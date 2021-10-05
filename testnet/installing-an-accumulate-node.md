@@ -63,6 +63,12 @@ $ brew install go
 
 
 
+#### Installing Go on Linux
+
+
+
+
+
 ### Installing accumulated from source
 
 With the prerequisite steps completed, to install `accumulated` and all related dependencies run the following commands:     
