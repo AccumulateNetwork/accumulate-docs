@@ -20,6 +20,7 @@
 
 ## Deep Dive
 
+* [Further Reading / Links](deep-dive/further-reading-links.md)
 * [Identity](deep-dive/identity.md)
 * [Anonymous Token Chains](deep-dive/anonymous-token-chains.md)
 * [Block Validation Chain](deep-dive/block-validation-chain.md)
@@ -31,4 +32,3 @@
 * [Wallets](tools/wallets/README.md)
   * [Command Line Wallet](tools/wallets/command-line-wallet.md)
   * [Mobile Wallet](tools/wallets/mobile-wallet.md)
-
