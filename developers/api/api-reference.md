@@ -31,6 +31,13 @@ Get ADI (Accumulate Digital Identity) info
 | `url`           | string | The URL for this ADI                            |
 | `publicKeyHash` | string | The SHA-256 hash of the Public Key for this ADI |
 
+#### Errors
+
+| Code   | Message            | Data |
+| ------ | ------------------ | ---- |
+| -32901 | Invalid ADI URL    |      |
+| -32902 | ADI does not exist |      |
+
 #### Example Request
 
 ```d
@@ -79,6 +86,15 @@ Create a new ADI (Accumulate Digital Identity)
 | Property | Type   | Description     |
 | -------- | ------ | --------------- |
 | ADI      | object | The created ADI |
+
+#### Errors
+
+| Code   | Message            | Data |
+| ------ | ------------------ | ---- |
+| -32901 | Invalid ADI URL    |      |
+| -32801 | Invalid signer ADI |      |
+| -32802 | Invalid signature  |      |
+| -32803 | Invalid timestamp  |      |
 
 #### Example Request
 
