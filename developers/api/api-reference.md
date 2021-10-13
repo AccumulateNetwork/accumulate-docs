@@ -46,7 +46,7 @@ curl -X POST --data '{
     "id": 0,
     "method": "adi",
     "params": {
-        "url": "acc://RedWagon"
+        "url": "redwagon"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
@@ -58,8 +58,8 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "url": "acc://RedWagon",
-        "publicKeyHash": "acc2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59",
+        "url": "redwagon",
+        "publicKeyHash": "2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59",
     },
     "id": 0
 }
@@ -105,17 +105,17 @@ curl -X POST --data '{
     "method": "adi-create",
     "params": {
         "adi": {
-            "url": "acc://QuantumField",
-            "publicKeyHash": "acc1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2",
+            "url": "quantumfield",
+            "publicKeyHash": "1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2",
         },
         "signer": {
-            "url": "acc://RedWagon",
-            "publicKey": "acc2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59"
+            "url": "redwagon",
+            "publicKey": "2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59"
         },
         "timestamp": 1631306251,
         "sig": "________________________"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
@@ -126,8 +126,8 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "result": {
         "adi": {
-            "url": "acc://QuantumField",
-            "publicKeyHash": "acc1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2",
+            "url": "quantumfield",
+            "publicKeyHash": "1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2",
         }
     },
     "id": 0
@@ -167,9 +167,9 @@ curl -X POST --data '{
     "id": 0,
     "method": "token",
     "params": {
-        "url": "acc://RedWagon/WagonToken"
+        "url": "redwagon/WagonToken"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
@@ -180,7 +180,7 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "result": {
         "token": {
-            "url": "acc://RedWagon/WagonToken",
+            "url": "redwagon/WagonToken",
             "symbol": "WT",
             "precision": 4
         }
@@ -228,18 +228,18 @@ curl -X POST --data '{
     "method": "token-create",
     "params": {
         "token": {
-            "url": "acc://QuantumField/Qbits",
+            "url": "quantumfield/Qbits",
             "symbol": "QB",
             "precision": 18
         },
         "signer": {
-            "url": "acc://QuantumField",
-            "publicKey": "acc1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2"
+            "url": "quantumfield",
+            "publicKey": "1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2"
         },
         "timestamp": 1631306251,
         "sig": "_________________________"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
@@ -250,7 +250,7 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "result": {
         "token": {
-            "url": "acc://QuantumField/Qbits",
+            "url": "quantumfield/Qbits",
             "symbol": "QB",
             "precision": 18
         }
@@ -292,9 +292,9 @@ curl -X POST --data '{
     "id": 0,
     "method": "token-account",
     "params": {
-        "url": "acc://QuantumField"
+        "url": "quantumfield"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
@@ -305,8 +305,8 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "result": {
         "tokenAccountWithBalance": {
-            "url": "acc://QuantumField",
-            "tokenURL": "acc://QuantumField/QBits",
+            "url": "quantumfield",
+            "tokenURL": "quantumfield/QBits",
             "balance": 10000000000000
         }
     },
@@ -354,17 +354,17 @@ curl -X POST --data '{
     "method": "token-account-create",
     "params": {
         "tokenAccount": {
-            "url": "acc://RedWagon",
-            "tokenURL": "acc://RedWagon/WagonCoin"
+            "url": "redwagon",
+            "tokenURL": "redwagon/WagonCoin"
         },
         "signer": {
-            "url": "acc://RedWagon",
-            "publicKey": "acc2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59"
+            "url": "redwagon",
+            "publicKey": "2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59"
         },
         "timestamp": 1631306251,
         "sig": "____________"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
@@ -375,8 +375,8 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "result": {
         "tokenAccount": {
-            "url": "acc://RedWagon",
-            "tokenURL": "acc://RedWagon/WagonCoin"
+            "url": "redwagon",
+            "tokenURL": "redwagon/WagonCoin"
         }
     },
     "id": 0
@@ -418,7 +418,7 @@ curl -X POST --data '{
     "params": {
         "hash": "f1d6daf52c3256b917405d465572e59c248b2db135e5d714e0ac5c43760ce434"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
@@ -430,14 +430,14 @@ curl -X POST --data '{
     "result": {
         "tokenTxWithHash": {
             "hash": "f1d6daf52c3256b917405d465572e59c248b2db135e5d714e0ac5c43760ce434",
-            "from": "acc://QuantumField",
+            "from": "quantumfield",
             "to": [
                 {
-                    "url": "acc://RedWagon",
+                    "url": "redwagon",
                     "amount": 500,
                 },
                 {
-                    "url": "acc://RhaegarTargaryen",
+                    "url": "rhaegartargaryen",
                     "amount": 283
                 }
             ],
@@ -486,7 +486,7 @@ curl -X POST --data '{
     "id": 0,
     "method": "____",
     "params": {}
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
