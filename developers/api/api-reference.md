@@ -16,19 +16,19 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ### adi
 
-Get ADI \(Accumulate Digital Identity\) info
+Get ADI (Accumulate Digital Identity) info
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| url | string | The ADI URL to check | Yes |
+| Parameter | Type   | Description          | Required? |
+| --------- | ------ | -------------------- | --------- |
+| url       | string | The ADI URL to check | Yes       |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| `url` | string | The URL for this ADI |
+| Property        | Type   | Description                                     |
+| --------------- | ------ | ----------------------------------------------- |
+| `url`           | string | The URL for this ADI                            |
 | `publicKeyHash` | string | The SHA-256 hash of the Public Key for this ADI |
 
 #### Example Request
@@ -41,7 +41,7 @@ curl -X POST --data '{
     "params": {
         "url": "acc://RedWagon"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/v1
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 
 ```
 
@@ -59,26 +59,26 @@ curl -X POST --data '{
 
 ```
 
-### 
+###
 
 ### adi-create
 
-Create a new ADI \(Accumulate Digital Identity\)
+Create a new ADI (Accumulate Digital Identity)
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| `adi` | object | The ADI to create | Yes |
-| `signer` | object | Existing ADI signing this request | Yes |
-| `timestamp` | object | UNIX timestamp | Yes |
-| `sig` | string | Signature of the ADI signing the transaction | Yes |
+| Parameter   | Type   | Description                                  | Required? |
+| ----------- | ------ | -------------------------------------------- | --------- |
+| `adi`       | object | The ADI to create                            | Yes       |
+| `signer`    | object | Existing ADI signing this request            | Yes       |
+| `timestamp` | object | UNIX timestamp                               | Yes       |
+| `sig`       | string | Signature of the ADI signing the transaction | Yes       |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| ADI | object | The created ADI |
+| Property | Type   | Description     |
+| -------- | ------ | --------------- |
+| ADI      | object | The created ADI |
 
 #### Example Request
 
@@ -118,7 +118,7 @@ curl -X POST --data '{
 }
 ```
 
-### 
+###
 
 ### token
 
@@ -126,15 +126,15 @@ Get Token info
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| `url` | string | Token URL | Yes |
+| Parameter | Type   | Description | Required? |
+| --------- | ------ | ----------- | --------- |
+| `url`     | string | Token URL   | Yes       |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| `token` | object | The requested token info |
+| Property | Type   | Description              |
+| -------- | ------ | ------------------------ |
+| `token`  | object | The requested token info |
 
 #### Example Request
 
@@ -166,7 +166,7 @@ curl -X POST --data '{
 }
 ```
 
-### 
+###
 
 ### token-create
 
@@ -174,18 +174,18 @@ Create Token
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| `token` | object | New token | Yes |
-| `signer` | object | ADI signing the creation of new token | Yes |
-| `timestamp` | integer | UNIX timestamp | Yes |
-| `sig` | string | Signature of the ADI signing the transaction | Yes |
+| Parameter   | Type    | Description                                  | Required? |
+| ----------- | ------- | -------------------------------------------- | --------- |
+| `token`     | object  | New token                                    | Yes       |
+| `signer`    | object  | ADI signing the creation of new token        | Yes       |
+| `timestamp` | integer | UNIX timestamp                               | Yes       |
+| `sig`       | string  | Signature of the ADI signing the transaction | Yes       |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| token | object | The created token |
+| Property | Type   | Description       |
+| -------- | ------ | ----------------- |
+| token    | object | The created token |
 
 #### Example Request
 
@@ -227,7 +227,7 @@ curl -X POST --data '{
 }
 ```
 
-### 
+###
 
 ### token-account
 
@@ -235,14 +235,14 @@ Get Token Account info
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| `url` | string | Token Account URL | Yes |
+| Parameter | Type   | Description       | Required? |
+| --------- | ------ | ----------------- | --------- |
+| `url`     | string | Token Account URL | Yes       |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
+| Property                  | Type   | Description                |
+| ------------------------- | ------ | -------------------------- |
 | `tokenAccountWithBalance` | object | Token account with balance |
 
 #### Example Request
@@ -275,7 +275,7 @@ curl -X POST --data '{
 }
 ```
 
-### 
+###
 
 ### token-account-create
 
@@ -283,17 +283,17 @@ Create Token Account
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| `tokenAccount` | object | New token account | Yes |
-| `signer` | object | ADI signing the creation of new Token Account | Yes |
-| `timestamp` | integer | UNIX timestamp | Yes |
-| `sig` | string | Signature of the ADI signing the transaction | Yes |
+| Parameter      | Type    | Description                                   | Required? |
+| -------------- | ------- | --------------------------------------------- | --------- |
+| `tokenAccount` | object  | New token account                             | Yes       |
+| `signer`       | object  | ADI signing the creation of new Token Account | Yes       |
+| `timestamp`    | integer | UNIX timestamp                                | Yes       |
+| `sig`          | string  | Signature of the ADI signing the transaction  | Yes       |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
+| Property       | Type   | Description   |
+| -------------- | ------ | ------------- |
 | `tokenAccount` | object | Token account |
 
 #### Example Request
@@ -334,7 +334,7 @@ curl -X POST --data '{
 }
 ```
 
-### 
+###
 
 ### token-tx
 
@@ -342,14 +342,14 @@ Get Token Transaction info
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| `hash` | string | Transaction hash | Yes |
+| Parameter | Type   | Description      | Required? |
+| --------- | ------ | ---------------- | --------- |
+| `hash`    | string | Transaction hash | Yes       |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
+| Property          | Type   | Description       |
+| ----------------- | ------ | ----------------- |
 | `tokenTxWithHash` | object | Token transaction |
 
 #### Example Request
@@ -392,7 +392,7 @@ curl -X POST --data '{
 }
 ```
 
-### 
+###
 
 ### token-tx-create
 
@@ -400,17 +400,17 @@ Create Token Transaction
 
 #### Request Parameters
 
-| Parameter | Type | Description | Required? |
-| :--- | :--- | :--- | :--- |
-| `tokenTx` | object | New token transaction |  |
-| `signer` | object | ADI signing the transaction |  |
-| `timestamp` | integer | UNIX timestamp |  |
-| `sig` | string | Signature of the ADI signing the transaction |  |
+| Parameter   | Type    | Description                                  | Required? |
+| ----------- | ------- | -------------------------------------------- | --------- |
+| `tokenTx`   | object  | New token transaction                        |           |
+| `signer`    | object  | ADI signing the transaction                  |           |
+| `timestamp` | integer | UNIX timestamp                               |           |
+| `sig`       | string  | Signature of the ADI signing the transaction |           |
 
 #### Response Properties
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
+| Property          | Type   | Description       |
+| ----------------- | ------ | ----------------- |
 | `tokenTxWithHash` | object | Token transaction |
 
 #### Example Request
@@ -446,6 +446,4 @@ curl -X POST --data '{
 Gets state for the chain
 
 #### Faucet
-
-
 
