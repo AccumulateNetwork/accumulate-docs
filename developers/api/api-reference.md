@@ -33,10 +33,10 @@ Get ADI (Accumulate Digital Identity) info
 
 #### Errors
 
-| Code   | Message            | Data |
-| ------ | ------------------ | ---- |
-| -32901 | Invalid ADI URL    |      |
-| -32902 | ADI does not exist |      |
+| Code   | Message            |
+| ------ | ------------------ |
+| -32901 | Invalid ADI URL    |
+| -32902 | ADI does not exist |
 
 #### Example Request
 
@@ -89,12 +89,12 @@ Create a new ADI (Accumulate Digital Identity)
 
 #### Errors
 
-| Code   | Message            | Data |
-| ------ | ------------------ | ---- |
-| -32901 | Invalid ADI URL    |      |
-| -32801 | Invalid signer ADI |      |
-| -32802 | Invalid signature  |      |
-| -32803 | Invalid timestamp  |      |
+| Code   | Message            |
+| ------ | ------------------ |
+| -32901 | Invalid ADI URL    |
+| -32801 | Invalid signer ADI |
+| -32802 | Invalid signature  |
+| -32803 | Invalid timestamp  |
 
 #### Example Request
 
@@ -152,6 +152,13 @@ Get Token info
 | -------- | ------ | ------------------------ |
 | `token`  | object | The requested token info |
 
+#### Errors
+
+| Code   | Message              |
+| ------ | -------------------- |
+| -33001 | Invalid token URL    |
+| -33002 | Token does not exist |
+
 #### Example Request
 
 ```cpp
@@ -202,6 +209,15 @@ Create Token
 | Property | Type   | Description       |
 | -------- | ------ | ----------------- |
 | token    | object | The created token |
+
+#### Errors
+
+| Code   |                    |
+| ------ | ------------------ |
+| -33001 | Invalid token URL  |
+| -32801 | Invalid signer ADI |
+| -32802 | Invalid signature  |
+| -32803 | Invalid timestamp  |
 
 #### Example Request
 
@@ -261,6 +277,13 @@ Get Token Account info
 | ------------------------- | ------ | -------------------------- |
 | `tokenAccountWithBalance` | object | Token account with balance |
 
+#### Errors
+
+| Code   | Message                      |
+| ------ | ---------------------------- |
+| -34001 | Invalid token account URL    |
+| -34002 | Token account does not exist |
+
 #### Example Request
 
 ```cpp
@@ -311,6 +334,16 @@ Create Token Account
 | Property       | Type   | Description   |
 | -------------- | ------ | ------------- |
 | `tokenAccount` | object | Token account |
+
+#### Errors
+
+| Code   | Message                   |
+| ------ | ------------------------- |
+| -34001 | Invalid token account URL |
+| -33001 | Invalid token URL         |
+| -32801 | Invalid signer ADI        |
+| -32802 | Invalid signature         |
+| -32803 | Invalid timestamp         |
 
 #### Example Request
 
@@ -368,6 +401,13 @@ Get Token Transaction info
 | ----------------- | ------ | ----------------- |
 | `tokenTxWithHash` | object | Token transaction |
 
+#### Errors
+
+| Code   | Message                    |
+| ------ | -------------------------- |
+| -34002 | Invalid transaction hash   |
+| -34003 | Transaction does not exist |
+
 #### Example Request
 
 ```cpp
@@ -418,16 +458,25 @@ Create Token Transaction
 
 | Parameter   | Type    | Description                                  | Required? |
 | ----------- | ------- | -------------------------------------------- | --------- |
-| `tokenTx`   | object  | New token transaction                        |           |
-| `signer`    | object  | ADI signing the transaction                  |           |
-| `timestamp` | integer | UNIX timestamp                               |           |
-| `sig`       | string  | Signature of the ADI signing the transaction |           |
+| `tokenTx`   | object  | New token transaction                        | Yes       |
+| `signer`    | object  | ADI signing the transaction                  | Yes       |
+| `timestamp` | integer | UNIX timestamp                               | Yes       |
+| `sig`       | string  | Signature of the ADI signing the transaction | Yes       |
 
 #### Response Properties
 
 | Property          | Type   | Description       |
 | ----------------- | ------ | ----------------- |
 | `tokenTxWithHash` | object | Token transaction |
+
+#### Errors
+
+| Code   | Message                   |
+| ------ | ------------------------- |
+| -34001 | Invalid token address URL |
+| -32801 | Invalid signer ADI        |
+| -32802 | Invalid signature         |
+| -32803 | Invalid timestamp         |
 
 #### Example Request
 
