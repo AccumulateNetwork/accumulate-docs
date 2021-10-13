@@ -212,7 +212,7 @@ Create Token
 
 #### Errors
 
-| Code   |                    |
+| Code   | Message            |
 | ------ | ------------------ |
 | -33001 | Invalid token URL  |
 | -32801 | Invalid signer ADI |
