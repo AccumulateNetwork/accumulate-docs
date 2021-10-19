@@ -504,11 +504,52 @@ curl -X POST --data '{
 
 
 
+### faucet
 
+Get free ACME tokens
 
-#### Get
+#### Request Parameters
 
-Gets state for the chain
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
 
-#### Faucet
+#### Response Properties
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+#### Errors
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+#### Example Request
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "____",
+    "params": {}
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+
+```
+
+#### Example Response
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "___": {}
+    },
+    "id": 0
+}
+```
+
+####
 
