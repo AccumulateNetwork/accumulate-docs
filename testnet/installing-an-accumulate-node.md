@@ -23,14 +23,14 @@ In order to install Accumulate using Docker, you need to have the following soft
 This guide will show you how to compile and install  `accumulated` into your environment of choice directly from the source-code.
 
 {% hint style="info" %}
-**Note**: If you want to avoid compiling the binaries yourself, you can download and install the latest release binary Accumulate from \_\_\_\_\_\_\_\_\_.
+**Note**: If you want to avoid compiling the binaries yourself, you can download and install the latest release binary of Accumulate from \_\_\_\_\_\_\_\_\_.
 {% endhint %}
 
 ### Prerequisites for installing from source
 
 In order to install `accumulated` from source, the following dependencies are required:
 
-* **Go:** `accumulated` is written in the Golang programming language. 
+* **Go:** `accumulated` is written in the Golang programming language.&#x20;
 
 {% hint style="info" %}
 **Note**: The minimum version of Go supported is Go 1.15. We recommend that users use the latest version of Go, which at the time of writing is  1.17
@@ -43,7 +43,7 @@ $ go version
 go version go1.17.x darwin/amd64
 ```
 
-#### 
+####
 
 #### Installing Go on Mac OS X
 
@@ -71,7 +71,7 @@ $ brew install go
 
 ### Installing accumulated from source
 
-With the prerequisite steps completed, to install `accumulated` and all related dependencies run the following commands:     
+With the prerequisite steps completed, to install `accumulated` and all related dependencies run the following commands:    &#x20;
 
 ```d
 $ git clone https://github.com/AccumulateNetwork/accumulated.git --branch develop
@@ -82,8 +82,7 @@ $ go build ./cmd/accumulated
 
 
 
-The command above will install the current _develop_ branch of `accumulated` and the necessary dependencies. 
+The command above will install the current _develop_ branch of `accumulated` and the necessary dependencies.&#x20;
 
-  
-          
-
+\
+&#x20;        &#x20;
