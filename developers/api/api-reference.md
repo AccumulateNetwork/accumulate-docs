@@ -15,7 +15,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 ## Methods
 
 
-### **URL methods**
+### ***URL methods***
 
 ### get
 
