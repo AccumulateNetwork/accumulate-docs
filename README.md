@@ -4,7 +4,7 @@ description: These docs are activity being written - please check back soon for 
 
 # Welcome
 
-This is the repository for documentation for the Accumulate Protocol on Gitbook.
+This is the repository for the [Gitbook documentation](https://app.gitbook.com/@accumulatenetwork/s/accumulate/) for the Accumulate Protocol.
 
 To see the Accumulate source code, please [click here](https://github.com/AccumulateNetwork/accumulated)
 
