@@ -15,7 +15,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 ## Methods
 
 
-### ***URL methods***
+### *URL methods*
 
 ### get
 
@@ -51,9 +51,9 @@ Returns Accumulate Object by URL
 
 ###
 
-### ADI methods
+### *ADI methods*
 
-#### adi
+### adi
 
 Get ADI (Accumulate Digital Identity) info
 
@@ -106,7 +106,7 @@ curl -X POST --data '{
 
 ###
 
-#### adi-create
+### adi-create
 
 Create a new ADI (Accumulate Digital Identity)
 
@@ -173,9 +173,9 @@ curl -X POST --data '{
 
 ###
 
-### Token methods
+### *Token methods*
 
-#### token
+### token
 
 Get Token info
 
@@ -229,7 +229,7 @@ curl -X POST --data '{
 
 ###
 
-#### token-create
+### token-create
 
 Create Token
 
@@ -298,7 +298,7 @@ curl -X POST --data '{
 
 ###
 
-#### token-account
+### token-account
 
 Get Token Account info
 
@@ -352,7 +352,7 @@ curl -X POST --data '{
 
 ###
 
-#### token-account-create
+### token-account-create
 
 Create Token Account
 
@@ -420,7 +420,7 @@ curl -X POST --data '{
 
 ###
 
-#### token-tx
+### token-tx
 
 Get Token Transaction info
 
@@ -484,7 +484,7 @@ curl -X POST --data '{
 
 ###
 
-#### token-tx-create
+### token-tx-create
 
 Create Token Transaction
 
@@ -535,7 +535,7 @@ curl -X POST --data '{
 }
 ```
 
-#### faucet
+### faucet
 
 Get free ACME tokens
 
@@ -570,4 +570,4 @@ Get free ACME tokens
 
 ####
 
-### Key management methods
+### *Key management methods*
