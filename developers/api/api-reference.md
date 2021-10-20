@@ -15,71 +15,70 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 ## Methods
 
 
-
-
 ### URL methods
 
-**get**
+#### get
 
 Returns Accumulate Object by URL
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
 | `tbd`     | tbd  |             |           |
 
-#### Response Properties
+**Response Properties**
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 | `tbd`    | tbd  |             |
 
-#### Errors
+**Errors**
 
 | Code | Message |
 | ---- | ------- |
 |      |         |
 
-#### Example Request
+**Example Request**
 
 ```d
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 ```
 
 ###
 
-## ADI methods
+### ADI methods
 
-### adi
+#### adi
 
 Get ADI (Accumulate Digital Identity) info
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter | Type   | Description          | Required? |
 | --------- | ------ | -------------------- | --------- |
 | url       | string | The ADI URL to check | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property        | Type   | Description                                     |
 | --------------- | ------ | ----------------------------------------------- |
 | `url`           | string | The URL for this ADI                            |
 | `publicKeyHash` | string | The SHA-256 hash of the Public Key for this ADI |
 
-#### Errors
+**Errors**
 
 | Code   | Message            |
 | ------ | ------------------ |
 | -32901 | Invalid ADI URL    |
 | -32902 | ADI does not exist |
 
-#### Example Request
+ 
+**Example Request**
 
 ```d
 curl -X POST --data '{
@@ -92,7 +91,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -107,11 +106,11 @@ curl -X POST --data '{
 
 ###
 
-### adi-create
+#### adi-create
 
 Create a new ADI (Accumulate Digital Identity)
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter   | Type   | Description                                  | Required? |
 | ----------- | ------ | -------------------------------------------- | --------- |
@@ -120,13 +119,13 @@ Create a new ADI (Accumulate Digital Identity)
 | `timestamp` | object | UNIX timestamp                               | Yes       |
 | `sig`       | string | Signature of the ADI signing the transaction | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property | Type   | Description     |
 | -------- | ------ | --------------- |
 | ADI      | object | The created ADI |
 
-#### Errors
+**Errors**
 
 | Code   | Message            |
 | ------ | ------------------ |
@@ -135,7 +134,7 @@ Create a new ADI (Accumulate Digital Identity)
 | -32802 | Invalid signature  |
 | -32803 | Invalid timestamp  |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 curl -X POST --data '{
@@ -157,7 +156,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -174,32 +173,32 @@ curl -X POST --data '{
 
 ###
 
-## Token methods
+### Token methods
 
-### token
+#### token
 
 Get Token info
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter | Type   | Description | Required? |
 | --------- | ------ | ----------- | --------- |
 | `url`     | string | Token URL   | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property | Type   | Description              |
 | -------- | ------ | ------------------------ |
 | `token`  | object | The requested token info |
 
-#### Errors
+**Errors**
 
 | Code   | Message              |
 | ------ | -------------------- |
 | -33001 | Invalid token URL    |
 | -33002 | Token does not exist |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 curl -X POST --data '{
@@ -212,7 +211,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -230,11 +229,11 @@ curl -X POST --data '{
 
 ###
 
-### token-create
+#### token-create
 
 Create Token
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter   | Type    | Description                                  | Required? |
 | ----------- | ------- | -------------------------------------------- | --------- |
@@ -243,13 +242,13 @@ Create Token
 | `timestamp` | integer | UNIX timestamp                               | Yes       |
 | `sig`       | string  | Signature of the ADI signing the transaction | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property | Type   | Description       |
 | -------- | ------ | ----------------- |
 | token    | object | The created token |
 
-#### Errors
+**Errors
 
 | Code   | Message            |
 | ------ | ------------------ |
@@ -258,7 +257,7 @@ Create Token
 | -32802 | Invalid signature  |
 | -32803 | Invalid timestamp  |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 curl -X POST --data '{
@@ -281,7 +280,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -299,30 +298,30 @@ curl -X POST --data '{
 
 ###
 
-### token-account
+#### token-account
 
 Get Token Account info
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter | Type   | Description       | Required? |
 | --------- | ------ | ----------------- | --------- |
 | `url`     | string | Token Account URL | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property                  | Type   | Description                |
 | ------------------------- | ------ | -------------------------- |
 | `tokenAccountWithBalance` | object | Token account with balance |
 
-#### Errors
+**Errors**
 
 | Code   | Message                      |
 | ------ | ---------------------------- |
 | -34001 | Invalid token account URL    |
 | -34002 | Token account does not exist |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 curl -X POST --data '{
@@ -335,7 +334,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -353,11 +352,11 @@ curl -X POST --data '{
 
 ###
 
-### token-account-create
+#### token-account-create
 
 Create Token Account
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter      | Type    | Description                                   | Required? |
 | -------------- | ------- | --------------------------------------------- | --------- |
@@ -366,13 +365,13 @@ Create Token Account
 | `timestamp`    | integer | UNIX timestamp                                | Yes       |
 | `sig`          | string  | Signature of the ADI signing the transaction  | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property       | Type   | Description   |
 | -------------- | ------ | ------------- |
 | `tokenAccount` | object | Token account |
 
-#### Errors
+**Errors**
 
 | Code   | Message                   |
 | ------ | ------------------------- |
@@ -382,7 +381,7 @@ Create Token Account
 | -32802 | Invalid signature         |
 | -32803 | Invalid timestamp         |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 curl -X POST --data '{
@@ -404,7 +403,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -421,30 +420,30 @@ curl -X POST --data '{
 
 ###
 
-### token-tx
+#### token-tx
 
 Get Token Transaction info
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter | Type   | Description      | Required? |
 | --------- | ------ | ---------------- | --------- |
 | `hash`    | string | Transaction hash | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property          | Type   | Description       |
 | ----------------- | ------ | ----------------- |
 | `tokenTxWithHash` | object | Token transaction |
 
-#### Errors
+**Errors**
 
 | Code   | Message                    |
 | ------ | -------------------------- |
 | -34002 | Invalid transaction hash   |
 | -34003 | Transaction does not exist |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 curl -X POST --data '{
@@ -457,7 +456,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -485,11 +484,11 @@ curl -X POST --data '{
 
 ###
 
-### token-tx-create
+#### token-tx-create
 
 Create Token Transaction
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter   | Type    | Description                                  | Required? |
 | ----------- | ------- | -------------------------------------------- | --------- |
@@ -498,13 +497,13 @@ Create Token Transaction
 | `timestamp` | integer | UNIX timestamp                               | Yes       |
 | `sig`       | string  | Signature of the ADI signing the transaction | Yes       |
 
-#### Response Properties
+**Response Properties**
 
 | Property          | Type   | Description       |
 | ----------------- | ------ | ----------------- |
 | `tokenTxWithHash` | object | Token transaction |
 
-#### Errors
+**Errors**
 
 | Code   | Message                   |
 | ------ | ------------------------- |
@@ -513,7 +512,7 @@ Create Token Transaction
 | -32802 | Invalid signature         |
 | -32803 | Invalid timestamp         |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 curl -X POST --data '{
@@ -524,7 +523,7 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 {
@@ -536,39 +535,39 @@ curl -X POST --data '{
 }
 ```
 
-### faucet
+#### faucet
 
 Get free ACME tokens
 
-#### Request Parameters
+**Request Parameters**
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
 |           |      |             |           |
 
-#### Response Properties
+**Response Properties**
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 |          |      |             |
 
-#### Errors
+**Errors**
 
 | Code | Message |
 | ---- | ------- |
 |      |         |
 |      | ​       |
 
-#### Example Request
+**Example Request**
 
 ```cpp
 ```
 
-#### Example Response
+**Example Response**
 
 ```d
 ```
 
 ####
 
-## Key management methods
+### Key management methods
