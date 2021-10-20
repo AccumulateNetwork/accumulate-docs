@@ -14,7 +14,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ## Methods
 
-## URL methods
+**URL methods**
 
 ### get
 
@@ -22,36 +22,30 @@ Returns Accumulate Object by URL
 
 #### Request Parameters
 
-| Parameter | Type   | Description          | Required? |
-| --------- | ------ | -------------------- | --------- |
-|   `tbd`   |   tbd  |                      |           |
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+| `tbd`     | tbd  |             |           |
 
 #### Response Properties
 
-| Property        | Type   | Description                                     |
-| --------------- | ------ | ----------------------------------------------- |
-| `tbd`           | tbd    |                                                 |
-
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| `tbd`    | tbd  |             |
 
 #### Errors
 
-| Code   | Message            |
-| ------ | ------------------ |
-|        |                    |
-
+| Code | Message |
+| ---- | ------- |
+|      |         |
 
 #### Example Request
 
 ```d
-
-
 ```
 
 #### Example Response
 
 ```d
-
-
 ```
 
 ###
@@ -93,7 +87,6 @@ curl -X POST --data '{
         "url": "redwagon"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -107,7 +100,6 @@ curl -X POST --data '{
     },
     "id": 0
 }
-
 ```
 
 ###
@@ -160,7 +152,6 @@ curl -X POST --data '{
         "sig": "________________________"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -216,7 +207,6 @@ curl -X POST --data '{
         "url": "redwagon/WagonToken"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -286,7 +276,6 @@ curl -X POST --data '{
         "sig": "_________________________"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -341,7 +330,6 @@ curl -X POST --data '{
         "url": "quantumfield"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -411,7 +399,6 @@ curl -X POST --data '{
         "sig": "____________"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -465,7 +452,6 @@ curl -X POST --data '{
         "hash": "f1d6daf52c3256b917405d465572e59c248b2db135e5d714e0ac5c43760ce434"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -533,7 +519,6 @@ curl -X POST --data '{
     "method": "____",
     "params": {}
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-
 ```
 
 #### Example Response
@@ -547,7 +532,6 @@ curl -X POST --data '{
     "id": 0
 }
 ```
-
 
 ### faucet
 
@@ -575,17 +559,13 @@ Get free ACME tokens
 #### Example Request
 
 ```cpp
-
-
 ```
 
 #### Example Response
 
 ```d
-
 ```
 
 ####
 
 ## Key management methods
-
