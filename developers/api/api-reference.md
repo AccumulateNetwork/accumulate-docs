@@ -14,6 +14,50 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ## Methods
 
+## URL methods
+
+### get
+
+Returns Accumulate Object by URL
+
+#### Request Parameters
+
+| Parameter | Type   | Description          | Required? |
+| --------- | ------ | -------------------- | --------- |
+|   `tbd`   |   tbd  |                      |           |
+
+#### Response Properties
+
+| Property        | Type   | Description                                     |
+| --------------- | ------ | ----------------------------------------------- |
+| `tbd`           | tbd    |                                                 |
+
+
+#### Errors
+
+| Code   | Message            |
+| ------ | ------------------ |
+|        |                    |
+
+
+#### Example Request
+
+```d
+
+
+```
+
+#### Example Response
+
+```d
+
+
+```
+
+###
+
+## ADI methods
+
 ### adi
 
 Get ADI (Accumulate Digital Identity) info
@@ -135,6 +179,8 @@ curl -X POST --data '{
 ```
 
 ###
+
+## Token methods
 
 ### token
 
@@ -503,7 +549,6 @@ curl -X POST --data '{
 ```
 
 
-
 ### faucet
 
 Get free ACME tokens
@@ -530,26 +575,17 @@ Get free ACME tokens
 #### Example Request
 
 ```cpp
-curl -X POST --data '{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "____",
-    "params": {}
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+
 
 ```
 
 #### Example Response
 
 ```d
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "___": {}
-    },
-    "id": 0
-}
+
 ```
 
 ####
+
+## Key management methods
 
