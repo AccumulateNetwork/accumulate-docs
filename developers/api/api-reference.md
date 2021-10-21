@@ -609,7 +609,9 @@ Get free ACME tokens. While supplies last!
 
 Returns the specified key page
 
+{% hint style="info" %}
 ***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
+{% endhint %}
 
 **Request Parameters**
 
@@ -646,7 +648,9 @@ Returns the specified key page
 
 Creates a new key page
 
+{% hint style="info" %}
 ***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
+{% endhint %}
 
 **Request Parameters**
 
@@ -683,7 +687,9 @@ Creates a new key page
 
 Returns information about the specified key book
 
+{% hint style="info" %}
 ***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
+{% endhint %}
 
 **Request Parameters**
 
@@ -720,7 +726,9 @@ Returns information about the specified key book
 
 Creates a new key book
 
+{% hint style="info" %}
 ***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
+{% endhint %}
 
 **Request Parameters**
 
