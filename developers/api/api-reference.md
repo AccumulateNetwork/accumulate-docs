@@ -177,7 +177,7 @@ curl -X POST --data '{
 
 ### token
 
-Get Token info
+Get token info
 
 **Request Parameters**
 
@@ -231,7 +231,7 @@ curl -X POST --data '{
 
 ### token-create
 
-Create Token
+Create new token
 
 **Request Parameters**
 
@@ -300,7 +300,7 @@ curl -X POST --data '{
 
 ### token-account
 
-Get Token Account info
+Get token account info
 
 **Request Parameters**
 
@@ -354,7 +354,7 @@ curl -X POST --data '{
 
 ### token-account-create
 
-Create Token Account
+Create token account
 
 **Request Parameters**
 
@@ -420,9 +420,45 @@ curl -X POST --data '{
 
 ###
 
+### token-account-history
+
+Get account history for a token account
+
+**Request Parameters**
+
+| Parameter | Type   | Description      | Required? |
+| --------- | ------ | ---------------- | --------- |
+| `TBD`     |        |                  |           |
+
+**Response Properties**
+
+| Property          | Type   | Description       |
+| ----------------- | ------ | ----------------- |
+|                   |        |                   |
+
+**Errors**
+
+| Code   | Message                    |
+| ------ | -------------------------- |
+|        |                            |
+|        |                            |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+
+```
+
+###
+
 ### token-tx
 
-Get Token Transaction info
+Get token transaction data
 
 **Request Parameters**
 
@@ -486,7 +522,7 @@ curl -X POST --data '{
 
 ### token-tx-create
 
-Create Token Transaction
+Create token transaction
 
 **Request Parameters**
 
@@ -571,3 +607,254 @@ Get free ACME tokens
 ####
 
 ### *Key management methods*
+
+### sig-spec
+
+________
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### create-sig-spec
+
+________
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### sig-spec-group
+
+________
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### create-sig-spec-group
+
+________
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### update-key-page
+
+________
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### update-sig-spec
+
+________
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### *Credit methods*
+
+### add-credits
+
+Add credits to... (TBD)
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|           |      |             |           |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​        |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### *Metrics*
+
+### metrics - coming soon
