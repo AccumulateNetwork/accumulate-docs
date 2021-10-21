@@ -609,7 +609,7 @@ Get free ACME tokens. While supplies last!
 
 Returns the specified key page
 
-_NOTE: Key page = sig-spec. Method names will be updated soon._
+***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
 
 **Request Parameters**
 
@@ -646,7 +646,7 @@ _NOTE: Key page = sig-spec. Method names will be updated soon._
 
 Creates a new key page
 
-_NOTE: Key page = sig-spec. Method names will be updated soon._
+***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
 
 **Request Parameters**
 
@@ -683,7 +683,7 @@ _NOTE: Key page = sig-spec. Method names will be updated soon._
 
 Returns information about the specified key book
 
-_NOTE: Key book = sig-spec-group. Method names will be updated soon._
+***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
 
 **Request Parameters**
 
@@ -720,9 +720,7 @@ _NOTE: Key book = sig-spec-group. Method names will be updated soon._
 
 Creates a new key book
 
-_NOTE: Key book = sig-spec-group. Method names will be updated soon._
-
-_hello \`code\` d_ `accumulated` is w
+***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
 
 **Request Parameters**
 
