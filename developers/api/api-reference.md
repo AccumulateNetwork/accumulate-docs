@@ -55,7 +55,7 @@ Returns Accumulate Object by URL
 
 ### adi
 
-Get ADI (Accumulate Digital Identity) info
+Returns information about the specified ADI
 
 **Request Parameters**
 
@@ -108,7 +108,7 @@ curl -X POST --data '{
 
 ### adi-create
 
-Create a new ADI (Accumulate Digital Identity)
+Creates a new ADI (Accumulate Digital Identity)
 
 **Request Parameters**
 
@@ -177,7 +177,7 @@ curl -X POST --data '{
 
 ### token
 
-Get token info
+Returns information about the specified token
 
 **Request Parameters**
 
@@ -231,7 +231,7 @@ curl -X POST --data '{
 
 ### token-create
 
-Create new token
+Creates a new token
 
 **Request Parameters**
 
@@ -300,7 +300,7 @@ curl -X POST --data '{
 
 ### token-account
 
-Get token account info
+Returns information about the specified token account
 
 **Request Parameters**
 
@@ -354,7 +354,7 @@ curl -X POST --data '{
 
 ### token-account-create
 
-Create token account
+Creates a new token account
 
 **Request Parameters**
 
@@ -422,7 +422,7 @@ curl -X POST --data '{
 
 ### token-account-history
 
-Get account history for a token account
+Returns account history for the specified token account
 
 **Request Parameters**
 
@@ -458,7 +458,7 @@ Get account history for a token account
 
 ### token-tx
 
-Get token transaction data
+Returns transaction data for the specified transaction
 
 **Request Parameters**
 
@@ -522,7 +522,7 @@ curl -X POST --data '{
 
 ### token-tx-create
 
-Create token transaction
+Creates a token transaction
 
 **Request Parameters**
 
@@ -573,7 +573,7 @@ curl -X POST --data '{
 
 ### faucet
 
-Get free ACME tokens
+Get free ACME tokens. While supplies last!
 
 **Request Parameters**
 
@@ -610,7 +610,9 @@ Get free ACME tokens
 
 ### sig-spec
 
-________
+Returns the specified key page
+
+*NOTE: Key page = sig-spec. Method names will be updated soon.*
 
 **Request Parameters**
 
@@ -629,7 +631,7 @@ ________
 | Code | Message |
 | ---- | ------- |
 |      |         |
-|      | ​       |
+|      | ​        |
 
 **Example Request**
 
@@ -645,7 +647,9 @@ ________
 
 ### create-sig-spec
 
-________
+Creates a new key page
+
+*NOTE: Key page = sig-spec. Method names will be updated soon.*
 
 **Request Parameters**
 
@@ -680,7 +684,9 @@ ________
 
 ### sig-spec-group
 
-________
+Returns information about the specified key book 
+
+*NOTE: Key book = sig-spec-group. Method names will be updated soon.*
 
 **Request Parameters**
 
@@ -715,7 +721,9 @@ ________
 
 ### create-sig-spec-group
 
-________
+Creates a new key book
+
+*NOTE: Key book = sig-spec-group. Method names will be updated soon.*
 
 **Request Parameters**
 
@@ -750,42 +758,7 @@ ________
 
 ### update-key-page
 
-________
-
-**Request Parameters**
-
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|           |      |             |           |
-
-**Response Properties**
-
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|          |      |             |
-
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      | ​       |
-
-**Example Request**
-
-```cpp
-```
-
-**Example Response**
-
-```d
-```
-
-###
-
-### update-sig-spec
-
-________
+Adds, removes, or updates key in a key page
 
 **Request Parameters**
 
@@ -822,7 +795,7 @@ ________
 
 ### add-credits
 
-Add credits to... (TBD)
+Adds credits to... (TBD)
 
 **Request Parameters**
 
