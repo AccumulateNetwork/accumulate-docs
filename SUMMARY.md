@@ -23,7 +23,7 @@
 
 * [Further Reading / Links](deep-dive/further-reading-links.md)
 * [Identity](deep-dive/identity.md)
-* [Anonymous Token Chains](deep-dive/anonymous-token-chains.md)
+* [Lite Accounts](deep-dive/anonymous-token-chains.md)
 * [Block Validation Chain](deep-dive/block-validation-chain.md)
 * [Directory Chain](deep-dive/directory-chain.md)
 
