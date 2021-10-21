@@ -14,8 +14,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ## Methods
 
-
-### *URL methods*
+### _URL methods_
 
 ### get
 
@@ -51,7 +50,7 @@ Returns Accumulate Object by URL
 
 ###
 
-### *ADI methods*
+### _ADI methods_
 
 ### adi
 
@@ -77,7 +76,6 @@ Returns information about the specified ADI
 | -32901 | Invalid ADI URL    |
 | -32902 | ADI does not exist |
 
- 
 **Example Request**
 
 ```d
@@ -173,7 +171,7 @@ curl -X POST --data '{
 
 ###
 
-### *Token methods*
+### _Token methods_
 
 ### token
 
@@ -248,7 +246,7 @@ Creates a new token
 | -------- | ------ | ----------------- |
 | token    | object | The created token |
 
-**Errors
+\*\*Errors
 
 | Code   | Message            |
 | ------ | ------------------ |
@@ -426,22 +424,22 @@ Returns account history for the specified token account
 
 **Request Parameters**
 
-| Parameter | Type   | Description      | Required? |
-| --------- | ------ | ---------------- | --------- |
-| `TBD`     |        |                  |           |
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+| `TBD`     |      |             |           |
 
 **Response Properties**
 
-| Property          | Type   | Description       |
-| ----------------- | ------ | ----------------- |
-|                   |        |                   |
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
 
 **Errors**
 
-| Code   | Message                    |
-| ------ | -------------------------- |
-|        |                            |
-|        |                            |
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      |         |
 
 **Example Request**
 
@@ -451,7 +449,6 @@ Returns account history for the specified token account
 **Example Response**
 
 ```d
-
 ```
 
 ###
@@ -606,13 +603,13 @@ Get free ACME tokens. While supplies last!
 
 ####
 
-### *Key management methods*
+### _Key management methods_
 
 ### sig-spec
 
 Returns the specified key page
 
-*NOTE: Key page = sig-spec. Method names will be updated soon.*
+_NOTE: Key page = sig-spec. Method names will be updated soon._
 
 **Request Parameters**
 
@@ -631,7 +628,7 @@ Returns the specified key page
 | Code | Message |
 | ---- | ------- |
 |      |         |
-|      | ​        |
+|      | ​       |
 
 **Example Request**
 
@@ -649,7 +646,7 @@ Returns the specified key page
 
 Creates a new key page
 
-*NOTE: Key page = sig-spec. Method names will be updated soon.*
+_NOTE: Key page = sig-spec. Method names will be updated soon._
 
 **Request Parameters**
 
@@ -684,9 +681,9 @@ Creates a new key page
 
 ### sig-spec-group
 
-Returns information about the specified key book 
+Returns information about the specified key book
 
-*NOTE: Key book = sig-spec-group. Method names will be updated soon.*
+_NOTE: Key book = sig-spec-group. Method names will be updated soon._
 
 **Request Parameters**
 
@@ -723,7 +720,9 @@ Returns information about the specified key book
 
 Creates a new key book
 
-*NOTE: Key book = sig-spec-group. Method names will be updated soon.*
+_NOTE: Key book = sig-spec-group. Method names will be updated soon._
+
+_hello \`code\` d_ `accumulated` is w
 
 **Request Parameters**
 
@@ -791,7 +790,7 @@ Adds, removes, or updates key in a key page
 
 ###
 
-### *Credit methods*
+### _Credit methods_
 
 ### add-credits
 
@@ -814,7 +813,7 @@ Adds credits to... (TBD)
 | Code | Message |
 | ---- | ------- |
 |      |         |
-|      | ​        |
+|      | ​       |
 
 **Example Request**
 
@@ -828,6 +827,6 @@ Adds credits to... (TBD)
 
 ###
 
-### *Metrics*
+### _Metrics_
 
 ### metrics - coming soon
