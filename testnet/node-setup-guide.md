@@ -37,7 +37,7 @@ Networks = []RouterNode{
 	}
 ```
 
-#### 
+####
 
 #### Creating a new network
 
@@ -68,7 +68,7 @@ Networks = []RouterNode{
 	}
 ```
 
-#### 
+####
 
 #### Initializing the node
 
@@ -84,11 +84,11 @@ Once compiled, run the following command to initialize the network:
 ./accumulated init -n "<NETWORK NAME>"
 ```
 
-This will generate the `~/.accumulate` directory with configs.  
+This will generate the `~/.accumulate` directory with configs. &#x20;
 
-**Note:** Currently in order for the other nodes on this network to recognize your node, the contents of the `~/accumulate` folder must be copied over to the other nodes as well so they all have the same config.
+**Note: **Currently in order for the other nodes on this network to recognize your node, the contents of the `~/accumulate` folder must be copied over to the other nodes as well so they all have the same config.
 
-Inside this directory you should find a directory for each node you included in the network, with the name following the convention of "Node" + the index for that node's IP address as it was entered in the `Ip` array in the RouterNode struct \(e.g. `Node0`, `Node1`, etc\).
+Inside this directory you should find a directory for each node you included in the network, with the name following the convention of "Node" + the index for that node's IP address as it was entered in the `Ip` array in the RouterNode struct (e.g. `Node0`, `Node1`, etc).
 
 
 
@@ -100,11 +100,12 @@ Once the node is initialized, you can start the node with the following command:
 ./accumulated run -n [node_number]
 ```
 
-* Where `[node_number]` is the index for the position of the node's entry in the `Ip` array in the network's RouterNode struct in `networks.go`.
+*   Where `[node_number]` is the index for the position of the node's entry in the `Ip` array in the network's RouterNode struct in `networks.go`.
 
-  * Alternatively you can look for the `persistent peers` line in the node config file that shows all the addresses being used.
+    * Alternatively you can look for the `persistent peers` line in the node config file that shows all the addresses being used.
+
+
 
 ### Final step to joining the Testnet as a validator node
 
-If you are interested in joining the Testnet as a participating member, please submit a Pull Request to the [Accumulate Repository](https://github.com/AccumulateNetwork/accumulated) with your updated `networks.go` file. 
-
+If you are interested in joining the Testnet as a participating member, please submit a Pull Request to the [Accumulate Repository](https://github.com/AccumulateNetwork/accumulated) with your updated `networks.go` file.&#x20;
