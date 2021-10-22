@@ -28,4 +28,3 @@
 
 * [Wallets](tools/wallets/README.md)
   * [Command Line Wallet](tools/wallets/command-line-wallet.md)
-  * [Mobile Wallet](tools/wallets/mobile-wallet.md)
