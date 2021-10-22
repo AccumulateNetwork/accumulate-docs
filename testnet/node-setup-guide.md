@@ -7,7 +7,7 @@ description: >-
 # Validator Node Setup Guide
 
 {% hint style="info" %}
-This guide is for creating a Validator node on Accumulate, which participates in consensus. If you would like to set up a follower node instead, which only records transactions on the network, please see the [Follower Node Setup Guide](follower-node-setup-guide.md).
+This guide is for creating a Validator node on Accumulate, which participates in consensus. If you would like to set up a follower node instead, which only records transactions on the network, please see the [Follower Node Setup Guide](follower-node-setup-guide.md "mention").
 {% endhint %}
 
 The first thing you must do is add your node's IP address to the `networks.go` file. Navigate to `accumulated/networks` then open up `networks.go` in your preferred code editor.
