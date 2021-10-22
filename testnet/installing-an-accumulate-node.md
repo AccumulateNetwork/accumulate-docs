@@ -11,10 +11,7 @@ In order for Accumulate to run properly on your machine, you will need:
 
 ## Installing with Docker
 
-In order to install Accumulate using Docker, you need to have the following software installed and set up on your machine:
-
-* Docker
-* `bash`
+(Coming soon)
 
 
 
