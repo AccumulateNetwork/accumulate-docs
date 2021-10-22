@@ -47,7 +47,34 @@ $ brew install go
 
 #### Installing Go on Linux
 
+First we need to find the link for the Go Linux binary by going to https://golang.org and then clicking on **Download Go**.
 
+Copy the link for the Linux download (it will look something like `https://golang.org/dl/go1.17.2.linux-amd64.tar.gz`), and then run the `wget` command with the copied link to download.
+
+```d
+# wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz
+```
+
+Next extract the tarball using the `tar` command to a directory of your choice.
+```d
+# sudo tar -C /chosen/directory/ -xzf go1.17.2.linux-amd64.tar.gz
+```
+
+Next you must set the PATH for Go. To do so, open the .profile file in your home directory. 
+
+```d
+# sudo nano $HOME/.profile
+```
+
+Then append the following line to that file and save it:
+```d
+export PATH=$PATH:/usr/local/go/bin
+```
+
+Save the profile file and then run the following command apply the change:
+```d
+# source .profile
+```
 
 
 
@@ -61,7 +88,6 @@ $ cd accumulated
 $ go build ./cmd/accumulated
 
 ```
-
 
 
 The command above will install the current _develop_ branch of `accumulated` and the necessary dependencies.&#x20;
