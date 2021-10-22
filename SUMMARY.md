@@ -23,7 +23,6 @@
 
 * [Accumulate Digital Identifiers](deep-dive/identity.md)
 * [Lite Accounts](deep-dive/anonymous-token-chains.md)
-* [Block Validation Chain](deep-dive/block-validation-chain.md)
 * [Directory Chain](deep-dive/directory-chain.md)
 
 ## Tools
