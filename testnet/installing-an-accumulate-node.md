@@ -2,17 +2,16 @@
 
 ## Installing from source
 
-This guide will show you how to compile and install  `accumulated` into your environment of choice directly from the source-code.
-
+This guide will show you how to compile and install `accumulated` into your environment of choice directly from the source-code.
 
 ### Prerequisites for installing from source
 
 In order to install `accumulated` from source, the following dependencies are required:
 
-* **Go:** `accumulated` is written in the Golang programming language.&#x20;
+* **Go:** `accumulated` is written in the Golang programming language.
 
 {% hint style="info" %}
-**Note**: The minimum version of Go supported is Go 1.15. We recommend that users use the latest version of Go, which at the time of writing is  1.17
+**Note**: The minimum version of Go supported is Go 1.15. We recommend that users use the latest version of Go, which at the time of writing is 1.17
 {% endhint %}
 
 If you're not sure if your environment has Go, use this command to verify if you have Go installed and what version:
@@ -32,13 +31,13 @@ Homebrew is the quickest and easiest way to install Go on Mac OS X. If you do no
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-
-
 To install Go with Homebrew, run the following command:
 
 ```d
 $ brew install go
 ```
+
+
 
 
 
@@ -49,45 +48,47 @@ First we need to find the link for the Go Linux binary by going to https://golan
 Copy the link for the Linux download (it will look something like `https://golang.org/dl/go1.17.2.linux-amd64.tar.gz`), and then run the `wget` command with the copied link to download.
 
 ```d
-# wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz
+$ wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz
 ```
 
 Next extract the tarball using the `tar` command to a directory of your choice.
+
 ```d
-# sudo tar -C /chosen/directory/ -xzf go1.17.2.linux-amd64.tar.gz
+$ sudo tar -C /chosen/directory/ -xzf go1.17.2.linux-amd64.tar.gz
 ```
 
-Next you must set the PATH for Go. To do so, open the .profile file in your home directory. 
+Next you must set the PATH for Go. To do so, open the .profile file in your home directory.
 
 ```d
-# sudo nano $HOME/.profile
+$ sudo nano $HOME/.profile
 ```
 
 Then append the following line to that file and save it:
-```d
+
+```c
 export PATH=$PATH:/usr/local/go/bin
 ```
 
 Save the profile file and then run the following command apply the change:
+
 ```d
-# source .profile
+$ source .profile
 ```
+
+
 
 
 
 ### Installing accumulated from source
 
-With the prerequisite steps completed, to install `accumulated` and all related dependencies run the following commands:    &#x20;
+With the prerequisite steps completed, to install `accumulated` and all related dependencies run the following commands:
 
 ```d
 $ git clone https://github.com/AccumulateNetwork/accumulated.git --branch develop
 $ cd accumulated
 $ go build ./cmd/accumulated
-
 ```
 
-
-The command above will install the current _develop_ branch of `accumulated` and the necessary dependencies.&#x20;
+The command above will install the current _develop_ branch of `accumulated` and the necessary dependencies.
 
 \
-&#x20;        &#x20;
