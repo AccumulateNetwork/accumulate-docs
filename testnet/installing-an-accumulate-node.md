@@ -1,5 +1,21 @@
 # Installing an Accumulate Node
 
+## Prerequisites
+
+In order for Accumulate to run properly on your machine, you will need:
+
+* Linux or Mac OS X operating system
+* A **CPU** with at least **\_\_\_** cores
+* **\_\_**GB of RAM
+* **\_\_**GB of free disk space
+
+## Installing with Docker
+
+In order to install Accumulate using Docker, you need to have the following software installed and set up on your machine:
+
+* Docker
+* `bash`
+
 ## Installing from source
 
 This guide will show you how to compile and install `accumulated` into your environment of choice directly from the source-code.
