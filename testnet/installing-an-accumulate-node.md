@@ -4,6 +4,10 @@
 
 This guide will show you how to compile and install `accumulated` into your environment of choice directly from the source-code.
 
+{% hint style="info" %}
+**Note**: If you want to avoid compiling the binaries yourself, you can download and install the latest release binary of Accumulate from \_\_\_\_\_\_\_\_\_.
+{% endhint %}
+
 ### Prerequisites for installing from source
 
 In order to install `accumulated` from source, the following dependencies are required:
