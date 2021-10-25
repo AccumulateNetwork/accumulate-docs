@@ -26,6 +26,7 @@ _acc://RedWagon/AcmeTokens_
 
 Compare the addressing format of ADIs with that of other blockchains and note that any number of sub-chains can be indexed under the same ADI:
 
+|            |                                                  |
 | ---------- | ------------------------------------------------ |
 | Accumulate | acc://RedWagon                                   |
 | Bitcoin    | bc1qd9qdr257xpultejescdf72y4n005y39b43dnqn       |
