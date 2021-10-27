@@ -715,7 +715,7 @@ Returns information about the specified key book / Signature specification group
 
 ### create-sig-spec-group
 
-Creates a new key book
+Creates a new key book / signature specification group
 
 {% hint style="info" %}
 ***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
@@ -725,20 +725,15 @@ Creates a new key book
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
-|           |      |             |           |
+|      `wait`     |   boolean   |     Wait for the transaction to complete?        |     No      |
+|      `tx`     |    object  |       Transaction       |     Yes      |
 
 **Response Properties**
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-|          |      |             |
+|     `keyBook`     |   object   |       The newly created key book      |
 
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      | ​       |
 
 **Example Request**
 
