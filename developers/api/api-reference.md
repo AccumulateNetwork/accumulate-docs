@@ -534,40 +534,7 @@ curl -X POST --data '{
 }
 ```
 
-### faucet
-
-Get free ACME tokens. While supplies last!
-
-**Request Parameters**
-
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|           |      |             |           |
-
-**Response Properties**
-
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|          |      |             |
-
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      | ​       |
-
-**Example Request**
-
-```cpp
-```
-
-**Example Response**
-
-```d
-```
-
-####
+###
 
 ### _Key management methods_
 
@@ -774,8 +741,4 @@ Adds credits to a lite account or key page
 ```d
 ```
 
-###
 
-### _Metrics_
-
-### metrics - coming soon
