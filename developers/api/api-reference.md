@@ -682,7 +682,7 @@ Creates a new key page (previously signature specification)
 
 ### sig-spec-group
 
-Returns information about the specified key book
+Returns information about the specified key book / Signature specification group
 
 {% hint style="info" %}
 ***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
@@ -692,20 +692,14 @@ Returns information about the specified key book
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
-|           |      |             |           |
+|      `url`     |   string   |     Accumulate key book URL        |     Yes      |
 
 **Response Properties**
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-|          |      |             |
+|      `keyBook`    |   object   |     Object containing the chain URL and key page IDs       |
 
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      | ​       |
 
 **Example Request**
 
