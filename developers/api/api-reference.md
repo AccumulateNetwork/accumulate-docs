@@ -781,13 +781,14 @@ Adds, removes, or updates a key in a key page
 
 ### add-credits
 
-Adds credits to... (TBD)
+Adds credits to a lite account or key page
 
 **Request Parameters**
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
-|           |      |             |           |
+|      `wait`     |   boolean   |        Wait for the transaction to complete?     |      No     |
+|      `tx`     |    Object  |      Transaction       |     Yes      |
 
 **Response Properties**
 
