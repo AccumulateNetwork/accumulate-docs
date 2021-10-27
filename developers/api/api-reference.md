@@ -623,30 +623,32 @@ Returns the specified key page / signature specification
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-|          |      |             |
-
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      | ​       |
+|     `keyPage`     |  object    |      An object containing the Chain URL, Key book ID, credit balance, and an unordered set of keys      |
 
 **Example Request**
 
 ```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "sig-spec",
+    "params": {
+        "url": "____"
+    }
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
 
 **Example Response**
 
 ```d
+
 ```
 
 ###
 
 ### create-sig-spec
 
-Creates a new key page
+Creates a new key page (previously signature specification)
 
 {% hint style="info" %}
 ***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
@@ -656,20 +658,15 @@ Creates a new key page
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
-|           |      |             |           |
+|      `wait`     |  boolean    |      Wait for the transaction to be complete?       |    No       |
+|      `tx`     |  object    |      Transaction      |    Yes       |
 
 **Response Properties**
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-|          |      |             |
+|     `keyPage`     |   object   |    The newly created key page         |
 
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      | ​       |
 
 **Example Request**
 
