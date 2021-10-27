@@ -749,13 +749,14 @@ Creates a new key book / signature specification group
 
 ### update-key-page
 
-Adds, removes, or updates key in a key page
+Adds, removes, or updates a key in a key page
 
 **Request Parameters**
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
-|           |      |             |           |
+|      `wait`     |   boolean   |        Wait for the transaction to complete?     |      No     |
+|      `tx`     |    Object  |      Transaction       |     Yes      |
 
 **Response Properties**
 
@@ -763,12 +764,6 @@ Adds, removes, or updates key in a key page
 | -------- | ---- | ----------- |
 |          |      |             |
 
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      | ​       |
 
 **Example Request**
 
