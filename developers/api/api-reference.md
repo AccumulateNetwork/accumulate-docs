@@ -60,7 +60,7 @@ Returns information about the specified ADI
 
 | Parameter | Type   | Description          | Required? |
 | --------- | ------ | -------------------- | --------- |
-| url       | string | The ADI URL to check | Yes       |
+| `url`       | string | The ADI URL to check | Yes       |
 
 **Response Properties**
 
@@ -607,7 +607,7 @@ Get free ACME tokens. While supplies last!
 
 ### sig-spec
 
-Returns the specified key page
+Returns the specified key page / signature specification
 
 {% hint style="info" %}
 ***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
@@ -617,7 +617,7 @@ Returns the specified key page
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
-|           |      |             |           |
+|    `url`       |  string    |       Accumulate Key Page URL      |    Yes       |
 
 **Response Properties**
 
