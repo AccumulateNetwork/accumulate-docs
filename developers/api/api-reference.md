@@ -540,6 +540,57 @@ curl -X POST --data '{
 }
 ```
 
+### faucet
+
+Get free ACME tokens. While supplies last!
+
+**Request Parameters**
+
+| Parameter | Type | Description | Required? |
+| --------- | ---- | ----------- | --------- |
+|     `url`      |   string   |      Token account URL       |     Yes      |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|     `txid`     |   string   |       The transasction ID      |
+|      `hash`    |   string   |             |
+|      `codespace`    |    string  |             |
+
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "faucet",
+    "params": {
+        "url": "acc://d4c8d9ab07daeecf50a7c78ff03c6524d941299e5601e578/ACME"
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
+```
+
+**Example Response**
+
+```d
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "type": "",
+    "data": {
+      "txid": "b1890c357977063b3088c444867253fb0ea7d5243a3e58ca8b8aa6b34a766765",
+      "hash": "EDED8E9BC71463FF193E10863A59FEEDAF1355A1917608E715A6E9082E06B60D",
+      "codespace": ""
+    },
+    "sponsor": "",
+    "keyPage": null
+  },
+  "id": 0
+}
+```
+
 ###
 
 ### _Key management methods_
