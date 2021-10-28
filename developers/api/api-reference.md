@@ -24,28 +24,55 @@ Returns Accumulate Object by URL
 
 | Parameter | Type | Description | Required? |
 | --------- | ---- | ----------- | --------- |
-| `tbd`     | tbd  |             |           |
+| `url`     | string  |       Any Accumulate URL     |     Yes      |
 
 **Response Properties**
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `tbd`    | tbd  |             |
+| `type`    |  string |     The Accumulate object type        |
+| `mdRoot`    |  string |      TBD       |
+| `data`    |  object |     The data for this object (properties vary)        |
+| `sponsor`    |  string |     The data for this object (properties vary)        |
+| `keyPage`    |  TBD |        TBD     |
 
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
 
 **Example Request**
 
-```d
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "get",
+    "params": {
+        "url": "acc://d4c8d9ab07daeecf50a7c78ff03c6524d941299e5601e578/ACME"
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
 ```
 
 **Example Response**
 
 ```d
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "type": "anonTokenAccount",
+    "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+    "data": {
+      "url": "acc://d4c8d9ab07daeecf50a7c78ff03c6524d941299e5601e578/ACME",
+      "tokenUrl": "acc://ACME",
+      "keyBookUrl": "",
+      "balance": "5000000000",
+      "txCount": 5,
+      "nonce": 0,
+      "creditBalance": "0"
+    },
+    "sponsor": "",
+    "keyPage": null
+  },
+  "id": 0
+}
+
 ```
 
 ###
