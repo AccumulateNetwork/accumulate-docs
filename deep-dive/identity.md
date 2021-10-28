@@ -40,7 +40,7 @@ Compare the addressing format of ADIs with that of other blockchains and note th
 
 A large corporation might create a sub-chain for each department and additional sub-chains for groups and managers. Identities are hierarchical, so a department would be under the control of the company’s ADI just as a group would be under the control of a department. However, a company could also create multiple independent ADIs, each with the authority to create and manage any number of sub-identities. An identity chain may be organized like the following:
 
-_acc://Company.com/                                                   _
+_acc://Company.com/_
 
 _acc://Company.com/i/Accounting/_
 
