@@ -293,7 +293,7 @@ curl -X POST --data '{
     "params": {
         "url": "acc://d4c8d9ab07daeecf50a7c78ff03c6524d941299e5601e578/ACME"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
 ```
 
 **Example Response**
@@ -546,18 +546,17 @@ Get free ACME tokens. While supplies last!
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|     `url`      |   string   |      Token account URL       |     Yes      |
+| Parameter | Type   | Description       | Required? |
+| --------- | ------ | ----------------- | --------- |
+| `url`     | string | Token account URL | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|     `txid`     |   string   |       The transasction ID      |
-|      `hash`    |   string   |             |
-|      `codespace`    |    string  |             |
-
+| Property    | Type   | Description         |
+| ----------- | ------ | ------------------- |
+| `txid`      | string | The transasction ID |
+| `hash`      | string |                     |
+| `codespace` | string |                     |
 
 **Example Request**
 
