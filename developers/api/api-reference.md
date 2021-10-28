@@ -14,8 +14,6 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ## Methods
 
-
-
 ### _ADI methods_
 
 ### adi
@@ -293,7 +291,7 @@ curl -X POST --data '{
     "id": 0,
     "method": "token-account",
     "params": {
-        "url": "quantumfield"
+        "url": "acc://d4c8d9ab07daeecf50a7c78ff03c6524d941299e5601e578/ACME"
     }
 }' -H 'content-type:application/json;' 127.0.0.1:35554/v1
 ```
@@ -304,11 +302,19 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "tokenAccountWithBalance": {
-            "url": "quantumfield",
-            "tokenURL": "quantumfield/QBits",
-            "balance": 10000000000000
-        }
+        "type": "anonTokenAccount",
+        "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+        "data": {
+            "url": "acc://d4c8d9ab07daeecf50a7c78ff03c6524d941299e5601e578/ACME",
+            "tokenUrl": "acc://ACME",
+            "keyBookUrl": "",
+            "balance": "1000000000",
+            "txCount": 1,
+            "nonce": 0,
+            "creditBalance": "0"
+        },
+        "sponsor": "",
+        "keyPage": null
     },
     "id": 0
 }
@@ -740,5 +746,3 @@ Adds credits to a lite account or key page
 
 ```d
 ```
-
-
