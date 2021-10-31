@@ -103,9 +103,9 @@ Example of usage:
 Send token from one anonymous token account to another one.
 
 ```bash
-tx get [txid]                      Get token transaction by txid
-tx create [from] [to] [amount]     Create new token tx
-tx history [url] [starting transaction number] [ending transaction number] Get transaction history
+Usage:
+  accumulate tx get [token account] [txid]      Get token tx by token account and txid
+  accumulate tx create [from] [to] [amount]     Create new token tx
 ```
 
 #### Tx Get&#x20;
