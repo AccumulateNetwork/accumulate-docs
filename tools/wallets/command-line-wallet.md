@@ -200,8 +200,9 @@ accumulate adi create [actor-adi-url] [wallet signing key label] [key index (opt
 
 Example of usage:
 
-```
-// Some code
+```bash
+> adi create ADITEST key1234 0 1 ADITEST2 key5678 ADIKEYBOOK2 ADIKEYPAGE2
+{"data":{"codespace":"","hash":"D196F92987F6EB5E73838D8B62AB782007E0363003BC9B40F52AC3DAEA18A66F","txid":"004f0df62645f5a128370528123eab320e79ecad5b74110f12d6f74de1860078"},"keyPage":null,"sponsor":"","type":"tokenTx"}
 ```
 
 #### ADI import
@@ -408,7 +409,9 @@ accumulate key get book [URL]                 Get existing Key Book by URL
 Example of usage:
 
 ```bash
-// Some Code
+> get ADITEST/ADIKEYBOOK1
+{"url":"ADITEST/ADIKEYBOOK1","wait":false}
+{"data":{"sigSpecId":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"sigSpecs":["df9531256df68eed2aa496b84bfbd7b6f989bdd08088d62dbbfc85451b820ac8"],"type":11,"url":"acc://ADITEST/ADIKEYBOOK1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpecGroup"}
 ```
 
 **Get Page**
@@ -420,8 +423,10 @@ accumulate key get page [URL]                 Get existing Key Page by URL
 
 Example of usage:
 
-```
-// Some code
+```bash
+> get ADITEST/ADIKEYPAGE1
+{"url":"ADITEST/ADIKEYPAGE1","wait":false}
+{"data":{"creditBalance":0,"keys":[{"nonce":0,"publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}],"sigSpecId":"d58e359c82d3efdbb38e355cfb5f50b42ee5fefda90582b4ef571b9f5478552e","type":10,"url":"acc://ADITEST/ADIKEYPAGE1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpec"}
 ```
 
 **Book Create**
@@ -429,6 +434,19 @@ Example of usage:
 ```
 Usage:
 accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n] Create new key page with 1 to N public keys
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Page Create**
+
+```
+Usage:
+accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
 ```
 
 Example of usage:
