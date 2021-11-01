@@ -205,19 +205,6 @@ Example of usage:
 {"data":{"codespace":"","hash":"D196F92987F6EB5E73838D8B62AB782007E0363003BC9B40F52AC3DAEA18A66F","txid":"004f0df62645f5a128370528123eab320e79ecad5b74110f12d6f74de1860078"},"keyPage":null,"sponsor":"","type":"tokenTx"}
 ```
 
-#### ADI import
-
-```
-Usage:
-accumulate adi import [adi-url] [private-key] Import Existing ADI
-```
-
-Example of usage:
-
-```
-// Some code
-```
-
 ### Completion
 
 ```bash
