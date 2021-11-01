@@ -106,10 +106,7 @@ accumulate account create [{actor adi}] [wallet key label] [key index (optional)
 Example of usage:
 
 ```bash
-> account create ADITEST key1234 1 1 ADITEST/TOKENS acc://ACME ADIKEYBOOK1
-{"url":"acc://ACME","wait":false}
-{"data":{"precision":8,"propertiesUrl":"","symbol":"ACME","url":"acc://ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"token"}
-{"data":{"code":"2","codespace":"","hash":"313B36D034BBF641C13D7C7D3045DC0C7BBA3B2BA408F287AE67F6105DA432A8","log":"acc://ADITEST check of tokenAccountCreate transaction failed: invalid sig spec index","mempool":"","txid":"5bc96a00848dba024b4df2128d1993eb6b7b3f789146020df157697f72484b4e"},"keyPage":null,"sponsor":"","type":"tokenAccount"}
+// Some code
 ```
 
 #### Account import
