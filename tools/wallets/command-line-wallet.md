@@ -1,4 +1,4 @@
-# Command Line Wallet
+# Command Line Tool
 
 The Command-Line Interface Tool allows for the following: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag.
 
@@ -239,6 +239,44 @@ Global Flags:
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 
 Use "accumulate completion [command] --help" for more information about a command.
+```
+
+### Credits
+
+Credits are used for all types of transactions in the Accumulate Network
+
+```bash
+> credits
+```
+
+```bash
+Usage:
+accumulate credits [actor lite account] [key page url] [amount]               Send credits to a recipient using an anoymous account
+accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page url] [amount]               Send credits to a recipient
+```
+
+**Credits (Send Credits to Lite Account)**
+
+```bash
+accumulate credits [actor lite account] [key page url] [amount]
+```
+
+Example usage:
+
+```
+// Some code
+```
+
+**Credits (Send Credits to ADI)**
+
+```bash
+accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page url] [amount]               Send credits to a recipient
+```
+
+Example of usage:
+
+```
+// Some code
 ```
 
 ### Directory

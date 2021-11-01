@@ -28,4 +28,4 @@
 
 ## Tools
 
-* [Command Line Tool](tools/command-line-wallet.md)
+* [Command Line Tool](tools/wallets/command-line-wallet.md)
