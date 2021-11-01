@@ -165,8 +165,8 @@ accumulate adi get [URL]                      Get existing ADI by URL
 Example of usage:
 
 ```bash
-> adi create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME ADITEST key1234 ADIKEYBOOK1 ADIKEYPAGE1
-{"data":{"codespace":"","hash":"A656742EACDDB73933D9AF7598DC29AEDFA7060E458DF829A58E70B03BCC878D","txid":"c6d726ac34d1b203b3c4d18233abbfdfa34d8f0eb3f3dcfe2f7aafc1fe16c178"},"keyPage":null,"sponsor":"","type":"tokenTx"}
+> adi get
+{"data":{"keyBookName":"","keyPageName":"","publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5","url":"acc://ADITEST"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"adi"}
 ```
 
 #### ADI create (Create New ADI from Lite Account)
@@ -178,8 +178,9 @@ accumulate adi create [actor-lite-account] [adi url to create] [public-key or wa
 
 Example of usage:
 
-```
-// Some code
+```bash
+> adi create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME ADITEST key1234 ADIKEYBOOK1 ADIKEYPAGE1
+{"data":{"codespace":"","hash":"A656742EACDDB73933D9AF7598DC29AEDFA7060E458DF829A58E70B03BCC878D","txid":"c6d726ac34d1b203b3c4d18233abbfdfa34d8f0eb3f3dcfe2f7aafc1fe16c178"},"keyPage":null,"sponsor":"","type":"tokenTx"}
 ```
 
 #### ADI create (Create new ADI for another ADI)
