@@ -67,6 +67,14 @@ Example of usage:
 {"data":{"balance":"1000000000","creditBalance":"0","keyBookUrl":"","nonce":0,"tokenUrl":"acc://ACME","txCount":1,"url":"acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"anonTokenAccount"}     
 ```
 
+Example of usage:
+
+```bash
+> get ADITEST/TOKENS   
+{"url":"ADITEST/TOKENS","wait":false}
+{"data":{"balance":"1000000000","keyBookUrl":"","tokenUrl":"acc://ACME","txCount":1,"url":"acc://ADITEST/TOKENS"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"tokenAccount"}
+```
+
 **Account generate**
 
 ```bash
