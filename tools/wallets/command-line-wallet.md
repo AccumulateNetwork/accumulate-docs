@@ -96,6 +96,18 @@ acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
 acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME
 ```
 
+#### Account Create (ADI Token Account)
+
+```
+Usage:
+accumulate account create [{actor adi}] [wallet key label] [key index (optional)] [key height (optional)] [token account url] [tokenUrl] [keyBook (optional)]  Create a token account for an ADI
+```
+
+Example of usage:
+
+```
+```
+
 #### Account import
 
 ```
@@ -148,8 +160,9 @@ accumulate adi get [URL]                      Get existing ADI by URL
 
 Example of usage:
 
-```
-// Some code
+```bash
+> adi create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME ADITEST key1234 ADIKEYBOOK1 ADIKEYPAGE1
+{"data":{"codespace":"","hash":"A656742EACDDB73933D9AF7598DC29AEDFA7060E458DF829A58E70B03BCC878D","txid":"c6d726ac34d1b203b3c4d18233abbfdfa34d8f0eb3f3dcfe2f7aafc1fe16c178"},"keyPage":null,"sponsor":"","type":"tokenTx"}
 ```
 
 #### ADI create (Create New ADI from Lite Account)
