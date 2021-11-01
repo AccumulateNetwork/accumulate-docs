@@ -14,7 +14,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ## Methods
 
-#### _URL methods_
+### _URL methods_
 
 ### get
 
@@ -22,20 +22,19 @@ Returns Accumulate Object by URL
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-| `url`     | string  |       Any Accumulate URL     |     Yes      |
+| Parameter | Type   | Description        | Required? |
+| --------- | ------ | ------------------ | --------- |
+| `url`     | string | Any Accumulate URL | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `type`    |  string |     The Accumulate object type        |
-| `mdRoot`    |  string |      TBD       |
-| `data`    |  object |     The data for this object (properties vary)        |
-| `sponsor`    |  string |     The data for this object (properties vary)        |
-| `keyPage`    |  TBD |        TBD     |
-
+| Property  | Type   | Description                                |
+| --------- | ------ | ------------------------------------------ |
+| `type`    | string | The Accumulate object type                 |
+| `mdRoot`  | string | TBD                                        |
+| `data`    | object | The data for this object (properties vary) |
+| `sponsor` | string | The data for this object (properties vary) |
+| `keyPage` | TBD    | TBD                                        |
 
 **Example Request**
 
@@ -72,7 +71,6 @@ curl -X POST --data '{
   },
   "id": 0
 }
-
 ```
 
 ###
@@ -87,7 +85,7 @@ Returns information about the specified ADI
 
 | Parameter | Type   | Description          | Required? |
 | --------- | ------ | -------------------- | --------- |
-| `url`       | string | The ADI URL to check | Yes       |
+| `url`     | string | The ADI URL to check | Yes       |
 
 **Response Properties**
 
@@ -662,20 +660,20 @@ curl -X POST --data '{
 Returns the specified key page / signature specification
 
 {% hint style="info" %}
-***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
+_**NOTE: Key page = ****`sig-spec`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|    `url`       |  string    |       Accumulate Key Page URL      |    Yes       |
+| Parameter | Type   | Description             | Required? |
+| --------- | ------ | ----------------------- | --------- |
+| `url`     | string | Accumulate Key Page URL | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|     `keyPage`     |  object    |      An object containing the Chain URL, Key book ID, credit balance, and an unordered set of keys      |
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `keyPage` | object | An object containing the Chain URL, Key book ID, credit balance, and an unordered set of keys |
 
 **Example Request**
 
@@ -693,7 +691,6 @@ curl -X POST --data '{
 **Example Response**
 
 ```d
-
 ```
 
 ###
@@ -703,22 +700,21 @@ curl -X POST --data '{
 Creates a new key page (previously signature specification)
 
 {% hint style="info" %}
-***NOTE: Key page = `sig-spec`. Method names will be updated soon.***
+_**NOTE: Key page = ****`sig-spec`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|      `wait`     |  boolean    |      Wait for the transaction to be complete?       |    No       |
-|      `tx`     |  object    |      Transaction      |    Yes       |
+| Parameter | Type    | Description                              | Required? |
+| --------- | ------- | ---------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to be complete? | No        |
+| `tx`      | object  | Transaction                              | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|     `keyPage`     |   object   |    The newly created key page         |
-
+| Property  | Type   | Description                |
+| --------- | ------ | -------------------------- |
+| `keyPage` | object | The newly created key page |
 
 **Example Request**
 
@@ -737,21 +733,20 @@ Creates a new key page (previously signature specification)
 Returns information about the specified key book / Signature specification group
 
 {% hint style="info" %}
-***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
+_**NOTE: Key book = ****`sig-spec-group`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|      `url`     |   string   |     Accumulate key book URL        |     Yes      |
+| Parameter | Type   | Description             | Required? |
+| --------- | ------ | ----------------------- | --------- |
+| `url`     | string | Accumulate key book URL | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|      `keyBook`    |   object   |     Object containing the chain URL and key page IDs       |
-
+| Property  | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| `keyBook` | object | Object containing the chain URL and key page IDs |
 
 **Example Request**
 
@@ -770,22 +765,21 @@ Returns information about the specified key book / Signature specification group
 Creates a new key book / signature specification group
 
 {% hint style="info" %}
-***NOTE: Key book = `sig-spec-group`. Method names will be updated soon.***
+_**NOTE: Key book = ****`sig-spec-group`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|      `wait`     |   boolean   |     Wait for the transaction to complete?        |     No      |
-|      `tx`     |    object  |       Transaction       |     Yes      |
+| Parameter | Type    | Description                           | Required? |
+| --------- | ------- | ------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to complete? | No        |
+| `tx`      | object  | Transaction                           | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|     `keyBook`     |   object   |       The newly created key book      |
-
+| Property  | Type   | Description                |
+| --------- | ------ | -------------------------- |
+| `keyBook` | object | The newly created key book |
 
 **Example Request**
 
@@ -805,17 +799,16 @@ Adds, removes, or updates a key in a key page
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|      `wait`     |   boolean   |        Wait for the transaction to complete?     |      No     |
-|      `tx`     |    Object  |      Transaction       |     Yes      |
+| Parameter | Type    | Description                           | Required? |
+| --------- | ------- | ------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to complete? | No        |
+| `tx`      | Object  | Transaction                           | Yes       |
 
 **Response Properties**
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 |          |      |             |
-
 
 **Example Request**
 
@@ -837,10 +830,10 @@ Adds credits to a lite account or key page
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|      `wait`     |   boolean   |        Wait for the transaction to complete?     |      No     |
-|      `tx`     |    Object  |      Transaction       |     Yes      |
+| Parameter | Type    | Description                           | Required? |
+| --------- | ------- | ------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to complete? | No        |
+| `tx`      | Object  | Transaction                           | Yes       |
 
 **Response Properties**
 

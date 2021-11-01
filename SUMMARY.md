@@ -28,5 +28,4 @@
 
 ## Tools
 
-* [Wallets](tools/wallets/README.md)
-  * [Command Line Wallet](tools/wallets/command-line-wallet.md)
+* [Command Line Tool](tools/command-line-wallet.md)
