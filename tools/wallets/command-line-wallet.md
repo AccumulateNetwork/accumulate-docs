@@ -290,13 +290,14 @@ Accumulate directory for Accumulate Digital Identifiers
 
 ```
 Usage:
-accumulate credits [url]              Get directory of sub-chains associate with a URL
+accumulate adi directory [url]              Get directory of sub-chains associate with a URL
 ```
 
 Example of usage:
 
-```
-// Some code
+```bash
+> adi directory ADITEST
+{"data":{"entries":["acc://ADITEST/ADIKEYBOOK1","acc://ADITEST/ADIKEYPAGE1", “acc://ADITEST/TOKENS"]},"keyPage":null,"sponsor":"","type":"directory"}
 ```
 
 ### Faucet
@@ -397,6 +398,22 @@ Usage:
   accumulate key list                   List generated keys associated with the wallet
   accumulate key import [label] [private key hex]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
   accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
+```
+
+```bash
+> key page update
+```
+
+```
+Usage:
+  accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
+                 example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key   
+                 example usage: accumulate key update page  acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
+                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
+                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
 ```
 
 **Get Book**
