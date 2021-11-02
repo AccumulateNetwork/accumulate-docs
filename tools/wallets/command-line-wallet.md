@@ -231,7 +231,7 @@ Use "accumulate completion [command] --help" for more information about a comman
 
 ### Credits
 
-Credits are used for all types of transactions in the Accumulate Network
+Credits are used for all types of transactions in the Accumulate Network. On the TestNet actions within Accumulate are free.&#x20;
 
 ```bash
 > credits
@@ -252,7 +252,6 @@ Usage:
 Example usage:
 
 ```
-// Some code
 ```
 
 **Credits (Send Credits to Recipient)**
@@ -375,32 +374,24 @@ Managed the Keys, Key Pages, and Key Book for your Accumulate Digital&#x20;
 
 ```
 Usage:
-  accumulate key get book [URL]                 Get existing Key Book by URL
-  accumulate key get page [URL]                 Get existing Key Page by URL
-  accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n] Create new key page with 1 to N public keys
+accumulate key get book [URL]                 Get existing Key Book by URL
+accumulate key get page [URL]                 Get existing Key Page by URL
+accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n + 1] Create new key book 
+with 1 to N+1 key pages
                  example usage: accumulate key book create acc://RedWagon redKey5 acc://RedWagon/RedBook acc://RedWagon/RedPage1
-  accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
+accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new 
+key page with 1 to N+1 public keys
                  example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate key generate [label]     Generate a new key and give it a label in the wallet
-  accumulate key list                   List generated keys associated with the wallet
-  accumulate key import [label] [private key hex]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
-  accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
-```
-
-```bash
-> key page update
-```
-
-```
-Usage:
-  accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
-                 example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key   
+accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key   
                  example usage: accumulate key update page  acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
+accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
                  example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
+accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
                  example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+accumulate key generate [label]     Generate a new key and give it a label in the wallet
+accumulate key list                   List generated keys associated with the wallet
+accumulate key import [label] [private key hex]     Import a key seed from a mnemonic, all keys will be derived from this seed going forward.
+accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
 ```
 
 **Get Key Book**
