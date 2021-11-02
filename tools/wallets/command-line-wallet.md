@@ -456,8 +456,9 @@ accumulate key page create [actor adi url] [signing key label] [key index (optio
 
 Example of usage:
 
-```
-// Some code
+```bash
+> key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42 
+{"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
 ```
 
 **Key Page Update**
@@ -547,10 +548,9 @@ accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a 
 Example of Usage:
 
 ```
-// Some code
+key mnemonic how goes it today oh son of mine
+accumulate key mnemonic [mnemonic phrase...] Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward. Key Page Create
 ```
-
-** Key Page Create**
 
 ### Tx
 
