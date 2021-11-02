@@ -287,7 +287,6 @@ Available Commands:
   completion  generate the autocompletion script for the specified shell
   directory   Send credits to a recipient
   faucet      Get tokens from faucet
-  get         Get data by URL
   help        Help about any command
   key         Create and manage Keys, Books, and Pages
   tx          Create and get token txs
