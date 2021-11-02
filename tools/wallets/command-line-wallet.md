@@ -442,8 +442,9 @@ accumulate key book create [actor adi url] [signing key label] [key index (optio
 
 Example of usage:
 
-```
-// Some code
+```bash
+> key book create ADITEST key1234 1 1 ADITEST/KEYBOOK1.1 ADITEST/KEYPAGE1.1 ADITEST/KEYPAGE1.2 ADITEST/KEYPAGE1.3
+{"data":{"code":"2","codespace":"","hash":"CD8322D22945E81142AAF38459FD99572AF20FABF8832827D6C0A1933EC8F813","log":"acc://ADITEST check of createSigSpecGroup transaction failed: invalid sig spec index","mempool":"","txid":"4fb9e1ee7bec80a664ac73ffcdde84754ce0c003dd3a710a0cb9b541f806ba73"},"keyPage":null,"sponsor":"","type":"sigSpecGroup"}
 ```
 
 **Key Page Create**
