@@ -231,7 +231,7 @@ Use "accumulate completion [command] --help" for more information about a comman
 
 ### Credits
 
-Credits are used for all types of transactions in the Accumulate Network. On the TestNet actions within Accumulate are free.&#x20;
+Credits are used for all types of transactions in the Accumulate Network. Credits are converted from your ACME to tokens.
 
 ```bash
 > credits
