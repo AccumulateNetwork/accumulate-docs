@@ -279,6 +279,7 @@ Example of usage: (ADI Key Page to ADI Key Page)
 Example usage:
 
 ```
+// Some code
 ```
 
 ### Directory
@@ -544,7 +545,7 @@ Example of Usage:
 // Some code
 ```
 
-**Key Mnemonic **
+**Key Mnemonic (12 Words)**
 
 ```
 Usage:
