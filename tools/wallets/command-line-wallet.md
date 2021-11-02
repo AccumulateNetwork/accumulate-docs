@@ -243,21 +243,10 @@ Usage:
   accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]               Send credits to a recipient
 ```
 
-**Credits (Send Credits to Lite Account or ADI Key Page)**
+**Credits **
 
 ```bash
  accumulate credits [actor lite account] [lite account or key page url] [amount]               Send credits using a lite account or adi key page to another lite account or adi key page
-```
-
-Example usage:
-
-```
-```
-
-**Credits (Send Credits to Recipient)**
-
-```bash
- accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]               Send credits to a recipient
 ```
 
 Example of usage (Lite Account to Lite Account):
@@ -279,6 +268,17 @@ Example of usage: (ADI Key Page to ADI Key Page)
 ```bash
 > credits ADITEST2/ADIKEYPAGE2 ADITEST/KEYPAGE1 1
 // Some Code
+```
+
+**Credits (Send Credits to Recipient)**
+
+```bash
+ accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]               Send credits to a recipient
+```
+
+Example usage:
+
+```
 ```
 
 ### Directory
