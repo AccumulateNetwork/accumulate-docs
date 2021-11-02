@@ -260,10 +260,25 @@ Example usage:
  accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]               Send credits to a recipient
 ```
 
-Example of usage:
+Example of usage (Lite Account to Lite Account):
 
+```bash
+> credits acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME 1
+{"data":{"codespace":"","hash":"7D0BEFDF48DA000ECDBBB130A5365F1CA99006A37C062C25C3D9ABCC8E3AE4A3","txid":"d133371b93915156409fc3f703325e38c3cd35cf9cc63e997fc5d58b8a1a0719"},"keyPage":null,"sponsor":"","type":"addCredits"}
 ```
-// Some code
+
+Example of usage: (Lite Account to ADI Key Page)
+
+```bash
+credits acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME ADITEST2/ADIKEYPAGE2 1
+{"data":{"codespace":"","hash":"6C0C7B17EC6CF9FE6925E117A16EC436CFCA3A499E72DABD822CE3F7543B72E3","txid":"01ab778153c1f7846933f8a8bb599ae2d1ce8295ee73a67543168ef2cd7263d5"},"keyPage":null,"sponsor":"","type":"addCredits"}
+```
+
+Example of usage: (ADI Key Page to ADI Key Page)
+
+```bash
+> credits ADITEST2/ADIKEYPAGE2 ADITEST/KEYPAGE1 1
+// Some Code
 ```
 
 ### Directory
