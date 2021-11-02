@@ -239,14 +239,14 @@ Credits are used for all types of transactions in the Accumulate Network
 
 ```bash
 Usage:
-accumulate credits [actor lite account] [key page url] [amount]               Send credits to a recipient using an anoymous account
-accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page url] [amount]               Send credits to a recipient
+  accumulate credits [actor lite account] [lite account or key page url] [amount]               Send credits using a lite account or adi key page to another lite account or adi key page
+  accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]               Send credits to a recipient
 ```
 
-**Credits (Send Credits to Lite Account)**
+**Credits (Send Credits to Lite Account or ADI Key Page)**
 
 ```bash
-accumulate credits [actor lite account] [key page url] [amount]
+ accumulate credits [actor lite account] [lite account or key page url] [amount]               Send credits using a lite account or adi key page to another lite account or adi key page
 ```
 
 Example usage:
@@ -255,10 +255,10 @@ Example usage:
 // Some code
 ```
 
-**Credits (Send Credits to ADI)**
+**Credits (Send Credits to Recipient)**
 
 ```bash
-accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page url] [amount]               Send credits to a recipient
+ accumulate credits [actor url] [actor key label] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]               Send credits to a recipient
 ```
 
 Example of usage:
