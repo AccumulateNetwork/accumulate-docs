@@ -20,7 +20,6 @@ Available Commands:
   completion  generate the autocompletion script for the specified shell
   directory   Send credits to a recipient
   faucet      Get tokens from faucet
-  get         Get data by URL
   help        Help about any command
   key         Create and manage Keys, Books, and Pages
   tx          Create and get token txs
@@ -266,29 +265,6 @@ Example of usage:
 ```bash
 > accumulate faucet acc://3ed6b2003242d2166508e117a2a66f8ca742b72e8d90d736/ACME
 {"data":{"codespace":"","hash":"C89966F8435FE6BC195DEB817CBCCBC3D9FF210EDA2B2B60F4CEC5E4E714F9A4","txid":"1d6138b453b7bee86f70e3012c2f0b4264dd631f6551965fe39b8bd1da08bb49"},"keyPage":null,"sponsor":"","type":""}
-```
-
-### Get
-
-Get information about an account
-
-```bash
-> get
-```
-
-**Account get**
-
-```bash
-Usage:
-accumulate account get [url]                  Get anon token account by URL
-```
-
-Example of usage:
-
-```bash
-> get acc://3ed6b2003242d2166508e117a2a66f8ca742b72e8d90d736/ACME
-{"url":"acc://3ed6b2003242d2166508e117a2a66f8ca742b72e8d90d736/ACME","wait":false}
-{"data":{"balance":"1000000000","creditBalance":"0","keyBookUrl":"","nonce":0,"tokenUrl":"acc://ACME","txCount":1,"url":"acc://3ed6b2003242d2166508e117a2a66f8ca742b72e8d90d736/ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"anonTokenAccount"}
 ```
 
 ### Help
