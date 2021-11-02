@@ -403,7 +403,7 @@ Usage:
                  example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
 ```
 
-**Get Book**
+**Get Key Book**
 
 ```
 Usage:
@@ -418,7 +418,7 @@ Example of usage:
 {"data":{"sigSpecId":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"sigSpecs":["df9531256df68eed2aa496b84bfbd7b6f989bdd08088d62dbbfc85451b820ac8"],"type":11,"url":"acc://ADITEST/ADIKEYBOOK1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpecGroup"}
 ```
 
-**Get Page**
+**Get Key Page**
 
 ```
 Usage:
@@ -433,7 +433,7 @@ Example of usage:
 {"data":{"creditBalance":0,"keys":[{"nonce":0,"publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}],"sigSpecId":"d58e359c82d3efdbb38e355cfb5f50b42ee5fefda90582b4ef571b9f5478552e","type":10,"url":"acc://ADITEST/ADIKEYPAGE1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpec"}
 ```
 
-**Book Create**
+**Key Book Create**
 
 ```
 Usage:
@@ -446,11 +446,47 @@ Example of usage:
 // Some code
 ```
 
-**Page Create**
+**Key Page Create**
 
 ```
 Usage:
 accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Key Page Update**
+
+```
+accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key 
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Key Page Add**
+
+```
+accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Key Page Remove**
+
+```
+accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
 ```
 
 Example of usage:
@@ -512,6 +548,8 @@ Example of Usage:
 ```
 // Some code
 ```
+
+** Key Page Create**
 
 ### Tx
 
