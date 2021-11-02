@@ -2,6 +2,7 @@
 
 * [Welcome](README.md)
 * [Protocol Overview](protocol-overview/README.md)
+  * [Fees](protocol-overview/fees.md)
   * [Factom/Accumulate Innovations](protocol-overview/factom-accumulate-innovations.md)
 
 ## Developers
