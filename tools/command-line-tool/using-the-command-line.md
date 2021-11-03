@@ -1,174 +1,171 @@
 # Command Line Interface (CLI) Guide
 
-The Command-Line Interface Tool allows for the following: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag.
+The Command-Line Interface Tool allows for the following operations: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag `-s`.
 
 ## How to build the CLI tool
 
+The first step is building the CLI executable.
+
 ```bash
 $ git clone https://github.com/AccumulateNetwork/accumulated.git
-$ cd accumulated/cmd/cli
-$ go build
+
+$ go build ./cmd/cli
 ```
 
-## Start CLI tool
+Once you run these commands, a `cli` binary file should appear in the root directory `accumulated`.
+
+## Starting CLI tool
+
+To test that the CLI built correctly, and to bring up a usage guide and list of available commands, run the `cli` command without any arguments.
+
+#### On Windows
 
 ```bash
 $ ./cli.exe
 ```
-```bash
-CLI for Accumulate Network
 
-Usage:
-  accumulate [command] [flags]
-
-Available Commands:
-  account     Create and get token accounts
-  adi         Create and manage ADI
-  completion  generate the autocompletion script for the specified shell
-  credits     Send credits to a recipient
-  faucet      Get tokens from faucet
-  get         Get data by URL
-  help        Help about any command
-  key         Create and manage Keys, Books, and Pages
-  tx          Create and get token txs
-  version     get version of the accumulate node
-
-Flags:
-  -d, --debug              Print accumulated API calls
-  -h, --help               help for accumulate
-  -s, --server string      Accumulated server (default "http://localhost:35554/v1")
-  -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
-
-Use "accumulate [command] --help" for more information about a command.
-```
-
-## Basic Operations 
-
-### Account
-
-Anonymous token accounts are stored in a local database. CLI allows you to generate anon token accounts and export/import corresponding private keys, create transactions, see a list of all of your accounts, and pull information about a URL.
+#### On Mac / Linux
 
 ```bash
-$ ./cli.exe account
+$ ./cli
 ```
+
+{% hint style="info" %}
+_Note_: you must prefix every operation with the `cli` command (either `./cli` or `./cli.exe` depending on your operating system).
+{% endhint %}
+
+## Getting Started Tutorial
+
+The following tutorial will help you get started with the CLI tool and understand how it works. We'll run through a few basic commands to create and fund an account, and send tokens between the two.
+
+### Creating an anonymous token account
+
+The first step is to create an anonymous token account using the `account generate` command. This command will create an account URL and corresponding private key, which will be stored locally on your computer. Since this command only generates an account locally, we don't need to worry about connecting to a node.
 
 ```bash
-  accumulate account get [url]                  Get anon token account by URL
-  accumulate account generate                   Generate random anon token account
-  accumulate account list                       Display all anon token accounts
-  accumulate account create [{actor adi}] [wallet key label] [key index (optional)] [key height (optional)] [token account url] [tokenUrl] [keyBook (optional)]  Create a token account for an ADI
-  accumulate account import [private-key]       Import anon token account from private key hex
-  accumulate account export [url]               Export private key hex of anon token account
+$ ./cli account generate
 ```
 
-#### Create Account
+Remember that if you are on Windows you must use `./cli.exe` instead.
+
+Once you run the command, you should get an output with the address for your token account. It will look something like: `acc://8c2bd7278f932663fcba7053f86d0b23e178913e9479c5ad/ACME`.
+
+### Funding your account
+
+Right now the account we created only exists locally, and therefore you won't be able to query the address in a block explorer or through the `get` command in the CLI. We must first complete a transaction using this account in order for it to be broadcast to the network. Let's fund our new account using the `faucet` command, which will both broadcast the existence of our new account, and give us some free tokens.
+
+Since this command actually requires broadcasting to the network, we need to make sure we are connected to a node. We do that with the `-s` flag, followed by the server address for the node we want to connect to.
+
+{% hint style="info" %}
+_Note_: If you're running your own node locally, you don't need to specify the server with `-s`. The CLI will connect to your local node by default.
+{% endhint %}
+
+You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulated/blob/develop/networks/networks.go). For this tutorial we'll use `http://18.119.26.7:33004/v1`.
 
 ```bash
-Usage:
-accumulate account generate                   Generate random anon token account
+$ ./cli faucet <your account address> -s http://18.119.26.7:33004/v1
 ```
 
-Example of usage:
+### Checking your account balance
+
+Now that we've ran the `faucet` command, the network should know that our account exists. Let's check our account balance to see how many tokens we got from the faucet. We can do that with the `account get` command (remember to use the `-s` flag if you are not running a node locally).
 
 ```bash
-$ ./cli.exe account generate
-acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME
+$ ./cli account get <your account address> -s http://18.119.26.7:33004/v1
 ```
 
-#### Account list
+We should get an output that looks something like this:
+
+```json
+{
+  "data": {
+    "balance": "1000000000",
+    "creditBalance": "0",
+    "keyBookUrl": "",
+    "nonce": 0,
+    "tokenUrl": "acc://ACME",
+    "txCount": 2,
+    "url": "acc://your-account/ACME"
+  },
+  "keyPage": null,
+  "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sponsor": "",
+  "type": "anonTokenAccount"
+}
+```
+
+Looking at the above, we can see under `"balance"` that we have `1000000000`, which is equivalent to 10 ACME tokens.
+
+### Sending tokens
+
+Now let's try sending some ACME tokens from one account to the other. We can use the account we already funded as the sending account. We'll have to create another account for the receiving account, so do that with `account generate`.
+
+To send tokens, we'll need to use the `tx create` command. Once you have your sending and receiving accounts ready, run the command, followed by the account address for the sending account, then the account address for the receiving account, and finally the amount you want to send (and don't forget the `-s` flag if you're not running your own node).
+
+{% hint style="info" %}
+_Note_: The unit size for ACME balances in the CLI is 1/100,000,000. So if you want to send 1 ACME token, you'll need to enter 100000000 as the amount.
+{% endhint %}
 
 ```bash
-Usage:
-accumulate account list                       Display all anon token accounts
+$ ./cli tx create <sending account> <receiving account> <amount to send> -s http://18.119.26.7:33004/v1
 ```
 
-Example of usage:
+We should receive a response that looks like this:
+
+```json
+{
+  "data": {
+    "codespace": "",
+    "hash": "70DAAF2DA6373FE2DB8248FE743BB87D595B58CD61F7DAB8F44AFC6CF825169C",
+    "txid": "28f01f719ce177e004bfb875c9c0c5c29a166b61cf2ec8c024f3686b6bb4ae56"
+  },
+  "keyPage": null,
+  "sponsor": "",
+  "type": "tokenTx"
+}
+```
+
+### Checking transaction info
+
+Finally, let's make sure that the transaction was successfully broadcast. This time we will us the `tx get` command, and we'll pass in the transaction id (`"txid"`) that we received in the response output when we ran `tx create`.
 
 ```bash
-$ ./cli.exe account list 
-acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
-acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME
+$ ./cli tx get <txid> -s http://18.119.26.7:33004/v1
 ```
 
-#### Fund tokens from Faucet
+If the transaction was successful, the response we receive should look something like this:
 
-Faucet sends some TestNet ACME tokens to the requested anonymous token account.
-
-```bash
-Usage:
-faucet [url]               Get tokens from faucet to address
+```json
+{
+  "data": {
+    "from": "acc://8c2bd7278f932663fcba7053f86d0b23e178913e9479c5ad/ACME",
+    "to": [
+      {
+        "amount": 78934,
+        "txid": "0d98a9c05cfcc9885705a71dbf1165ad4718c10bb86c191ed181ab3aabb6a534",
+        "url": "acc://ba61c4d7dced236b9f89c908664bb7d80868097a363a6461/ACME"
+      }
+    ],
+    "txid": "28f01f719ce177e004bfb875c9c0c5c29a166b61cf2ec8c024f3686b6bb4ae56"
+  },
+  "keyPage": {
+    "height": 1,
+    "index": 0
+  },
+  "sig": "232f4f34c358ea9c67908bb9e02608565233425efec44e4be7aa7f518aff3e0542fcbe8d807bee00530d3f448bdfd2780e09471263fe81434397ee5f956deb0c",
+  "signer": {
+    "nonce": 1635897963,
+    "publicKey": "60358024268e1c7ba68d1d0b246ae3083d62ae4f27a2aaeb65695faef08d3ad5"
+  },
+  "sponsor": "acc://8c2bd7278f932663fcba7053f86d0b23e178913e9479c5ad/ACME",
+  "status": {
+    "code": "0"
+  },
+  "type": "tokenTx"
+}
 ```
 
-Example of usage:
 
-```bash
-$ ./cli.exe faucet acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME -s http://18.119.26.7:33004/v1
-{"data":{"codespace":"","hash":"64D2F5A1245D0C877F2A967D14E6B9121687A122D9032D2D4A98AF7A719EF2FA","txid":"f6bb8797f85b3bdb08e344e42ce3ca7cb42d4704128c7cd7bc1c1ada9d5a3e6f"},"keyPage":null,"sponsor":"","type":""}
-```
+### The end
 
-#### Get Account info
-
-```bash
-Usage:
-accumulate account get [url]                  Get anon token account by URL
-```
-
-Example of usage:
-
-```bash
-$ ./cli.exe account get acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME -s http://18.119.26.7:33004/v1
-{"data":{"balance":"1000000000","creditBalance":"0","keyBookUrl":"","nonce":0,"tokenUrl":"acc://ACME","txCount":1,"url":"acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"anonTokenAccount"}
-```
-
-#### Get Transaction info
-
-```
-Usage:
-accumulate tx get [txid]                      Get token transaction by txid
-```
-
-Example of usage:
-
-```bash
-$ ./cli.exe tx get f6bb8797f85b3bdb08e344e42ce3ca7cb42d4704128c7cd7bc1c1ada9d5a3e6f -s http://18.119.26.7:33004/v1
-{"data":{"from":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","to":[{"amount":1000000000,"txid":"d1d2b8c3f419e7caea4573be197da4d49142d5ae290974b2d8c131239d3fadfe","url":"acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME"}],"txid":"f6bb8797f85b3bdb08e344e42ce3ca7cb42d4704128c7cd7bc1c1ada9d5a3e6f"},"keyPage":{"height":1,"index":0},"sig":"4ddd5d7916e02227c07398595e83bc115c20d1a463e5f7085bbf245efbf94dda8f997b7ecb6754b4f37bece1431c44bb5275bb53dbed45dc39db539adfd78f07","signer":{"nonce":1635849154607908400,"publicKey":"d03c683332ed36add8d0eeb9eee9e2669b5565decec03acc43d762f3f79f49c2"},"sponsor":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","status":{"code":"0"},"type":"tokenTx"}
-```
-
-#### Create a new account and transfer some tokens
-
-```
-Usage:
-accumulate tx create [from] [to] [amount]     Create new token tx
-```
-
-Example of usage:
-
-```bash
-$ ./cli.exe account generate
-acc://df8d19e2cb0435d178d1c6c7a114872d083a27a65a854707/ACME
-```
-
-```bash
-$ ./cli.exe tx create acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME acc://df8d19e2cb0435d178d1c6c7a114872d083a27a65a854707/ACME 2000 -s http://18.119.26.7:33004/v1
-{"data":{"codespace":"","hash":"9545262EC02FA1C7E21E797DC0C7A3D42EF1BAA365BB32CF52996407D5B56DB4","txid":"7bb88c24774c234b4363748b895742027e02bb897359ae0451f76c74ed85d985"},"keyPage":null,"sponsor":"","type":"tokenTx"}
-```
-
-#### Verify the account balalnce
-
-```bash
-Usage:
-accumulate account get [url]                  Get anon token account by URL
-```
-
-Example of usage:
-
-```bash
-$ ./cli.exe get acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME -s http://18.119.26.7:33004/v1
-{"url":"acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME","wait":false}
-{"data":{"balance":"999998000","creditBalance":"0","keyBookUrl":"","nonce":0,"tokenUrl":"acc://ACME","txCount":2,"url":"acc://c078e544351861f38ed40521beee54f9fb0276103d4189d9/ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"anonTokenAccount"}
-
-$ ./cli.exe get acc://df8d19e2cb0435d178d1c6c7a114872d083a27a65a854707/ACME -s http://18.119.26.7:33004/v1
-{"url":"acc://df8d19e2cb0435d178d1c6c7a114872d083a27a65a854707/ACME","wait":false}
-{"data":{"balance":"2000","creditBalance":"0","keyBookUrl":"","nonce":0,"tokenUrl":"acc://ACME","txCount":1,"url":"acc://df8d19e2cb0435d178d1c6c7a114872d083a27a65a854707/ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"anonTokenAccount"}
-```
-
+That's all for this tutorial, but you can find more commands and examples in the [Reference Guide](command-line-wallet.md).
