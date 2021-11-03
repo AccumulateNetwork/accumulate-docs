@@ -28,13 +28,13 @@ Returns Accumulate Object by URL
 
 **Response Properties**
 
-| Property  | Type   | Description                                |
-| --------- | ------ | ------------------------------------------ |
-| `type`    | string | The Accumulate object type                 |
-| `mdRoot`  | string | TBD                                        |
-| `data`    | object | The data for this object (properties vary) |
-| `sponsor` | string | The data for this object (properties vary) |
-| `keyPage` | TBD    | TBD                                        |
+| Property  | Type   | Description                                                                     |
+| --------- | ------ | ------------------------------------------------------------------------------- |
+| `type`    | string | The Accumulate object type                                                      |
+| `mdRoot`  | string | TBD                                                                             |
+| `data`    | object | The data for this object (properties vary)                                      |
+| `sponsor` | string | The data for this object (properties vary)                                      |
+| `keyPage` | TBD    | The [key page](../../deep-dive/key-management.md) within key book for this ADI. |
 
 **Example Request**
 
