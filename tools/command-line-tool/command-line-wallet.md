@@ -518,7 +518,9 @@ accumulate key page remove [key page url] [signing key label] [key index (option
 
 Example of usage:
 
-```
+```bash
+> page key remove ADITEST/ADIKEYPAGE1 key1234 1 1 key1234
+{"data":{"code":"2","codespace":"","hash":"5FDCB8ACBF729C3F162DB5BE22EACD43796E43761BA6E9CD09DCC3F5EE468D05","log":"acc://ADITEST/ADIKEYPAGE1 check of updateKeyPage transaction failed: invalid sig spec index","mempool":"","txid":"99084b8865ec9503dd7f1c752f2243036523bff3548af134a8fa0b5fa3535c70"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"}
 ```
 
 ### Tx
