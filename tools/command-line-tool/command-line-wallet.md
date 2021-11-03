@@ -375,11 +375,15 @@ Managed the Keys, Key Pages, and Key Book for your Accumulate Digital
 ```
 
 ```
-Usage:
-accumulate key generate [key name]     Generate a new key and give it a name in the wallet
-accumulate key list                   List generated keys associated with the wallet
-accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
-accumulate key import private [private key hex] [key name]      Import a key and give it a name in the wallet
+  Usage:
+  accumulate key generate [key name]     Generate a new key and give it a name in the wallet
+  accumulate key list                   List generated keys associated with the wallet
+  accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
+  accumulate key import private [private key hex] [key name]      Import a key and give it a name in the wallet
+  accumulate key export all                                 export all keys in wallet
+  accumulate key export private [key name]                      export the private key by key name
+  accumulate key export mnemonic                            export the mnemonic phrase if one was entered
+  accumulate key export seed                       export the seed generated from the mnemonic phrase
 ```
 
 **Key Generation**
@@ -410,11 +414,11 @@ Example of usage:
 key1234                  ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
 ```
 
-**Key Mnemonic (12 Words)**
+**Key Import Mnemonic **
 
 ```
 Usage:
-accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
+accumulate key import mnemonic [mnemonic phrase...]     Import the mnemonic phrase used to generate keys in the wallet
 ```
 
 Example of Usage:
@@ -424,14 +428,65 @@ key mnemonic how goes it today oh son of mine
 accumulate key mnemonic [mnemonic phrase...] Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward. Key Page Create
 ```
 
-**Key Import**
+**Key Import Private Key**
 
 ```
 Usage:
-accumulate key import [label] [private key hex]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
+accumulate key import private [private key hex] [key name]      Import a key and give it a name in the wallet
 ```
 
 Example of Usage:
+
+```
+// Some code
+```
+
+**Key Export All **
+
+```
+Usage:
+accumulate key export all                                 export all keys in wallet
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Key Export Private **
+
+```
+Usage:
+accumulate key export private [key name]                      export the private key by key name
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Key Export Mnemonic **
+
+```
+Usage:
+accumulate key export mnemonic                            export the mnemonic phrase if one was entered
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Key Export Seed **
+
+```
+accumulate key export seed                       export the seed generated from the mnemonic phrase
+```
+
+Example of usage:
 
 ```
 // Some code
