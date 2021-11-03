@@ -31,5 +31,5 @@
 ## Tools
 
 * [Command Line Tool](tools/command-line-tool/README.md)
-  * [Using the Command Line](tools/command-line-tool/using-the-command-line.md)
+  * [Getting Started](tools/command-line-tool/using-the-command-line.md)
   * [CLI Reference](tools/command-line-tool/command-line-wallet.md)

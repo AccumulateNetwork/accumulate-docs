@@ -1,6 +1,6 @@
-# Command Line Interface (CLI) Guide
+# Getting Started
 
-The Command-Line Interface Tool allows for the following operations: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag `-s`.
+The Command-Line Interface Tool allows users to interact with the Accumulate network and run a variety of operations, such as creating accounts and sending tokens. The following guide will show you how to set up the CLI tool.
 
 ## How to build the CLI tool
 
@@ -8,7 +8,6 @@ The first step is building the CLI executable.
 
 ```bash
 $ git clone https://github.com/AccumulateNetwork/accumulated.git
-
 $ go build ./cmd/cli
 ```
 
@@ -164,7 +163,6 @@ If the transaction was successful, the response we receive should look something
   "type": "tokenTx"
 }
 ```
-
 
 ### The end
 

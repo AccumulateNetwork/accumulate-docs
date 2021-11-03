@@ -1,6 +1,6 @@
-# CLI Reference
+# Command Line Tool
 
-The Command-Line Interface Tool allows for the following: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag `-s.`
+The Command-Line Interface Tool allows for the following: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag.
 
 ### Basic commands and flags
 
