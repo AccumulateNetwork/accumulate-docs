@@ -376,60 +376,10 @@ Managed the Keys, Key Pages, and Key Book for your Accumulate Digital
 
 ```
 Usage:
-accumulate key get book [URL]                 Get existing Key Book by URL
-accumulate key get page [URL]                 Get existing Key Page by URL
-accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n + 1] Create new key book
-with 1 to N+1 key pages
-                 example usage: accumulate key book create acc://RedWagon redKey5 acc://RedWagon/RedBook acc://RedWagon/RedPage1
-accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new
-key page with 1 to N+1 public keys
-                 example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key
-                 example usage: accumulate key update page  acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
-                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
-                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-accumulate key generate [label]     Generate a new key and give it a label in the wallet
-accumulate key list                   List generated keys associated with the wallet
-accumulate key import [label] [private key hex]     Import a key seed from a mnemonic, all keys will be derived from this seed going forward.
-accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
-```
-
-**Page Key Update**
-
-```
-accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key
-```
-
-Example of usage:
-
-```
-// Some code
-```
-
-**Page Key Add**
-
-```
-accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
-```
-
-Example of usage:
-
-```
-// Some code
-```
-
-**Page Key Remove**
-
-```
-accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
-```
-
-Example of usage:
-
-```
-// Some code
+  accumulate key generate [key name]     Generate a new key and give it a name in the wallet
+  accumulate key list                   List generated keys associated with the wallet
+  accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
+  accumulate key import [private key hex] [key name]      Import a key and give it a name in the wallet
 ```
 
 **Key Generation**
@@ -532,6 +482,44 @@ Example of usage:
 ```bash
 > key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42
 {"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
+```
+
+
+
+**Page Key Update**
+
+```
+accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Page Key Add**
+
+```
+accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
+```
+
+Example of usage:
+
+```
+// Some code
+```
+
+**Page Key Remove**
+
+```
+accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
+```
+
+Example of usage:
+
+```
+// S
 ```
 
 ### Tx
