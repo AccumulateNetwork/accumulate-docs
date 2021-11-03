@@ -23,13 +23,13 @@ Available Commands:
   help        Help about any command
   key         Create and manage Keys, Books, and Pages
   tx          Create and get token txs
-  
+
 Flags:
   -d, --debug              Print accumulated API calls
   -h, --help               help for accumulate
   -s, --server string      Accumulated server (default "http://localhost:35554/v1")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
-  
+
   Use "accumulate [command] --help" for more information about a command.
 ```
 
@@ -61,14 +61,30 @@ Example of usage:
 
 ```bash
 > get acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
-{"url":"acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME","wait":false}
-{"data":{"balance":"1000000000","creditBalance":"0","keyBookUrl":"","nonce":0,"tokenUrl":"acc://ACME","txCount":1,"url":"acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"anonTokenAccount"}     
+```
+
+```json
+{
+  "data": {
+    "balance": "1000000000",
+    "creditBalance": "0",
+    "keyBookUrl": "",
+    "nonce": 0,
+    "tokenUrl": "acc://ACME",
+    "txCount": 1,
+    "url": "acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME"
+  },
+  "keyPage": null,
+  "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sponsor": "",
+  "type": "anonTokenAccount"
+}
 ```
 
 Example of usage:
 
 ```bash
-> get acc://ADITEST/TOKENS/ACME   
+> get acc://ADITEST/TOKENS/ACME
 {"url":"ADITEST/TOKENS","wait":false}
 {"data":{"balance":"1000000000","keyBookUrl":"","tokenUrl":"acc://ACME","txCount":1,"url":"acc://ADITEST/TOKENS"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"tokenAccount"}
 ```
@@ -97,7 +113,7 @@ accumulate account list                       Display all anon token accounts
 Example of usage:
 
 ```bash
-> account list 
+> account list
 acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
 acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME
 ```
@@ -312,13 +328,13 @@ Managed the Keys, Key Pages, and Key Book for your Accumulate Digital&#x20;
 Usage:
 accumulate key get book [URL]                 Get existing Key Book by URL
 accumulate key get page [URL]                 Get existing Key Page by URL
-accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n + 1] Create new key book 
+accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n + 1] Create new key book
 with 1 to N+1 key pages
                  example usage: accumulate key book create acc://RedWagon redKey5 acc://RedWagon/RedBook acc://RedWagon/RedPage1
-accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new 
+accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new
 key page with 1 to N+1 public keys
                  example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key   
+accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key
                  example usage: accumulate key update page  acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
 accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
                  example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
@@ -384,14 +400,14 @@ accumulate key page create [actor adi url] [signing key label] [key index (optio
 Example of usage:
 
 ```bash
-> key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42 
+> key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42
 {"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
 ```
 
 **Key Page Update**
 
 ```
-accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key 
+accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key
 ```
 
 Example of usage:
@@ -536,4 +552,3 @@ Example of usage:
 > tx history acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME 0 1
 {"data":[{"data":{"amount":"1000000000","from":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","to":"acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME","tokenURL":"acc://ACME","txid":"8aef025e2d4e90d75f703c51aae321e44eb26c2f79de0034ac7bb7aae4c00d94"},"keyPage":{"height":1,"index":0},"sig":"ef8d401dc1022131b5cc3083c3453cfb707fa68d06be47c584e9c38e8e04622f20afbddaba5e664595887483848dc109ca5492e0182686d2ac59c95710a23805","signer":{"nonce":72,"publicKey":"7408e7dc62924a98b6c24fa814eec2d40363f9769875613d4d5ee04fdc1db94a"},"sponsor":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","status":{"code":"0"},"type":"syntheticTokenDeposit"}],"limit":1,"start":0,"total":2,"type":"tokenAccountHistory"}
 ```
-
