@@ -1,4 +1,4 @@
-# Command Line Interface (CLI) Guide
+# Getting Started
 
 The Command-Line Interface Tool allows for the following operations: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag `-s`.
 
@@ -14,7 +14,7 @@ $ go build ./cmd/cli
 
 Once you run these commands, a `cli` binary file should appear in the root directory `accumulated`.
 
-## Starting CLI tool
+## How to start the CLI tool
 
 To test that the CLI built correctly, and to bring up a usage guide and list of available commands, run the `cli` command without any arguments.
 
@@ -33,4 +33,3 @@ $ ./cli
 {% hint style="info" %}
 _Note_: you must prefix every operation with the `cli` command (either `./cli` or `./cli.exe` depending on your operating system).
 {% endhint %}
-
