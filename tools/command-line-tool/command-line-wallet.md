@@ -376,10 +376,10 @@ Managed the Keys, Key Pages, and Key Book for your Accumulate Digital
 
 ```
 Usage:
-  accumulate key generate [key name]     Generate a new key and give it a name in the wallet
-  accumulate key list                   List generated keys associated with the wallet
-  accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
-  accumulate key import [private key hex] [key name]      Import a key and give it a name in the wallet
+accumulate key generate [key name]     Generate a new key and give it a name in the wallet
+accumulate key list                   List generated keys associated with the wallet
+accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
+accumulate key import private [private key hex] [key name]      Import a key and give it a name in the wallet
 ```
 
 **Key Generation**
@@ -410,6 +410,20 @@ Example of usage:
 key1234                  ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
 ```
 
+**Key Mnemonic (12 Words)**
+
+```
+Usage:
+accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
+```
+
+Example of Usage:
+
+```
+key mnemonic how goes it today oh son of mine
+accumulate key mnemonic [mnemonic phrase...] Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward. Key Page Create
+```
+
 **Key Import**
 
 ```
@@ -421,20 +435,6 @@ Example of Usage:
 
 ```
 // Some code
-```
-
-**Key Mnemonic (12 Words)**
-
-```
-Usage:
-accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
-```
-
-Example of Usage:
-
-```
-key mnemonic how goes it today oh son of mine
-accumulate key mnemonic [mnemonic phrase...] Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward. Key Page Create
 ```
 
 ### Page
@@ -484,8 +484,6 @@ Example of usage:
 {"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
 ```
 
-
-
 **Page Key Update**
 
 ```
@@ -494,8 +492,9 @@ accumulate key page update [key page url] [signing key label] [key index (option
 
 Example of usage:
 
-```
-// Some code
+```bash
+> page key update ADITEST/ADIKEYPAGE1 key5678 1 1 key5678 key1234
+{"data":{"code":"2","codespace":"","hash":"15C1D6A9014CB99C3F7FBD804E87EA644126537B4D5F342BC93A5D0DEDBE0B5B","log":"acc://ADITEST/ADIKEYPAGE1 check of updateKeyPage transaction failed: invalid sig spec index","mempool":"","txid":"4d23f95a0201e4589d26c6b28f68c6fc658d05f74997c1ebd8c3711b574e963a"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"
 ```
 
 **Page Key Add**
@@ -506,8 +505,9 @@ accumulate key page add [key page url] [signing key label] [key index (optional)
 
 Example of usage:
 
-```
-// Some code
+```bash
+> page key add ADITEST/ADIKEYPAGE1 key1234 1 1 key5678
+{"data":{"code":"2","codespace":"","hash":"FF52531081161330E1B52F1A4E9108D6782495495A909176F7E9650DE01BE8C0","log":"acc://ADITEST/ADIKEYPAGE1 check of updateKeyPage transaction failed: invalid sig spec index","mempool":"","txid":"83d357c824a444014eafe1b8a8a1ea972d831d91f1258a1b2d46618a7450c16b"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"
 ```
 
 **Page Key Remove**
@@ -519,7 +519,6 @@ accumulate key page remove [key page url] [signing key label] [key index (option
 Example of usage:
 
 ```
-// S
 ```
 
 ### Tx
