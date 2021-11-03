@@ -4,6 +4,10 @@
 
 The MainNet is the primary Accumulate network.
 
+{% hint style="danger" %}
+The MainNet will not be created until testing and development is done
+{% endhint %}
+
 ## TestNet
 
 The TestNet is a secondary production Accumulate network intended for exploratory work. TestNet tokens do not have value.
