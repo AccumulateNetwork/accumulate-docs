@@ -3,7 +3,7 @@
 The following tutorial will help you get started with the CLI tool and understand how it works. We'll run through a few basic commands to create and fund an account, and send tokens between the two.
 
 {% hint style="warning" %}
-This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [using-the-command-line.md] to learn how.
+This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [Getting Started](using-the-command-line.md) to learn how.
 {% endhint %}
 
 ### Creating an anonymous token account
