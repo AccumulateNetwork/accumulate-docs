@@ -10,9 +10,9 @@ The MainNet will not be created until testing and development is done
 
 ## TestNet
 
-The TestNet is a secondary production Accumulate network intended for exploratory work. TestNet tokens do not have value.
+The TestNet is a secondary production Accumulate network intended for exploratory work. TestNet tokens do not have value. **TestNet history may be reset at any time.**
 
-Currently, the TestNet BVCs and nodes are hard-coded in `networks.go`. There are currently three TestNet BVCs: Arches, American Samoa, and EastXeons. The TestNet does not currently include a DC.
+Currently, the TestNet BVCs and nodes are hard-coded in `networks.go`. There are currently three TestNet BVCs: BVC0, BVC1, and BVC2. The TestNet does not currently include a DC.
 
 ## DevNet
 
