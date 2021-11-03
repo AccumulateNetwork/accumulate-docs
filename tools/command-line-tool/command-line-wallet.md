@@ -18,15 +18,17 @@ CLI for Accumulate Network
 Usage:
   accumulate [command] [flags]
 
-Available Commands:
+Available Commands
   account     Create and get token accounts
   adi         Create and manage ADI
+  book        Manage key books for a ADI chains
   completion  generate the autocompletion script for the specified shell
-  directory   Send credits to a recipient
   faucet      Get tokens from faucet
   help        Help about any command
-  key         Create and manage Keys, Books, and Pages
+  key         Create and manage Keys for ADI Key Books, and Pages
+  page        Create and manage Keys, Books, and Pages
   tx          Create and get token txs
+  version     get version of the accumulate node
 
 Flags:
   -d, --debug              Print accumulated API calls
@@ -224,6 +226,47 @@ Example of usage:
 {"data":{"codespace":"","hash":"D196F92987F6EB5E73838D8B62AB782007E0363003BC9B40F52AC3DAEA18A66F","txid":"004f0df62645f5a128370528123eab320e79ecad5b74110f12d6f74de1860078"},"keyPage":null,"sponsor":"","type":"tokenTx"}
 ```
 
+### Book
+
+```bash
+> book
+```
+
+```
+Usage:
+accumulate book get [URL]                     Get existing Key Book by URL
+accumulate book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n + 1] Create new key book and assign key pages 1 to N+1 to the book
+```
+
+**Get Key Book**
+
+```
+Usage:
+accumulate key get book [URL]                 Get existing Key Book by URL
+```
+
+Example of usage:
+
+```bash
+> get ADITEST/ADIKEYBOOK1
+{"url":"ADITEST/ADIKEYBOOK1","wait":false}
+{"data":{"sigSpecId":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"sigSpecs":["df9531256df68eed2aa496b84bfbd7b6f989bdd08088d62dbbfc85451b820ac8"],"type":11,"url":"acc://ADITEST/ADIKEYBOOK1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpecGroup"}
+```
+
+**Key Book Create**
+
+```
+Usage:
+accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n] Create new key page with 1 to N public keys
+```
+
+Example of usage:
+
+```bash
+> key book create ADITEST key1234 1 1 ADITEST/KEYBOOK1.1 ADITEST/KEYPAGE1.1 ADITEST/KEYPAGE1.2 ADITEST/KEYPAGE1.3
+{"data":{"code":"2","codespace":"","hash":"CD8322D22945E81142AAF38459FD99572AF20FABF8832827D6C0A1933EC8F813","log":"acc://ADITEST check of createSigSpecGroup transaction failed: invalid sig spec index","mempool":"","txid":"4fb9e1ee7bec80a664ac73ffcdde84754ce0c003dd3a710a0cb9b541f806ba73"},"keyPage":null,"sponsor":"","type":"sigSpecGroup"}
+```
+
 ### Completion
 
 ```bash
@@ -300,17 +343,19 @@ CLI Help
 CLI for Accumulate Network
 
 Usage:
-  accumulate [command]
+  accumulate [command] [flags]
 
-Available Commands:
+Available Commands
   account     Create and get token accounts
   adi         Create and manage ADI
+  book        Manage key books for a ADI chains
   completion  generate the autocompletion script for the specified shell
-  directory   Send credits to a recipient
   faucet      Get tokens from faucet
   help        Help about any command
-  key         Create and manage Keys, Books, and Pages
+  key         Create and manage Keys for ADI Key Books, and Pages
+  page        Create and manage Keys, Books, and Pages
   tx          Create and get token txs
+  version     get version of the accumulate node
 
 Flags:
   -d, --debug              Print accumulated API calls
@@ -318,7 +363,7 @@ Flags:
   -s, --server string      Accumulated server (default "http://localhost:35554/v1")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 
-Use "accumulate [command] --help" for more information about a command.
+  Use "accumulate [command] --help" for more information about a command.
 ```
 
 ### Keys
@@ -351,21 +396,6 @@ accumulate key import [label] [private key hex]     Import a key seed from a mne
 accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
 ```
 
-**Get Key Book**
-
-```
-Usage:
-accumulate key get book [URL]                 Get existing Key Book by URL
-```
-
-Example of usage:
-
-```bash
-> get ADITEST/ADIKEYBOOK1
-{"url":"ADITEST/ADIKEYBOOK1","wait":false}
-{"data":{"sigSpecId":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"sigSpecs":["df9531256df68eed2aa496b84bfbd7b6f989bdd08088d62dbbfc85451b820ac8"],"type":11,"url":"acc://ADITEST/ADIKEYBOOK1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpecGroup"}
-```
-
 **Get Key Page**
 
 ```
@@ -379,20 +409,6 @@ Example of usage:
 > get ADITEST/ADIKEYPAGE1
 {"url":"ADITEST/ADIKEYPAGE1","wait":false}
 {"data":{"creditBalance":0,"keys":[{"nonce":0,"publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}],"sigSpecId":"d58e359c82d3efdbb38e355cfb5f50b42ee5fefda90582b4ef571b9f5478552e","type":10,"url":"acc://ADITEST/ADIKEYPAGE1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpec"}
-```
-
-**Key Book Create**
-
-```
-Usage:
-accumulate key book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n] Create new key page with 1 to N public keys
-```
-
-Example of usage:
-
-```bash
-> key book create ADITEST key1234 1 1 ADITEST/KEYBOOK1.1 ADITEST/KEYPAGE1.1 ADITEST/KEYPAGE1.2 ADITEST/KEYPAGE1.3
-{"data":{"code":"2","codespace":"","hash":"CD8322D22945E81142AAF38459FD99572AF20FABF8832827D6C0A1933EC8F813","log":"acc://ADITEST check of createSigSpecGroup transaction failed: invalid sig spec index","mempool":"","txid":"4fb9e1ee7bec80a664ac73ffcdde84754ce0c003dd3a710a0cb9b541f806ba73"},"keyPage":null,"sponsor":"","type":"sigSpecGroup"}
 ```
 
 **Key Page Create**
@@ -445,7 +461,7 @@ Example of usage:
 // Some code
 ```
 
-\*\*Key Generation \*\*
+**Key Generation**
 
 ```
 Usage:
