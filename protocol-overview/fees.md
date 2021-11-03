@@ -4,7 +4,7 @@ description: Learn about estimated fees for common actions on the Accumulate Pro
 
 # Fees
 
-Unlike most blockchain protocols, fees are fixed and stable, making budgeting for blockchain expenses much more predictable.
+Accumulates fees are fixed and stable. Business models, built on Accumulate, can rely on a predictable cost model to support their go-to-market strategies today and tomorrow.
 
 Estimated fees below are converted to USD for actions like identity creation, token transactions, and token issuances.
 
