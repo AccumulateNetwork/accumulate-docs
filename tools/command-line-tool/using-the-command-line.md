@@ -8,7 +8,6 @@ The first step is building the CLI executable.
 
 ```bash
 $ git clone https://github.com/AccumulateNetwork/accumulated.git
-
 $ go build ./cmd/cli
 ```
 
