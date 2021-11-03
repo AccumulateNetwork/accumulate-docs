@@ -62,8 +62,8 @@ Example of usage:
 ```bash
 > get acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
 ```
-
 ```json
+//Response:
 {
   "data": {
     "balance": "1000000000",
