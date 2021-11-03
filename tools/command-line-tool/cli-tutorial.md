@@ -28,10 +28,10 @@ Since this command actually requires broadcasting to the network, we need to mak
 _Note_: If you're running your own node locally, you don't need to specify the server with `-s`. The CLI will connect to your local node by default.
 {% endhint %}
 
-You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulated/blob/develop/networks/networks.go). For this tutorial we'll use `http://18.119.26.7:33004/v1`.
+You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulated/blob/develop/networks/networks.go). For this tutorial we'll use `https://testnet.accumulatenetwork.io/v1`.
 
 ```bash
-$ ./cli faucet <your account address> -s http://18.119.26.7:33004/v1
+$ ./cli faucet <your account address> -s https://testnet.accumulatenetwork.io/v1
 ```
 
 ### Checking your account balance
@@ -39,7 +39,7 @@ $ ./cli faucet <your account address> -s http://18.119.26.7:33004/v1
 Now that we've ran the `faucet` command, the network should know that our account exists. Let's check our account balance to see how many tokens we got from the faucet. We can do that with the `account get` command (remember to use the `-s` flag if you are not running a node locally).
 
 ```bash
-$ ./cli account get <your account address> -s http://18.119.26.7:33004/v1
+$ ./cli account get <your account address> -s https://testnet.accumulatenetwork.io/v1
 ```
 
 We should get an output that looks something like this:
@@ -75,7 +75,7 @@ _Note_: The unit size for ACME balances in the CLI is 1/100,000,000. So if you w
 {% endhint %}
 
 ```bash
-$ ./cli tx create <sending account> <receiving account> <amount to send> -s http://18.119.26.7:33004/v1
+$ ./cli tx create <sending account> <receiving account> <amount to send> -s https://testnet.accumulatenetwork.io/v1
 ```
 
 We should receive a response that looks like this:
@@ -98,7 +98,7 @@ We should receive a response that looks like this:
 Finally, let's make sure that the transaction was successfully broadcast. This time we will us the `tx get` command, and we'll pass in the transaction id (`"txid"`) that we received in the response output when we ran `tx create`.
 
 ```bash
-$ ./cli tx get <txid> -s http://18.119.26.7:33004/v1
+$ ./cli tx get <txid> -s https://testnet.accumulatenetwork.io/v1
 ```
 
 If the transaction was successful, the response we receive should look something like this:
