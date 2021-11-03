@@ -32,4 +32,5 @@
 
 * [Command Line Tool](tools/command-line-tool/README.md)
   * [Getting Started](tools/command-line-tool/using-the-command-line.md)
+  * [CLI Tutorial](tools/command-line-tool/cli-tutorial.md)
   * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
