@@ -366,7 +366,7 @@ Flags:
   Use "accumulate [command] --help" for more information about a command.
 ```
 
-### Keys
+### Key
 
 Managed the Keys, Key Pages, and Key Book for your Accumulate Digital
 
@@ -394,35 +394,6 @@ accumulate key generate [label]     Generate a new key and give it a label in th
 accumulate key list                   List generated keys associated with the wallet
 accumulate key import [label] [private key hex]     Import a key seed from a mnemonic, all keys will be derived from this seed going forward.
 accumulate key mnemonic [mnemonic phrase...]     Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward.
-```
-
-**Get Key Page**
-
-```
-Usage:
-accumulate key get page [URL]                 Get existing Key Page by URL
-```
-
-Example of usage:
-
-```bash
-> get ADITEST/ADIKEYPAGE1
-{"url":"ADITEST/ADIKEYPAGE1","wait":false}
-{"data":{"creditBalance":0,"keys":[{"nonce":0,"publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}],"sigSpecId":"d58e359c82d3efdbb38e355cfb5f50b42ee5fefda90582b4ef571b9f5478552e","type":10,"url":"acc://ADITEST/ADIKEYPAGE1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpec"}
-```
-
-**Key Page Create**
-
-```
-Usage:
-accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
-```
-
-Example of usage:
-
-```bash
-> key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42
-{"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
 ```
 
 **Page Key Update**
@@ -514,6 +485,53 @@ Example of Usage:
 ```
 key mnemonic how goes it today oh son of mine
 accumulate key mnemonic [mnemonic phrase...] Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward. Key Page Create
+```
+
+### Page
+
+```
+> Page
+```
+
+```
+accumulate page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new key page with 1 to N+1 public keys 
+                 example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate page get [URL]                     Get existing Key Page by URL
+  accumulate page key update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key in a key page with a new public key
+                 example usage: accumulate key update page  acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate page key add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to a key page
+                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate page key remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key from a key page
+                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 r
+```
+
+**Get Key Page**
+
+```
+Usage:
+accumulate key get page [URL]                 Get existing Key Page by URL
+```
+
+Example of usage:
+
+```bash
+> get ADITEST/ADIKEYPAGE1
+{"url":"ADITEST/ADIKEYPAGE1","wait":false}
+{"data":{"creditBalance":0,"keys":[{"nonce":0,"publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}],"sigSpecId":"d58e359c82d3efdbb38e355cfb5f50b42ee5fefda90582b4ef571b9f5478552e","type":10,"url":"acc://ADITEST/ADIKEYPAGE1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpec"}
+```
+
+**Key Page Create**
+
+```
+Usage:
+accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
+```
+
+Example of usage:
+
+```bash
+> key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42
+{"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
 ```
 
 ### Tx
