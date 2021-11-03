@@ -1,11 +1,10 @@
-# Command Line Tool
+# CLI Reference
 
 The Command-Line Interface Tool allows for the following: token, identity, and key management. By default, the Command-Line Interface connects to a localhost Accumulate Node, but you can specify any remote server by using the flag `-s`.
 
 {% hint style="info" %}
 You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulated/blob/develop/networks/networks.go). Or you can use the public testnet server: `https://testnet.accumulatenetwork.io/v1`.
 {% endhint %}
-
 
 ### Basic commands and flags
 
@@ -67,6 +66,7 @@ Example of usage:
 ```bash
 > get acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
 ```
+
 ```json
 //Response:
 {
@@ -290,7 +290,7 @@ Example of usage:
 
 ### Help
 
-CLI Help&#x20;
+CLI Help
 
 ```bash
 > help
@@ -323,7 +323,7 @@ Use "accumulate [command] --help" for more information about a command.
 
 ### Keys
 
-Managed the Keys, Key Pages, and Key Book for your Accumulate Digital&#x20;
+Managed the Keys, Key Pages, and Key Book for your Accumulate Digital
 
 ```bash
 > key
@@ -409,7 +409,7 @@ Example of usage:
 {"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
 ```
 
-**Key Page Update**
+**Page Key Update**
 
 ```
 accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key
@@ -421,7 +421,7 @@ Example of usage:
 // Some code
 ```
 
-**Key Page Add**
+**Page Key Add**
 
 ```
 accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
@@ -433,7 +433,7 @@ Example of usage:
 // Some code
 ```
 
-**Key Page Remove**
+**Page Key Remove**
 
 ```
 accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
@@ -445,7 +445,7 @@ Example of usage:
 // Some code
 ```
 
-**Key Generation **
+\*\*Key Generation \*\*
 
 ```
 Usage:
@@ -515,7 +515,7 @@ accumulate tx create [from] [to] [amount]     Create new token tx
 accumulate tx history [url] [starting transaction number] [ending transaction number] Get transaction history
 ```
 
-#### Tx Get&#x20;
+#### Tx Get
 
 ```
 Usage:
