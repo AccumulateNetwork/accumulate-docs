@@ -133,6 +133,80 @@ If the transaction was successful, the response we receive should look something
 }
 ```
 
+### How to Create ADI 
+
+The following section deals will creating keypage and Accumulate Digital Identifier (ADI).
+
+#### Create and list keypage
+
+Prior to creating an ADI, you need to create a keypage which will be required as a parameter for ADI creation.
+
+```bash
+$ ./cli.exe key generate <keyname>
+```
+
+The output is displayed as
+
+```bash
+<keyname> : 20bb303068330cc761c35bb6425d269c7b4462c0daf78dc7dd15bcb51b496e05
+```
+
+You can see the list of key using
+
+```bash
+$ ./cli.exe key list
+```
+
+The output is displayed as
+
+```bash
+Public Key                                                              Key name
+e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5        <key name>
+20bb303068330cc761c35bb6425d269c7b4462c0daf78dc7dd15bcb51b496e05        <key name>
+```
+
+#### Create new ADI using lite accounts
+
+Now you can create an ADI using lite/annonymous account which was earlier described in the tutorial. The other parameters are the key name which was created just now, and name of the new ADI. 
+
+```bash
+$ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <lite-account-address> <new-adi-name> <key name>
+```
+
+If the transaction was successful, the response we receive should look something like this:
+
+```bash
+{"data":{"codespace":"","hash":"CF79B038261BAFAFD7ADE320C007C628DEE5BBBD5FCD9E5F20A77244C0BA2F2C","txid":"9c8afdb50ea20e0628dbddb65a3de8ae88b63d209cdce2500fe5f4a22c6b522f"},"keyPage":null,"sponsor":"","txid":null,"type":"tokenTx"}
+```
+
+#### Create new ADI for another ADI
+
+You can also create an ADI using another ADI and keypage as shown below:
+
+```bash
+$ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <existing-adi> <key name 1> <new-adi-name> <key name 2> 
+```
+
+If the transaction was successful, the response we receive should look something like this:
+
+```bash
+{"data":{"codespace":"","hash":"94E992C9939E7D2C3BB25A5B488FA574FA40E574C338C94C73FAB86FC2535320","txid":"483b121513e5b3fa40d6e93fb488532ac08aecf942e3aacb55ce56dc3b5d6f58"},"keyPage":null,"sponsor":"","txid":null,"type":"tokenTx"}
+```
+
+### Checking the ADI accounts
+
+You can check the ADI accounts using the following command:
+
+```bash
+$ ./cli.exe -s https://testnet.accumulatenetwork.io/v1 get <adi-name>
+```
+
+The Output should look something like:
+
+```bash
+{"url":"acc://kadi1","wait":false}
+{"data":{"keyBookName":"","keyPageName":"","publicKey":"e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5","url":"acc://kadi1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","txid":null,"type":"adi"}
+```
 
 ### The end
 
