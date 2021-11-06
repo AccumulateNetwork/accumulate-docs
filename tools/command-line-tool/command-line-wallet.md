@@ -393,9 +393,9 @@ accumulate key import mnemonic [mnemonic phrase...]     Import the mnemonic phra
 
 Example of Usage:
 
-```
-key mnemonic 
-accumulate key mnemonic [mnemonic phrase...] Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward. Key Page Create
+```bash
+> key mnemonic humor demand lesson identify rookie road truth beef benefit thank camera tumble
+Mnemonic imported
 ```
 
 **Key Import Private Key**
