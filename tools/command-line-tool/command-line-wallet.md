@@ -451,7 +451,8 @@ accumulate key export all                                 export all keys in wal
 Example of usage:
 
 ```
-// Some code
+{"name":"MarianP","privateKey":"e3e6c72c16d848bd54fa50ec4aa43ae5832ad70da3cd14705dac567de9192e86","publicKey":"0c5ebf71e4068306a5916309717af8c25ad17cb376fe9e96957168588a4048f1"}
+{"name":"acc://5eed661e873c4437fb31f034cc31e049b49c2260d035b2c6/ACME","privateKey":"abcd9388fcb6c718ef49a7cfa50fa9832a123de63769eabdc025bfb848e2b0a8","publicKey":"1f339c9684aa756d57ae0a37961bfc9aad84b575f22fa378701f3944af095106"}
 ```
 
 **Key Export Private **
