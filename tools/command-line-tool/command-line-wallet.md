@@ -52,8 +52,6 @@ Anonymous token accounts are stored in a local database. CLI allows you to gener
   accumulate account generate                   Generate random anon token account
   accumulate account list                       Display all anon token accounts
   accumulate account create [{actor adi}] [wallet key label] [key index (optional)] [key height (optional)] [token account url] [tokenUrl] [keyBook (optional)]  Create a token account for an ADI
-  accumulate account import [private-key]       Import anon token account from private key hex
-  accumulate account export [url]               Export private key hex of anon token account
 ```
 
 **Account get**
@@ -139,34 +137,6 @@ Example of usage:
 {"url":"acc://ACME","wait":false}
 {"data":{"precision":8,"propertiesUrl":"","symbol":"ACME","url":"acc://ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"token"}
 {"data":{"codespace":"","hash":"D4671ABD87E02BF6ACC3864BA84FF7F17D9A2224055973DB9079079D93F3D75B","txid":"5668f7a936c45e513d654a98ee758d8a3612833c5256ef65aed32c639e721aaa"},"keyPage":null,"sponsor":"","type":"tokenAccount"}
-```
-
-#### Account import
-
-```
-Usage:
- accumulate account import [private-key]       Import anon token account from private key hex
-```
-
-Example of usage:
-
-```bash
-> account import 5917639ec8c66576b8e44797cfc198f0b85b0cbe4ab29ac8a1e8413a7b779f888d378ef83bcd38edf6023ed77a4e422059770da9d198ead8fd76245a353ced61
-acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
-```
-
-#### Account export
-
-```
-Usage:
-accumulate account export [url]               Export private key hex of anon token account
-```
-
-Example of usage:
-
-```bash
-> account export acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
-5917639ec8c66576b8e44797cfc198f0b85b0cbe4ab29ac8a1e8413a7b779f888d378ef83bcd38edf6023ed77a4e422059770da9d198ead8fd76245a353ced61
 ```
 
 ### ADI
