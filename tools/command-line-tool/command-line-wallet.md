@@ -394,7 +394,7 @@ accumulate key import mnemonic [mnemonic phrase...]     Import the mnemonic phra
 Example of Usage:
 
 ```
-key mnemonic how goes it today oh son of mine
+key mnemonic 
 accumulate key mnemonic [mnemonic phrase...] Generate a new key seed from a mnemonic, all keys will be derived from this seed going forward. Key Page Create
 ```
 
@@ -420,7 +420,8 @@ accumulate key export all                                 export all keys in wal
 
 Example of usage:
 
-```
+```bash
+> key export all
 {"name":"MarianP","privateKey":"e3e6c72c16d848bd54fa50ec4aa43ae5832ad70da3cd14705dac567de9192e86","publicKey":"0c5ebf71e4068306a5916309717af8c25ad17cb376fe9e96957168588a4048f1"}
 {"name":"acc://5eed661e873c4437fb31f034cc31e049b49c2260d035b2c6/ACME","privateKey":"abcd9388fcb6c718ef49a7cfa50fa9832a123de63769eabdc025bfb848e2b0a8","publicKey":"1f339c9684aa756d57ae0a37961bfc9aad84b575f22fa378701f3944af095106"}
 ```
@@ -434,8 +435,9 @@ accumulate key export private [key name]                      export the private
 
 Example of usage:
 
-```
-// Some code
+```bash
+> key export private 1234
+{"name":"key1234","privateKey":"25c8d1b59cf3585b1adcce63ad06b6e67c8ed07d98e128a6324b51c993fdf154","publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}
 ```
 
 **Key Export Mnemonic **
@@ -447,8 +449,9 @@ accumulate key export mnemonic                            export the mnemonic ph
 
 Example of usage:
 
-```
-// Some code
+```bash
+> key export mnemonic
+mnemonic phrase: humor demand lesson identify rookie road truth beef benefit thank camera tumble
 ```
 
 **Key Export Seed **
@@ -459,8 +462,9 @@ accumulate key export seed                       export the seed generated from 
 
 Example of usage:
 
-```
-// Some code
+```bash
+> key export seed
+seed: b1310fcca7d5938d552561757d1e62a11a6fd3939cabdcfbbad94d1a6fb6a873f81b15f286ab4bed8e6139e4a6348387d555b72cf0e98793f5828264cfa78c77
 ```
 
 ### Page
