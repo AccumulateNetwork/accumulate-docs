@@ -208,6 +208,23 @@ The Output should look something like:
 {"data":{"keyBookName":"","keyPageName":"","publicKey":"e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5","url":"acc://kadi1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","txid":null,"type":"adi"}
 ```
 
+### Account Create (ADI Token Account)
+
+You can create a token account for an ADI
+
+```bash
+$ ./cli.exe -s https://testnet.accumulatenetwork.io/v1 get <adi-name>
+./cli.exe  -s https://testnet.accumulatenetwork.io/v1 account create <adi-name> <wallet-key> <key index (optional)> <key height (optional)> <token account URL> <token URL> <keyBook (optional)>
+```
+
+The Output should look something like:
+
+```bash
+{"url":"acc://ACME","wait":false}
+{"data":{"precision":8,"propertiesUrl":"","symbol":"ACME","url":"acc://ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","txid":null,"type":"token"}
+{"data":{"code":"4","codespace":"","hash":"D5E9E6D0FF32FE700E542215570F3011F05E6DB3EEDD8E45F274FC85AD240386","log":"acc://kadi1 check of tokenAccountCreate transaction failed: no key spec matches signature 0","mempool":"","txid":"4ce5dd3e0e16b0283766a0484eefad9ff4a099edd1cca85805ae1b1ae594104c"},"keyPage":null,"sponsor":"","txid":null,"type":"tokenAccount"}
+```
+
 ### The end
 
 That's all for this tutorial, but you can find more commands and examples in the [Reference Guide](command-line-wallet.md).
