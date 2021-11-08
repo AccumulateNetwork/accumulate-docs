@@ -27,6 +27,7 @@
 * [Lite Accounts](deep-dive/anonymous-token-chains.md)
 * [Accumulate Digital Identifiers](deep-dive/identity.md)
 * [Key Management](deep-dive/key-management.md)
+* [Identity Hierarchies](deep-dive/identity-hierarchies.md)
 
 ## Tools
 
