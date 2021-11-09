@@ -16,7 +16,7 @@
 
 ## Operators
 
-* [Getting Started](operators/getting-started.md)
+* [Setting Up Accumulate](operators/getting-started.md)
 * [Networks](operators/networks.md)
 * [Validator Node Setup Guide](operators/node-setup-guide.md)
 * [Follower Node Setup Guide](operators/follower-node-setup-guide.md)
