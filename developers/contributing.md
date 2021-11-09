@@ -1,3 +1,9 @@
+---
+description: >-
+  This guide will walk you through setting up your environment and downloading
+  the Accumulate source code.
+---
+
 # Contributing
 
 ## Prerequisites

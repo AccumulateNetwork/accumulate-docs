@@ -7,7 +7,6 @@
 
 ## Developers
 
-* [Getting Started](developers/getting-started.md)
 * [Contributing](developers/contributing.md)
 * [Local DevNet](developers/local-devnet.md)
 * [Accumulate API](developers/api/README.md)
