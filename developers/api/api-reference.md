@@ -111,7 +111,7 @@ curl -X POST --data '{
     "params": {
         "url": "redwagon"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
 ```
 
 **Example Response**
@@ -120,81 +120,21 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "url": "redwagon",
-        "publicKeyHash": "2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59",
-    },
-    "id": 0
-}
-```
-
-###
-
-### adi-create
-
-Creates a new ADI (Accumulate Digital Identity)
-
-**Request Parameters**
-
-| Parameter   | Type   | Description                                  | Required? |
-| ----------- | ------ | -------------------------------------------- | --------- |
-| `adi`       | object | The ADI to create                            | Yes       |
-| `signer`    | object | Existing ADI signing this request            | Yes       |
-| `timestamp` | object | UNIX timestamp                               | Yes       |
-| `sig`       | string | Signature of the ADI signing the transaction | Yes       |
-
-**Response Properties**
-
-| Property | Type   | Description     |
-| -------- | ------ | --------------- |
-| ADI      | object | The created ADI |
-
-**Errors**
-
-| Code   | Message            |
-| ------ | ------------------ |
-| -32901 | Invalid ADI URL    |
-| -32801 | Invalid signer ADI |
-| -32802 | Invalid signature  |
-| -32803 | Invalid timestamp  |
-
-**Example Request**
-
-```cpp
-curl -X POST --data '{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "adi-create",
-    "params": {
-        "adi": {
-            "url": "quantumfield",
-            "publicKeyHash": "1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2",
-        },
-        "signer": {
+        "type": "adi",
+        "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+        "data": {
             "url": "redwagon",
-            "publicKey": "2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59"
+            "publicKey": "e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5",
+            "keyBookName": "",
+            "keyPageName": ""
         },
-        "timestamp": 1631306251,
-        "sig": "________________________"
-    }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-```
-
-**Example Response**
-
-```d
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "adi": {
-            "url": "quantumfield",
-            "publicKeyHash": "1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2",
-        }
+        "sponsor": "",
+        "keyPage": null,
+        "txid": null
     },
     "id": 0
 }
 ```
-
-###
 
 ### _Token methods_
 
@@ -229,9 +169,9 @@ curl -X POST --data '{
     "id": 0,
     "method": "token",
     "params": {
-        "url": "redwagon/WagonToken"
+        "url": "acc://ACME"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
 ```
 
 **Example Response**
@@ -240,83 +180,19 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "token": {
-            "url": "redwagon/WagonToken",
-            "symbol": "WT",
-            "precision": 4
-        }
+        "type": "token",
+        "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+        "data": {
+            "url": "acc://ACME",
+            "symbol": "ACME",
+            "precision": 8,
+            "propertiesUrl": ""
+        },
+        "sponsor": "",
+        "keyPage": null,
+        "txid": null
     },
     "id": 0
-}
-```
-
-###
-
-### token-create
-
-Creates a new token
-
-**Request Parameters**
-
-| Parameter   | Type    | Description                                  | Required? |
-| ----------- | ------- | -------------------------------------------- | --------- |
-| `token`     | object  | New token                                    | Yes       |
-| `signer`    | object  | ADI signing the creation of new token        | Yes       |
-| `timestamp` | integer | UNIX timestamp                               | Yes       |
-| `sig`       | string  | Signature of the ADI signing the transaction | Yes       |
-
-**Response Properties**
-
-| Property | Type   | Description       |
-| -------- | ------ | ----------------- |
-| token    | object | The created token |
-
-\*\*Errors
-
-| Code   | Message            |
-| ------ | ------------------ |
-| -33001 | Invalid token URL  |
-| -32801 | Invalid signer ADI |
-| -32802 | Invalid signature  |
-| -32803 | Invalid timestamp  |
-
-**Example Request**
-
-```cpp
-curl -X POST --data '{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "token-create",
-    "params": {
-        "token": {
-            "url": "quantumfield/Qbits",
-            "symbol": "QB",
-            "precision": 18
-        },
-        "signer": {
-            "url": "quantumfield",
-            "publicKey": "1403D9DB8AC1556C24065D9F1A946DE46A6F609B9476B9DE3C9FAFE6254F2"
-        },
-        "timestamp": 1631306251,
-        "sig": "_________________________"
-    }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-```
-
-**Example Response**
-
-```d
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "token": {
-            "url": "quantumfield/Qbits",
-            "symbol": "QB",
-            "precision": 18
-        }
-    },
-    "id": 0
-}
 ```
 
 ###
@@ -383,34 +259,28 @@ curl -X POST --data '{
 
 ###
 
-### token-account-create
+### token-account-history
 
-Creates a new token account
+Returns account history for the specified token account
 
 **Request Parameters**
 
-| Parameter      | Type    | Description                                   | Required? |
-| -------------- | ------- | --------------------------------------------- | --------- |
-| `tokenAccount` | object  | New token account                             | Yes       |
-| `signer`       | object  | ADI signing the creation of new Token Account | Yes       |
-| `timestamp`    | integer | UNIX timestamp                                | Yes       |
-| `sig`          | string  | Signature of the ADI signing the transaction  | Yes       |
+| Parameter | Type   | Description       | Required? |
+| --------- | ------ | ----------------- | --------- |
+| `url`     | string | Token Account URL | Yes       |
 
 **Response Properties**
 
-| Property       | Type   | Description   |
-| -------------- | ------ | ------------- |
-| `tokenAccount` | object | Token account |
+| Property          | Type   | Description       |
+| ----------------- | ------ | ----------------- |
+| `tokenTxWithHash` | object | Token transaction |
 
 **Errors**
 
-| Code   | Message                   |
-| ------ | ------------------------- |
-| -34001 | Invalid token account URL |
-| -33001 | Invalid token URL         |
-| -32801 | Invalid signer ADI        |
-| -32802 | Invalid signature         |
-| -32803 | Invalid timestamp         |
+| Code   | Message                      |
+| ------ | ---------------------------- |
+| -34001 | Invalid token account URL    |
+| -34002 | Token account does not exist |
 
 **Example Request**
 
@@ -418,20 +288,11 @@ Creates a new token account
 curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
-    "method": "token-account-create",
+    "method": "token-account-history",
     "params": {
-        "tokenAccount": {
-            "url": "redwagon",
-            "tokenURL": "redwagon/WagonCoin"
-        },
-        "signer": {
-            "url": "redwagon",
-            "publicKey": "2ed111975d438e64bd2eb455be285b186e5ebd525d45dd8c274dff30edb59"
-        },
-        "timestamp": 1631306251,
-        "sig": "____________"
+        "url": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
 ```
 
 **Example Response**
@@ -440,48 +301,115 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "tokenAccount": {
-            "url": "redwagon",
-            "tokenURL": "redwagon/WagonCoin"
-        }
+        "data": [
+            {
+                "type": "syntheticTokenDeposit",
+                "data": {
+                    "txid": "ec183d7f1df5a5edc1e39369c7ab11094d0ae6898b5b66cff9ca2a18116b8b94",
+                    "from": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+                    "to": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME",
+                    "amount": "1000000000",
+                    "tokenURL": "acc://ACME"
+                },
+                "sponsor": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+                "keyPage": {
+                    "height": 1,
+                    "index": 0
+                },
+                "txid": "bda2bb7cc11b3944851623b245bc7816a8476f21c8e6bdde0786d6aa6d678010",
+                "signer": {
+                    "publicKey": "18fc600320f247cf71652cfb6125973defef1bfd9499f297e6172cb5b293e7e1",
+                    "nonce": 37
+                },
+                "sig": "5cc19f7476688b97ab7c716019facaaf6d1179ea58b6d77046f1cc5ba94a79f54eaa0c7234968bc5db487d58b9384111bd6ba30de9e23aa10efd8e6a89a4800c",
+                "status": {
+                    "code": "0"
+                }
+            },
+            {
+                "type": "tokenTx",
+                "data": {
+                    "txid": "327912a9a0e9ef7916d358bc9cd5f4944adfdb168a2b017435e27a022c867ef7",
+                    "from": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME",
+                    "to": [
+                        {
+                            "txid": "bbc37d5bae15363287faa72c4a3d663d9e2238ef7a07723de7ab3ec1ab7dc559",
+                            "url": "acc://21f6a2751c8959919162dd9b9dd9306a574cb1035dcd229a/ACME",
+                            "amount": 20000
+                        }
+                    ]
+                },
+                "sponsor": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME",
+                "keyPage": {
+                    "height": 1,
+                    "index": 0
+                },
+                "txid": "327912a9a0e9ef7916d358bc9cd5f4944adfdb168a2b017435e27a022c867ef7",
+                "signer": {
+                    "publicKey": "9d091adcb8426831b3a546be958c3d353521313182a75c9c76a642ef41fd4726",
+                    "nonce": 1636285772
+                },
+                "sig": "5a1727a029f055c0cb3dceab2bd04a798b145bf4ea5c04ac54b9201b85f89428dcec2b549bd47daed9f1dafdefbea9cdfc64aeb6a81bec50482df8828287a10c",
+                "status": {
+                    "code": "0"
+                }
+            },
+            {
+                "type": "syntheticTokenDeposit",
+                "data": {
+                    "txid": "0fb8cc2eae7dbf26061fb2a0c6f6b3a3bd5754ebbdafa2fc4f933e1a5ad5cee8",
+                    "from": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+                    "to": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME",
+                    "amount": "1000000000",
+                    "tokenURL": "acc://ACME"
+                },
+                "sponsor": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+                "keyPage": {
+                    "height": 431,
+                    "index": 0
+                },
+                "txid": "f8ff5e4d0961d185db6dd3feb13be09371d84f7d8ae5f174357e5d76545ba1b4",
+                "signer": {
+                    "publicKey": "7408e7dc62924a98b6c24fa814eec2d40363f9769875613d4d5ee04fdc1db94a",
+                    "nonce": 141
+                },
+                "sig": "7f8089d480644c50a269d40d8b1cf620bf75399ce54011ee8af95333b48c91ce31f3183b69854c326dad0b32af5e7ced662d72ac8a56a4b4cd1dfb830e2a650e",
+                "status": {
+                    "code": "0"
+                }
+            },
+            {
+                "type": "syntheticTokenDeposit",
+                "data": {
+                    "txid": "3fc71b785b7965fae89734ca4b4e4da253d592811e978fab06352aa171fc5bcb",
+                    "from": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+                    "to": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME",
+                    "amount": "1000000000",
+                    "tokenURL": "acc://ACME"
+                },
+                "sponsor": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+                "keyPage": {
+                    "height": 433,
+                    "index": 0
+                },
+                "txid": "f70df8cb52c06ce76bfc6b4f47348a8c671b34efedfc9d79bb1db1e130f581b0",
+                "signer": {
+                    "publicKey": "18fc600320f247cf71652cfb6125973defef1bfd9499f297e6172cb5b293e7e1",
+                    "nonce": 142
+                },
+                "sig": "2dcec00259c6962f10ceaf142ae6b62352da7279b1ba6d3cfd264397a53d0cdd08b2de91ac4662c0a037009931acedb75b7ddce3f240088ce11a708d25a1eb08",
+                "status": {
+                    "code": "0"
+                }
+            }
+        ],
+        "type": "tokenAccountHistory",
+        "start": 0,
+        "limit": 20,
+        "total": 4
     },
     "id": 0
 }
-```
-
-###
-
-### token-account-history
-
-Returns account history for the specified token account
-
-**Request Parameters**
-
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-| `TBD`     |      |             |           |
-
-**Response Properties**
-
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|          |      |             |
-
-**Errors**
-
-| Code | Message |
-| ---- | ------- |
-|      |         |
-|      |         |
-
-**Example Request**
-
-```cpp
-```
-
-**Example Response**
-
-```d
 ```
 
 ###
@@ -517,9 +445,9 @@ curl -X POST --data '{
     "id": 0,
     "method": "token-tx",
     "params": {
-        "hash": "f1d6daf52c3256b917405d465572e59c248b2db135e5d714e0ac5c43760ce434"
+        "hash": "327912a9a0e9ef7916d358bc9cd5f4944adfdb168a2b017435e27a022c867ef7"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1 get
 ```
 
 **Example Response**
@@ -528,74 +456,32 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "tokenTxWithHash": {
-            "hash": "f1d6daf52c3256b917405d465572e59c248b2db135e5d714e0ac5c43760ce434",
-            "from": "quantumfield",
+        "type": "tokenTx",
+        "data": {
+            "txid": "327912a9a0e9ef7916d358bc9cd5f4944adfdb168a2b017435e27a022c867ef7",
+            "from": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME",
             "to": [
                 {
-                    "url": "redwagon",
-                    "amount": 500,
-                },
-                {
-                    "url": "rhaegartargaryen",
-                    "amount": 283
+                    "txid": "bbc37d5bae15363287faa72c4a3d663d9e2238ef7a07723de7ab3ec1ab7dc559",
+                    "url": "acc://21f6a2751c8959919162dd9b9dd9306a574cb1035dcd229a/ACME",
+                    "amount": 20000
                 }
-            ],
-            "meta": "Prince Rhaegar Targaryen was the firstborn son of King Aerys II Targaryen and his sister-wife, Queen Rhaella"
+            ]
+        },
+        "sponsor": "acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME",
+        "keyPage": {
+            "height": 1,
+            "index": 0
+        },
+        "txid": "327912a9a0e9ef7916d358bc9cd5f4944adfdb168a2b017435e27a022c867ef7",
+        "signer": {
+            "publicKey": "9d091adcb8426831b3a546be958c3d353521313182a75c9c76a642ef41fd4726",
+            "nonce": 1636285772
+        },
+        "sig": "5a1727a029f055c0cb3dceab2bd04a798b145bf4ea5c04ac54b9201b85f89428dcec2b549bd47daed9f1dafdefbea9cdfc64aeb6a81bec50482df8828287a10c",
+        "status": {
+            "code": "0"
         }
-    },
-    "id": 0
-}
-```
-
-###
-
-### token-tx-create
-
-Creates a token transaction
-
-**Request Parameters**
-
-| Parameter   | Type    | Description                                  | Required? |
-| ----------- | ------- | -------------------------------------------- | --------- |
-| `tokenTx`   | object  | New token transaction                        | Yes       |
-| `signer`    | object  | ADI signing the transaction                  | Yes       |
-| `timestamp` | integer | UNIX timestamp                               | Yes       |
-| `sig`       | string  | Signature of the ADI signing the transaction | Yes       |
-
-**Response Properties**
-
-| Property          | Type   | Description       |
-| ----------------- | ------ | ----------------- |
-| `tokenTxWithHash` | object | Token transaction |
-
-**Errors**
-
-| Code   | Message                   |
-| ------ | ------------------------- |
-| -34001 | Invalid token address URL |
-| -32801 | Invalid signer ADI        |
-| -32802 | Invalid signature         |
-| -32803 | Invalid timestamp         |
-
-**Example Request**
-
-```cpp
-curl -X POST --data '{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "____",
-    "params": {}
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
-```
-
-**Example Response**
-
-```d
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "___": {}
     },
     "id": 0
 }
@@ -645,13 +531,12 @@ curl -X POST --data '{
       "codespace": ""
     },
     "sponsor": "",
-    "keyPage": null
+    "keyPage": null,
+    "txid": null
   },
   "id": 0
 }
 ```
-
-####
 
 ### _Key management methods_
 
