@@ -4,7 +4,6 @@
 * [Protocol Overview](protocol-overview/README.md)
   * [Fees](protocol-overview/fees.md)
   * [Innovations](protocol-overview/factom-accumulate-innovations.md)
-  * [FAQs](https://www.google.com)
 
 ## Developers
 
