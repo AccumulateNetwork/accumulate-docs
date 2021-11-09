@@ -28,4 +28,10 @@ The [repository for this documentation](https://github.com/AccumulateNetwork/acc
 
 Accumulate is a brand new Blockchain protocol, and as is typical of new software, will be evolving often. This documentation will evolve with it, but may be a bit behind new changes.&#x20;
 
-If you don't find the answer you're looking for, please ask on our [Discord](https://discord.gg/CYnaF8w2C2). Everyone there is happy and eager to help.
+If you don't find the answer you're looking for, please ask on our [Discord](https://discord.gg/CYnaF8w2C2) or on our [Telegram channel](https://t.me/accumulatenetwork). Everyone there is happy and eager to help.
+
+
+
+Have any suggestions or feedback to make this documentation better? Please drop us a note! You can message us on Discord or Telegram.&#x20;
+
+Or even better, you can contribute to the documentation directly! Accumulate is an open source protocol and therefore the documentation is also open source. You can submit a [Pull Request](https://github.com/AccumulateNetwork/accumulate-docs/compare) with any changes you'd like to see on [Github](https://github.com/AccumulateNetwork/accumulate-docs/pulls).
