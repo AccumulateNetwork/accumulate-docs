@@ -14,7 +14,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ## Methods
 
-#### _URL methods_
+### _URL methods_
 
 ### get
 
@@ -22,20 +22,19 @@ Returns Accumulate Object by URL
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-| `url`     | string  |       Any Accumulate URL     |     Yes      |
+| Parameter | Type   | Description        | Required? |
+| --------- | ------ | ------------------ | --------- |
+| `url`     | string | Any Accumulate URL | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `type`    |  string |     The Accumulate object type        |
-| `mdRoot`    |  string |      TBD       |
-| `data`    |  object |     The data for this object (properties vary)        |
-| `sponsor`    |  string |     The data for this object (properties vary)        |
-| `keyPage`    |  TBD |        TBD     |
-
+| Property  | Type   | Description                                                                     |
+| --------- | ------ | ------------------------------------------------------------------------------- |
+| `type`    | string | The Accumulate object type                                                      |
+| `mdRoot`  | string | The root hash of the patricia trie                                              |
+| `data`    | object | The data for this object (properties vary)                                      |
+| `sponsor` | string | The data for this object (properties vary)                                      |
+| `keyPage` | TBD    | The [key page](../../deep-dive/key-management.md) within key book for this ADI. |
 
 **Example Request**
 
@@ -72,7 +71,6 @@ curl -X POST --data '{
   },
   "id": 0
 }
-
 ```
 
 ###
@@ -87,7 +85,7 @@ Returns information about the specified ADI
 
 | Parameter | Type   | Description          | Required? |
 | --------- | ------ | -------------------- | --------- |
-| `url`       | string | The ADI URL to check | Yes       |
+| `url`     | string | The ADI URL to check | Yes       |
 
 **Response Properties**
 
@@ -495,18 +493,17 @@ Get free ACME tokens. While supplies last!
 
 **Request Parameters**
 
-| Parameter | Type | Description | Required? |
-| --------- | ---- | ----------- | --------- |
-|     `url`      |   string   |      Token account URL       |     Yes      |
+| Parameter | Type   | Description       | Required? |
+| --------- | ------ | ----------------- | --------- |
+| `url`     | string | Token account URL | Yes       |
 
 **Response Properties**
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-|     `txid`     |   string   |       The transasction ID      |
-|      `hash`    |   string   |             |
-|      `codespace`    |    string  |             |
-
+| Property    | Type   | Description         |
+| ----------- | ------ | ------------------- |
+| `txid`      | string | The transasction ID |
+| `hash`      | string |                     |
+| `codespace` | string |                     |
 
 **Example Request**
 
@@ -541,4 +538,213 @@ curl -X POST --data '{
 }
 ```
 
-####
+### _Key management methods_
+
+### sig-spec
+
+Returns the specified key page / signature specification
+
+{% hint style="info" %}
+_**NOTE: Key page = ****`sig-spec`****. Method names will be updated soon.**_
+{% endhint %}
+
+**Request Parameters**
+
+| Parameter | Type   | Description             | Required? |
+| --------- | ------ | ----------------------- | --------- |
+| `url`     | string | Accumulate Key Page URL | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `keyPage` | object | An object containing the Chain URL, Key book ID, credit balance, and an unordered set of keys |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "sig-spec",
+    "params": {
+        "url": "____"
+    }
+}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### create-sig-spec
+
+Creates a new key page (previously signature specification)
+
+{% hint style="info" %}
+_**NOTE: Key page = ****`sig-spec`****. Method names will be updated soon.**_
+{% endhint %}
+
+**Request Parameters**
+
+| Parameter | Type    | Description                              | Required? |
+| --------- | ------- | ---------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to be complete? | No        |
+| `tx`      | object  | Transaction                              | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                |
+| --------- | ------ | -------------------------- |
+| `keyPage` | object | The newly created key page |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### sig-spec-group
+
+Returns information about the specified key book / Signature specification group
+
+{% hint style="info" %}
+_**NOTE: Key book = ****`sig-spec-group`****. Method names will be updated soon.**_
+{% endhint %}
+
+**Request Parameters**
+
+| Parameter | Type   | Description             | Required? |
+| --------- | ------ | ----------------------- | --------- |
+| `url`     | string | Accumulate key book URL | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| `keyBook` | object | Object containing the chain URL and key page IDs |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### create-sig-spec-group
+
+Creates a new key book / signature specification group
+
+{% hint style="info" %}
+_**NOTE: Key book = ****`sig-spec-group`****. Method names will be updated soon.**_
+{% endhint %}
+
+**Request Parameters**
+
+| Parameter | Type    | Description                           | Required? |
+| --------- | ------- | ------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to complete? | No        |
+| `tx`      | object  | Transaction                           | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                |
+| --------- | ------ | -------------------------- |
+| `keyBook` | object | The newly created key book |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### update-key-page
+
+Adds, removes, or updates a key in a key page
+
+**Request Parameters**
+
+| Parameter | Type    | Description                           | Required? |
+| --------- | ------- | ------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to complete? | No        |
+| `tx`      | Object  | Transaction                           | Yes       |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### _Credit methods_
+
+### add-credits
+
+Adds credits to a lite account or key page
+
+**Request Parameters**
+
+| Parameter | Type    | Description                           | Required? |
+| --------- | ------- | ------------------------------------- | --------- |
+| `wait`    | boolean | Wait for the transaction to complete? | No        |
+| `tx`      | Object  | Transaction                           | Yes       |
+
+**Response Properties**
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+
+**Errors**
+
+| Code | Message |
+| ---- | ------- |
+|      |         |
+|      | ​       |
+
+**Example Request**
+
+```cpp
+```
+
+**Example Response**
+
+```d
+```
+
+###
+
+### _Metrics_
+
+### metrics - coming soon

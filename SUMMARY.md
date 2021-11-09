@@ -2,6 +2,7 @@
 
 * [Welcome](README.md)
 * [Protocol Overview](protocol-overview/README.md)
+  * [Fees](protocol-overview/fees.md)
   * [Factom/Accumulate Innovations](protocol-overview/factom-accumulate-innovations.md)
 
 ## Developers
@@ -23,10 +24,14 @@
 
 ## Deep Dive
 
-* [Accumulate Digital Identifiers](deep-dive/identity.md)
 * [Lite Accounts](deep-dive/anonymous-token-chains.md)
+* [Accumulate Digital Identifiers](deep-dive/identity.md)
+* [Key Management](deep-dive/key-management.md)
+* [Identity Hierarchies](deep-dive/identity-hierarchies.md)
 
 ## Tools
 
-* [Wallets](tools/wallets/README.md)
-  * [Command Line Wallet](tools/wallets/command-line-wallet.md)
+* [Command Line Tool](tools/command-line-tool/README.md)
+  * [Getting Started](tools/command-line-tool/using-the-command-line.md)
+  * [CLI Tutorial](tools/command-line-tool/cli-tutorial.md)
+  * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
