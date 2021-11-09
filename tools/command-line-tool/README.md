@@ -8,4 +8,4 @@ To learn how to set up the CLI tool, visit [Getting Started](using-the-command-l
 
 To view a reference of available commands and see examples, visit [CLI Reference](command-line-wallet.md).
 
-If you'd like to follow a tutorial of how to use the CLI, visit [CLI Tutorial](cli-tutorial.md).
+If you'd like to follow a tutorial of how to use the CLI, visit [CLI Tutorial](../../tutorials/cli-tutorial.md).

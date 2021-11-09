@@ -3,7 +3,7 @@
 * [Welcome](README.md)
 * [Protocol Overview](protocol-overview/README.md)
   * [Fees](protocol-overview/fees.md)
-  * [Factom/Accumulate Innovations](protocol-overview/factom-accumulate-innovations.md)
+  * [Innovations](protocol-overview/factom-accumulate-innovations.md)
 
 ## Developers
 
@@ -31,6 +31,9 @@
 ## Tools
 
 * [Command Line Tool](tools/command-line-tool/README.md)
-  * [Getting Started](tools/command-line-tool/using-the-command-line.md)
-  * [CLI Tutorial](tools/command-line-tool/cli-tutorial.md)
+  * [CLI Setup](tools/command-line-tool/using-the-command-line.md)
   * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
+
+## Tutorials
+
+* [CLI Tutorial](tutorials/cli-tutorial.md)

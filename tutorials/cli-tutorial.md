@@ -1,9 +1,13 @@
+---
+coverY: 0
+---
+
 # CLI Tutorial
 
 The following tutorial will help you get started with the CLI tool and understand how it works. We'll run through a few basic commands to create and fund an account, and send tokens between the two.
 
 {% hint style="warning" %}
-This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [Getting Started](using-the-command-line.md) to learn how.
+This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [CLI Setup](../tools/command-line-tool/using-the-command-line.md) to learn how.
 {% endhint %}
 
 ### Creating an anonymous token account
@@ -133,7 +137,7 @@ If the transaction was successful, the response we receive should look something
 }
 ```
 
-### How to Create ADI 
+### How to Create ADI
 
 The following section deals will creating keypage and Accumulate Digital Identifier (ADI).
 
@@ -167,7 +171,7 @@ e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5        <key nam
 
 #### Create new ADI using lite accounts
 
-Now you can create an ADI using lite/annonymous account which was earlier described in the tutorial. The other parameters are the key name which was created just now, and name of the new ADI. 
+Now you can create an ADI using lite/annonymous account which was earlier described in the tutorial. The other parameters are the key name which was created just now, and name of the new ADI.
 
 ```bash
 $ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <lite-account-address> <new-adi-name> <key name>
@@ -227,4 +231,4 @@ The Output should look something like:
 
 ### The end
 
-That's all for this tutorial, but you can find more commands and examples in the [Reference Guide](command-line-wallet.md).
+That's all for this tutorial, but you can find more commands and examples in the [Reference Guide](../tools/command-line-tool/command-line-wallet.md).

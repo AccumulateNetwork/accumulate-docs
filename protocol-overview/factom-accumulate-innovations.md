@@ -5,9 +5,11 @@ description: >-
   the blockchain technology.
 ---
 
-# Factom/Accumulate Innovations
+# Innovations
 
+The Accumulate Protocol is being built by many of the core developers behind the [Factom Protocol](https://www.factomprotocol.org). Factom was one of the earliest blockchain protocols, being established back in 2014. Over the years there have been many advancements in the blockchain field. Accumulate is being developed to incorporate the early innovations of Factom while also learning from and applying lessons learned from these new advancements.
 
+Here is a quick summary of the innovations and advantages of Factom and Accumulate that greatly aid integrations of real world applications and use cases with the blockchain technology.
 
 * Factom's data based blockchain innovations:
   * User Chains -- Data organized in chains
@@ -22,13 +24,13 @@ description: >-
   * Data management -- data chains are created and controlled by Identities
   * Scratch Space
     * Coordination -- multi-party transaction construction on the blockchain
-    * Limited availability -- Not guaranteed after 20,000 blocks \(about 2.3 weeks\)
+    * Limited availability -- Not guaranteed after 20,000 blocks (about 2.3 weeks)
     * Segregated witness -- Bulky authorizations don’t bloat the blockchain
     * Blockchain rewriting -- Blends advantages of 10 second blocks with 10 minute blocks
   * Performance
-    * Sharding -- Block Validator Chains \(BVCs\) and the Directory Block Chain \(DBC\) run independently
+    * Sharding -- Block Validator Chains (BVCs) and the Directory Block Chain (DBC) run independently
     * Synthetic Transactions -- Transaction processing runs in parallel with blockchain syncronization
-    * BVCs and DBC each run their own consensus \(independently\)
+    * BVCs and DBC each run their own consensus (independently)
     * Tokens are tracked across accounts, one chain per account
     * All accounts can process transactions in parallel
     * All Identity validation can be processed in parallel
@@ -39,4 +41,3 @@ description: >-
   * URLs
     * URL addressing of Accumulate identities, data, transactions, and state Traditional technology stacks easily integrate with URL addressable data and endpoints Much improved user experience Enables integration with browsers
     * Tokens can be sent to human readable URLs rather than odd collections of characters
-
