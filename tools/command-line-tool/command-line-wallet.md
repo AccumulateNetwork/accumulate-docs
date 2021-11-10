@@ -384,7 +384,7 @@ Example of usage:
 key1234                  ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
 ```
 
-\*\*Key Import Mnemonic \*\*
+**Key Import Mnemonic**
 
 ```
 Usage:
