@@ -384,7 +384,7 @@ Example of usage:
 key1234                  ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
 ```
 
-**Key Import Mnemonic **
+\*\*Key Import Mnemonic \*\*
 
 ```
 Usage:
@@ -407,11 +407,12 @@ accumulate key import private [private key hex] [key name]      Import a key and
 
 Example of Usage:
 
-```
-// Some code
+```bash
+> key import private c25288e8262fc23a5e8fc3acd523428b6913d05166f47022abef52acdba47930 benkey4
+{"name":"benkey4","publicKey":"d5b57f10eb85a751094fcf943fc4997e45f0a90955294ca99cc5ee298d301690"}
 ```
 
-**Key Export All **
+**Key Export All**
 
 ```
 Usage:
@@ -426,7 +427,7 @@ Example of usage:
 {"name":"acc://5eed661e873c4437fb31f034cc31e049b49c2260d035b2c6/ACME","privateKey":"abcd9388fcb6c718ef49a7cfa50fa9832a123de63769eabdc025bfb848e2b0a8","publicKey":"1f339c9684aa756d57ae0a37961bfc9aad84b575f22fa378701f3944af095106"}
 ```
 
-**Key Export Private **
+**Key Export Private**
 
 ```
 Usage:
@@ -440,7 +441,7 @@ Example of usage:
 {"name":"key1234","privateKey":"25c8d1b59cf3585b1adcce63ad06b6e67c8ed07d98e128a6324b51c993fdf154","publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}
 ```
 
-**Key Export Mnemonic **
+**Key Export Mnemonic**
 
 ```
 Usage:
@@ -454,7 +455,7 @@ Example of usage:
 mnemonic phrase: humor demand lesson identify rookie road truth beef benefit thank camera tumble
 ```
 
-**Key Export Seed **
+**Key Export Seed**
 
 ```
 accumulate key export seed                       export the seed generated from the mnemonic phrase
