@@ -231,4 +231,4 @@ The Output should look something like:
 
 ### The end
 
-That's all for this tutorial, but you can find more commands and examples in the [Reference Guide](../tools/command-line-tool/command-line-wallet.md).
+That's all for this tutorial, but you can find more commands and examples in the [Reference Guide](broken-reference).

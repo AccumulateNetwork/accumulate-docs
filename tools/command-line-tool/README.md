@@ -6,6 +6,6 @@ The Accumulate Command Line Interface (CLI) Tool allows users to interact with t
 
 To learn how to set up the CLI tool, visit [Getting Started](using-the-command-line.md).
 
-To view a reference of available commands and see examples, visit [CLI Reference](command-line-wallet.md).
+To view a reference of available commands and see examples, visit [CLI Reference](broken-reference).
 
 If you'd like to follow a tutorial of how to use the CLI, visit [CLI Tutorial](../../tutorials/cli-tutorial.md).

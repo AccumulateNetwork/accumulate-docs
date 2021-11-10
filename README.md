@@ -1,3 +1,8 @@
+---
+cover: .gitbook/assets/Accumulate-Facebook-LBK.png
+coverY: 0
+---
+
 # Welcome
 
 Accumulate is a novel blockchain network designed to be hugely scalable while maintaining security. The purpose of this documentation is to give a general overview of Accumulate and to serve as a starting point for new users.
