@@ -1,6 +1,6 @@
 # CLI Reference
 
-The Command-Line Interface Tool allows you to interact with the Accumulate protocol and includes operations around token, identity, and key management. By default, the Command-Line Interface connects to the dedicated testnet server, but you can manually connect to a different server with `-s`
+The Command-Line Interface Tool allows you to interact with the Accumulate network and includes operations around token, identity, and key management. By default, the Command-Line Interface connects to the dedicated testnet server, but you can manually connect to a different server with `-s`
 
 {% hint style="info" %}
 If you'd like to connect to a specific testnet server, you can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulated/blob/develop/networks/networks.go). Or you can use the public testnet server: `https://testnet.accumulatenetwork.io/v1`.
