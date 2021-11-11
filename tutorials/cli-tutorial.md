@@ -1,6 +1,3 @@
----
-coverY: 0
----
 
 # CLI Tutorial
 
@@ -143,7 +140,7 @@ The following section deals will creating keypage and Accumulate Digital Identif
 
 #### Create and list keypage
 
-Prior to creating an ADI, you need to create a keypage which will be required as a parameter for ADI creation.
+Prior to creating an ADI, you need to create a key which will be required as a parameter for ADI creation.
 
 ```bash
 $ ./cli.exe key generate <keyname>
@@ -180,7 +177,17 @@ $ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <lite-account
 If the transaction was successful, the response we receive should look something like this:
 
 ```bash
-{"data":{"codespace":"","hash":"CF79B038261BAFAFD7ADE320C007C628DEE5BBBD5FCD9E5F20A77244C0BA2F2C","txid":"9c8afdb50ea20e0628dbddb65a3de8ae88b63d209cdce2500fe5f4a22c6b522f"},"keyPage":null,"sponsor":"","txid":null,"type":"tokenTx"}
+{
+   "data":{
+      "codespace":"",
+      "hash":"CF79B038261BAFAFD7ADE320C007C628DEE5BBBD5FCD9E5F20A77244C0BA2F2C",
+      "txid":"9c8afdb50ea20e0628dbddb65a3de8ae88b63d209cdce2500fe5f4a22c6b522f"
+   },
+   "keyPage":null,
+   "sponsor":"",
+   "txid":null,
+   "type":"tokenTx"
+}
 ```
 
 #### Create new ADI for another ADI
@@ -194,7 +201,17 @@ $ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <existing-adi
 If the transaction was successful, the response we receive should look something like this:
 
 ```bash
-{"data":{"codespace":"","hash":"94E992C9939E7D2C3BB25A5B488FA574FA40E574C338C94C73FAB86FC2535320","txid":"483b121513e5b3fa40d6e93fb488532ac08aecf942e3aacb55ce56dc3b5d6f58"},"keyPage":null,"sponsor":"","txid":null,"type":"tokenTx"}
+{
+   "data":{
+      "codespace":"",
+      "hash":"94E992C9939E7D2C3BB25A5B488FA574FA40E574C338C94C73FAB86FC2535320",
+      "txid":"483b121513e5b3fa40d6e93fb488532ac08aecf942e3aacb55ce56dc3b5d6f58"
+   },
+   "keyPage":null,
+   "sponsor":"",
+   "txid":null,
+   "type":"tokenTx"
+}
 ```
 
 ### Checking the ADI accounts
@@ -208,8 +225,22 @@ $ ./cli.exe -s https://testnet.accumulatenetwork.io/v1 get <adi-name>
 The Output should look something like:
 
 ```bash
-{"url":"acc://kadi1","wait":false}
-{"data":{"keyBookName":"","keyPageName":"","publicKey":"e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5","url":"acc://kadi1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","txid":null,"type":"adi"}
+{
+   "url":"acc://kadi1",
+   "wait":false
+}{
+   "data":{
+      "keyBookName":"",
+      "keyPageName":"",
+      "publicKey":"e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5",
+      "url":"acc://kadi1"
+   },
+   "keyPage":null,
+   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
+   "sponsor":"",
+   "txid":null,
+   "type":"adi"
+}
 ```
 
 ### Account Create (ADI Token Account)
@@ -224,10 +255,168 @@ $ ./cli.exe -s https://testnet.accumulatenetwork.io/v1 get <adi-name>
 The Output should look something like:
 
 ```bash
-{"url":"acc://ACME","wait":false}
-{"data":{"precision":8,"propertiesUrl":"","symbol":"ACME","url":"acc://ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","txid":null,"type":"token"}
-{"data":{"code":"4","codespace":"","hash":"D5E9E6D0FF32FE700E542215570F3011F05E6DB3EEDD8E45F274FC85AD240386","log":"acc://kadi1 check of tokenAccountCreate transaction failed: no key spec matches signature 0","mempool":"","txid":"4ce5dd3e0e16b0283766a0484eefad9ff4a099edd1cca85805ae1b1ae594104c"},"keyPage":null,"sponsor":"","txid":null,"type":"tokenAccount"}
+{
+   "url":"acc://ACME",
+   "wait":false
+}{
+   "data":{
+      "precision":8,
+      "propertiesUrl":"",
+      "symbol":"ACME",
+      "url":"acc://ACME"
+   },
+   "keyPage":null,
+   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
+   "sponsor":"",
+   "txid":null,
+   "type":"token"
+}{
+   "data":{
+      "code":"4",
+      "codespace":"",
+      "hash":"D5E9E6D0FF32FE700E542215570F3011F05E6DB3EEDD8E45F274FC85AD240386",
+      "log":"acc://kadi1 check of tokenAccountCreate transaction failed: no key spec matches signature 0",
+      "mempool":"",
+      "txid":"4ce5dd3e0e16b0283766a0484eefad9ff4a099edd1cca85805ae1b1ae594104c"
+   },
+   "keyPage":null,
+   "sponsor":"",
+   "txid":null,
+   "type":"tokenAccount"
+}
 ```
+
+### Key Page Create
+
+Create new key page with public key within the wallet
+
+```bash
+$ ./cli.exe -s https://testnet.accumulatenetwork.io/v1 page create <adi URL> <keyname> <new keypage URL> <keyname>
+```
+The Output should look something like:
+
+```bash
+{
+   "​​""data":{
+      "​​""codespace":"",
+      "hash":"494832A75CE0F4995965ABC142C1ED7B2AD1A98167D828B30B9122777EA361E5",
+      "txid":"d8072c4c1ebab505a9eea8298013606c4b77ac6fa3814596b05c2dc2d9d51912"
+   }"​​",
+   "keyPage":null,
+   "sponsor":"",
+   "txid":null,
+   "type":"sigSpec"
+}"​​"
+```
+
+### Get Key Page
+
+You can get an existing Key Page by URL with the following command:
+
+```bash
+$ ./cli.exe get <keypage URL>
+```
+
+The Output should look something like:
+
+```bash
+{
+   "data":{
+      "creditBalance":0,
+      "keys":[
+         {
+            "nonce":0,
+            "publicKey":"32933b518737cd8af65e5ab2e5b56af99e468e21c557278ac9f848ba66907883"
+         }
+      ],
+      "sigSpecId":"0000000000000000000000000000000000000000000000000000000000000000",
+      "type":10,
+      "url":"acc://TEST/Page"
+   },
+   "keyPage":null,
+   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
+   "sponsor":"",
+   "txid":null,
+   "type":"sigSpec"
+}
+```
+
+### Key Book Create
+
+You can create a key book after creating a key page. Below is the command to create a keybook.
+
+```bash
+$ ./cli.exe book create <adi URL> <keyname> <new keybook URL> <existing keypage URL>
+```
+The Output should look something like:
+
+```bash
+2021/11/11 16:26:14
+        Transaction Identifier  :       dd351321ca42568b9cc7e3a8faa88481e0e7e6759f4fd6b3976950b74865623a
+        Tendermint Reference    :       71d231c0645a74c7ea21347bdcb54610e946f8a99eff0f48562634c14a928e27
+        Error code              :       ok
+```
+
+### Get Key Book
+
+You can get details of existing keybook URL with the following command:
+
+```bash
+$ ./cli.exe book get <keybook URL>
+```
+The Output should look something like:
+
+```bash
+{
+   "data":{
+      "sigSpecId":[
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0,
+         0
+      ],
+      "sigSpecs":[
+         "aabae67381f844ebe0cb59fa9ed73db8ad6f3e1e9d1d9332d784d0fb0344e09c"
+      ],
+      "type":11,
+      "url":"acc://testadi1/keybook1"
+   },
+   "keyPage":null,
+   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
+   "sponsor":"",
+   "txid":null,
+   "type":"sigSpecGroup"
+}
+```
+
 
 ### The end
 
