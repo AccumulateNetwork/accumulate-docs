@@ -568,14 +568,37 @@ curl -X POST --data '{
     "id": 0,
     "method": "sig-spec",
     "params": {
-        "url": "____"
+        "url": "acc://testadi1/keypage1"
     }
-}' -H 'content-type:application/json;' 127.0.0.1:35554/v1
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
 ```
 
 **Example Response**
 
 ```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "sigSpec",
+        "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+        "data": {
+            "type": 10,
+            "url": "acc://testadi1/keypage1",
+            "sigSpecId": "a0da002bf84abf1b88682be0131bc148201dcd38c360ed93a5e71d20408bf054",
+            "creditBalance": 0,
+            "keys": [
+                {
+                    "publicKey": "1c3681b851c1996b5768b2a7c16ea592d18b89286373c6f98e5414e0fb145c5f",
+                    "nonce": 0
+                }
+            ]
+        },
+        "sponsor": "",
+        "keyPage": null,
+        "txid": null
+    },
+    "id": 0
+}
 ```
 
 ###
@@ -636,11 +659,71 @@ _**NOTE: Key book = ****`sig-spec-group`****. Method names will be updated soon.
 **Example Request**
 
 ```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "sig-spec-group",
+    "params": {
+        "url": "acc://testadi1/keybook1"
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v1
 ```
 
 **Example Response**
 
 ```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "sigSpecGroup",
+        "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+        "data": {
+            "type": 11,
+            "url": "acc://testadi1/keybook1",
+            "sigSpecId": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "sigSpecs": [
+                "aabae67381f844ebe0cb59fa9ed73db8ad6f3e1e9d1d9332d784d0fb0344e09c"
+            ]
+        },
+        "sponsor": "",
+        "keyPage": null,
+        "txid": null
+    },
+    "id": 0
+}
 ```
 
 ###
