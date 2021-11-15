@@ -280,6 +280,21 @@ The Output should look something like:
         1       :       acc://testadi1/keypage1
 ```
 
+### How to send Credits
+
+You can send credits using a lite account or adi key page to another lite account or adi key page.
+
+```bash
+$ ./cli.exe credits <lite account URL> <lite account or Key Page URL> <amount>
+```
+The Output should look something like:
+
+```bash
+        Transaction Identifier  :       81ddc13f2993f812bf41c895b5b485aeaf46095bc9695e0f30c49833e5f5450f
+        Tendermint Reference    :       5fa567cef491714601b86f28bbdd0014130693a3e582fefeed9c1fb2886ece2b
+        Error code              :       ok
+```
+
 
 ### The end
 
