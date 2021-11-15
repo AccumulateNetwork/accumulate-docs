@@ -45,25 +45,15 @@ $ ./cli account get <your account address> -s https://testnet.accumulatenetwork.
 
 We should get an output that looks something like this:
 
-```json
-{
-  "data": {
-    "balance": "1000000000",
-    "creditBalance": "0",
-    "keyBookUrl": "",
-    "nonce": 0,
-    "tokenUrl": "acc://ACME",
-    "txCount": 2,
-    "url": "acc://your-account/ACME"
-  },
-  "keyPage": null,
-  "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
-  "sponsor": "",
-  "type": "anonTokenAccount"
-}
+```bash
+        Account Url     :       acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME
+        Token Url       :       acc://ACME
+        Balance         :       10 ACME
+        Credits         :       0
+        Nonce           :       0
 ```
 
-Looking at the above, we can see under `"balance"` that we have `1000000000`, which is equivalent to 10 ACME tokens.
+Looking at the above, we can see under `"balance"` that is 10 ACME tokens.
 
 ### Sending tokens
 
@@ -81,17 +71,10 @@ $ ./cli tx create <sending account> <receiving account> <amount to send> -s http
 
 We should receive a response that looks like this:
 
-```json
-{
-  "data": {
-    "codespace": "",
-    "hash": "70DAAF2DA6373FE2DB8248FE743BB87D595B58CD61F7DAB8F44AFC6CF825169C",
-    "txid": "28f01f719ce177e004bfb875c9c0c5c29a166b61cf2ec8c024f3686b6bb4ae56"
-  },
-  "keyPage": null,
-  "sponsor": "",
-  "type": "tokenTx"
-}
+```bash
+        Transaction Identifier  :       4a34fbf2efb1e374890dda349af8e106e4af4f7b38f4944bb2cd412d17a9d30f
+        Tendermint Reference    :       b35694f3cf40ab1e61fbb69fc0a9a94f8c5f6a6e83f3ee54ff54366729fdce7f
+        Error code              :       ok
 ```
 
 ### Checking transaction info
@@ -177,17 +160,9 @@ $ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <lite-account
 If the transaction was successful, the response we receive should look something like this:
 
 ```bash
-{
-   "data":{
-      "codespace":"",
-      "hash":"CF79B038261BAFAFD7ADE320C007C628DEE5BBBD5FCD9E5F20A77244C0BA2F2C",
-      "txid":"9c8afdb50ea20e0628dbddb65a3de8ae88b63d209cdce2500fe5f4a22c6b522f"
-   },
-   "keyPage":null,
-   "sponsor":"",
-   "txid":null,
-   "type":"tokenTx"
-}
+        Transaction Identifier  :       1f3ce3f4f61b1b1b5b2a0b0436ffd22dc549eb222df84b4b6941de5087aab5a5
+        Tendermint Reference    :       d7e3eddfbcd56c6f7c4635dddaa84b3a8f788da522ab8fa927b8ff6c2c02b98c
+        Error code              :       ok
 ```
 
 #### Create new ADI for another ADI
@@ -201,17 +176,9 @@ $ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <existing-adi
 If the transaction was successful, the response we receive should look something like this:
 
 ```bash
-{
-   "data":{
-      "codespace":"",
-      "hash":"94E992C9939E7D2C3BB25A5B488FA574FA40E574C338C94C73FAB86FC2535320",
-      "txid":"483b121513e5b3fa40d6e93fb488532ac08aecf942e3aacb55ce56dc3b5d6f58"
-   },
-   "keyPage":null,
-   "sponsor":"",
-   "txid":null,
-   "type":"tokenTx"
-}
+        Transaction Identifier  :       1074b68ae7c1ca4d1cf5f8f87f84cc4eb08ac916719b79547c9f5e1c451ff626
+        Tendermint Reference    :       8b96ced206dd2252b00ee0b5e5e8814bd761f3cee1fb999dd0151aacf357c11c
+        Error code              :       ok
 ```
 
 ### Checking the ADI accounts
@@ -225,22 +192,8 @@ $ ./cli.exe -s https://testnet.accumulatenetwork.io/v1 get <adi-name>
 The Output should look something like:
 
 ```bash
-{
-   "url":"acc://kadi1",
-   "wait":false
-}{
-   "data":{
-      "keyBookName":"",
-      "keyPageName":"",
-      "publicKey":"e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5",
-      "url":"acc://kadi1"
-   },
-   "keyPage":null,
-   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
-   "sponsor":"",
-   "txid":null,
-   "type":"adi"
-}
+        ADI Url         :       acc://xyzadi
+        Key Book Url    :
 ```
 
 ### Account Create (ADI Token Account)
@@ -248,42 +201,15 @@ The Output should look something like:
 You can create a token account for an ADI
 
 ```bash
-$ ./cli.exe -s https://testnet.accumulatenetwork.io/v1 get <adi-name>
-./cli.exe  -s https://testnet.accumulatenetwork.io/v1 account create <adi-name> <wallet-key> <key index (optional)> <key height (optional)> <token account URL> <token URL> <keyBook (optional)>
+$ ./cli.exe  account create <adi-name> <wallet-key> <key index (optional)> <key height (optional)> <token account URL> <token URL> <keyBook (optional)>
 ```
 
 The Output should look something like:
 
 ```bash
-{
-   "url":"acc://ACME",
-   "wait":false
-}{
-   "data":{
-      "precision":8,
-      "propertiesUrl":"",
-      "symbol":"ACME",
-      "url":"acc://ACME"
-   },
-   "keyPage":null,
-   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
-   "sponsor":"",
-   "txid":null,
-   "type":"token"
-}{
-   "data":{
-      "code":"4",
-      "codespace":"",
-      "hash":"D5E9E6D0FF32FE700E542215570F3011F05E6DB3EEDD8E45F274FC85AD240386",
-      "log":"acc://kadi1 check of tokenAccountCreate transaction failed: no key spec matches signature 0",
-      "mempool":"",
-      "txid":"4ce5dd3e0e16b0283766a0484eefad9ff4a099edd1cca85805ae1b1ae594104c"
-   },
-   "keyPage":null,
-   "sponsor":"",
-   "txid":null,
-   "type":"tokenAccount"
-}
+        Transaction Identifier  :       bcd5cc5fade48642082be7449b9d29208755c48365e79d181390375442dea6c3
+        Tendermint Reference    :       011600eb026031530f06b48eabac9d575dc02e0e88ee300c28d25aaf9fd4d0e4
+        Error code              :       ok
 ```
 
 ### Key Page Create
@@ -314,31 +240,14 @@ The Output should look something like:
 You can get an existing Key Page by URL with the following command:
 
 ```bash
-$ ./cli.exe get <keypage URL>
+$ ./cli.exe page get <keypage URL>
 ```
 
 The Output should look something like:
 
 ```bash
-{
-   "data":{
-      "creditBalance":0,
-      "keys":[
-         {
-            "nonce":0,
-            "publicKey":"32933b518737cd8af65e5ab2e5b56af99e468e21c557278ac9f848ba66907883"
-         }
-      ],
-      "sigSpecId":"0000000000000000000000000000000000000000000000000000000000000000",
-      "type":10,
-      "url":"acc://TEST/Page"
-   },
-   "keyPage":null,
-   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
-   "sponsor":"",
-   "txid":null,
-   "type":"sigSpec"
-}
+        Index   Nonce   Public Key                                                              Key Name
+        0       0       ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
 ```
 
 ### Key Book Create
@@ -367,54 +276,8 @@ $ ./cli.exe book get <keybook URL>
 The Output should look something like:
 
 ```bash
-{
-   "data":{
-      "sigSpecId":[
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0,
-         0
-      ],
-      "sigSpecs":[
-         "aabae67381f844ebe0cb59fa9ed73db8ad6f3e1e9d1d9332d784d0fb0344e09c"
-      ],
-      "type":11,
-      "url":"acc://testadi1/keybook1"
-   },
-   "keyPage":null,
-   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
-   "sponsor":"",
-   "txid":null,
-   "type":"sigSpecGroup"
-}
+        Height          Key Page Url
+        1       :       acc://testadi1/keypage1
 ```
 
 
