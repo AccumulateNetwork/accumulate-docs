@@ -280,6 +280,106 @@ The Output should look something like:
         1       :       acc://testadi1/keypage1
 ```
 
+### Key Page Hierarchy
+
+In this section you will learn to create a keybook with multiple keypages and managing the keypages with hierarchy of keys that allow to participate in the execution of transactions.
+A Key Book is a prioritized list of Key Pages, where the first page in the list is the highest priority and the last page is the lowest priority. The first key page can modify any key page, but the last key page can only modify itself.
+
+Below are the steps that you need to follow to generate keys, create ADI, add pages to the book and finally add/update keys:
+
+#### Generate Keys
+
+You create new keys or use existing keys. In this example new set of keys are created
+
+```bash
+$ ./cli.exe key generate keytest-0-0
+$ ./cli.exe key generate keytest-1-0
+$ ./cli.exe key generate keytest-1-1
+$ ./cli.exe key generate keytest-2-0
+$ ./cli.exe key generate keytest-2-1
+```
+
+#### Create ADI
+
+You can create an ADI using one of the key generated in the preious step and specifying the keybook and keypage name as parameters as shown below:
+
+```bash
+$ ./cli.exe adi create <lite account URL> keytestadi keytest-0-0 book page0
+```
+
+The Output should look something like:
+
+```bash
+        Transaction Identifier  :       c0ddc311cd19fb01bb1f05959191588f4507f288b1669973b91aa183a3063a7c
+        Tendermint Reference    :       3f5b2a8af0e90c1ed1e3612a26b8612318de4587ea0b37cf7258005ebf02d646
+        Error code              :       ok
+```
+
+#### Add keypages to the keybook
+
+The next step is to add keypages to the keybook under the ADI which was created in the previous step. Below are the sample command and output:
+
+```bash
+$ ./cli.exe page create keytestadi/book keytest-0-0 keytestadi/page1 keytest-1-0
+```
+```bash
+{"data":{"codespace":"","hash":"87541A6483FF29779AB8528B9DA14BC5C747EB1F379D451AA76BF988E54B1777","txid":"81c2aa87078df1bcd368297a3f45a5324b27599c848b672650e6138ba1e4265e"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"}            :       ok
+```
+
+```bash
+$ ./cli.exe page create keytestadi/book keytest-0-0 keytestadi/page2 keytest-2-0
+```
+```bash
+{"data":{"codespace":"","hash":"8A9B68686333AA64034FCFB1762DF4AA8DA7C12C9D9688B8DA9CA1F9A226E012","txid":"024d483ecfe44f1b8a76292ad6cd14847a3cec2a54866f3dc3e6f69620d32788"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"}           :       ok
+```
+
+#### Adding a key to page1 using a page1 key
+
+You can add/modify a key to page1 using the key at the same priority level. You can try the below command to implement the same:
+
+```bash
+$ ./cli.exe page key add keytestadi/page1 keytest-1-0 1 1 keytest-1-1
+```
+
+The Output should look something like:
+
+```bash
+        Transaction Identifier  :       f61b5344e863141f25d34c2f40d8d1e2bd4cd29687c5f98822f91e9e39500682
+        Tendermint Reference    :       2572c943abfc91b7e2192d9522657f5fffc8f4da1df55d5d0807ebca6f67faf7
+        Error code              :       ok
+```
+
+#### Adding a key to page2 using a page1 key
+
+You can add/modify a key to page2 using the key at a higher priority level. You can try the below command to add a key to page2 using a page1 key:
+
+```bash
+$ ./cli.exe page key add keytestadi/page2 keytest-1-0 1 1 keytest-2-1
+```
+
+The Output should look something like:
+
+```bash
+        Transaction Identifier  :       65dc57255960b0880dfccf5162bab0231ef1fb4b7ec09f72dc256ca9eec105b0
+        Tendermint Reference    :       106d8eb1a87912ed94eff8a77a3e470f1cfc97a1e31d2223105e120e38a16869
+        Error code              :       ok
+```
+
+#### Adding a key to page0 using a page1 key
+
+You cannot add/modify a higher priority level page with a lower level key. Below is the command to attempt the same which throws an error.
+
+```bash
+$ ./cli.exe page key add keytestadi/page0 keytest-1-0 1 1 keytest-1-1
+```
+
+The Output should throw error something like:
+
+```bash
+jsonrpc2.Error{Code:ErrorCode{-32603:"Internal error"}, Message:"Internal error"}
+```
+
+
 ### How to send Credits
 
 You can send credits using a lite account or adi key page to another lite account or adi key page.
