@@ -64,34 +64,37 @@ accumulate account get [url]                  Get anon token account by URL
 Example of usage:
 
 ```bash
-> get acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
+> account get acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACMEE
 ```
 
-```json
-//Response:
-{
-  "data": {
-    "balance": "1000000000",
-    "creditBalance": "0",
-    "keyBookUrl": "",
-    "nonce": 0,
-    "tokenUrl": "acc://ACME",
-    "txCount": 1,
-    "url": "acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME"
-  },
-  "keyPage": null,
-  "mdRoot": "0000000000000000000000000000000000000000000000000000000000000000",
-  "sponsor": "",
-  "type": "anonTokenAccount"
-}
+```bash
+        Account Url     :       acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME
+        Token Url       :       acc://ACME
+        Balance         :       19.9 ACME
+        Credits         :       0
+        Nonce           :       0
 ```
 
 Example of usage:
 
 ```bash
 > get acc://ADITEST/TOKENS/ACME
-{"url":"ADITEST/TOKENS","wait":false}
-{"data":{"balance":"1000000000","keyBookUrl":"","tokenUrl":"acc://ACME","txCount":1,"url":"acc://ADITEST/TOKENS"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"tokenAccount"}
+{
+   "url":"ADITEST/TOKENS",
+   "wait":false
+}{
+   "data":{
+      "balance":"1000000000",
+      "keyBookUrl":"",
+      "tokenUrl":"acc://ACME",
+      "txCount":1,
+      "url":"acc://ADITEST/TOKENS"
+   },
+   "keyPage":null,
+   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
+   "sponsor":"",
+   "type":"tokenAccount"
+}
 ```
 
 **Account generate**
@@ -105,7 +108,7 @@ Example of usage:
 
 ```bash
 > account generate
-acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
+acc://26ddb87b5d12236f752680c97443a0212a93df4bdd7d784a/ACME :   3adc1fcd47c711e662b94335b1f270bd07bf27c279f65d5f754e091cc1e95b35
 ```
 
 #### Account list
@@ -164,8 +167,8 @@ accumulate adi get [URL]                      Get existing ADI by URL
 Example of usage:
 
 ```bash
-> adi get
-{"data":{"keyBookName":"","keyPageName":"","publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5","url":"acc://ADITEST"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"adi"}
+        ADI Url         :       acc://ADITEST
+        Key Book Url    :
 ```
 
 #### ADI create (Create New ADI from Lite Account)
@@ -179,7 +182,10 @@ Example of usage:
 
 ```bash
 > adi create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME ADITEST key1234 ADIKEYBOOK1 ADIKEYPAGE1
-{"data":{"codespace":"","hash":"A656742EACDDB73933D9AF7598DC29AEDFA7060E458DF829A58E70B03BCC878D","txid":"c6d726ac34d1b203b3c4d18233abbfdfa34d8f0eb3f3dcfe2f7aafc1fe16c178"},"keyPage":null,"sponsor":"","type":"tokenTx"}
+2021/11/18 14:42:59
+        Transaction Identifier  :       48217eb91f3a75fe22beddfba5166a34661d2dfd9b7ae222e8dccbe5be7ce310
+        Tendermint Reference    :       df2d36bfbfeaa5b42307bad269d163c18dbd710c2c961194728e16b93664a387
+        Error code              :       ok
 ```
 
 #### ADI create (Create new ADI for another ADI)
@@ -193,7 +199,10 @@ Example of usage:
 
 ```bash
 > adi create ADITEST key1234 0 1 ADITEST2 key5678 ADIKEYBOOK2 ADIKEYPAGE2
-{"data":{"codespace":"","hash":"D196F92987F6EB5E73838D8B62AB782007E0363003BC9B40F52AC3DAEA18A66F","txid":"004f0df62645f5a128370528123eab320e79ecad5b74110f12d6f74de1860078"},"keyPage":null,"sponsor":"","type":"tokenTx"}
+2021/11/19 14:50:30
+        Transaction Identifier  :       c6f0b82a557fe1e3c77484c188aa2978a7a5974bc7252fe33eb5577fabd4a290
+        Tendermint Reference    :       1e47824134f333f8d3d0b9d84a413583a57ba3d9cede00d53462c58fb0e9f9ef
+        Error code              :       ok
 ```
 
 ### Book
@@ -219,8 +228,8 @@ Example of usage:
 
 ```bash
 > get ADITEST/ADIKEYBOOK1
-{"url":"ADITEST/ADIKEYBOOK1","wait":false}
-{"data":{"sigSpecId":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"sigSpecs":["df9531256df68eed2aa496b84bfbd7b6f989bdd08088d62dbbfc85451b820ac8"],"type":11,"url":"acc://ADITEST/ADIKEYBOOK1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpecGroup"}
+        Height          Key Page Url
+        1       :       acc://ADITEST/ADIKEYBOOK1
 ```
 
 **Key Book Create**
@@ -234,7 +243,9 @@ Example of usage:
 
 ```bash
 > key book create ADITEST key1234 1 1 ADITEST/KEYBOOK1.1 ADITEST/KEYPAGE1.1 ADITEST/KEYPAGE1.2 ADITEST/KEYPAGE1.3
-{"data":{"code":"2","codespace":"","hash":"CD8322D22945E81142AAF38459FD99572AF20FABF8832827D6C0A1933EC8F813","log":"acc://ADITEST check of createSigSpecGroup transaction failed: invalid sig spec index","mempool":"","txid":"4fb9e1ee7bec80a664ac73ffcdde84754ce0c003dd3a710a0cb9b541f806ba73"},"keyPage":null,"sponsor":"","type":"sigSpecGroup"}
+        Transaction Identifier  :       dd351321ca42568b9cc7e3a8faa88481e0e7e6759f4fd6b3976950b74865623a
+        Tendermint Reference    :       71d231c0645a74c7ea21347bdcb54610e946f8a99eff0f48562634c14a928e27
+        Error code              :       ok
 ```
 
 ### Completion
@@ -278,7 +289,10 @@ Example of usage:
 
 ```bash
 > adi directory ADITEST
-{"data":{"entries":["acc://ADITEST/ADIKEYBOOK1","acc://ADITEST/ADIKEYPAGE1", “acc://ADITEST/TOKENS"]},"keyPage":null,"sponsor":"","type":"directory"}
+        ADI Entries
+        acc://ADITEST1/ssg0 (Key Book)
+        acc://ADITEST1/sigspec0 (Key Page)
+
 ```
 
 ### Faucet
@@ -298,7 +312,9 @@ Example of usage:
 
 ```bash
 > accumulate faucet acc://3ed6b2003242d2166508e117a2a66f8ca742b72e8d90d736/ACME
-{"data":{"codespace":"","hash":"C89966F8435FE6BC195DEB817CBCCBC3D9FF210EDA2B2B60F4CEC5E4E714F9A4","txid":"1d6138b453b7bee86f70e3012c2f0b4264dd631f6551965fe39b8bd1da08bb49"},"keyPage":null,"sponsor":"","type":""}
+        Transaction Identifier  :       b72669697b6641f71595df9df0381599fdff5429171772d9f79e75533b7e5f57
+        Tendermint Reference    :       36fde0e08fec2b123e8eb1876827d60be237e8b7c15ddb1505f4091bd4cba284
+        Error code              :       ok
 ```
 
 ### Help
@@ -367,7 +383,7 @@ Example of usage:
 
 ```bash
 > key generate key1234
-ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
+key1234 :        e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12
 ```
 
 **Key List**
@@ -381,7 +397,8 @@ Example of usage:
 
 ```bash
 > key list
-key1234                  ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
+Public Key                                                              Key name
+e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12        key1234
 ```
 
 **Key Import Mnemonic**
@@ -409,7 +426,8 @@ Example of Usage:
 
 ```bash
 > key import private c25288e8262fc23a5e8fc3acd523428b6913d05166f47022abef52acdba47930 benkey4
-{"name":"benkey4","publicKey":"d5b57f10eb85a751094fcf943fc4997e45f0a90955294ca99cc5ee298d301690"}
+        name            :benkey4
+        public key      :d5b57f10eb85a751094fcf943fc4997e45f0a90955294ca99cc5ee298d301690
 ```
 
 **Key Export All**
@@ -423,8 +441,12 @@ Example of usage:
 
 ```bash
 > key export all
-{"name":"MarianP","privateKey":"e3e6c72c16d848bd54fa50ec4aa43ae5832ad70da3cd14705dac567de9192e86","publicKey":"0c5ebf71e4068306a5916309717af8c25ad17cb376fe9e96957168588a4048f1"}
-{"name":"acc://5eed661e873c4437fb31f034cc31e049b49c2260d035b2c6/ACME","privateKey":"abcd9388fcb6c718ef49a7cfa50fa9832a123de63769eabdc025bfb848e2b0a8","publicKey":"1f339c9684aa756d57ae0a37961bfc9aad84b575f22fa378701f3944af095106"}
+name                    :       key101
+        private key     :       23ab78aa778b044045e8287aca3347fe4e04d5060c5dbeb214661ef0bf2eec89
+        public key      :       e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5
+name                    :       key102
+        private key     :       7302b5758d15c5ef9eec4ba7182d3a18ba10776f8bb921945f3766028260b3f8
+        public key      :       e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12
 ```
 
 **Key Export Private**
@@ -437,8 +459,10 @@ accumulate key export private [key name]                      export the private
 Example of usage:
 
 ```bash
-> key export private 1234
-{"name":"key1234","privateKey":"25c8d1b59cf3585b1adcce63ad06b6e67c8ed07d98e128a6324b51c993fdf154","publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}
+> key export private key1234
+name                    :       key1234
+        private key     :       7302b5758d15c5ef9eec4ba7182d3a18ba10776f8bb921945f3766028260b3f8
+        public key      :       e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12
 ```
 
 **Key Export Mnemonic**
@@ -497,8 +521,8 @@ Example of usage:
 
 ```bash
 > get ADITEST/ADIKEYPAGE1
-{"url":"ADITEST/ADIKEYPAGE1","wait":false}
-{"data":{"creditBalance":0,"keys":[{"nonce":0,"publicKey":"ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5"}],"sigSpecId":"d58e359c82d3efdbb38e355cfb5f50b42ee5fefda90582b4ef571b9f5478552e","type":10,"url":"acc://ADITEST/ADIKEYPAGE1"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"sigSpec"}
+        Index   Nonce   Public Key                                                              Key Name
+        0       0       ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
 ```
 
 **Key Page Create**
@@ -512,7 +536,17 @@ Example of usage:
 
 ```bash
 > key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42
-{"data":{"codespace":"","hash":"1893687A65DAEBA8730C914750A38724FADEAD81B49913EC614BC4F150C420C3","txid":"a71101eb4636d46aa4b31db4cd28364091530b4ce1cfa1b22a0955a0bdbb2186"},"keyPage":null,"sponsor":"","type":"sigSpec"}
+{
+   "​​""data":{
+      "​​""codespace":"",
+      "hash":"494832A75CE0F4995965ABC142C1ED7B2AD1A98167D828B30B9122777EA361E5",
+      "txid":"d8072c4c1ebab505a9eea8298013606c4b77ac6fa3814596b05c2dc2d9d51912"
+   }"​​",
+   "keyPage":null,
+   "sponsor":"",
+   "txid":null,
+   "type":"sigSpec"
+}"
 ```
 
 **Page Key Update**
@@ -525,7 +559,9 @@ Example of usage:
 
 ```bash
 > page key update ADITEST/ADIKEYPAGE1 key5678 1 1 key5678 key1234
-{"data":{"code":"2","codespace":"","hash":"15C1D6A9014CB99C3F7FBD804E87EA644126537B4D5F342BC93A5D0DEDBE0B5B","log":"acc://ADITEST/ADIKEYPAGE1 check of updateKeyPage transaction failed: invalid sig spec index","mempool":"","txid":"4d23f95a0201e4589d26c6b28f68c6fc658d05f74997c1ebd8c3711b574e963a"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"
+        Transaction Identifier  :       f61b5344e863141f25d34c2f40d8d1e2bd4cd29687c5f98822f91e9e39500682
+        Tendermint Reference    :       2572c943abfc91b7e2192d9522657f5fffc8f4da1df55d5d0807ebca6f67faf7
+        Error code              :       ok
 ```
 
 **Page Key Add**
@@ -538,7 +574,9 @@ Example of usage:
 
 ```bash
 > page key add ADITEST/ADIKEYPAGE1 key1234 1 1 key5678
-{"data":{"code":"2","codespace":"","hash":"FF52531081161330E1B52F1A4E9108D6782495495A909176F7E9650DE01BE8C0","log":"acc://ADITEST/ADIKEYPAGE1 check of updateKeyPage transaction failed: invalid sig spec index","mempool":"","txid":"83d357c824a444014eafe1b8a8a1ea972d831d91f1258a1b2d46618a7450c16b"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"
+        Transaction Identifier  :       f61b5344e863141f25d34c2f40d8d1e2bd4cd29687c5f98822f91e9e39500682
+        Tendermint Reference    :       2572c943abfc91b7e2192d9522657f5fffc8f4da1df55d5d0807ebca6f67faf7
+        Error code              :       ok
 ```
 
 **Page Key Remove**
@@ -551,7 +589,9 @@ Example of usage:
 
 ```bash
 > page key remove ADITEST/ADIKEYPAGE1 key1234 1 1 key1234
-{"data":{"code":"2","codespace":"","hash":"5FDCB8ACBF729C3F162DB5BE22EACD43796E43761BA6E9CD09DCC3F5EE468D05","log":"acc://ADITEST/ADIKEYPAGE1 check of updateKeyPage transaction failed: invalid sig spec index","mempool":"","txid":"99084b8865ec9503dd7f1c752f2243036523bff3548af134a8fa0b5fa3535c70"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"}
+        Transaction Identifier  :       f61b5344e863141f25d34c2f40d8d1e2bd4cd29687c5f98822f91e9e39500682
+        Tendermint Reference    :       2572c943abfc91b7e2192d9522657f5fffc8f4da1df55d5d0807ebca6f67faf7
+        Error code              :       ok
 ```
 
 ### Tx
@@ -580,7 +620,33 @@ Example of usage:
 
 ```shell
 > tx get 46469416c03b2b386e6c10da8e873f0d61392fc1e8384b63123d8d1e8a7326dd
-{"data":{"from":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","to":[{"amount":1000000000,"txid":"60d4c56055876cfa955721ff8613d9e372de02167951f360e4bcb27d2b1efb48","url":"acc://e3f53a4582a9193914effacbd2ef5ad8105a61cdf78ee414/ACME"}],"txid":"46469416c03b2b386e6c10da8e873f0d61392fc1e8384b63123d8d1e8a7326dd"},"keyPage":{"height":1,"index":0},"sig":"ce03ba0e52cdd4ce140de75f51727e2c40b1cc1f141e16916ad5f3a435935b81e99e43ce15274f973e1a06dab2dc174567f0544e1dfec39b516ef095fbf8670f","signer":{"nonce":1635714053572291600,"publicKey":"d03c683332ed36add8d0eeb9eee9e2669b5565decec03acc43d762f3f79f49c2"},"sponsor":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","status":{"code":"0"},"type":"tokenTx"}
+{
+   "data":{
+      "from":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+      "to":[
+         {
+            "amount":1000000000,
+            "txid":"60d4c56055876cfa955721ff8613d9e372de02167951f360e4bcb27d2b1efb48",
+            "url":"acc://e3f53a4582a9193914effacbd2ef5ad8105a61cdf78ee414/ACME"
+         }
+      ],
+      "txid":"46469416c03b2b386e6c10da8e873f0d61392fc1e8384b63123d8d1e8a7326dd"
+   },
+   "keyPage":{
+      "height":1,
+      "index":0
+   },
+   "sig":"ce03ba0e52cdd4ce140de75f51727e2c40b1cc1f141e16916ad5f3a435935b81e99e43ce15274f973e1a06dab2dc174567f0544e1dfec39b516ef095fbf8670f",
+   "signer":{
+      "nonce":1635714053572291600,
+      "publicKey":"d03c683332ed36add8d0eeb9eee9e2669b5565decec03acc43d762f3f79f49c2"
+   },
+   "sponsor":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+   "status":{
+      "code":"0"
+   },
+   "type":"tokenTx"
+}
 ```
 
 #### Tx Create
@@ -595,7 +661,9 @@ Example of usage:
 ```bash
 > tx create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME 500000000
 5917639ec8c66576b8e44797cfc198f0b85b0cbe4ab29ac8a1e8413a7b779f888d378ef83bcd38edf6023ed77a4e422059770da9d198ead8fd76245a353ced61
-{"data":{"codespace":"","hash":"AD97A5F97FFCBCD713690216897DAA2FB4E6194F9C6F5E4279F57DD6895082DF","txid":"1968a55178de4ed410c859d8bd34a0bec311cd01fd706b165e9242c315273232"},"keyPage":null,"sponsor":"","type":"tokenTx"}
+        Transaction Identifier  :       4a6683f35ac3191a482e606ac37e6224ef325936d045252af7bf7c5bd9970dfb
+        Tendermint Reference    :       7745ebf61e42ee1b9e83b18a05125031d78f3bfdfe460e7be58f3c9296769e6a
+        Error code              :       ok
 ```
 
 #### Tx History
@@ -609,5 +677,35 @@ Example of usage:
 
 ```bash
 > tx history acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME 0 1
-{"data":[{"data":{"amount":"1000000000","from":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","to":"acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME","tokenURL":"acc://ACME","txid":"8aef025e2d4e90d75f703c51aae321e44eb26c2f79de0034ac7bb7aae4c00d94"},"keyPage":{"height":1,"index":0},"sig":"ef8d401dc1022131b5cc3083c3453cfb707fa68d06be47c584e9c38e8e04622f20afbddaba5e664595887483848dc109ca5492e0182686d2ac59c95710a23805","signer":{"nonce":72,"publicKey":"7408e7dc62924a98b6c24fa814eec2d40363f9769875613d4d5ee04fdc1db94a"},"sponsor":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","status":{"code":"0"},"type":"syntheticTokenDeposit"}],"limit":1,"start":0,"total":2,"type":"tokenAccountHistory"}
+{
+   "data":[
+      {
+         "data":{
+            "amount":"1000000000",
+            "from":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+            "to":"acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME",
+            "tokenURL":"acc://ACME",
+            "txid":"8aef025e2d4e90d75f703c51aae321e44eb26c2f79de0034ac7bb7aae4c00d94"
+         },
+         "keyPage":{
+            "height":1,
+            "index":0
+         },
+         "sig":"ef8d401dc1022131b5cc3083c3453cfb707fa68d06be47c584e9c38e8e04622f20afbddaba5e664595887483848dc109ca5492e0182686d2ac59c95710a23805",
+         "signer":{
+            "nonce":72,
+            "publicKey":"7408e7dc62924a98b6c24fa814eec2d40363f9769875613d4d5ee04fdc1db94a"
+         },
+         "sponsor":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+         "status":{
+            "code":"0"
+         },
+         "type":"syntheticTokenDeposit"
+      }
+   ],
+   "limit":1,
+   "start":0,
+   "total":2,
+   "type":"tokenAccountHistory"
+}
 ```
