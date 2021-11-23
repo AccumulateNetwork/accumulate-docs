@@ -3,13 +3,12 @@
 
 The following tutorial will help you get started with the CLI tool and understand how it works. We'll run through a few basic commands to create and fund an account, and send tokens between the two.
 
-{% hint style="warning" %}
 This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [CLI Setup](../tools/command-line-tool/using-the-command-line.md) to learn how.
 {% endhint %}
 
-### Creating an anonymous token account
+### Creating a lite token account
 
-The first step is to create an anonymous token account using the `account generate` command. This command will create an account URL and corresponding private key, which will be stored locally on your computer. Since this command only generates an account locally, we don't need to worry about connecting to a node.
+The first step is to create a lite token account using the `account generate` command. This command will create an account URL and corresponding private key, which will be stored locally on your computer. Since this command only generates an account locally, we don't need to worry about connecting to a node.
 
 ```bash
 $ ./cli account generate
@@ -149,12 +148,12 @@ e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5        <key nam
 20bb303068330cc761c35bb6425d269c7b4462c0daf78dc7dd15bcb51b496e05        <key name>
 ```
 
-#### Create new ADI using lite accounts
+#### Create new ADI using lite token accounts
 
-Now you can create an ADI using lite/annonymous account which was earlier described in the tutorial. The other parameters are the key name which was created just now, and name of the new ADI.
+Now you can create an ADI using lite token account which was earlier described in the tutorial. The other parameters are the key name which was created just now, and name of the new ADI.
 
 ```bash
-$ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <lite-account-address> <new-adi-name> <key name>
+$ ./cli.exe  -s https://testnet.accumulatenetwork.io/v1 adi create <lite-token-account-address> <new-adi-name> <key name>
 ```
 
 If the transaction was successful, the response we receive should look something like this:
@@ -304,7 +303,7 @@ $ ./cli.exe key generate keytest-2-1
 You can create an ADI using one of the key generated in the preious step and specifying the keybook and keypage name as parameters as shown below:
 
 ```bash
-$ ./cli.exe adi create <lite account URL> keytestadi keytest-0-0 book page0
+$ ./cli.exe adi create <lite token account URL> keytestadi keytest-0-0 book page0
 ```
 
 The Output should look something like:
@@ -382,10 +381,10 @@ jsonrpc2.Error{Code:ErrorCode{-32603:"Internal error"}, Message:"Internal error"
 
 ### How to send Credits
 
-You can send credits using a lite account or adi key page to another lite account or adi key page.
+You can send credits using a lite token account or adi key page to another lite token account or adi key page.
 
 ```bash
-$ ./cli.exe credits <lite account URL> <lite account or Key Page URL> <amount>
+$ ./cli.exe credits <lite token account URL> <lite token account or Keypage URL> <amount>
 ```
 The Output should look something like:
 
