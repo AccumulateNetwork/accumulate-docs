@@ -6,12 +6,11 @@ The Accumulate network is a collection of independent chains. Each chain is mana
 
 ### Accumulate Digital Identifier (ADI)
 
-ADIs are URL-based digital identities with hierarchical key sets that can manage data, tokens, and sub-identities. Each ADI operates as its own independent chain under which all the states for a user’s identity including its keys, data, token accounts, and sub-identities can be managed on the network.
-ADIs can send and receive tokens like a Bitcoin address, issue smart contracts like an Ethereum address, and facilitate a variety of new and complex operations such as consensus building and key management.
+An ADI is the umbrella account which holds sub accounts. These sub accounts are different chains that store information on the Accumulate Network. An ADI can have different chains that it manages i.e. Token Account Chain, Data Chain, Scratch Chain, Token Issuance Chain, Key Chain, Managed Chains.
 
 ### ADI Token Account
 
-An ADI can contain a token account. We call this an ADI token account.
+Tokens are held by identities in an ADI Token Account and can be sent to identities or Lite Accounts. ADI Token Accounts can send transactions to other Lite Accounts or ADI Token Accounts.
 
 ### ADI Data Account
 
@@ -23,41 +22,44 @@ An ADI can contain another ADI. We call this a sub-ADI. They can be considered a
 
 ### Lite Account
 
-A Lite Account consists of an identity and token URL. Lite Accounts are a ‘lite’ version of ADIs that can be used to send and receive tokens. 
-Lite Accounts are automatically created by the network once a transaction is sent from an external wallet. Two Lite Accounts can interact with each other through deposits and withdrawals just as users can interact through traditional blockchain addresses. Lite Accounts also fulfill several important roles, including ADI sponsorship.
-
-### Token Account
-
-A token sub-chain is classified as Token Account.
-
-### Data Account
-
-A data sub-chain is classified as Data Account.
-
-### Keys
-
-Each identity of an ADI hierarchy, possesses a hierarchy of keys that allow it to participate in the execution of transactions. Keys are considered a sub-chain of an ADI, and can be categorized as administrative (admin) keys, token keys, and data keys.
+Accounts that are not tied to an Identity but can send transactions using ACME. Lite Accounts that can send transactions to other Lite Accounts or ADI Token Accounts. Lite Accounts are URL based but have a series of hexadecimal characters.
 
 ### Keypage
 
-A Key Page defines the set of keys that are required to validate a transaction. 
+A Key Page holds a list of the hash of public keys and determines signature specifications (single-sig, multi-sig).
 
 ### Keybook
 
-A Key Book is a prioritized list of Key Pages, where the first page in the list is the highest priority and the last page is the lowest priority. 
+A Key Book maintains a set of key pages order by priority.
+
+### Keys
+
+Keys are signatures that are required for transaction.
+
+### Admin Keys
+
+Admin Keys are used to make changes to keys and key types that are used to manage an identity. Admin keys have priorities. The highest priorities can be kept in cold storage, while the lower priority keys are in active use to maintain an Identity. Admin keys can be replaced or retired with any sort of key signature as needed to manage the identity.
+
+### Token Keys
+
+Token Keys authorize token transactions. They can be restricted to particular tokens.
+
+### Data Keys
+
+Data Keys authorize data writes to data chains. They can be restricted to particular data chains.
+
+### Credits
+
+Credits are a non-transferable form of payment on the Accumulate Network. As user converts ACME tokens to purchase credits. Credits are then used for actions on the network such as the creation of an ADI, ADI Token Account, or Updating Keys in a Key Page.
 
 ### Block Validator Network (BVN)
 
-A tendermint network of nodes that execute transactions against records.
-
-### BVN Anchor Chain
-
-A chain that aggregates record anchors.
+A tendermint network of nodes that execute transactions against records. BVNs act as independent blockchains that build blocks for parts of the Accumulate blockchain. BVNs serve as their own roots of possible nodes, breaking up the job of validating transactions. BVN Sub-chains hold Merkle roots of chains collected and managed by a BVN. Effectively allows the sharding of BVN nodes, which in turn shard Accumulate.
 
 ### Directory Network (DN)
 
-a tendermint network of nodes that aggregates BVN anchors.
+BVNs are tied together by a blockchain called the DN that builds directory blocks for Accumulate. The DN collects the summary hash for all the BVNs and puts them in a directory block for every block period. In this way, the DN acts as a directory service for Accumulate, and resolves questions about the state of Accumulate at every block. 
 
-### DN Anchor Chain
+### Anchor Chain
 
-A chain that aggregates BVN anchors
+A chain that aggregates anchors from other chain.
