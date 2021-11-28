@@ -6,19 +6,19 @@ The Accumulate network is a collection of independent chains. Each chain is mana
 
 ### Accumulate Digital Identifier (ADI)
 
-An ADI is the umbrella account which holds sub accounts. These sub accounts are different chains that store information on the Accumulate Network. An ADI can have different chains that it manages i.e. Token Account Chain, Data Chain, Scratch Chain, Token Issuance Chain, Key Chain, Managed Chains.
+An ADI is the account which can hold accounts under itself. These sub accounts are different chains that store information on the Accumulate Network. An ADI can have different chains that it manages i.e. Token Account Chain, Data Chain, Scratch Chain, Token Issuance Chain, Key Chain, Managed Chains. An ADI name can be customized based on preferences.
 
 ### ADI Token Account
 
-Tokens are held by identities in an ADI Token Account and can be sent to identities or Lite Accounts. ADI Token Accounts can send transactions to other Lite Accounts or ADI Token Accounts.
+Tokens are held by identities in an ADI Token Account. ADI Token Accounts can send transactions to other Lite Accounts or ADI Token Accounts.
 
 ### ADI Data Account
 
-An ADI can contain data account. We call this an ADI data account.
+An ADI can contain data account. We call this an ADI data account. It is a layer that allows ADI accounts to add and organize data to the blockchain.
 
 ### sub-ADI
 
-An ADI can contain another ADI. We call this a sub-ADI. They can be considered as a type of identity sub-chains.
+An ADI can contain another ADI. We call this a sub-ADI. While an ADI contains accounts, a sub-ADI contains sub-accounts.
 
 ### Lite Account
 
@@ -30,11 +30,11 @@ A Key Page holds a list of the hash of public keys and determines signature spec
 
 ### Keybook
 
-A Key Book maintains a set of key pages order by priority.
+A Key Book maintains a set of key pages ordered by priority.
 
 ### Keys
 
-Keys are signatures that are required for transaction.
+Keys are signatures that are required for submitting transaction.
 
 ### Admin Keys
 
@@ -62,4 +62,4 @@ BVNs are tied together by a blockchain called the DN that builds directory block
 
 ### Anchor Chain
 
-A chain that aggregates anchors from other chain.
+A chain that aggregates anchors from other chains (transactions, merkle tree & BVNs) capturing the states of the network.
