@@ -27,6 +27,8 @@ To see the Accumulate source code, please [click here](https://github.com/Accumu
 
 The [repository for this documentation](https://github.com/AccumulateNetwork/accumulate-docs) is hosted on Github. Feel free to contribute!
 
+Please visit [Contributing](https://github.com/AccumulateNetwork/accumulate-docs/blob/master/developers/contributing.md) to be able to set up your environment and download the Accumulate source code.
+
 
 
 ### Please note...
