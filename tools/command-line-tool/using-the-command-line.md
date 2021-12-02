@@ -7,11 +7,11 @@ The Command-Line Interface Tool allows for the following operations: token, iden
 The first step is building the CLI executable.
 
 ```bash
-$ git clone https://github.com/AccumulateNetwork/accumulated.git
+$ git clone https://github.com/AccumulateNetwork/accumulate.git
 $ go build ./cmd/cli
 ```
 
-Once you run these commands, a `cli` binary file should appear in the root directory `accumulated`.
+Once you run these commands, a `cli` binary file should appear in the root directory `accumulate`.
 
 ## How to start the CLI tool
 

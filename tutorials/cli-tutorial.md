@@ -28,7 +28,7 @@ Since this command actually requires broadcasting to the network, we need to mak
 _Note_: If you're running your own node locally, you don't need to specify the server with `-s`. The CLI will connect to your local node by default.
 {% endhint %}
 
-You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulated/blob/develop/networks/networks.go). For this tutorial we'll use `https://testnet.accumulatenetwork.io/v1`.
+You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulate/blob/develop/networks/networks.go). For this tutorial we'll use `https://testnet.accumulatenetwork.io/v1`.
 
 ```bash
 $ ./cli faucet <your account address> -s https://testnet.accumulatenetwork.io/v1
