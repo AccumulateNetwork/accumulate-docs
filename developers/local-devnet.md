@@ -9,8 +9,8 @@ This guide assumes you have successfully [compiled](contributing.md#compiling) `
 * [ ] Choose the number of validators and followers to create
 * [ ] Execute `accumulated init local-devnet [flags]`
 
-{% hint style="warning" %}
-Currently, the correct command is `accumulated testnet`. [This issue](https://github.com/AccumulateNetwork/accumulated/issues/162) on GitHub tracks the change.
+{% hint style="danger" %}
+On macOS, you need to create loopback aliases before you will be able to listen on `127.x.y.z` (except `127.0.0.1`). To create an alias for `127.0.25.1`, execute `sudo ifconfig lo0 alias 127.0.`25`.1.`
 {% endhint %}
 
 ```shell-session
