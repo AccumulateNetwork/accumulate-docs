@@ -9,7 +9,7 @@ If you'd like to connect to a specific testnet server, you can find a list of th
 ### Basic commands and flags
 
 ```bash
-> help
+$ ./cli.exe help
 ```
 
 ```bash
@@ -23,7 +23,9 @@ Available Commands
   adi         Create and manage ADI
   book        Manage key books for a ADI chains
   completion  generate the autocompletion script for the specified shell
+  credits     Send credits to a recipient
   faucet      Get tokens from faucet
+  get         Get data by URL
   help        Help about any command
   key         Create and manage Keys for ADI Key Books, and Pages
   page        Create and manage Keys, Books, and Pages
@@ -33,7 +35,7 @@ Available Commands
 Flags:
   -d, --debug              Print accumulated API calls
   -h, --help               help for accumulate
-  -s, --server string      Accumulated server (default "http://localhost:35554/v1")
+  -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v1")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 
   Use "accumulate [command] --help" for more information about a command.
@@ -44,7 +46,7 @@ Flags:
 Anonymous token accounts are stored in a local database. CLI allows you to generate anon token accounts and export/import corresponding private keys, create transactions, see a list of all of your accounts, and pull information about a URL.
 
 ```bash
-> account
+$ ./cli.exe account
 ```
 
 ```bash
@@ -64,7 +66,7 @@ accumulate account get [url]                  Get anon token account by URL
 Example of usage:
 
 ```bash
-> account get acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACMEE
+$ ./cli.exe account get acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACMEE
 ```
 
 ```bash
@@ -78,7 +80,7 @@ Example of usage:
 Example of usage:
 
 ```bash
-> get acc://ADITEST/TOKENS/ACME
+$ ./cli.exe get acc://ADITEST/TOKENS/ACME
 {
    "url":"ADITEST/TOKENS",
    "wait":false
@@ -107,7 +109,7 @@ accumulate account generate                   Generate random anon token account
 Example of usage:
 
 ```bash
-> account generate
+$ ./cli.exe account generate
 acc://26ddb87b5d12236f752680c97443a0212a93df4bdd7d784a/ACME :   3adc1fcd47c711e662b94335b1f270bd07bf27c279f65d5f754e091cc1e95b35
 ```
 
@@ -121,7 +123,7 @@ accumulate account list                       Display all anon token accounts
 Example of usage:
 
 ```bash
-> account list
+$ ./cli.exe account list
 acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
 acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME
 ```
@@ -136,7 +138,7 @@ accumulate account create [{actor adi}] [wallet key label] [key index (optional)
 Example of usage:
 
 ```bash
-> account create ADITEST key1234 0 1 ADITEST/TOKENS acc://ACME ADITEST/ADIKEYBOOK1
+$ ./cli.exe account create ADITEST key1234 0 1 ADITEST/TOKENS acc://ACME ADITEST/ADIKEYBOOK1
 {"url":"acc://ACME","wait":false}
 {"data":{"precision":8,"propertiesUrl":"","symbol":"ACME","url":"acc://ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"token"}
 {"data":{"codespace":"","hash":"D4671ABD87E02BF6ACC3864BA84FF7F17D9A2224055973DB9079079D93F3D75B","txid":"5668f7a936c45e513d654a98ee758d8a3612833c5256ef65aed32c639e721aaa"},"keyPage":null,"sponsor":"","type":"tokenAccount"}
@@ -147,7 +149,7 @@ Example of usage:
 Create an Accumulate Digital Identifier. The Accumulate network is managed by an enhanced version of Distributed Digital Identities and Identifiers (DDIIs) that we refer to as Accumulate Digital Identifiers (ADIs).
 
 ```bash
-> adi
+$ ./cli.exe adi
 ```
 
 ```
@@ -168,7 +170,7 @@ Example of usage:
 
 ```bash
         ADI Url         :       acc://ADITEST
-        Key Book Url    :
+        Key Book Url    :       acc://ADITEST/keybook1
 ```
 
 #### ADI create (Create New ADI from Lite Account)
@@ -181,7 +183,7 @@ accumulate adi create [actor-lite-account] [adi url to create] [public-key or wa
 Example of usage:
 
 ```bash
-> adi create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME ADITEST key1234 ADIKEYBOOK1 ADIKEYPAGE1
+$ ./cli.exe adi create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME ADITEST key1234 ADIKEYBOOK1 ADIKEYPAGE1
 2021/11/18 14:42:59
         Transaction Identifier  :       48217eb91f3a75fe22beddfba5166a34661d2dfd9b7ae222e8dccbe5be7ce310
         Tendermint Reference    :       df2d36bfbfeaa5b42307bad269d163c18dbd710c2c961194728e16b93664a387
@@ -198,7 +200,7 @@ accumulate adi create [actor-adi-url] [wallet signing key label] [key index (opt
 Example of usage:
 
 ```bash
-> adi create ADITEST key1234 0 1 ADITEST2 key5678 ADIKEYBOOK2 ADIKEYPAGE2
+$ ./cli.exe adi create ADITEST key1234 0 1 ADITEST2 key5678 ADIKEYBOOK2 ADIKEYPAGE2
 2021/11/19 14:50:30
         Transaction Identifier  :       c6f0b82a557fe1e3c77484c188aa2978a7a5974bc7252fe33eb5577fabd4a290
         Tendermint Reference    :       1e47824134f333f8d3d0b9d84a413583a57ba3d9cede00d53462c58fb0e9f9ef
@@ -208,7 +210,7 @@ Example of usage:
 ### Book
 
 ```bash
-> book
+$ ./cli.exe book
 ```
 
 ```
@@ -227,7 +229,7 @@ accumulate key get book [URL]                 Get existing Key Book by URL
 Example of usage:
 
 ```bash
-> get ADITEST/ADIKEYBOOK1
+$ ./cli.exe get ADITEST/ADIKEYBOOK1
         Height          Key Page Url
         1       :       acc://ADITEST/ADIKEYBOOK1
 ```
@@ -242,7 +244,7 @@ accumulate key book create [actor adi url] [signing key label] [key index (optio
 Example of usage:
 
 ```bash
-> key book create ADITEST key1234 1 1 ADITEST/KEYBOOK1.1 ADITEST/KEYPAGE1.1 ADITEST/KEYPAGE1.2 ADITEST/KEYPAGE1.3
+$ ./cli.exe key book create ADITEST key1234 1 1 ADITEST/KEYBOOK1.1 ADITEST/KEYPAGE1.1 ADITEST/KEYPAGE1.2 ADITEST/KEYPAGE1.3
         Transaction Identifier  :       dd351321ca42568b9cc7e3a8faa88481e0e7e6759f4fd6b3976950b74865623a
         Tendermint Reference    :       71d231c0645a74c7ea21347bdcb54610e946f8a99eff0f48562634c14a928e27
         Error code              :       ok
@@ -251,7 +253,7 @@ Example of usage:
 ### Completion
 
 ```bash
-> completion
+$ ./cli.exe completion
 ```
 
 ```
@@ -272,12 +274,37 @@ Global Flags:
 Use "accumulate completion [command] --help" for more information about a command.
 ```
 
+### Credits
+
+Send credits using a lite account or adi key page to another lite account or adi key page
+
+```bash
+$ ./cli.exe credits
+```
+
+```
+Usage:
+  accumulate credits [actor lite account] [lite account or key page url] [amount]
+  accumulate credits [actor url] [actor key name] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe credits acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME acc://53948aeb1cda7cf854c6ec3104a66e336d26be1ad1790bb7/ACME 100
+2021/12/02 20:58:43
+        Transaction Identifier  :       4f8e7f98d0da08b1a3731f4a20e92e5a0a82f1b42e84958aff0eecc122d363af
+        Tendermint Reference    :       dfd9d4b558c3abe05b93aa79f3e61190b180778269e37094d01ce1c4f48a354f
+        Error code              :       ok
+```
+
+
 ### Directory
 
 Accumulate directory for Accumulate Digital Identifiers
 
 ```bash
-> directory
+$ ./cli.exe directory
 ```
 
 ```
@@ -288,7 +315,7 @@ accumulate adi directory [url]              Get directory of sub-chains associat
 Example of usage:
 
 ```bash
-> adi directory ADITEST
+$ ./cli.exe adi directory ADITEST
         ADI Entries
         acc://ADITEST1/ssg0 (Key Book)
         acc://ADITEST1/sigspec0 (Key Page)
@@ -300,7 +327,7 @@ Example of usage:
 Faucet sends some TestNet ACME tokens to the requested anonymous token account.
 
 ```bash
-> faucet
+$ ./cli.exe faucet
 ```
 
 ```bash
@@ -311,7 +338,7 @@ faucet [url]               Get tokens from faucet to address
 Example of usage:
 
 ```bash
-> accumulate faucet acc://3ed6b2003242d2166508e117a2a66f8ca742b72e8d90d736/ACME
+$ ./cli.exe faucet acc://3ed6b2003242d2166508e117a2a66f8ca742b72e8d90d736/ACME
         Transaction Identifier  :       b72669697b6641f71595df9df0381599fdff5429171772d9f79e75533b7e5f57
         Tendermint Reference    :       36fde0e08fec2b123e8eb1876827d60be237e8b7c15ddb1505f4091bd4cba284
         Error code              :       ok
@@ -322,7 +349,7 @@ Example of usage:
 CLI Help
 
 ```bash
-> help
+$ ./cli.exe help
 ```
 
 ```
@@ -336,7 +363,9 @@ Available Commands
   adi         Create and manage ADI
   book        Manage key books for a ADI chains
   completion  generate the autocompletion script for the specified shell
+  credits     Send credits to a recipient
   faucet      Get tokens from faucet
+  get         Get data by URL
   help        Help about any command
   key         Create and manage Keys for ADI Key Books, and Pages
   page        Create and manage Keys, Books, and Pages
@@ -346,7 +375,7 @@ Available Commands
 Flags:
   -d, --debug              Print accumulated API calls
   -h, --help               help for accumulate
-  -s, --server string      Accumulated server (default "http://localhost:35554/v1")
+  -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v1")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 
   Use "accumulate [command] --help" for more information about a command.
@@ -357,7 +386,7 @@ Flags:
 Managed the Keys, Key Pages, and Key Book for your Accumulate Digital
 
 ```bash
-> key
+$ ./cli.exe key
 ```
 
 ```
@@ -382,7 +411,7 @@ accumulate key generate [label]     Generate a new key and give it a label in th
 Example of usage:
 
 ```bash
-> key generate key1234
+$ ./cli.exe key generate key1234
 key1234 :        e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12
 ```
 
@@ -396,7 +425,7 @@ accumulate key list                   List generated keys associated with the wa
 Example of usage:
 
 ```bash
-> key list
+$ ./cli.exe key list
 Public Key                                                              Key name
 e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12        key1234
 ```
@@ -411,7 +440,7 @@ accumulate key import mnemonic [mnemonic phrase...]     Import the mnemonic phra
 Example of Usage:
 
 ```bash
-> key mnemonic humor demand lesson identify rookie road truth beef benefit thank camera tumble
+$ ./cli.exe key mnemonic humor demand lesson identify rookie road truth beef benefit thank camera tumble
 Mnemonic imported
 ```
 
@@ -425,7 +454,7 @@ accumulate key import private [private key hex] [key name]      Import a key and
 Example of Usage:
 
 ```bash
-> key import private c25288e8262fc23a5e8fc3acd523428b6913d05166f47022abef52acdba47930 benkey4
+$ ./cli.exe key import private c25288e8262fc23a5e8fc3acd523428b6913d05166f47022abef52acdba47930 benkey4
         name            :benkey4
         public key      :d5b57f10eb85a751094fcf943fc4997e45f0a90955294ca99cc5ee298d301690
 ```
@@ -440,7 +469,7 @@ accumulate key export all                                 export all keys in wal
 Example of usage:
 
 ```bash
-> key export all
+$ ./cli.exe key export all
 name                    :       key101
         private key     :       23ab78aa778b044045e8287aca3347fe4e04d5060c5dbeb214661ef0bf2eec89
         public key      :       e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5
@@ -459,7 +488,7 @@ accumulate key export private [key name]                      export the private
 Example of usage:
 
 ```bash
-> key export private key1234
+$ ./cli.exe key export private key1234
 name                    :       key1234
         private key     :       7302b5758d15c5ef9eec4ba7182d3a18ba10776f8bb921945f3766028260b3f8
         public key      :       e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12
@@ -475,7 +504,7 @@ accumulate key export mnemonic                            export the mnemonic ph
 Example of usage:
 
 ```bash
-> key export mnemonic
+$ ./cli.exe key export mnemonic
 mnemonic phrase: humor demand lesson identify rookie road truth beef benefit thank camera tumble
 ```
 
@@ -488,14 +517,14 @@ accumulate key export seed                       export the seed generated from 
 Example of usage:
 
 ```bash
-> key export seed
+$ ./cli.exe key export seed
 seed: b1310fcca7d5938d552561757d1e62a11a6fd3939cabdcfbbad94d1a6fb6a873f81b15f286ab4bed8e6139e4a6348387d555b72cf0e98793f5828264cfa78c77
 ```
 
 ### Page
 
 ```
-> Page
+$ ./cli.exe Page
 ```
 
 ```
@@ -520,7 +549,7 @@ accumulate key get page [URL]                 Get existing Key Page by URL
 Example of usage:
 
 ```bash
-> get ADITEST/ADIKEYPAGE1
+$ ./cli.exe get ADITEST/ADIKEYPAGE1
         Index   Nonce   Public Key                                                              Key Name
         0       0       ec52b1f5b263010912431bf8e4af6ed84b3b3d64baff41b306fec359a512e7b5
 ```
@@ -535,7 +564,7 @@ accumulate key page create [actor adi url] [signing key label] [key index (optio
 Example of usage:
 
 ```bash
-> key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42
+$ ./cli.exe key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 KEY1.41 KEY1.42
 {
    "​​""data":{
       "​​""codespace":"",
@@ -558,7 +587,7 @@ accumulate key page update [key page url] [signing key label] [key index (option
 Example of usage:
 
 ```bash
-> page key update ADITEST/ADIKEYPAGE1 key5678 1 1 key5678 key1234
+$ ./cli.exe page key update ADITEST/ADIKEYPAGE1 key5678 1 1 key5678 key1234
         Transaction Identifier  :       f61b5344e863141f25d34c2f40d8d1e2bd4cd29687c5f98822f91e9e39500682
         Tendermint Reference    :       2572c943abfc91b7e2192d9522657f5fffc8f4da1df55d5d0807ebca6f67faf7
         Error code              :       ok
@@ -573,7 +602,7 @@ accumulate key page add [key page url] [signing key label] [key index (optional)
 Example of usage:
 
 ```bash
-> page key add ADITEST/ADIKEYPAGE1 key1234 1 1 key5678
+$ ./cli.exe page key add ADITEST/ADIKEYPAGE1 key1234 1 1 key5678
         Transaction Identifier  :       f61b5344e863141f25d34c2f40d8d1e2bd4cd29687c5f98822f91e9e39500682
         Tendermint Reference    :       2572c943abfc91b7e2192d9522657f5fffc8f4da1df55d5d0807ebca6f67faf7
         Error code              :       ok
@@ -588,7 +617,7 @@ accumulate key page remove [key page url] [signing key label] [key index (option
 Example of usage:
 
 ```bash
-> page key remove ADITEST/ADIKEYPAGE1 key1234 1 1 key1234
+$ ./cli.exe page key remove ADITEST/ADIKEYPAGE1 key1234 1 1 key1234
         Transaction Identifier  :       f61b5344e863141f25d34c2f40d8d1e2bd4cd29687c5f98822f91e9e39500682
         Tendermint Reference    :       2572c943abfc91b7e2192d9522657f5fffc8f4da1df55d5d0807ebca6f67faf7
         Error code              :       ok
@@ -619,7 +648,7 @@ accumulate tx get [txid]                      Get token transaction by txid
 Example of usage:
 
 ```shell
-> tx get 46469416c03b2b386e6c10da8e873f0d61392fc1e8384b63123d8d1e8a7326dd
+$ ./cli.exe tx get 46469416c03b2b386e6c10da8e873f0d61392fc1e8384b63123d8d1e8a7326dd
 {
    "data":{
       "from":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
@@ -659,7 +688,7 @@ accumulate tx create [from] [to] [amount]     Create new token tx
 Example of usage:
 
 ```bash
-> tx create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME 500000000
+$ ./cli.exe tx create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME 500000000
 5917639ec8c66576b8e44797cfc198f0b85b0cbe4ab29ac8a1e8413a7b779f888d378ef83bcd38edf6023ed77a4e422059770da9d198ead8fd76245a353ced61
         Transaction Identifier  :       4a6683f35ac3191a482e606ac37e6224ef325936d045252af7bf7c5bd9970dfb
         Tendermint Reference    :       7745ebf61e42ee1b9e83b18a05125031d78f3bfdfe460e7be58f3c9296769e6a
@@ -676,7 +705,7 @@ accumulate tx history [url] [starting transaction number] [ending transaction nu
 Example of usage:
 
 ```bash
-> tx history acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME 0 1
+$ ./cli.exe tx history acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME 0 1
 {
    "data":[
       {
