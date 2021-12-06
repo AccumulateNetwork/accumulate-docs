@@ -28,14 +28,14 @@ Here is a quick summary of the innovations and advantages of Factom and Accumula
     * Segregated witness -- Bulky authorizations don’t bloat the blockchain
     * Blockchain rewriting -- Blends advantages of 10 second blocks with 10 minute blocks
   * Performance
-    * Sharding -- Block Validator Chains (BVCs) and the Directory Block Chain (DBC) run independently
+    * Sharding -- Block Validator Networks (BVNs) and the Directory Block Network (DBN) run independently
     * Synthetic Transactions -- Transaction processing runs in parallel with blockchain syncronization
-    * BVCs and DBC each run their own consensus (independently)
+    * BVNs and DBN each run their own consensus (independently)
     * Tokens are tracked across accounts, one chain per account
     * All accounts can process transactions in parallel
     * All Identity validation can be processed in parallel
-    * Tendermint Consensus will be run for each BVC and the DBC so that adding BVCs adds capacity very close to linearly
-    * Tendermint capacity is about 1000 to 10,000 tps per BVC
+    * Tendermint Consensus will be run for each BVN and the DBN so that adding BVNs adds capacity very close to linearly
+    * Tendermint capacity is about 1000 to 10,000 tps per BVN
     * State required to validate a chain is preserved on-chain; syncing with a chain for building or accessing the current state of the blockchain is nearly instant.
     * Maintaining the data and history of the blockchain is maintained on validator nodes separate from data nodes for accessing the past state of the blockchain
   * URLs
