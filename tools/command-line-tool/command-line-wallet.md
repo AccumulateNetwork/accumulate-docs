@@ -35,6 +35,8 @@ Available Commands
 Flags:
   -d, --debug              Print accumulated API calls
   -h, --help               help for accumulate
+  -j, --json               Print outputs as json
+  -n, --pretend            Enables check-only mode for transactions
   -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v1")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 
@@ -51,9 +53,13 @@ $ ./cli.exe account
 
 ```bash
   accumulate account get [url]                  Get anon token account by URL
-  accumulate account generate                   Generate random anon token account
+  accumulate account qr [url]                   Display QR code for lite account URL
+  accumulate account generate                   Generate random lite token account
   accumulate account list                       Display all anon token accounts
+  accumulate account restore                    Restore old anon token accounts
   accumulate account create [{actor adi}] [wallet key label] [key index (optional)] [key height (optional)] [token account url] [tokenUrl] [keyBook (optional)]  Create a token account for an ADI
+  accumulate account import [private-key]       Import anon token account from private key hex
+  account account export [url]                  Export private key hex of anon token account
 ```
 
 **Account get**
@@ -173,6 +179,30 @@ Example of usage:
         Key Book Url    :       acc://ADITEST/keybook1
 ```
 
+
+#### ADI directory
+
+Accumulate directory for Accumulate Digital Identifiers
+
+```bash
+$ ./cli.exe adi directory
+```
+
+```
+Usage:
+accumulate adi directory [url]              Get directory of sub-chains associate with a URL
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe adi directory ADITEST
+        ADI Entries
+        acc://ADITEST1/ssg0 (Key Book)
+        acc://ADITEST1/sigspec0 (Key Page)
+
+```
+
 #### ADI create (Create New ADI from Lite Account)
 
 ```
@@ -206,6 +236,8 @@ $ ./cli.exe adi create ADITEST key1234 0 1 ADITEST2 key5678 ADIKEYBOOK2 ADIKEYPA
         Tendermint Reference    :       1e47824134f333f8d3d0b9d84a413583a57ba3d9cede00d53462c58fb0e9f9ef
         Error code              :       ok
 ```
+
+
 
 ### Book
 
@@ -268,6 +300,8 @@ Flags:
 
 Global Flags:
   -d, --debug              Print accumulated API calls
+  -j, --json               print outputs as json
+  -n, --pretend            Enables check-only mode for transactions
   -s, --server string      Accumulated server (default "http://localhost:35554/v1")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 
@@ -298,29 +332,6 @@ $ ./cli.exe credits acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME 
         Error code              :       ok
 ```
 
-
-### Directory
-
-Accumulate directory for Accumulate Digital Identifiers
-
-```bash
-$ ./cli.exe directory
-```
-
-```
-Usage:
-accumulate adi directory [url]              Get directory of sub-chains associate with a URL
-```
-
-Example of usage:
-
-```bash
-$ ./cli.exe adi directory ADITEST
-        ADI Entries
-        acc://ADITEST1/ssg0 (Key Book)
-        acc://ADITEST1/sigspec0 (Key Page)
-
-```
 
 ### Faucet
 
@@ -375,6 +386,8 @@ Available Commands
 Flags:
   -d, --debug              Print accumulated API calls
   -h, --help               help for accumulate
+  -j, --json               print outputs as json
+  -n, --pretend            Enables check-only mode for transactions
   -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v1")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 
@@ -395,6 +408,7 @@ $ ./cli.exe key
   accumulate key list                   List generated keys associated with the wallet
   accumulate key import mnemonic [mnemonic phrase...]     Import the mneumonic phrase used to generate keys in the wallet
   accumulate key import private [private key hex] [key name]      Import a key and give it a name in the wallet
+  accumulate key import lite [private key hex]      Import a key as an anonymous address
   accumulate key export all                                 export all keys in wallet
   accumulate key export private [key name]                      export the private key by key name
   accumulate key export mnemonic                            export the mnemonic phrase if one was entered

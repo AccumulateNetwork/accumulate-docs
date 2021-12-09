@@ -4,14 +4,14 @@ The Command-Line Interface Tool allows for the following operations: token, iden
 
 ## How to build the CLI tool
 
-The first step is building the CLI executable.
+The first step is building the CLI executable. You will need to have the Go compiler installed on your machine before you can build the CLI. You can find the Go compiler [here](https://go.dev/dl/).
 
 ```bash
 $ git clone https://github.com/AccumulateNetwork/accumulated.git
 $ go build ./cmd/cli
 ```
 
-Once you run these commands, a `cli` binary file should appear in the root directory `accumulated`.
+Once you run these commands, a `cli` binary file will appear in the root directory of `accumulated`.
 
 ## How to start the CLI tool
 
@@ -30,5 +30,5 @@ $ ./cli
 ```
 
 {% hint style="info" %}
-_Note_: you must prefix every operation with the `cli` command (either `./cli` or `./cli.exe` depending on your operating system).
+_Note_: every operation must be prefixed with the `cli` command (either `./cli` or `./cli.exe` depending on your operating system).
 {% endhint %}
