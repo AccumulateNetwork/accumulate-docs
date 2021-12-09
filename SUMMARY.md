@@ -5,6 +5,7 @@
   * [Fees](protocol-overview/fees.md)
   * [Innovations](protocol-overview/factom-accumulate-innovations.md)
   * [FAQs](https://accumulatenetwork.io/learn/#intro)
+  * [Glossary](protocol-overview/glossary.md)
 
 ## Developers
 

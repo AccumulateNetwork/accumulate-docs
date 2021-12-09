@@ -8,7 +8,7 @@ description: >-
 
 ## Prerequisites
 
-* **Go 1.17** (or higher) is required to compile `accumulated`
+* **Go 1.17** (or higher) is required to compile `accumulate`
 * GNU Make is required to create versioned builds
 * In order to capture metrics from a dev node, you must set up [Prometheus](https://prometheus.io)
 
@@ -41,7 +41,7 @@ go version go1.17.2 linux/amd64
 * [Run via Docker](https://hub.docker.com/r/prom/prometheus)
 * Prometheus can be installed by most package managers
 
-Given an `accumulated` node running on 1.2.3.4 with 3000 as the base port number, Prometheus can be configured as follows:
+Given an `accumulate` node running on 1.2.3.4 with 3000 as the base port number, Prometheus can be configured as follows:
 
 {% code title="prometheus.yml" %}
 ```yaml
@@ -59,10 +59,10 @@ scrape_configs:
 ## Compiling
 
 ```shell-session
-$ git clone https://github.com/accumulateNetwork/accumulated
-$ cd accumulated
-$ make # or go build ./cmd/accumulated
-$ ./accumulated version
+$ git clone https://github.com/accumulateNetwork/accumulate
+$ cd accumulate
+$ make # or go build ./cmd/accumulate
+$ ./accumulate version
 Accumulate network daemon v0.0.0-760-g30319a2
 30319a28b59a92a82ba6cb570515cac03887effd
 ```

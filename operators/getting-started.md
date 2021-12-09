@@ -1,6 +1,6 @@
 # Getting Started
 
-## Install `accumulated`
+## Install `accumulate`
 
 ### From source
 
@@ -8,7 +8,7 @@ Follow [these instructions](../developers/contributing.md)
 
 ### Latest CI build
 
-Bleeding-edge binaries for Windows, macOS, and Linux (amd64 and arm64) can be found [here](https://gitlab.com/accumulatenetwork/accumulated/-/jobs/artifacts/develop/browse?job=build)
+Bleeding-edge binaries for Windows, macOS, and Linux (amd64 and arm64) can be found [here](https://gitlab.com/accumulatenetwork/accumulate/-/jobs/artifacts/develop/browse?job=build)
 
 ## Node Types
 

@@ -23,7 +23,7 @@ Looking to get your hands dirty? Check out the [CLI Tutorial](tutorials/cli-tuto
 
 ### Source Code
 
-To see the Accumulate source code, please [click here](https://github.com/AccumulateNetwork/accumulated).
+To see the Accumulate source code, please [click here](https://github.com/AccumulateNetwork/accumulate).
 
 The [repository for this documentation](https://github.com/AccumulateNetwork/accumulate-docs) is hosted on Github. Feel free to contribute!
 

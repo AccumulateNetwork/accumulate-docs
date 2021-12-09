@@ -19,10 +19,10 @@ Data and token sub-chains are classified as accounts, while identity sub-chains 
 | <p> </p><p><strong>Description</strong></p><p> </p> | <p> </p><p>Data</p><p> </p>                      | <p> </p><p>Tokens</p><p> </p>                  |
 | --------------------------------------------------- | ------------------------------------------------ | ---------------------------------------------- |
 | <p> </p><p><strong>Designator</strong></p><p> </p>  | <p> </p><p>d</p><p> </p>                         | <p> </p><p>t</p><p> </p>                       |
-| <p> </p><p><strong>Sub-ADI-1</strong></p><p> </p>   | <p> </p><p>acc://bank/d/accounts</p><p> </p>     | <p> </p><p>acc://bank/t/loans</p><p> </p>      |
-| <p> </p><p><strong>Sub-ADI-2</strong></p><p> </p>   | <p> </p><p>acc://bank/d/investments</p><p> </p>  | <p> </p><p>acc://bank/t/securities</p><p> </p> |
-| <p> </p><p><strong>Sub-ADI-3</strong></p><p> </p>   | <p> </p><p>acc://bank/d/transactions</p><p> </p> | <p> </p><p>acc://bank/t/realestate</p><p> </p> |
-| <p> </p><p><strong>Sub-ADI-N</strong></p><p> </p>   | <p> </p><p>acc://bank/d/data</p><p> </p>         | <p> </p><p>acc://bank/t/tokens</p><p> </p>     |
+| <p> </p><p><strong>Account-1</strong></p><p> </p>   | <p> </p><p>acc://bank/d/accounts</p><p> </p>     | <p> </p><p>acc://bank/t/loans</p><p> </p>      |
+| <p> </p><p><strong>Account-2</strong></p><p> </p>   | <p> </p><p>acc://bank/d/investments</p><p> </p>  | <p> </p><p>acc://bank/t/securities</p><p> </p> |
+| <p> </p><p><strong>Account-3</strong></p><p> </p>   | <p> </p><p>acc://bank/d/transactions</p><p> </p> | <p> </p><p>acc://bank/t/realestate</p><p> </p> |
+| <p> </p><p><strong>Account-N</strong></p><p> </p>   | <p> </p><p>acc://bank/d/data</p><p> </p>         | <p> </p><p>acc://bank/t/tokens</p><p> </p>     |
 
 Accounts are terminal sub-chains, meaning that sub-accounts don’t exist. However, a user can choose a different designator to categorize objects so long as the object type is specified within their wallet. For example, an investment firm with ADI ‘firm’ may create data accounts with designators _r_ and _c_ residential and commercial properties, while a cryptocurrency trader and non-fungible token (NFT) art collector may create token accounts with designators _n_ and _s_ to denote NFTs and stablecoins.
 

@@ -20,6 +20,6 @@ Accumulate is not currently set up in a way that allows operators outside of the
 `<network>` must be the name of BVC network and `<all networks>` must be a comma-separated list of all BVC networks. See [networks.md](networks.md "mention") for a list of BVC network names.
 {% endhint %}
 
-1. Execute the following command to configure a BVC network: `accumulated init --work-dir .nodes --network "<network>" --relay-to "<all networks>"`
+1. Execute the following command to configure a BVC network: `accumulate init --work-dir .nodes --network "<network>" --relay-to "<all networks>"`
 2. Copy `.nodes` to each server
-3. On each server, execute `accumulated run --work-dir .nodes -n <node number>`. `<node number>` must be the index of the node's IP address in the network's `Nodes` array (in `networks.go`).
+3. On each server, execute `accumulate run --work-dir .nodes -n <node number>`. `<node number>` must be the index of the node's IP address in the network's `Nodes` array (in `networks.go`).

@@ -31,7 +31,7 @@ Returns Accumulate Object by URL
 | Property  | Type   | Description                                                                     |
 | --------- | ------ | ------------------------------------------------------------------------------- |
 | `type`    | string | The Accumulate object type                                                      |
-| `mdRoot`  | string | The root hash of the patricia trie                                              |
+| `mdRoot`  | string | The root hash (merkle DAG root) of the patricia trie                            |
 | `data`    | object | The data for this object (properties vary)                                      |
 | `sponsor` | string | The data for this object (properties vary)                                      |
 | `keyPage` | TBD    | The [key page](../../deep-dive/key-management.md) within key book for this ADI. |
@@ -545,7 +545,7 @@ curl -X POST --data '{
 Returns the specified key page / signature specification
 
 {% hint style="info" %}
-_**NOTE: Key page = ****`sig-spec`****. Method names will be updated soon.**_
+_**NOTE: Key page =**** ****`sig-spec`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
@@ -608,7 +608,7 @@ curl -X POST --data '{
 Creates a new key page (previously signature specification)
 
 {% hint style="info" %}
-_**NOTE: Key page = ****`sig-spec`****. Method names will be updated soon.**_
+_**NOTE: Key page =**** ****`sig-spec`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
@@ -641,7 +641,7 @@ _**NOTE: Key page = ****`sig-spec`****. Method names will be updated soon.**_
 Returns information about the specified key book / Signature specification group
 
 {% hint style="info" %}
-_**NOTE: Key book = ****`sig-spec-group`****. Method names will be updated soon.**_
+_**NOTE: Key book =**** ****`sig-spec-group`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
@@ -733,7 +733,7 @@ curl -X POST --data '{
 Creates a new key book / signature specification group
 
 {% hint style="info" %}
-_**NOTE: Key book = ****`sig-spec-group`****. Method names will be updated soon.**_
+_**NOTE: Key book =**** ****`sig-spec-group`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
