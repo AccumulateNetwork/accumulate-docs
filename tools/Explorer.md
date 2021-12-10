@@ -1,6 +1,3 @@
----
-An overview of the Accumulate Blockchain Explorer
----
 # Explorer
 
 
