@@ -88,7 +88,7 @@ A tendermint network of nodes that execute transactions against records. BVNs ac
 
 ### Block Validator Network Node (BVNN)
 
-The Validator nodes within the Block Validator Network are the BVN Nodes(BVNN).
+The Validator nodes within the Block Validator Network (BVN) are the BVN Nodes(BVNN).
 
 ### Directory Network (DN)
 
@@ -96,7 +96,7 @@ BVNs are tied together by a blockchain called the DN that builds directory block
 
 ### Directory Network Node (DNN)
 
-The Validator nodes within the Directory Network network are the DN Nodes(DNN).
+The Validator nodes within the Directory Network (DN) are the DN Nodes(DNN).
 
 ### Anchor Chain
 
