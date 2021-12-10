@@ -86,24 +86,30 @@ All transactions (fully validated or not) go on the Pending Chain. A separate Ke
 
 A tendermint network of nodes that execute transactions against records. BVNs act as independent blockchains that build blocks for parts of the Accumulate blockchain. BVNs serve as their own roots of possible nodes, breaking up the job of validating transactions. BVN Sub-chains hold Merkle roots of chains collected and managed by a BVN. Effectively allows the sharding of BVN nodes, which in turn shard Accumulate.
 
+### Block Validator Network Node (BVNN)
+
+The Validator nodes within the Block Validator Network are the BVN Nodes(BVNN).
+
 ### Directory Network (DN)
 
 BVNs are tied together by a blockchain called the DN that builds directory blocks for Accumulate. The DN collects the summary hash for all the BVNs and puts them in a directory block for every block period. In this way, the DN acts as a directory service for Accumulate, and resolves questions about the state of Accumulate at every block. 
+
+### Directory Network Node (DNN)
+
+The Validator nodes within the Directory Network network are the DN Nodes(DNN).
 
 ### Anchor Chain
 
 A chain that aggregates anchors from other chains (transactions, merkle tree & BVNs) capturing the states of the network.
 
-### Block Validator Network Node (BVNN)
-
-
-### Directory Network Node (DNN)
-
-
-### Layer-1 Anchoring
-
 
 ### Staking
 
+It is the process that involves committing your ACME tokens to support the Accumulate network and confirm transactions.
 
 ### Delegated Staking
+
+Staking with the ability for ACME holders to contribute to a Validator's stake is Delegated Staking. ACME holders can delegate their stake to a validator which will increase that validator's voting/influence power.
+
+### Layer-1 Anchoring
+
