@@ -14,7 +14,7 @@ On macOS, you need to create loopback aliases before you will be able to listen 
 {% endhint %}
 
 ```shell-session
-$ accumulate init local-devnet --work-dir .nodes --ip 127.0.25.1 --followers 1 --validators 3
+$ accumulate init devnet --work-dir .nodes --ip 127.0.25.1 --followers 1 --validators 3
 ```
 
 This will create configuration for four nodes, three validators and one follower, in `.nodes`, with IP addresses `127.0.25.1`, `127.0.25.2`, `127.0.25.3`, and `127.0.25.4`.
@@ -24,9 +24,15 @@ This will create configuration for four nodes, three validators and one follower
 To run node 0 from directory `.nodes`, execute:
 
 ```shell-session
-$ accumulate run -w .nodes -n 0
+$ accumulate accumulated run -w ${DIR}/bvn0 -n 0
 ```
 
 {% hint style="warning" %}
 All validator nodes must be run together. For the example above, nodes 0, 1, and 2 must be run. Nodes will hang until all validators respond.
+{% endhint %}
+
+
+
+{% hint style="warning" %}
+The directory of your bvn0 folder maybe different.
 {% endhint %}
