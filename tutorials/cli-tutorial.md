@@ -25,7 +25,7 @@ The account that was created in the previous section currently only exist locall
 Since this command actually requires broadcasting to the network, we need to make sure we are connected to a node. We do that with the `-s` flag, followed by the server address for the node we want to connect to.
 
 {% hint style="info" %}
-_Note_: If you're running your own node locally, you don't need to specify the server with `-s`. The CLI will connect to your local node by default.
+_Note_: If you're running your own node locally, you will need to specify your local server with `-s`. 
 {% endhint %}
 
 You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulate/blob/develop/networks/networks.go). For this tutorial we'll use `https://testnet.accumulatenetwork.io/v1`.
