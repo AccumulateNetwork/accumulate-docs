@@ -37,7 +37,6 @@
   * [CLI Setup](tools/command-line-tool/using-the-command-line.md)
   * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
 * [Explorer](tools/explorer.md)
-* [Explorer](tools/explorer-1.md)
 
 ## Tutorials
 
