@@ -6,6 +6,7 @@
   * [Innovations](protocol-overview/factom-accumulate-innovations.md)
   * [FAQs](https://accumulatenetwork.io/learn/#intro)
   * [Glossary](protocol-overview/glossary.md)
+  * [Glossary](protocol-overview/glossary-1.md)
 
 ## Developers
 
@@ -35,7 +36,8 @@
 * [Command Line Tool](tools/command-line-tool/README.md)
   * [CLI Setup](tools/command-line-tool/using-the-command-line.md)
   * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
-* [Explorer](tools/Explorer.md)
+* [Explorer](tools/explorer.md)
+* [Explorer](tools/explorer-1.md)
 
 ## Tutorials
 

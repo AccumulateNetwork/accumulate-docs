@@ -545,7 +545,7 @@ curl -X POST --data '{
 Returns the specified key page / signature specification
 
 {% hint style="info" %}
-_**NOTE: Key page =**** ****`sig-spec`****. Method names will be updated soon.**_
+_**NOTE: Key page =\*\*\*\***** ****`sig-spec`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
@@ -603,13 +603,12 @@ curl -X POST --data '{
 
 ###
 
-
 ### keybook
 
 Returns information about the specified key book / Signature specification group
 
 {% hint style="info" %}
-_**NOTE: Key book =**** ****`sig-spec-group`****. Method names will be updated soon.**_
+_**NOTE: Key book =\*\*\*\***** ****`sig-spec-group`****. Method names will be updated soon.**_
 {% endhint %}
 
 **Request Parameters**
@@ -695,4 +694,3 @@ curl -X POST --data '{
 ```
 
 ###
-
