@@ -24,6 +24,7 @@ Available Commands
   book        Manage key books for a ADI chains
   completion  generate the autocompletion script for the specified shell
   credits     Send credits to a recipient
+  data        Create, add, and query adi data accounts
   faucet      Get tokens from faucet
   get         Get data by URL
   help        Help about any command
@@ -57,9 +58,10 @@ $ ./cli.exe account
   accumulate account generate                   Generate random lite token account
   accumulate account list                       Display all anon token accounts
   accumulate account restore                    Restore old anon token accounts
-  accumulate account create [{actor adi}] [wallet key label] [key index (optional)] [key height (optional)] [token account url] [tokenUrl] [keyBook (optional)]  Create a token account for an ADI
-  accumulate account import [private-key]       Import anon token account from private key hex
-  account account export [url]                  Export private key hex of anon token account
+  accumulate account create token [actor adi] [signing key name] [key index (optional)] [key height (optional)] [new token account url] [tokenUrl] [keyBookUrl] Create a token account for an ADI
+  accumulate account create data [actor adi] [signing key name] [key index (optional)] [key height (optional)] [new data account url]  [keyBookUrl]     Create a data account under an ADI
+  accumulate account import [private-key]       Import lite token account from private key hex
+  accumulate account export [url]               Export private key hex of lite token account
 ```
 
 **Account get**
@@ -160,8 +162,9 @@ $ ./cli.exe adi
 
 ```
   accumulate adi get [URL]                      Get existing ADI by URL
-  accumulate adi create [actor-lite-account] [adi url to create] [public-key or wallet key label] [key-book-name (optional)] [key-page-name (optional)]  Create new ADI from lite account
-  accumulate adi create [actor-adi-url] [wallet signing key label] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key label] [key book url (optional)] [key page url (optional)] Create new ADI for another ADI
+  accumulate adi directory [url]                Get directory of URL's associated with an ADI
+  accumulate adi create [actor-lite-account] [adi url to create] [public-key or key name] [key-book-name (optional)] [key-page-name (optional)]  Create new ADI from lite account
+  accumulate adi create [actor-adi-url] [wallet signing key name] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key name] [key book url (optional)] [key page url (optional)] Create new ADI for another ADI
   accumulate adi import [adi-url] [private-key] Import Existing ADI
 ```
 
@@ -248,7 +251,13 @@ $ ./cli.exe book
 ```
 Usage:
 accumulate book get [URL]                     Get existing Key Book by URL
-accumulate book create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n + 1] Create new key book and assign key pages 1 to N+1 to the book
+accumulate book create [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [new key book url] [key page url 1] ... [key page url n + 1] Create new key book and assign key pages 1 to N+1 to the book
+```
+
+Example usage:
+
+```bash
+accumulate book create acc://RedWagon redKey5 acc://RedWagon/RedBook acc://RedWagon/RedPage1
 ```
 
 **Get Key Book**
@@ -283,6 +292,11 @@ $ ./cli.exe key book create ADITEST key1234 1 1 ADITEST/KEYBOOK1.1 ADITEST/KEYPA
 ```
 
 ### Completion
+
+```
+Usage:
+Generate the autocompletion script for accumulate for the specified shell. See each sub-command's help for details on how to use the generated script.
+```
 
 ```bash
 $ ./cli.exe completion
@@ -332,6 +346,20 @@ $ ./cli.exe credits acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME 
         Error code              :       ok
 ```
 
+### Data
+
+```bash
+$ ./cli.exe data
+```
+
+```
+  accumulate account create data [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [adi data account url] [key book (optional)] Create new data account
+         example usage:  accumulate account create data acc://actor signingKeyName acc://actor/dataAccount acc://actor/book0
+  accumulate data get [DataAccountURL]                    Get existing Key Page by URL
+  accumulate data get [DataAccountURL] [EntryHash]  Get data entry by entryHash in hex
+  accumulate data get [DataAccountURL] [start index] [count] expand(optional) Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data] Write entry to your data account. 
+         Note: extid's and data needs to be a quoted string or hex
+```
 
 ### Faucet
 
@@ -375,6 +403,7 @@ Available Commands
   book        Manage key books for a ADI chains
   completion  generate the autocompletion script for the specified shell
   credits     Send credits to a recipient
+  data        Create, add, and query adi data accounts
   faucet      Get tokens from faucet
   get         Get data by URL
   help        Help about any command
@@ -538,19 +567,19 @@ seed: b1310fcca7d5938d552561757d1e62a11a6fd3939cabdcfbbad94d1a6fb6a873f81b15f286
 ### Page
 
 ```
-$ ./cli.exe Page
+$ ./cli.exe page
 ```
 
 ```
-accumulate page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new key page with 1 to N+1 public keys 
+accumulate page create [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new key page with 1 to N+1 public keys 
                  example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
   accumulate page get [URL]                     Get existing Key Page by URL
-  accumulate page key update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key in a key page with a new public key
-                 example usage: accumulate key update page  acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate page key add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to a key page
-                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate page key remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key from a key page
-                 example usage: accumulate key add page acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 r
+  accumulate page key update [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key in a key page with a new public key
+                 example usage: accumulate page key update  acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate page key add [key page url] [signing key name] [key index (optional)] [key height (optional)] [new key label] Add key to a key page
+                 example usage: accumulate page key add acc://RedWagon/RedPage1 redKey1 redKey2
+  accumulate page key remove [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key label] Remove key from a key page
+                 example usage: accumulate page key remove acc://RedWagon/RedPage1 redKey1 redKey2 
 ```
 
 **Get Key Page**
@@ -642,7 +671,7 @@ $ ./cli.exe page key remove ADITEST/ADIKEYPAGE1 key1234 1 1 key1234
 Send token from one anonymous token account to another one.
 
 ```bash
-> tx
+$ ./cli.exe tx
 ```
 
 ```bash
