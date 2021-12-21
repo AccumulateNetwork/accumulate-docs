@@ -420,20 +420,10 @@ Example of usage:
 ```bash
 $ ./cli.exe account get acc://ADITEST/DATA
 {
-   "url":"ADITEST/TOKENS",
-   "wait":false
-}{
-   "data":{
-      "balance":"1000000000",
-      "keyBookUrl":"",
-      "tokenUrl":"acc://ACME",
-      "txCount":1,
-      "url":"acc://ADITEST/TOKENS"
-   },
-   "keyPage":null,
-   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
-   "sponsor":"",
-   "type":"tokenAccount"
+   "keyBook":"e95bdba6179f3f9fadd4530f2403143dbd137e851a804bd917847fe27ec061b6",
+   "managerKeyBook":"",
+   "type":"dataAccount",
+   "url":"acc://ADITEST/DATA"
 }
 ```
 
