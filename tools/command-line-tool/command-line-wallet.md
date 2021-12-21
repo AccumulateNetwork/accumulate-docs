@@ -74,7 +74,7 @@ accumulate account get [url]                  Get anon token account by URL
 Example of usage:
 
 ```bash
-$ ./cli.exe account get acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACMEE
+$ ./cli.exe account get acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME
 ```
 
 ```bash
@@ -138,18 +138,42 @@ acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME
 
 #### Account Create (ADI Token Account)
 
+Create a token account for an ADI
+
 ```
 Usage:
-accumulate account create [{actor adi}] [wallet key label] [key index (optional)] [key height (optional)] [token account url] [tokenUrl] [keyBook (optional)]  Create a token account for an ADI
+accumulate account create token [origin adi] [signing key name] [key index (optional)] [key height (optional)] [new token account url] [tokenUrl] [keyBookUrl]
+
 ```
 
 Example of usage:
 
 ```bash
-$ ./cli.exe account create ADITEST key1234 0 1 ADITEST/TOKENS acc://ACME ADITEST/ADIKEYBOOK1
-{"url":"acc://ACME","wait":false}
-{"data":{"precision":8,"propertiesUrl":"","symbol":"ACME","url":"acc://ACME"},"keyPage":null,"mdRoot":"0000000000000000000000000000000000000000000000000000000000000000","sponsor":"","type":"token"}
-{"data":{"codespace":"","hash":"D4671ABD87E02BF6ACC3864BA84FF7F17D9A2224055973DB9079079D93F3D75B","txid":"5668f7a936c45e513d654a98ee758d8a3612833c5256ef65aed32c639e721aaa"},"keyPage":null,"sponsor":"","type":"tokenAccount"}
+$ ./cli.exe account create token ADITEST key11 ADITEST/TOKENS acc://ACME acc://ADITEST/book0
+        Transaction Id          :       9219c4aa063dbd4ad9a5ee02f3cca6e6445672a6f3b743aa6085239609b61d4a
+        Tendermint Reference    :       9616826054dcc07d81e636ed185159249c0777ff27bf52ddae947371e0537f3d
+        Error code              :       ok
+        Error                   :       CheckTx
+```
+
+#### Account Create (ADI Data Account)
+
+Create a data account under an ADI
+
+```
+Usage:
+accumulate account create data [origin adi] [signing key name] [key index (optional)] [key height (optional)] [new data account url]  [keyBookUrl]
+
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe account create data ADITEST key11 ADITEST/DATA acc://ADITEST/book0
+        Transaction Id          :       b9807394c46d41bcdb5fa6d500624fdb6a2832b50a34cd159c7d5d026584df38
+        Tendermint Reference    :       aa090d8f31b863a5a0b5e313e4e6ab698b4a8762f1f16a6d24f673ccb501dc63
+        Error code              :       ok
+        Error                   :       CheckTx
 ```
 
 ### ADI
@@ -359,6 +383,58 @@ $ ./cli.exe data
   accumulate data get [DataAccountURL] [EntryHash]  Get data entry by entryHash in hex
   accumulate data get [DataAccountURL] [start index] [count] expand(optional) Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data] Write entry to your data account. 
          Note: extid's and data needs to be a quoted string or hex
+```
+
+#### Create Data Account
+
+Create new data account
+
+```
+Usage:
+accumulate account create data [origin adi] [signing key name] [key index (optional)] [key height (optional)] [adi data account url]  [keyBookUrl]
+
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe account create data ADITEST key11 ADITEST/DATA acc://ADITEST/book0
+        Transaction Id          :       b9807394c46d41bcdb5fa6d500624fdb6a2832b50a34cd159c7d5d026584df38
+        Tendermint Reference    :       aa090d8f31b863a5a0b5e313e4e6ab698b4a8762f1f16a6d24f673ccb501dc63
+        Error code              :       ok
+        Error                   :       CheckTx
+```
+
+#### Get Data Account
+
+Get existing Key Page by URL
+
+```
+Usage:
+accumulate data get [DataAccountURL]
+
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe account get acc://ADITEST/DATA
+{
+   "url":"ADITEST/TOKENS",
+   "wait":false
+}{
+   "data":{
+      "balance":"1000000000",
+      "keyBookUrl":"",
+      "tokenUrl":"acc://ACME",
+      "txCount":1,
+      "url":"acc://ADITEST/TOKENS"
+   },
+   "keyPage":null,
+   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
+   "sponsor":"",
+   "type":"tokenAccount"
+}
 ```
 
 ### Faucet
@@ -732,10 +808,30 @@ Example of usage:
 
 ```bash
 $ ./cli.exe tx create acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME 500000000
-5917639ec8c66576b8e44797cfc198f0b85b0cbe4ab29ac8a1e8413a7b779f888d378ef83bcd38edf6023ed77a4e422059770da9d198ead8fd76245a353ced61
+
         Transaction Identifier  :       4a6683f35ac3191a482e606ac37e6224ef325936d045252af7bf7c5bd9970dfb
         Tendermint Reference    :       7745ebf61e42ee1b9e83b18a05125031d78f3bfdfe460e7be58f3c9296769e6a
         Error code              :       ok
+```
+
+#### Tx Create (between ADI token accounts)
+
+Send tokens between ADI token accounts.
+
+```
+Usage:
+accumulate tx create [from] [to] [amount]    
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe tx create acc://adione/one key61 acc://adithree/three  0.5
+
+        Transaction Identifier  :       73fc83c76f36a6a1850e84d2149223de69903c5c635be64ef234d61f8929b4ae
+        Tendermint Reference    :       b981ef488248ad3adf4b799a4b717e9f8026b0b8f6e162fa992b26ba68777385
+        Error code              :       ok
+        Error                   :       CheckTx
 ```
 
 #### Tx History
