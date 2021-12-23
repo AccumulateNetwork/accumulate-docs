@@ -381,7 +381,8 @@ $ ./cli.exe data
          example usage:  accumulate account create data acc://actor signingKeyName acc://actor/dataAccount acc://actor/book0
   accumulate data get [DataAccountURL]                    Get existing Key Page by URL
   accumulate data get [DataAccountURL] [EntryHash]  Get data entry by entryHash in hex
-  accumulate data get [DataAccountURL] [start index] [count] expand(optional) Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data] Write entry to your data account. 
+  accumulate data get [DataAccountURL] [start index] [count] expand(optional) Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided 
+  accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data] Write entry to your data account. 
          Note: extid's and data needs to be a quoted string or hex
 ```
 
@@ -405,7 +406,28 @@ $ ./cli.exe account create data ADITEST key11 ADITEST/DATA acc://ADITEST/book0
         Error                   :       CheckTx
 ```
 
-#### Get Data Account
+#### Write Data
+
+Write entry to your data account.
+
+```
+Usage:
+accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data]
+
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe data write acc://ADITEST/DATA key61 "testdata"
+        Entry Hash              :       b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808
+        Transaction Id          :       513050cc0fb5459a27f7fd1661656d5c5b7fe3879740d51aabab0e072a0bb857
+        Tendermint Reference    :       76821f50a8fa63fe6d74263754ad0c728003466d14822686963b604731225907
+        Error code              :       ok
+        Error                   :       CheckTx
+```
+
+#### Get Data
 
 Get existing Key Page by URL
 
@@ -418,12 +440,86 @@ accumulate data get [DataAccountURL]
 Example of usage:
 
 ```bash
-$ ./cli.exe account get acc://ADITEST/DATA
+$ ./cli.exe data get acc://ADITEST/DATA
 {
-   "keyBook":"e95bdba6179f3f9fadd4530f2403143dbd137e851a804bd917847fe27ec061b6",
-   "managerKeyBook":"",
-   "type":"dataAccount",
-   "url":"acc://ADITEST/DATA"
+   "type":"dataEntry",
+   "merkleState":{
+      "count":2,
+      "roots":[
+         null,
+         "87c5cc4a4f86accac328b5773c3e6fe29e8af23cbaa5a14f154011e2e71af4d2"
+      ]
+   },
+   "data":{
+      "entry":{
+         "data":"61646974776f64617461"
+      },
+      "entryHash":"b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808"
+   }
+}
+```
+
+#### Get Data (entry hash)
+
+Get data entry by entryHash in hex
+
+```
+Usage:
+accumulate data get [DataAccountURL] [EntryHash]
+
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe data get acc://ADITEST/DATA b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808
+{
+   "type":"dataEntry",
+   "merkleState":{
+      "count":2,
+      "roots":[
+         null,
+         "87c5cc4a4f86accac328b5773c3e6fe29e8af23cbaa5a14f154011e2e71af4d2"
+      ]
+   },
+   "data":{
+      "entry":{
+         "data":"61646974776f64617461"
+      },
+      "entryHash":"b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808"
+   }
+}
+```
+
+#### Get Data (start & count)
+
+Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided
+
+```
+Usage:
+accumulate data get [DataAccountURL] [start index] [count] expand(optional)
+
+```
+
+Example of usage:
+
+```bash
+$ ./cli.exe data get acc://ADITEST/DATA 0 1
+{
+   "type":"dataEntry",
+   "merkleState":{
+      "count":2,
+      "roots":[
+         null,
+         "87c5cc4a4f86accac328b5773c3e6fe29e8af23cbaa5a14f154011e2e71af4d2"
+      ]
+   },
+   "data":{
+      "entry":{
+         "data":"61646974776f64617461"
+      },
+      "entryHash":"b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808"
+   }
 }
 ```
 
