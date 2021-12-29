@@ -1,10 +1,8 @@
-
 # CLI Tutorial
 
 This tutorial will guide you in getting started with the CLI. We'll run through a few basic commands to create and fund an account, and send tokens between the two.
 
 This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [CLI Setup](../tools/command-line-tool/using-the-command-line.md) for instructions on building the CLI.
-{% endhint %}
 
 ### Creating a lite token account
 
@@ -16,7 +14,7 @@ $ ./cli account generate
 
 Remember that if you are on Windows you must use `./cli.exe` instead.
 
-Once you run the command, you should get an output with the address for your token account. It will look something like the following: `acc://d699fd22e466e7ea4f05a1f6b67fc67af555856f701bdf29/ACME :   e258d215c12d610dad703482bc7c61a0f5db975fbfaf73c52f4533c5941b82d3`.
+Once you run the command, you should get an output with the address for your token account. It will look something like the following: `acc://d699fd22e466e7ea4f05a1f6b67fc67af555856f701bdf29/ACME : e258d215c12d610dad703482bc7c61a0f5db975fbfaf73c52f4533c5941b82d3`.
 
 ### Funding your account
 
@@ -25,7 +23,7 @@ The account that was created in the previous section currently only exist locall
 Since this command actually requires broadcasting to the network, we need to make sure we are connected to a node. We do that with the `-s` flag, followed by the server address for the node we want to connect to.
 
 {% hint style="info" %}
-_Note_: If you're running your own node locally, you will need to specify your local server with `-s`. 
+_Note_: If you're running your own node locally, you will need to specify your local server with `-s`.
 {% endhint %}
 
 You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulate/blob/develop/networks/networks.go). For this tutorial we'll use `https://testnet.accumulatenetwork.io/v1`.
@@ -33,7 +31,9 @@ You can find a list of the available servers in the [Networks.go file](https://g
 ```bash
 $ ./cli faucet <your account address> -s https://testnet.accumulatenetwork.io/v1
 ```
+
 This will return a statment similar to the following:
+
 ```bash
         Transaction Identifier  :       6dd7a8d90ffaa4d45ff5a538a06bdb6d13b3f3cf90763fae13797b4a935caed5
         Tendermint Reference    :       a0b30c13f68fbaf4ac3c943837dda06e912dc851f707f92f13e7894fabc9bd0a
@@ -64,11 +64,7 @@ Looking at the above, we can see under `"Balance"` that we have received 10 ACME
 
 Now let's try sending some ACME tokens from one account to the other. You can use the account we already funded as the sending account. You'll need to create an additional account to receive the tokens. You will need to use the `account generate` again to establish the receiving account.
 
-To send the tokens you will use the  `tx create` command. Once you have the addresses of the sending and receiving accounts ready, run the command, followed by the account address for the sending account, then the account address for the receiving account, and finally the amount you would like to send (and don't forget the `-s` flag if you're not running your own node).
-
-{% hint style="info" %}
-_Note_: The unit size for ACME balances in the CLI is 1/100,000,000. So if you want to send 1 ACME token, you'll need to enter 100000000 as the amount.
-{% endhint %}
+To send the tokens you will use the `tx create` command. Once you have the addresses of the sending and receiving accounts ready, run the command, followed by the account address for the sending account, then the account address for the receiving account, and finally the amount you would like to send (and don't forget the `-s` flag if you're not running your own node).
 
 ```bash
 $ ./cli tx create <sending account> <receiving account> <amount to send> -s https://testnet.accumulatenetwork.io/v1
@@ -203,7 +199,6 @@ The Output should look something like:
 "sponsor":"",
 "txid":null,
 "type":"adi"}
-
 ```
 
 ### Account Create (ADI Token Account)
@@ -229,6 +224,7 @@ You can create new keypages with public key within the wallet
 ```bash
 $ ./cli -s https://testnet.accumulatenetwork.io/v1 page create <adi URL> <keyname> <new keypage URL> <keyname>
 ```
+
 The Output should look something like:
 
 ```bash
@@ -267,6 +263,7 @@ You can create a keybook after creating a keypage. Below is the command to creat
 ```bash
 $ ./cli book create <adi URL> <keyname> <new keybook URL> <existing keypage URL>
 ```
+
 The Output should look something like:
 
 ```bash
@@ -283,6 +280,7 @@ You can get details of existing keybook URL with the following command:
 ```bash
 $ ./cli book get <keybook URL>
 ```
+
 The Output should look something like:
 
 ```bash
@@ -292,8 +290,7 @@ The Output should look something like:
 
 ### Keypage Hierarchy
 
-In this section you will learn to create a keybook with multiple keypages and managing the keypages with hierarchy of keys that allow to participate in the execution of transactions.
-A Keybook is a prioritized list of Keypages, where the first page in the list is the highest priority and the last page is the lowest priority. The first keypage can modify any keypage, but the last keypage can only modify itself.
+In this section you will learn to create a keybook with multiple keypages and managing the keypages with hierarchy of keys that allow to participate in the execution of transactions. A Keybook is a prioritized list of Keypages, where the first page in the list is the highest priority and the last page is the lowest priority. The first keypage can modify any keypage, but the last keypage can only modify itself.
 
 Below are the steps that you need to follow to generate keys, create ADI, add pages to the book and finally add/update keys:
 
@@ -332,6 +329,7 @@ The next step is to add keypages to the keybook under the ADI which was created 
 ```bash
 $ ./cli page create keytestadi/book keytest-0-0 keytestadi/page1 keytest-1-0
 ```
+
 ```bash
 {"data":{"codespace":"","hash":"87541A6483FF29779AB8528B9DA14BC5C747EB1F379D451AA76BF988E54B1777","txid":"81c2aa87078df1bcd368297a3f45a5324b27599c848b672650e6138ba1e4265e"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"}            :       ok
 ```
@@ -339,6 +337,7 @@ $ ./cli page create keytestadi/book keytest-0-0 keytestadi/page1 keytest-1-0
 ```bash
 $ ./cli page create keytestadi/book keytest-0-0 keytestadi/page2 keytest-2-0
 ```
+
 ```bash
 {"data":{"codespace":"","hash":"8A9B68686333AA64034FCFB1762DF4AA8DA7C12C9D9688B8DA9CA1F9A226E012","txid":"024d483ecfe44f1b8a76292ad6cd14847a3cec2a54866f3dc3e6f69620d32788"},"keyPage":null,"sponsor":"","txid":null,"type":"sigSpec"}           :       ok
 ```
@@ -389,7 +388,6 @@ The Output should throw error something like:
 jsonrpc2.Error{Code:ErrorCode{-32603:"Internal error"}, Message:"Internal error"}
 ```
 
-
 ### How to send Credits
 
 You can send credits using a lite token account or adi keypage to another lite token account or adi keypage.
@@ -397,6 +395,7 @@ You can send credits using a lite token account or adi keypage to another lite t
 ```bash
 $ ./cli credits <lite token account URL> <lite token account or Keypage URL> <amount>
 ```
+
 The Output should look something like:
 
 ```bash
@@ -405,7 +404,6 @@ The Output should look something like:
         Error code              :       ok
 ```
 
-
 ### The end
 
-That is the end of this tutorial, but you can find more commands and examples in the [Reference Guide](broken-reference).
+That is the end of this tutorial, but you can find more commands and examples in the [Reference Guide](broken-reference/).
