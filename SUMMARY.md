@@ -30,6 +30,7 @@
 * [Accumulate Digital Identifiers](deep-dive/identity.md)
 * [Key Management](deep-dive/key-management.md)
 * [Identity Hierarchies](deep-dive/identity-hierarchies.md)
+* [Synthetic Transactions](deep-dive/synthetic-transactions.md)
 
 ## Tools
 

@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Synthetic Transactions
 
 **1. Introduction to Database Scaling**
@@ -20,11 +24,11 @@ Each BVN is a network of Tendermint nodes responsible for validating transaction
 
 While each identity acts as its own independent blockchain, transactions between the BVNs that host these identities necessitate a query of the sender’s transaction history to determine if they actually possess the assets they wish to send. Since no BVN contains the entire state of the Accumulate network, each BVN must be independently queried. As more BVNs are added to scale the network, the majority of queries will involve BVNs that have no transaction history with the sender. This puts unnecessary load on each BVN, which increases transaction cost and decreases transaction throughput.
 
-To solve this problem, a third type of node network is introduced, called the Data Server Network (DSN). The DSN, does not have the requirement of high validation throughput.  It will move the transaction data from the BVN’s and organize the transaction history into organized identity chains. Thus, this reduces the resource load on the BVN nodes, enabling the BVN’s to focus on managing the identity states, while allowing the DSN to maintain the transaction history for those states.
+To solve this problem, a third type of node network is introduced, called the Data Server Network (DSN). The DSN, does not have the requirement of high validation throughput. It will move the transaction data from the BVN’s and organize the transaction history into organized identity chains. Thus, this reduces the resource load on the BVN nodes, enabling the BVN’s to focus on managing the identity states, while allowing the DSN to maintain the transaction history for those states.
 
 **4. Introduction to Synthetic Transactions**
 
-To optimize transaction throughput, Accumulate uses synthetic transactions, which can be broadly defined as any transaction that is submitted by the protocol rather than by the user. To understand how synthetic transactions work, consider the classic example of Alice, Bob, and Charlie who will be treated as separate ADIs on the Accumulate network. 
+To optimize transaction throughput, Accumulate uses synthetic transactions, which can be broadly defined as any transaction that is submitted by the protocol rather than by the user. To understand how synthetic transactions work, consider the classic example of Alice, Bob, and Charlie who will be treated as separate ADIs on the Accumulate network.
 
 Alice’s transactions are handled by BVN-1, Bob’s by BVN-2, and Charlie’s by BVN-3. Bob needs to pay Charlie, but he can only do so once Alice pays him back. Alice sends a transaction to Bob after BVN-1 verifies that Alice has sufficient funds. Bob receives the tokens and sends a transaction to Charlie through BVN-2. However, BVN-2 doesn’t know about the transaction or from which BVN it came since Alice sent her transaction through BVN-1. Therefore, BVN-2 will have to query all other BVNs to verify that Bob has enough money to pay Charlie. This problem can be resolved by creating transaction flows with synthetic transactions.
 
@@ -34,7 +38,7 @@ After BVN-1 has validated Alice’s transaction, it sends a second transaction t
 
 The illustration below shows individual synthetic transactions between identities A-F that are being collected and sent as a bulk synthetic transaction from BVN-0 to BVN-1, BVN-2, and the Directory Network (DN). The yellow circles in rows A-F represent transactions, while those in the “Synthetic TX” row represent sets of transactions between identities A-F. The quadrangle that connects ADIs A-F, BVN-1, BVN-2, and the DN represents communication between all ADIs hosted on BVN-0 and all identities hosted on other BVNs or the DN. If the box representing BVN-1 were opened, for example, you might find identities G-J.
 
-![](<../.gitbook/assets/Synthetic-Transactions-Figure3.svg>)
+![](<../.gitbook/assets/Synthetic-Transactions-Figure3 (1) (1).svg>)
 
 When a transaction or set of transactions validates on the Accumulate network, those transaction are duplicated as synthetic transactions that essentially export updates to other BVNs. Those updates do not require state in BVN-0 to validate what they should do in BVN-1, BVN-2, or the DN. If BVN-0 is sending a transaction to BVN-1, and later on to BVN-2, BVN-0 can operate at full speed and interact with BVN-2 without having to wait on BVN-1 to accept the deposit.
 
