@@ -6,7 +6,6 @@
   * [Innovations](protocol-overview/factom-accumulate-innovations.md)
   * [FAQs](https://accumulatenetwork.io/learn/#intro)
   * [Glossary](protocol-overview/glossary.md)
-  * [Glossary](protocol-overview/glossary-1.md)
 
 ## Developers
 
