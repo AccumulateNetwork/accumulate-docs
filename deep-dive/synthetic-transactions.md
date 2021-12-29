@@ -34,7 +34,7 @@ After BVN-1 has validated Alice’s transaction, it sends a second transaction t
 
 The illustration below shows individual synthetic transactions between identities A-F that are being collected and sent as a bulk synthetic transaction from BVN-0 to BVN-1, BVN-2, and the Directory Network (DN). The yellow circles in rows A-F represent transactions, while those in the “Synthetic TX” row represent sets of transactions between identities A-F. The quadrangle that connects ADIs A-F, BVN-1, BVN-2, and the DN represents communication between all ADIs hosted on BVN-0 and all identities hosted on other BVNs or the DN. If the box representing BVN-1 were opened, for example, you might find identities G-J.
 
-![](<../.gitbook/assets/Synthetic-Transactions-Figure3 (1) (1).svg>)
+![](../.gitbook/assets/synth\_transaction.PNG)
 
 When a transaction or set of transactions validates on the Accumulate network, those transaction are duplicated as synthetic transactions that essentially export updates to other BVNs. Those updates do not require state in BVN-0 to validate what they should do in BVN-1, BVN-2, or the DN. If BVN-0 is sending a transaction to BVN-1, and later on to BVN-2, BVN-0 can operate at full speed and interact with BVN-2 without having to wait on BVN-1 to accept the deposit.
 
