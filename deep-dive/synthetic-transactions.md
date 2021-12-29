@@ -1,7 +1,3 @@
----
-coverY: 0
----
-
 # Synthetic Transactions
 
 **1. Introduction to Database Scaling**
