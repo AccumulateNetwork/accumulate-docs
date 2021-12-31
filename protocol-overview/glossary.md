@@ -8,6 +8,10 @@ description: A list of Accumulate-centric terminology and definitions
 
 The Accumulate network is a collection of independent chains. Each chain is managed by a hierarchy of identities known as Accumulate Digital Identifiers (ADIs), and each identity possesses a hierarchy of keys, which allows it to participate in the execution of transactions.
 
+#### ACME
+
+“ACME” is the symbol of a cryptographic token used in the Accumulate protocol. The ACME token, which is a traditional spendable token, like ETH and BTC and it is issued by the protocol to reward those providing services to the protocol. For example, Validators will be awarded staking fees in ACME.
+
 #### Accumulate Blocks
 
 The Accumulate protocol defines minor blocks and major blocks. Minor blocks are once per second synchronization points of the Merkle trees. Major blocks are twice per day.
@@ -42,17 +46,13 @@ acc://Bob/Tokens/ACME
 
 When you are sending or receiving tokens you would specify this URL.
 
-#### Anchor Chain
+#### ADI Scratch Data Accounts (Scratch Chains)
 
-A chain that aggregates anchors from other chains (transactions, merkle tree & BVNs) capturing the states of the network.
+Scratch chains are identical to data chains, however, after 2-3 weeks the chain is compressed, and proof of the transactions is created. A proof is a logical argument used to show the truth of the operations made on the chain. This argument or proof contains less data than the scratch chain it is representing. This allows the blockchain to not be burdened with moving substantial amounts of data over the network.
 
 #### Block Validator Network (BVN) / Block Validator Network Node (BVNN)&#x20;
 
 A BVN executes transactions against records. At the end of each block, the BVN collects Merkle DAG roots (anchors) from the transaction chain of records modified by one or more transactions in the block, appending them to the BVN’s root chain. The anchor from the root chain is sent to the DN. A BVNN is a node with a BVN.
-
-#### Directory Network (DN)/ Directory Network Node (DNN)
-
-The DN executes transactions against certain system records, such as the ACME token issuer. The DN also receives root chain anchors sent from BVNs, appending them to the DN’s BVN anchor chain. At the end of each block, the DN collects Merkle DAG roots (anchors) from the transaction chain of records modified by one or more transactions in the block (including the DN’s BVN anchor chain), appending them to the DN’s root chain. The anchor from the root chain is sent to all of the BVNs. A DNN is a node within a DN.
 
 #### Chain Validators/Executors
 
@@ -61,6 +61,14 @@ Chain validators can be thought of as transaction executors. The actual code for
 #### Credits
 
 Credits are a non-transferable form of payment on the Accumulate Network. Credits are created by converting ACME tokens into credits. Once the user converts ACME tokens to purchase credits, credits are then used for actions on the network such as the creation of an ADI, ADI Token Account, or Updating Keys in a Key Page.
+
+#### Directory Network (DN)/ Directory Network Node (DNN)
+
+The DN executes transactions against certain system records, such as the ACME token issuer. The DN also receives root chain anchors sent from BVNs, appending them to the DN’s BVN anchor chain. At the end of each block, the DN collects Merkle DAG roots (anchors) from the transaction chain of records modified by one or more transactions in the block (including the DN’s BVN anchor chain), appending them to the DN’s root chain. The anchor from the root chain is sent to all of the BVNs. A DNN is a node within a DN.
+
+#### Keys
+
+Keys are defined as the hash of the public key for a signature.
 
 #### Key Book
 
@@ -78,13 +86,13 @@ A Key Page can be represented as so:\
 \
 acc://Bob/KeyPage
 
-#### Keys
-
-Keys are defined as the hash of the public key for a signature.
-
 #### Layer-1 Anchoring
 
 An anchor is created from the latest Directory Network major block which is then anchored into a Layer 1 Blockchain such as Bitcoin.
+
+#### Lite Data Chain
+
+A lite data chain is a chain that anyone can write data to, as opposed to ADI Data Accounts which requires specified keys.
 
 #### Lite Token Account
 
@@ -94,17 +102,13 @@ acc://bf3c639bbce4f523897050de8df9f34f49d8be7d9eb8fa11/ACME
 
 Lite Token Accounts are not associated with an identity and are not acknowledged by the Accumulate network until they have ACME tokens.
 
-#### Lite Data Chain
+#### Major Blocks
 
-A lite data chain is a chain that anyone can write data to, as opposed to ADI Data Accounts which requires specified keys.
+Every 12 hours, the transactions executed in the last 12 hours (since the prior major block) are collected into a new major block. For each record modified by a transaction in the block, a Merkle DAG root (anchor) is taken from the main transaction chain of the record and appended to the DN or BVN’s major root chain.
 
 #### Managed Chain
 
 When creating an ADI account, you can specify an additional Key Book within the same ADI that manages a Key Book. As an example, a transaction submitted using Key1 from acc:/Bob/KeyPage1 within acc://Bob/ KeyBook1 would be routed to acc:/Bob/KeyBook2 which is manager for that account. The manager would then need to sign a transaction approving the transactions specified by the Key Page and m of n required. In the future a Key Book of one ADI will be able to manage a Key Book of another ADI.
-
-#### Major Blocks
-
-Every 12 hours, the transactions executed in the last 12 hours (since the prior major block) are collected into a new major block. For each record modified by a transaction in the block, a Merkle DAG root (anchor) is taken from the main transaction chain of the record and appended to the DN or BVN’s major root chain.
 
 #### Minor Blocks
 
@@ -114,6 +118,10 @@ Tendermint collects incoming transactions and presents them to the application i
 
 A pending chain tracks transactions that haven’t been promoted to the main chain. As an example, a multi-signature that has an m of n of 3 of 4, with only 2 signatures, would sit in the pending chain until 3 of 4 were signed. In addition, if a manager hasn’t signed a transaction, the transactions would sit in the pending chain until the specified m of n was satisfied. The data that is produced in the pending chain is pruned every 2.3 weeks.
 
+#### Scratch Space
+
+Accumulate provides scratch space on the blockchain that can be used by parties to come to consensus, but whose data availability is not retained by Accumulate forever. Scratch space allows processes to provide cryptographic proof of validation and process transactions without overburdening the blockchain.
+
 #### sub-ADI
 
 An ADI can contain another ADI. We call this a sub-ADI. While an ADI contains accounts, a sub-ADI contains sub-accounts.
@@ -121,14 +129,6 @@ An ADI can contain another ADI. We call this a sub-ADI. While an ADI contains ac
 #### Synthetic Transactions
 
 Synthetic transactions are any transactions that are generated by the protocol. These include transactions that deposit tokens into other token accounts, and refund amounts for failed transactions. Accumulate takes a pragmatic approach to defining the risk and independence of transactions across the protocol by using short block sizes and adding latency between the validation and recording of transactions, and the application of the outcome of a transaction to the state of the blockchain. Accumulate processes transactions as submitted by users of the protocol directly, but rather than these changing the state of the blockchain, user transactions create synthetic transactions that are then processed by the protocol. Because user transactions are limited to changing only one part of the protocol, they can almost always be processed in parallel. Since synthetic transactions are limited to changing only one part of the protocol, they too can be processed in parallel in following blocks.
-
-#### Scratch Chains
-
-Scratch chains are identical to data chains, however, after 2-3 weeks the chain is compressed, and proof of the transactions is created. A proof is a logical argument used to show the truth of the operations made on the chain. This argument or proof contains less data than the scratch chain it is representing. This allows the blockchain to not be burdened with moving substantial amounts of data over the network.
-
-#### Scratch Space
-
-Accumulate provides scratch space on the blockchain that can be used by parties to come to consensus, but whose data availability is not retained by Accumulate forever. Scratch space allows processes to provide cryptographic proof of validation and process transactions without overburdening the blockchain.
 
 #### Token Issuance
 
