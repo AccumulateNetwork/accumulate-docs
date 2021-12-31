@@ -4,61 +4,115 @@ description: A list of Accumulate-centric terminology and definitions
 
 # Glossary
 
-#### Accumulate Digital Identifier (ADI)
-
-An ADI is an account that can hold sub-accounts under itself. These sub-accounts are different chains that store information on the Accumulate Network. An ADI can manage multiple types of chains i.e. Token Account Chain, Data Chain, Scratch Chain, Token Issuance Chain, Key Chain, Managed Chains. The ADI name can be customized based on the preferences of the user.
-
-#### Accumulate Network
+#### Accumulate
 
 The Accumulate network is a collection of independent chains. Each chain is managed by a hierarchy of identities known as Accumulate Digital Identifiers (ADIs), and each identity possesses a hierarchy of keys, which allows it to participate in the execution of transactions.
 
+#### Accumulate Blocks
+
+The Accumulate protocol defines minor blocks and major blocks. Minor blocks are once per second synchronization points of the Merkle trees. Major blocks are twice per day.
+
+#### Accumulate Digital Identifier (ADI)
+
+Accumulate is a paradigm shift for how blockchains manage data, tokens, and users. Accumulate is the first blockchain to be completely organized around Decentralized Digital Identity and Identifiers (DDIIs). Accumulate Digital Identifiers (ADIs) have powerful and novel uses within Accumulate to allow the blockchain network to be applied to a huge set of use cases. ADIs allow smart contracts, consensus building, validator networks, and enterprise-level management of digital assets that go beyond the simple and constrained smart contract based frameworks of other blockchains.
+
+An Identity or Accumulate Digital Identifier is a human readable URL that can represent users, institutions, devices etc.
+
+An Identity has accounts which holds its assets, whether that is tokens, data, or keys.
+
+An identity can be represented as so:
+
+acc://Bob
+
+Identities provide structure on the Accumulate Blockchain.
+
 #### ADI Data Account
 
-An ADI can contain a data account. We call this an ADI data account. The ADI Data Account is a layer that allows ADI accounts to add and organize data to the blockchain
+An ADI Data Account is one of the types of accounts an ADI can control. An ADI data account holds data. An ADI data account can be represented as so:
+
+acc://Bob/Data
+
+To write Data you would specify this URL.
 
 #### ADI Token Account
 
-ADI Token Accounts hold tokens. ADI Token Accounts can send tokens to other Lite Accounts or ADI Token Accounts.
+An ADI Token Account is one of the types of accounts an ADI can control. An ADI token account holds tokens. An ADI token account can be represented as so:
 
-#### Admin Keys
+acc://Bob/Tokens/ACME
 
-Admin Keys are used to make changes to keys and key types, which are used to manage an identity. Admin keys have priorities. The highest priorities can be kept in cold storage, while the lower priority keys are in active use to maintain an Identity. Admin keys can be replaced or retired with any sort of key signature as needed to manage the identity.
+When you are sending or receiving tokens you would specify this URL.
 
 #### Anchor Chain
 
 A chain that aggregates anchors from other chains (transactions, merkle tree & BVNs) capturing the states of the network.
 
-#### Block Validator Network
+#### Block Validator Network (BVN) / Block Validator Network Node (BVNN)&#x20;
 
-A tendermint network of nodes that execute transactions against records. BVNs act as independent blockchains that build blocks for parts of the Accumulate blockchain. BVNs serve as their own roots of possible nodes, breaking up the job of validating transactions. BVN Sub-chains hold Merkle roots of chains collected and managed by a BVN. Effectively allows the sharding of BVN nodes, which in turn shard Accumulate.
+A BVN executes transactions against records. At the end of each block, the BVN collects Merkle DAG roots (anchors) from the transaction chain of records modified by one or more transactions in the block, appending them to the BVN’s root chain. The anchor from the root chain is sent to the DN. A BVNN is a node with a BVN.
+
+#### Directory Network (DN)/ Directory Network Node (DNN)
+
+The DN executes transactions against certain system records, such as the ACME token issuer. The DN also receives root chain anchors sent from BVNs, appending them to the DN’s BVN anchor chain. At the end of each block, the DN collects Merkle DAG roots (anchors) from the transaction chain of records modified by one or more transactions in the block (including the DN’s BVN anchor chain), appending them to the DN’s root chain. The anchor from the root chain is sent to all of the BVNs. A DNN is a node within a DN.
+
+#### Chain Validators/Executors
+
+Chain validators can be thought of as transaction executors. The actual code for executors is per-transaction (type), not per-chain. As an example, the creation of an identity would have a specified executor. The validation of the signature for instance is handled by the overall validator/executor.
 
 #### Credits
 
 Credits are a non-transferable form of payment on the Accumulate Network. Credits are created by converting ACME tokens into credits. Once the user converts ACME tokens to purchase credits, credits are then used for actions on the network such as the creation of an ADI, ADI Token Account, or Updating Keys in a Key Page.
 
-#### Data Keys
+#### Key Book
 
-Data Keys authorize data writes to data chains. Data Keys can be restricted to particular data chains.
+Key Books store the Hierarchical Key Management Structure of an ADI using Key Pages and Keys within those pages. A Key Book is an ordered set of Key Pages by priority where any Key Page can modify itself or a Page of lower priority. Modifications include adding, updating, or removing keys. An account specifies what Key Book applies to any transaction within that account.
 
-#### Directory Network (DN)
+A Key Book can be represented as so:\
+\
+acc://Bob/KeyBook
 
-BVNs are tied together by a blockchain called the Directory Network (DN), which builds directory blocks for Accumulate. The DN collects the summary hash for all the BVNs and puts them in a directory block for every block period. The DN acts as a directory service for Accumulate and resolves questions about the state of Accumulate at every block.
+#### Key Page
 
-#### Keybook
+A Key Page defines the set of Keys required to validate a transaction. A Key Page specify one or more Keys possible and how many such Keys are required to validate a transaction. As an example, a Key Page with an m of n of 3 of 4 means that the page contains 4 keys and 3 of those 4 keys are required to sign transactions. This transaction would be considered multi-sig whereas an m of n of 1 of 1 would be single-sig. Key Pages store credits.
 
-A Keybook maintains a set of keypages ordered by priority.
-
-#### Keypage
-
-A Key Page holds a list of the hash of public keys and determines signature specifications (single-sig, multi-sig).
+A Key Page can be represented as so:\
+\
+acc://Bob/KeyPage
 
 #### Keys
 
-Keys are signatures that are required for submitting transactions.
+Keys are defined as the hash of the public key for a signature.
 
-#### Lite Account
+#### Layer-1 Anchoring
 
-Lite Accounts are accounts that are not tied to Identity, however, they can send transactions using ACME. Lite Accounts can send transactions to other Lite Accounts or ADI Token Accounts. Lite Accounts are URL-based, but those addresses feature a series of hexadecimal characters.
+An anchor is created from the latest Directory Network major block which is then anchored into a Layer 1 Blockchain such as Bitcoin.
+
+#### Lite Token Account
+
+A lite token account is an unstructured account that is similar to an address such as Bitcoin, a string of non-human readable characters. Lite Token Accounts are free to create. Accumulate represents these accounts as so:
+
+acc://bf3c639bbce4f523897050de8df9f34f49d8be7d9eb8fa11/ACME
+
+Lite Token Accounts are not associated with an identity and are not acknowledged by the Accumulate network until they have ACME tokens.
+
+#### Lite Data Chain
+
+A lite data chain is a chain that anyone can write data to, as opposed to ADI Data Accounts which requires specified keys.
+
+#### Managed Chain
+
+When creating an ADI account, you can specify an additional Key Book within the same ADI that manages a Key Book. As an example, a transaction submitted using Key1 from acc:/Bob/KeyPage1 within acc://Bob/ KeyBook1 would be routed to acc:/Bob/KeyBook2 which is manager for that account. The manager would then need to sign a transaction approving the transactions specified by the Key Page and m of n required. In the future a Key Book of one ADI will be able to manage a Key Book of another ADI.
+
+#### Major Blocks
+
+Every 12 hours, the transactions executed in the last 12 hours (since the prior major block) are collected into a new major block. For each record modified by a transaction in the block, a Merkle DAG root (anchor) is taken from the main transaction chain of the record and appended to the DN or BVN’s major root chain.
+
+#### Minor Blocks
+
+Tendermint collects incoming transactions and presents them to the application in blocks, generally once per second. These are minor blocks. At the end of each minor block, for each record that was modified by a transaction within the block, a Merkle DAG root (anchor) is taken from the main transaction chain of the record and appended to the DN or BVN’s minor root chain. What are major blocks? Every 12 hours, the transactions executed in the last 12 hours (since the prior major block) are collected into a new major block. For each record modified by a transaction in the block, a Merkle DAG root (anchor) is taken from the main transaction chain of the record and appended to the DN or BVN’s major root chain.
+
+#### Pending Chains
+
+A pending chain tracks transactions that haven’t been promoted to the main chain. As an example, a multi-signature that has an m of n of 3 of 4, with only 2 signatures, would sit in the pending chain until 3 of 4 were signed. In addition, if a manager hasn’t signed a transaction, the transactions would sit in the pending chain until the specified m of n was satisfied. The data that is produced in the pending chain is pruned every 2.3 weeks.
 
 #### sub-ADI
 
@@ -66,8 +120,16 @@ An ADI can contain another ADI. We call this a sub-ADI. While an ADI contains ac
 
 #### Synthetic Transactions
 
-Synthetic Transactions are transactions that are submitted by the protocol rather than by the user. This allows the BVN hosting the user to completely process the transaction on its own, and allows it to notify the remaining BVNs of the transaction after it has been completed. Since the BVN that processed the transaction does not have to wait on the others, this allows for faster processing times of transactions.
+Synthetic transactions are any transactions that are generated by the protocol. These include transactions that deposit tokens into other token accounts, and refund amounts for failed transactions. Accumulate takes a pragmatic approach to defining the risk and independence of transactions across the protocol by using short block sizes and adding latency between the validation and recording of transactions, and the application of the outcome of a transaction to the state of the blockchain. Accumulate processes transactions as submitted by users of the protocol directly, but rather than these changing the state of the blockchain, user transactions create synthetic transactions that are then processed by the protocol. Because user transactions are limited to changing only one part of the protocol, they can almost always be processed in parallel. Since synthetic transactions are limited to changing only one part of the protocol, they too can be processed in parallel in following blocks.
 
-#### Token Keys
+#### Scratch Chains
 
-Token Keys authorize token transactions. They can be restricted to particular tokens.
+Scratch chains are identical to data chains, however, after 2-3 weeks the chain is compressed, and proof of the transactions is created. A proof is a logical argument used to show the truth of the operations made on the chain. This argument or proof contains less data than the scratch chain it is representing. This allows the blockchain to not be burdened with moving substantial amounts of data over the network.
+
+#### Scratch Space
+
+Accumulate provides scratch space on the blockchain that can be used by parties to come to consensus, but whose data availability is not retained by Accumulate forever. Scratch space allows processes to provide cryptographic proof of validation and process transactions without overburdening the blockchain.
+
+#### Token Issuance
+
+In Accumulate, users will be able to create custom tokens that can be used within the Accumulate protocol.
