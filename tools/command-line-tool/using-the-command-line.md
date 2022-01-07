@@ -8,10 +8,10 @@ The first step is building the CLI executable. You will need to have the Go comp
 
 ```bash
 $ git clone https://github.com/AccumulateNetwork/accumulate.git
-$ go build ./cmd/cli
+$ go build ./cmd/accumulate
 ```
 
-Once you run these commands, a `cli` binary file should appear in the root directory `accumulate`.
+Once you run these commands, an `accumulate` binary file should appear in the root directory `accumulate`.
 
 ## How to start the CLI tool
 
@@ -20,15 +20,15 @@ To test that the CLI built correctly, and to bring up a usage guide and list of 
 #### On Windows
 
 ```bash
-$ ./cli.exe
+$ ./accumulate.exe
 ```
 
 #### On Mac / Linux
 
 ```bash
-$ ./cli
+$ ./accumulate
 ```
 
 {% hint style="info" %}
-_Note_: every operation must be prefixed with the `cli` command (either `./cli` or `./cli.exe` depending on your operating system).
+_Note_: every operation must be prefixed with the `accumulate` command (either `./accumulate` or `./accumulate.exe` depending on your operating system).
 {% endhint %}
