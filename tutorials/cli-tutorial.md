@@ -9,10 +9,10 @@ This tutorial assumes you have already built the executable for the CLI tool. If
 The first step is to create a lite token account using the `account generate` command. This command will create an account URL and corresponding private key, which will be stored locally on your computer. Since this command only generates an account locally, it is not necessary to connect to a node, however, this also means that lite token account is not yet on the server.
 
 ```bash
-$ ./cli account generate
+$ ./accumulate account generate
 ```
 
-Remember that if you are on Windows you must use `./cli.exe` instead.
+Remember that if you are on Windows you must use `./accumulate.exe` instead.
 
 Once you run the command, you should get an output with the address for your token account. It will look something like the following: `acc://d699fd22e466e7ea4f05a1f6b67fc67af555856f701bdf29/ACME : e258d215c12d610dad703482bc7c61a0f5db975fbfaf73c52f4533c5941b82d3`.
 
@@ -29,7 +29,7 @@ _Note_: If you're running your own node locally, you will need to specify your l
 You can find a list of the available servers in the [Networks.go file](https://github.com/AccumulateNetwork/accumulate/blob/develop/networks/networks.go). For this tutorial we'll use `https://testnet.accumulatenetwork.io/v1`.
 
 ```bash
-$ ./cli faucet <your account address> -s https://testnet.accumulatenetwork.io/v1
+$ ./accumulate faucet <your account address>
 ```
 
 This will return a statment similar to the following:
@@ -45,7 +45,7 @@ This will return a statment similar to the following:
 Now that we've ran the `faucet` command, the network will know that the account exists. Let's check the account balance to see how many tokens we have received from the faucet. We can do this with the `account get` command (remember to use the `-s` flag if you are not running a node locally).
 
 ```bash
-$ ./cli account get <your account address> -s https://testnet.accumulatenetwork.io/v1
+$ ./accumulate account get <your account address>
 ```
 
 You should get an output that looks something like this:
@@ -64,10 +64,10 @@ Looking at the above, we can see under `"Balance"` that we have received 10 ACME
 
 Now let's try sending some ACME tokens from one account to the other. You can use the account we already funded as the sending account. You'll need to create an additional account to receive the tokens. You will need to use the `account generate` again to establish the receiving account.
 
-To send the tokens you will use the `tx create` command. Once you have the addresses of the sending and receiving accounts ready, run the command, followed by the account address for the sending account, then the account address for the receiving account, and finally the amount you would like to send (and don't forget the `-s` flag if you're not running your own node).
+To send the tokens you will use the `tx create` command. Once you have the addresses of the sending and receiving accounts ready, run the command, followed by the account address for the sending account, then the account address for the receiving account, and finally the amount you would like to send.
 
 ```bash
-$ ./cli tx create <sending account> <receiving account> <amount to send> -s https://testnet.accumulatenetwork.io/v1
+$ ./accumulate tx create <sending account> <receiving account> <amount to send>
 ```
 
 We should receive a response that looks like this:
@@ -83,7 +83,7 @@ We should receive a response that looks like this:
 Finally, let's make sure that the transaction was successfully broadcast. This time you will use the `tx get` command, and we'll pass in the transaction id (`"txid"`) that we received in the response output from `tx create`.
 
 ```bash
-$ ./cli tx get <txid> -s https://testnet.accumulatenetwork.io/v1
+$ ./accumulate tx get <txid>
 ```
 
 If the transaction was successful, the response we receive should look something like this:
@@ -127,7 +127,7 @@ The following section deals will creating keypage and Accumulate Digital Identif
 Prior to creating an ADI, you need to create a key which is one of the required parameters during the ADI creation process.
 
 ```bash
-$ ./cli key generate <keyname>
+$ ./accumulate key generate <keyname>
 ```
 
 The output is displayed as
@@ -139,7 +139,7 @@ The output is displayed as
 You can see the list of key using
 
 ```bash
-$ ./cli key list
+$ ./accumulate key list
 ```
 
 The output is displayed as
@@ -155,7 +155,7 @@ e086e27ff0bb5b146b6bdf55c8273211ddb62c684923502e22ef9d2d8b9a9ad5        <key nam
 Now you can create an ADI using one of your lite token accounts. The parameters of this function are the address of the lite account, the name you would like to assign to the ADI, and the name of the key.
 
 ```bash
-$ ./cli  -s https://testnet.accumulatenetwork.io/v1 adi create <lite-token-account-address> <new-adi-name> <key name>
+$ ./accumulate  adi create <lite-token-account-address> <new-adi-name> <key name>
 ```
 
 If the transaction was successful, the response we receive should look something like this:
@@ -171,7 +171,7 @@ If the transaction was successful, the response we receive should look something
 You can also create an ADI using another ADI and keypage as shown below:
 
 ```bash
-$ ./cli  -s https://testnet.accumulatenetwork.io/v1 adi create <existing-adi> <key name 1> <new-adi-name> <key name 2> 
+$ ./accumulate adi create <existing-adi> <key name 1> <new-adi-name> <key name 2> 
 ```
 
 If the transaction was successful, the response we receive should look something like this:
@@ -187,7 +187,7 @@ If the transaction was successful, the response we receive should look something
 You can view ADI accounts using the following command:
 
 ```bash
-$ ./cli -s https://testnet.accumulatenetwork.io/v1 get <adi-name>
+$ ./accumulate get <adi-name>
 ```
 
 The Output should look something like:
@@ -206,7 +206,7 @@ The Output should look something like:
 You can create a token account for an ADI
 
 ```bash
-$ ./cli  account create <adi-name> <wallet-key> <key index (optional)> <key height (optional)> <token account URL> <token URL> <keyBook (optional)>
+$ ./accumulate  account create <adi-name> <wallet-key> <key index (optional)> <key height (optional)> <token account URL> <token URL> <keyBook (optional)>
 ```
 
 The Output should look something like:
@@ -222,7 +222,7 @@ The Output should look something like:
 You can create new keypages with public key within the wallet
 
 ```bash
-$ ./cli -s https://testnet.accumulatenetwork.io/v1 page create <adi URL> <keyname> <new keypage URL> <keyname>
+$ ./accumulate page create <adi URL> <keyname> <new keypage URL> <keyname>
 ```
 
 The Output should look something like:
@@ -246,7 +246,7 @@ The Output should look something like:
 You can get an existing Keypage by URL with the following command:
 
 ```bash
-$ ./cli page get <keypage URL>
+$ ./accumulate page get <keypage URL>
 ```
 
 The Output should look something like:
@@ -261,7 +261,7 @@ The Output should look something like:
 You can create a keybook after creating a keypage. Below is the command to create a keybook.
 
 ```bash
-$ ./cli book create <adi URL> <keyname> <new keybook URL> <existing keypage URL>
+$ ./accumulate book create <adi URL> <keyname> <new keybook URL> <existing keypage URL>
 ```
 
 The Output should look something like:
@@ -278,7 +278,7 @@ The Output should look something like:
 You can get details of existing keybook URL with the following command:
 
 ```bash
-$ ./cli book get <keybook URL>
+$ ./accumulate book get <keybook URL>
 ```
 
 The Output should look something like:
@@ -299,11 +299,11 @@ Below are the steps that you need to follow to generate keys, create ADI, add pa
 You create new keys or use existing keys. In this example new set of keys are created
 
 ```bash
-$ ./cli key generate keytest-0-0
-$ ./cli key generate keytest-1-0
-$ ./cli key generate keytest-1-1
-$ ./cli key generate keytest-2-0
-$ ./cli key generate keytest-2-1
+$ ./accumulate key generate keytest-0-0
+$ ./accumulate key generate keytest-1-0
+$ ./accumulate key generate keytest-1-1
+$ ./accumulate key generate keytest-2-0
+$ ./accumulate key generate keytest-2-1
 ```
 
 #### Create ADI
@@ -311,7 +311,7 @@ $ ./cli key generate keytest-2-1
 You can create an ADI using one of the key generated in the preious step and specifying the keybook and keypage name as parameters as shown below:
 
 ```bash
-$ ./cli adi create <lite token account URL> keytestadi keytest-0-0 book page0
+$ ./accumulate adi create <lite token account URL> keytestadi keytest-0-0 book page0
 ```
 
 The Output should look something like:
@@ -327,7 +327,7 @@ The Output should look something like:
 The next step is to add keypages to the keybook under the ADI which was created in the previous step. Below are the sample command and output:
 
 ```bash
-$ ./cli page create keytestadi/book keytest-0-0 keytestadi/page1 keytest-1-0
+$ ./accumulate page create keytestadi/book keytest-0-0 keytestadi/page1 keytest-1-0
 ```
 
 ```bash
@@ -335,7 +335,7 @@ $ ./cli page create keytestadi/book keytest-0-0 keytestadi/page1 keytest-1-0
 ```
 
 ```bash
-$ ./cli page create keytestadi/book keytest-0-0 keytestadi/page2 keytest-2-0
+$ ./accumulate page create keytestadi/book keytest-0-0 keytestadi/page2 keytest-2-0
 ```
 
 ```bash
@@ -347,7 +347,7 @@ $ ./cli page create keytestadi/book keytest-0-0 keytestadi/page2 keytest-2-0
 You can add/modify a key to page1 using the key at the same priority level. You can try the below command to implement the same:
 
 ```bash
-$ ./cli page key add keytestadi/page1 keytest-1-0 1 1 keytest-1-1
+$ ./accumulate page key add keytestadi/page1 keytest-1-0 1 1 keytest-1-1
 ```
 
 The Output should look something like:
@@ -363,7 +363,7 @@ The Output should look something like:
 You can add/modify a key to page2 using the key at a higher priority level. You can try the below command to add a key to page2 using a page1 key:
 
 ```bash
-$ ./cli page key add keytestadi/page2 keytest-1-0 1 1 keytest-2-1
+$ ./accumulate page key add keytestadi/page2 keytest-1-0 1 1 keytest-2-1
 ```
 
 The Output should look something like:
@@ -379,7 +379,7 @@ The Output should look something like:
 You cannot add/modify a higher priority level page with a lower level key. Below is the command to attempt the same which throws an error.
 
 ```bash
-$ ./cli page key add keytestadi/page0 keytest-1-0 1 1 keytest-1-1
+$ ./accumulate page key add keytestadi/page0 keytest-1-0 1 1 keytest-1-1
 ```
 
 The Output should throw error something like:
@@ -393,7 +393,7 @@ jsonrpc2.Error{Code:ErrorCode{-32603:"Internal error"}, Message:"Internal error"
 You can send credits using a lite token account or adi keypage to another lite token account or adi keypage.
 
 ```bash
-$ ./cli credits <lite token account URL> <lite token account or Keypage URL> <amount>
+$ ./accumulate credits <lite token account URL> <lite token account or Keypage URL> <amount>
 ```
 
 The Output should look something like:
