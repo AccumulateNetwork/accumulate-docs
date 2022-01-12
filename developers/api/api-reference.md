@@ -76,7 +76,7 @@ curl -X POST --data '{
 ```
 
 
-### _ADI methods_
+### _query ADI_
 
 Returns information about the specified ADI
 
@@ -135,23 +135,17 @@ Returns account history for the specified token account
 
 **Response Properties**
 
-| Property          | Type   | Description       |
-| ----------------- | ------ | ----------------- |
-| type              |        |                   |
-| data              |        |                   |
-| sponsor           |        |                   |
-| keypage           |        |                   |
-| txid              |        |                   |
-| signer            |        |                   |
-| sig               |        |                   |
-| status            |        |                   |
+| Property            | Type         | Description       |
+| -----------------   | ------       | ----------------- |
+| `type`              |  string      |                   |
+| `data`              |  object      |                   |
+| `sponsor`           |  string      |                   |
+| `keypage`           |  object      |                   |
+| `txid`              |  byte        |                   |
+| `signer`            |  object      |                   |
+| `sig`               |  object      |                   |
+| `status`            |  object      |                   |
 
-**Errors**
-
-| Code   | Message                      |
-| ------ | ---------------------------- |
-|        |                              |
-|        |                              |
 
 **Example Request**
 
@@ -206,8 +200,6 @@ curl -X POST --data '{
 }
 ```
 
-###
-
 ### query-tx
 
 Returns transaction data for the specified transaction
@@ -220,22 +212,16 @@ Returns transaction data for the specified transaction
 
 **Response Properties**
 
-| Property          | Type   | Description       |
-| ----------------- | ------ | ----------------- |
-| type              |        |                   |
-| data              |        |                   |
-| sponsor           |        |                   |
-| keypage           |        |                   |
-| txid              |        |                   |
-| signer            |        |                   |
-| sig               |        |                   |
-| status            |        |                   |
-
-**Errors**
-
-| Code   | Message                    |
-| ------ | -------------------------- |
-|        |                            |
+| Property            | Type         | Description       |
+| -----------------   | ------       | ----------------- |
+| `type`              |  string      |                   |
+| `data`              |  object      |                   |
+| `sponsor`           |  string      |                   |
+| `keypage`           |  object      |                   |
+| `txid`              |  byte        |                   |
+| `signer`            |  object      |                   |
+| `sig`               |  object      |                   |
+| `status`            |  object      |                   |
 
 
 **Example Request**
@@ -391,7 +377,7 @@ curl -X POST --data '{
 
 ### query-data
 
-Get query-chain properties
+Get data
 
 **Request Parameters**
 
