@@ -6,7 +6,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ### Endpoint
 
-`[node-ip]:[http-port]/v1`
+`[node-ip]:[http-port]/v2`
 
 #### Testnet Endpoint
 
@@ -137,7 +137,14 @@ Returns account history for the specified token account
 
 | Property          | Type   | Description       |
 | ----------------- | ------ | ----------------- |
-|                   |        |                   |
+| type              |        |                   |
+| data              |        |                   |
+| sponsor           |        |                   |
+| keypage           |        |                   |
+| txid              |        |                   |
+| signer            |        |                   |
+| sig               |        |                   |
+| status            |        |                   |
 
 **Errors**
 
@@ -215,14 +222,21 @@ Returns transaction data for the specified transaction
 
 | Property          | Type   | Description       |
 | ----------------- | ------ | ----------------- |
-| `tokenTxWithHash` | object | Token transaction |
+| type              |        |                   |
+| data              |        |                   |
+| sponsor           |        |                   |
+| keypage           |        |                   |
+| txid              |        |                   |
+| signer            |        |                   |
+| sig               |        |                   |
+| status            |        |                   |
 
 **Errors**
 
 | Code   | Message                    |
 | ------ | -------------------------- |
-| -34002 | Invalid transaction hash   |
-| -34003 | Transaction does not exist |
+|        |                            |
+
 
 **Example Request**
 
@@ -313,6 +327,125 @@ curl -X POST --data '{
 }
 ```
 
+### query-chain
+
+Get query-chain properties
+
+**Request Parameters**
+
+| Parameter     | Type   | Description       | Required? |
+| ---------     | ------ | ----------------- | --------- |
+| `chainId`     | byte   | Chain ID          | Yes       |
+
+**Response Properties**
+
+| Property      | Type   | Description         |
+| -----------   | ------ | ------------------- |
+| `type`        | string | The transasction ID |
+| `merkleState` | object |                     |
+| `data`        | object |                     |
+| `chainId`     | byte   | Chain ID            |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "query-chain",
+    "params": {
+        "chainId": "12e2d2d82f7b65752b3fd8d37d195f6d87f6cb24b83c4ae70f4571ea1007e741"
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "keyPage",
+        "merkleState": {
+            "count": 1,
+            "roots": [
+                "cb0d7ccf124390693628c86cbb31cba64cee6c56b9086403f22c805b6bdf06d8"
+            ]
+        },
+        "data": {
+            "type": "keyPage",
+            "url": "acc://kg1/prishth",
+            "keyBook": "4b6fdf9d3e4ca631a0d1ca92eef528b7cfcd16a953efbe5e70811cd3841e88da",
+            "managerKeyBook": "",
+            "creditBalance": 0,
+            "keys": [
+                {
+                    "publicKey": "57ddf8f09ddaaf28656fcca6ef1d4bb028c02ed31584c36df1e0ffcacc14d90c"
+                }
+            ]
+        }
+    },
+    "id": 0
+}
+```
+
+### query-data
+
+Get query-chain properties
+
+**Request Parameters**
+
+| Parameter     | Type   | Description       | Required? |
+| ---------     | ------ | ----------------- | --------- |
+| `url`         | string | URL               | Yes       |
+| `entryHash`   | byte   | URL               | No        |
+
+**Response Properties**
+
+| Property      | Type   | Description         |
+| -----------   | ------ | ------------------- |
+| `entryHash`   | byte   |                     |
+| `dataEntry`   | object |                     |
+
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "query-data",
+    "params": {
+        "url": "acc://aditwo/aditwodata"
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "dataEntry",
+        "merkleState": {
+            "count": 2,
+            "roots": [
+                null,
+                "87c5cc4a4f86accac328b5773c3e6fe29e8af23cbaa5a14f154011e2e71af4d2"
+            ]
+        },
+        "data": {
+            "entryHash": "b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808",
+            "entry": {
+                "data": "61646974776f64617461"
+            }
+        }
+    },
+    "id": 0
+}
+```
+
 ### _Key management methods_
 
 ### query-key-index
@@ -362,4 +495,4 @@ curl -X POST --data '{
 }
 ```
 
-###
+
