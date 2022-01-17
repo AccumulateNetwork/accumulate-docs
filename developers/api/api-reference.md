@@ -517,7 +517,8 @@ curl -X POST --data '{
             "url":"pun8",
             "publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6",
             "keyBookName":"pun5book",
-            "keyPageName":"pun5page"}
+            "keyPageName":"pun5page"
+        }
     }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
@@ -538,7 +539,7 @@ curl -X POST --data '{
 
 ### create-data-account
 
-Creates a new ADI (Accumulate Digital Identity)
+Creates a new data account under an ADI
 
 **Request Parameters**
 
@@ -566,7 +567,19 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
     "method": "create-data-account",
-    "params": {"origin":"acc://pun1","sponsor":"acc://pun1","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642415962518690},"signature":"be51cb7dcacd38943bb7d18e72b360e79ac1533ae933de76e7071db4f91d660ecad134808688e0c69d34ead11fbe2f6751dbbceedf8f74448635bd7aa5e0b60b","keyPage":{"height":1},"payload":{"url":"acc://pun1/data","keyBookUrl":"acc://pun1/pun1book"}}
+    "params": {
+        "origin":"acc://pun1",
+        "sponsor":"acc://pun1",
+        "signer":{
+            "publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6",
+            "nonce":1642415962518690
+        },"signature":"be51cb7dcacd38943bb7d18e72b360e79ac1533ae933de76e7071db4f91d660ecad134808688e0c69d34ead11fbe2f6751dbbceedf8f74448635bd7aa5e0b60b",
+        "keyPage":{"height":1},
+        "payload":{
+            "url":"acc://pun1/data",
+            "keyBookUrl":"acc://pun1/pun1book"
+        }
+    }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
 
@@ -586,7 +599,7 @@ curl -X POST --data '{
 
 ### create-token-account
 
-Creates a new ADI (Accumulate Digital Identity)
+Creates a new token account for an ADI
 
 **Request Parameters**
 
@@ -614,7 +627,20 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
     "method": "create-token-account",
-    "params": {"origin":"acc://pun1","sponsor":"acc://pun1","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642416249257761},"signature":"8f70fd61875ee45e4743d0199a5705f19901cb6f34f65fe3fab7e5c07f86008dba656d04dfe2fda8d9e659610716938b8131560c3aaf34c2c45cad2204873605","keyPage":{"height":1},"payload":{"url":"acc://pun1/tok","tokenUrl":"acc://ACME","keyBookUrl":"acc://pun1/pun1book"}}
+    "params": {
+        "origin":"acc://pun1",
+        "sponsor":"acc://pun1",
+        "signer":{
+            "publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6",
+            "nonce":1642416249257761
+        },"signature":"8f70fd61875ee45e4743d0199a5705f19901cb6f34f65fe3fab7e5c07f86008dba656d04dfe2fda8d9e659610716938b8131560c3aaf34c2c45cad2204873605",
+        "keyPage":{"height":1},
+        "payload":{
+            "url":"acc://pun1/tok",
+            "tokenUrl":"acc://ACME",
+            "keyBookUrl":"acc://pun1/pun1book"
+        }
+    }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
 
@@ -662,7 +688,19 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
     "method": "create-key-page",
-    "params": {"origin":"acc://pun123","sponsor":"acc://pun123","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642419400242766},"signature":"215ecd3c35da005687fa8eb54139067c9f5bbfe5e200a5a5b54e0f43492cbbd0dba47ab8814a21124f264fd85a6e9d54688275550d3adc45a5bdd3c4c82f1508","keyPage":{"height":1},"payload":{"url":"acc://pun123/pg123","keys":[{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6"}]}}
+    "params": {
+        "origin":"acc://pun123",
+        "sponsor":"acc://pun123",
+        "signer":{
+            "publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6",
+            "nonce":1642419400242766
+        },"signature":"215ecd3c35da005687fa8eb54139067c9f5bbfe5e200a5a5b54e0f43492cbbd0dba47ab8814a21124f264fd85a6e9d54688275550d3adc45a5bdd3c4c82f1508",
+        "keyPage":{"height":1},
+        "payload":{
+            "url":"acc://pun123/pg123",
+            "keys":[{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6"}]
+        }
+    }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
 
@@ -710,7 +748,19 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
     "method": "create-key-page",
-    "params": {"origin":"acc://pun123","sponsor":"acc://pun123","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642419179442424},"signature":"99c00392160d00586c3e82f966d6452bb9758e11add68a6c39c3d08ee27006afb07f88f7c21288ed48cb848d9f7ca5968f54d2b51173f84f4e0057f5c785d50b","keyPage":{"height":1},"payload":{"url":"acc://pun123/book0","pages":["76037579e7e45b863ef34705c9931a5191faa01e85088a8e636d5f70472e0730"]}}
+    "params": {
+        "origin":"acc://pun123",
+        "sponsor":"acc://pun123",
+        "signer":{
+            "publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6",
+            "nonce":1642419179442424
+        },"signature":"99c00392160d00586c3e82f966d6452bb9758e11add68a6c39c3d08ee27006afb07f88f7c21288ed48cb848d9f7ca5968f54d2b51173f84f4e0057f5c785d50b",
+        "keyPage":{"height":1},
+        "payload":{
+            "url":"acc://pun123/book0",
+            "pages":["76037579e7e45b863ef34705c9931a5191faa01e85088a8e636d5f70472e0730"]
+        }
+    }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
 
@@ -730,7 +780,7 @@ curl -X POST --data '{
 
 ### write-data
 
-Write data to a data account
+Write entry to a data account
 
 **Request Parameters**
 
@@ -758,7 +808,18 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
     "method": "write-data",
-    "params": {"origin":"acc://pun1/data","sponsor":"acc://pun1/data","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642419054067056},"signature":"19795c8bd66ed8c247568e98d0c19d8498c01247191a12c337e1d02f53fcf2121bb93c16a1fe5cdb5ec33fbac415fd55dd76d84457fd508888fe00ce43f47d0d","keyPage":{"height":1},"payload":{"entry":{"data":"7465737464617461"}}}
+    "params": {
+        "origin":"acc://pun1/data",
+        "sponsor":"acc://pun1/data",
+        "signer":{
+            "publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6",
+            "nonce":1642419054067056
+        },"signature":"19795c8bd66ed8c247568e98d0c19d8498c01247191a12c337e1d02f53fcf2121bb93c16a1fe5cdb5ec33fbac415fd55dd76d84457fd508888fe00ce43f47d0d",
+        "keyPage":{"height":1},
+        "payload":{
+            "entry":{"data":"7465737464617461"}
+        }
+    }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
 
@@ -806,7 +867,19 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
     "method": "send-tokens",
-    "params": {"origin":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME","sponsor":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME","signer":{"publicKey":"0f1d20afd36f778df9692efa5b69bcf04adfe8cf7a4c12e50e4523bebab52825","nonce":1642421667051758},"signature":"b3e4729436359ecdc5736998205a425d0e8740eede791b620b7abd2eb88d0b8d4ae1822811e2de6b3509e949dff3d67767340973e97601f05876fe54af81f606","keyPage":{"height":1},"payload":{"hash":"0000000000000000000000000000000000000000000000000000000000000000","to":[{"url":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME","amount":1000000000}]}}
+    "params": {
+        "origin":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME",
+        "sponsor":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME",
+        "signer":{
+            "publicKey":"0f1d20afd36f778df9692efa5b69bcf04adfe8cf7a4c12e50e4523bebab52825",
+            "nonce":1642421667051758
+        },"signature":"b3e4729436359ecdc5736998205a425d0e8740eede791b620b7abd2eb88d0b8d4ae1822811e2de6b3509e949dff3d67767340973e97601f05876fe54af81f606",
+        "keyPage":{"height":1},
+        "payload":{
+            "hash":"0000000000000000000000000000000000000000000000000000000000000000",
+            "to":[{"url":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME","amount":1000000000}]
+            }
+    }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
 
@@ -854,7 +927,18 @@ curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
     "method": "add-credits",
-    "params": {"origin":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME","sponsor":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME","signer":{"publicKey":"becbf8ba73bae227853e9e6e7ffbb5689d7022b070ef95f99e0cc879b7b56a0b","nonce":1642422094810161},"signature":"0c5d0ba22bc21b542a11db233d326f6a580c7a26dc815bd76a0297f33b716b0530658ac005111ed81efd2002a39e7825cf5c9d65cf7941b90b12af5252bcfe0d","keyPage":{"height":1},"payload":{"recipient":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME","amount":5}}
+    "params": {
+        "origin":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME",
+        "sponsor":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME",
+        "signer":{
+            "publicKey":"becbf8ba73bae227853e9e6e7ffbb5689d7022b070ef95f99e0cc879b7b56a0b",
+            "nonce":1642422094810161
+        },"signature":"0c5d0ba22bc21b542a11db233d326f6a580c7a26dc815bd76a0297f33b716b0530658ac005111ed81efd2002a39e7825cf5c9d65cf7941b90b12af5252bcfe0d",
+        "keyPage":{"height":1},
+        "payload":{
+            "recipient":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME",
+            "amount":5}
+        }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
 
