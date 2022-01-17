@@ -14,7 +14,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 ## Methods
 
-### _URL methods_
+### _Query methods_
 
 ### query
 
@@ -32,7 +32,7 @@ Returns Accumulate Object by URL
 | ---------     | ------ | ------------------------------------------------------------------------------- |
 | `type`        | string | The Accumulate object type                                                      |
 | `merkleState` | object |                                                                                 |
-| `data`        | object | The data for this object (properties vary)                                      |
+| `data`        | object |                                                                                 |
 
 **Example Request**
 
@@ -75,12 +75,6 @@ curl -X POST --data '{
 }
 ```
 
-
-### _query ADI_
-
-Returns information about the specified ADI
-
-
 **Example Request**
 
 ```d
@@ -120,7 +114,6 @@ curl -X POST --data '{
     "id": 0
 }
 ```
-
 
 ### query-tx-history
 
@@ -218,9 +211,9 @@ Returns transaction data for the specified transaction
 | `data`              |  object      |                   |
 | `sponsor`           |  string      |                   |
 | `keypage`           |  object      |                   |
-| `txid`              |  byte        |                   |
+| `txid`              |  string      |                   |
 | `signer`            |  object      |                   |
-| `sig`               |  object      |                   |
+| `sig`               |  string      |                   |
 | `status`            |  object      |                   |
 
 
@@ -268,51 +261,6 @@ curl -X POST --data '{
 }
 ```
 
-### faucet
-
-Get free ACME tokens. While supplies last!
-
-**Request Parameters**
-
-| Parameter | Type   | Description       | Required? |
-| --------- | ------ | ----------------- | --------- |
-| `url`     | string | Token account URL | Yes       |
-
-**Response Properties**
-
-| Property    | Type   | Description         |
-| ----------- | ------ | ------------------- |
-| `txid`      | string | The transasction ID |
-| `hash`      | string |                     |
-| `message`   | string |                     |
-
-**Example Request**
-
-```cpp
-curl -X POST --data '{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "faucet",
-    "params": {
-        "url": "acc://5fd54e898c2c60e9757d2cd36f3a14b6df895b237690afb1/ACME"
-    }
-}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
-```
-
-**Example Response**
-
-```d
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "hash": "be347539c19cb0d5e1b396b4142a637ff94aec795e6e81442d37fe73469bc5dd",
-        "message": "CheckTx",
-        "txid": "7ec47e5a48e7b6e38040748885a9702ef1949b45325ac5eafd0f616457e92cda"
-    },
-    "id": 0
-}
-```
-
 ### query-chain
 
 Get query-chain properties
@@ -327,10 +275,9 @@ Get query-chain properties
 
 | Property      | Type   | Description         |
 | -----------   | ------ | ------------------- |
-| `type`        | string | The transasction ID |
+| `type`        | string |                     |
 | `merkleState` | object |                     |
 | `data`        | object |                     |
-| `chainId`     | byte   | Chain ID            |
 
 **Example Request**
 
@@ -390,8 +337,9 @@ Get data
 
 | Property      | Type   | Description         |
 | -----------   | ------ | ------------------- |
-| `entryHash`   | byte   |                     |
-| `dataEntry`   | object |                     |
+| `type`        | string |                     |
+| `merkleState` | object |                     |
+| `data`        | object |                     |
 
 
 **Example Request**
@@ -432,7 +380,50 @@ curl -X POST --data '{
 }
 ```
 
-### _Key management methods_
+### faucet
+
+Get free ACME tokens. While supplies last!
+
+**Request Parameters**
+
+| Parameter | Type   | Description       | Required? |
+| --------- | ------ | ----------------- | --------- |
+| `url`     | string | Token account URL | Yes       |
+
+**Response Properties**
+
+| Property    | Type   | Description         |
+| ----------- | ------ | ------------------- |
+| `txid`      | string | The transasction ID |
+| `hash`      | string |                     |
+| `message`   | string |                     |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "faucet",
+    "params": {
+        "url": "acc://5fd54e898c2c60e9757d2cd36f3a14b6df895b237690afb1/ACME"
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "be347539c19cb0d5e1b396b4142a637ff94aec795e6e81442d37fe73469bc5dd",
+        "message": "CheckTx",
+        "txid": "7ec47e5a48e7b6e38040748885a9702ef1949b45325ac5eafd0f616457e92cda"
+    },
+    "id": 0
+}
+```
 
 ### query-key-index
 
@@ -443,13 +434,14 @@ Returns the specified key page / signature specification
 | Parameter | Type   | Description             | Required? |
 | --------- | ------ | ----------------------- | --------- |
 | `url`     | string | Accumulate Key Page URL | Yes       |
-| `key`     | string |                         | Yes       |
+| `key`     | string |                         | No       |
 
 **Response Properties**
 
 | Property  | Type   | Description                                                                                   |
 | --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `keyPage` | object | An object containing the Chain URL, Key book ID, credit balance, and an unordered set of keys |
+| `type` | string    |                                                                                               |
+| `data` | object    |                                                                                               |
 
 **Example Request**
 
@@ -481,4 +473,401 @@ curl -X POST --data '{
 }
 ```
 
+### _Create methods_
 
+### create-adi
+
+Creates a new ADI (Accumulate Digital Identity)
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "create-adi",
+    "params": {
+        "origin":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME",
+        "sponsor":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME",
+        "signer":{
+            "publicKey":"0f1d20afd36f778df9692efa5b69bcf04adfe8cf7a4c12e50e4523bebab52825",
+            "nonce":1642405755442626
+        },"signature":"433b80aa4be172d05c55f86bf6aca5313c7a6a2c76784ac92d109420a18e6a5bb11a411e78b2ea437c4d83eca139d918fb414f01ab36782e81eb2b69ba5d6407",
+        "keyPage":{"height":1},
+        "payload":{
+            "url":"pun8",
+            "publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6",
+            "keyBookName":"pun5book",
+            "keyPageName":"pun5page"}
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "0905fa3ec38600bef28005f09971c615cc6f9d4a30f6e16949c47fde21652eb1",
+        "message": "CheckTx",
+        "txid": "24aea6af366f2560cdebcf91dfc3e7518eb0b01c04edbbbac16569c5b765622f"
+    },
+    "id": 0
+}
+```
+
+### create-data-account
+
+Creates a new ADI (Accumulate Digital Identity)
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "create-data-account",
+    "params": {"origin":"acc://pun1","sponsor":"acc://pun1","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642415962518690},"signature":"be51cb7dcacd38943bb7d18e72b360e79ac1533ae933de76e7071db4f91d660ecad134808688e0c69d34ead11fbe2f6751dbbceedf8f74448635bd7aa5e0b60b","keyPage":{"height":1},"payload":{"url":"acc://pun1/data","keyBookUrl":"acc://pun1/pun1book"}}
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "d81f710a70689fa3a42fdb3662555987ef260a17a426ef6e7760649e2219d2e5",
+        "message": "CheckTx",
+        "txid": "77b2d61f2e6a5c9da8cadf57dd8bdd57ec0846930630270a7fa32ea4e177d879"
+    },
+    "id": 0
+}
+```
+
+### create-token-account
+
+Creates a new ADI (Accumulate Digital Identity)
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "create-token-account",
+    "params": {"origin":"acc://pun1","sponsor":"acc://pun1","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642416249257761},"signature":"8f70fd61875ee45e4743d0199a5705f19901cb6f34f65fe3fab7e5c07f86008dba656d04dfe2fda8d9e659610716938b8131560c3aaf34c2c45cad2204873605","keyPage":{"height":1},"payload":{"url":"acc://pun1/tok","tokenUrl":"acc://ACME","keyBookUrl":"acc://pun1/pun1book"}}
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "95e68aad1ec44592514d64a4fd9747f8226282ff6d96784ee23bd5f7aaee4640",
+        "message": "CheckTx",
+        "txid": "1df91e761955e66cd8abbdf1caef8a4666db3746c69343382572451225d61807"
+    },
+    "id": 0
+}
+```
+
+### create-key-page
+
+Creates a new Key Page
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "create-key-page",
+    "params": {"origin":"acc://pun123","sponsor":"acc://pun123","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642419400242766},"signature":"215ecd3c35da005687fa8eb54139067c9f5bbfe5e200a5a5b54e0f43492cbbd0dba47ab8814a21124f264fd85a6e9d54688275550d3adc45a5bdd3c4c82f1508","keyPage":{"height":1},"payload":{"url":"acc://pun123/pg123","keys":[{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6"}]}}
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "5b01c887701cbea996be9a2c199f815e57819d20a2ff4242fb3a7682190ec788",
+        "message": "CheckTx",
+        "txid": "dd70b0b3936f93651ae69776654d0de804a50040e2b6f023529264ff1fe6d414"
+    },
+    "id": 0
+}
+```
+
+### create-key-book
+
+Creates a new Key Book
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "create-key-page",
+    "params": {"origin":"acc://pun123","sponsor":"acc://pun123","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642419179442424},"signature":"99c00392160d00586c3e82f966d6452bb9758e11add68a6c39c3d08ee27006afb07f88f7c21288ed48cb848d9f7ca5968f54d2b51173f84f4e0057f5c785d50b","keyPage":{"height":1},"payload":{"url":"acc://pun123/book0","pages":["76037579e7e45b863ef34705c9931a5191faa01e85088a8e636d5f70472e0730"]}}
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "0905fa3ec38600bef28005f09971c615cc6f9d4a30f6e16949c47fde21652eb1",
+        "message": "CheckTx",
+        "txid": "24aea6af366f2560cdebcf91dfc3e7518eb0b01c04edbbbac16569c5b765622f"
+    },
+    "id": 0
+}
+```
+
+### write-data
+
+Write data to a data account
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "write-data",
+    "params": {"origin":"acc://pun1/data","sponsor":"acc://pun1/data","signer":{"publicKey":"31c52df25166098c9f227e5bd4d39e1ef5c0ab9a6c4fcc327f27e3e38eab44b6","nonce":1642419054067056},"signature":"19795c8bd66ed8c247568e98d0c19d8498c01247191a12c337e1d02f53fcf2121bb93c16a1fe5cdb5ec33fbac415fd55dd76d84457fd508888fe00ce43f47d0d","keyPage":{"height":1},"payload":{"entry":{"data":"7465737464617461"}}}
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "4e1cb535ffa781b404ad7a05d0b771c76696a95555d063d9958ea90a88a4d6a3",
+        "message": "CheckTx",
+        "txid": "56362a342374d68b51883e85f0dbaa2ba601fd0f1dbb3a11d3506864f721e796"
+    },
+    "id": 0
+}
+```
+
+### send-tokens
+
+Send tokens from one account to another
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "send-tokens",
+    "params": {"origin":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME","sponsor":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME","signer":{"publicKey":"0f1d20afd36f778df9692efa5b69bcf04adfe8cf7a4c12e50e4523bebab52825","nonce":1642421667051758},"signature":"b3e4729436359ecdc5736998205a425d0e8740eede791b620b7abd2eb88d0b8d4ae1822811e2de6b3509e949dff3d67767340973e97601f05876fe54af81f606","keyPage":{"height":1},"payload":{"hash":"0000000000000000000000000000000000000000000000000000000000000000","to":[{"url":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME","amount":1000000000}]}}
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "848245dc249b266a238004cb3b8c574435089f0e0618f2bab3c3f2c7738632b6",
+        "message": "CheckTx",
+        "txid": "839eb76679b2132bb52f369bfb9ddcd57bc716cc4a2a67da00fc679610847328"
+    },
+    "id": 0
+}
+```
+
+### add-credits
+
+Send Credits from one account to another
+
+**Request Parameters**
+
+| Parameter     | Type   | Description             | Required? |
+| ------------- | ------ | ----------------------- | --------- |
+| `origin`      | string |                         | Yes       |
+| `sponsor`     | string |                         | Yes       |
+| `signer`      | object |                         | Yes       |
+| `signature`   | string |                         | Yes       |
+| `keyPage`     | object |                         | Yes       |
+| `payload`     | object |                         | Yes       |
+
+**Response Properties**
+
+| Property  | Type   | Description                                                                                   |
+| --------- | ------ | --------------------------------------------------------------------------------------------- |
+| `hash`    | object |                                                                                               |
+| `mesage`  | object |                                                                                               |
+| `txid`    | object |                                                                                               |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "add-credits",
+    "params": {"origin":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME","sponsor":"acc://595f9bf47adae283e98a6ddaf466b733d1ae6127711313f2/ACME","signer":{"publicKey":"becbf8ba73bae227853e9e6e7ffbb5689d7022b070ef95f99e0cc879b7b56a0b","nonce":1642422094810161},"signature":"0c5d0ba22bc21b542a11db233d326f6a580c7a26dc815bd76a0297f33b716b0530658ac005111ed81efd2002a39e7825cf5c9d65cf7941b90b12af5252bcfe0d","keyPage":{"height":1},"payload":{"recipient":"acc://5f1ad125de4275e18f0f8867bcb2a2103b2e44298650ec61/ACME","amount":5}}
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "hash": "e00dac5f3e279ce083a5b69fe7649f278e6613442ebfe54359e235a176b54a03",
+        "message": "CheckTx",
+        "txid": "3765f47b94a9fbb8a8ae012825e2c8cded47405306265078141e4bd6505292d9"
+    },
+    "id": 0
+}
+```
