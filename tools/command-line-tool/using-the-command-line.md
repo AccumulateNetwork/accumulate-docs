@@ -8,6 +8,7 @@ The first step is building the CLI executable. You will need to have the Go comp
 
 ```bash
 $ git clone https://github.com/AccumulateNetwork/accumulate.git
+$ cd accumulate
 $ go build ./cmd/accumulate
 ```
 
