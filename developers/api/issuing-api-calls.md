@@ -10,15 +10,15 @@ API calls are made to a node endpoint, which is a URL. The base URL follows this
 
 * `[node-ip]` is the IP address for the node you are connecting to.
 * `[http-port]` is the port that the node you are connecting to is listening for HTTP calls.
-* All API calls are made to the `/v1` endpoint.
+* All API calls are made to the `/v2` endpoint.
 
-For example, the node endpoint URL may look like: `127.0.0.1:9650/v1`
+For example, the node endpoint URL may look like: `127.0.0.1:9650/v2`
 
 #### Public API Testnet Endpoint
 
 There is a Public Testnet JSON-RPC API server \(18.119.26.7\)  that allows developers to access the Accumulate Testnet network without having to run a node themselves. 
 
-The public API server is at `https://testnet.accumulatenetwork.io/v1` for Accumulate Testnet.
+The public API server is at `https://testnet.accumulatenetwork.io/v2` for Accumulate Testnet.
 
 
 
@@ -30,7 +30,7 @@ The Accumulate API uses the [OpenRPC](https://open-rpc.org/) specification for J
 
 Let's say you want to retrieve the Public Key of an ADI \(Accumulate Digital Identifier\). You would call the `adi` method to retrieve this information.
 
-The endpoint we send our API call to is always`[node-ip]:[http-port]/v1`
+The endpoint we send our API call to is always`[node-ip]:[http-port]/v2`
 
 The required parameter for the `adi` request is `url`, which is the Accumulate ADI URL that you are requesting information on.
 
