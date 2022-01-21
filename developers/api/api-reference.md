@@ -32,7 +32,7 @@ Returns Accumulate Object by URL
 | ---------     | ------ | ------------------------------------------------------------------------------- |
 | `type`        | string | The Accumulate object type                                                      |
 | `merkleState` | object |                                                                                 |
-| `data`        | object |                                                                                 |
+| `data`        | object | The data for this object (properties vary)                                      |
 
 **Example Request**
 
@@ -128,16 +128,16 @@ Returns account history for the specified token account
 
 **Response Properties**
 
-| Property            | Type         | Description       |
-| -----------------   | ------       | ----------------- |
-| `type`              |  string      |                   |
-| `data`              |  object      |                   |
-| `sponsor`           |  string      |                   |
-| `keypage`           |  object      |                   |
-| `txid`              |  byte        |                   |
-| `signer`            |  object      |                   |
-| `sig`               |  object      |                   |
-| `status`            |  object      |                   |
+| Property            | Type         | Description                                  |
+| -----------------   | ------       | ----------------------------------------     |
+| `type`              |  string      | The Accumulate object type                   |
+| `data`              |  object      | The data for this object (properties vary)   |
+| `sponsor`           |  string      | The data for this object (properties vary)   |
+| `keypage`           |  object      |                                              |
+| `txid`              |  string      | Transaction hash                             |
+| `signer`            |  object      | ADI signing the creation of new token        |
+| `sig`               |  object      | Signature of the ADI signing the transaction |
+| `status`            |  object      |                                              |
 
 
 **Example Request**
@@ -205,17 +205,16 @@ Returns transaction data for the specified transaction
 
 **Response Properties**
 
-| Property            | Type         | Description       |
-| -----------------   | ------       | ----------------- |
-| `type`              |  string      |                   |
-| `data`              |  object      |                   |
-| `sponsor`           |  string      |                   |
-| `keypage`           |  object      |                   |
-| `txid`              |  string      |                   |
-| `signer`            |  object      |                   |
-| `sig`               |  string      |                   |
-| `status`            |  object      |                   |
-
+| Property            | Type         | Description                                  |
+| -----------------   | ------       | ----------------------------------------     |
+| `type`              |  string      | The Accumulate object type                   |
+| `data`              |  object      | The data for this object (properties vary)   |
+| `sponsor`           |  string      | The data for this object (properties vary)   |
+| `keypage`           |  object      |                                              |
+| `txid`              |  string      | Transaction hash                             |
+| `signer`            |  object      | ADI signing the creation of new token        |
+| `sig`               |  object      | Signature of the ADI signing the transaction |
+| `status`            |  object      |                                              |
 
 **Example Request**
 
@@ -267,17 +266,17 @@ Get query-chain properties
 
 **Request Parameters**
 
-| Parameter     | Type   | Description       | Required? |
-| ---------     | ------ | ----------------- | --------- |
-| `chainId`     | byte   | Chain ID          | Yes       |
+| Parameter     | Type      | Description       | Required? |
+| ---------     | ------    | ----------------- | --------- |
+| `chainId`     | string    | Chain ID          | Yes       |
 
 **Response Properties**
 
-| Property      | Type   | Description         |
-| -----------   | ------ | ------------------- |
-| `type`        | string |                     |
-| `merkleState` | object |                     |
-| `data`        | object |                     |
+| Property      | Type   | Description                                  |
+| -----------   | ------ | --------------------------------------       |
+| `type`        | string | The Accumulate object type                   |
+| `merkleState` | object |                                              |
+| `data`        | object | The data for this object (properties vary)   |
 
 **Example Request**
 
@@ -331,15 +330,15 @@ Get data
 | Parameter     | Type   | Description       | Required? |
 | ---------     | ------ | ----------------- | --------- |
 | `url`         | string | URL               | Yes       |
-| `entryHash`   | byte   | URL               | No        |
+| `entryHash`   | string | URL               | No        |
 
 **Response Properties**
 
-| Property      | Type   | Description         |
-| -----------   | ------ | ------------------- |
-| `type`        | string |                     |
-| `merkleState` | object |                     |
-| `data`        | object |                     |
+| Property      | Type   | Description                                  |
+| -----------   | ------ | --------------------------------------       |
+| `type`        | string | The Accumulate object type                   |
+| `merkleState` | object |                                              |
+| `data`        | object | The data for this object (properties vary)   |
 
 
 **Example Request**
@@ -392,11 +391,11 @@ Get free ACME tokens. While supplies last!
 
 **Response Properties**
 
-| Property    | Type   | Description         |
-| ----------- | ------ | ------------------- |
-| `txid`      | string | The transasction ID |
-| `hash`      | string |                     |
-| `message`   | string |                     |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `txid`      | string | The transasction ID    |
+| `hash`      | string | Token Transaction      |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
@@ -438,10 +437,10 @@ Returns the specified key page / signature specification
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `type` | string    |                                                                                               |
-| `data` | object    |                                                                                               |
+| Property  | Type   | Description                                |
+| --------- | ------ | -------------------------------------------|
+| `type` | string    | The Accumulate object type                 |
+| `data` | object    | The data for this object (properties vary) |
 
 **Example Request**
 
@@ -481,22 +480,24 @@ Creates a new ADI (Accumulate Digital Identity)
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
+
 
 **Example Request**
 
@@ -543,22 +544,23 @@ Creates a new data account under an ADI
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
@@ -603,22 +605,23 @@ Creates a new token account for an ADI
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
@@ -664,22 +667,23 @@ Creates a new Key Page
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
@@ -724,22 +728,23 @@ Creates a new Key Book
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
@@ -784,22 +789,23 @@ Write entry to a data account
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
@@ -843,22 +849,23 @@ Send tokens from one account to another
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
@@ -903,22 +910,23 @@ Send Credits from one account to another
 
 **Request Parameters**
 
-| Parameter     | Type   | Description             | Required? |
-| ------------- | ------ | ----------------------- | --------- |
-| `origin`      | string |                         | Yes       |
-| `sponsor`     | string |                         | Yes       |
-| `signer`      | object |                         | Yes       |
-| `signature`   | string |                         | Yes       |
-| `keyPage`     | object |                         | Yes       |
-| `payload`     | object |                         | Yes       |
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
 
 **Response Properties**
 
-| Property  | Type   | Description                                                                                   |
-| --------- | ------ | --------------------------------------------------------------------------------------------- |
-| `hash`    | object |                                                                                               |
-| `mesage`  | object |                                                                                               |
-| `txid`    | object |                                                                                               |
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
 
 **Example Request**
 
