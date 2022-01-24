@@ -9,17 +9,17 @@ Accumulate is a novel blockchain network designed to be hugely scalable while ma
 
 ### Suggested reading
 
-Developers should find everything they need in the [Developers](broken-reference/) section.
+Developers should find everything they need in the [Developers](developers/contributing.md) section.
 
-If you would like to run your own Accumulate node, check out the [Operators](broken-reference/) section.
+If you would like to run your own Accumulate node, check out the [Operators](operators/getting-started.md) section.
 
-If you would like to learn more about the technical concepts and the unique design choices of Accumulate, then the [Deep Dive section](broken-reference/) is for you.
+If you would like to learn more about the technical concepts and the unique design choices of Accumulate, then the [Deep Dive](deep-dive/anonymous-token-chains.md) section is for you.
 
 Looking to get your hands dirty? Check out the [CLI Tutorial](tutorials/cli-tutorial.md), which will run you through some basic Accumulate operations using the command line tool.
 
 ### Source Code
 
-To see the Accumulate source code, please [click here](https://github.com/AccumulateNetwork/accumulate).
+To see the Accumulate source code, please [click here](https://gitlab.com/accumulatenetwork/accumulate/-/tree/develop).
 
 The [repository for this documentation](https://github.com/AccumulateNetwork/accumulate-docs) is hosted on Github. Feel free to contribute!
 
