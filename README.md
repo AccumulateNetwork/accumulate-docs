@@ -19,7 +19,7 @@ Looking to get your hands dirty? Check out the [CLI Tutorial](tutorials/cli-tuto
 
 ### Source Code
 
-To see the Accumulate source code, please [click here](https://gitlab.com/accumulatenetwork/accumulate/-/tree/develop).
+To see the Accumulate source code, please [click here](https://gitlab.com/accumulatenetwork/accumulate).
 
 The [repository for this documentation](https://github.com/AccumulateNetwork/accumulate-docs) is hosted on Github. Feel free to contribute!
 
