@@ -63,5 +63,5 @@ $ git clone https://github.com/accumulateNetwork/accumulate
 $ cd accumulate
 $ make # or go build ./cmd/accumulate
 $ ./accumulate version
-# {"data":{"commit":"adbcac031eb437e749aa09c99f2e2228c2821f02","version":"v0.3.0","versionIsKnown":true},"type":"version"}
+{"data":{"commit":"adbcac031eb437e749aa09c99f2e2228c2821f02","version":"v0.3.0","versionIsKnown":true},"type":"version"}
 ```
