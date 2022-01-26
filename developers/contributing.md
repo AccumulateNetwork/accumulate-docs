@@ -63,6 +63,5 @@ $ git clone https://github.com/accumulateNetwork/accumulate
 $ cd accumulate
 $ make # or go build ./cmd/accumulate
 $ ./accumulate version
-Accumulate network daemon v0.0.0-760-g30319a2
-30319a28b59a92a82ba6cb570515cac03887effd
+# {"data":{"commit":"adbcac031eb437e749aa09c99f2e2228c2821f02","version":"v0.3.0","versionIsKnown":true},"type":"version"}
 ```
