@@ -1,6 +1,6 @@
 # Local DevNet
 
-This guide assumes you have successfully [compiled](contributing.md#compiling) `github.com/AccumulateNetwork/accumulate/cmd/accumulated` and installed the binary to your path. If the binary is not installed to your path, replace `accumulate ...` with `./accumulate ...`, assuming the binary is in the current directory.
+This guide assumes you have successfully [compiled](contributing.md#compiling) Accumulate and installed the binary to your path. If the binary is not installed to your path, replace `accumulate ...` with `./accumulate ...`, assuming the binary is in the current directory.
 
 ### Configure
 
