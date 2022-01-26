@@ -118,6 +118,23 @@ If the transaction was successful, the response we receive should look something
 }
 ```
 
+### How to add Credits to a Lite Token Account or ADI Key page
+
+You can add credits to your lite token account or ADI keypage by burning tokens. You can do this by running the `credits` command, and passing in the lite token account url, or keypage url, you are using to sign the transaction, followed by the url for the lite token account, or ADI keypage, that you want to add credits to, followed by the amount of tokens you'd like to burn in exchange for credits.
+
+
+```bash
+$ ./accumulate credits <lite token account URL> <lite token account or Keypage URL> <amount>
+```
+
+The Output should look something like:
+
+```bash
+        Transaction Identifier  :       81ddc13f2993f812bf41c895b5b485aeaf46095bc9695e0f30c49833e5f5450f
+        Tendermint Reference    :       5fa567cef491714601b86f28bbdd0014130693a3e582fefeed9c1fb2886ece2b
+        Error code              :       ok
+```
+
 ## How to Create ADI
 
 The following section deals will creating keypage and Accumulate Digital Identifier (ADI).
@@ -386,22 +403,6 @@ The Output should throw error something like:
 
 ```bash
 jsonrpc2.Error{Code:ErrorCode{-32603:"Internal error"}, Message:"Internal error"}
-```
-
-### How to send Credits
-
-You can send credits using a lite token account or adi keypage to another lite token account or adi keypage.
-
-```bash
-$ ./accumulate credits <lite token account URL> <lite token account or Keypage URL> <amount>
-```
-
-The Output should look something like:
-
-```bash
-        Transaction Identifier  :       81ddc13f2993f812bf41c895b5b485aeaf46095bc9695e0f30c49833e5f5450f
-        Tendermint Reference    :       5fa567cef491714601b86f28bbdd0014130693a3e582fefeed9c1fb2886ece2b
-        Error code              :       ok
 ```
 
 ### The end
