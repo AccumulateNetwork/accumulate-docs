@@ -9,14 +9,14 @@ If you'd like to connect to a specific testnet server, you can find a list of th
 ### Basic commands and flags
 
 ```bash
-$ ./accumulate.exe help
+$ ./accumulate.exe
 ```
 
 ```bash
 CLI for Accumulate Network
 
 Usage:
-  accumulate [command] [flags]
+  accumulate [command]
 
 Available Commands
   account     Create and get token accounts
@@ -30,6 +30,7 @@ Available Commands
   help        Help about any command
   key         Create and manage Keys for ADI Key Books, and Pages
   page        Create and manage Keys, Books, and Pages
+  token       Issue and get tokens
   tx          Create and get token txs
   version     get version of the accumulate node
 
@@ -46,22 +47,34 @@ Flags:
 
 ### Account
 
-Lite token accounts are stored in a local database. CLI allows you to generate lite token accounts and export/import corresponding private keys, create transactions, see a list of all of your accounts, and pull information about a URL.
+Create and get token accounts
 
 ```bash
 $ ./accumulate.exe account
 ```
 
 ```bash
-  accumulate account get [url]                  Get anon token account by URL
-  accumulate account qr [url]                   Display QR code for lite account URL
-  accumulate account generate                   Generate random lite token account
-  accumulate account list                       Display all anon token accounts
-  accumulate account restore                    Restore old anon token accounts
-  accumulate account create token [actor adi] [signing key name] [key index (optional)] [key height (optional)] [new token account url] [tokenUrl] [keyBookUrl] Create a token account for an ADI
-  accumulate account create data [actor adi] [signing key name] [key index (optional)] [key height (optional)] [new data account url]  [keyBookUrl]     Create a data account under an ADI
-  accumulate account import [private-key]       Import lite token account from private key hex
-  accumulate account export [url]               Export private key hex of lite token account
+Usage:
+  accumulate account [command]
+
+Available Commands:
+  create      Create an account
+  generate    Generate random lite token account
+  get         Get an account by URL
+  list        Display all lite token accounts
+  qr          Display QR code for lite account URL
+  restore     Restore old lite token accounts
+
+Flags:
+  -h, --help   help for account
+
+Global Flags:
+  -d, --debug              Print accumulated API calls
+  -j, --json               print outputs as json
+  -n, --pretend            Enables check-only mode for transactions
+      --prove              Request a receipt proving the transaction is in a block
+  -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v2")
+  -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 ```
 
 **Account get**
@@ -189,11 +202,26 @@ $ ./accumulate.exe adi
 ```
 
 ```
-  accumulate adi get [URL]                      Get existing ADI by URL
-  accumulate adi directory [url]                Get directory of URL's associated with an ADI
-  accumulate adi create [actor-lite-account] [adi url to create] [public-key or key name] [key-book-name (optional)] [key-page-name (optional)]  Create new ADI from lite account
-  accumulate adi create [actor-adi-url] [wallet signing key name] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key name] [key book url (optional)] [key page url (optional)] Create new ADI for another ADI
-  accumulate adi import [adi-url] [private-key] Import Existing ADI
+Usage:
+  accumulate adi [command]
+
+Available Commands:
+  create      Create new ADI
+  directory   Get directory of URL's associated with an ADI with starting index and number of directories to receive
+  get         Get existing ADI by URL
+  list        Get existing ADI by URL
+
+Flags:
+  -h, --help   help for adi
+
+Global Flags:
+  -d, --debug              Print accumulated API calls
+  -j, --json               print outputs as json
+  -n, --pretend            Enables check-only mode for transactions
+      --prove              Request a receipt proving the transaction is in a block
+  -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v2")
+  -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
+
 ```
 
 #### ADI get
@@ -385,13 +413,24 @@ $ ./accumulate.exe data
 ```
 
 ```
-  accumulate account create data [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [adi data account url] [key book (optional)] Create new data account
+  accumulate account create data [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [adi data account url] [key book (optional)] 
+         Create new data account
          example usage:  accumulate account create data acc://actor signingKeyName acc://actor/dataAccount acc://actor/book0
-  accumulate data get [DataAccountURL]                    Get existing Key Page by URL
-  accumulate data get [DataAccountURL] [EntryHash]  Get data entry by entryHash in hex
-  accumulate data get [DataAccountURL] [start index] [count] expand(optional) Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided 
-  accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data] Write entry to your data account. 
-         Note: extid's and data needs to be a quoted string or hex
+  
+  accumulate account create data lite [lite token account] [name_0] ... [name_n] 
+         Create new lite data account creating a chain based upon a name list
+  accumulate account create data lite [origin url] [signing key name]  [key index (optional)] [key height (optional)] [name_0] ... [name_n] 
+         Create new lite data account creating a chain based upon a name list
+         example usage: accumulate account create data lite acc://actor signingKeyName example1 example2
+  accumulate data get [DataAccountURL]                    
+         Get existing Key Page by URL
+  accumulate data get [DataAccountURL] [EntryHash]  
+         Get data entry by entryHash in hex
+  accumulate data get [DataAccountURL] [start index] [count] expand(optional) 
+         Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided 
+  accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data] 
+         Write entry to your data account. 
+  Note: extid's and data needs to be a quoted string or hex
 ```
 
 #### Create Data Account
@@ -579,6 +618,7 @@ Available Commands
   help        Help about any command
   key         Create and manage Keys for ADI Key Books, and Pages
   page        Create and manage Keys, Books, and Pages
+  token       Issue and get tokens
   tx          Create and get token txs
   version     get version of the accumulate node
 
@@ -741,22 +781,29 @@ $ ./accumulate.exe page
 ```
 
 ```
-accumulate page create [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] Create new key page with 1 to N+1 public keys 
-                 example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate page get [URL]                     Get existing Key Page by URL
-  accumulate page key update [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key in a key page with a new public key
-                 example usage: accumulate page key update  acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
-  accumulate page key add [key page url] [signing key name] [key index (optional)] [key height (optional)] [new key label] Add key to a key page
-                 example usage: accumulate page key add acc://RedWagon/RedPage1 redKey1 redKey2
-  accumulate page key remove [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key label] Remove key from a key page
-                 example usage: accumulate page key remove acc://RedWagon/RedPage1 redKey1 redKey2 
+accumulate page create [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [new key page url] [public key 1] ... [public key hex or label n + 1] 
+            Create new key page with 1 to N+1 public keys 
+            example usage: accumulate key page create acc://RedWagon redKey5 acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate page get [URL]                     
+            Get existing Key Page by URL
+  accumulate page key update [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key label] [new public key or label] 
+            Update key in a key page with a new public key
+            example usage: accumulate page key update  acc://RedWagon/RedPage1 redKey1 redKey2 redKey3
+  accumulate page key add [key page url] [signing key name] [key index (optional)] [key height (optional)] [new key label] 
+            Add key to a key page
+            example usage: accumulate page key add acc://RedWagon/RedPage1 redKey1 redKey2
+  accumulate page key remove [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key label] 
+            Remove key from a key page
+            example usage: accumulate page key remove acc://RedWagon/RedPage1 redKey1 redKey2 
 ```
 
 **Get Key Page**
 
+Get existing Key Page by URL
+
 ```
 Usage:
-accumulate key get page [URL]                 Get existing Key Page by URL
+accumulate key get page [URL]                 
 ```
 
 Example of usage:
@@ -769,9 +816,11 @@ $ ./accumulate.exe get ADITEST/ADIKEYPAGE1
 
 **Key Page Create**
 
+Create new key page with 1 to N public keys within the wallet
+
 ```
 Usage:
-accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] Create new key page with 1 to N public keys within the wallet
+accumulate key page create [actor adi url] [signing key label] [key index (optional)] [key height (optional)] [new key page url] [public key label 1] ... [public key label n] 
 ```
 
 Example of usage:
@@ -793,8 +842,11 @@ $ ./accumulate.exe key page create ADITEST key1234 ADITEST/ADIKEYPAGE1.4 KEY1.4 
 
 **Page Key Update**
 
+Update key page with a new public key
+
 ```
-accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] Update key page with a new public key
+Usage:
+accumulate key page update [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] [new public key or label] 
 ```
 
 Example of usage:
@@ -808,8 +860,10 @@ $ ./accumulate.exe page key update ADITEST/ADIKEYPAGE1 key5678 1 1 key5678 key12
 
 **Page Key Add**
 
+Add key to key page
+
 ```
-accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] Add key to key page
+accumulate key page add [key page url] [signing key label] [key index (optional)] [key height (optional)] [new key label] 
 ```
 
 Example of usage:
@@ -823,8 +877,10 @@ $ ./accumulate.exe page key add ADITEST/ADIKEYPAGE1 key1234 1 1 key5678
 
 **Page Key Remove**
 
+Remove key in key page
+
 ```
-accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] Remove key in key page
+accumulate key page remove [key page url] [signing key label] [key index (optional)] [key height (optional)] [old key label] 
 ```
 
 Example of usage:
@@ -846,16 +902,25 @@ $ ./accumulate.exe tx
 
 ```bash
 Usage:
-accumulate tx get [txid]                      Get token transaction by txid
-accumulate tx create [from] [to] [amount]     Create new token tx
-accumulate tx history [url] [starting transaction number] [ending transaction number] Get transaction history
+  accumulate tx get [txid]                      
+         Get token transaction by txid
+  accumulate tx create [from] [to] [amount]     
+         Create new token tx
+  accumulate tx execute [from] [payload]        
+         Execute an arbitrary transaction
+  accumulate tx sign [origin] [signing key name] [key index (optional)] [key height (optional)] [txid]  
+         Sign a pending transaction
+  accumulate tx history [url] [starting transaction number] [ending transaction number] 
+         Get transaction history
 ```
 
 #### Tx Get
 
+Get token transaction by txid
+
 ```
 Usage:
-accumulate tx get [txid]                      Get token transaction by txid
+accumulate tx get [txid]                      
 ```
 
 Example of usage:
@@ -893,9 +958,11 @@ $ ./accumulate.exe tx get 46469416c03b2b386e6c10da8e873f0d61392fc1e8384b63123d8d
 
 #### Tx Create
 
+Create new token tx
+
 ```
 Usage:
-accumulate tx create [from] [to] [amount]     Create new token tx
+accumulate tx create [from] [to] [amount]     
 ```
 
 Example of usage:
@@ -930,9 +997,11 @@ $ ./accumulate.exe tx create acc://adione/one key61 acc://adithree/three  0.5
 
 #### Tx History
 
+Get transaction history
+
 ```
 Usage:
-accumulate tx history [url] [starting transaction number] [ending transaction number] Get transaction history
+accumulate tx history [url] [starting transaction number] [ending transaction number] 
 ```
 
 Example of usage:
