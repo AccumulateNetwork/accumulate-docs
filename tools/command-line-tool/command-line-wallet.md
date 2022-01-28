@@ -392,8 +392,10 @@ $ ./accumulate.exe credits
 
 ```
 Usage:
-  accumulate credits [actor lite account] [lite account or key page url] [amount]
-  accumulate credits [actor url] [actor key name] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]
+  accumulate credits [origin lite account] [lite account or key page url] [amount]              
+         Send credits using a lite account or adi key page to another lite account or adi key page
+  accumulate credits [origin url] [origin key name] [key index (optional)] [key height (optional)] [key page or lite account url] [amount]              
+         Send credits to another lite account or adi key page
 ```
 
 Example of usage:
@@ -440,7 +442,6 @@ Create new data account
 ```
 Usage:
 accumulate account create data [origin adi] [signing key name] [key index (optional)] [key height (optional)] [adi data account url]  [keyBookUrl]
-
 ```
 
 Example of usage:
@@ -451,6 +452,29 @@ $ ./accumulate.exe account create data ADITEST key11 ADITEST/DATA acc://ADITEST/
         Tendermint Reference    :       aa090d8f31b863a5a0b5e313e4e6ab698b4a8762f1f16a6d24f673ccb501dc63
         Error code              :       ok
         Error                   :       CheckTx
+```
+
+#### Create Data Lite Account
+
+Create new lite data account creating a chain based upon a name list
+
+```
+Usage:
+accumulate account create data lite [lite token account] [name_0] ... [name_n]
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe account create data lite acc://acf81a8d470f0ac2a085b4159da659ccf3a25681ab5f8257/ACME k01 k02
+        Account Url             :acc://0401cc2a360c4685095bac0c751e3b2a6590c4663a46c33a
+
+        Account Id              :0401cc2a360c4685095bac0c751e3b2a6590c466b33f63b9028f50d90c9fd13c
+        Entry Hash              :a61b9a70ae0a12ac3c3ee5c2f3085be2e77848e6d2dcc0759ae94bd46a6ab1b6
+        Transaction Hash        :       c6736b1f4bd11e4b546e2a1adef7e9c54256d6e3764a7a9d53eedc60bfa4d3db
+        Envelope Hash           :       f80afa894e57472cfe395988705a3475c6f9c215f0ed43686db48294c9efb9b4
+        Simple Hash             :       87cf3322eb18fd6ab2ea53f06287cd478e4e16d6ca33c9474b632816c3ed29a1
+        Error code              :       ok
 ```
 
 #### Write Data
