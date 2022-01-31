@@ -940,12 +940,34 @@ accumulate token create [origin adi url] [signer key name] [url] [symbol] [preci
 Example of usage:
 
 ```bash
-./accumulate token create ADITEST key11 TokenTest ADT 2
+./accumulate token create acc://ADITEST key11 acc://ADITEST/TokenTest ADT 2
 
         Transaction Hash        :       42b9cc80cd430a3dcf759e43190192b358743b42d4f80d4c6367e7b36b90a364
         Envelope Hash           :       e72f8b6561dda8531a2fd3c58317bc35e4300e9953762f662a0b5a0ee4392a4f
         Simple Hash             :       e8bd622ebe235c99e799e6780f42f8cae6248211a62303086cea82a9bbbeca0d
         Error code              :       ok
+```
+
+#### Token Get
+
+Get token by URL
+
+```
+Usage:
+accumulate token get [url]     
+```
+
+Example of usage:
+
+```bash
+./accumulate token get acc://ADITEST/TokenTest
+
+        Token URL       :       acc://adikg1/toknkg1
+        Symbol          :       kgt
+        Precision       :       2
+        Supply          :       0
+        Supply Limit    :       no
+        Properties URL  :
 ```
 
 ### Tx
