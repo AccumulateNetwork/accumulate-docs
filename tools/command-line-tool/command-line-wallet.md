@@ -962,8 +962,8 @@ Example of usage:
 ```bash
 ./accumulate token get acc://ADITEST/TokenTest
 
-        Token URL       :       acc://adikg1/toknkg1
-        Symbol          :       kgt
+        Token URL       :       acc://ADITEST/TokenTest
+        Symbol          :       ADT
         Precision       :       2
         Supply          :       0
         Supply Limit    :       no
