@@ -916,6 +916,38 @@ $ ./accumulate.exe page key remove ADITEST/ADIKEYPAGE1 key1234 1 1 key1234
         Error code              :       ok
 ```
 
+### Token
+
+```bash
+$ ./accumulate.exe token
+```
+
+```bash
+Usage:
+  accumulate token get [url] Get token by URL
+  accumulate token create [origin adi url] [signer key name] [url] [symbol] [precision] [properties]    Create new token
+```
+
+#### Token Create
+
+Create new token
+
+```
+Usage:
+accumulate token create [origin adi url] [signer key name] [url] [symbol] [precision] [properties]     
+```
+
+Example of usage:
+
+```bash
+./accumulate token create ADITEST key11 TokenTest ADT 2
+
+        Transaction Hash        :       42b9cc80cd430a3dcf759e43190192b358743b42d4f80d4c6367e7b36b90a364
+        Envelope Hash           :       e72f8b6561dda8531a2fd3c58317bc35e4300e9953762f662a0b5a0ee4392a4f
+        Simple Hash             :       e8bd622ebe235c99e799e6780f42f8cae6248211a62303086cea82a9bbbeca0d
+        Error code              :       ok
+```
+
 ### Tx
 
 Send token from one anonymous token account to another one.
