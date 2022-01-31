@@ -1118,3 +1118,33 @@ $ ./accumulate.exe tx history acc://68fe2628a354d44ab349b08566ac35139a22b9896b1e
    "type":"tokenAccountHistory"
 }
 ```
+
+#### Scratch Token Account
+
+Create new scratch token account
+
+Example of usage:
+
+```bash
+$ ./accumulate tx execute acc://ADITEST key11 '{"type": "createTokenAccount", "url": "acc://ADITEST/tokn", "tokenUrl": "acc://ACME", "scratch": true}'
+
+        Transaction Hash        :       ab1031b05c5c5800354fc42c5d0d96f1f4e03c67248e97a3d24d0c255d574cf5
+        Envelope Hash           :       37fe7276d368c0228acfcc1b646a02bf0b696b4b83707abbf986ce2dcd550a33
+        Simple Hash             :       458cc577e82bc7ec2240dce06e4ec66d03bba8246b977dff486366e774fef581
+        Error code              :       ok
+```
+
+#### Scratch Data Account
+
+Create new scratch data account
+
+Example of usage:
+
+```bash
+$ ./accumulate tx execute acc://ADITEST key11 '{"type": "createDataAccount", "url": "acc://ADITEST/data", "scratch": true}'
+
+        Transaction Hash        :       6643103744814c1671c451115cf66299b2bebcf4ea97b498f94169181386d924
+        Envelope Hash           :       fce3d26fcf78d2e144e0d8ee3f2fd69303655549fd223bc1bd4a95a0101d47d3
+        Simple Hash             :       924e43967cc24048d51f02daa4f9e20902b0516a12b210de131ded16f3959e29
+        Error code              :       ok
+```
