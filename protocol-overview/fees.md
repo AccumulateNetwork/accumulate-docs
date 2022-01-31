@@ -8,22 +8,4 @@ Accumulates fees are fixed and stable. Business models, built on Accumulate, can
 
 Estimated fees below are converted to USD for actions like identity creation, token transactions, and token issuances.
 
-| Type                                                      | Fee                            |
-| --------------------------------------------------------- | ------------------------------ |
-| <p> </p><p>Create Identity  </p><p> </p>                  | <p> </p><p>$5.00</p><p> </p>   |
-| <p> </p><p>Create Token Account</p><p> </p>               | <p> </p><p>$0.25</p><p> </p>   |
-| <p> </p><p>Send Tokens</p><p> </p>                        | <p> </p><p>$0.03</p><p> </p>   |
-| <p> </p><p>Create Data Account</p><p> </p>                | <p> </p><p>$0.25</p><p> </p>   |
-| <p> </p><p>Write Data (Data Account)</p><p> </p>          | <p> </p><p>$0.001</p><p> </p>  |
-| <p> </p><p>Write Data (Scratch Data Account)</p><p> </p>  | <p> </p><p>$0.0001</p><p> </p> |
-| <p> </p><p>Write Data to (Lite Data Account</p><p> </p>   | <p> </p><p>$0.001</p><p> </p>  |
-| <p> </p><p>Acme Faucet</p><p> </p>                        | <p> </p><p></p><p> </p>        |
-| <p> </p><p>Create Token</p><p> </p>                       | <p> </p><p>$50.00</p><p> </p>  |
-| <p> </p><p>Issue Tokens</p><p> </p>                       | <p> </p><p>$0.03</p><p> </p>   |
-| <p> </p><p>Burn Tokens</p><p> </p>                        | <p> </p><p></p><p> </p>        |
-| <p> </p><p>Create Key Page</p><p> </p>                    | <p> </p><p>$1.00</p><p> </p>   |
-| <p> </p><p>Create Key Book</p><p> </p>                    | <p> </p><p>$1.00</p><p> </p>   |
-| <p> </p><p>Add Credits</p><p> </p>                        | <p> </p><p></p><p> </p>        |
-| <p> </p><p>Update Key Page</p><p> </p>                    | <p> </p><p>$0.03</p><p> </p>   |
-| <p> </p><p>Sign Transaction</p><p> </p>                   | <p> </p><p>$0.001</p><p> </p>   |
-
+<table><thead><tr><th>Type</th><th data-type="number">Base Fee in Credits</th><th>Fee in USD (approx.)</th></tr></thead><tbody><tr><td>Create Identity</td><td>null</td><td>$5.00</td></tr><tr><td>Create Token Account</td><td>null</td><td>$0.25</td></tr><tr><td>Send Tokens</td><td>null</td><td>$0.03</td></tr><tr><td>Create Data Account</td><td>null</td><td>$0.25</td></tr><tr><td>Write Data (Data Account)</td><td>null</td><td>$0.001</td></tr><tr><td>Write Data (Scratch Data Account)</td><td>null</td><td>$0.0001</td></tr><tr><td>Write Data to (Lite Data Account</td><td>null</td><td>$0.001</td></tr><tr><td>Acme Faucet</td><td>null</td><td></td></tr><tr><td>Create Token</td><td>null</td><td>$50.00</td></tr><tr><td>Issue Tokens</td><td>null</td><td>$0.03</td></tr><tr><td>Burn Tokens</td><td>null</td><td></td></tr><tr><td>Create Key Page</td><td>null</td><td>$1.00</td></tr><tr><td>Create Key Book</td><td>null</td><td>$1.00</td></tr><tr><td>Add Credits</td><td>null</td><td></td></tr><tr><td>Update Key Page</td><td>null</td><td>$0.03</td></tr><tr><td>Sign Transaction</td><td>null</td><td>$0.001</td></tr></tbody></table>
