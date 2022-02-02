@@ -407,7 +407,7 @@ jsonrpc2.Error{Code:ErrorCode{-32603:"Internal error"}, Message:"Internal error"
 
 ### Multi-Sig Transaction
 
-Below is sequential steps for pending transactions that needs multiple signatures.
+Below are the sequential steps for pending transactions that needs multiple signatures.
 
 #### Create an ADI and token account (with credits)
 
