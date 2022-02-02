@@ -76,6 +76,21 @@ Global Flags:
   -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v2")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
 ```
+**Account generate**
+
+Generate random lite token account
+
+```bash
+Usage:
+accumulate account generate                   
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe account generate
+acc://26ddb87b5d12236f752680c97443a0212a93df4bdd7d784a/ACME :   3adc1fcd47c711e662b94335b1f270bd07bf27c279f65d5f754e091cc1e95b35
+```
 
 **Account get**
 
@@ -122,22 +137,6 @@ $ ./accumulate.exe get acc://ADITEST/TOKENS/ACME
 }
 ```
 
-**Account generate**
-
-Generate random lite token account
-
-```bash
-Usage:
-accumulate account generate                   
-```
-
-Example of usage:
-
-```bash
-$ ./accumulate.exe account generate
-acc://26ddb87b5d12236f752680c97443a0212a93df4bdd7d784a/ACME :   3adc1fcd47c711e662b94335b1f270bd07bf27c279f65d5f754e091cc1e95b35
-```
-
 #### Account list
 
 Display all lite token accounts
@@ -153,6 +152,40 @@ Example of usage:
 $ ./accumulate.exe account list
 acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
 acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME
+```
+
+#### Account QR
+
+Display QR code for lite account URL
+
+```bash
+Usage:
+accumulate account qr [url]                   
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe account qr acc://f5a2c0416599ae08f264d1f55779540037bb7b8c85fe6bf5/ACME
+█████████████████████████████████████
+██ ▄▄▄▄▄ █▀    ▀█ ▄█▀ ▄ █ ▄█ ▄▄▄▄▄ ██
+██ █   █ ██ ▀█▄▀█ ██▄▀▄█ ▀▀█ █   █ ██
+██ █▄▄▄█ █▄▄▀▀▄▀▀██ █ █▀▄ ▄█ █▄▄▄█ ██
+██▄▄▄▄▄▄▄█▄▀ █▄▀ █ ▀▄█▄▀ █▄█▄▄▄▄▄▄▄██
+██ ▀▄▀▄▀▄███▄ ▄▄ ▄  ███  ███▀▀▄▀█▄▀██
+████▀▄▄▄▄ ██▀▄▀▄█▀█▀▀▀▀  ▀▄█ ██▄██ ██
+██ ▄▄▄ ▄▄▀█▀▄ ███▀▄ ▄█   █ █  █▀▀  ██
+██  ▄█▄█▄   ▀▄ █ ▀▀ ██  ██▀▄▄▀▄ ▄▄▄██
+███▀▄▄▄█▄█▄ ██ ▀▀██▄ █ ▄ ██  ██ ██ ██
+██▀▀▄ ██▄  ▄█▄▄▀█▀  ▀▀█▀▄██▄ ▄▀ ██ ██
+██▄██▄▄ ▄▄▄█  ▀  ▀ ▀███  ██   █▄█  ██
+██▄▀▄ ▄█▄▀▄   ▄▀█▀▀ ▄▀▀▀▀█▄█▄▀▄ ▄▄ ██
+██▄█▄█▄█▄█▀▀  ▀ ▀▄   █   ▀ ▄▄▄  ▀█▀██
+██ ▄▄▄▄▄ ███ ▄█ ▄▀ ▀ ▀█▀▀▄ █▄█ ▀██▄██
+██ █   █ █▄▄  ▄▄█▀ ▀█▄ ▄█▀  ▄  ██▄ ██
+██ █▄▄▄█ █▄▄▀▀█████ ██ ▀ ▀  ██ ▀▄▀▄██
+██▄▄▄▄▄▄▄█▄▄▄█▄████▄▄██▄▄▄▄██▄█▄█▄▄██
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 ```
 
 #### Account Create (ADI Token Account)
@@ -224,46 +257,6 @@ Global Flags:
 
 ```
 
-#### ADI get
-
-Get existing ADI by URL
-
-```
-Usage:
-accumulate adi get [URL]                      
-```
-
-Example of usage:
-
-```bash
-        ADI Url         :       acc://ADITEST
-        Key Book Url    :       acc://ADITEST/keybook1
-```
-
-
-#### ADI directory
-
-Accumulate directory for Accumulate Digital Identifiers
-
-```bash
-$ ./accumulate.exe adi directory
-```
-
-```
-Usage:
-accumulate adi directory [url]              Get directory of sub-chains associate with a URL
-```
-
-Example of usage:
-
-```bash
-$ ./accumulate.exe adi directory ADITEST
-        ADI Entries
-        acc://ADITEST1/ssg0 (Key Book)
-        acc://ADITEST1/sigspec0 (Key Page)
-
-```
-
 #### ADI create (Create New ADI from Lite Account)
 
 ```
@@ -298,6 +291,62 @@ $ ./accumulate.exe adi create ADITEST key1234 0 1 ADITEST2 key5678 ADIKEYBOOK2 A
         Error code              :       ok
 ```
 
+#### ADI directory
+
+Get directory of URL's associated with an ADI with starting index and number of directories to receive
+
+```bash
+$ ./accumulate.exe adi directory
+```
+
+```
+Usage:
+accumulate adi directory [url]              Get directory of sub-chains associate with a URL
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe adi directory ADITEST
+        ADI Entries
+        acc://ADITEST1/ssg0 (Key Book)
+        acc://ADITEST1/sigspec0 (Key Page)
+
+```
+
+#### ADI get
+
+Get existing ADI by URL
+
+```
+Usage:
+accumulate adi get [URL]                      
+```
+
+Example of usage:
+
+```bash
+        ADI Url         :       acc://ADITEST
+        Key Book Url    :       acc://ADITEST/keybook1
+```
+
+#### ADI list
+
+Get existing ADI list
+
+```
+Usage:
+accumulate adi list                    
+```
+
+Example of usage:
+
+```bash
+        acc://ADITEST1     :       key11
+        acc://adione       :       key61
+        acc://aditwo       :       key51
+        acc://aditthree    :       key61
+```
 
 
 ### Book
@@ -431,8 +480,8 @@ $ ./accumulate.exe data
   accumulate data get [DataAccountURL] [start index] [count] expand(optional) 
          Get a set of data entries starting from start and going to start+count, if "expand" is specified, data entries will also be provided 
   accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data] 
-         Write entry to your data account. 
-  Note: extid's and data needs to be a quoted string or hex
+         Write entry to your data account. Note: extid's and data needs to be a quoted string or hex
+   accumulate data write-to [account url] [signing key] [lite data account] [extid_0 (optional)] ... [extid_n (optional)] [data]
 ```
 
 #### Create Data Account
@@ -475,27 +524,6 @@ $ ./accumulate.exe account create data lite acc://acf81a8d470f0ac2a085b4159da659
         Envelope Hash           :       f80afa894e57472cfe395988705a3475c6f9c215f0ed43686db48294c9efb9b4
         Simple Hash             :       87cf3322eb18fd6ab2ea53f06287cd478e4e16d6ca33c9474b632816c3ed29a1
         Error code              :       ok
-```
-
-#### Write Data
-
-Write entry to your data account.
-
-```
-Usage:
-accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data]
-
-```
-
-Example of usage:
-
-```bash
-$ ./accumulate.exe data write acc://ADITEST/DATA key61 "testdata"
-        Entry Hash              :       b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808
-        Transaction Id          :       513050cc0fb5459a27f7fd1661656d5c5b7fe3879740d51aabab0e072a0bb857
-        Tendermint Reference    :       76821f50a8fa63fe6d74263754ad0c728003466d14822686963b604731225907
-        Error code              :       ok
-        Error                   :       CheckTx
 ```
 
 #### Get Data
@@ -592,6 +620,48 @@ $ ./accumulate.exe data get acc://ADITEST/DATA 0 1
       "entryHash":"b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808"
    }
 }
+```
+#### Data Write
+
+Write entry to your data account.
+
+```
+Usage:
+accumulate data write [data account url] [signingKey] [extid_0 optional)] ... [extid_n (optional)] [data]
+
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe data write acc://ADITEST/DATA key61 "testdata"
+        Entry Hash              :       b45fa53718dbc5bf31f2f6134d1ff84fe22b3760face9c2ab012fd66d16d1808
+        Transaction Id          :       513050cc0fb5459a27f7fd1661656d5c5b7fe3879740d51aabab0e072a0bb857
+        Tendermint Reference    :       76821f50a8fa63fe6d74263754ad0c728003466d14822686963b604731225907
+        Error code              :       ok
+        Error                   :       CheckTx
+```
+
+#### Data Write-To
+
+Write entry to your data account.
+
+```
+Usage:
+accumulate data write-to [account url] [signing key] [lite data account] [extid_0 (optional)] ... [extid_n (optional)] [data]
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe data write-to acc://ADITEST key61 acc://08aecb75d3025d00bdc899e0ae675a6f03afc89d83e88879 testdata
+        Account Url           :       acc://08aecb75d3025d00bdc899e0ae675a6f03afc89d83e88879
+        Account Id            :       08aecb75d3025d00bdc899e0ae675a6f03afc89dde9836db705242e5b3355cce
+        Entry Hash            :       89b9534d62d826478abb26cf53315dcefb49805471d226049ac1076f9269e6d1
+        Transaction Hash      :       992af3be5221b8edca8b0252620f11d6b86720a9d5c005656d1f49a673ecac69
+        Envelope Hash         :       afd6e529c7c215b15730270113b77f770d351d6d1444bbff0b181a8d454235ee
+        Simple Hash           :       8e3fec17b992b01b4bc69e54a097a8b62ed6dabca9021fcc64ccadeb40abcf33
+        Error code            :       ok
 ```
 
 ### Faucet
@@ -734,6 +804,21 @@ Example of Usage:
 $ ./accumulate.exe key import private c25288e8262fc23a5e8fc3acd523428b6913d05166f47022abef52acdba47930 benkey4
         name            :benkey4
         public key      :d5b57f10eb85a751094fcf943fc4997e45f0a90955294ca99cc5ee298d301690
+```
+
+**Key Import Lite**
+
+```
+Usage:
+accumulate key import lite [private key hex]      Import a key as an anonymous address
+```
+
+Example of Usage:
+
+```bash
+$ ./accumulate.exe key import lite 52693a08f2511ecd05b41e0ea6e6b6f2b7dee4248293b8c4ae9e4aacb8f3ae54
+        name            :acc://4111d56848824a2d74ee93e2c42091f7019a87c7649b48fe/ACME
+        public key      :76324e43a382e6ff6a9724f8dae137b93f5d5a61a3eb9d6e5213739b656c5d44
 ```
 
 **Key Export All**
@@ -990,6 +1075,13 @@ Usage:
          Sign a pending transaction
   accumulate tx history [url] [starting transaction number] [ending transaction number] 
          Get transaction history
+  accumulate tx pending [txid]                  
+         Get token transaction by txid
+  accumulate tx pending [height]                        
+         Get token transaction by block height
+  accumulate tx pending [starting transaction number]   [ending transaction number]             
+         Get token transaction by block height
+ 
 ```
 
 #### Tx Get
@@ -1073,6 +1165,46 @@ $ ./accumulate.exe tx create acc://adione/one key61 acc://adithree/three  0.5
         Error                   :       CheckTx
 ```
 
+#### Tx Execute
+
+Execute an arbitrary transaction
+
+```
+Usage:
+accumulate tx execute [from] [payload]
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate tx execute acc://ADITEST key1 '{"type": "createTokenAccount", "url": "acc://ADITEST/tokn", "tokenUrl": "acc://ACME"}'
+
+        Transaction Hash        :       ab1031b05c5c5800354fc42c5d0d96f1f4e03c67248e97a3d24d0c255d574cf5
+        Envelope Hash           :       37fe7276d368c0228acfcc1b646a02bf0b696b4b83707abbf986ce2dcd550a33
+        Simple Hash             :       458cc577e82bc7ec2240dce06e4ec66d03bba8246b977dff486366e774fef581
+        Error code              :       ok
+```
+
+#### Tx Sign
+
+Sign a pending transaction
+
+```
+Usage:
+accumulate tx sign [origin] [signing key name] [key index (optional)] [key height (optional)] [txid]
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate tx sign ADITEST/testtoken key2 fa3aac0886f345ec32b5762277de2a6645b6d8ac5551e7aa0761e41e80a7726b
+
+        Transaction Hash        :       fa3aac0886f345ec32b5762277de2a6645b6d8ac5551e7aa0761e41e80a7726b
+        Envelope Hash           :       87d9a4019c019267e6a1f452e7119ab4cb9bd300827f41b84ce56e31a9acb7be
+        Simple Hash             :       1d5f884c4cde73d3b561a9ebe6cc9909fce6435220cf2644bd2925fa3cff6367
+        Error code              :       ok
+```
+
 #### Tx History
 
 Get transaction history
@@ -1118,6 +1250,23 @@ $ ./accumulate.exe tx history acc://68fe2628a354d44ab349b08566ac35139a22b9896b1e
    "type":"tokenAccountHistory"
 }
 ```
+
+#### Tx Pending
+
+Get token transaction by txid
+
+```
+Usage:
+accumulate tx pending [txid]
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe tx pending b5ca6c9ed9aa092637236f73533a8579bb072fadecf9fac1b777b43aad545fe3
+
+        Pending Tranactions -> Start: 0  Count: 0        Total: 0
+```     
 
 #### Scratch Token Account
 

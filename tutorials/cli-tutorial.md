@@ -135,7 +135,7 @@ The Output should look something like:
         Error code              :       ok
 ```
 
-## How to Create ADI
+### How to Create ADI
 
 The following section deals will creating keypage and Accumulate Digital Identifier (ADI).
 
@@ -275,7 +275,7 @@ The Output should look something like:
 
 ### Keybook Create
 
-You can create a keybook after creating a keypage. Below is the command to create a keybook.
+Below is the command to create a keybook.
 
 ```bash
 $ ./accumulate book create <adi URL> <keyname> <new keybook URL> <existing keypage URL>
@@ -403,6 +403,81 @@ The Output should throw error something like:
 
 ```bash
 jsonrpc2.Error{Code:ErrorCode{-32603:"Internal error"}, Message:"Internal error"}
+```
+
+### Multi-Sig Transaction
+
+Below is sequential steps for pending transactions that needs multiple signatures.
+
+#### Create an ADI and token account (with credits)
+
+```bash
+$ ./accumulate adi create acc://acf81a8d470f0ac2a085b4159da659ccf3a25681ab5f8257/ACME TEST key1 TESTbook testpage
+
+        Transaction Hash        :       36e25682558694df1561803a93b47910c4a7fb7eeb87e0730aa7ddd0a7c90980
+        Envelope Hash           :       7410c654b8e5f5626e39da408c3a255270dbcccbe22070893916577ac85cdc3c
+        Simple Hash             :       5aea0e7e72eafb750b41f387a5eef8e4aea4c99207b2c4860bd7238f41f27ce1
+        Error code              :       ok
+
+
+$ ./accumulate credits acc://77f6116eb602b90cb94cf3458e7a3788b3af20baa856a336/ACME test/testpage 30
+
+        Transaction Hash        :       4cff5530c2f5041fc77ac2fed297fb3babe5fc97d41ee1f09cfe155e43081bab
+        Envelope Hash           :       46592a7d56dc632e0cfd250b5eb473c96997283a1f3143406233d2bfcd06a810
+        Simple Hash             :       211e3f096109bf9e6774e510b1296f0050d2cb31e767a21598d7c5b24d5c4e89
+        Error code              :       ok
+
+
+$ ./accumulate account create token acc://test key1 test/testtoken acc://ACME acc://test/testbook
+
+        Transaction Hash        :       540dc880dc3acbbde8da70c02b0506ae02c6e8d2855716fb2892857f1f17fda0
+        Envelope Hash           :       96acc8cea26234f55f2a4acf43fccabefe5491dab876ae8cb512f74d5880b0ad
+        Simple Hash             :       77f7e4baba278497ecc42c88eed780b85b487a65a1a99e7917cfda1108725260
+        Error code              :       ok
+```
+
+#### Add a second key to the key page
+
+```bash
+$ ./accumulate page key add test/testpage key1 key2
+
+        Transaction Hash        :       492a490af0a1efeedbd93c7fbb7d56c701bee124260a0450087e2ee1d38991db
+        Envelope Hash           :       5a41d0fcee831c9a2e7cfb94ed548753775178d85c26b5187c3b941a9f064447
+        Simple Hash             :       699b7c6c051ab9e389c21242e878eec3a853b5945c51c5b128a206c1b1193aaf
+        Error code              :       ok
+```
+
+#### Set the key book threshold to two
+
+```bash
+$ ./accumulate tx execute test/testpage key1 '{"type": "updateKeyPage", "operation": "setThreshold", "threshold": 2}'
+
+        Transaction Hash        :       b64b28ef147c7c618817ea0446353ad7c1f70cf8963a96b0cfb27f7886a6df73
+        Envelope Hash           :       d0de78745417f7b4e402df836c29437bea8fe3e7e95f5efc59583d5beeae8aba
+        Simple Hash             :       4e06bc176ccb4006429b8e1c5da897566d872bde98bfcc887fa4b7ebcb3540fa
+        Error code              :       ok
+```
+
+#### Send a transaction & note the transaction ID
+
+```bash
+$ ./accumulate tx create test/testtoken key1  acc://d65b4631b87661408b8ae0e51fe3de29be16b474fcc88450/ACME  5
+
+        Transaction Hash        :       fa3aac0886f345ec32b5762277de2a6645b6d8ac5551e7aa0761e41e80a7726b
+        Envelope Hash           :       12cf5a08a17fb9d99ff9b2302b24d363575acdcc5ffdeee553ac1c53cba9e6bd
+        Simple Hash             :       b7649a32f2a568dcd004866b1644ed163c5e1b7b6ee1cbf158ffe946ba146bc8
+        Error code              :       ok
+```
+
+#### Sign the transaction
+
+```bash
+$ ./accumulate tx sign test/testtoken key2 fa3aac0886f345ec32b5762277de2a6645b6d8ac5551e7aa0761e41e80a7726b
+
+        Transaction Hash        :       fa3aac0886f345ec32b5762277de2a6645b6d8ac5551e7aa0761e41e80a7726b
+        Envelope Hash           :       87d9a4019c019267e6a1f452e7119ab4cb9bd300827f41b84ce56e31a9acb7be
+        Simple Hash             :       1d5f884c4cde73d3b561a9ebe6cc9909fce6435220cf2644bd2925fa3cff6367
+        Error code              :       ok
 ```
 
 ### The end
