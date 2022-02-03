@@ -941,7 +941,7 @@ Write entry to a data account
 curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
-    "method": "write-data",
+    "method": "write-data-to",
     "params": {
         "origin":"acc://fun",
         "sponsor":"acc://fun",
