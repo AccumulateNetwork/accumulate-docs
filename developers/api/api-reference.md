@@ -722,6 +722,72 @@ curl -X POST --data '{
 }
 ```
 
+### update-key-page
+
+Update key in a key page with a new public key
+
+**Request Parameters**
+
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
+
+**Response Properties**
+
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |                        |
+| `txid`               | string |                        |
+| `envelopeHash`       | string |                        |
+| `simpleHash`         | string |                        |
+| `hash`               | string |                        |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "update-key-page",
+    "params": {
+        "origin":"acc://fun/funpage",
+        "sponsor":"acc://fun/funpage",
+        "signer":{
+            "publicKey":"313cfdb8a47c302d1622f5a7c064fa312935579fbac867c3cfc764617b151d5c",
+            "nonce":1643889342338447
+        },"signature":"871e18e8bde6f97b8a49323a958405b8f7499afee83294f6ff05236f6f5e1f96ec11ed3fe01928c8685efd7995a96ad634ebc6dc26e67a1a0be64522294c6f02",
+        "keyPage":{"height":7},
+        "payload":{
+            "operation":"update",
+            "key":"313cfdb8a47c302d1622f5a7c064fa312935579fbac867c3cfc764617b151d5c",
+            "newKey":"06b03ad284d26d249f99bed19586a1f314c72eb5bb37b55b22aaaacbe9c9b80f"
+        }
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "e7d8cd07d3d9fa64ffd537730df6fdbc20e2214342d7a919d7bc2e16f0a96324",
+        "txid": "e7d8cd07d3d9fa64ffd537730df6fdbc20e2214342d7a919d7bc2e16f0a96324",
+        "envelopeHash": "e8594157bff23451f50429a3e4fc7399f9dbc177728a54341dc713a66603481a",
+        "simpleHash": "2ff5705a0e4c604de62a3f867d8c4f821341d77359714c7271ab3877e3b73622",
+        "hash": "2ff5705a0e4c604de62a3f867d8c4f821341d77359714c7271ab3877e3b73622"
+    },
+    "id": 0
+}
+```
+
 ### create-key-book
 
 Creates a new Key Book
@@ -801,11 +867,13 @@ Write entry to a data account
 
 **Response Properties**
 
-| Property    | Type   | Description            |
-| ----------- | ------ | -------------------    |
-| `hash`      | string | Token Transaction      |
-| `txid`      | string | The transasction ID    |
-| `message`   | string | The success Message    |
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |                        |
+| `txid`               | string |                        |
+| `envelopeHash`       | string |                        |
+| `simpleHash`         | string |                        |
+| `hash`               | string |                        |
 
 **Example Request**
 
@@ -838,6 +906,69 @@ curl -X POST --data '{
         "hash": "4e1cb535ffa781b404ad7a05d0b771c76696a95555d063d9958ea90a88a4d6a3",
         "message": "CheckTx",
         "txid": "56362a342374d68b51883e85f0dbaa2ba601fd0f1dbb3a11d3506864f721e796"
+    },
+    "id": 0
+}
+```
+
+### write-data-to
+
+Write entry to a data account
+
+**Request Parameters**
+
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
+
+**Response Properties**
+
+| Property    | Type   | Description            |
+| ----------- | ------ | -------------------    |
+| `hash`      | string | Token Transaction      |
+| `txid`      | string | The transasction ID    |
+| `message`   | string | The success Message    |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "write-data",
+    "params": {
+        "origin":"acc://fun",
+        "sponsor":"acc://fun",
+        "signer":{
+            "publicKey":"06b03ad284d26d249f99bed19586a1f314c72eb5bb37b55b22aaaacbe9c9b80f",
+            "nonce":1643890491830725
+        },"signature":"51cc66214c6173fba699d56c986f7444705b2cfaf4ecff5236d2970b7c3d90ffb45def706119fd1b8b382c12882c380671c2a7fb340d11e830bcd009773da10b",
+        "keyPage":{"height":8},
+        "payload":{
+            "recipient":"acc://a46c76c16addf3177fa48ffc2ff4dae791a6dc669da9fd4a",
+            "entry":{"data":"7465737464617461"}
+        }
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "e7d8cd07d3d9fa64ffd537730df6fdbc20e2214342d7a919d7bc2e16f0a96324",
+        "txid": "e7d8cd07d3d9fa64ffd537730df6fdbc20e2214342d7a919d7bc2e16f0a96324",
+        "envelopeHash": "e8594157bff23451f50429a3e4fc7399f9dbc177728a54341dc713a66603481a",
+        "simpleHash": "2ff5705a0e4c604de62a3f867d8c4f821341d77359714c7271ab3877e3b73622",
+        "hash": "2ff5705a0e4c604de62a3f867d8c4f821341d77359714c7271ab3877e3b73622"
     },
     "id": 0
 }
