@@ -1266,7 +1266,37 @@ Example of usage:
 $ ./accumulate.exe tx pending b5ca6c9ed9aa092637236f73533a8579bb072fadecf9fac1b777b43aad545fe3
 
         Pending Tranactions -> Start: 0  Count: 0        Total: 0
-```     
+``` 
+
+Get token transaction by block height
+
+```
+Usage:
+accumulate tx pending [height]
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe tx pending 1
+
+        Pending Tranactions -> Start: 0  Count: 0        Total: 0
+``` 
+
+Get token transaction by beginning and ending height
+
+```
+Usage:
+accumulate tx pending [starting transaction number]   [ending transaction number]
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate.exe tx pending fa3aac0886f345ec32b5762277de2a6645b6d8ac5551e7aa0761e41e80a7726b 
+
+        Pending Tranactions -> Start: 0  Count: 0        Total: 0
+``` 
 
 #### Scratch Token Account
 
