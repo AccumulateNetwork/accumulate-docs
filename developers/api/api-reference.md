@@ -974,6 +974,138 @@ curl -X POST --data '{
 }
 ```
 
+### create-token
+
+Create token
+
+**Request Parameters**
+
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
+
+**Response Properties**
+
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |                        |
+| `txid`               | string |                        |
+| `envelopeHash`       | string |                        |
+| `simpleHash`         | string |                        |
+| `hash`               | string |                        |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "create-token",
+    "params": {
+        "origin":"acc://fun",
+        "sponsor":"acc://fun",
+        "signer":{
+            "publicKey":"06b03ad284d26d249f99bed19586a1f314c72eb5bb37b55b22aaaacbe9c9b80f",
+            "nonce":1643908516407232
+        },"signature":"ea6d8f1797861480890e6cacb8c32917411a1799d8345b2965f6e338dac7ff584a95c29b09c5d19ec371b295e1555f27898f7a5bc00f568741d4177d7eb82b0b",
+        "keyPage":{"height":11},
+        "payload":{
+            "url":"acc://fun/funtoken",
+            "symbol":ft,
+            "precision":2,
+            "initialSupply":"0"
+            }
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "5a0a1f30e21dcac73ad9999bc825ec04b608344e98a43bc5383bc1c00473db16",
+        "txid": "5a0a1f30e21dcac73ad9999bc825ec04b608344e98a43bc5383bc1c00473db16",
+        "envelopeHash": "3802c9c17542cb9ffb3934ae9a8870fc99a34ec1fbe0180f4245aed27ccf4878",
+        "simpleHash": "c802830a48a03021d9f7fa8372dcd5efe78961de578965ea980659e22037cbce",
+        "hash": "c802830a48a03021d9f7fa8372dcd5efe78961de578965ea980659e22037cbce"
+    },
+    "id": 0
+}
+```
+
+### issue-token
+
+Issue token
+
+**Request Parameters**
+
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object |                                              | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
+
+**Response Properties**
+
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |                        |
+| `txid`               | string |                        |
+| `envelopeHash`       | string |                        |
+| `simpleHash`         | string |                        |
+| `hash`               | string |                        |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "issue-tokens",
+    "params": {
+        "origin":"acc://fun/funtoken",
+        "sponsor":"acc://fun/funtoken",
+        "signer":{
+            "publicKey":"06b03ad284d26d249f99bed19586a1f314c72eb5bb37b55b22aaaacbe9c9b80f",
+            "nonce":1643911774348012
+        },"signature":"724985a4022419c6324d1933f0968e203c39e08d0eb244e53e63870786456c64896849051b31c7a24e2f537adf6a86b1dc29152515fb2862d4fa41a02085fb0d",
+        "keyPage":{"height":15},
+        "payload":{
+            "recipient":"acc://fun/funAccToken",
+            "amount":"10"
+            }
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "2b4e43d21361cc3aa47bd6b4fb813aaef2f91c7df692e46e2a8cf8e77d0348f3",
+        "txid": "2b4e43d21361cc3aa47bd6b4fb813aaef2f91c7df692e46e2a8cf8e77d0348f3",
+        "envelopeHash": "793da8890631ae04caed1fd90a8b1d0ca986d21249d8fc64d84de399b8d79c09",
+        "simpleHash": "9adf795c9f7b919c5ab0d97554e90d96bf1631d87b6c556920da5cf5f482d886",
+        "hash": "9adf795c9f7b919c5ab0d97554e90d96bf1631d87b6c556920da5cf5f482d886"
+    },
+    "id": 0
+}
+```
+
 ### send-tokens
 
 Send tokens from one account to another
