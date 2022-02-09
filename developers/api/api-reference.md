@@ -12,9 +12,7 @@ This API uses the JSON-RPC 2.0 format. For more information on making JSON-RPC c
 
 `https://testnet.accumulatenetwork.io/v2`
 
-## Methods
-
-### _Query methods_
+## Methods : Query methods
 
 ### query
 
@@ -77,7 +75,7 @@ curl -X POST --data '{
 
 **Example Request**
 
-```d
+```cpp
 curl -X POST --data '{
     "jsonrpc": "2.0",
     "id": 0,
@@ -121,10 +119,10 @@ Returns account history for the specified token account
 
 **Request Parameters**
 
-| Parameter | Type   | Description       | Required? |
-| --------- | ------ | ----------------- | --------- |
-| `url`     | string | Token Account URL | Yes       |
-| `count`   | int    |                   | Yes       |
+| Parameter | Type   | Description                      | Required? |
+| --------- | ------ | -------------------------------- | --------- |
+| `url`     | string | Token Account URL                | Yes       |
+| `count`   | int    | Count of history trananctions    | Yes       |
 
 **Response Properties**
 
@@ -133,11 +131,11 @@ Returns account history for the specified token account
 | `type`              |  string      | The Accumulate object type                   |
 | `data`              |  object      | The data for this object (properties vary)   |
 | `sponsor`           |  string      | The data for this object (properties vary)   |
-| `keypage`           |  object      |                                              |
+| `keypage`           |  object      | The Keypage for this object                  |
 | `txid`              |  string      | Transaction hash                             |
 | `signer`            |  object      | ADI signing the creation of new token        |
 | `sig`               |  object      | Signature of the ADI signing the transaction |
-| `status`            |  object      |                                              |
+| `status`            |  object      | Status                                       |
 
 
 **Example Request**
@@ -210,11 +208,11 @@ Returns transaction data for the specified transaction
 | `type`              |  string      | The Accumulate object type                   |
 | `data`              |  object      | The data for this object (properties vary)   |
 | `sponsor`           |  string      | The data for this object (properties vary)   |
-| `keypage`           |  object      |                                              |
+| `keypage`           |  object      | The Keypage for this object                  |
 | `txid`              |  string      | Transaction hash                             |
 | `signer`            |  object      | ADI signing the creation of new token        |
 | `sig`               |  object      | Signature of the ADI signing the transaction |
-| `status`            |  object      |                                              |
+| `status`            |  object      | Status                                       |
 
 **Example Request**
 
@@ -275,7 +273,7 @@ Get query-chain properties
 | Property      | Type   | Description                                  |
 | -----------   | ------ | --------------------------------------       |
 | `type`        | string | The Accumulate object type                   |
-| `merkleState` | object |                                              |
+| `merkleState` | object | The merkle-state for this object             |
 | `data`        | object | The data for this object (properties vary)   |
 
 **Example Request**
@@ -337,7 +335,7 @@ Get data
 | Property      | Type   | Description                                  |
 | -----------   | ------ | --------------------------------------       |
 | `type`        | string | The Accumulate object type                   |
-| `merkleState` | object |                                              |
+| `merkleState` | object | The merkle-state for this object             |
 | `data`        | object | The data for this object (properties vary)   |
 
 
@@ -433,7 +431,7 @@ Returns the specified key page / signature specification
 | Parameter | Type   | Description             | Required? |
 | --------- | ------ | ----------------------- | --------- |
 | `url`     | string | Accumulate Key Page URL | Yes       |
-| `key`     | string |                         | No       |
+| `key`     | string | hash of public key      | No        |
 
 **Response Properties**
 
@@ -472,7 +470,94 @@ curl -X POST --data '{
 }
 ```
 
-### _Create methods_
+### describe
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "describe",
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "subnet": {
+            "Type": "block-validator",
+            "ID": "BVN2",
+            "BvnNames": [
+                "BVN0",
+                "BVN1",
+                "BVN2"
+            ],
+            "Addresses": {
+                "bvn0": [
+                    "http://127.0.100.5:26656",
+                    "http://127.0.100.6:26656",
+                    "http://127.0.100.7:26656",
+                    "http://127.0.100.8:26656"
+                ],
+                "bvn1": [
+                    "http://127.0.100.9:26656",
+                    "http://127.0.100.10:26656",
+                    "http://127.0.100.11:26656",
+                    "http://127.0.100.12:26656"
+                ],
+                "bvn2": [
+                    "http://127.0.100.13:26656",
+                    "http://127.0.100.14:26656",
+                    "http://127.0.100.15:26656",
+                    "http://127.0.100.16:26656"
+                ],
+                "directory": [
+                    "http://127.0.100.1:26656",
+                    "http://127.0.100.2:26656",
+                    "http://127.0.100.3:26656",
+                    "http://127.0.100.4:26656"
+                ]
+            }
+        }
+    },
+    "id": 0
+}
+```
+
+### version
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "version",
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "version",
+        "data": {
+            "version": "v0.4.0-4-ge0866b72",
+            "commit": "e0866b72bcb428e9c850ce8467197fc827f071bc",
+            "versionIsKnown": true
+        }
+    },
+    "id": 0
+}
+```
+
+## Create methods
 
 ### create-adi
 
@@ -486,7 +571,7 @@ Creates a new ADI (Accumulate Digital Identity)
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -550,7 +635,7 @@ Creates a new data account under an ADI
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -611,7 +696,7 @@ Creates a new token account for an ADI
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -673,7 +758,7 @@ Creates a new Key Page
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -734,7 +819,7 @@ Update key in a key page with a new public key
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -742,11 +827,11 @@ Update key in a key page with a new public key
 
 | Property             | Type   | Description            |
 | -----------------    | ------ | -------------------    |
-| `transactionHash`    | string |                        |
-| `txid`               | string |                        |
-| `envelopeHash`       | string |                        |
-| `simpleHash`         | string |                        |
-| `hash`               | string |                        |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
 
 **Example Request**
 
@@ -800,7 +885,7 @@ Creates a new Key Book
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -861,7 +946,7 @@ Write entry to a data account
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -869,11 +954,11 @@ Write entry to a data account
 
 | Property             | Type   | Description            |
 | -----------------    | ------ | -------------------    |
-| `transactionHash`    | string |                        |
-| `txid`               | string |                        |
-| `envelopeHash`       | string |                        |
-| `simpleHash`         | string |                        |
-| `hash`               | string |                        |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
 
 **Example Request**
 
@@ -923,7 +1008,7 @@ Write entry to a data account
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -986,7 +1071,7 @@ Create token
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -994,11 +1079,11 @@ Create token
 
 | Property             | Type   | Description            |
 | -----------------    | ------ | -------------------    |
-| `transactionHash`    | string |                        |
-| `txid`               | string |                        |
-| `envelopeHash`       | string |                        |
-| `simpleHash`         | string |                        |
-| `hash`               | string |                        |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
 
 **Example Request**
 
@@ -1053,7 +1138,7 @@ Issue token
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -1061,11 +1146,11 @@ Issue token
 
 | Property             | Type   | Description            |
 | -----------------    | ------ | -------------------    |
-| `transactionHash`    | string |                        |
-| `txid`               | string |                        |
-| `envelopeHash`       | string |                        |
-| `simpleHash`         | string |                        |
-| `hash`               | string |                        |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
 
 **Example Request**
 
@@ -1106,6 +1191,73 @@ curl -X POST --data '{
 }
 ```
 
+### burn-tokens
+
+Burn token
+
+**Request Parameters**
+
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
+
+**Response Properties**
+
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "burn-tokens",
+    "params": {
+        "origin":"acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
+        "sponsor":"acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
+        "signer":{
+            "publicKey":"699bf621792c70fcabe70efaa6eb5fab451b9eaf2053fb0a66d110209b1f5cf4",
+            "nonce":1644429190391471
+        },"signature":"a5faa201c49ba24a2655e0e3263732237663a9dba83e215e2fe992c6b52af0fa58b4f35e096ddcc057b556f40c89ae9595e6b36259a74fea6f5d960951282600",
+        "keyPage":{
+            "height":1,
+            "index":0
+            },
+        "payload":{
+            "amount":"100000000"
+            }
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "047a9c71c04006129835667610d132698c0651270252dccbb31d6df48b25e8b1",
+        "txid": "047a9c71c04006129835667610d132698c0651270252dccbb31d6df48b25e8b1",
+        "envelopeHash": "54dc39ffc1812b2c74702696a050c768aaaebcc9592893051176c4ba2e3bc383",
+        "simpleHash": "3b476be18b19c51eba2c18a93b8e0ac103be233a4fb66d5b18e945eb115ae630",
+        "hash": "3b476be18b19c51eba2c18a93b8e0ac103be233a4fb66d5b18e945eb115ae630"
+    },
+    "id": 0
+}
+```
+
 ### send-tokens
 
 Send tokens from one account to another
@@ -1118,7 +1270,7 @@ Send tokens from one account to another
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 
@@ -1179,7 +1331,7 @@ Send Credits from one account to another
 | `sponsor`     | string | The data for this object (properties vary)   | Yes       |
 | `signer`      | object | ADI signing  this request                    | Yes       |
 | `signature`   | string | Signature of the ADI signing the transaction | Yes       |
-| `keyPage`     | object |                                              | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
 | `payload`     | object | The data for this object (properties vary)   | Yes       |
 
 

@@ -1009,8 +1009,30 @@ $ ./accumulate.exe token
 
 ```bash
 Usage:
-  accumulate token get [url] Get token by URL
-  accumulate token create [origin adi url] [signer key name] [url] [symbol] [precision] [properties]    Create new token
+  burn        burn tokens
+  create      Create new token
+  get         get token by URL
+  issue       send tokens from a token url to a recipient
+```
+
+#### Token Burn
+
+Burn Tokens
+
+```
+Usage:
+ accumulate token burn [adi or lite token account] [adi signer key name (if applicable)] [amount] [flags]     
+```
+
+Example of usage:
+
+```bash
+./accumulate token burn acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME 1
+
+        Transaction Hash        :       a6d7f5aa0c373c6888adba7e3c84df0b3c5b2688427df420c4c749cf452a5864
+        Envelope Hash           :       b0a58ed58f096cf35a50eda7fcb728fa0a7d9129d5e061d03071fa1a00d927ba
+        Simple Hash             :       0f5d6fa9ba05d322487ce35db53a5f69d0e1bc0f52c3bbd972cb2cde88042b37
+        Error code              :       ok
 ```
 
 #### Token Create
@@ -1053,6 +1075,26 @@ Example of usage:
         Supply          :       0
         Supply Limit    :       no
         Properties URL  :
+```
+
+#### Token Issue
+
+Send tokens from a token url to a recipient
+
+```
+Usage:
+accumulate token issue [adi token url] [signer key name] [recipient url] [amount] [flags]     
+```
+
+Example of usage:
+
+```bash
+./accumulate token issue acc://fun/funtoken kgkey acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME 1
+
+        Transaction Hash        :       a2c232565b3b9864740966b17a97a14560e8a9bbf2cbf362928a113e2435a4af
+        Envelope Hash           :       2b40effc2cb9edc6edc7dfc7482684a487a100dc485469bc5f4e376181f0f6c0
+        Simple Hash             :       7d8197f93f3f361be3dbc92dd0ac8bd7cd51da2b1ec28f25ce7ae3d4db6de7ae
+        Error code              :       ok
 ```
 
 ### Tx
