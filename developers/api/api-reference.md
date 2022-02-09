@@ -377,6 +377,104 @@ curl -X POST --data '{
 }
 ```
 
+### query-data-set
+
+Get data set
+
+**Request Parameters**
+
+| Parameter     | Type   | Description       | Required? |
+| ---------     | ------ | ----------------- | --------- |
+| `url`         | string | URL               | Yes       |
+| `count`       | int    | URL               | Yes       |
+
+**Response Properties**
+
+| Property      | Type   | Description                          |
+| -----------   | ------ | ------------------------------------ |
+| `type`        | string | The Accumulate object type           |
+| `start`       | int    |                                      |
+| `count`       | int    |                                      |
+| `total`       | int    |                                      |
+
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "query-data-set",
+    "params": {
+        "url": "fun",
+        "count":1
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "dataSet",
+        "start": 0,
+        "count": 1,
+        "total": 0
+    },
+    "id": 0
+}
+```
+
+### query-directory
+
+Get directory information
+
+**Request Parameters**
+
+| Parameter     | Type   | Description       | Required? |
+| ---------     | ------ | ----------------- | --------- |
+| `url`         | string | URL               | Yes       |
+
+**Response Properties**
+
+| Property      | Type   | Description                          |
+| -----------   | ------ | ------------------------------------ |
+| `type`        | string | The Accumulate object type           |
+| `start`       | int    |                                      |
+| `count`       | int    |                                      |
+| `total`       | int    |                                      |
+
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "query-directory",
+    "params": {
+        "url": "fun"
+    }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": "directory",
+        "start": 0,
+        "count": 1,
+        "total": 4
+    },
+    "id": 0
+}
+```
+
 ### faucet
 
 Get free ACME tokens. While supplies last!
