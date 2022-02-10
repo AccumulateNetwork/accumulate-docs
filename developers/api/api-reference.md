@@ -122,7 +122,7 @@ Returns account history for the specified token account
 | Parameter | Type   | Description                      | Required? |
 | --------- | ------ | -------------------------------- | --------- |
 | `url`     | string | Token Account URL                | Yes       |
-| `count`   | int    | Count of history trananctions    | Yes       |
+| `count`   | int    | Count of history transactions    | Yes       |
 
 **Response Properties**
 
