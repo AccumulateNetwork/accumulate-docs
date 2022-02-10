@@ -29,7 +29,7 @@ Returns Accumulate Object by URL
 | Property      | Type   | Description                                                                     |
 | ---------     | ------ | ------------------------------------------------------------------------------- |
 | `type`        | string | The Accumulate object type                                                      |
-| `merkleState` | object |                                                                                 |
+| `merkleState` | object | The merkle-state for this object                                                |
 | `data`        | object | The data for this object (properties vary)                                      |
 
 **Example Request**
@@ -133,8 +133,8 @@ Returns account history for the specified token account
 | `sponsor`           |  string      | The data for this object (properties vary)   |
 | `keypage`           |  object      | The Keypage for this object                  |
 | `txid`              |  string      | Transaction hash                             |
-| `signer`            |  object      | ADI signing the creation of new token        |
-| `sig`               |  object      | Signature of the ADI signing the transaction |
+| `transactionHash`   |  string      | Transaction hash                             |
+| `signatures`        |  object      | ADI signing the creation of new token        |
 | `status`            |  object      | Status                                       |
 
 
@@ -158,34 +158,66 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
+        "type": "txHistory",
         "items": [
             {
                 "type": "syntheticDepositTokens",
                 "data": {
-                    "txid": "b735291bca4dfc28ae0c0092a688e5d75b5722cac225c6bfd5e9b2929a603467",
-                    "from": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
-                    "to": "acc://5fd54e898c2c60e9757d2cd36f3a14b6df895b237690afb1/ACME",
-                    "amount": "1000000000",
-                    "tokenURL": "ACME"
+                    "cause": "395caba8d27056614abf991ab40a1b53a8b8babc4919d34ababa24f603f8a1a3",
+                    "token": "ACME",
+                    "amount": "1000000000"
                 },
-                "sponsor": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+                "origin": "acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
+                "sponsor": "acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
                 "keyPage": {
-                    "height": 1
+                    "height": 1,
+                    "index": 0
                 },
-                "txid": "c7e59bfea5029963ee07c27a09e5e7467e30cd4ebc1822e16ebbb173a8ff685c",
-                "signer": {
-                    "publicKey": "14e97550afcace8082546d71001af1844fba07818c0624c2ce17b054f0260e45",
-                    "nonce": 18446744073709551615
-                },
-                "sig": "1c0d7064e5e6ad77eb3ddbe39cf687fe75124415b7726b635d829276892c47fad7ec63ee6376fa5730845e0053c154c3f162016568ccd4f499e3fc881bac3302",
+                "transactionHash": "2bd403d477d70b87e35e88b0aa316242d89aa41db5b5dea6df5a1c470e424671",
+                "txid": "2bd403d477d70b87e35e88b0aa316242d89aa41db5b5dea6df5a1c470e424671",
+                "signatures": [
+                    {
+                        "Nonce": 390,
+                        "PublicKey": "Kdjx5D4pOOIrd/gNV3S+21DF5g93dR6IZ1ZfwfDi94g=",
+                        "Signature": "tyKHXcPWzJBwkNJOTljvYmRQdzi9eJROgfIVJkcIJ6+HnmrYZnTtCKz5jE/Q5mKfvqiquAfEvUWw4nXHjpEMAA=="
+                    }
+                ],
                 "status": {
-                    "code": "0"
+                    "delivered": true,
+                    "result": {}
+                }
+            },
+            {
+                "type": "syntheticDepositTokens",
+                "data": {
+                    "cause": "4d253e95399ccbd6b7044d1fff85a6a7d6dd83ab209cdd25a416dd2c70c21e9d",
+                    "token": "ACME",
+                    "amount": "1000000000"
+                },
+                "origin": "acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
+                "sponsor": "acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
+                "keyPage": {
+                    "height": 1,
+                    "index": 0
+                },
+                "transactionHash": "bc573897d25828887b393a54ba8378d6af20298738dc909af4fb86c553689c9c",
+                "txid": "bc573897d25828887b393a54ba8378d6af20298738dc909af4fb86c553689c9c",
+                "signatures": [
+                    {
+                        "Nonce": 516,
+                        "PublicKey": "Kdjx5D4pOOIrd/gNV3S+21DF5g93dR6IZ1ZfwfDi94g=",
+                        "Signature": "y02cNToZnoqabkIY8V2v3UjQvdh47JNQzjlFHpsdYVsFQUtYIWZDJKzS8nahTcTfdoPH0SR4dEZ373W+AeAiAQ=="
+                    }
+                ],
+                "status": {
+                    "delivered": true,
+                    "result": {}
                 }
             }
         ],
         "start": 0,
-        "count": 1,
-        "total": 1
+        "count": 2,
+        "total": 40
     },
     "id": 0
 }
@@ -210,8 +242,8 @@ Returns transaction data for the specified transaction
 | `sponsor`           |  string      | The data for this object (properties vary)   |
 | `keypage`           |  object      | The Keypage for this object                  |
 | `txid`              |  string      | Transaction hash                             |
-| `signer`            |  object      | ADI signing the creation of new token        |
-| `sig`               |  object      | Signature of the ADI signing the transaction |
+| `transactionHash`   |  string      | Transaction hash                             |
+| `signatures`        |  object      | ADI signing the creation of new token        |
 | `status`            |  object      | Status                                       |
 
 **Example Request**
@@ -233,26 +265,31 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "type": "acmeFaucet",
+        "type": "syntheticDepositTokens",
         "data": {
-            "url": "acc://cddfb7ce867972e41ae5aaca86db77292ca3170e2009d8f4/ACME"
+            "cause": "395caba8d27056614abf991ab40a1b53a8b8babc4919d34ababa24f603f8a1a3",
+            "token": "ACME",
+            "amount": "1000000000"
         },
-        "sponsor": "acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME",
+        "origin": "acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
+        "sponsor": "acc://09bca3fcd7e28434f4fb5a3c7317d64e955acbc102e45df5/ACME",
         "keyPage": {
-            "height": 1
+            "height": 1,
+            "index": 0
         },
-        "txid": "9dce91ec75f5b5e767283d8db77394daeef6e50b4f0e1197624f1a888ed076b1",
-        "signer": {
-            "publicKey": "d03c683332ed36add8d0eeb9eee9e2669b5565decec03acc43d762f3f79f49c2",
-            "nonce": 1641907412194963895
-        },
-        "sig": "962c97762149f346350b867aef604c168a088a6effbf987f3b0e05cb24095650df973f43989c3eb50cbbb903c30ad94991d46e5041d4220b400bb7bf946b7f0c",
+        "transactionHash": "2bd403d477d70b87e35e88b0aa316242d89aa41db5b5dea6df5a1c470e424671",
+        "txid": "2bd403d477d70b87e35e88b0aa316242d89aa41db5b5dea6df5a1c470e424671",
+        "signatures": [
+            {
+                "Nonce": 390,
+                "PublicKey": "Kdjx5D4pOOIrd/gNV3S+21DF5g93dR6IZ1ZfwfDi94g=",
+                "Signature": "tyKHXcPWzJBwkNJOTljvYmRQdzi9eJROgfIVJkcIJ6+HnmrYZnTtCKz5jE/Q5mKfvqiquAfEvUWw4nXHjpEMAA=="
+            }
+        ],
         "status": {
-            "code": "0"
-        },
-        "syntheticTxids": [
-            "7c478d483a26192b84a637c674ea28ba6d71b16af011da325fa5eb160321697f"
-        ]
+            "delivered": true,
+            "result": {}
+        }
     },
     "id": 0
 }
@@ -529,7 +566,7 @@ Returns the specified key page / signature specification
 | Parameter | Type   | Description             | Required? |
 | --------- | ------ | ----------------------- | --------- |
 | `url`     | string | Accumulate Key Page URL | Yes       |
-| `key`     | string | hash of public key      | No        |
+| `key`     | string | hash of public key      | Yes       |
 
 **Response Properties**
 
@@ -546,7 +583,8 @@ curl -X POST --data '{
     "id": 0,
     "method": "query-key-index",
     "params": {
-        "url": "acc://adione/page0"
+        "url": "acc://adione/page0",
+        "key": "06b03ad284d26d249f99bed19586a1f314c72eb5bb37b55b22aaaacbe9c9b80f"
     }
 }' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
 ```
@@ -675,11 +713,13 @@ Creates a new ADI (Accumulate Digital Identity)
 
 **Response Properties**
 
-| Property    | Type   | Description            |
-| ----------- | ------ | -------------------    |
-| `hash`      | string | Token Transaction      |
-| `txid`      | string | The transasction ID    |
-| `message`   | string | The success Message    |
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
 
 
 **Example Request**
@@ -713,9 +753,11 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "hash": "0905fa3ec38600bef28005f09971c615cc6f9d4a30f6e16949c47fde21652eb1",
-        "message": "CheckTx",
-        "txid": "24aea6af366f2560cdebcf91dfc3e7518eb0b01c04edbbbac16569c5b765622f"
+        "transactionHash": "5938024f0957598dac26131a8669079e1626e698131deca05a1000c7f1f185c1",
+        "txid": "5938024f0957598dac26131a8669079e1626e698131deca05a1000c7f1f185c1",
+        "envelopeHash": "02dfa2dce7ea552e5762a8b3edbe4c2bd41ae6580cfff332e83350e703397d10",
+        "simpleHash": "b6487f7599677e2aa33d3c2cc7b76258e06f0004943fe8cc48f1c7025820babd",
+        "hash": "b6487f7599677e2aa33d3c2cc7b76258e06f0004943fe8cc48f1c7025820babd"
     },
     "id": 0
 }
@@ -739,11 +781,13 @@ Creates a new data account under an ADI
 
 **Response Properties**
 
-| Property    | Type   | Description            |
-| ----------- | ------ | -------------------    |
-| `hash`      | string | Token Transaction      |
-| `txid`      | string | The transasction ID    |
-| `message`   | string | The success Message    |
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
 
 **Example Request**
 
@@ -774,9 +818,11 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "hash": "d81f710a70689fa3a42fdb3662555987ef260a17a426ef6e7760649e2219d2e5",
-        "message": "CheckTx",
-        "txid": "77b2d61f2e6a5c9da8cadf57dd8bdd57ec0846930630270a7fa32ea4e177d879"
+        "transactionHash": "e0b10b09bb3215e3890c69cda6c41d41f46912d38fb0738dd0b4d146002b7d9b",
+        "txid": "e0b10b09bb3215e3890c69cda6c41d41f46912d38fb0738dd0b4d146002b7d9b",
+        "envelopeHash": "de5cba0bb00e7138ccf067fc6cb9485791ea646161850f6d5ab35809bb61d418",
+        "simpleHash": "5f8869ce49529973546d78ffc6b5a48416b20bb6b655c56e9b0322ae258ecfaa",
+        "hash": "5f8869ce49529973546d78ffc6b5a48416b20bb6b655c56e9b0322ae258ecfaa"
     },
     "id": 0
 }
@@ -862,11 +908,14 @@ Creates a new Key Page
 
 **Response Properties**
 
-| Property    | Type   | Description            |
-| ----------- | ------ | -------------------    |
-| `hash`      | string | Token Transaction      |
-| `txid`      | string | The transasction ID    |
-| `message`   | string | The success Message    |
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
+
 
 **Example Request**
 
@@ -897,9 +946,11 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "hash": "5b01c887701cbea996be9a2c199f815e57819d20a2ff4242fb3a7682190ec788",
-        "message": "CheckTx",
-        "txid": "dd70b0b3936f93651ae69776654d0de804a50040e2b6f023529264ff1fe6d414"
+        "transactionHash": "75a0a6f0b6d196a22d1ecb66817c0fb72386ef34890f69b5cf6fa4745ef871f7",
+        "txid": "75a0a6f0b6d196a22d1ecb66817c0fb72386ef34890f69b5cf6fa4745ef871f7",
+        "envelopeHash": "0c1c2b2f1e7dd2acbe6a50f8bb7cbfdd715a938d24c057ed1546e1d48123d7a2",
+        "simpleHash": "8601f63f80ff373050b02bb45ab6f3c174b1aa82f2ffb50959ad2be803a0a213",
+        "hash": "8601f63f80ff373050b02bb45ab6f3c174b1aa82f2ffb50959ad2be803a0a213"
     },
     "id": 0
 }
@@ -989,11 +1040,13 @@ Creates a new Key Book
 
 **Response Properties**
 
-| Property    | Type   | Description            |
-| ----------- | ------ | -------------------    |
-| `hash`      | string | Token Transaction      |
-| `txid`      | string | The transasction ID    |
-| `message`   | string | The success Message    |
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
 
 **Example Request**
 
@@ -1024,9 +1077,11 @@ curl -X POST --data '{
 {
     "jsonrpc": "2.0",
     "result": {
-        "hash": "0905fa3ec38600bef28005f09971c615cc6f9d4a30f6e16949c47fde21652eb1",
-        "message": "CheckTx",
-        "txid": "24aea6af366f2560cdebcf91dfc3e7518eb0b01c04edbbbac16569c5b765622f"
+        "transactionHash": "5a17b09ca070305f7797ff18af6ddf27b483b311b5451ffbd9ab242deb9f7400",
+        "txid": "5a17b09ca070305f7797ff18af6ddf27b483b311b5451ffbd9ab242deb9f7400",
+        "envelopeHash": "c27fabdf0a6a118ac660b1b53517ec0bd06fd34e47d9f8e3237a1d1ec0c53097",
+        "simpleHash": "4653e636a6b0f867c2d273c7ed8923df12e3493bc649d8e106a98c9b8915be51",
+        "hash": "4653e636a6b0f867c2d273c7ed8923df12e3493bc649d8e106a98c9b8915be51"
     },
     "id": 0
 }
