@@ -132,7 +132,7 @@ Returns account history for the specified token account
 | `data`              |  object      | The data for this object (properties vary)   |
 | `sponsor`           |  string      | The data for this object (properties vary)   |
 | `keypage`           |  object      | The Keypage for this object                  |
-| `txid`              |  string      | Transaction hash                             |
+| `txid`              |  string      | Transaction id                               |
 | `transactionHash`   |  string      | Transaction hash                             |
 | `signatures`        |  object      | ADI signing the creation of new token        |
 | `status`            |  object      | Status                                       |
