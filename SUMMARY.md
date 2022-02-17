@@ -37,6 +37,7 @@
   * [CLI Setup](tools/command-line-tool/using-the-command-line.md)
   * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
 * [Explorer](tools/explorer.md)
+* [Javascript SDK](https://accumulatenetwork.gitlab.io/accumulate.js/)
 
 ## Tutorials
 
