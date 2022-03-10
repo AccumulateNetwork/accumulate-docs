@@ -1531,3 +1531,136 @@ curl -X POST --data '{
     "id": 0
 }
 ```
+
+### update-manager
+
+**Request Parameters**
+
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
+**Response Properties**
+
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
+
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "update-manager",
+    "params": {
+            "origin":"acc://testadi/page",
+            "sponsor":"acc://testadi/page",
+            "signer":{
+                "publicKey":"06b03ad284d26d249f99bed19586a1f314c72eb5bb37b55b22aaaacbe9c9b80f",
+                "nonce":1646848796500769
+            },
+            "signature":"bd99ad4929a27e01f0e1628bb5b6fef4cbf07acd0e80a1f9e434c071469149c123d299eb8d144c5dbf7895056ea3f4f43854bfaf160d89bc7900e77c4ad47306",
+            "keyPage":{
+                "height":3,
+                "index":0
+            },
+            "payload":{
+                "type":"updateManager",
+                "managerKeyBook":"acc://testadi/book"
+            }
+            }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "9b98f65207b77c5a2e54243d624d8ff0da73ca5f90d7e6d22782cc6cd831e940",
+        "txid": "9b98f65207b77c5a2e54243d624d8ff0da73ca5f90d7e6d22782cc6cd831e940",
+        "envelopeHash": "39c2a18a96b4e6152e6837c7c1b4073d922b837084f6342f544113deed9f1157",
+        "simpleHash": "a86fc3abd7097f03f8382e68d0985404db2d1559eaef0f00895df655b58baff8",
+        "hash": "a86fc3abd7097f03f8382e68d0985404db2d1559eaef0f00895df655b58baff8"
+    },
+    "id": 0
+}
+```
+
+### remove-manager
+
+**Request Parameters**
+
+| Parameter     | Type   | Description                                  | Required? |
+| ------------- | ------ | ---------------------------------------------| --------- |
+| `origin`      | string | The origin account                           | Yes       |
+| `sponsor`     | string | The data for this object (properties vary)   | Yes       |
+| `signer`      | object | ADI signing  this request                    | Yes       |
+| `signature`   | string | Signature of the ADI signing the transaction | Yes       |
+| `keyPage`     | object | The keypage for this object                  | Yes       |
+| `payload`     | object | The data for this object (properties vary)   | Yes       |
+
+
+**Response Properties**
+
+| Property             | Type   | Description            |
+| -----------------    | ------ | -------------------    |
+| `transactionHash`    | string |  Transaction Hash      |
+| `txid`               | string |  Transaction ID        |
+| `envelopeHash`       | string |  Envelope Hash         |
+| `simpleHash`         | string |  Simple Hash           |
+| `hash`               | string |  Token Transaction     |
+
+**Example Request**
+
+```cpp
+curl -X POST --data '{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "remove-manager",
+    "params": {
+            "origin":"acc://testadi/page",
+            "sponsor":"acc://testadi/page",
+            "signer":{
+                "publicKey":"06b03ad284d26d249f99bed19586a1f314c72eb5bb37b55b22aaaacbe9c9b80f",
+                "nonce":1646849056685160
+            },
+            "signature":"88c889b35d4d32b541ddf96c7582aef3f712bf30859ee7ce2816399f22461bfb300dca518c4748209851be94ce0d743bc6c35c8a76f41efc3f10ff542b114201",
+            "keyPage":{
+                "height":4,
+                "index":0
+            },
+            "payload":{
+                "type":"removeManager"
+            }
+            }
+}' -H 'content-type:application/json;' https://testnet.accumulatenetwork.io/v2
+```
+
+**Example Response**
+
+```d
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "transactionHash": "a0409b7139c7fd7656488abe9896918812242bca538286f1433dfa73bc94a41f",
+        "txid": "a0409b7139c7fd7656488abe9896918812242bca538286f1433dfa73bc94a41f",
+        "envelopeHash": "3e1d26ebd4732a77d577ebfd311d12700945c677d30a7e5ddc045449d55e7f69",
+        "simpleHash": "36045c816f90f514d8d5e8effd3b200366abde9270cb54386192fa15ef062b55",
+        "hash": "36045c816f90f514d8d5e8effd3b200366abde9270cb54386192fa15ef062b55"
+    },
+    "id": 0
+}
+```
