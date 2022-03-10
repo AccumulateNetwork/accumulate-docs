@@ -29,6 +29,7 @@ Available Commands
   get         Get data by URL
   help        Help about any command
   key         Create and manage Keys for ADI Key Books, and Pages
+  manager     add and remove manager from chain
   page        Create and manage Keys, Books, and Pages
   token       Issue and get tokens
   tx          Create and get token txs
@@ -37,10 +38,14 @@ Available Commands
 Flags:
   -d, --debug              Print accumulated API calls
   -h, --help               help for accumulate
-  -j, --json               Print outputs as json
+  -j, --json               print outputs as json
+      --no-wait            Do not wait for the transaction to complete
   -n, --pretend            Enables check-only mode for transactions
+      --prove              Request a receipt proving the transaction is in a block
   -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v2")
   -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
+  -w, --wait duration      Wait for the transaction to complete
+
 
   Use "accumulate [command] --help" for more information about a command.
 ```
@@ -882,6 +887,42 @@ Example of usage:
 $ ./accumulate.exe key export seed
 seed: b1310fcca7d5938d552561757d1e62a11a6fd3939cabdcfbbad94d1a6fb6a873f81b15f286ab4bed8e6139e4a6348387d555b72cf0e98793f5828264cfa78c77
 ```
+
+### Manager
+
+**Update Manager**
+
+```
+Usage:
+accumulate manager set [key page url] [signing key name] [key book url]                
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate manager set ADITEST/page keytest ADITEST/book
+        Transaction Hash        :       6b0e7de9b549823623e2ac019442e415968a892d602b91c04390acfb641c51f4
+        Envelope Hash           :       227b322acda0564b6ef7d6753e7cf1442df689fdc84b8659b3b6c2ce52af259b
+        Simple Hash             :       cc8af739ecabaa116f7484000cd8b9ff8d0065672a9b7b17d59ea742e5e5b4d5
+        Error code              :       ok
+```
+
+**Remove Manager**
+
+```
+accumulate manager remove  [key page url] [signing key name]                      
+```
+
+Example of usage:
+
+```bash
+$ ./accumulate manager remove ADITEST/page keytest
+        Transaction Hash        :       1ec19ab6084c1e82632a3c441de82a4ddb659afc3b40dda365510e07465f080d
+        Envelope Hash           :       53ca879b1dc6bac8899d5bf70657dd9af4f027f87000cd5673c1b40b62b7d425
+        Simple Hash             :       4cbe000690b7eb27d669584e28497403dae7539864bf030dc178b559dcb58a90
+        Error code              :       ok
+```
+
 
 ### Page
 
