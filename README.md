@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/accumulate-youtube-cover (1).png
+cover: .gitbook/assets/gitbook-1800-2360-1.png
 coverY: 0
 ---
 
