@@ -1,27 +1,25 @@
 # Table of contents
 
-* [Welcome](README.md)
-* [Protocol Overview](protocol-overview/README.md)
-  * [Fees](protocol-overview/fees.md)
-  * [Innovations](protocol-overview/factom-accumulate-innovations.md)
-  * [FAQs](https://accumulatenetwork.io/learn/#intro)
-  * [Glossary](protocol-overview/glossary.md)
+## Getting Started
 
-## Developers
+* [Introduction](README.md)
+* [Create a lite account](getting-started/create-a-lite-account.md)
+* [Support](getting-started/support.md)
+* [Glossary](getting-started/glossary.md)
+* [Innovations](getting-started/factom-accumulate-innovations.md)
+* [Fees](getting-started/fees.md)
+* [Open source and Contribution](getting-started/open-source-and-contribution.md)
+* [Frequently Asked Questions](https://accumulatenetwork.io/learn/#intro)
 
-* [Contributing](developers/contributing.md)
-* [Local DevNet](developers/local-devnet.md)
-* [Accumulate API](developers/api/README.md)
-  * [Issuing API Calls](developers/api/issuing-api-calls.md)
-  * [API Reference](developers/api/api-reference.md)
-* [Tendermint](developers/tendermint.md)
+## Setup
 
-## Operators
+* [CLI Setup](setup/cli-setup.md)
+* [Validator Node Setup](setup/validator-node-setup.md)
+* [Follower Node Setup](setup/follower-node-setup.md)
 
-* [Setting Up Accumulate](operators/getting-started.md)
-* [Networks](operators/networks.md)
-* [Validator Node Setup Guide](operators/node-setup-guide.md)
-* [Follower Node Setup Guide](operators/follower-node-setup-guide.md)
+## Network
+
+* [Networks](network/networks.md)
 
 ## Deep Dive
 
@@ -38,7 +36,37 @@
   * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
 * [Explorer](tools/explorer.md)
 * [Javascript SDK](https://accumulatenetwork.gitlab.io/accumulate.js/)
+* [Java SDK](tools/java-sdk.md)
+* [Python SDK](tools/python-sdk.md)
+* [Flutter SDK](tools/flutter-sdk.md)
+
+## Developer Resources
+
+* [API Reference](developer-resources/api-reference.md)
+* [CLI Reference](developer-resources/cli-reference.md)
+* [Release Note](developer-resources/release-note.md)
+
+## Integration
+
+* [Tendermint](integration/tendermint.md)
+
+***
+
+* [Blog](https://medium.com/@accumulate)
 
 ## Tutorials
 
 * [CLI Tutorial](tutorials/cli-tutorial.md)
+
+***
+
+* [Welcome](<README (1).md>)
+
+## Developers
+
+* [Contributing](developers/contributing.md)
+* [Local DevNet](developers/local-devnet.md)
+
+## Operators
+
+* [Setting Up Accumulate](operators/getting-started.md)

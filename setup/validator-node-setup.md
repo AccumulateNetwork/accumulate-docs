@@ -4,10 +4,10 @@ description: >-
   Accumulate network.
 ---
 
-# Validator Node Setup Guide
+# Validator Node Setup
 
 {% hint style="info" %}
-This guide is for creating a Validator node on Accumulate, which participates in consensus. If you would like to set up a follower node instead, which only records transactions on the network, please see the [follower-node-setup-guide.md](follower-node-setup-guide.md "mention").
+This guide is for creating a Validator node on Accumulate, which participates in consensus. If you would like to set up a follower node instead, which only records transactions on the network, please see the [Broken link](broken-reference "mention").
 {% endhint %}
 
 {% hint style="warning" %}
@@ -17,7 +17,7 @@ Accumulate is not currently set up in a way that allows operators outside of the
 ## BVN
 
 {% hint style="info" %}
-`<network>` must be the name of BVN network and `<all networks>` must be a comma-separated list of all BVN networks. See [networks.md](networks.md "mention") for a list of BVN network names.
+`<network>` must be the name of BVN network and `<all networks>` must be a comma-separated list of all BVN networks. See [Broken link](broken-reference "mention") for a list of BVN network names.
 {% endhint %}
 
 1. Execute the following command to configure a BVN network: `accumulate init --work-dir .nodes --network "<network>" --relay-to "<all networks>"`
