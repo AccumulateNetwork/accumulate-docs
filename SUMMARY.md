@@ -32,8 +32,7 @@
 
 ## Tools
 
-* [Command Line Tool](tools/command-line-tool/README.md)
-  * [CLI Reference](tools/command-line-tool/command-line-wallet.md)
+* [Command Line Tool](tools/command-line-tool.md)
 * [Explorer](tools/explorer.md)
 * [Javascript SDK](https://accumulatenetwork.gitlab.io/accumulate.js/)
 * [Java SDK](tools/java-sdk.md)
