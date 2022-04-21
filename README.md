@@ -1,8 +1,3 @@
----
-cover: .gitbook/assets/Accumulate-Facebook-LBK.png
-coverY: 0
----
-
 # Introduction
 
 **What is Accumulate?**&#x20;
