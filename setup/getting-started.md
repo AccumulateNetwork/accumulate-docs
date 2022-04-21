@@ -1,10 +1,10 @@
-# Getting Started
+# Setting Up Accumulate
 
 ## Install `accumulate`
 
 ### From source
 
-Follow [these instructions](../developers/contributing.md)
+Follow [these instructions](broken-reference)
 
 ### Latest CI build
 

@@ -13,6 +13,7 @@
 
 ## Setup
 
+* [Setting Up Accumulate](setup/getting-started.md)
 * [CLI Setup](setup/cli-setup.md)
 * [Validator Node Setup](setup/validator-node-setup.md)
 * [Follower Node Setup](setup/follower-node-setup.md)
@@ -45,6 +46,7 @@
 * [API Reference](developer-resources/api-reference.md)
 * [CLI Reference](developer-resources/cli-reference.md)
 * [Release Note](developer-resources/release-note.md)
+* [Local DevNet](developer-resources/local-devnet.md)
 
 ## Integration
 
@@ -57,16 +59,3 @@
 ## Tutorials
 
 * [CLI Tutorial](tutorials/cli-tutorial.md)
-
-***
-
-* [Welcome](<README (1).md>)
-
-## Developers
-
-* [Contributing](developers/contributing.md)
-* [Local DevNet](developers/local-devnet.md)
-
-## Operators
-
-* [Setting Up Accumulate](operators/getting-started.md)
