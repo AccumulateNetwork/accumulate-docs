@@ -2,7 +2,7 @@
 
 This tutorial will guide you in getting started with the CLI. We'll run through a few basic commands to create and fund an account, and send tokens between the two.
 
-This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [CLI Setup](../tools/command-line-tool/using-the-command-line.md) for instructions on building the CLI.
+This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [CLI Setup](broken-reference) for instructions on building the CLI.
 
 ### Creating a lite token account
 
@@ -121,7 +121,6 @@ If the transaction was successful, the response we receive should look something
 ### How to add Credits to a Lite Token Account or ADI Key page
 
 You can add credits to your lite token account or ADI keypage by burning tokens. You can do this by running the `credits` command, and passing in the lite token account url, or keypage url, you are using to sign the transaction, followed by the url for the lite token account, or ADI keypage, that you want to add credits to, followed by the amount of tokens you'd like to burn in exchange for credits.
-
 
 ```bash
 $ ./accumulate credits <lite token account URL> <lite token account or Keypage URL> <amount>
