@@ -8,14 +8,6 @@ For a list of API calls and their parameters, please see [API Reference](broken-
 
 
 
-
-
-
-
-
-
-
-
 ### Endpoint
 
 API calls are made to a node endpoint, which is a URL. The base URL follows this format:
@@ -62,8 +54,6 @@ curl -X POST --data '{
 * `params` specifies the parameters for this method.
 * `id` is the ID of this request. This is chosen by the sender.
 
-####
-
 #### Example Response
 
 If you run the above call, you should receive a response as such:
@@ -98,18 +88,6 @@ For our `adi` request, the `url` we passed might not exist. If that's the case, 
     "id": 1
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
