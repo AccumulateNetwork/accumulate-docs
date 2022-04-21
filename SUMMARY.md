@@ -3,7 +3,6 @@
 ## Getting Started
 
 * [Introduction](README.md)
-* [Create a lite account](getting-started/create-a-lite-account.md)
 * [Support](getting-started/support.md)
 * [Glossary](getting-started/glossary.md)
 * [Innovations](getting-started/factom-accumulate-innovations.md)
@@ -46,6 +45,11 @@
 * [Release Note](developer-resources/release-note.md)
 * [Local DevNet](developer-resources/local-devnet.md)
 
+## Tutorials
+
+* [Create a lite account](tutorials/create-a-lite-account.md)
+* [CLI Tutorial](tutorials/cli-tutorial.md)
+
 ## Integration
 
 * [Tendermint](integration/tendermint.md)
@@ -53,7 +57,3 @@
 ***
 
 * [Blog](https://medium.com/@accumulate)
-
-## Tutorials
-
-* [CLI Tutorial](tutorials/cli-tutorial.md)
