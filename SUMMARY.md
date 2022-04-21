@@ -42,7 +42,7 @@
 
 * [API Reference](developer-resources/api-reference.md)
 * [CLI Reference](developer-resources/cli-reference.md)
-* [Release Note](developer-resources/release-note.md)
+* [Release Notes](developer-resources/release-notes.md)
 * [Local DevNet](developer-resources/local-devnet.md)
 
 ## Tutorials
