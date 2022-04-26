@@ -6,10 +6,7 @@ Accumulate is a unique blockchain network built to address blockchain technology
 
 Accumulate is the first blockchain to be organized entirely around Decentralized Digital Identity and Identifiers (DDIIs). Accumulate Digital Identifiers (ADIs) have powerful and novel uses within Accumulate to allow the blockchain network to be applied to a huge set of use cases. &#x20;
 
-&#x20;
-
-ADIs allow smart contracts, consensus building, validator networks, and enterprise-level management of digital assets beyond the simple and constrained smart contract-based frameworks of other blockchains. \
-&#x20;
+ADIs allow smart contracts, consensus building, validator networks, and enterprise-level management of digital assets beyond the simple and constrained smart contract-based frameworks of other blockchains.&#x20;
 
 Accumulate blockchain is a network of blockchain services, data, and endpoints for processes supporting payments, business, education, regulation, entertainment, social networks, etc. To this end, Accumulate will be the first indexable blockchain using URLs to index anything within Accumulate.&#x20;
 

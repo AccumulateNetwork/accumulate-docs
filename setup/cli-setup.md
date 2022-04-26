@@ -4,9 +4,9 @@ The Accumulate CLI (Command Line Interface) installation is the fastest way to g
 
 ### **Preparing the installation**&#x20;
 
-The CLI installation guide requires at least two prerequisites installed on your computer:&#x20;
+The CLI installation guide needs two requirements.&#x20;
 
-* GO language 1.17 version&#x20;
+* GO language 1.18 version&#x20;
 * Terminal or any text editor of your choice&#x20;
 
 &#x20;
@@ -28,8 +28,16 @@ git checkout develop
 
 ### **Step 3: Locate Accumulate folder**&#x20;
 
+&#x20;**Mac/Linux**
+
 ```
 cd accumulate
+```
+
+#### Windows
+
+```
+go build ./cmd/accumulate
 ```
 
 ### **Step 4: Build Accumulate** &#x20;
@@ -48,13 +56,7 @@ To test that the Accumulate is installed correctly, run the below command withou
 
 &#x20;
 
-**On Windows**&#x20;
-
-```
-./accumulate.exe
-```
-
-**On Mac / Linux**&#x20;
+**On Mac / Linux / Windows**
 
 ```
 ./accumulate
