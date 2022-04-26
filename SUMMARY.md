@@ -7,19 +7,20 @@
 * [Glossary](getting-started/glossary.md)
 * [Innovations](getting-started/factom-accumulate-innovations.md)
 * [Fees](getting-started/fees.md)
+* [Networks](getting-started/networks.md)
 * [Open source and Contribution](getting-started/open-source-and-contribution.md)
 * [Frequently Asked Questions](https://accumulatenetwork.io/learn/#intro)
 
 ## Setup
 
-* [Setting Up Accumulate](setup/getting-started.md)
-* [CLI Setup](setup/cli-setup.md)
+* [Local DevNet Setup](setup/local-devnet.md)
 * [Validator Node Setup](setup/validator-node-setup.md)
 * [Follower Node Setup](setup/follower-node-setup.md)
 
-## Network
+## CLI
 
-* [Networks](network/networks.md)
+* [CLI Setup](cli/cli-setup.md)
+* [CLI Reference](cli/cli-reference.md)
 
 ## Deep Dive
 
@@ -40,14 +41,12 @@
 ## Developer Resources
 
 * [API Reference](developer-resources/api-reference.md)
-* [CLI Reference](developer-resources/cli-reference.md)
 * [Release Notes](developer-resources/release-notes.md)
-* [Local DevNet](developer-resources/local-devnet.md)
 
 ## Tutorials
 
 * [Create a lite account](tutorials/create-a-lite-account.md)
-* [CLI Tutorial](tutorials/cli-tutorial.md)
+* [How to add Credits to a Lite Token Account](tutorials/cli-tutorial.md)
 
 ## Integration
 

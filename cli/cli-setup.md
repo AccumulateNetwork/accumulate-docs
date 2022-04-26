@@ -28,22 +28,22 @@ git checkout develop
 
 ### **Step 3: Locate Accumulate folder**&#x20;
 
-&#x20;**Mac/Linux**
-
 ```
 cd accumulate
+```
+
+### **Step 4: Build Accumulate** &#x20;
+
+**Mac/Linux**
+
+```
+make accumulate 
 ```
 
 #### Windows
 
 ```
 go build ./cmd/accumulate
-```
-
-### **Step 4: Build Accumulate** &#x20;
-
-```
-make accumulate 
 ```
 
 Once you run these commands, an accumulate binary file should appear in the root directory accumulate that enables the CLI Commands.&#x20;
