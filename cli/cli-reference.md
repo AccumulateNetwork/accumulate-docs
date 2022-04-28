@@ -13,7 +13,7 @@ If you'd like to connect to a specific testnet server, you can find a list of th
 ### Basic commands and flags
 
 ```bash
-$ ./accumulate.exe
+$ ./accumulate
 ```
 
 ```bash
@@ -25,41 +25,46 @@ Usage:
 Available Commands
   account     Create and get token accounts
   adi         Create and manage ADI
+  auth        Manage authorization of an account
+  blocks      Create and get blocks
   book        Manage key books for a ADI chains
-  completion  generate the autocompletion script for the specified shell
-  credits     Send credits to a recipient
+  completion  Generate the autocompletion script for the specified shell
+  credits     Purchase credits with acme and send to recipient.
   data        Create, add, and query adi data accounts
   faucet      Get tokens from faucet
   get         Get data by URL
   help        Help about any command
   key         Create and manage Keys for ADI Key Books, and Pages
-  manager     add and remove manager from chain
+  oracle      Send credits to a recipient
   page        Create and manage Keys, Books, and Pages
   token       Issue and get tokens
   tx          Create and get token txs
+  validator   Manage validators
   version     get version of the accumulate node
 
 Flags:
-  -d, --debug              Print accumulated API calls
-  -h, --help               help for accumulate
-  -j, --json               print outputs as json
-      --no-wait            Do not wait for the transaction to complete
-  -n, --pretend            Enables check-only mode for transactions
-      --prove              Request a receipt proving the transaction is in a block
-  -s, --server string      Accumulated server (default "https://testnet.accumulatenetwork.io/v2")
-  -t, --timeout duration   Timeout for all API requests (i.e. 10s, 1m) (default 5s)
-  -w, --wait duration      Wait for the transaction to complete
+      --authority strings   Additional authorities to add when creating an account      
+  -d, --debug               Print accumulated API calls
+  -h, --help                help for accumulate
+  -j, --json                print outputs as json
+  -m, --memo string         Memo
+  -a, --metadata string     Transaction Metadata
+      --no-wait             Don't wait for the transaction to complete
+  -n, --pretend             Enables check-only mode for transactions
+      --prove               Request a receipt proving the transaction or account        
+  -s, --server string       Accumulated server (default "https://testnet2.accumulatenetwork.io/v2")
+  -t, --timeout duration    Timeout for all API requests (i.e. 10s, 1m) (default 5s)    
+  -w, --wait duration       Wait for the transaction to complete
 
-
-  Use "accumulate [command] --help" for more information about a command.
+Use "accumulate [command] --help" for more information about a command.
 ```
 
 ### Account
 
-Create and get token accounts
+Create and get lite identities and token accounts
 
 ```bash
-$ ./accumulate.exe account
+$ ./accumulate account
 ```
 
 ```bash
@@ -88,7 +93,7 @@ Global Flags:
 
 **Account generate**
 
-Generate random lite token account
+Generate random Lite Identity and ACME Lite Token Account
 
 ```bash
 Usage:
@@ -98,13 +103,14 @@ accumulate account generate
 Example of usage:
 
 ```bash
-$ ./accumulate.exe account generate
-acc://26ddb87b5d12236f752680c97443a0212a93df4bdd7d784a/ACME :   3adc1fcd47c711e662b94335b1f270bd07bf27c279f65d5f754e091cc1e95b35
+$ ./accumulate account generate
+name            :       ecd9d73a0b8451cebfb69eef2ff0fb5f89ccb36d10dda346    
+lite account    :       acc://ecd9d73a0b8451cebfb69eef2ff0fb5f89ccb36d10dda346/ACME    
+public key      :       03b3a92f65e9cd940010af8c438dd2354e5764a1409cbe09626b6264a195f933    
+key type        :       ed25519
 ```
 
-**Account get**
-
-Get lite token account by URL
+Get Lite Token Account by URL
 
 ```bash
 Usage:
@@ -114,37 +120,30 @@ accumulate account get [url]
 Example of usage:
 
 ```bash
-$ ./accumulate.exe account get acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME
+$ ./accumulate account get acc://ecd9d73a0b8451cebfb69eef2ff0fb5f89ccb36d10dda346/ACME
 ```
 
 ```bash
-        Account Url     :       acc://5a48d2999da25641db06a8e4baf54a275bfc6ed90cbcd21a/ACME
+        Account Url     :       acc://ecd9d73a0b8451cebfb69eef2ff0fb5f89ccb36d10dda346/ACME
         Token Url       :       acc://ACME
-        Balance         :       19.9 ACME
+        Balance         :       2000000.00000000 ACME
         Credits         :       0
-        Nonce           :       0
+        Last Used On    :       1969-12-31 19:00:00 -0500 EST
+```
+
+Get Lite Identity by URL
+
+```bash
+$ ./accumulate account get ecd9d73a0b8451cebfb69eef2ff0fb5f89ccb36d10dda346
 ```
 
 Example of usage:
 
 ```bash
-$ ./accumulate.exe get acc://ADITEST/TOKENS/ACME
-{
-   "url":"ADITEST/TOKENS",
-   "wait":false
-}{
-   "data":{
-      "balance":"1000000000",
-      "keyBookUrl":"",
-      "tokenUrl":"acc://ACME",
-      "txCount":1,
-      "url":"acc://ADITEST/TOKENS"
-   },
-   "keyPage":null,
-   "mdRoot":"0000000000000000000000000000000000000000000000000000000000000000",
-   "sponsor":"",
-   "type":"tokenAccount"
-}
+./accumulate get ecd9d73a0b8451cebfb69eef2ff0fb5f89ccb36d10dda346
+
+ ADI Entries: start = 0, count = 10, total = 1
+ acc://ecd9d73a0b8451cebfb69eef2ff0fb5f89ccb36d10dda346/ACME (Lite Account)
 ```
 
 #### Account list
@@ -159,9 +158,17 @@ accumulate account list
 Example of usage:
 
 ```bash
-$ ./accumulate.exe account list
-acc://68fe2628a354d44ab349b08566ac35139a22b9896b1eff0d/ACME
-acc://78ef49e7ff69a7099774b72ec31edffb6c5a66a964aaa6e9/ACME
+$ ./accumulate account list
+
+name            :       acc://001846c0a1590675fd0ad816ab4873387ef127cd9b307c24/ACME
+lite account    :       acc://001846c0a1590675fd0ad816ab4873387ef127cd9b307c24/ACME
+public key      :       3615e429b89fa3d6b636412d7a17b13cc321c14b2f2e5bf520868c9617401845
+key type        :       legacyED25519
+        
+name            :       acc://003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54/ACME
+lite account    :       acc://003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54/ACME
+public key      :       45090e7cfa0edd52db7181fa0a30f1da8d2c0b1bdc6b4847de75fe922ad9e755
+key type        :       ed25519
 ```
 
 #### Account QR
