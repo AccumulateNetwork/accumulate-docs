@@ -7,7 +7,7 @@ The Accumulate CLI (Command Line Interface) installation is the fastest way to g
 The CLI installation guide needs two requirements.&#x20;
 
 * GO language 1.18 version&#x20;
-* Terminal or any text editor of your choice&#x20;
+* Terminal or any command line interface of your choice&#x20;
 
 ### **Step 1: Clone accumulate from Github**&#x20;
 
