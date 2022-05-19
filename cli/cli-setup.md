@@ -9,8 +9,6 @@ The CLI installation guide needs two requirements.&#x20;
 * GO language 1.18 version&#x20;
 * Terminal or any text editor of your choice&#x20;
 
-&#x20;
-
 ### **Step 1: Clone accumulate from Github**&#x20;
 
 ```
@@ -18,18 +16,18 @@ git clone
 https://github.com/AccumulateNetwork/accumulate.git
 ```
 
-### **Step 2: Change branch**&#x20;
+### **Step 2: Locate Accumulate folder**
+
+```
+cd accumulate
+```
+
+### **Step 3: Change branch**&#x20;
 
 In your terminal type the below command to switch to the develop branch. At the moment, the branch supports the Accumulate CLI.&#x20;
 
 ```
-git checkout develop 
-```
-
-### **Step 3: Locate Accumulate folder**&#x20;
-
-```
-cd accumulate
+git checkout develop
 ```
 
 ### **Step 4: Build Accumulate** &#x20;
@@ -47,8 +45,6 @@ go build ./cmd/accumulate
 ```
 
 Once you run these commands, an accumulate binary file should appear in the root directory accumulate that enables the CLI Commands.&#x20;
-
-
 
 ### **Step 5: Start the CLI Tool**&#x20;
 

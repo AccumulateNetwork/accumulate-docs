@@ -40,7 +40,6 @@ You will fund your new account using the faucet command, which will broadcast th
 
 Since this command requires broadcasting to the network, you need to ensure you are connected to a node. We do that with the -s flag then the server address for the node we wish to connect to comes next.&#x20;
 
-&#x20;\
 &#x20;
 
 {% hint style="info" %}
@@ -98,9 +97,7 @@ accumulate credits <origin lite account> <lite account or key page url><amount>
 ./accumulate credits acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME 10
 ```
 
-&#x20;&#x20;
-
-**Result:**&#x20;
+The above command will return an output similar to the following:&#x20;
 
 ```
  Transaction Hash : d64847cee49418516596c905b12f0002cc6b06decec1356e9c48f0040c1b6f4f 
@@ -109,7 +106,6 @@ accumulate credits <origin lite account> <lite account or key page url><amount>
  Error code : ok 
 ```
 
-&#x20;\
 &#x20;
 
 ### **4: Check your Balance**&#x20;
@@ -126,12 +122,10 @@ Check the account balance to see how many tokens you have received from the fauc
 
 ```
 ./accumulate account get acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME 
+ 
 ```
 
-&#x20;\
-&#x20;
-
-&#x20;The above command will return:&#x20;
+&#x20;The above command will return an output similar to the following:&#x20;
 
 ```
 Account Url : acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME 
@@ -147,7 +141,7 @@ To get it in a json format a -j flag&#x20;
 ./accumulate account get acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME -j
 ```
 
-**Result:**&#x20;
+The above command will return an output similar to the following:&#x20;
 
 ```
 {"type":"liteTokenAccount","mainChain":{"height":1,"count":1,"roots":["e0ae7b03ca99b41eb1e545fa9b647d933e7b74b127224eef6743e45fdc7b9ac0"]},"data":{"balance":"1000000000","creditBalance":"0","keyBook":"","managerKeyBook":"","tokenUrl":"acc://ACME","type":"liteTokenAccount","url":"acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME"},"chainId":"9c92f4565ea7bc81191a201b2a778e004222b4b3f8701ee57eaca29cb12579d9"}
@@ -171,7 +165,7 @@ To send the tokens, use the command below.&#x20;
 ./accumulate tx create acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME acc://b3e4778e8940f13e4ddf1716b453b366e2a4b3a59b99bd03/ACME 5 
 ```
 
-**Result:**&#x20;
+The above command will return an output similar to the following:&#x20;
 
 ```
  Transaction Hash : f8174628b1236865d71473d542691da5c7887210052972bdc22dff97866955ae 
@@ -196,9 +190,7 @@ Finally, let's make sure that the transaction was successful. You will use the t
 ./accumulate tx get f8174628b1236865d71473d542691da5c7887210052972bdc22dff97866955ae 
 ```
 
-&#x20;
-
-**Result:**&#x20;
+The above command will return an output similar to the following:&#x20;
 
 ```
 Send unknown from acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME to  

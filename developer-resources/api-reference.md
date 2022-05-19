@@ -26,7 +26,7 @@ The public API server is at `https://testnet.accumulatenetwork.io/v2` for Accumu
 
 ### JSON RPC Formatted APIs
 
-The Accumulate API uses the [OpenRPC](https://open-rpc.org) specification for JSON-RPC 2.0 to describe its requests and responses.
+The Accumulate API uses the [OpenRPC](https://open-rpc.org/) specification for JSON-RPC 2.0 to describe its requests and responses.
 
 #### Example Request
 

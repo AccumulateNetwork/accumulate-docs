@@ -4,7 +4,7 @@ description: An overview of the Accumulate Blockchain Explorer
 
 # Explorer
 
-The Accumulate Explorer provides users with a real-time view of the Accumulate Blockchain. The Explorer can be used to view transactions, Lite Accounts, and ADI Token accounts. Searches are performed by providing either an account URL or a TXID. The explorer can be accessed [here](https://explorer.accumulatenetwork.io).
+The Accumulate Explorer provides users with a real-time view of the Accumulate Blockchain. The Explorer can be used to view transactions, Lite Accounts, and ADI Token accounts. Searches are performed by providing either an account URL or a TXID. The explorer can be accessed [here](https://explorer.accumulatenetwork.io/).
 
 ![URL Search](<../.gitbook/assets/Explorer Account.png>)
 
