@@ -14,7 +14,7 @@ Accumulate blockchain is a network of blockchain services, data, and endpoints f
 
 **Why Accumulate?**&#x20;
 
-you should choose Accumulate as your blockchain protocol because of the following features.&#x20;
+You should choose Accumulate as your blockchain protocol because of the following features.&#x20;
 
 * Decentralized Identifiers  &#x20;
 * Key Management &#x20;
