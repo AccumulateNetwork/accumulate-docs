@@ -78,7 +78,7 @@ Credits are payments made by users to compensate for the computing energy requir
 
 To send ACME tokens to another account, you need to purchase credits with ACME and send them to a recipient.&#x20;
 
-Check this link to view the Base Fees for different transactions.&#x20;
+Check this [link](https://docs.accumulatenetwork.io/accumulate/getting-started/fees) to view the Base Fees for different transactions.&#x20;
 
 To send credits to your lite account, run the example command in your terminal&#x20;
 
