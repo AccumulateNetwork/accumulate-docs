@@ -17,7 +17,7 @@ https://gitlab.com/AccumulateNetwork/accumulate.git
 ```
 
 {% hint style="info" %}
-The `accumulate`repository is also available on Github: `https://github.com/AccumulateNetwork/accumulate.git`
+The `accumulate`repository is also available on [Github](https://github.com/AccumulateNetwork/accumulate): `https://github.com/AccumulateNetwork/accumulate.git`
 {% endhint %}
 
 ### **Step 2: Locate accumulate folder**
