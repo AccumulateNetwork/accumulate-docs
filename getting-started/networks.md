@@ -25,15 +25,25 @@ The TestNet is a secondary production Accumulate network intended for explorator
 
 {% tabs %}
 {% tab title="Stable Testnet" %}
-The stable testnet uses the v0.6 tag on Github and Gitlab and will remain so until the mainnet launch. The endpoint for the stable testnet is `testnet.accumulatenetwork.io` and the branch for the CLI is `cli-v0.6`. You can use the Accumulate explorer to view the transactions on this version of the network at the main mirror ([https://explorer.accumulatenetwork.io](https://explorer.accumulatenetwork.io/))&#x20;
+The stable testnet uses the v0.6 tag on Github and Gitlab and will remain so until the mainnet launch.&#x20;
+
+* Endpoint: `testnet.accumulatenetwork.io`
+* CLI branch: `cli-v0.6`
+
+You can use the Accumulate explorer to view the transactions on this version of the network at the main mirror ([explorer.accumulatenetwork.io](https://explorer.accumulatenetwork.io))
 {% endtab %}
 
 {% tab title="Beta Testnet" %}
-The beta testnet uses the v0.7 tag on Github and Gitlab. The endpoint is `beta.testnet.accumulatenetwork.io,` and the branch for the CLI is `cli-0.7.0-beta.` You can use the Accumulate explorer to view transactions on this version of the network at [https://beta.explorer.accumulatenetwork.io](https://beta.explorer.accumulatenetwork.io/).&#x20;
+The beta testnet uses the v0.7 tag on Github and Gitlab.&#x20;
+
+
+
+* Endpoint: `beta.testnet.accumulatenetwork.io`
+* CLI branch: `cli-0.7.0-beta`
+
+&#x20;You can use the Accumulate explorer to view transactions on this version of the network at [beta.explorer.accumulatenetwork.io](https://beta.explorer.accumulatenetwork.io).
 {% endtab %}
 {% endtabs %}
-
-
 
 ## DevNet
 
@@ -45,6 +55,6 @@ DevNet history is reset frequently, by continuous deployment on the `develop` br
 
 The DevNet is an Accumulate network used for development and validation. The DevNet may be reinitialized, with all history discarded, at any time.
 
-The devnet uses the `develop branch` and the endpoint is  You can use the Accumulate explorer to view transactions on this version of the network at[ ](https://dev.explorer.accumulatenetwork.io/)[https://dev.explorer.accumulatenetwork.io/](https://dev.explorer.accumulatenetwork.io/).&#x20;
+The devnet uses the `develop branch` and the endpoint is You can use the Accumulate explorer to view transactions on this version of the network at[ ](https://dev.explorer.accumulatenetwork.io/)[https://dev.explorer.accumulatenetwork.io/](https://dev.explorer.accumulatenetwork.io/).
 
 Since the devnet is changing rapidly, we encourage you to use the stable or beta testnet.
