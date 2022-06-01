@@ -1,8 +1,8 @@
-# CLI Tutorial
+# How to add Credits to a Lite Token Account
 
 This tutorial will guide you in getting started with the CLI. We'll run through a few basic commands to create and fund an account, and send tokens between the two.
 
-This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [CLI Setup](broken-reference) for instructions on building the CLI.
+This tutorial assumes you have already built the executable for the CLI tool. If you have not yet done so, visit [cli-setup.md](../cli/cli-setup.md "mention") for instructions on building the CLI.
 
 ### Creating a lite token account
 

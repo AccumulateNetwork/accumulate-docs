@@ -2,7 +2,7 @@
 
 In this tutorial, you will learn how to create and fund an account, send tokens between the two, send credits, check account balance, and check transaction info.&#x20;
 
-Lite Accounts are a ‘lite’ version of ADIs that may appeal to users who want to send and receive tokens and maintain a record of their token accounts and transactions despite their comparatively limited utility and flexibility. For more info, check this [link](https://docs.accumulatenetwork.io/accumulate/deep-dive/anonymous-token-chains).
+Lite Accounts are a ‘lite’ version of ADIs that may appeal to users who want to send and receive tokens and maintain a record of their token accounts and transactions despite their comparatively limited utility and flexibility. For more information, see the [Lite Account Deep Dive](../deep-dive/anonymous-token-chains.md) section.
 
 &#x20;
 

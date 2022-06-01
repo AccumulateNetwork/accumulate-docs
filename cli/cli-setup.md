@@ -24,7 +24,7 @@ cd accumulate
 
 ### **Step 3: Checkout a branch (optional)**
 
-Depending on the network you are connecting to, you may need to checkout a different branch. For best results, the CLI version must match the API version. Please see Networks for the list of available networks and which branch to checkout.
+Depending on the network you are connecting to, you may need to checkout a different branch. For best results, the CLI version must match the API version. Please see [networks.md](../getting-started/networks.md "mention") for the list of available networks and which branch to checkout.
 
 In your terminal type the below command to switch to a different branch.
 
