@@ -25,7 +25,7 @@ The TestNet is a secondary production Accumulate network intended for explorator
 
 {% tabs %}
 {% tab title="Stable Testnet" %}
-The stable testnet uses the v0.6 tag on Github and Gitlab and will remain so until the mainnet launch. The endpoint for the stable testnet is “testnet.accumulatenetwork.io” and the branch for the CLI is “cli-v0.6”. You can use the Accumulate explorer to view the transactions on this version of the network at the main mirror ([https://explorer.accumulatenetwork.io](https://explorer.accumulatenetwork.io/))&#x20;
+The stable testnet uses the v0.6 tag on Github and Gitlab and will remain so until the mainnet launch. The endpoint for the stable testnet is `testnet.accumulatenetwork.io` and the branch for the CLI is `cli-v0.6`. You can use the Accumulate explorer to view the transactions on this version of the network at the main mirror ([https://explorer.accumulatenetwork.io](https://explorer.accumulatenetwork.io/))&#x20;
 {% endtab %}
 
 {% tab title="Beta Testnet" %}

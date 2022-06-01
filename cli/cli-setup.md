@@ -24,11 +24,7 @@ cd accumulate
 
 ### **Step 3: Checkout a branch (optional)**
 
-Depending on the network you are connecting to, you may need to checkout a different branch. For best results, the CLI version must match the API version. As of 2022-5-26, these are the versions:
-
-* Stable testnet (testnet.accumulatenetwork.io) runs v0.6, checkout `cli-v0.6`
-* Beta testnet (beta.testnet.accumulatenetwork.io) runs v0.7-beta, checkout `cli-0.7.0-beta`
-* Devnet (local or otherwise) runs the latest build, checkout `develop`
+Depending on the network you are connecting to, you may need to checkout a different branch. For best results, the CLI version must match the API version. Please see Networks for the list of available networks and which branch to checkout.
 
 In your terminal type the below command to switch to a different branch.
 
