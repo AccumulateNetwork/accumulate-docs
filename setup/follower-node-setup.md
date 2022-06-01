@@ -38,15 +38,16 @@ This tutorial will teach you how to set up an Accumulate node on your local mach
 &#x20;
 
 **1: Update apt** &#x20;
-
-apt update && apt install git curl jq  \
-&#x20;
+```
+apt update && apt install git curl jq  
+```
 
 **2: Clone the Repo** &#x20;
+```
+git clone https://gitlab.com/accumulatenetwork/accumulate-docker.git
+```
 
-git clone [https://gitlab.com/accumulatenetwork/accumulate-docker.git](https://gitlab.com/accumulatenetwork/accumulate-docker.git) &#x20;
 
-&#x20;
 
 **3: Locate accumulate-docker folder**&#x20;
 
