@@ -9,12 +9,16 @@ The CLI installation guide needs two requirements.
 * GO language 1.18 version
 * Terminal or any command line interface of your choice
 
-### **Step 1: Clone accumulate from Github**
+### **Step 1: Clone accumulate**
 
 ```
 git clone 
 https://gitlab.com/AccumulateNetwork/accumulate.git
 ```
+
+{% hint style="info" %}
+The Accumulate repository is also available on Github: [https://github.com/AccumulateNetwork/accumulate.git](https://github.com/AccumulateNetwork/accumulate.git)
+{% endhint %}
 
 ### **Step 2: Locate Accumulate folder**
 
