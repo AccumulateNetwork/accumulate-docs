@@ -36,8 +36,6 @@ You can use the Accumulate explorer to view the transactions on this version of 
 {% tab title="Beta Testnet" %}
 The beta testnet uses the v0.7 tag on Github and Gitlab.&#x20;
 
-
-
 * Endpoint: `beta.testnet.accumulatenetwork.io`
 * CLI branch: `cli-0.7.0-beta`
 
