@@ -12,8 +12,7 @@ The CLI installation guide needs two requirements.
 ### **Step 1: Clone accumulate**
 
 ```
-git clone 
-https://gitlab.com/AccumulateNetwork/accumulate.git
+git clone https://gitlab.com/AccumulateNetwork/accumulate.git
 ```
 
 {% hint style="info" %}

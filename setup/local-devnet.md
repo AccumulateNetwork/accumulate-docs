@@ -12,7 +12,7 @@ The fastest way to experiment with the Accumulate CLI or API is to replace the A
 * You should have a basic knowledge of CLI.&#x20;
 * You should have the Accumulate CLI setup already.&#x20;
 
-To set up the Accumulate CLI tool, go to [cli-setup.md](../cli/cli-setup.md "mention").&#x20;
+To set up the Accumulate CLI tool, follow this link (https://docs.accumulatenetwork.io/accumulate/cli/cli-setup).&#x20;
 
 You can run a local devnet with the Accumulate Github or Gitlab source code. &#x20;
 
