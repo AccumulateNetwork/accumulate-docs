@@ -12,7 +12,7 @@ The fastest way to experiment with the Accumulate CLI or API is to replace the A
 * You should have a basic knowledge of CLI.&#x20;
 * You should have the Accumulate CLI setup already.&#x20;
 
-To set up the Accumulate CLI tool, follow this link (https://docs.accumulatenetwork.io/accumulate/cli/cli-setup).&#x20;
+To set up the Accumulate CLI tool, go to [cli-setup.md](../cli/cli-setup.md "mention").&#x20;
 
 You can run a local devnet with the Accumulate Github or Gitlab source code. &#x20;
 
@@ -152,21 +152,16 @@ Use this command below to initialize the local devnet.&#x20;
 
 **Syntax**&#x20;
 
-.\accumulated init devnet --bvns 1 --validators 1 --followers 0 --reset -w '\<location where you want data to be stored>'&#x20;
-
-**Example**&#x20;
-
 ```
-.\accumulated init devnet --bvns 1 --validators 1 --followers 0 --reset -w ' D:\.accumulate:\accumulate 
+.\accumulated init devnet --bvns 1 --validators 1 --followers 0 --reset -w '<location where you want data to be stored (optional)>'
 ```
 
-* init devnet: Initialize the configure files for the devnet &#x20;
 * \--bvns 1: is the number of BVN that you are using&#x20;
 * \--validators 1: specifies how many validators that you are using&#x20;
 * \--followers 0: The number of followers you are using&#x20;
 * \--log-levels 'error;executor=debug': (optional) to receive logs after running devnet&#x20;
 * \--reset: This flag will delete the previous configuration that you have &#x20;
-* \-w (optional) the working directory where you want data to be stored&#x20;
+* \-w (optional) the working directory where you want data to be stored. If omitted a working directory will be added in the default location.
 
 The above command will return an output similar to the following:&#x20;
 
