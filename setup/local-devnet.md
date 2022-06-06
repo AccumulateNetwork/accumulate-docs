@@ -99,8 +99,7 @@ Installing CLI
  
  
 Generate a Lite Token Account 
-./scripts/ci/validate.sh: line 127: jq: command not found 
-wisdomnwokocha@wisdoms-MBP accumulate % ./scripts/ci/validate.sh 
+./scripts/ci/validate.sh 
 Setup 
 Installing CLI 
  
@@ -155,6 +154,9 @@ Use this command below to initialize the local devnet.&#x20;
 ```
 .\accumulated init devnet --bvns 1 --validators 1 --followers 0 --reset -w '<location where you want data to be stored (optional)>'
 ```
+{% hint style="warning" %}
+WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, make sure you specify an empty directory so no files are at risk.
+{% endhint %}
 
 * \--bvns 1: is the number of BVN that you are using&#x20;
 * \--validators 1: specifies how many validators that you are using&#x20;
