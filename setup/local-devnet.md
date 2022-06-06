@@ -26,17 +26,24 @@ The CLI default network uses the Testnet devnet
 
 **Initialize the Devnet**&#x20;
 
+{% hint style="warning" %}
+WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, make sure you specify an empty directory so no files are at risk.
+{% endhint %}
+
 Use this command below to initialize the local devnet&#x20;
 
 ```
 go run ./cmd/accumulated init devnet -w .nodes -f 0 -v 1 -b 1 --no-empty-blocks --no-website --reset 
 ```
+{% hint style="warning" %}
+WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, make sure you specify an empty directory so no files are at risk.
+{% endhint %}
 
 * init devnet: Initialize the configure files for the devnet &#x20;
 * \--no-empty-blocks: A Tendermint command that will not allow empty blocks stored in the database&#x20;
 * \--no-website: this will stop the creation of a website&#x20;
 * \--reset: This flag will delete the previous configuration that you have or data&#x20;
-* \-w.nodes: is the working directory that the data is stored&#x20;
+* \-w .nodes: is the working directory that the data is stored (you can also specify a custom location).&#x20;
 * \-v 1: specifies how many validators that you are using&#x20;
 * \-b 1: is the number of BVN that you are using&#x20;
 * \-f 0: x is the number of followers&#x20;
