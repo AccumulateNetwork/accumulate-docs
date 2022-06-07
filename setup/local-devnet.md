@@ -1,75 +1,67 @@
 # Local DevNet Setup
 
-The fastest way to experiment with the Accumulate CLI or API is to replace the Accumulate Testnet with a running local devnet.&#x20;
+The fastest way to experiment with the Accumulate CLI or API is to replace the Accumulate Testnet with a running local devnet.
 
-&#x20;A local devnet allows you to run accumulate Node locally on your computer and it's hosted on your company.&#x20;
+A local devnet allows you to run accumulate Node locally on your computer and it's hosted on your company.
 
-&#x20;
+**Requirements**
 
-**Requirements**&#x20;
+* You should have Go 1.18 installed on your machine.
+* You should have a basic knowledge of CLI.
+* You should have the Accumulate CLI setup already.
 
-* You should have Go 1.18 installed on your machine.&#x20;
-* You should have a basic knowledge of CLI.&#x20;
-* You should have the Accumulate CLI setup already.&#x20;
+To set up the Accumulate CLI tool, go to [cli-setup.md](../cli/cli-setup.md "mention").
 
-To set up the Accumulate CLI tool, go to [cli-setup.md](../cli/cli-setup.md "mention").&#x20;
-
-You can run a local devnet with the Accumulate Github or Gitlab source code. &#x20;
+You can run a local devnet with the Accumulate Github or Gitlab source code.
 
 {% hint style="info" %}
 The CLI default network uses the Testnet devnet
 {% endhint %}
 
-## **Follow the steps below for Mac:**&#x20;
+## **Follow the steps below for Mac:**
 
-&#x20;
-
-**Initialize the Devnet**&#x20;
+**Initialize the Devnet**
 
 {% hint style="warning" %}
-WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, make sure you specify an empty directory so no files are at risk.
+WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w` make sure you specify an empty directory so no files are at risk.
 {% endhint %}
 
-Use this command below to initialize the local devnet&#x20;
+Use this command below to initialize the local devnet
 
 ```
 go run ./cmd/accumulated init devnet -w .nodes -f 0 -v 1 -b 1 --no-empty-blocks --no-website --reset 
 ```
-{% hint style="warning" %}
-WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, make sure you specify an empty directory so no files are at risk.
-{% endhint %}
 
-* init devnet: Initialize the configure files for the devnet &#x20;
-* \--no-empty-blocks: A Tendermint command that will not allow empty blocks stored in the database&#x20;
-* \--no-website: this will stop the creation of a website&#x20;
-* \--reset: This flag will delete the previous configuration that you have or data&#x20;
-* \-w .nodes: is the working directory that the data is stored (you can also specify a custom location).&#x20;
-* \-v 1: specifies how many validators that you are using&#x20;
-* \-b 1: is the number of BVN that you are using&#x20;
-* \-f 0: x is the number of followers&#x20;
+* init devnet: Initialize the configure files for the devnet
+* \--no-empty-blocks: A Tendermint command that will not allow empty blocks stored in the database
+* \--no-website: this will stop the creation of a website
+* \--reset: This flag will delete the previous configuration that you have or data
+* \-w .nodes: is the working directory that the data is stored (you can also specify a custom location).
+* \-v 1: specifies how many validators that you are using
+* \-b 1: is the number of BVN that you are using
+* \-f 0: x is the number of followers
 
 {% hint style="info" %}
-Before you run the code make sure you “git checkout” the branch for the network version you want for your local devnet. Please see Networks\[LINK] for a list of available versions.&#x20;
+Before you run the code make sure you “git checkout” the branch for the network version you want for your local devnet. Please see Networks\[LINK] for a list of available versions.
 {% endhint %}
 
-**Local network IP Address**&#x20;
+**Local network IP Address**
 
 ```
 export ACC_API=http://127.0.1.1:26660/v2 
 ```
 
-The export ACC\_API makes this `http://127.0.1.1:26660/v2` address on your CLI to look for this IP on the local network&#x20;
+The export ACC\_API makes this `http://127.0.1.1:26660/v2` address on your CLI to look for this IP on the local network
 
-**Add Loopback Alias**&#x20;
+**Add Loopback Alias**
 
 ```
 sudo ifconfig lo0 alias 127.0.1.1 
 ```
 
-If you run the above command, it will prompt you to add your computer admin password. After that make sure to repeat this step till you get to 9.&#x20;
+If you run the above command, it will prompt you to add your computer admin password. After that make sure to repeat this step till you get to 9.
 
-**Example**\
-
+**Example**\\
 
 ```
 $ sudo ifconfig lo0 alias 127.0.1.1  
@@ -83,24 +75,23 @@ $ sudo ifconfig lo0 alias 127.0.1.8
 $ sudo ifconfig lo0 alias 127.0.1.9  
 ```
 
-In Mac, you have to do this step from 127.0.1.1 - 127.0.1.9 because Mac requires a loopback alias.&#x20;
+In Mac, you have to do this step from 127.0.1.1 - 127.0.1.9 because Mac requires a loopback alias.
 
-**Run the Devnet**&#x20;
+**Run the Devnet**
 
 ```
 go run ./cmd/accumulated run devnet -w .nodes 
 ```
 
-To check that the devnet is running fine, open a new terminal and run the below command in the accumulate folder&#x20;
+To check that the devnet is running fine, open a new terminal and run the below command in the accumulate folder
 
 ```
 ./scripts/ci/validate.sh 
 ```
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
-
 Setup 
 Installing CLI 
  
@@ -140,13 +131,11 @@ Waiting for 1f1bb66968df68f71b200135df74b127fcdc2dab8472d82c7825edf4c36121c7
 "pages":[{"signer":{"type":"liteTokenAccount","url":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME"},"signatures":[{"type":"ed25519","publicKey":"d03c683332ed36add8d0eeb9eee9e2669b5565decec03acc43d762f3f79f49c2","signature":"a05c49f63370cfe01878d4d9f596e5e890fe5408f562df92aecccbffc9e6ec35e798423b3ddfb3e3ce01d4f4646f0140c8938bc8e84a88f5f1e8dd6d44e9db00","signer":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","signerVersion":1,"timestamp":1650645938374084900,"transactionHash":"1f1bb66968df68f71b200135df74b127fcdc2dab8472d82c7825edf4c36121c7"}]}]}]} 
 ```
 
-## **Follow the steps below for Windows:**&#x20;
+## **Follow the steps below for Windows:**
 
-&#x20;
+### **Build accumulated (the node daemon)**
 
-### **Build accumulated (the node daemon)**&#x20;
-
-Use this command below to build accumulate.&#x20;
+Use this command below to build accumulate.
 
 ```
 go build ./cmd/accumulated 
@@ -154,41 +143,42 @@ go build ./cmd/accumulated
 
 ### **Initialize the devnet**
 
-Use this command below to initialize the local devnet.&#x20;
+Use this command below to initialize the local devnet.
 
-**Syntax**&#x20;
+**Syntax**
 
 ```
 .\accumulated init devnet --bvns 1 --validators 1 --followers 0 --reset -w '<location where you want data to be stored (optional)>'
 ```
+
 {% hint style="warning" %}
 WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, make sure you specify an empty directory so no files are at risk.
 {% endhint %}
 
-* \--bvns 1: is the number of BVN that you are using&#x20;
-* \--validators 1: specifies how many validators that you are using&#x20;
-* \--followers 0: The number of followers you are using&#x20;
-* \--log-levels 'error;executor=debug': (optional) to receive logs after running devnet&#x20;
-* \--reset: This flag will delete the previous configuration that you have &#x20;
+* \--bvns 1: is the number of BVN that you are using
+* \--validators 1: specifies how many validators that you are using
+* \--followers 0: The number of followers you are using
+* \--log-levels 'error;executor=debug': (optional) to receive logs after running devnet
+* \--reset: This flag will delete the previous configuration that you have
 * \-w (optional) the working directory where you want data to be stored. If omitted a working directory will be added in the default location.
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
 Deleting D:\.accumulate/bvn0 
 Deleting D:\.accumulate/dn  
 ```
 
-**Run the Devnet**&#x20;
+**Run the Devnet**
 
 ```
 .\accumulated run devnet 
 ```
 
-Add ‘-w’ if you included in the previous command 'D:\\.accumulate'&#x20;
+Add ‘-w’ if you included in the previous command 'D:\\.accumulate'
 
 {% hint style="info" %}
 in order to point the CLI to your local devnet, you must add ‘-s local’ to each command.
 {% endhint %}
 
-To test if your devnet is working, checkout the [CLI guide](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference).&#x20;
+To test if your devnet is working, checkout the [CLI guide](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference).
