@@ -35,8 +35,6 @@
 * [Explorer](tools/explorer.md)
 * [Javascript SDK](https://accumulatenetwork.gitlab.io/accumulate.js/)
 * [Java SDK](tools/java-sdk.md)
-* [Python SDK](tools/python-sdk.md)
-* [Flutter SDK](tools/flutter-sdk.md)
 
 ## Developer Resources
 
