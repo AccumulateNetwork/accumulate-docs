@@ -11,6 +11,11 @@
 * [Open source and Contribution](getting-started/open-source-and-contribution.md)
 * [Frequently Asked Questions](https://accumulatenetwork.io/learn/#intro)
 
+## Developer Resources
+
+* [API Reference](developer-resources/api-reference.md)
+* [Release Notes](developer-resources/release-notes.md)
+
 ## Setup
 
 * [Local DevNet Setup](setup/local-devnet.md)
@@ -35,11 +40,6 @@
 * [Explorer](tools/explorer.md)
 * [Javascript SDK](https://accumulatenetwork.gitlab.io/accumulate.js/)
 * [Java SDK](tools/java-sdk.md)
-
-## Developer Resources
-
-* [API Reference](developer-resources/api-reference.md)
-* [Release Notes](developer-resources/release-notes.md)
 
 ## Tutorials
 
