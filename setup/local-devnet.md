@@ -15,7 +15,7 @@ To set up the Accumulate CLI tool, go to [cli-setup.md](../cli/cli-setup.md "men
 You can run a local devnet with the Accumulate Github or Gitlab source code.
 
 {% hint style="info" %}
-The CLI default network uses the Testnet devnet
+When using the CLI tool with your local devnet, you must specify the CLI to point to localhost with `-s local` with every command.
 {% endhint %}
 
 ## **Follow the steps below for Mac:**
