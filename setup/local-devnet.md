@@ -51,7 +51,7 @@ go run ./cmd/accumulated init devnet -w .nodes -f 0 -v 1 -b 1 --no-empty-blocks 
 export ACC_API=http://127.0.1.1:26660/v2 
 ```
 
-The export ACC\_API makes this `http://127.0.1.1:26660/v2` address on your CLI to look for this IP on the local network
+The export `ACC\_API` command sets the CLI to look for this IP address when executing commands.
 
 **Add Loopback Alias**
 
