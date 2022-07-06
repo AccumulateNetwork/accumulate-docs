@@ -22,8 +22,12 @@ The CLI default network uses the Testnet devnet
 
 **Initialize the Devnet**
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w` make sure you specify an empty directory so no files are at risk.
+{% endhint %}
+
+{% hint style="info" %}
+Before you run the code make sure you “git checkout” the branch for the network version you want for your local devnet. Please see [networks.md](../getting-started/networks.md "mention") for a list of available versions.
 {% endhint %}
 
 Use this command below to initialize the local devnet
@@ -40,10 +44,6 @@ go run ./cmd/accumulated init devnet -w .nodes -f 0 -v 1 -b 1 --no-empty-blocks 
 * \-v 1: specifies how many validators that you are using
 * \-b 1: is the number of BVN that you are using
 * \-f 0: x is the number of followers
-
-{% hint style="info" %}
-Before you run the code make sure you “git checkout” the branch for the network version you want for your local devnet. Please see Networks\[LINK] for a list of available versions.
-{% endhint %}
 
 **Local network IP Address**
 
