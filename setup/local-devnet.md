@@ -61,7 +61,7 @@ sudo ifconfig lo0 alias 127.0.1.1
 
 If you run the above command, it will prompt you to add your computer admin password. After that make sure to repeat this step till you get to 9.
 
-**Example**\\
+**Example**
 
 ```
 $ sudo ifconfig lo0 alias 127.0.1.1  
