@@ -5,7 +5,6 @@
 * [Introduction](README.md)
 * [Support](getting-started/support.md)
 * [Glossary](getting-started/glossary.md)
-* [Innovations](getting-started/factom-accumulate-innovations.md)
 * [Fees](getting-started/fees.md)
 * [Networks](getting-started/networks.md)
 * [Open source and Contribution](getting-started/open-source-and-contribution.md)
