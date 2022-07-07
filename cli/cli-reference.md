@@ -4,42 +4,29 @@ description: All the commands available via the Command Line Tool are documented
 
 # CLI Reference
 
-&#x20;
-
 Account Types:
 
 •       Lite Identity
-
 •       Lite Token Account
-
 •       Lite Data Account
-
 •       Accumulate Digital Identifier (ADI)
-
 •       Key Book
-
 •       Key Page
-
 •       ADI Token Account
-
 •       ADI Data Account
-
 •       Token Issuer Account
-
 •       Sub-ADIs
-
 •       Sub-Sub-ADIs
 
 Credits are technically not an account type but will be explained below.
 
-&#x20;
 
 **Lite Identities and Lite Token Accounts**
 
 A Lite Token Account is the most basic token Account in Accumulate. Credits for a Lite Token Account are stored in the Lite Token Account’s Lite Identity Account. A Lite Identity’s address is the same as the Lite Token Accounts address without ‘/ACME’ at the end. The ‘ACME’ denotes the type of token the Lite Token Account holds. ACME is the native token to the Accumulate Protocol.
 
-Lite Token Account: acc://1080be6dc3895faccb614470fc4320a99d7ba04ec77fab1f/ACME\
-Lite Identity Account: acc://1080be6dc3895faccb614470fc4320a99d7ba04ec77fab1f
+Lite Token Account: `acc://1080be6dc3895faccb614470fc4320a99d7ba04ec77fab1f/ACME`
+Lite Identity Account: `acc://1080be6dc3895faccb614470fc4320a99d7ba04ec77fab1f`
 
 There are multiple signature types that can be used to create a Lite Identity and Lite Token Account such as ED25519, Bitcoin and Ethereum Signatures, and RCD1 which supports Factom Accounts. Factoid Addresses from the Factom Protocol will convert into Accumulate Lite Token Accounts.
 
@@ -72,47 +59,33 @@ key type        :       ed25519
 
 **./accumulate account list**
 
-&#x20;       key name                :       001846c0a1590675fd0ad816ab4873387ef127cd9b307c24
+key name        :       `001846c0a1590675fd0ad816ab4873387ef127cd9b307c24`
+lite account    :       `acc://001846c0a1590675fd0ad816ab4873387ef127cd9b307c24/ACME`
+public key      :       `3615e429b89fa3d6b636412d7a17b13cc321c14b2f2e5bf520868c9617401845`
+key type        :       legacyED25519
+key name        :       `003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54`
+lite account    :       `acc://003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54/ACME`
+public key      :       `45090e7cfa0edd52db7181fa0a30f1da8d2c0b1bdc6b4847de75fe922ad9e755`
+key type        :       ed25519
 
-&#x20;       lite account    :       acc://001846c0a1590675fd0ad816ab4873387ef127cd9b307c24/ACME
-
-&#x20;       public key      :       3615e429b89fa3d6b636412d7a17b13cc321c14b2f2e5bf520868c9617401845
-
-&#x20;       key type        :       legacyED25519
-
-&#x20;
-
-&#x20;       key name                :       003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54
-
-&#x20;       lite account    :       acc://003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54/ACME
-
-&#x20;       public key      :       45090e7cfa0edd52db7181fa0a30f1da8d2c0b1bdc6b4847de75fe922ad9e755
-
-&#x20;       key type        :       ed25519
-
-&#x20;
 
 **Faucet Transaction**
 
 The Test Faucet can be used to add test ACME tokens to a Lite Token Account. The Sponsor of the transaction is the Test Faucet address that holds Test ACME. ([acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME](https://beta.explorer.accumulatenetwork.io/acc/7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME)):
 
-&#x20; accumulate faucet \[url]               Get tokens from faucet to address
+&#x20; `accumulate faucet [url]`            Get tokens from faucet to address
 
 &#x20;****&#x20;
 
-./accumulate faucet acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
+`./accumulate faucet acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME`
 
-&#x20;       Transaction Hash        : a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f0e0bd0f328
-
-&#x20;       Signature 0 Hash        : 78d521b36691c46216a66d6648dd620a9f6ec312a24b3b0f29a9889887f4953d
-
-&#x20;       Simple Hash             : ab039db9714e8a30b0443054dea78a36e754ead8ca50a6ab6e50adc62ef3d801
-
-&#x20;       Error code              : ok
-
-&#x20;       Result                  :
-
-&#x20;
+```shell-session
+Transaction Hash        : a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f0e0bd0f328
+Signature 0 Hash        : 78d521b36691c46216a66d6648dd620a9f6ec312a24b3b0f29a9889887f4953d
+Simple Hash             : ab039db9714e8a30b0443054dea78a36e754ead8ca50a6ab6e50adc62ef3d801
+Error code              : ok
+Result                  : 
+```
 
 _**The Transaction Hash is a hash of the transaction without signatures and the Signature Hash is the Transaction Hash with the Signature appended to it and hashed.**_
 
