@@ -23,8 +23,6 @@ watch and subscribe to our videos on youtube.
 
 To get your questions answered on Accumulate FAQ page, click this [link](https://accumulatenetwork.io/learn/#intro)
 
-&#x20;
-
 **Developer resources** &#x20;
 
 * &#x20;[Documentation](https://docs.accumulatenetwork.io/accumulate/getting-started/readme) &#x20;
@@ -45,7 +43,7 @@ These tools will help you build  Accumulate dapps using your favorite language a
 
 * [Create a lite account ](../tutorials/create-a-lite-account.md)
 
-**Community Suppor**  &#x20;
+**Community Support**  &#x20;
 
 * [Discord](https://discord.gg/bg9yWvArcP)  &#x20;
 
