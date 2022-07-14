@@ -29,7 +29,7 @@ To get your questions answered on Accumulate FAQ page, click this [link](https:/
 * &#x20;[Whitepaper](https://accumulatenetwork.io/whitepaper/)&#x20;
 * &#x20;[CLI Setup](https://docs.accumulatenetwork.io/accumulate/cli/cli-setup) &#x20;
 * [CLI Reference](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference) &#x20;
-* [API Reference](https://docs.accumulatenetwork.io/accumulate/developer-resources/api-reference)
+* [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
 
 **Tools**&#x20;
 
