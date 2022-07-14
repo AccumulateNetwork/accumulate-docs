@@ -12,7 +12,7 @@
 
 ## Developer Resources
 
-* [API Reference](developer-resources/api-reference.md)
+* [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
 * [Release Notes](developer-resources/release-notes.md)
 
 ## Setup
