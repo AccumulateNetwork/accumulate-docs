@@ -1,6 +1,6 @@
-# Sending tokens with the API
+# Sending transactions with the API
 
-## sendrawtransaction (accumulate execute-direct / sendTokens)
+## Sendrawtransaction (accumulate execute-direct / sendTokens)
 
 ```json
 {
