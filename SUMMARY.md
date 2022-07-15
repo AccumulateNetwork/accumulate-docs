@@ -15,6 +15,7 @@
 * [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
 * [Proving account state with the API](developer-resources/proving-account-state-with-the-api.md)
 * [Sending tokens with the API](developer-resources/sending-tokens-with-the-api.md)
+* [Querying transactions with the API](developer-resources/querying-transactions-with-the-api.md)
 * [Release Notes](developer-resources/release-notes.md)
 
 ## Setup
