@@ -14,6 +14,7 @@
 
 * [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
 * [Send a transaction with the API](developer-resources/send-a-transaction-with-the-api.md)
+* [Sending tokens with the API](developer-resources/sending-tokens-with-the-api.md)
 * [Release Notes](developer-resources/release-notes.md)
 
 ## Setup
