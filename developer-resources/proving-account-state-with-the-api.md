@@ -1,4 +1,4 @@
-# Send a transaction with the API
+# Proving account state with the API
 
 ### Getting the balance of a token account
 
