@@ -6,7 +6,7 @@ description: All the commands available via the Command Line Tool are documented
 
 
 
-**Lite Token Account/Lite Identity Creation**
+### **Lite Token Account/Lite Identity Creation**
 
 This command will generate a new account url for you.
 
@@ -23,7 +23,7 @@ public key      :       03c633851507f63ef8517dc934075f2abe2f8c3b3053b5a49a477e85
 key type        :       ed25519
 ```
 
-**Account List**
+### **Account List**
 
 This command will get the list of account.
 
@@ -42,7 +42,7 @@ public key : 45090e7cfa0edd52db7181fa0a30f1da8d2c0b1bdc6b4847de75fe922ad9e755
 key type : ed25519
 ```
 
-**Faucet Transaction**
+### **Faucet Transaction**
 
 The Test Faucet can be used to add test ACME tokens to a Lite Token Account. The Sponsor of the transaction is the Test Faucet address that holds Test ACME. ([acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME](https://beta.explorer.accumulatenetwork.io/acc/7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME)):
 
@@ -64,7 +64,7 @@ Result                  :
 
 _**The Transaction Hash is a hash of the transaction without signatures and the Signature Hash is the Transaction Hash with the Signature appended to it and hashed.**_
 
-**TX Get Transaction Hash (TXID)**
+### **TX Get Transaction Hash (TXID)**
 
 To query a transaction by the transaction ID a tx get command is required
 
