@@ -66,11 +66,19 @@ _**The Transaction Hash is a hash of the transaction without signatures and the 
 
 **TX Get Transaction Hash (TXID)**
 
-To query a transaction by the transaction ID a tx get command is required:
+To query a transaction by the transaction ID a tx get command is required
 
-accumulate tx get \[txid] Get token transaction by txid
+**Syntax**
 
+```
+accumulate tx get [txid] Get token transaction by txid
+```
+
+**Command**
+
+```
 accumulate tx get a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f0e0bd0f328
+```
 
 (type): Acme Faucet
 
@@ -80,7 +88,7 @@ Url: acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
 
 \- Synthetic Transaction 0 : 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b94e6c532f2f
 
-**TX Get Signature Hash**
+### **TX Get Signature Hash**
 
 To query the transaction hash from the Faucet account transaction:
 
@@ -98,43 +106,45 @@ Url: acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
 
 94e6c532f2f
 
-**Synthetic TX Get**
+### **Synthetic TX Get**
 
-To query the synthetic transaction from the Faucet Account transaction:
+To query the synthetic transaction from the Faucet Account transaction
 
-accumulate tx get \[txid] Get token transaction by txid
+**Syntax**
 
+```
+accumulate tx get [txid] Get token transaction by txid
+```
+
+**Command**
+
+```
 ./accumulate tx get 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b94e6c532f2f
+```
 
+**Result**
+
+```
 Receive 2000000.00000000 ACME to acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME (cause: A0018D18C558C36F3F639FA1A64E2E9C47CC705FDF0D3F65A8EC8F0E0BD0F328)
+---
+- Transaction : 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b94e6c532f2f
+- Signer Url : acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
+- Signatures :
+- Signer : acc://bvn-BVN0/validators/1 (keyPage)
+- : synthetic
+- : 739d02db90d8f4a979241d37aab8de104f7d967cfc29611e8664afb70006aa4e0b6d728c9d01a8481704e7a3a0b17ce15de6c7744d82508e9102ac3572cbdf0e (sig)
+- : b4449beb71f752736e8223fae4a407037e3016e7e91d5b2dc60e87f5b2978cc4 (key hash)
+- : receipt
+- Signatures :
+- Signer : acc://dn/validators/1 (unknownSigner)
+- : receipt
+```
 
-\---
 
-\- Transaction : 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b94e6c532f2f
 
-\- Signer Url : acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
+### **Get Token Balance**
 
-\- Signatures :
-
-\- Signer : acc://bvn-BVN0/validators/1 (keyPage)
-
-\- : synthetic
-
-\- : 739d02db90d8f4a979241d37aab8de104f7d967cfc29611e8664afb70006aa4e0b6d728c9d01a8481704e7a3a0b17ce15de6c7744d82508e9102ac3572cbdf0e (sig)
-
-\- : b4449beb71f752736e8223fae4a407037e3016e7e91d5b2dc60e87f5b2978cc4 (key hash)
-
-\- : receipt
-
-\- Signatures :
-
-\- Signer : acc://dn/validators/1 (unknownSigner)
-
-\- : receipt
-
-**Get Token Balance**
-
-To check the token balance of a Lite Token Account a Get function will query the balance. The Token URL in the output specifies the type of Token.
+To check the token balance of a Lite Token Account, a Get function will query the balance. The Token URL in the output specifies the type of Token.
 
 \*\*\*\*
 
@@ -166,7 +176,7 @@ To generate named keys of other signature types this can be explicitly reference
 
 \*\*\*\*
 
-**Bitcoin:**
+### **Bitcoin**
 
 ./accumulate key generate --sigtype btc testbtc
 
@@ -180,7 +190,7 @@ key type : btc
 
 \*\*\*\*
 
-**Bitcoin Legacy:**
+### **Bitcoin Legacy**
 
 ./accumulate key generate --sigtype btclegacy testbtclegacy
 
