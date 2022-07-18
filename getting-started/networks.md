@@ -22,7 +22,7 @@ Currently there are two testnets that are publicly available. A **beta testnet**
 {% tab title="Stable testnet" %}
 The stable testnet uses the v0.6 tag on Github and Gitlab and will remain so until the mainnet launch.
 
-* Endpoint: `testnet.accumulatenetwork.io`
+* Endpoint: `https://testnet.accumulatenetwork.io/v2`
 * CLI branch: `cli-v0.6`
 
 You can use the Accumulate explorer to view the transactions on this version of the network at the main mirror ([explorer.accumulatenetwork.io](https://explorer.accumulatenetwork.io))
@@ -31,8 +31,8 @@ You can use the Accumulate explorer to view the transactions on this version of 
 {% tab title="Beta testnet" %}
 The beta testnet uses the v0.7 tag on Github and Gitlab.
 
-* Endpoint: `beta.testnet.accumulatenetwork.io`
-* CLI branch: `cli-0.7.0-beta`
+* Endpoint: `https://beta.testnet.accumulatenetwork.io/v2`
+* CLI branch: `cli-0.9.1-beta`
 
 You can use the Accumulate explorer to view transactions on this version of the network at [beta.explorer.accumulatenetwork.io](https://beta.explorer.accumulatenetwork.io).
 {% endtab %}
