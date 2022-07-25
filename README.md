@@ -1,3 +1,8 @@
+---
+cover: .gitbook/assets/accumulate-twitter-cover-1-22.png
+coverY: 0
+---
+
 # Introduction
 
 **What is Accumulate?**&#x20;
