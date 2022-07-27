@@ -68,7 +68,7 @@ accumulate faucet [url] Get tokens from faucet to address
 ./accumulate faucet acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
 ```
 
-&#x20;**The above command will return an output similar to the following:**
+&#x20;The above command will return an output similar to the following:
 
 ```shell-session
 Transaction Hash        : a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f0e0bd0f328
@@ -96,13 +96,14 @@ accumulate tx get [txid] Get token transaction by txid
 accumulate tx get a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f0e0bd0f328
 ```
 
+&#x20;The above command will return an output similar to the following:
+
+```
 (type): Acme Faucet
-
 Transaction Type: acme Faucet
-
 Url: acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
-
-\- Synthetic Transaction 0 : 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b94e6c532f2f
+- Synthetic Transaction 0 : 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b94e6c532f2f
+```
 
 ### **TX Get Signature Hash**
 
@@ -120,17 +121,15 @@ accumulate tx get [txid] Get token transaction by txid
 ./accumulate tx get 78d521b36691c46216a66d6648dd620a9f6ec312a24b3b0f29a9889887f4953d
 ```
 
-****
+&#x20;The above command will return an output similar to the following:
 
+```
 (type): Acme Faucet
-
 Transaction Type: acme Faucet
-
 Url: acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
-
-\- Synthetic Transaction 0 : 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b
-
+- Synthetic Transaction 0 : 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b
 94e6c532f2f
+```
 
 ### **Synthetic TX Get**
 
@@ -168,7 +167,7 @@ Receive 2000000.00000000 ACME to acc://0143b52490530b90eef9b1a2405e322c6badc1e90
 
 ### **Get Token Balance**
 
-To check the token balance of a Lite Token Account, a Get function will query the balance. The Token URL in the output specifies the type of Token.
+The get token command will query the balance to check the token balance of a Lite Token Account. The Token URL in the output specifies the type of Token.
 
 **Syntax**
 
@@ -218,8 +217,6 @@ key type : ed25519
 ### **Bitcoin**
 
 This command will sign an Accumulate transaction using the  `Bitcoin` signature algorithm
-
-
 
 **Syntax**
 
