@@ -4,7 +4,7 @@
 
 The mainnet is the primary Accumulate network.
 
-{% hint style="danger" %}
+{% hint style="info" %}
 The mainnet will not be launched until testing and development is done, currently scheduled for September 2022.
 {% endhint %}
 
@@ -40,11 +40,11 @@ You can use the Accumulate explorer to view transactions on this network version
 
 ## Devnet
 
-`https://devnet.accumulatenetwork.io`
-
-{% hint style="info" %}
-Devnet history is reset frequently, by continuous deployment on the `develop` branch. Devnet is bleeding edge and very unstable.
+{% hint style="warning" %}
+NOTICE: The Devnet is now deprecated. The below information is no longer valid, and will be removed soon. You can still set up a Local Devnet - see for details.
 {% endhint %}
+
+`https://devnet.accumulatenetwork.io`
 
 The devnet is an Accumulate network used for development and validation. It is more bleeding edge than the testnets, and is constantly updated. The devnet may be reinitialized, with all history discarded, at any time.
 
