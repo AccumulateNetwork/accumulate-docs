@@ -41,7 +41,7 @@ You can use the Accumulate explorer to view transactions on this network version
 ## Devnet
 
 {% hint style="warning" %}
-NOTICE: The Devnet is now deprecated. The below information is no longer valid, and will be removed soon. You can still set up a Local Devnet - see for details.
+NOTICE: The Devnet is now deprecated. The below information is no longer valid, and will be removed soon. You can still set up a Local Devnet - see [local-devnet.md](../setup/local-devnet.md "mention") for details.
 {% endhint %}
 
 `https://devnet.accumulatenetwork.io`
