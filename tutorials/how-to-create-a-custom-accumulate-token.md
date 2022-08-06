@@ -1,14 +1,11 @@
-# How to create a custom accumulate token
+# How to create a custom token via CLI
 
 Creating a custom token in Accumulate via CLI is straightforward. You do that by creating an ADI and using the ADI information to create your custom token. &#x20;
 
-&#x20;
-
-**Requirements**&#x20;
+### **Requirements**&#x20;
 
 * Basic understanding of Command line&#x20;
-* Basic understanding of Accumulate CLI commands \
-  &#x20;
+* Basic understanding of Accumulate CLI commands&#x20;
 
 ### **Create an ADI**&#x20;
 
@@ -30,7 +27,7 @@ Follow the steps below to create an ADI from a lite account&#x20;
 To be able to process this transaction, you must have 500 credits of ACME&#x20;
 {% endhint %}
 
-**1: Generate a lite account**&#x20;
+### **1: Generate a lite account**&#x20;
 
 Generate random Lite Identity and ACME Lite Token Account&#x20;
 
@@ -46,14 +43,13 @@ Generate random Lite Identity and ACME Lite Token Account&#x20;
 ./accumulate account generate 
 ```
 
-&#x20;The above command will return an output similar to the following: \
-&#x20;
+&#x20;The above command will return an output similar to the following:&#x20;
 
 ```
 acc://809050d340268983b1cc6a4c2ea57faef7ad96823588ce48/ACME : bb25657569c503c96eb03a7d36287b77d5e20672aa57692ce8fb9af468f74bfe 
 ```
 
-**2: Get ACME from Faucets**&#x20;
+### **2: Get ACME from Faucets**&#x20;
 
 **Syntax:**
 
@@ -78,7 +74,7 @@ Simple Hash : 2ccc8e1da92ad7d70417e1c553287bb54c66d169f914a1a3317c6ffa235b4434
 Error code : ok 
 ```
 
-**3: Add credits to your lite account**&#x20;
+### **3: Add credits to your lite account**&#x20;
 
 **Syntax:**&#x20;
 
@@ -105,7 +101,7 @@ The above command will return an output similar to the following:
                                   Amount 2000.00000000 ACME 
 ```
 
-**4: Generate a key**&#x20;
+### **4: Generate a key**&#x20;
 
 **Syntax:**&#x20;
 
@@ -127,7 +123,7 @@ key1234 : e7f1541f7460fc38ef8ffeb5d483415074d68621b004614209d3d461d7abee12
  
 ```
 
-**5: Create an ADI**&#x20;
+### **5: Create an ADI**&#x20;
 
 **Syntax:**&#x20;
 
@@ -157,7 +153,7 @@ To create a token, you will need to credit your keypage with at least 100credits
 acc://Tesla.acme/wize/1 
 ```
 
-**6:  Credits your keypage**&#x20;
+### **6:  Credits your keypage**&#x20;
 
 **Syntax**
 

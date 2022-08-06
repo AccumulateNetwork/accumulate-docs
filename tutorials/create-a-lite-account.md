@@ -1,12 +1,10 @@
 # Create a lite account
 
-In this tutorial, you will learn how to create and fund an account, send tokens between the two, send credits, check account balance, and check transaction info.&#x20;
+This tutorial will teach you how to create and fund an account, send tokens between the two, send credits, check account balance, and check transaction info.&#x20;
 
 Lite Accounts are a ‘lite’ version of ADIs that may appeal to users who want to send and receive tokens and maintain a record of their token accounts and transactions despite their comparatively limited utility and flexibility. For more information, see the [Lite Account Deep Dive](../deep-dive/anonymous-token-chains.md) section.
 
-&#x20;
-
-**Requirements:**&#x20;
+### **Requirements:**&#x20;
 
 * Basic CLI Knowledge&#x20;
 * [CLI Setup](https://docs.accumulatenetwork.io/accumulate/setup/cli-setup)&#x20;
@@ -32,15 +30,11 @@ Once you run the command, you should get an output with the address for your tok
 acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME :   c11d64fa7aca19c365fb4e392fac540033493911e604bf629465132392d18ba4
 ```
 
-&#x20;****&#x20;
-
 ### **2: Funding your account**&#x20;
 
 You will fund your new account using the faucet command, which will broadcast the existence of your new account and give you some free tokens.&#x20;
 
 Since this command requires broadcasting to the network, you need to ensure you are connected to a node. We do that with the -s flag then the server address for the node we wish to connect to comes next.&#x20;
-
-&#x20;
 
 {% hint style="info" %}
 Your account connects to the accumulate testnet by default. &#x20;
@@ -69,8 +63,6 @@ If you want to connect to the devnet, add this flag and argument -s [https://dev
  Simple Hash : 6493d0887aa9838f6d522b3a84a5843308e32f699ae4150da14ad89ad827bc40 
  Error code : ok
 ```
-
-&#x20;
 
 ### **3: Send Credits**&#x20;
 
@@ -105,8 +97,6 @@ The above command will return an output similar to the following:&#x20;
  Simple Hash : 07b567df37b86050f6ef636e9118d23926206f459ffd4f82d28f208e7d2151b1 
  Error code : ok 
 ```
-
-&#x20;
 
 ### **4: Check your Balance**&#x20;
 
@@ -204,5 +194,3 @@ Send unknown from acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME to
 === 
   - Synthetic Transaction 0 : 4e148c20cf0838718485597c60ce3d7880914d298337bd040b7799ea196b9606 
 ```
-
-&#x20;
