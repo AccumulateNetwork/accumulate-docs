@@ -3,19 +3,11 @@
 Participation in the Accumulate network occurs through Accumulate Digital Identifiers (ADIs) and Lite Accounts, similar to how participation in other blockchains occurs through a wallet or address. ADIs described previously in Use Cases, and Technical Guides give users access to the full range of features the Accumulate network provides, including smart contracts, off-chain consensus building, and dynamic key management. \
 
 
-**What is a Lite Account?**\
-
+### **What is a Lite Account?** 
 
 Lite Accounts are a 'lite' version of ADIs that may appeal to users who want to send and receive tokens and maintain a record of their token accounts and transactions despite their comparatively limited utility and flexibility.&#x20;
 
 Lite Accounts also fulfill several vital roles, including ADI sponsorship, that will be discussed in the following sections. In this technical guide, we will expand on the utility of Lite Accounts and describe their creation process.
-
-\
-
-
-Add image here
-
-
 
 **Differences Between ADIs and Lite Accounts**
 
@@ -25,7 +17,7 @@ Add image here
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
-**Specific Features**
+### **Specific Features**
 
 The URL of an ADI identifies the account name and names of its associated subchains chosen and managed by the owner of the ADI. A Lite Account, in contrast, is identified solely by a token URL and public key hash, which is automatically derived from the Ed25519 public key. Thus its security is self-contained within the Lite Account and is not dependent on the key security provided by an ADI.&#x20;
 
@@ -33,47 +25,34 @@ In the future, the token issuance will determine what type of asymmetric key alg
 
 Anyone can generate a Lite Account by arranging for tokens to be sent to a Lite Account address corresponding to a public key that they own. ADIs, in contrast, can only be created by a sponsor through the spending of non-transferable credits issued through the Accumulate protocol. A user without an ADI to use as a sponsor can buy ACME tokens on an exchange, create a Lite Account for ACME tokens, purchase credits on the network, and sponsor the creation of their own ADI. They can then use their ADI to sponsor the creation of additional ADIs for themselves or others.
 
-***
-
-**Building a Lite Account**
-
-****
+### **Building a Lite Account**
 
 A Lite Account consists of identity and token URL. The Accumulate wallet automatically derives the identity by concatenating the SHA256 hash and checksum of a user's public key. Next, the user-specified the token URL (e.g., bob/token) and appended it to the identity. A Lite Account is created by the first transaction sent to its URL. This transaction may originate from an exchange or an external wallet (e.g. Metamask). When the Accumulate network receives the transaction, it will create a Lite Account if the Lite Account URL is valid and a Lite Account does not already exist for that URL.&#x20;
 
 To spend tokens in the Lite Account, a user will create a transaction, hash and sign it with their private key, attach their public key, and submit this to the Accumulate network. The network will hash the public key and compute a checksum, verify that the hash and checksum are identical to the Lite Account provided by the user, then decrypt the signature with their public key and verify the withdrawal. Of course, the network trusts that the person that owns the private key that hashes to this string of characters is the one who signed this transaction.
 
-**Architecture**
+### **Architecture**
 
 The URL format of a Lite Account is acc://\<keyHash>\<checkSum>/\<tokenUrl>. The \<keyHash> is the first 20 bytes of the SHA256 sum of the account’s public key, encoded as hexadecimal. The \<checkSum> is the last 4 bytes of the SHA256 sum of the lower case \<keyHash>, also encoded as hexadecimal. The following example illustrates the process of creating a Lite ACME token account from a public/private key pair:
 
-_PrivKey: b270eaaa57e5d4d808a9766f64b340aa655481c298288238e5b1b3561fb80b27_
-
-_PubKey: 023e6165e349c2822089ab042b3a885ca54a0907e237e8bfb5bd2aa96885966f3_
-
+```
+PrivKey: b270eaaa57e5d4d808a9766f64b340aa655481c298288238e5b1b3561fb80b27
+PubKey: 023e6165e349c2822089ab042b3a885ca54a0907e237e8bfb5bd2aa96885966f3
 Compute the SHA256 hash of the public key:
-
-_818D7C1F69E7BEBCE54FE087F44D86D14279100D2EEA690AC3847AE1B9A14237_
-
+818D7C1F69E7BEBCE54FE087F44D86D14279100D2EEA690AC3847AE1B9A14237
 Trim hash to first 20 bytes (odds of random match is 1 in 10^48) and convert to lowercase
-
-_818D7C1F69E7BEBCE54FE087F44D86D14279100D_
-
+818D7C1F69E7BEBCE54FE087F44D86D14279100D
 818d7c1f69e7bebce54fe087f44d86d14279100d
-
 Compute checksum (last 4 bytes of the SHA256 hash of trimmed hash) and convert to lowercase:
-
-_904A336D_
-
-_904a336d_
-
+904A336D
+904a336d
 Concatenate (20 bytes of) the hash, the checksum, a slash, and the token URL:
-
-_acc://818d7c1f69e7bebce54fe087f44d86d14279100d904a336d/acme_
+acc://818d7c1f69e7bebce54fe087f44d86d14279100d904a336d/acme
+```
 
 The length of a Lite Account is fixed at 48 characters, where the hash of the public key occupies 40 characters and the appended checksum an additional 8 characters. Thus, the length of a Lite token account URL is also fixed, at 49 characters (1 for the slash) plus the length of the token URL. When submitting a transaction to a Lite Account, a user can choose whether to append the acc:// prefix. If a prefix is not added by the user, it will be automatically added by the network.
 
-**Security**
+### **Security**
 
 **Token Registries**
 

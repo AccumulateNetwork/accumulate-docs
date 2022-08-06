@@ -33,7 +33,7 @@ This tutorial uses IntelliJ&#x20;
 
 ![](<../.gitbook/assets/Screenshot 2022-05-17 at 13.56.21.png>)
 
-3\. In the dialog that opens, select Maven from the options on the left and click OK.
+3\. In the open dialog, select Maven from the options on the left and click OK.
 
 ![](<../.gitbook/assets/Screenshot 2022-05-17 at 13.58.17.png>)
 
@@ -139,18 +139,16 @@ Open the generated pom.xml file and add the below information. The artifactId an
 </project> 
 ```
 
-****
-
 ### **Configure the Java SDK repo (settings.xml configuration)**&#x20;
 
 * Currently, the Java SDK is hosted in a private repository. To access the repository we have to specify the username and password of the repository.&#x20;
-* To set the credentials, we have to create a settings file inside the .m2 directory.&#x20;
-* Since we are using the maven, the system itself can create the .m2 directory while maven installation.&#x20;
+* To set the credentials, we have to create a settings file inside the `.m2` directory.&#x20;
+* Since we are using the maven, the system itself can create the `.m2` directory while maven installation.&#x20;
 * Else follow the below steps.&#x20;
-* $ cd - It will goto the home directory. (for example /home/user/)&#x20;
-* $ mkdir .m2 - It will create a .m2 directory (/home/user/.m2/)&#x20;
-* Now create a settings.xml file inside the .m2 directory (/home/user/.m2/settings.xml)&#x20;
-* Then paste the below xml content in the settings.xml file.
+* `$ cd` - It will go to the home directory. (for example /home/user/)&#x20;
+* `$ mkdir .m2` - It will create a `.m2` directory (/home/user/.m2/)&#x20;
+* Now create a settings.xml file inside the `.m2` directory (/home/user/.m2/settings.xml)&#x20;
+* Then paste the below xml content into the `settings.xml` file.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -175,14 +173,12 @@ Open the generated pom.xml file and add the below information. The artifactId an
  
 ```
 
-
-
 * And save the file&#x20;
 * Now the system can access the Java SDK private repository.&#x20;
 
-Now you have your project fully configured to use the Accumulate Java SDK. We have some code examples below to help you get started using the SDK to make it easier for you.&#x20;
+Now you have your project fully configured to use the Accumulate Java SDK. We have some code examples below to help you get started using the SDK to make it easier.&#x20;
 
-### **Code Examples** &#x20;
+### **Code Reference** &#x20;
 
 The Accumulate java SDK methods with examples of how to use them in your project.&#x20;
 
