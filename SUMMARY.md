@@ -50,7 +50,6 @@
 ## Tutorials
 
 * [Create a lite account](tutorials/create-a-lite-account.md)
-* [How to add Credits to a Lite Token Account](tutorials/cli-tutorial.md)
 * [How to create a custom token via CLI](tutorials/how-to-create-a-custom-accumulate-token.md)
 
 ***
