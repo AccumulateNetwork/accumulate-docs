@@ -295,7 +295,9 @@ This command will sign an Accumulate transaction using the  `Factom` signature a
 
 **Syntax**
 
-
+```
+./accumulate key generate --sigtype RCD1 keyname
+```
 
 **Command**
 
@@ -478,10 +480,6 @@ To send credits to your lite account **** or keypage, run the example command in
 This command adds credit to your lite token account / keypage.
 
 **Syntax**
-
-```
-accumulate credits <origin token account> <key page or lite identity url><amount> 
-```
 
 ```
 accumulate credits [origin token account] [key page or lite identity url] [number of credits wanted] [max acme to spend] [percent slippage (optional)] [flags][BS2]
@@ -995,7 +993,9 @@ A new Key Page can be added to a Key Book where public keys or key names can be 
 
 **Syntax**
 
-****
+```
+accumulate page create [origin key book url] [key name[@key book or page]] [public key 1] ... [public key hex or name n + 1] [flags]
+```
 
 **Command**
 
@@ -1290,18 +1290,6 @@ Error code : ok
 Result :
 ```
 
-**Query Key Page**
-
-./accumulate get acc://Delegatetest.acme/keybook/1
-
-Credit Balance : 999535.00\
-\
-Index Nonce Key Name Delegate Public Key Hash\
-0 1969-12-31 19:00:00 -0500 EST Delegatetest.acme/Keybook2\
-1 1969-12-31 19:00:00 -0500 EST Delegatetest.acme/Keybook4\
-2 1969-12-31 19:00:00 -0500 EST Delegatetest.acme/Keybook5\
-3 1969-12-31 19:00:00 -0500 EST newkey Delegatetest.acme/Keybook3 785b7f22ab201ae3f391cc47b06e2da00bbd47e7600ba1c68ea2cdb2b26f00ef
-
 **Removing a Delegate and Public Key Hash of a Key Page Entry**
 
 **Syntax**
@@ -1356,49 +1344,6 @@ Error code : ok
 Result :
 ```
 
-./accumulate tx sign
-
-Usage:
-
-accumulate tx sign \[origin url] \[signing key name] \[key index (optional)] \[key height (optional)] \[txid] Sign a pending transaction
-
-\
-\\
-
-./accumulate tx sign acc://DefiDevs.acme/Tokens acc://Key3@DefiDevs.acme/Keybook2 45171d54df1058d4766c353c12255c41875ac57ccaba44020af548eddc3aa0d9
-
-Error:
-
-Transaction Hash : 45171d54df1058d4766c353c12255c41875ac57ccaba44020af548eddc3aa0d9
-
-Signature 0 Hash : 19067f8180ab3ba62ba51e9f01e780fc91d144369e3dbc6663ae792e17ea8734
-
-Simple Hash : 36e8292247f68013081b225d221586439736b7a0fbffb6b6771cf7940430478f
-
-Error code : 4
-
-Error : transaction 45171D54 has been delivered
-
-Result&#x20;
-
-
-
-**A get command on the Token Account shows the two Key Book Authorities**
-
-./accumulate get acc://DefiDevs.acme/Tokens
-
-Account Url : acc://DefiDevs.acme/Tokens
-
-Token Url : acc://ACME
-
-Balance : 85.00000000 ACME
-
-Key Book Url : acc://DefiDevs.acme/Keybook
-
-Key Book Url : acc://DefiDevs.acme/Keybook2
-
-
-
 ### **Disable an Authority**
 
 To disable an Authority, the Authority you are disabling must sign the transaction for approval.&#x20;
@@ -1424,22 +1369,6 @@ Simple Hash : 54fc208aa6dd08c0983376d1e0886ee82a9636e5b850ae5576458ab7cf9fc47a
 Error code : ok
 Result :
 ```
-
-
-
-./accumulate tx sign acc://DefiDevs.acme/Tokens acc://Key2@DefiDevs.acme/Keybook 1473f62845bfc30974b7c87b9c885d81bf2ca6e963c5f9bb2b12428af52538ae
-
-Transaction Hash : 1473f62845bfc30974b7c87b9c885d81bf2ca6e963c5f9bb2b12428af52538ae
-
-Signature 0 Hash : 4cb6383ac9831080cbd12e11b725a6809eebf9613376aa4096157867ef623ccc
-
-Simple Hash : 9e284ea79f47e15762ab8bae27c0952ff63c9f20cb3fdb0fcfde34ffddcb2d32
-
-Error code : ok
-
-Result :
-
-\*\*\*\*
 
 ### **Enable an Authority**
 
@@ -1467,18 +1396,6 @@ Error code : ok
 Result :
 ```
 
-./accumulate tx sign acc://DefiDevs.acme/Tokens acc://Key2@DefiDevs.acme/Keybook 76a62919ad23b8e9f790af52f78960787055a5376a2b7f4e747e9def63a6f892
-
-Transaction Hash : 1473f62845bfc30974b7c87b9c885d81bf2ca6e963c5f9bb2b12428af52538ae
-
-Signature 0 Hash : 4cb6383ac9831080cbd12e11b725a6809eebf9613376aa4096157867ef623ccc
-
-Simple Hash : 9e284ea79f47e15762ab8bae27c0952ff63c9f20cb3fdb0fcfde34ffddcb2d32
-
-Error code : ok
-
-Result :
-
 ### **Remove an Authority**
 
 Whether a Key Book is enabled or disabled, updating the authority set requires a signature from the Key Book being removed.
@@ -1504,22 +1421,6 @@ Simple Hash : e8912ec4e9104f4396303520d078d3357b034c0c988607ea5ebbd89fd93580af
 Error code : ok
 Result :
 ```
-
-
-
-./accumulate tx sign acc://DefiDevs.acme/Tokens acc://Key3@DefiDevs.acme/Keybook2 de14677e318310c19c56fdc12aa7fbf6201c91bc851739c00de8636f28591569
-
-Transaction Hash : de14677e318310c19c56fdc12aa7fbf6201c91bc851739c00de8636f28591569
-
-Signature 0 Hash : c01d0c4fb9cbcce99e5441f2b51d15dd9e7c8e56f3855dbb880ff1bd693bb1f5
-
-Simple Hash : c3921c1777dd12d591929be7309da166ed42f2f9fc236e85e5c083b6fead773e
-
-Error code : ok
-
-Result :
-
-****
 
 **Create Sub-ADI and Sub-Sub-ADIs**
 
@@ -2022,7 +1923,9 @@ A decimal value must be added (can be 0) when burning tokens
 
 **Syntax**
 
-****
+```
+ accumulate token burn [adi or lite token account] [adi signer key name (if applicable)] [amount] [flags]
+```
 
 **Command**
 
@@ -2051,7 +1954,7 @@ accumulate account create data [actor adi url] [signing key name] [key index (op
 ```
 
 ```
-example usage: accumulate account create data acc://actor signingKeyName acc://actor/dataAccount acc://actor/book0
+accumulate account create data acc://actor signingKeyName acc://actor/dataAccount acc://actor/book0
 ```
 
 **Command**
@@ -2190,7 +2093,12 @@ Entry Hash 12e90b8e74f20fc0a7274cff9fcbae14592db12292757f1ea0d7503d30799fd2
 
 **Syntax**
 
-****
+```
+accumulate account create data [actor adi url] [key name[@key book or page]]  [adi data account url] --authority key
+book (optional) 
+```
+
+The actor ADI is an AD or Sub-ADI
 
 **Command**
 
@@ -2299,7 +2207,9 @@ The above command will return an output similar to the following:
 
 **Syntax**
 
-****
+```
+accumulate data write [data account url] [signingKey] --scratch (optional) [extid_0 (optional)] ... [extid_n (optional)] [data]
+```
 
 **Command**
 
@@ -2320,17 +2230,15 @@ Account ID edb5a7e9186c418e3024cfa191d781929777470d21d7b2d4aa049f077737d589
 Entry Hash 12e90b8e74f20fc0a7274cff9fcbae14592db12292757f1ea0d7503d30799fd2
 ```
 
-**Minor Blocks**
-
-accumulate blocks minor \[subnet-url] \[start index] \[count] \[tx fetch mode expand|ids|countOnly|omit (optional)] \[filter synth-anchors only blocks true|false (optional)] Get minor blocks
-
-
-
-### **Directory Network Minor Blocks**
+### **Minor Blocks**
 
 **Syntax**
 
-****
+```
+accumulate blocks minor [partition-url] [start index] [count] [tx fetch mode expand|ids|countOnly|omit (optional)] [block filter mode excludenone|excludeempty (optional)] 
+```
+
+The partition url is a BVN, ADI, or a DN ADI
 
 **Command**
 
@@ -2374,6 +2282,46 @@ AcmeBurnt:
 Block: 1
 AcmeOraclePrice: 0
 Receipts:
+```
+
+### **Major Blocks**
+
+**Syntax**
+
+```
+accumulate blocks major [partition-url] [start index] [count]
+```
+
+The partition url is a BVN, ADI, or a DN ADI
+
+**Command**
+
+```
+./accumulate blocks minor acc://dn 0 2
+```
+
+The above command will return an output similar to the following:
+
+```
+Major block result Start: 0      Count: 1        Total blocks: 8
+==========================================================================
+--- major block #1, major blocktime 0001-01-01 00:00:00 +0000 UTC:
+    minor block index: 1
+    minor block time : 2022-08-06 05:48:28 +0000 UTC
+    minor block index: 2
+    minor block time : 2022-08-06 05:48:28 +0000 UTC
+    minor block index: 3
+    minor block time : 2022-08-06 05:50:42 +0000 UTC
+    minor block index: 4
+    minor block time : 2022-08-06 05:50:43 +0000 UTC
+    minor block index: 5
+    minor block time : 2022-08-06 05:50:45 +0000 UTC
+    minor block index: 7
+    minor block time : 2022-08-06 05:50:48 +0000 UTC
+    minor block index: 8
+    minor block time : 2022-08-07 01:05:03 +0000 UTC
+    minor block index: 9
+    minor block time : 2022-08-07 01:05:05 +0000 UTC
 ```
 
 ### **Block Validator Network Minor Blocks**
