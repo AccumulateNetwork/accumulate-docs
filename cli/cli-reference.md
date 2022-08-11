@@ -1953,10 +1953,6 @@ Create an ADI Data Account
 accumulate account create data [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [adi data account url] [key book (optional)] Create new data account
 ```
 
-```
-accumulate account create data acc://actor signingKeyName acc://actor/dataAccount acc://actor/book0
-```
-
 **Command**
 
 ```

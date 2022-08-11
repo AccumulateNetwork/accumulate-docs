@@ -20,6 +20,10 @@ A Validator is the same as a follower, except that it is trusted to check everyt
 
 ![](../.gitbook/assets/AccMan.png)
 
+{% embed url="https://www.youtube.com/watch?v=dN-ocP--Jl0" %}
+Video Walkthrough
+{% endembed %}
+
 ### **AccMan** &#x20;
 
 **AccMan aka (Accumulate Manager runner)**&#x20;
