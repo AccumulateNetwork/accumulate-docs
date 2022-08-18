@@ -15,9 +15,5 @@ All transactions incur a 0.1 credit fee per for each 256 bytes over a base 256 b
 {% endhint %}
 
 {% hint style="info" %}
-Remote transactions incur a 3 credit fee.
-{% endhint %}
-
-{% hint style="info" %}
 Failed transactions paying fees over 1 credit will be refunded less 1 credit. No refund is made for fees less than or equal to 1 credit.
 {% endhint %}
