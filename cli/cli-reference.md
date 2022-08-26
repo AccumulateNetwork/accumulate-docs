@@ -819,7 +819,7 @@ Result :
 
 ### **ADI Directory**
 
-This command returns the list of your AD directory.
+This command returns the list of your ADI directory.
 
 **Syntax**
 
@@ -907,7 +907,7 @@ get Deprecated - use \`accumulate get ...\` fix in CLI
 
 ### **Create an Additional Key Book**
 
-An ADI can have multiple Key Books. To create an additional Key Book, a Public Key Hash or Key Book URL must be specified for the purpose of signing the transaction. A new public key or specified public key name should be added to the new book.
+An ADI can have multiple Key Books. To create an additional Key Book, a Public Key Hash or Key Book URL must be specified for the purpose of signing the transaction. A new public key or key name should be added to the new book.
 
 **Syntax**
 
@@ -1223,13 +1223,13 @@ Result :
 **Syntax**
 
 ```
-./accumulate tx sign [Key Book][Singing Key][Transaction ID]
+./accumulate tx sign [Key Page][SingingKey@KeyBook][Transaction ID]
 ```
 
 **Command**
 
 ```
-./accumulate tx sign acc://Delegatetest.acme/Keybook3 newkey 619ec91821f0fec89a77d69ed1272f86e18fc70d78101660b4859f67f77fb90b
+./accumulate tx sign acc://Delegatetest.acme/Keybook/1 newkey@Delegatetest.acme/Keybook3 619ec91821f0fec89a77d69ed1272f86e18fc70d78101660b4859f67f77fb90b
 ```
 
 The above command will return an output similar to the following:
@@ -1277,7 +1277,7 @@ Result :
 **Command**
 
 ```
-./accumulate tx sign acc://Delegatetest.acme/Keybook3 newkey 619ec91821f0fec89a77d69ed1272f86e18fc70d78101660b4859f67f77fb90b
+./accumulate tx sign acc://Delegatetest.acme/Keybook/1 newkey@Delegatetest.acme/Keybook3 619ec91821f0fec89a77d69ed1272f86e18fc70d78101660b4859f67f77fb90b
 ```
 
 The above command will return an output similar to the following:
