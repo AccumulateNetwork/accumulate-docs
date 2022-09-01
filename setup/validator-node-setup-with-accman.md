@@ -2,15 +2,15 @@
 
 Please complete the Follower Node Setup guide. To become a Validator Node, a Follower Node is created first. It is recommended to use Accman for this process.
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (5).png>)
 
 Select "Accumulate - Manage Node" and hit Enter
 
-![](<../.gitbook/assets/image (2).png>)
+![](../.gitbook/assets/image.png)
 
 Scroll Down to “Display Registration Info” and Click Enter
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (1).png>)
 
 The Public Key (pubkey) is what an Operator will provide as their **Validator Key** to the Protocol
 
@@ -35,4 +35,17 @@ The Public Key in the Output will server as the **Operator Public Key**
 
 _Please Provide the **Validator Public Key** and **Operator Public Key** to a member of the Operator Key Page. Two-thirds of the Operators will sign a transaction to add your **Operator Key** and a second transaction to add your **Validator Key.**_
 
-In a future AccMan release the type of Node you are running will be visible in your AccMan console.\
+When you search in a Web Page your node's I.P. (I.P. :16592.status), if the voting power is 0 you are running a follower node. If the voting power is 1 you are running a Validator Node.&#x20;
+
+_****_![](<../.gitbook/assets/image (3).png>)_****_
+
+In a future AccMan release the type of Node you are running will be visible in your AccMan console.
+
+_To Verify your Operator Key is in the Operator Key Page query_ \
+_./accumulate get dn.acme/operators/1 in the CLI._&#x20;
+
+_To Verify your Validato Key is in the Networks Data Account query_
+
+_./accumulate get dn.acme/network_
+
+\
