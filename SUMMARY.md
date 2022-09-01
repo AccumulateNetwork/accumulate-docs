@@ -14,7 +14,7 @@
 
 * [Local DevNet Setup](setup/local-devnet.md)
 * [Follower Node Setup with AccMan](setup/validator-node-setup.md)
-* [Validator Node Setup with Accman](setup/validator-node-setup-with-accman.md)
+* [Validator Node Setup with AccMan](setup/validator-node-setup-with-accman.md)
 
 ## CLI
 

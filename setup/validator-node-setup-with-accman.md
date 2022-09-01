@@ -1,16 +1,16 @@
-# Validator Node Setup with Accman
+# Validator Node Setup with AccMan
 
 Please complete the Follower Node Setup guide. To become a Validator Node, a Follower Node is created first. It is recommended to use Accman for this process.
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (4).png>)
 
 Select "Accumulate - Manage Node" and hit Enter
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (2).png>)
 
 Scroll Down to “Display Registration Info” and Click Enter
 
-![](<../.gitbook/assets/image (3).png>)
+![](../.gitbook/assets/image.png)
 
 The Public Key (pubkey) is what an Operator will provide as their **Validator Key** to the Protocol
 
