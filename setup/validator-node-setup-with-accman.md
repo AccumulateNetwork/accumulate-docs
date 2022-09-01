@@ -1,3 +1,7 @@
+---
+description: This guide will run you through how to create a Validator Node.
+---
+
 # Validator Node Setup with AccMan
 
 Please complete the Follower Node Setup guide. To become a Validator Node, a Follower Node is created first. It is recommended to use Accman for this process.
