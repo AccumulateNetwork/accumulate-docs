@@ -6,11 +6,11 @@ Please complete the Follower Node Setup guide. To become a Validator Node, a Fol
 
 Select "Accumulate - Manage Node" and hit Enter
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (4).png>)
 
 Scroll Down to “Display Registration Info” and Click Enter
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (3).png>)
 
 The Public Key (pubkey) is what an Operator will provide as their **Validator Key** to the Protocol
 
