@@ -27,13 +27,19 @@
 * [Proving account state with the API](developer-resources/proving-account-state-with-the-api.md)
 * [Sending transactions with the API](developer-resources/sending-transactions-with-the-api.md)
 * [Querying transactions with the API](developer-resources/querying-transactions-with-the-api.md)
-* [Release Notes](developer-resources/release-notes.md)
 
 ## Tools
 
 * [Explorer](tools/explorer.md)
 * [Javascript SDK](https://accumulatenetwork.gitlab.io/accumulate.js/)
 * [Java SDK](tools/java-sdk.md)
+
+## Release Note
+
+* [Release note 1.0](release-note/release-note-1.0.md)
+* [Release note 0.6.1](release-note/release-note-0.6.1.md)
+* [Release note 0.5.1](release-note/release-note-0.5.1.md)
+* [Release note 0.5](release-note/release-note-0.5.md)
 
 ## Deep Dive
 
