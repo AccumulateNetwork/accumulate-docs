@@ -37,7 +37,7 @@ key type : ed25519
 
 The Public Key in the Output will server as the **Operator Public Key**
 
-_Please Provide the **Validator Public Key** and **Operator Public Key** to a member of the Operator Key Page. Two-thirds of the Operators will sign a transaction to add your **Operator Key** and a second transaction to add your **Validator Key.**_
+_Please Provide the **Validator Public Key** and **Operator Public Key** to a member of the Operator Key Page. Two-thirds of the Operators will sign a transaction to add your **Operator Key** and a second transaction to add your **Validator Key.** For more information please see the Operator Onboarding Guide._
 
 When you search in a Web Page your node's I.P. (I.P. :16592.status), if the voting power is 0 you are running a follower node. If the voting power is 1 you are running a Validator Node.&#x20;
 
