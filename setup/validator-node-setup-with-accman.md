@@ -50,6 +50,6 @@ _./accumulate get dn.acme/operators/1 in the CLI._&#x20;
 
 _To Verify your Validator Key is in the Networks Data Account query_
 
-_./accumulate get dn.acme/network_
+_./accumulate get dn.acme/network in the CLI_
 
 \
