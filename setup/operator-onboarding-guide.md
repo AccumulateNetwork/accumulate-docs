@@ -12,13 +12,24 @@ When launching a node through AccMan, the node will initially be a Follower. Aft
 
 
 
-Below are the following accounts an Operator will need to be aware of:
+#### Below are the following accounts an Operator will need to be aware of:
 
-Directory Network URL Description acc://dn.acme ADI Account acc://dn.acme/operators Key Book Account acc://dn.acme/operators/1 Key Page Account within Operator Key Book acc://dn.acme/network ADI Data Account acc://dn.acme/globals ADI Data Account acc://dn.acme/oracle ADI Data Account
+| URL                       | Description                                                                     |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| acc://dn.acme             | ADI Account for the Directory Network                                           |
+| acc://dn.acme/operators   | Operators Key Book                                                              |
+| acc://dn.acme/operators/1 | Operators Key Page within the Operators Key Book                                |
+| acc://dn.acme/network     | ADI Data Account that stores the Validator keys                                 |
+| acc://dn.acme/globals     | ADI Data Account that defines the _Operator Accept Threshold Ratio_             |
+| acc://dn.acme/oracle      | ADI Data Account that stores pricing data for the ACME-Credits conversion rate. |
+
+<figure><img src="../.gitbook/assets/Picture1.png" alt=""><figcaption></figcaption></figure>
 
 As shown in the Diagram above, the Operator Key Book is an Authority to the Networks, Data, and Globals Data Accounts and all BVN ADIs and the accounts within them. The Operator Key Book, with the URL dn.acme/operators, has one Key Page: Operator Key Page 1 with the URL dn.acme/operators/1. Operator Key Page 1 is used to store the Operators’ keys (Public Key hashes). The keys affiliated with the public key hashes must be used to sign any transaction that adds a data entry to one of the Data Accounts. Since there is no Key Page of a higher priority than Operator Key Page 1, these keys must also sign any transaction that adds a new key to Operator Key Page 1.
 
-The Network Data Account (dn.acme/network), contains a list of Validator keys (public key hashes) which are used to validate transactions.The Globals Data Account (dn.acme/globals) defines and enforces the Operator Accept Threshold Ratio, i.e. the minimum number of signatures needed by the Operator Key Page in order to execute a transaction. The threshold ratio is 2/3 (rounded up). This threshold ratio is also used when updating the list of Validators in dn.acme/network. The Oracle Data Account is used to define the price of ACME and how many credits a user should receive for that price. To add a new operator key to dn.acme/operators/1, we execute a multi-sig UpdateKeyPage transaction signed by dn.acme/operators. To add a new Validator key to dn.acme/network, we execute a multi-sig WriteData transaction signed by dn.acme/operators. Tendermint (the consensus engine of Accumulate) uses the Validator keys to approve or reject all transactions in Accumulate.
+The Network Data Account (dn.acme/network), contains a list of Validator keys (public key hashes) which are used to validate transactions.The Globals Data Account (dn.acme/globals) defines and enforces the _Operator Accept Threshold Ratio_, i.e. the minimum number of signatures needed by the Operator Key Page in order to execute a transaction. The threshold ratio is 2/3 (rounded up). This threshold ratio is also used when updating the list of Validators in dn.acme/network.&#x20;
+
+The Oracle Data Account is used to define the price of ACME and how many credits a user should receive for that price. To add a new operator key to dn.acme/operators/1, we execute a multi-sig UpdateKeyPage transaction signed by dn.acme/operators. To add a new Validator key to dn.acme/network, we execute a multi-sig WriteData transaction signed by dn.acme/operators. Tendermint (the consensus engine of Accumulate) uses the Validator keys to approve or reject all transactions in Accumulate.
 
 Block Validator Network Changes to these accounts are replicated to each Block Validator Network. As an example, if an Operator Key is added to the Key Page of the Operator Key Book in the Directory Network, the same Key will be added to the replica of the key book on each Block Validator Network In the same fashion, if a Validator Key is added to the Network Data Account in the Directory network ADI, the same Key will be added to replica of the data account on each Block Validator Network. acc://bvn-(BVN Partition X).acme acc://bvn-(BVN Partition X).acme/Operators acc://bvn-(BVN Partition X).acme/Operators/1 acc://bvn-(BVN Partition X).acme/Network acc://bvn-(BVN Partition X).acme/Globals acc://bvn-(BVN Partition X).acme/Oracle
 
