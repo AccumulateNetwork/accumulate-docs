@@ -48,7 +48,7 @@ In a future AccMan release the type of Node you are running will be visible in y
 _To Verify your Operator Key is in the Operator Key Page query_ \
 _./accumulate get dn.acme/operators/1 in the CLI._&#x20;
 
-_To Verify your Validato Key is in the Networks Data Account query_
+_To Verify your Validator Key is in the Networks Data Account query_
 
 _./accumulate get dn.acme/network_
 
