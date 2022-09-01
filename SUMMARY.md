@@ -13,8 +13,8 @@
 ## Setup
 
 * [Local DevNet Setup](setup/local-devnet.md)
-* [Validator Node Setup](setup/validator-node-setup.md)
-* [Follower Node Setup](setup/follower-node-setup.md)
+* [Follower Node Setup with Accman](setup/validator-node-setup.md)
+* [Validator Node Setup with Accman](setup/validator-node-setup-with-accman.md)
 
 ## CLI
 

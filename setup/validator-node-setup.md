@@ -6,7 +6,7 @@ cover: ../.gitbook/assets/AccMan.png
 coverY: 4.783333333333334
 ---
 
-# Validator Node Setup
+# Follower Node Setup with Accman
 
 &#x20;A unique type of full node called a validator node takes part in "consensus." By taking part in consensus, validator nodes take on additional responsibilities such as transaction verification, voting, and maintaining a record of transactions.&#x20;
 
@@ -121,7 +121,7 @@ v0-6-0-rc1
 v0-6-0-rc2  
 ```
 
-Now, you have your `Node` running. 🥳🥳🥳&#x20;
+Now, you have your Follower`Node` running. 🥳🥳🥳&#x20;
 
 Also, if you want to create an `ssh` login account, it will take you directly to the Accumulate Manager menu:&#x20;
 
@@ -142,3 +142,8 @@ Remember, it is still your responsibility to ensure your server is secure.&#x20;
 A self-certificate is generated automatically on start-up. If you have an existing certificate for a domain name, copy the `.crt` and `.key` files to the `./certs` directory. They will be read on start-up; the\`.pem\` files are also compatible. &#x20;
 
 Also, rename them to `.crt` and `.key` files. Make sure the files are kept valid. For example, if you provide an e-mail address, Accumulate Manager will attempt to get a certificate from `LetsEncrypt` and keep it renewed.&#x20;
+
+
+
+
+
