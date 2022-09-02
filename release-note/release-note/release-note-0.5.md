@@ -1,10 +1,6 @@
-# Release note 0.5
-
-
+# Release Note 0.5
 
 ### **Accumulate - Version 0.5**  February 1st, 2022
-
-&#x20;
 
 **🚀  New**&#x20;
 

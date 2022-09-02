@@ -1,6 +1,4 @@
-# Release note 1.0
-
-
+# Release Note 1.0
 
 **Accumulate v1.0** **and Release Candidate1 (RC1) Release Notes – 07/19/22**&#x20;
 

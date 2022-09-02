@@ -37,10 +37,11 @@
 
 ## Release Note
 
-* [Release note 1.0](release-note/release-note-1.0.md)
-* [Release note 0.6.1](release-note/release-note-0.6.1.md)
-* [Release note 0.5.1](release-note/release-note-0.5.1.md)
-* [Release note 0.5](release-note/release-note-0.5.md)
+* [Release Note](release-note/release-note/README.md)
+  * [Release Note 1.0](release-note/release-note/release-note-1.0.md)
+  * [Release Note 0.6](release-note/release-note/release-note-0.6.md)
+  * [Release Note 0.5.1](release-note/release-note/release-note-0.5.1.md)
+  * [Release Note 0.5](release-note/release-note/release-note-0.5.md)
 
 ## Deep Dive
 

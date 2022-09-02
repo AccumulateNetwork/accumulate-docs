@@ -1,6 +1,4 @@
-# Release note 0.6.1
-
-
+# Release Note 0.6
 
 **Accumulate 0.6.1 Release Notes – 06/02/22**
 
