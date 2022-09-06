@@ -35,7 +35,23 @@ Block Validator Network Changes to these accounts are replicated to each Block V
 
 Command Line Interface
 
-OPERATORS ./accumulate operator Manage operators Usage: accumulate operator \[command] Available Commands: add Add an operator remove Remove an operator update-key Update an operator's key
+An **Operator Key** can be generated in the Command Line Interface
+
+./accumulate key generate \[Key Name]
+
+./accumulate key generate operatorkey1&#x20;
+
+Password: \*\*\*\*\*\*\*\*&#x20;
+
+name : operatorkey1 lite account : acc://11d3217fda3c863c2e66936826987edb3a4467f540279689/ACME\
+public key : **1df37076ff875fc2a9c99a647622d33b1c194ff0d821c40b93fffac1743acca2**\
+key type : ed25519
+
+The Public Key in the Output will server as the **Operator Public Key**
+
+OPERATORS&#x20;
+
+./accumulate operator Manage operators Usage: accumulate operator \[command] Available Commands: add Add an operator remove Remove an operator update-key Update an operator's key
 
 Add a Key to the Operator Key Page ./accumulate operator add\
 Usage: accumulate operator add dn \[Existing Operator Key] \[New Operator Key] \[flags] The first argument is a Public Key of an existing Operator. The second argument is the Public Key of the new Operator. DeFi Devs will execute the transaction below to add your Operator Key to the Operator Key Page. In the example below a key was generated called “operator key.” To generate a Key in the Command Line Interface the “./accumulate key generate \[name of key]” command can be used.
