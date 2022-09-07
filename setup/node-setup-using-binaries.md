@@ -1,3 +1,5 @@
+# Running an Accumulate Node directly from the binary
+
 For some types of deployment it may be preferable to run an Accumulate Node directly from the binary, rather than using Accman or Docker.
 This guide will detail the specific steps necessary to successfully run an Accumulate Node in this way but it is not intended as a general guide on Linux system administration. 
 
