@@ -10,3 +10,14 @@
    * If it is not listening, wait for a minute to ensure the node has booted. If there's still no response, ask for help.
    * If you get a response and `catching_up` is `true`, wait for it to finish catching up.
    * If you get a response and `catching_up` is `false`, ask for help.
+
+### Port numbers
+
+The base port for the testnet and mainnet is 16591. All of the node ports have a fixed offset from the base port.
+
+| Service        | DNN | BVNN |
+| -------------- | --- | ---- |
+| Tendermint P2P | 0   | 100  |
+| Tendermint RPC | 1   | 101  |
+| Prometheus     | 3   | 103  |
+| Accumulate API | 4   | 104  |
