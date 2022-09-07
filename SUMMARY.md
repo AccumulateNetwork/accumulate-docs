@@ -16,6 +16,7 @@
 * [Follower Node Setup with AccMan](setup/follower-node-setup-with-accman.md)
 * [Validator Node Setup with AccMan](setup/validator-node-setup-with-accman.md)
 * [Operator Onboarding Guide](setup/operator-onboarding-guide.md)
+* [Debugging node issues](setup/debugging-node-issues.md)
 
 ## CLI
 
