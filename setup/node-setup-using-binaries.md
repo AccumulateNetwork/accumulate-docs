@@ -29,7 +29,7 @@ Please see here for the list of ports an Accumulate Node uses and ensure your fi
 Please note, it is your responsibility to ensure you have a correctly configured firewall that adequately secures the server.
 
 &#x20;**Create a working directory for the configuration files**&#x20;
-the
+
 You should switch to the `accumulate` user account and create a directory to contain the required configuration files. Here we opt to create a directory called `node` in the `accumulate` user's home directory:
 
 ```
