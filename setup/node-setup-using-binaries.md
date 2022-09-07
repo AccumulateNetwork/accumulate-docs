@@ -8,7 +8,7 @@ This guide will detail the specific steps necessary to successfully run an Accum
 * Experience using the command line.&#x20;
 * Basic knowledge about Accumulate.&#x20;
 * Creation of an `accumulate` user account (it is NOT recommended to run as `root`!).&#x20;
-* Knowledge of how to manage the specific firewall implemenation running on your machine.&#x20;
+* Knowledge of how to manage the specific firewall implementation running on your machine.&#x20;
 * A copy of the `accumulated` binary, preferably built from source.&#x20;
 
 N.B. If you are intending to run a production mainnet validator it is not advisable to install compilers and build the binary on the same system. 
@@ -104,6 +104,6 @@ Log output can be viewed via journalctl, e.g.:
 sudo journalctl -f -u accumulate.service
 ```
 
-Please note, on quiet networks, for example newly initalized testnets, the logs will not be particular chatty, producing output only for snapshots/major blocks and failed transactions.
+Please note, on quiet networks, for example newly initalized testnets, the logs will not be particularly chatty, producing output only for snapshots/major blocks and failed transactions.
 To confirm a node is functioning correctly please see the recommended strategies in 
 ***[TO DO] Create a doc with details on assessing whether a node is healthy***
