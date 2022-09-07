@@ -26,7 +26,7 @@ Copy the `accumulated` binary to your machine. `/usr/local/bin` is a sensible pl
 
 Please see here for the list of ports an Accumulate Node uses and ensure your firewall is configured for the appropriate ones to be publicly accessible. 
 ***[TO DO] Reference document listing all ports, their protocol and whether they are to be publicly or privately accessible***
-Please note, it is your responsibility to ensure that your firewall is configured proprely to adequately secure your server.
+Please note, it is your responsibility to ensure you have a correctly configured firewall that adequately secures the server.
 
 &#x20;**Create a working directory for the configuration files**&#x20;
 the
