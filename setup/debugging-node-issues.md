@@ -11,6 +11,10 @@
    * If you get a response and `catching_up` is `true`, wait for it to finish catching up.
    * If you get a response and `catching_up` is `false`, ask for help.
 
+### Prometheus is not responding to requests
+
+When running a DNN and BVNN in dual-mode, the BVNN's Prometheus exporer is disabled. Because of how Tendermint initializes Prometheus ([see here](https://github.com/tendermint/tendermint/issues/7076)), the Prometheus exporter cannot be enabled for both nodes. If neither the DNN's nor the BVNN's exporter are responding to requests, see [#the-node-is-not-responding-to-api-requests](debugging-node-issues.md#the-node-is-not-responding-to-api-requests "mention").
+
 ### Port numbers
 
 The base port for the testnet and mainnet is 16591. All of the node ports have a fixed offset from the base port.
