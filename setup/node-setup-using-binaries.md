@@ -7,7 +7,6 @@ This guide will detail the specific steps necessary to successfully run an Accum
 
 * Experience using the command line.&#x20;
 * Basic knowledge about Accumulate.&#x20;
-* Creation of an `accumulate` user account (it is NOT recommended to run as `root`!).&#x20;
 * Knowledge of how to manage the specific firewall implementation running on your machine.&#x20;
 * A copy of the `accumulated` binary, preferably built from source.&#x20;
 
@@ -18,6 +17,13 @@ Please see here ***[TO_DO] Document detailing how to build from source***
 
 Follow the steps below to set up an Accumulate Node on your machine:&#x20;
 
+&#x20;**Prepare your machine**&#x20;
+
+You will need to identify which user you would like to run the Accumulate process under. It is generally not advisable to run as `root` and creation of a dedicated `accumulate` user without sudo privileges may be appropriate. Whenver you see `<accumulate_user>` in any of the command examples below, replace it with this user.
+
+You will also need to create a working directory for the Accumulate config and data files which your chosen user account will need full access to. This can be in a subdirectory of the user's `home` directory or you could place it under `/opt`. Whenever you see `<working_dir>` in any of the command examples below, replace it with this directory.
+
+
 &#x20;**Install the accumulated binary**&#x20;
 
 Copy the `accumulated` binary to your machine. `/usr/local/bin` is a sensible place to store this file.
@@ -26,18 +32,9 @@ Copy the `accumulated` binary to your machine. `/usr/local/bin` is a sensible pl
 
 Please see here for the list of ports an Accumulate Node uses and ensure your firewall is configured for the appropriate ones to be publicly accessible. 
 ***[TO DO] Reference document listing all ports, their protocol and whether they are to be publicly or privately accessible***
-Please note, it is your responsibility to ensure you have a correctly configured firewall that adequately secures the server.
+Please note, it is your responsibility to ensure you have a correctly configured firewall that adequately secures your system.
 
-&#x20;**Create a working directory for the configuration files**&#x20;
 
-You should switch to the `accumulate` user account and create a directory to contain the required configuration files. Here we opt to create a directory called `node` in the `accumulate` user's home directory:
-
-```
-su - accumulate
-```
-```
-mkdir node 
-```
 
 &#x20;**Identify a BVN to run and initialize configuration files**&#x20;
 
@@ -62,7 +59,7 @@ If successful this will contact the sever behind the seed url and pull down all 
 
 &#x20;**Run the node**&#x20;
 
-The node can then be started by the `accumulate` user with the following command:
+The node can then be started under your chosen user with the following command:
 ```
 accumulated run-dual <working_directory>/dnn <working_directory>/bvnn -w <working_directory>
 ```
@@ -78,11 +75,11 @@ Description=Accumulate Validator Node
 After=network-online.target
 
 [Service]
-User=accumulate
-Group=accumulate
+User=<accumulate_user>
+Group=<accumulate_user>
 Restart=always
-WorkingDirectory=/home/accumulate/node
-ExecStart=/usr/local/bin/accumulated run-dual /home/accumulate/node/dnn /home/accumulate/node/bvnn -w /home/accumulate/node
+WorkingDirectory=<working_dir>
+ExecStart=/usr/local/bin/accumulated run-dual <working_dir>/dnn <working_dir>/bvnn -w <working_dir>
 LimitNOFILE=1048576
 
 
