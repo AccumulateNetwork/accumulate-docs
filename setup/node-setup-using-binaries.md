@@ -19,9 +19,9 @@ Follow the steps below to set up an Accumulate Node on your machine:&#x20;
 
 &#x20;**Prepare your machine**&#x20;
 
-You will need to identify which user you would like to run the Accumulate process under. It is generally not advisable to run as `root` and creation of a dedicated `accumulate` user without sudo privileges may be appropriate. Whenver you see `<accumulate_user>` in any of the command examples below, replace it with this user.
+You will need to identify which user you would like to run the Accumulate process under. It is generally not advisable to run as `root` and creation of a dedicated `accumulate` user without sudo privileges may be appropriate. Whenver you see `<accumulate_user>` in any of the command examples below, replace it with your chosen user.
 
-You will also need to create a working directory for the Accumulate config and data files which your chosen user account will need full access to. This can be in a subdirectory of the user's `home` directory or you could place it under `/opt`. Whenever you see `<working_dir>` in any of the command examples below, replace it with this directory.
+You will also need to create a working directory for the Accumulate config and data files which your chosen user account will need full access to. This can be in a subdirectory of the user's `home` directory or you could place it under `/opt`. Whenever you see `<working_dir>` in any of the command examples below, replace it with your chosen directory.
 
 
 &#x20;**Install the accumulated binary**&#x20;
