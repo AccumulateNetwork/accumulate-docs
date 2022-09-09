@@ -67,7 +67,7 @@ cd accman
 
 **Install Docker Engine.**&#x20;
 
-If your running Ubuntu you can use our script.  Otherwise check the [Docker site](https://docs.docker.com/engine/install/)
+If you're running Ubuntu you can use our script.  Otherwise check the [Docker site](https://docs.docker.com/engine/install/)
 
 ```
 ./scripts/install-ubuntu.sh 
