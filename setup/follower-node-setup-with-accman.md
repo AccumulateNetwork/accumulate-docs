@@ -135,11 +135,31 @@ Locking down your server is essential. By default, Accumulate Manager will take 
 
 Remember, it is still your responsibility to ensure your server is secure.&#x20;
 
+**Ports in use:**
+
+| Port  | Use          |
+| ----- | ------------ |
+| 16591 | DN P2P       |
+| 16592 | DN RPC       |
+| 16595 | DN RPC Json  |
+| 16691 | BVN P2P      |
+| 16692 | BVN RPC      |
+| 16695 | BVN RPC Json |
+| 16666 | AccMan       |
+
+
+
+| Proxy Port | Use                          |
+| ---------- | ---------------------------- |
+| 6695       | SSL Client (your-domain.com) |
+
+### ****
+
 ### **SSL certificates**&#x20;
 
-A self-certificate is generated automatically on start-up. If you have an existing certificate for a domain name, copy the `.crt` and `.key` files to the `./certs` directory. They will be read on start-up; the\`.pem\` files are also compatible. &#x20;
+A self-certificate is automatically generated on start-up. If you have an existing certificate for a domain name, copy the `.crt` and `.key` files to the `./certs` directory. They will be read on start-up. `.pem` files are also compatible. Rename them to `.crt` and `.key` files respectively.
 
-Also, rename them to `.crt` and `.key` files. Make sure the files are kept valid. For example, if you provide an e-mail address, Accumulate Manager will attempt to get a certificate from `LetsEncrypt` and keep it renewed.&#x20;
+&#x20;Set up a cron job, to make sure the files are kept valid. These files will be monitored for changes, and automatically reloaded. If you provide an e-mail address, Accumulate Manager will attempt to get a certificate from LetsEncrypt, and keep it renewed.
 
 
 
