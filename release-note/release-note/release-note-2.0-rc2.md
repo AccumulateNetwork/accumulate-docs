@@ -1,6 +1,6 @@
 # Release Note 2.0 RC2
 
-**Accumulate Release Candidate1 (RC1) Release Notes – 08/01/22**&#x20;
+**Accumulate Release Candidate1 (RC1) Release Notes – 09/06/22**&#x20;
 
 **🚀  New**  &#x20;
 
