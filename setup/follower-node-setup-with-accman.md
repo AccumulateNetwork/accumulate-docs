@@ -50,7 +50,7 @@ Follow the steps below to set up your Accumulate \`Node\` on your machine.&#x20;
 To install `AccMan`, you will need to log in as root.&#x20;
 
 ```
-apt update && apt -y install git telnet net-tools mtr 
+apt update && apt -y install git telnet net-tools 
 ```
 
 **Clone repo**&#x20;
@@ -65,9 +65,9 @@ git clone https://gitlab.com/accumulatenetwork/accman.git
 cd accman
 ```
 
-**Run script**&#x20;
+**Install Docker Engine.**&#x20;
 
-This script will install Ubuntu OS and the latest version of Docker.
+If your running Ubuntu you can use our script.  Otherwise check the [Docker site](https://docs.docker.com/engine/install/)
 
 ```
 ./scripts/install-ubuntu.sh 
@@ -102,7 +102,7 @@ Testnet-Beta
 
 * **Select a BVN**&#x20;
 
-We recommend you select \`Auto.\`&#x20;
+We recommend you select \`Auto.\`. This is to balance the network. If your running multiple servers, then assign a different BVN to each.
 
 ```
 Auto 
@@ -110,7 +110,7 @@ BVN0
 BVN1 
 ```
 
-* **Select the network you wish to join.**&#x20;
+* **Select the version you wish to join.**&#x20;
 
 ```
 v0-6-0              
@@ -119,7 +119,7 @@ v0-6-0-rc1
 v0-6-0-rc2  
 ```
 
-Now, you have your Follower`Node` running. 🥳🥳🥳&#x20;
+Now, you have your Follower`Node`.  Select Start, and your running. 🥳🥳🥳&#x20;
 
 Also, if you want to create an `ssh` login account, it will take you directly to the Accumulate Manager menu:&#x20;
 
