@@ -6,11 +6,11 @@ description: >-
 
 # Operator Onboarding Guide
 
-Each operator is required to run a dual-mode deployment that includes a Directory Network Node (DNN) and Block Validator Network Node (BVNN). In Accumulate, Block Validator Networks (BVNs) contain validator nodes which are used to validate transactions. All transactions feed into the Directory Network (DN) containing validator nodes which anchor each BVN into the larger Network. To facilitate transaction validation and other operator functions, the network must store the public keys of every operator and every validator node. Each operator must supply a public key that represents the operator _plus_ the full public key of every node.
+Each operator runs a dual-mode deployment with a Directory Network Node (DNN) and Block Validator Network Node (BVNN). In Accumulate, Block Validator Networks (BVNs) contain validator nodes used to validate transactions. All transactions feed into the Directory Network (DN) containing validator nodes which anchor each BVN into the larger network.&#x20;
+
+The network must store all operator and validator node public keys to facilitate transaction validation and other operator functions. Therefore, each operator must supply a public key representing the operator plus every node's full public key.
 
 When launching a node through AccMan, the node will initially be a Follower. After completing the [Follower Node setup](https://docs.accumulatenetwork.io/accumulate/setup/follower-node-setup-with-accman), please follow the steps in the [Validator Node Setup guide](https://docs.accumulatenetwork.io/accumulate/setup/validator-node-setup-with-accman) to set up your Validator node.
-
-
 
 #### Below are the following accounts an Operator will need to be aware of:
 
@@ -25,39 +25,75 @@ When launching a node through AccMan, the node will initially be a Follower. Aft
 
 <figure><img src="../.gitbook/assets/Picture1.png" alt=""><figcaption></figcaption></figure>
 
-As shown in the Diagram above, the Operator Key Book is an Authority to the Networks, Data, and Globals Data Accounts and all BVN ADIs and the accounts within them. The Operator Key Book, with the URL dn.acme/operators, has one Key Page: Operator Key Page 1 with the URL dn.acme/operators/1. Operator Key Page 1 is used to store the Operators’ keys (Public Key hashes). The keys affiliated with the public key hashes must be used to sign any transaction that adds a data entry to one of the Data Accounts. Since there is no Key Page of a higher priority than Operator Key Page 1, these keys must also sign any transaction that adds a new key to Operator Key Page 1.
+As shown in the Diagram above, the Operator Key Book is an Authority to the Networks, Data, and Global Data Accounts and all BVN ADIs and the accounts within them. The Operator Key Book, with the URL `dn.acme/operators` has one Key Page: Operator Key Page 1 with the URL `dn.acme/operators/1`. The Operator Key Page 1 store the Operators’ keys (Public Key hashes). The keys affiliated with the public key hashes must be used to sign any transaction that adds a data entry to one of the Data Accounts. Since there is no Key Page of a higher priority than Operator Key Page 1, these keys must also sign any transaction that adds a new key to Operator Key Page 1.
 
-The Network Data Account (dn.acme/network), contains a list of Validator keys (public key hashes) which are used to validate transactions.The Globals Data Account (dn.acme/globals) defines and enforces the _Operator Accept Threshold Ratio_, i.e. the minimum number of signatures needed by the Operator Key Page in order to execute a transaction. The threshold ratio is 2/3 (rounded up). This threshold ratio is also used when updating the list of Validators in dn.acme/network.&#x20;
+The Network Data Account `dn.acme/network` contains a list of Validator keys (public key hashes) used to validate transactions. The Globals Data Account `dn.acme/globals` defines and enforces the _**Operator Accept Threshold Ratio**_, i.e., the minimum number of signatures needed by the Operator Key Page to execute a transaction. The threshold ratio is 2/3 (rounded up). This threshold ratio is used when updating the list of Validators in `dn.acme/network`
 
-The Oracle Data Account is used to define the price of ACME and how many credits a user should receive for that price. To add a new operator key to dn.acme/operators/1, we execute a multi-sig UpdateKeyPage transaction signed by dn.acme/operators. To add a new Validator key to dn.acme/network, we execute a multi-sig WriteData transaction signed by dn.acme/operators. Tendermint (the consensus engine of Accumulate) uses the Validator keys to approve or reject all transactions in Accumulate.
 
-Block Validator Network Changes to these accounts are replicated to each Block Validator Network. As an example, if an Operator Key is added to the Key Page of the Operator Key Book in the Directory Network, the same Key will be added to the replica of the key book on each Block Validator Network In the same fashion, if a Validator Key is added to the Network Data Account in the Directory network ADI, the same Key will be added to replica of the data account on each Block Validator Network. acc://bvn-(BVN Partition X).acme acc://bvn-(BVN Partition X).acme/Operators acc://bvn-(BVN Partition X).acme/Operators/1 acc://bvn-(BVN Partition X).acme/Network acc://bvn-(BVN Partition X).acme/Globals acc://bvn-(BVN Partition X).acme/Oracle
 
-Command Line Interface
+The Oracle Data Account defines the price of ACME and how many credits a user should receive for that price.&#x20;
+
+* To add a new operator key to `dn.acme/operators/1`we execute a multi-sig UpdateKeyPage transaction signed by `dn.acme/operators`.&#x20;
+* To add a new Validator key to `dn.acme/network` we execute a multi-sig WriteData transaction signed by `dn.acme/operators`. Tendermint (the consensus engine of Accumulate) uses the Validator keys to approve or reject all transactions in Accumulate.
+
+**Command Line Interface**
 
 An **Operator Key** can be generated in the Command Line Interface
 
-./accumulate key generate \[Key Name]
+**Syntax**
 
-./accumulate key generate operatorkey1&#x20;
+```
+./accumulate key generate [Key Name]
+```
 
-Password: \*\*\*\*\*\*\*\*&#x20;
+**Command**
 
-name : operatorkey1 lite account : acc://11d3217fda3c863c2e66936826987edb3a4467f540279689/ACME\
-public key : **1df37076ff875fc2a9c99a647622d33b1c194ff0d821c40b93fffac1743acca2**\
+```
+./accumulate key generate operatorkey1 
+```
+
+&#x20;The above command will return an output similar to the following:&#x20;
+
+```
+name : operatorkey1 lite account : acc://11d3217fda3c863c2e66936826987edb3a4467f540279689/ACME
+public key : 1df37076ff875fc2a9c99a647622d33b1c194ff0d821c40b93fffac1743acca2
 key type : ed25519
+```
 
-The Public Key in the Output will server as the **Operator Public Key**
+The Public Key in the Output will serve as the **Operator Public Key**
 
-OPERATORS&#x20;
+### **OPERATORS**&#x20;
 
-./accumulate operator Manage operators Usage: accumulate operator \[command] Available Commands: add Add an operator remove Remove an operator update-key Update an operator's key
+./accumulate operator&#x20;
 
-Add a Key to the Operator Key Page ./accumulate operator add\
-Usage: accumulate operator add dn \[Existing Operator Key] \[New Operator Key] \[flags] The first argument is a Public Key of an existing Operator. The second argument is the Public Key of the new Operator. DeFi Devs will execute the transaction below to add your Operator Key to the Operator Key Page. In the example below a key was generated called “operator key.” To generate a Key in the Command Line Interface the “./accumulate key generate \[name of key]” command can be used.
+**Manage operators**&#x20;
 
-./accumulate operator add dn nodekey1 nodekey2\
-Password: \*\*\*\*\*\*\*\*
+Usage: accumulate operator \[command]&#x20;
+
+Available Commands: add (Add an operator), remove (Remove an operator), update-key, (Update an operator's key)
+
+Add a Key to the Operator Key Page ./accumulate operator add
+
+\
+**Syntax**
+
+```
+accumulate operator add dn [Existing Operator Key] [New Operator Key] [flags] 
+```
+
+The first argument is a Public Key of an existing Operator. The second argument is the Public Key of the new Operator. DeFi Devs will execute the transaction below to add your Operator Key to the Operator Key Page. In the example below a key was generated called “operator key.” To generate a Key in the Command Line Interface the “./accumulate key generate \[name of key]” command can be used.
+
+**Add the Operator key**
+
+
+
+**Command**
+
+```
+./accumulate operator add dn nodekey1 nodekey2
+```
+
+&#x20;The above command will return an output similar to the following:&#x20;
 
 ```
     Transaction Hash        : e2469b9b7ee8c554332c8fa862eacafe4ef2b4724fe27e4b5cd32779e168f077
@@ -69,7 +105,11 @@ Password: \*\*\*\*\*\*\*\*
 
 Querying the Operator Key Page to see if the Key was added:
 
-./accumulate get dn.acme/operators/1 Password: \*\*\*\*\*\*\*\*
+```
+./accumulate get dn.acme/operators/1 
+```
+
+&#x20;The above command will return an output similar to the following:&#x20;
 
 ```
     Credit Balance  :       0.00
@@ -80,15 +120,19 @@ Querying the Operator Key Page to see if the Key was added:
    f22fbe9dcb68bbbafefb99896c1e0fa54f7c0a219b2194f96955f733cfddd966
 ```
 
-As shown above, the Directory Network ADI and Block Validator Network ADIs do not require credits to perform transactions. Other than this specific use case, all actions in Accumulate require credits which are generated by burning ACME tokens.
+As shown above, the Directory Network ADI and Block Validator Network ADIs do not require credits to perform transactions. Other than this specific use case, all actions in Accumulate require credits generated by burning ACME tokens.
 
-To conform to the 2/3 threshold the protocol will execute: Number of Keys in Key Page \* Signature Threshold Ratio (2/3) = RoundUp(Number of Signatures Required) 2 \*(2/3) = 1.3 -> Rounded Up to Nearest Whole Number if Number is a Decimal = 2 Signatures Required From this point going forward 2 out of 2 Operator signatures are required to execute a transaction.
+To conform to the 2/3 threshold, the protocol will execute: Number of Keys in Key Page \* Signature Threshold Ratio (2/3) = RoundUp(Number of Signatures Required) 2 \*(2/3) = 1.3 -> Rounded Up to Nearest Whole Number if Number is a Decimal = 2 Signatures Required From this point going forward 2 out of 2 Operator signatures are required to execute a transaction.
 
 Next, a third Key will be added using sign a Multi-Signature Transaction based on the 2 of 2 Threshold.
 
-Either Operator within the Key Page can execute a transaction to add a third key, but both Operators must sign the transaction for the Key to be added. In this scenarios DeFiDevs has initiated the transaction.
+Either Operator within the Key Page can execute a transaction to add a third key, but both Operators must sign the transaction for the Key to be added. In this scenario, DeFiDevs has initiated the transaction.
 
-./accumulate operator add dn nodekey nodekey3 Password: \*\*\*\*\*\*\*\*
+```
+./accumulate operator add dn nodekey nodekey3 
+```
+
+The above command will return an output similar to the following:&#x20;
 
 ```
     Transaction Hash        : 28f0df5f19f4d60639b415b9f9ce287e15c26c0cdbebd6655caf9602d65dc274
@@ -98,13 +142,19 @@ Either Operator within the Key Page can execute a transaction to add a third key
     Result                  :
 ```
 
-The second Operator needs to sign the Transaction Hash to fulfil the Multi-Signature transaction.
+The second Operator needs to sign the Transaction Hash to fulfill the Multi-Signature transaction.
 
-./accumulate tx sign Usage: accumulate tx sign \[origin url] \[n Signer Key Name]] \[txid] Sign a pending transaction
+```
+./accumulate tx sign Usage: accumulate tx sign [origin url] [n Signer Key Name]] [txid] Sign a pending transaction
+```
 
-The origin url is the Operator Key Page, which is being updated. The Signer Key refers a party that needs to sign the multi-signature transaction. The transaction hash refers to the hash that was produced from the initial transaction.
+The origin url is the Operator Key Page, which is being updated. The Signer Key refers to a party that needs to sign the multi-signature transaction. The transaction hash refers to the hash produced from the initial transaction.
 
-./accumulate tx sign dn.acme/operators/1 nodekey2 28f0df5f19f4d60639b415b9f9ce287e15c26c0cdbebd6655caf9602d65dc274 Password: \*\*\*\*\*\*\*\*
+```
+./accumulate tx sign dn.acme/operators/1 nodekey2 28f0df5f19f4d60639b415b9f9ce287e15c26c0cdbebd6655caf9602d65dc274
+```
+
+The above command will return an output similar to the following:&#x20;
 
 ```
     Transaction Hash        : 28f0df5f19f4d60639b415b9f9ce287e15c26c0cdbebd6655caf9602d65dc274
@@ -116,7 +166,11 @@ The origin url is the Operator Key Page, which is being updated. The Signer Key 
 
 Querying the Operator Key Page to see if the Key was added:
 
-./accumulate get dn.acme/operators/1 Password: \*\*\*\*\*\*\*\*
+```
+./accumulate get dn.acme/operators/1 
+```
+
+The above command will return an output similar to the following:&#x20;
 
 ```
     Credit Balance  :       0.00
@@ -129,12 +183,15 @@ Querying the Operator Key Page to see if the Key was added:
  0cd684e23ca541d13b03f977a9f3556f867e2a67ab868e710c66739520cdbcb4
 ```
 
-To conform to the 2/3 threshold the protocol will execute: Number of Keys in Key Page \* Signature Threshold Ratio (2/3) = RoundUp(Number of Signatures Required) 3 \*(2/3) = 2 -> Rounded Up to Nearest Whole Number if Number is a Decimal = 2 Signatures Required From this point going forward 2 out of 2 Operator signatures are required to execute a transaction.
+To conform to the 2/3 threshold, the protocol will execute: Number of Keys in Key Page \* Signature Threshold Ratio (2/3) = RoundUp(Number of Signatures Required) 3 \*(2/3) = 2 -> Rounded Up to Nearest Whole Number if Number is a Decimal = 2 Signatures Required From this point going forward 2 out of 2 Operator signatures are required to execute a transaction.
 
 Remove a Key from an Operator Key Page: To remove a Key from the Key Page 2 of the 3 Keys need to sign a transaction for it to be processed.
 
-./accumulate operator remove dn nodekey1 nodekey3\
-Password: \*\*\*\*\*\*\*\*
+```
+./accumulate operator remove dn nodekey1 nodekey3
+```
+
+The above command will return an output similar to the following:&#x20;
 
 ```
     Transaction Hash        : 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143
@@ -146,7 +203,11 @@ Password: \*\*\*\*\*\*\*\*
 
 One of the two remaining operators needs to the transaction hash:
 
-./accumulate tx sign dn.acme/operators/1 nodekey2 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143 Password: \*\*\*\*\*\*\*\*
+```
+./accumulate tx sign dn.acme/operators/1 nodekey2 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143 
+```
+
+The above command will return an output similar to the following:&#x20;
 
 ```
     Transaction Hash        : 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143
@@ -158,7 +219,11 @@ One of the two remaining operators needs to the transaction hash:
 
 Querying the Operator Key Page to see if the Key was Removed:
 
-./accumulate get dn.acme/operators/1 Password: \*\*\*\*\*\*\*\*
+```
+./accumulate get dn.acme/operators/1 
+```
+
+The above command will return an output similar to the following:&#x20;
 
 ```
     Credit Balance  :       0.00
@@ -169,17 +234,28 @@ Querying the Operator Key Page to see if the Key was Removed:
    f22fbe9dcb68bbbafefb99896c1e0fa54f7c0a219b2194f96955f733cfddd966
 ```
 
-Update your own Key in the Operator Key Page: When you are updating your own Key within a Key Page you do not have to conform to the signature threshold. The command that an Operator would use is: \
-\
-accumulate page key replace \[key page url] \[key name\[@key book or page]] \[new public key or name] \[flags]\
-\
-The signature threshold is 1 of 1 for this transaction only, all other transactions will require the Key Page threshold. In the example below, DeFi Devs wants to update _someone else's_ key which would required the 2 of 3 threshold.&#x20;
+&#x20;**Update the Key**
 
-./accumulate operator update-key\
+Update your own Key in the Operator Key Page:
+
+When you are updating your own Key within a Key Page you do not have to conform to the signature threshold.\
+
+
+The command that an Operator would use is:
+
+accumulate page key replace \[key page url] \[key name\[@key book or page]] \[new public key or name] \[flags]\
+
+
+The signature threshold is 1 of 1 for this transaction only, all other transactions will require the Key Page threshold. In the example below, DeFi Devs wants to update _someone else's_ key which would required the 2 of 3 threshold.
+
+**Syntax**
+
+./accumulate operator update-key
+
+**Command**\
 Usage: accumulate operator update-key dn \[Signing Key] \[old key name or path] \[new key name or path] \[flags]
 
-./accumulate operator update-key dn nodekey1 nodekey2 updatedkey\
-Password: \*\*\*\*\*\*\*\*
+./accumulate operator update-key dn nodekey1 nodekey2 updatedkey
 
 ```
     Transaction Hash        : 0a9d215fa33f98a1ffa9d64f2493e47f9aa3b4b5ca615fddd594fe82d1e77431
@@ -190,8 +266,6 @@ Password: \*\*\*\*\*\*\*\*
 ```
 
 Sign Transaction Hash: ./accumulate tx sign dn.acme/operators/1 nodekey2 6827da678ce369d34398848cc652e6ac1b4e2acf23aac0b74b5e8e0a57c6f642
-
-Password: \*\*\*\*\*\*\*\*
 
 ```
     Transaction Hash        : 0a9d215fa33f98a1ffa9d64f2493e47f9aa3b4b5ca615fddd594fe82d1e77431
@@ -212,7 +286,7 @@ Query Operator Key Page: ./accumulate get dn.acme/operators/1 Password: \*\*\*\*
 0 1969-12-31 19:00:00 -0500 EST nodekey1 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 1 1969-12-31 19:00:00 -0500 EST updatedkey\
 31f15c6bf79bf76cecbf59513c2bbaaca24281151a1038cf083e178b2e026cab
 
-VALIDATORS
+### **VALIDATORS**
 
 ./accumulate validator Manage validators Usage: accumulate validator \[command] Available Commands: add Add a validator remove Remove a validator update-key Update a validator's key
 
