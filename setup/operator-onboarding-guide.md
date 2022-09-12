@@ -236,17 +236,7 @@ The above command will return an output similar to the following:&#x20;
 
 &#x20;**Update the Key**
 
-Update your own Key in the Operator Key Page:
-
-When you are updating your own Key within a Key Page you do not have to conform to the signature threshold.\
-
-
-The command that an Operator would use is:
-
-accumulate page key replace \[key page url] \[key name\[@key book or page]] \[new public key or name] \[flags]\
-
-
-The signature threshold is 1 of 1 for this transaction only, all other transactions will require the Key Page threshold. In the example below, DeFi Devs wants to update _someone else's_ key which would required the 2 of 3 threshold.
+Update your Key on the Operator Key Page: When you update your Key within a Key Page you do not have to conform to the signature threshold. The signature threshold is 1 of 1 for this transaction only; all other transactions will require the Key Page threshold. In the example below, DeFi Devs want to update their Key `1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839` to UpdatedKey.
 
 **Syntax**
 
