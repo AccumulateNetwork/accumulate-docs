@@ -169,7 +169,11 @@ Querying the Operator Key Page to see if the Key was Removed:
    f22fbe9dcb68bbbafefb99896c1e0fa54f7c0a219b2194f96955f733cfddd966
 ```
 
-Update your own Key in the Operator Key Page: When you are updating your own Key within a Key Page you do not have to conform to the signature threshold. The signature threshold is 1 of 1 for this transaction only, all other transactions will require the Key Page threshold. In the example below, DeFi Devs wants to update their Key “1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839” to UpdatedKey.
+Update your own Key in the Operator Key Page: When you are updating your own Key within a Key Page you do not have to conform to the signature threshold. The command that an Operator would use is: \
+\
+accumulate page key replace \[key page url] \[key name\[@key book or page]] \[new public key or name] \[flags]\
+\
+The signature threshold is 1 of 1 for this transaction only, all other transactions will require the Key Page threshold. 12d839” to UpdatedKey. In the example below, DeFi Devs wants to update _someone else's_ key which would required the 2 of 3 threshold.&#x20;
 
 ./accumulate operator update-key\
 Usage: accumulate operator update-key dn \[Signing Key] \[old key name or path] \[new key name or path] \[flags]
