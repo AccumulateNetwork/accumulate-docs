@@ -173,7 +173,7 @@ Update your own Key in the Operator Key Page: When you are updating your own Key
 \
 accumulate page key replace \[key page url] \[key name\[@key book or page]] \[new public key or name] \[flags]\
 \
-The signature threshold is 1 of 1 for this transaction only, all other transactions will require the Key Page threshold. 12d839” to UpdatedKey. In the example below, DeFi Devs wants to update _someone else's_ key which would required the 2 of 3 threshold.&#x20;
+The signature threshold is 1 of 1 for this transaction only, all other transactions will require the Key Page threshold. In the example below, DeFi Devs wants to update _someone else's_ key which would required the 2 of 3 threshold.&#x20;
 
 ./accumulate operator update-key\
 Usage: accumulate operator update-key dn \[Signing Key] \[old key name or path] \[new key name or path] \[flags]
