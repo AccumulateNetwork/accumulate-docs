@@ -1242,7 +1242,7 @@ Error code : ok
 Result :
 ```
 
-### **Updating a Delegate and Publick Key Hash of a Key Page Entry (Signing with a Delegate)**
+### **Updating a Delegate and Public Key Hash of a Key Page Entry (Signing with a Delegate)**
 
 **Syntax**
 
