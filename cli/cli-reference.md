@@ -20,7 +20,7 @@ This command will generate a new account URL for you.
 ./accumulate account generate
 ```
 
-&#x20;**The above command will return an output similar to the following:**&#x20;
+**The above command will return an output similar to the following:**
 
 ```shell-session
 lite identity        :       0143b52490530b90eef9b1a2405e322c6badc1e90e200c56
@@ -39,7 +39,7 @@ This command will get the list of accounts.
 ./accumulate account list
 ```
 
-&#x20;**The above command will return an output similar to the following:**
+**The above command will return an output similar to the following:**
 
 ```
 key name : 001846c0a1590675fd0ad816ab4873387ef127cd9b307c24 
@@ -68,7 +68,7 @@ accumulate faucet [url] Get tokens from faucet to address
 ./accumulate faucet acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME
 ```
 
-&#x20;The above command will return an output similar to the following:
+The above command will return an output similar to the following:
 
 ```shell-session
 Transaction Hash        : a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f0e0bd0f328
@@ -96,7 +96,7 @@ accumulate tx get [txid] Get token transaction by txid
 accumulate tx get a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f0e0bd0f328
 ```
 
-&#x20;The above command will return an output similar to the following:
+The above command will return an output similar to the following:
 
 ```
 (type): Acme Faucet
@@ -121,7 +121,7 @@ accumulate tx get [txid] Get token transaction by txid
 ./accumulate tx get 78d521b36691c46216a66d6648dd620a9f6ec312a24b3b0f29a9889887f4953d
 ```
 
-&#x20;The above command will return an output similar to the following:
+The above command will return an output similar to the following:
 
 ```
 (type): Acme Faucet
@@ -147,7 +147,7 @@ accumulate tx get [txid] Get token transaction by txid
 ./accumulate tx get 8eb0088ec37e2fca37fd915aa2348e03b30c77e2b2abdcbc4ee7b94e6c532f2f
 ```
 
-&#x20;The above command will return an output similar to the following:
+The above command will return an output similar to the following:
 
 ```
 Receive 2000000.00000000 ACME to acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME (cause: A0018D18C558C36F3F639FA1A64E2E9C47CC705FDF0D3F65A8EC8F0E0BD0F328)
@@ -189,9 +189,9 @@ Token Url : acc://ACME
 Balance : 2000000.00000000 ACME
 ```
 
-### **Key**&#x20;
+### **Key**
 
-A named key can be generated using the key generating function. This will also output the public key's name and **** key type. Unless specified otherwise, this will create an ed25519 key.
+A named key can be generated using the key generating function. This will also output the public key's name and \*\*\*\* key type. Unless specified otherwise, this will create an ed25519 key.
 
 **Syntax**
 
@@ -216,7 +216,7 @@ key type : ed25519
 
 ### **Bitcoin**
 
-This command will sign an Accumulate transaction using the  `Bitcoin` signature algorithm
+This command will sign an Accumulate transaction using the `Bitcoin` signature algorithm
 
 **Syntax**
 
@@ -241,7 +241,7 @@ key type : btc
 
 ### **Bitcoin Legacy**
 
-This command will sign an Accumulate transaction using the  `Bitcoin` signature algorithm
+This command will sign an Accumulate transaction using the `Bitcoin` signature algorithm
 
 **Syntax**
 
@@ -266,7 +266,7 @@ key type : btclegacy
 
 ### **Ethereum**
 
-This command **** will sign an Accumulate transaction using the  `Ethereum` signature algorithm
+This command \*\*\*\* will sign an Accumulate transaction using the `Ethereum` signature algorithm
 
 **Syntax**
 
@@ -291,7 +291,7 @@ key type : eth
 
 ### **Factom (RCD1)**
 
-This command will sign an Accumulate transaction using the  `Factom` signature algorithm
+This command will sign an Accumulate transaction using the `Factom` signature algorithm
 
 **Syntax**
 
@@ -316,7 +316,7 @@ key type : rcd1
 
 ### **Key Import Mnemonic**
 
-This command imports the key using the mnemonic phrase&#x20;
+This command imports the key using the mnemonic phrase
 
 **Syntax**
 
@@ -338,7 +338,7 @@ mnemonic import successful
 
 ### **Key Import Factoid**
 
-This command imports the key using the mnemonic&#x20;
+This command imports the key using the mnemonic
 
 **Syntax**
 
@@ -363,7 +363,7 @@ key type : rcd1
 
 ### **Key Import Lite**
 
-****
+***
 
 **Syntax**
 
@@ -469,11 +469,11 @@ seed: 2cca6f211913e1031f2acae938611e8599e24cd550f60c4ddb637fd28667aefd5eb7e1b04d
 
 ### **Credits**
 
-To send ACME tokens to another account, you need to purchase credits with ACME and send them to a recipient.&#x20;
+To send ACME tokens to another account, you need to purchase credits with ACME and send them to a recipient.
 
-Check this [link](https://docs.accumulatenetwork.io/accumulate/getting-started/fees) to view the Base Fees for different transactions.&#x20;
+Check this [link](https://docs.accumulatenetwork.io/accumulate/getting-started/fees) to view the Base Fees for different transactions.
 
-To send credits to your lite account **** or keypage, run the example command in your terminal&#x20;
+To send credits to your lite account \*\*\*\* or keypage, run the example command in your terminal
 
 ### **Adding Credits to a Lite Token Account/Lite Identity.**
 
@@ -485,7 +485,7 @@ This command adds credit to your lite token account / keypage.
 accumulate credits [origin token account] [key page or lite identity url] [number of credits wanted] [max acme to spend] [percent slippage (optional)] [flags][BS2]
 ```
 
-The command below gives your accumulate URL the access to send credits to another lite account.&#x20;
+The command below gives your accumulate URL the access to send credits to another lite account.
 
 **Command**
 
@@ -551,7 +551,7 @@ Credits per ACME : 5.00
 
 ### **Lite Data Accounts**
 
-Lite Data Accounts are an extension of the Factom Protocol, which will be used to transition data from Factom to Accumulate.&#x20;
+Lite Data Accounts are an extension of the Factom Protocol, which will be used to transition data from Factom to Accumulate.
 
 ### **Lite Data Account Creation from Lite Toke Account/Lite Identity**
 
@@ -624,7 +624,6 @@ accumulate data write-to [account url] [signing key][BS3] [lite data account] [e
 **Command**
 
 ```
-
 data write-to acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME acc://7d27485702b1f756a7c0f6ac39931e77959f58d475ee3898 "Key6"
 ```
 
@@ -643,7 +642,7 @@ Result :
 
 ### **Querying a Lite Data Account by URL**
 
-This command **** returns a lite data account by url.
+This command \*\*\*\* returns a lite data account by url.
 
 **Syntax**
 
@@ -687,7 +686,7 @@ The above command will return an output similar to the following:
 
 ### **Querying a Lite Data Account by URL and Index**
 
-This command returns a lite data account by using the url and index.&#x20;
+This command returns a lite data account by using the url and index.
 
 **Syntax**
 
@@ -851,7 +850,7 @@ acc://DefiDevs.acme/AITokens (ADI Token Account)
 
 ### **ADI List**
 
-To see a list of ADIs created and the initial Key specified for Key Page 1&#x20;
+To see a list of ADIs created and the initial Key specified for Key Page 1
 
 ### **ADI Get**
 
@@ -935,7 +934,7 @@ Result :
 
 A Key Page has entries that define the parties required to validate a transaction.
 
-### **Get Key Page**&#x20;
+### **Get Key Page**
 
 This command returns the list of keypages.
 
@@ -1029,7 +1028,6 @@ accumulate page key add [key page url] [signing key name] [key index (optional)]
 The above command will return an output similar to the following:
 
 ```
-
 Transaction Hash : 9fbcbe49b4dbbf861be63eeae41576f1da7b7ca3b31e1c3968adff766b0445c2
 Signature 0 Hash : 99f87aa951585592d66a56e670b083c8a4f10de0fd014a72b2d05fa901546dde
 Simple Hash : f4f7e5e0d8b5599aad214412939f954b4bf012b8f5ac9a56d24d54983f185d3d
@@ -1118,7 +1116,7 @@ Error code : ok
 
 ### **Setting a Threshold for a Key Page**
 
-By default, setting a threshold for a Key Page**,** the m of n will be 1 of 1. Because of this, any entry within the Key Page can update the signature threshold. In the example below, the number of Keys within acc://DefiDevs.acme/Keybook/2 is 3. Setting the threshold at two means that 2 of 3 signatures are required for the transaction to be processed.
+By default, setting a threshold for a Key Page\*\*,\*\* the m of n will be 1 of 1. Because of this, any entry within the Key Page can update the signature threshold. In the example below, the number of Keys within acc://DefiDevs.acme/Keybook/2 is 3. Setting the threshold at two means that 2 of 3 signatures are required for the transaction to be processed.
 
 **Syntax**
 
@@ -1146,26 +1144,78 @@ Result :
 
 A multi-signature transaction is defined by the signature threshold for a given Key Page.
 
+Multi-Signature Transactions&#x20;
+
+A multi-signature transaction is defined by the signature threshold for a given Key Page. In the following examples, a new Key will be added to a Key Page using a multi-signature transaction. &#x20;
+
 **Syntax**
 
 ```
 accumulate page key add [key page url] [signing key name] [key index (optional)] [key height (optional)] [new key name] [flags]
 ```
 
+&#x20;**Command**
+
+```
+./accumulate page key add acc://DefiDevs.acme/Keybook/2 Key5 Key1  
+```
+
+&#x20;The above command will return an output similar to the following:
+
+```
+Transaction Hash        : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6 
+Signature 0 Hash        : de3f985a3569b3537c591353db6a15a385578967b7ddc28910f6779bebce4cf3 
+Simple Hash             : 8961c92b3adeadaae13eba36e935808d723c33806bc421937159d0a9498b33c6 
+Error code              : ok 
+Result                  : 
+```
+
+### **Pending Transaction**
+
+A pending transaction can be queried to see the status.&#x20;
+
+**Syntax**
+
+```
+./accumulate tx pending [txid]
+```
+
 **Command**
 
 ```
-./accumulate page key add acc://DefiDevs.acme/Keybook/2 Key5 Key1
+./accumulate tx pending 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6 
 ```
 
 The above command will return an output similar to the following:
 
 ```
-Transaction Hash : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6
-Signature 0 Hash : de3f985a3569b3537c591353db6a15a385578967b7ddc28910f6779bebce4cf3
-Simple Hash : 8961c92b3adeadaae13eba36e935808d723c33806bc421937159d0a9498b33c6
-Error code : ok
-Result :
+  Pending Tranactions -> Start: 0  Count: 1       Total: 1 
+```
+
+### **Sign Transaction**
+
+The second signer signs the transaction hash of the first transaction in the multi-signature sequence. If there are additional signers, they sign the same transaction hash.
+
+**Syntax**
+
+```
+./accumulate tx sign [key page url] [signing key name] [txid]
+```
+
+**Command**
+
+```
+./accumulate tx sign acc://DefiDevs.acme/Keybook/2 Key3 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6   
+```
+
+The above command will return an output similar to the following:
+
+```
+    Transaction Hash        : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6 
+    Signature 0 Hash        : de79633b1ceced2652f29f7fcb813190c19d175dd1846e76b3e233da66252666 
+    Simple Hash             : c87ef41af1233a666e9a833f50ee030ddcca08a1adaab76904846489220f3b8b 
+    Error code              : ok 
+    Result                  : 
 ```
 
 ### **Signing with a Delegate**
@@ -1316,7 +1366,7 @@ Result :
 
 ### **Key Book Authorities**
 
-A Key Book Authority can either belong to a Key Book that exists within the same root ADI or a different ADI. When a Key Book Authority is added to an Account, the Key Book signs a pending transaction for approval.&#x20;
+A Key Book Authority can either belong to a Key Book that exists within the same root ADI or a different ADI. When a Key Book Authority is added to an Account, the Key Book signs a pending transaction for approval.
 
 ### **Add an Authority**
 
@@ -1346,7 +1396,7 @@ Result :
 
 ### **Disable an Authority**
 
-To disable an Authority, the Authority you are disabling must sign the transaction for approval.&#x20;
+To disable an Authority, the Authority you are disabling must sign the transaction for approval.
 
 **Syntax**
 
@@ -1424,7 +1474,7 @@ Result :
 
 **Create Sub-ADI and Sub-Sub-ADIs**
 
-A Sub-ADI is an ADI created within an ADI. An example could be an organization that creates an ADI and different departments within the origination are Sub-ADIs.&#x20;
+A Sub-ADI is an ADI created within an ADI. An example could be an organization that creates an ADI and different departments within the origination are Sub-ADIs.
 
 **Syntax**
 
@@ -1502,7 +1552,7 @@ Result :
 
 ### **ADI Token Account**
 
-An ADI can have different account types such as an ADI Token Account. An ADI can have multiple ADI Token Accounts, but each ADI token account can only hold one type of token such as ACME, Accumulate’s native token.&#x20;
+An ADI can have different account types such as an ADI Token Account. An ADI can have multiple ADI Token Accounts, but each ADI token account can only hold one type of token such as ACME, Accumulate’s native token.
 
 | <p><strong>Token Account</strong></p><p>Sender/Receiver</p> | Lite Token Account | ADI Token Account | Sub-ADI Token Account |
 | ----------------------------------------------------------- | ------------------ | ----------------- | --------------------- |
@@ -1578,7 +1628,7 @@ Error code : ok
 Result :
 ```
 
-### **Sending Tokens** &#x20;
+### **Sending Tokens**
 
 #### **Lite Token Account to Lite Token Account**
 

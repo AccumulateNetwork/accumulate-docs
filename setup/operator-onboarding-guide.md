@@ -6,7 +6,7 @@ description: >-
 
 # Operator Onboarding Guide
 
-Each operator runs a dual-mode deployment with a Directory Network Node (DNN) and Block Validator Network Node (BVNN). In Accumulate, Block Validator Networks (BVNs) contain validator nodes used to validate transactions. All transactions feed into the Directory Network (DN) containing validator nodes which anchor each BVN into the larger network.&#x20;
+Each operator runs a dual-mode deployment with a Directory Network Node (DNN) and Block Validator Network Node (BVNN). In Accumulate, Block Validator Networks (BVNs) contain validator nodes used to validate transactions. All transactions feed into the Directory Network (DN) containing validator nodes which anchor each BVN into the larger network.
 
 The network must store all operator and validator node public keys to facilitate transaction validation and other operator functions. Therefore, each operator must supply a public key representing the operator plus every node's full public key.
 
@@ -29,11 +29,9 @@ As shown in the Diagram above, the Operator Key Book is an Authority to the Netw
 
 The Network Data Account `dn.acme/network` contains a list of Validator keys (public key hashes) used to validate transactions. The Globals Data Account `dn.acme/globals` defines and enforces the _**Operator Accept Threshold Ratio**_, i.e., the minimum number of signatures needed by the Operator Key Page to execute a transaction. The threshold ratio is 2/3 (rounded up). This threshold ratio is used when updating the list of Validators in `dn.acme/network`
 
+The Oracle Data Account defines the price of ACME and how many credits a user should receive for that price.
 
-
-The Oracle Data Account defines the price of ACME and how many credits a user should receive for that price.&#x20;
-
-* To add a new operator key to `dn.acme/operators/1`we execute a multi-sig UpdateKeyPage transaction signed by `dn.acme/operators`.&#x20;
+* To add a new operator key to `dn.acme/operators/1`we execute a multi-sig UpdateKeyPage transaction signed by `dn.acme/operators`.
 * To add a new Validator key to `dn.acme/network` we execute a multi-sig WriteData transaction signed by `dn.acme/operators`. Tendermint (the consensus engine of Accumulate) uses the Validator keys to approve or reject all transactions in Accumulate.
 
 **Command Line Interface**
@@ -52,7 +50,7 @@ An **Operator Key** can be generated in the Command Line Interface
 ./accumulate key generate operatorkey1 
 ```
 
-&#x20;The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
 name : operatorkey1 lite account : acc://11d3217fda3c863c2e66936826987edb3a4467f540279689/ACME
@@ -62,13 +60,13 @@ key type : ed25519
 
 The Public Key in the Output will serve as the **Operator Public Key**
 
-### **OPERATORS**&#x20;
+### **Operators**&#x20;
 
-./accumulate operator&#x20;
+./accumulate operator
 
-**Manage operators**&#x20;
+**Manage operators**
 
-Usage: accumulate operator \[command]&#x20;
+Usage: accumulate operator \[command]
 
 Available Commands: add (Add an operator), remove (Remove an operator), update-key, (Update an operator's key)
 
@@ -85,15 +83,13 @@ The first argument is a Public Key of an existing Operator. The second argument 
 
 **Add the Operator key**
 
-
-
 **Command**
 
 ```
 ./accumulate operator add dn nodekey1 nodekey2
 ```
 
-&#x20;The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : e2469b9b7ee8c554332c8fa862eacafe4ef2b4724fe27e4b5cd32779e168f077
@@ -109,7 +105,7 @@ Querying the Operator Key Page to see if the Key was added:
 ./accumulate get dn.acme/operators/1 
 ```
 
-&#x20;The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Credit Balance  :       0.00
@@ -132,7 +128,7 @@ Either Operator within the Key Page can execute a transaction to add a third key
 ./accumulate operator add dn nodekey nodekey3 
 ```
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : 28f0df5f19f4d60639b415b9f9ce287e15c26c0cdbebd6655caf9602d65dc274
@@ -154,7 +150,7 @@ The origin url is the Operator Key Page, which is being updated. The Signer Key 
 ./accumulate tx sign dn.acme/operators/1 nodekey2 28f0df5f19f4d60639b415b9f9ce287e15c26c0cdbebd6655caf9602d65dc274
 ```
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : 28f0df5f19f4d60639b415b9f9ce287e15c26c0cdbebd6655caf9602d65dc274
@@ -170,7 +166,7 @@ Querying the Operator Key Page to see if the Key was added:
 ./accumulate get dn.acme/operators/1 
 ```
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Credit Balance  :       0.00
@@ -191,7 +187,7 @@ Remove a Key from an Operator Key Page: To remove a Key from the Key Page 2 of t
 ./accumulate operator remove dn nodekey1 nodekey3
 ```
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143
@@ -207,7 +203,7 @@ One of the two remaining operators needs to the transaction hash:
 ./accumulate tx sign dn.acme/operators/1 nodekey2 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143 
 ```
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143
@@ -223,7 +219,7 @@ Querying the Operator Key Page to see if the Key was Removed:
 ./accumulate get dn.acme/operators/1 
 ```
 
-The above command will return an output similar to the following:&#x20;
+The above command will return an output similar to the following:
 
 ```
     Credit Balance  :       0.00
@@ -234,9 +230,11 @@ The above command will return an output similar to the following:&#x20;
    f22fbe9dcb68bbbafefb99896c1e0fa54f7c0a219b2194f96955f733cfddd966
 ```
 
-&#x20;**Update the Key**
+**Update the Key**
 
 Update your Key on the Operator Key Page: When you update your Key within a Key Page you do not have to conform to the signature threshold. The signature threshold is 1 of 1 for this transaction only; all other transactions will require the Key Page threshold. In the example below, DeFi Devs want to update their Key `1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839` to UpdatedKey.
+
+The signature threshold is 1 of 1 for this transaction; all other transactions will require the Key Page threshold. In the example below, DeFi Devs want to update _someone else's_ key, which would require the 2 of 3 thresholds.
 
 **Syntax**
 
@@ -276,11 +274,19 @@ Query Operator Key Page: ./accumulate get dn.acme/operators/1 Password: \*\*\*\*
 0 1969-12-31 19:00:00 -0500 EST nodekey1 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 1 1969-12-31 19:00:00 -0500 EST updatedkey\
 31f15c6bf79bf76cecbf59513c2bbaaca24281151a1038cf083e178b2e026cab
 
-### **VALIDATORS**
+### **Validators**
 
-./accumulate validator Manage validators Usage: accumulate validator \[command] Available Commands: add Add a validator remove Remove a validator update-key Update a validator's key
+./accumulate validator&#x20;
 
-Adding a Validator Key is a separate Operation from adding an Operator Key. The Operator Key Book is an Authority to the Network Data Account that Lists the Validator Keys. This means that the Operators need to sign a transaction to add a Validator to the Validator Set. The DN operator Key Page has two Keys which means a Multi-Signature Transaction is required. ./accumulate get dn.acme/operators/1 Password: \*\*\*\*\*\*\*\*
+Manage validators&#x20;
+
+Usage:&#x20;
+
+accumulate validator \[command] Available Commands: add Add a validator remove Remove a validator update-key Update a validator's key
+
+Adding a Validator Key is a separate Operation from adding an Operator Key. The Operator Key Book is an Authority to the Network Data Account that Lists the Validator Keys. This means that the Operators need to sign a transaction to add a Validator to the Validator Set. The DN operator Key Page has two Keys which means a Multi-Signature Transaction is required.&#x20;
+
+./accumulate get dn.acme/operators/1
 
 ```
     Credit Balance  :       0.00
@@ -291,7 +297,9 @@ Adding a Validator Key is a separate Operation from adding an Operator Key. The 
 1 1969-12-31 19:00:00 -0500 EST nodekey1 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 1 1969-12-31 19:00:00 -0500 EST updatedkey\
 31f15c6bf79bf76cecbf59513c2bbaaca24281151a1038cf083e178b2e026cab
 
-Sign a Transaction with Operator Key to add a Validator Key to the Network Data Account ./accumulate validator add dn nodekey1 nodekey3 Password: \*\*\*\*\*\*\*\*
+Sign a Transaction with Operator Key to add a Validator Key to the Network Data Account&#x20;
+
+./accumulate validator add dn nodekey1 nodekey3&#x20;
 
 ```
     Transaction Hash        : aaee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff13
@@ -303,7 +311,11 @@ Sign a Transaction with Operator Key to add a Validator Key to the Network Data 
                               Entry Hash    3bb9b4a7b3df97d2c4b0e54b639c9a42baaacac062846ccec20c5c24884eb1a6
 ```
 
-Sign the Transaction Hash: ./accumulate tx sign dn.acme/network updatedkey aaee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff13 Transaction Hash : 33ee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff51 Signature 0 Hash : 59149e78d963455f22ec0a9cd5c4083fe2138f36f17cda6daa218a528d8a3a21 Simple Hash : 622918b687a6e3943ce27b68245736dcc0c03bfd2aaf80dead8f21a195417566 Error code : ok Result : Account URL acc://dn.acme/network
+Sign the Transaction Hash:&#x20;
+
+./accumulate tx sign dn.acme/network updatedkey&#x20;
+
+aaee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff13 Transaction Hash : 33ee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff51 Signature 0 Hash : 59149e78d963455f22ec0a9cd5c4083fe2138f36f17cda6daa218a528d8a3a21 Simple Hash : 622918b687a6e3943ce27b68245736dcc0c03bfd2aaf80dead8f21a195417566 Error code : ok Result : Account URL acc://dn.acme/network
 
 A Get Command on the Network Data Account shows the Validator Keys: ./accumulate get dn.acme/network
 
@@ -321,7 +333,9 @@ Remove a Validator Key ./accumulate validator remove nodekey1 nodekey3
                               Entry Hash    145b4a7b3df97d2c4b0e54b639c9a42baaacac062846ccec20c5c24884eb1a6
 ```
 
-Sign the Transaction Hash: ./accumulate tx sign dn.acme/network updatedkey 35db1f2bed8d8d85b85d0197b2b71666b1741ba2ef0c953a6055a7643a1ab6af Transaction Hash : 33ee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff51 Signature 0 Hash : 59149e78d963455f22ec0a9cd5c4083fe2138f36f17cda6daa218a528d8a3a21 Simple Hash : 622918b687a6e3943ce27b68245736dcc0c03bfd2aaf80dead8f21a195417566 Error code : ok Result : Account URL acc://dn.acme/network
+Sign the Transaction Hash: ./accumulate tx sign dn.acme/network updatedkey&#x20;
+
+35db1f2bed8d8d85b85d0197b2b71666b1741ba2ef0c953a6055a7643a1ab6af Transaction Hash : 33ee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff51 Signature 0 Hash : 59149e78d963455f22ec0a9cd5c4083fe2138f36f17cda6daa218a528d8a3a21 Simple Hash : 622918b687a6e3943ce27b68245736dcc0c03bfd2aaf80dead8f21a195417566 Error code : ok Result : Account URL acc://dn.acme/network
 
 A Get Command on the Network Data Account shows the Validator Keys: ./accumulate get dn.acme/network
 
@@ -347,8 +361,6 @@ Password: \*\*\*\*\*\*\*\*
 
 Sign Transaction Hash: ./accumulate tx sign dn.acme/operators/1 nodekey1 18d0321582896b74c282db30b8c4c5839a7652c9ddf820cb41a51874ba076705
 
-Password: \*\*\*\*\*\*\*\*
-
 ```
  Transaction Hash        : 18d0321582896b74c282db30b8c4c5839a7652c9ddf820cb41a51874ba076705
  Signature 0 Hash        : 194c1a86cbdc75e764cefb8438be4a6fbee06d2fcff56ced3ebbcc5a96542a91
@@ -372,7 +384,7 @@ As shown, if the price of ACME is $0.0500 then the Credits per ACME is 5.00 to r
 Signing a Transaction to change the Oracle Value:
 
 ./accumulate data write dn.acme/oracle updatedkey 01d804 --sign-with nodekey1 --write-state\
-Password: \*\*\*\*\*\*\*\*
+
 
 ```
     Entry Hash              :471002594e7834d19879036cd174bead906cbaafc3164e30b4ed411c91b8dfbd
