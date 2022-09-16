@@ -4,7 +4,7 @@ description: >-
   the Accumulate Network.
 ---
 
-# Operator Onboarding Guide
+# Operator onboarding guide
 
 Each operator runs a dual-mode deployment with a Directory Network Node (DNN) and Block Validator Network Node (BVNN). In Accumulate, Block Validator Networks (BVNs) contain validator nodes used to validate transactions. All transactions feed into the Directory Network (DN) containing validator nodes which anchor each BVN into the larger network.
 
@@ -398,5 +398,6 @@ Signing a Transaction to change the Oracle Value:
                               Entry Hash    471002594e7834d19879036cd174bead906cbaafc3164e30b4ed411c91b8dfbd   
 ```
 
-PS C:\Users\Mr. Ben\accumulate> ./accumulate get dn.acme/oracle\
-(type): Url: acc://dn.acme/oracle Value: (type): Acme Oracle Price: 600
+./accumulate get dn.acme/oracle\
+(type): Url: acc://dn.acme/oracle Value: \
+(type): Acme Oracle Price: 600
