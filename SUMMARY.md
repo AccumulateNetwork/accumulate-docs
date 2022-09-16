@@ -7,21 +7,24 @@
 * [Glossary](getting-started/glossary.md)
 * [Fees](getting-started/fees.md)
 * [Networks](getting-started/networks.md)
-* [Open source and Contribution](getting-started/open-source-and-contribution.md)
+* [Open source and contribution](getting-started/open-source-and-contribution.md)
 * [Frequently Asked Questions](https://accumulatenetwork.io/learn/#intro)
 
 ## Setup
 
 * [Local DevNet Setup](setup/local-devnet.md)
-* [Follower Node Setup with AccMan](setup/follower-node-setup-with-accman.md)
-* [Validator Node Setup with AccMan](setup/validator-node-setup-with-accman.md)
-* [Operator Onboarding Guide](setup/operator-onboarding-guide.md)
+* [Follower node setup with AccMan](setup/follower-node-setup-with-accman.md)
+* [Validator node setup with AccMan](setup/validator-node-setup-with-accman.md)
 * [Debugging node issues](setup/debugging-node-issues.md)
 
 ## CLI
 
-* [CLI Setup](cli/cli-setup.md)
-* [CLI Reference](cli/cli-reference.md)
+* [CLI setup](cli/cli-setup.md)
+* [CLI reference](cli/cli-reference.md)
+
+## Nodes
+
+* [Operator onboarding guide](nodes/operator-onboarding-guide.md)
 
 ## Developer Resources
 
@@ -38,7 +41,7 @@
 
 ## Release Note
 
-* [Release Note](release-note/release-note/README.md)
+* [Release note](release-note/release-note/README.md)
   * [Release Note 2.0 RC2](release-note/release-note/release-note-2.0-rc2.md)
   * [Release Note 1.0 RC1](release-note/release-note/release-note-1.0-rc1.md)
   * [Release Note 0.6](release-note/release-note/release-note-0.6.md)
@@ -47,11 +50,11 @@
 
 ## Deep Dive
 
-* [Lite Accounts](deep-dive/anonymous-token-chains.md)
-* [Accumulate Digital Identifiers](deep-dive/identity.md)
-* [Key Management](deep-dive/key-management.md)
-* [Identity Hierarchies](deep-dive/identity-hierarchies.md)
-* [Synthetic Transactions](deep-dive/synthetic-transactions.md)
+* [Lite accounts](deep-dive/anonymous-token-chains.md)
+* [Accumulate digital identifiers](deep-dive/identity.md)
+* [Key management](deep-dive/key-management.md)
+* [Identity hierarchies](deep-dive/identity-hierarchies.md)
+* [Synthetic transactions](deep-dive/synthetic-transactions.md)
 
 ## Integration
 
