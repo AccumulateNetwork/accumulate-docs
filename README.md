@@ -1,6 +1,6 @@
 ---
-cover: .gitbook/assets/accumulate-twitter-cover-1-22.png
-coverY: 0
+cover: .gitbook/assets/Screenshot 2022-09-16 at 21.44.02.png
+coverY: 89.61483007209064
 ---
 
 # Introduction
