@@ -62,6 +62,8 @@ The Public Key in the Output will serve as the **Operator Public Key**
 
 ### **Operators**&#x20;
 
+Operators decide who becomes a validator.
+
 ./accumulate operator
 
 **Manage operators**
@@ -71,6 +73,8 @@ Usage: accumulate operator \[command]
 Available Commands: add (Add an operator), remove (Remove an operator), update-key, (Update an operator's key)
 
 Add a Key to the Operator Key Page ./accumulate operator add
+
+2/3 of the existing operators need to sign a transaction to add the operator key
 
 \
 **Syntax**
@@ -197,7 +201,7 @@ The above command will return an output similar to the following:
     Result                  :
 ```
 
-One of the two remaining operators needs to the transaction hash:
+One of the two remaining operators needs to sign the transaction hash:
 
 ```
 ./accumulate tx sign dn.acme/operators/1 nodekey2 30691a0ecdaad77455d65598194d4cf2be86143ca7029b57bf5665a14398e143 
@@ -240,10 +244,15 @@ The signature threshold is 1 of 1 for this transaction; all other transactions w
 
 ./accumulate operator update-key
 
-**Command**\
 Usage: accumulate operator update-key dn \[Signing Key] \[old key name or path] \[new key name or path] \[flags]
 
+**Command**
+
+```
 ./accumulate operator update-key dn nodekey1 nodekey2 updatedkey
+```
+
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : 0a9d215fa33f98a1ffa9d64f2493e47f9aa3b4b5ca615fddd594fe82d1e77431
@@ -253,7 +262,13 @@ Usage: accumulate operator update-key dn \[Signing Key] \[old key name or path] 
     Result                  :
 ```
 
-Sign Transaction Hash: ./accumulate tx sign dn.acme/operators/1 nodekey2 6827da678ce369d34398848cc652e6ac1b4e2acf23aac0b74b5e8e0a57c6f642
+Sign Transaction Hash:&#x20;
+
+```
+./accumulate tx sign dn.acme/operators/1 nodekey2 0a9d215fa33f98a1ffa9d64f2493e47f9aa3b4b5ca615fddd594fe82d1e77431
+```
+
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : 0a9d215fa33f98a1ffa9d64f2493e47f9aa3b4b5ca615fddd594fe82d1e77431
@@ -263,43 +278,59 @@ Sign Transaction Hash: ./accumulate tx sign dn.acme/operators/1 nodekey2 6827da6
     Result                  :
 ```
 
-Query Operator Key Page: ./accumulate get dn.acme/operators/1 Password: \*\*\*\*\*\*\*\*
+Query Operator Key Page:&#x20;
+
+```
+./accumulate get dn.acme/operators/1 
+```
+
+The above command will return an output similar to the following:
 
 ```
     Credit Balance  :       0.00
 
-    Index  Nonce                          Key Name                                                          Delegate  Public Key Hash
+    Index  Nonce          0 1969-12-31 19:00:00 -0500 EST                
+    Key Name               nodekey1                                           
+    Delegate  Public Key Hash        1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 1 1969-12-31 19:00:00 -0500 EST updatedkey
+31f15c6bf79bf76cecbf59513c2bbaaca24281151a1038cf083e178b2e026cab  
+     
 ```
 
-0 1969-12-31 19:00:00 -0500 EST nodekey1 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 1 1969-12-31 19:00:00 -0500 EST updatedkey\
-31f15c6bf79bf76cecbf59513c2bbaaca24281151a1038cf083e178b2e026cab
+
 
 ### **Validators**
 
 ./accumulate validator&#x20;
 
-Manage validators&#x20;
-
-Usage:&#x20;
+**Manage validators**&#x20;
 
 accumulate validator \[command] Available Commands: add Add a validator remove Remove a validator update-key Update a validator's key
 
 Adding a Validator Key is a separate Operation from adding an Operator Key. The Operator Key Book is an Authority to the Network Data Account that Lists the Validator Keys. This means that the Operators need to sign a transaction to add a Validator to the Validator Set. The DN operator Key Page has two Keys which means a Multi-Signature Transaction is required.&#x20;
 
+**Command**
+
+```
 ./accumulate get dn.acme/operators/1
+```
+
+The above command will return an output similar to the following:
 
 ```
     Credit Balance  :       0.00
 
     Index  Nonce                          Key Name                                                          Delegate  Public Key Hash
-```
-
-1 1969-12-31 19:00:00 -0500 EST nodekey1 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 1 1969-12-31 19:00:00 -0500 EST updatedkey\
+    1 1969-12-31 19:00:00 -0500 EST nodekey1 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 1 1969-12-31 19:00:00 -0500 EST updatedkey
 31f15c6bf79bf76cecbf59513c2bbaaca24281151a1038cf083e178b2e026cab
+```
 
 Sign a Transaction with Operator Key to add a Validator Key to the Network Data Account&#x20;
 
-./accumulate validator add dn nodekey1 nodekey3&#x20;
+```
+./accumulate validator add dn nodekey1 nodekey3 
+```
+
+The above command will return an output similar to the following:
 
 ```
     Transaction Hash        : aaee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff13
@@ -313,15 +344,36 @@ Sign a Transaction with Operator Key to add a Validator Key to the Network Data 
 
 Sign the Transaction Hash:&#x20;
 
-./accumulate tx sign dn.acme/network updatedkey&#x20;
+```
+./accumulate tx sign dn.acme/network updatedkey 
+```
 
-aaee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff13 Transaction Hash : 33ee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff51 Signature 0 Hash : 59149e78d963455f22ec0a9cd5c4083fe2138f36f17cda6daa218a528d8a3a21 Simple Hash : 622918b687a6e3943ce27b68245736dcc0c03bfd2aaf80dead8f21a195417566 Error code : ok Result : Account URL acc://dn.acme/network
+The above command will return an output similar to the following:
 
-A Get Command on the Network Data Account shows the Validator Keys: ./accumulate get dn.acme/network
+```bash
+aaee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff13 Transaction Hash : 33ee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff51 Signature 0 Hash : 59149e78d963455f22ec0a9cd5c4083fe2138f36f17cda6daa218a528d8a3a21 Simple Hash : 622918b687a6e3943ce27b68245736dcc0c03bfd2aaf80dead8f21a195417566 
+Error code : ok Result : Account URL acc://dn.acme/network
+```
 
+A Get Command on the Network Data Account shows the Validator Keys:&#x20;
+
+```
+./accumulate get dn.acme/network
+```
+
+The above command will return an output similar to the following:
+
+```
 (type): Url: acc://dn.acme/network Value: (type): Network Definition NetworkName: DevNet Version: 1 Partitions: 0 (elem): (type): Partition Info ID: BVN1 Type: blockValidator 1 (elem): (type): Partition Info ID: Directory Type: directory Validators: 0 (elem): (type): Validator Info PublicKey: 32ccc129c90e2c5dc9889e500719fdd129ac80b8eb669a9ed59d579c9ae17db7 PublicKeyHash: 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 Partitions: 0 (elem): (type): Validator Partition Info ID: Directory Active: true 1 (elem): (type): Validator Info PublicKey: 0cd684e23ca541d13b03f977a9f3556f867e2a67ab868e710c66739520cdbcb4 PublicKeyHash: 92c358f53581aa5066b7485b10d668d7c491c34608f6549bea43c4f3ee4a7d9f Partitions: 0 (elem): (type): Validator Partition Info ID: Directory Active: true 1 (elem): (type): Validator Partition Info ID: BVN1 Active: true
+```
 
-Remove a Validator Key ./accumulate validator remove nodekey1 nodekey3
+Remove a Validator Key&#x20;
+
+```
+./accumulate validator remove nodekey1 nodekey3
+```
+
+The above command will return an output similar to the following:
 
 ```
    Transaction Hash  : 35db1f2bed8d8d85b85d0197b2b71666b1741ba2ef0c953a6055a7643a1ab6af
@@ -333,23 +385,50 @@ Remove a Validator Key ./accumulate validator remove nodekey1 nodekey3
                               Entry Hash    145b4a7b3df97d2c4b0e54b639c9a42baaacac062846ccec20c5c24884eb1a6
 ```
 
-Sign the Transaction Hash: ./accumulate tx sign dn.acme/network updatedkey&#x20;
+Sign the Transaction Hash:&#x20;
 
+```
+./accumulate tx sign dn.acme/network updatedkey 
+```
+
+The above command will return an output similar to the following:
+
+```
 35db1f2bed8d8d85b85d0197b2b71666b1741ba2ef0c953a6055a7643a1ab6af Transaction Hash : 33ee722519006cbf8ae0d5f20c4415769a07c0ca6571f8a410166d9664ccff51 Signature 0 Hash : 59149e78d963455f22ec0a9cd5c4083fe2138f36f17cda6daa218a528d8a3a21 Simple Hash : 622918b687a6e3943ce27b68245736dcc0c03bfd2aaf80dead8f21a195417566 Error code : ok Result : Account URL acc://dn.acme/network
+```
 
-A Get Command on the Network Data Account shows the Validator Keys: ./accumulate get dn.acme/network
+A Get Command on the Network Data Account shows the Validator Keys:&#x20;
 
+```
+./accumulate get dn.acme/network
+```
+
+The above command will return an output similar to the following:
+
+```
 (type): Url: acc://dn.acme/network Value: (type): Network Definition NetworkName: DevNet Version: 1 Partitions: 0 (elem): (type): Partition Info ID: BVN1 Type: blockValidator 1 (elem): (type): Partition Info ID: Directory Type: directory Validators: 0 (elem): (type): Validator Info PublicKey: 32ccc129c90e2c5dc9889e500719fdd129ac80b8eb669a9ed59d579c9ae17db7 PublicKeyHash: 1e0ffe0dc92cef77211b4d98256aea98fd87b9ea2b3657cdbe494bbea912d839 Partitions: 0 (elem): (type): Validator Partition Info ID: Directory Active: true
+```
 
-Update a Validator Key There is a special procedure for updating a Validator Key.
+**Update a Validator Key**&#x20;
+
+There is a special procedure for updating a Validator Key.
 
 1. Launch a New Node
-2. Use the Key from new Node in the Update-Key function
+2. Use the Key from the new Node in the Update-Key function
 
-./accumulate validator update-key Usage: accumulate validator update-key dn] \[Signing Key] \[old key name or path] \[new key name or path] \[flags]
+**Syntax**
 
-./accumulate validator update-key dn nodekey1 node1 updatedkey\
-Password: \*\*\*\*\*\*\*\*
+```
+./accumulate validator update-key Usage: accumulate validator update-key dn] [Signing Key] [old key name or path] [new key name or path] [flags]
+```
+
+**Command**
+
+```
+./accumulate validator update-key dn nodekey1 node1 updatedkey
+```
+
+The above command will return an output similar to the following:
 
 ```
  Transaction Hash        : 18d0321582896b74c282db30b8c4c5839a7652c9ddf820cb41a51874ba076705
@@ -359,7 +438,13 @@ Password: \*\*\*\*\*\*\*\*
     Result                  :
 ```
 
-Sign Transaction Hash: ./accumulate tx sign dn.acme/operators/1 nodekey1 18d0321582896b74c282db30b8c4c5839a7652c9ddf820cb41a51874ba076705
+Sign Transaction Hash:&#x20;
+
+```
+./accumulate tx sign dn.acme/operators/1 nodekey1 18d0321582896b74c282db30b8c4c5839a7652c9ddf820cb41a51874ba076705
+```
+
+The above command will return an output similar to the following:
 
 ```
  Transaction Hash        : 18d0321582896b74c282db30b8c4c5839a7652c9ddf820cb41a51874ba076705
@@ -369,13 +454,21 @@ Sign Transaction Hash: ./accumulate tx sign dn.acme/operators/1 nodekey1 18d0321
  Result                  :
 ```
 
-A Get Command on the Network Data Account shows the Validator Keys: ./accumulate get dn.acme/network
+A Get Command on the Network Data Account shows the Validator Keys:&#x20;
 
+```
+./accumulate get dn.acme/network
+```
+
+The above command will return an output similar to the following:
+
+```
 (type): Url: acc://dn.acme/network Value: (type): Network Definition NetworkName: DevNet Version: 1 Partitions: 0 (elem): (type): Partition Info ID: BVN1 Type: blockValidator 1 (elem): (type): Partition Info ID: Directory Type: directory Validators: 0 (elem): (type): Validator Info PublicKey: 31f15c6bf79bf76cecbf59513c2bbaaca24281151a1038cf083e178b2e026cab PublicKeyHash: ee8e2e5da29781aa619590a3ef98c33f2f688f7f5b96d0931cdc15ed09cc99a6 Partitions: 0 (elem): (type): Validator Partition Info ID: Directory Active: true
+```
 
 Changing the Oracle Value Transaction in Accumulate Require Credits. Certain actions require a different amount of Credits See Fee Schedule: https://docs.accumulatenetwork.io/accumulate/getting-started/fees
 
-1 Credit always equals $0.01 If the value of ACME increases or decreases the Oracle needs to change to maintain the ration of 1 credit equaling $0.01.
+1 Credit always equals $0.01 If the value of ACME increases or decreases the Oracle needs to change to maintain the ratio of 1 credit equaling $0.01.
 
 Querying the Oracle: ./accumulate oracle USD per ACME : $0.0500 Credits per ACME : 5.00
 
@@ -383,8 +476,11 @@ As shown, if the price of ACME is $0.0500 then the Credits per ACME is 5.00 to r
 
 Signing a Transaction to change the Oracle Value:
 
-./accumulate data write dn.acme/oracle updatedkey 01d804 --sign-with nodekey1 --write-state\
+```
+./accumulate data write dn.acme/oracle updatedkey 01d804 --sign-with nodekey1 --write-state
+```
 
+The above command will return an output similar to the following:
 
 ```
     Entry Hash              :471002594e7834d19879036cd174bead906cbaafc3164e30b4ed411c91b8dfbd
@@ -398,6 +494,15 @@ Signing a Transaction to change the Oracle Value:
                               Entry Hash    471002594e7834d19879036cd174bead906cbaafc3164e30b4ed411c91b8dfbd   
 ```
 
-./accumulate get dn.acme/oracle\
-(type): Url: acc://dn.acme/oracle Value: \
+Get an Oracle
+
+```
+./accumulate get dn.acme/oracle
+```
+
+The above command will return an output similar to the following:
+
+```
+(type): Url: acc://dn.acme/oracle Value: 
 (type): Acme Oracle Price: 600
+```
