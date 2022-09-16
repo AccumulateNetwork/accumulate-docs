@@ -55,6 +55,7 @@
 * [Key management](deep-dive/key-management.md)
 * [Identity hierarchies](deep-dive/identity-hierarchies.md)
 * [Synthetic transactions](deep-dive/synthetic-transactions.md)
+* [Signatures and authorities](deep-dive/signatures-and-authorities.md)
 
 ## Integration
 
