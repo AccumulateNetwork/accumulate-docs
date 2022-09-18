@@ -5,7 +5,7 @@
 The mainnet is the primary Accumulate network.
 
 {% hint style="info" %}
-The mainnet will not be launched until testing and development is done, currently scheduled for October, 2022.
+The mainnet will not be launched until testing and development is done, currently scheduled for September 2022.
 {% endhint %}
 
 ## Testnet

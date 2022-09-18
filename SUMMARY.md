@@ -41,7 +41,7 @@
 
 ## Release Note
 
-* [Release note](release-note/release-note/README.md)
+* [Release notes](release-note/release-note/README.md)
   * [Release Note 2.0 RC2](release-note/release-note/release-note-2.0-rc2.md)
   * [Release Note 1.0 RC1](release-note/release-note/release-note-1.0-rc1.md)
   * [Release Note 0.6](release-note/release-note/release-note-0.6.md)
