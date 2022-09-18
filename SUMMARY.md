@@ -63,8 +63,8 @@
 
 ## Tutorials
 
-* [Create a lite account](tutorials/create-a-lite-account.md)
-* [How to create a custom token via CLI](tutorials/how-to-create-a-custom-accumulate-token.md)
+* [Sending a Transaction with a Lite Token Account](tutorials/create-a-lite-account.md)
+* [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
 
 ***
 
