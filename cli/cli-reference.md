@@ -1181,9 +1181,9 @@ Result :
 
 ### **Multi-Signature Transactions**
 
-A multi-signature transaction is defined by the signature threshold for a given Key Page.
+A multi-signature transaction is defined by the signature threshold for a given Key Page. As a note, to sign with multiple keys at once you can add the --sign-with flag with a list of keys to a transaction.&#x20;
 
-Multi-Signature Transactions&#x20;
+**Multi-Signature Transactions**&#x20;
 
 A multi-signature transaction is defined by the signature threshold for a given Key Page. In the following examples, a new Key will be added to a Key Page using a multi-signature transaction. &#x20;
 
@@ -1405,7 +1405,7 @@ Result :
 
 ### **Key Book Authorities**
 
-An ADI and its accounts have a set of Key Books which manages the signers for that Account. When a Key Book Authority is added to an Account, the Key Book signs a transaction hash to approve its addition.
+An ADI and its accounts have a set of Key Books which manages the signers for that Account. When a Key Book Authority is added to an Account, the Key Book signs a transaction hash to approve its addition. The --auth flag can be added when creating an account to add multiple authorities at once.
 
 ### **Add an Authority**
 
