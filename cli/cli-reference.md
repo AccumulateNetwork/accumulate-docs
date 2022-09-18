@@ -2,7 +2,7 @@
 description: All the commands available via the Command Line Tool are documented below
 ---
 
-# CLI Reference
+# CLI reference
 
 ### **Lite Token Account/Lite Identity Creation**
 
@@ -191,7 +191,7 @@ Balance : 2000000.00000000 ACME
 
 ### **Key**
 
-A named key can be generated using the key generating function. This will also output the public key's name and \*\*\*\* key type. Unless specified otherwise, this will create an ed25519 key.
+A named key can be generated using the key generating function. This will also output the public key's name and key type. Unless specified otherwise, this will create an ed25519 key.
 
 **Syntax**
 
@@ -266,7 +266,7 @@ key type : btclegacy
 
 ### **Ethereum**
 
-This command \*\*\*\* will sign an Accumulate transaction using the `Ethereum` signature algorithm
+This command will sign an Accumulate transaction using the `Ethereum` signature algorithm
 
 **Syntax**
 
@@ -374,7 +374,7 @@ accumulate key import lite [private key hex] Import a key as an anonymous addres
 **Command**
 
 ```
-./accumulate key import lite 52693a08f2511ecd05b41e0ea6e6b6f2b7dee4248293b8c4ae9e4aacb8f3ae54
+./accumulate key import lite ****************************
 ```
 
 The above command will return an output similar to the following:
@@ -403,9 +403,7 @@ accumulate key export all export all keys in wallet
 The above command will return an output similar to the following:
 
 ```
-private key : 470f9b6a34196895699ef3c40875ad3b05c6ad8486b74ee721f68288bd3ecb1c
-public key : fe826e17daa861acad86539710bf08c709b1d9f88fe8e0d1d858912a4fe0b681
-key type : unknown
+mnemonic phrase: into print foil tumble hammer prevent canoe shine maze bind cradle hub
 ```
 
 ### **Key Export Private**
@@ -419,16 +417,19 @@ accumulate key export private [key name] export the private key by key name
 **Command**
 
 ```
-./accumulate key export private Key5
+./accumulate key export private dnkey
 ```
 
 The above command will return an output similar to the following:
 
 ```
-name : Key5
-private key : c25288e8262fc23a5e8fc3acd523428b6913d05166f47022abef52acdba47930
-public key : d5b57f10eb85a751094fcf943fc4997e45f0a90955294ca99cc5ee298d301690
-key type : unknown
+./accumulate key export private dnkey
+Password: ********
+name                    :       dnkey
+        private key     :       083c1add158243eab736d66d82f568eda8a1e0fc4112351a960d1308e5de4f842004d1945a43082e0586c5e52b9198ef0768c3318c4d6e43aefe36ef9cce713b
+        public key      :       2004d1945a43082e0586c5e52b9198ef0768c3318c4d6e43aefe36ef9cce713b
+key type                :       ed25519
+        derivation      :       m/44'/281'/0'/0/21
 ```
 
 ### **Key Export Mnemonic**
@@ -473,19 +474,17 @@ To send ACME tokens to another account, you need to purchase credits with ACME a
 
 Check this [link](https://docs.accumulatenetwork.io/accumulate/getting-started/fees) to view the Base Fees for different transactions.
 
-To send credits to your lite account \*\*\*\* or keypage, run the example command in your terminal
+To send credits to your lite account or Key Page, run the example command in your terminal
 
 ### **Adding Credits to a Lite Token Account/Lite Identity.**
 
-This command adds credit to your lite token account / keypage.
+This command adds credit to your lite token account/lite identity.&#x20;
 
 **Syntax**
 
 ```
 accumulate credits [origin token account] [key page or lite identity url] [number of credits wanted] [max acme to spend] [percent slippage (optional)] [flags][BS2]
 ```
-
-The command below gives your accumulate URL the access to send credits to another lite account.
 
 **Command**
 
@@ -553,7 +552,7 @@ Credits per ACME : 5.00
 
 Lite Data Accounts are an extension of the Factom Protocol, which will be used to transition data from Factom to Accumulate.
 
-### **Lite Data Account Creation from Lite Toke Account/Lite Identity**
+### **Lite Data Account Creation from Lite Token Account/Lite Identity**
 
 This command creates a new lite data account from a lite token account.
 
@@ -932,11 +931,11 @@ Result :
 
 ### **Key Pages**
 
-A Key Page has entries that define the parties required to validate a transaction.
+A Key Page has entries that define the parties required to sign a transaction. If you have the same Key in multiple Key Pages you must explicitly specify the page using keyname@adi.acme/book/(page number).
 
 ### **Get Key Page**
 
-This command returns the list of keypages.
+This command returns the list of key pages.
 
 **Syntax**
 
@@ -988,7 +987,7 @@ Amount 2000.00000000 ACME
 
 ### **Adding Additional Key Pages to a Key Book**
 
-A new Key Page can be added to a Key Book where public keys or key names can be specified. In the example below 3 keys were added to the new Key Page (Key1, Key3, and Key4. Due to this being the 2nd Key Page, the Key Page URL would be acc:/DefiDevs.acme/Keybook/2.
+A new Key Page can be added to a Key Book where public keys or key names can be specified. In the example below 3 keys were added to the new Key Page (Key1, Key3, and Key4. Due to this being the 2nd Key Page, the Key Page URL would be acc:/DefiDevs.acme/Keybook/2.&#x20;
 
 **Syntax**
 
@@ -1086,9 +1085,9 @@ Error code : ok
 Result :
 ```
 
-### **Updating a Key**
+### **Updating a Key of another party**
 
-This command updates a key in a keypage.
+This command updates a key in a key **** page and requires the page threshold to be met.
 
 **Syntax**
 
@@ -1114,9 +1113,32 @@ Simple Hash : ffe7d185949a7322333a485590c8976fc1dd66855f7fc973dfae084f1afb455a
 Error code : ok 
 ```
 
+### **Updating your own Key**
+
+This command updates your own key in a key **** page and doesn't require the page threshold to be met.
+
+```
+./accumulate page key replace directorynetwork.acme/book/1 dnkey hello      
+
+
+        Transaction Hash        : e1a36e712b0bb6c2335d0c03dbb2e8238dcbe7f25e07ede3f419d19af5adc981
+        Signature 0 Hash        : db932235913e8f6d4d8bd5c0299f31bc4878e878878ab494f2b24279a022ffc3
+        Simple Hash             : b32974949f5f81b2fffe6f6e04b5700db4ad5d1192970db3c5976b9a53dea884
+        Error code              : ok
+        Result                  :
+```
+
+```
+    Transaction Hash        : e1a36e712b0bb6c2335d0c03dbb2e8238dcbe7f25e07ede3f419d19af5adc981
+    Signature 0 Hash        : db932235913e8f6d4d8bd5c0299f31bc4878e878878ab494f2b24279a022ffc3
+    Simple Hash             : b32974949f5f81b2fffe6f6e04b5700db4ad5d1192970db3c5976b9a53dea884
+    Error code              : ok
+    Result                  :
+```
+
 ### **Setting a Threshold for a Key Page**
 
-By default, setting a threshold for a Key Page\*\*,\*\* the m of n will be 1 of 1. Because of this, any entry within the Key Page can update the signature threshold. In the example below, the number of Keys within acc://DefiDevs.acme/Keybook/2 is 3. Setting the threshold at two means that 2 of 3 signatures are required for the transaction to be processed.
+By default, setting a threshold for a Key Page, the m of n will be 1 of 1. Because of this, any entry within the Key Page can update the signature threshold. In the example below, the number of Keys within acc://DefiDevs.acme/Keybook/2 is 3. Setting the threshold at two means that 2 of 3 signatures are required for the transaction to be processed.
 
 **Syntax**
 
@@ -1192,7 +1214,7 @@ The above command will return an output similar to the following:
   Pending Tranactions -> Start: 0  Count: 1       Total: 1 
 ```
 
-### **Sign Transaction**
+### **Sign Transaction Hash**
 
 The second signer signs the transaction hash of the first transaction in the multi-signature sequence. If there are additional signers, they sign the same transaction hash.
 
@@ -1220,7 +1242,7 @@ The above command will return an output similar to the following:
 
 ### **Signing with a Delegate**
 
-If a Delegate is specified in a Key Page Entry, the Delegate can use any entry within its Key Book to sign a transaction. If the Delegate is of a different ADI (remote), the signing key must be specified using \[keyname@remotedelegatekeypage]. In the example below, the Delegate is remote.
+If a Delegate is specified in a Key Page Entry, the Delegate can use any entry within its Key Book to sign a transaction. If the Delegate is of a different ADI (remote), the signing key must be specified using \[keyname@adiname/keybookname]. In the example below, the Delegate is remote.
 
 **Syntax**
 
@@ -1244,7 +1266,7 @@ Error code : ok
 Result :
 ```
 
-### **Adding a Delegate and Public Key hash of a Key Page Entry**
+### **Adding a Delegate and Public Key hash to a Key Page Entry**
 
 **Syntax**
 
@@ -1273,7 +1295,7 @@ Result :
 **Syntax**
 
 ```
-./accumulate tx sign [Key Page][SingingKey@KeyBook][Transaction ID]
+./accumulate tx sign [Key Page] [SingingKey@KeyBook][Transaction ID]
 ```
 
 **Command**
@@ -1340,7 +1362,7 @@ Error code : ok
 Result :
 ```
 
-**Removing a Delegate and Public Key Hash of a Key Page Entry**
+### **Removing a Delegate and Public Key Hash of Key Page Entry**
 
 **Syntax**
 
@@ -1366,7 +1388,7 @@ Result :
 
 ### **Key Book Authorities**
 
-A Key Book Authority can either belong to a Key Book that exists within the same root ADI or a different ADI. When a Key Book Authority is added to an Account, the Key Book signs a pending transaction for approval.
+An ADI and its accounts have a set of Key Books which manages the signers for that Account. When a Key Book Authority is added to an Account, the Key Book signs a transaction hash to approve its addition.
 
 ### **Add an Authority**
 
@@ -1472,7 +1494,7 @@ Error code : ok
 Result :
 ```
 
-**Create Sub-ADI and Sub-Sub-ADIs**
+### **Create Sub-ADI and Sub-Sub-ADIs**
 
 A Sub-ADI is an ADI created within an ADI. An example could be an organization that creates an ADI and different departments within the origination are Sub-ADIs.
 
@@ -1562,6 +1584,8 @@ An ADI can have different account types such as an ADI Token Account. An ADI can
 
 This matrix doesn’t capture sub-sub ADI token accounts and sub-sub-sub ADI Token accounts etc.
 
+### **Create an ADI Token Account**
+
 **Syntax**
 
 ```
@@ -1586,7 +1610,7 @@ Result :
 
 ### **QR Codes**
 
-Within the CLI, QR codes can be generated for accounts such as a token account.
+Within the CLI, QR codes can be generated for accounts such as an ADI token account.
 
 **Syntax**
 
@@ -1632,7 +1656,7 @@ Result :
 
 #### **Lite Token Account to Lite Token Account**
 
-From the matrix above, you can send tokens in three ways.
+From the matrix above, you can send tokens in multiple ways.
 
 **Syntax**
 
@@ -1707,7 +1731,9 @@ Error code :
 The signing Key used to sign ADI related token transactions must be specified.
 {% endhint %}
 
-### **ADI Token Account to Lite Token AccountSyntax**
+**ADI Token Account to Lite Token Account**
+
+**Syntax**
 
 ```
 accumulate tx create [Token url] [signing key name] [origin lite account] [amount]
@@ -1729,7 +1755,7 @@ Error code : ok
 Result :
 ```
 
-### **ADI Token Account to ADI Token Account**
+**ADI Token Account to ADI Token Account**
 
 **Syntax**
 
@@ -1849,6 +1875,10 @@ Error code : ok
 Result :
 ```
 
+### **Token Issuer**
+
+A Token Issuer defines the properties of a custom token to be issued such as the symbol and supply limit. When creating an ADI Token Account that will accept a custom token, the Token Issuer must be specified instead of acc://ACME. To create a Custom Lite Token account the Token Issuer must issue the tokens to the Lite Identity (URL without /ACME) with Token Issuer URL appended to the Lite Identity address.
+
 ### **Create a Token Issuer**
 
 **Syntax**
@@ -1923,7 +1953,7 @@ Result :
 
 ### **Creating a Custom Lite Token Account by Issuing Tokens to it**
 
-Append the TokenIssuer Account to the Lite Token Account Address to receive custom tokens.
+Append the Token Issuer Account to the Lite Token Account Address to receive custom tokens.
 
 **Command**
 
