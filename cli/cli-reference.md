@@ -2314,7 +2314,7 @@ Entry Hash 12e90b8e74f20fc0a7274cff9fcbae14592db12292757f1ea0d7503d30799fd2
 accumulate blocks minor [partition-url] [start index] [count] [tx fetch mode expand|ids|countOnly|omit (optional)] [block filter mode excludenone|excludeempty (optional)] 
 ```
 
-The partition url is a BVN ADI, or a DN ADI
+The partition url is a BVN, ADI, or a DN ADI
 
 **Command**
 

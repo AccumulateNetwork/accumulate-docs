@@ -110,7 +110,7 @@ Lite Token Accounts are not associated with an identity and are not acknowledged
 
 Every 12 hours, the transactions executed in the last 12 hours (since the prior major block) are collected into a new major block. For each record modified by a transaction in the block, a Merkle DAG root (anchor) is taken from the main transaction chain of the record and appended to the DN or BVN’s major root chain.
 
-#### Managed Chain
+#### Managed Chain (Authorities)
 
 When creating an ADI account, you can specify an additional Key Book within the same ADI that manages a Key Book. As an example, a transaction submitted using Key1 from acc:/Bob/KeyPage1 within acc://Bob/ KeyBook1 would be routed to acc:/Bob/KeyBook2 which is manager for that account. The manager would then need to sign a transaction approving the transactions specified by the Key Page and m of n required. In the future a Key Book of one ADI will be able to manage a Key Book of another ADI.
 
