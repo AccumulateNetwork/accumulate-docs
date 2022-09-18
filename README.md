@@ -1,4 +1,5 @@
 ---
+description: Accumulate Protocol
 cover: .gitbook/assets/Screenshot 2022-09-16 at 21.44.02.png
 coverY: 89.61483007209064
 ---
