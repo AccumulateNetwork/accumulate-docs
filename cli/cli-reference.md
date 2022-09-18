@@ -468,6 +468,23 @@ The above command will return an output similar to the following:
 seed: 2cca6f211913e1031f2acae938611e8599e24cd550f60c4ddb637fd28667aefd5eb7e1b04d366bd603678ae7a0b13452240efee6296a2c09e1460795f9796484
 ```
 
+### **Wallet**&#x20;
+
+**Export -** Export Wallet Details\
+./accumulate export "C:\filepath\myaccounts.json"\
+\
+Check the file path and open the json file to view its contents\
+\
+**Init** - Import secret factoid key from terminal input \
+./accumulate wallet init create\
+\
+./accumulate wallet init import \
+Enter mnemonic :\
+\
+**Serve -** run wallet service daemon
+
+./accumulate wallet serve
+
 ### **Credits**
 
 To send ACME tokens to another account, you need to purchase credits with ACME and send them to a recipient.
@@ -2314,7 +2331,7 @@ Entry Hash 12e90b8e74f20fc0a7274cff9fcbae14592db12292757f1ea0d7503d30799fd2
 accumulate blocks minor [partition-url] [start index] [count] [tx fetch mode expand|ids|countOnly|omit (optional)] [block filter mode excludenone|excludeempty (optional)] 
 ```
 
-The partition url is a BVN, ADI, or a DN ADI
+The partition url is a BVN ADI, or a DN ADI
 
 **Command**
 
@@ -2450,3 +2467,21 @@ Block: 1
 AcmeOraclePrice: 500
 Receipts:
 ```
+
+## Describe
+
+**Describe the Accumulate Node**
+
+./accumulate describe {"network":{"id":"DevNet","partitions":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}],"subnets":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}]},"networkAnchor":"0000000000000000000000000000000000000000000000000000000000000000","networkType":"directory","partitionId":"Directory","values":{"globals":{"feeSchedule":{"createIdentitySliding":\[204800000,102400000,51200000,25600000,12800000,6400000,3200000,1600000,800000,400000,200000,100000]},"majorBlockSchedule":"0 \*/12 \* \* \*","operatorAcceptThreshold":{"denominator":3,"numerator":2},"validatorAcceptThreshold":{"denominator":3,"numerator":2\}},"network":{"networkName":"DevNet","partitions":\[{"id":"BVN1","type":"blockValidator"},{"id":"Directory","type":"directory"}],"validators":\[{"partitions":\[{"active":true,"id":"Directory"},{"active":true,"id":"BVN1"}],"publicKey":"986511759eef5601701324cfa8961f99c3aad1dc62ef5932cbf63adc5e27a6b9","publicKeyHash":"aa157582befd1e5e150dbc4a0af48136e82a9b917b6f5af2ea5c732249ad4427"}]},"oracle":{"price":50000000},"routing":{"overrides":\[{"account":"acc://ACME","partition":"Directory"},{"account":"acc://bvn-BVN1.acme","partition":"BVN1"},{"account":"acc://dn.acme","partition":"Directory"}],"routes":\[{"partition":"BVN1"}]\}}}\
+
+
+## Encrypt
+
+Encrypt Wallet Database \
+./accumulate encrypt
+
+
+
+
+
+****
