@@ -16,6 +16,7 @@
 * [Follower node setup with AccMan](setup/follower-node-setup-with-accman.md)
 * [Validator node setup with AccMan](setup/validator-node-setup-with-accman.md)
 * [Debugging node issues](setup/debugging-node-issues.md)
+* [Retaining Validator Keys when wiping Node data](setup/retaining-validator-keys-when-wiping-node-data.md)
 
 ## CLI
 
