@@ -30,7 +30,7 @@ Short ADIs cost more. The length of an ADI is calculated as the number of bytes 
 | 1      | $20480 / 2048000 credits | 7      | $320 / 32000 credits |
 | 2      | $10240 / 1024000 credits | 8      | $160 / 16000 credits |
 | 3      | $5120 / 512000 credits   | 9      | $80 / 8000 credits   |
-| 4      | $2560 / 32000 credits    | 10     | $40 / 4000 credits   |
+| 4      | $2560 / 256000 credits   | 10     | $40 / 4000 credits   |
 | 5      | $1280 / 128000 credits   | 11     | $20 / 2000 credits   |
 | 6      | $640 / 64000 credits     | 12     | $10 / 1000 credits   |
 
