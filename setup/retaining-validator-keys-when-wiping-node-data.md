@@ -14,6 +14,8 @@ Select Key Management.
 
 Select Backup Key to AccMan. Follow the prompt to encrypt it with a password.
 
+![](https://lh6.googleusercontent.com/BaFykNAZbMPi2JSQE2Hof-EC13DGPQMyrcJGTHm7VuznJW\_Qvf4urbnFyFhet0LAnOLxJRgUGAL4qzuqcbsCqmhwc6FuE3Xw9q6DuworDI\_w8v7qiXKc2\_CSpUwmscDhR7cMqJUJ85jyPbIBRKY4o-S6iY\_caSmX1b1CSxAr6xe8XAlILH3frqBi\_g)
+
 Stop the node.
 
 ![](https://lh3.googleusercontent.com/vq11HyvgvO9zw-vp6sgJW0OHhRoo-dK6uVD6jpZLgJIw3yXvhhrY9WxCpRfUtmXSX\_HHVipwayBfeYzyAxsdfpFDa2F2BDWJC3g9E0Gg3sZ2AewQnF7qCKeSaJahxInXj2kigyMpWU\_nK0dncf5EtdbnhumdKtonbRt4I0nelu65s7ga5V8qeuTPWg)
