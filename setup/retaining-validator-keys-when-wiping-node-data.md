@@ -42,10 +42,6 @@ Select the same BVN as your backup
 
 ![](https://lh6.googleusercontent.com/SB5q6gtkjRLdltVZW\_e\_P4OobfrZxvFVDr4IKmsPQYL5OneyowXKlzqu0\_tOPqTcw0oN1WMPyf3ufICOgl8sxW1s2IK7R-PJ0aj6twxHVaR2BzdSWNOk6GxlKGfwgsj-nLRTCroMejkUlG4R9x5jst540wsz-lPjPxSKRXH2sbgV5WbdlOyMwNOmsg)
 
-Testnet-Stable
-
-![](https://lh4.googleusercontent.com/5Uz3g0kN8paDflhudyJcvMA-dCcXc6E75d9pFkfGFztz7vAt\_6bIdtCgOmWDtyQy8BaQzMt-F9sjC8t90QK5a\_9-ZFyvNuU68a8e3IeuHi7wkBy9\_FmQSSzfohdLBJLDxBSVqAr2v9E4SMZFYhMPCV-qpVxlB8bC4nnZMqsRtOCOckggyIrYxt8Bjg)
-
 Select latest version offered.
 
 ![](https://lh4.googleusercontent.com/DpUOJAFVCkuDiDHztxc8kdykUVdam2xlOGv0dGnTGxwwiZuDEQI5sDPxBPT9AjVIifBAxWT2CFxcjpWyJKKDxzoXbXe1gmX8UT1pNoper-LzU9mKp4C28CGj0kFK9TfLGfnPXbkd6-WaZxqXFN\_tWSWCwuDG4uWnRGUJQB0QavIm5Eu2UoYfgvJj3Q)
