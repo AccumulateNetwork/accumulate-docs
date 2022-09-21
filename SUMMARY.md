@@ -61,6 +61,7 @@
 ## Integration
 
 * [Tendermint](integration/tendermint.md)
+* [Factoid and Wrapped Factoid Conversion to ACME and Data Chain to Lite Data Account](integration/factoid-and-wrapped-factoid-conversion-to-acme-and-data-chain-to-lite-data-account.md)
 
 ## Tutorials
 
