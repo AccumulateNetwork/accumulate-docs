@@ -4,7 +4,7 @@ cover: ../.gitbook/assets/AccMan.png
 coverY: 4.783333333333334
 ---
 
-# Follower Node Setup with AccMan
+# Follower node setup with AccMan
 
 &#x20;A unique type of full node called a validator node takes part in "consensus." By taking part in consensus, validator nodes take on additional responsibilities such as transaction verification, voting, and maintaining a record of transactions.&#x20;
 
@@ -152,8 +152,6 @@ Remember, it is still your responsibility to ensure your server is secure.&#x20;
 | Proxy Port | Use                          |
 | ---------- | ---------------------------- |
 | 6695       | SSL Client (your-domain.com) |
-
-### ****
 
 ### **SSL certificates**&#x20;
 

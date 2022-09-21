@@ -25,7 +25,7 @@
 ## Nodes
 
 * [Operator onboarding guide](nodes/operator-onboarding-guide.md)
-* [Debugging node issues](nodes/debugging-node-issues.md)
+* [Debugging node issues](setup/debugging-node-issues.md)
 
 ## Developer Resources
 
