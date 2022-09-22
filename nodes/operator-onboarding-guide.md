@@ -308,6 +308,8 @@ accumulate validator \[command] Available Commands: add Add a validator remove R
 
 Adding a Validator Key is a separate Operation from adding an Operator Key. The Operator Key Book is an Authority to the Network Data Account that Lists the Validator Keys. This means that the Operators need to sign a transaction to add a Validator to the Validator Set. The DN operator Key Page has two Keys which means a Multi-Signature Transaction is required.&#x20;
 
+To modify a key to the directory network use dn. To modify a key in a block validator network use bvn\[BVN#].
+
 **Command**
 
 ```
