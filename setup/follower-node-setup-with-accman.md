@@ -129,6 +129,23 @@ Also, if you want to create an `ssh` login account, it will take you directly to
 
 This will create a login account `accman`. The private keys from \`/root/.ssh/authorized\_keys\` will be copied to `/home/accman/.ssh/authorized_keys`. Edit as necessary.&#x20;
 
+### Synchronizing
+
+{% hint style="warning" %}
+Before booting your node **** you must configure it to synchronize to the latest snapshot. If you skip this step, your node will take days or weeks to get caught up to the network.
+{% endhint %}
+
+Get the latest snapshot height and hash for the DN and for the BVN you're joining. For now, send a message on [#operator-chat](https://discord.com/channels/677558240141115481/1001135069727043594) requesting the latest snapshots.
+
+In AccMan, run "Attach BASH Console" and run the following commands:
+
+```
+accumulated sync snapshot -w /node/dnn  tcp://{bvn}-seed.testnet.accumulatenetwork.io:16592 {dn snapshot height} {dn snapshot hash}
+accumulated sync snapshot -w /node/bvnn tcp://{bvn}-seed.testnet.accumulatenetwork.io:16692 {bvn snapshot height} {bvn snapshot hash}
+```
+
+The node may take a few minutes to syncronize to the snapshot after booting up the first time. If the height remains at zero for more than 10 minutes, there may be a problem.
+
 ### **Firewall & Rate Limiting**&#x20;
 
 Locking down your server is essential. By default, Accumulate Manager will take care of this for you. To make manual changes, edit the `iptables.sh` file accordingly.&#x20;
