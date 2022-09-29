@@ -32,7 +32,7 @@ Endpoint: `https://testnet.accumulatenetwork.io/v2`
 The beta testnet uses the v0.7 tag on Github and Gitlab.
 
 * Endpoint: `https://beta.testnet.accumulatenetwork.io/v2`
-* CLI branch: `cli-v1.0.0-rc1.2` and the tag deployed `v1-0-0-rc1.2`
+* CLI branch: `cli-v1.0.0-rc3.1` and the tag deployed `v1-0-0-rc3.1`
 
 You can use the Accumulate explorer to view transactions on this network version at [beta.explorer.accumulatenetwork.io](https://beta.explorer.accumulatenetwork.io).
 {% endtab %}
