@@ -1603,6 +1603,8 @@ This matrix doesn’t capture sub-sub ADI token accounts and sub-sub-sub ADI Tok
 
 ### **Create an ADI Token Account**
 
+The creation of an ADI Token Accounts requires Credits. These Credits must reside within the Key Page of the Key Book associated with the ADI Token Account. As per the fee schedule, 25 credits are required.
+
 **Syntax**
 
 ```
