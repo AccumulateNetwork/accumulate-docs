@@ -2,16 +2,14 @@
 
 ### Getting the balance of a token account
 
-Accumulate maintains the current state of all accounts. So querying an account you receive the current state. Therefore, you can query the account for current balance along with a receipt that you can use to prove the balance is authentic and current. Token accounts take 2 forms:
+Accumulate maintains the current state of all accounts. So querying an account, you receive the current state. Therefore, you can query the account for the current balance along with a receipt that you can use to prove the balance is authentic and current. Token accounts take two forms:
 
-*   A Lite account, where you have 1 private key that manages an account similar to a bitcoin or Ethereum private key controlling the btc or eth address.
+* A Lite account, where you have one private key that manages an account similar to a bitcoin or Ethereum private key controlling the **BTC** or **eth address**.
+* An ADI token account, where you have a token account part of a user's Accumulate Digital Identifier domain. You can think of an ADI as an analogy to a traditional internet domain, e.g., `example.com` The owner of an ADI can have sub-accounts within it, for example, `acc://dennyb.acme/acmetokens`, where `acmetokens` is designated as the ACME token account.
 
+### _Query a user's token account_
 
-* An ADI token account, where you have a token account part of a user’s Accumulate Digital Identifier domain. You can think of an ADI as an analogy to an traditional internet domain, e.g. “example.com.” The owner of an ADI can have sub accounts within it, for example, acc://dennyb.acme/acmetokens, where “acmetokens” is designated as the ACME token account.
-
-### _Query a user’s token account_
-
-For this example, the user’s domain (ADI) is dennyb.acme with a token account “acme,” so the user’s token account URL is acc://dennyb.acme/acme. We also want to “prove” the validity of the balance state, so we also include “prove” true parameter.
+For this example, the user's domain (ADI) is `dennyb.acme` with a token account `acme`, so the user's token account URL is `acc://dennyb.acme/acme`. We also want to "prove" the balance state's validity, including the **prove** true parameter.
 
 Example Query:
 
@@ -125,11 +123,14 @@ Example Response:
 }
 ```
 
-In the response there is a lot of information, however, the key things to note are 1) the data parameter, and 2) the receipt.
+In the response, there is a lot of information; however, the key things to note are
+
+1. the data parameter
+2. the receipt.
 
 ### The data parameter
 
-The data field contains the details of the account state. Because “acc://dennyb.acme/acme” is configured as an acme token account, it will show the token account state information, which includes the token balance, token type, and controlling key authorities of the account.
+The data field contains the details of the account state. For example, because `acc://dennyb.acme/acme` is configured as an acme token account, it will show the token account state information, which includes the **token balance**, **token type**, and **controlling key authorities of the account**.
 
 ```json
 "data": {
@@ -161,6 +162,8 @@ The parameters of the token are broken down in the following table:
 
 ### The receipt parameter
 
-The receipt field contains the details needed to prove the state is genuine against a separate anchor. The general concept is the anchor is published by the directory node at predetermined intervals. These anchors contain the status of the entire state of the network up to that point. Given an anchor, one can prove the state of the account is valid by executing an algorithms over the receipt. There is currently no endpoint api to facilitate this, so implementation is left up to the user. An example use case for this and implementation detail is outlined here.
+The receipt field contains the details needed to prove the state is genuine against a separate anchor. The general concept is the directory node publishes the anchor at predetermined intervals. These anchors contain the status of the entire state of the network up to that point. Given an anchor, one can prove the state of the account is valid by executing algorithms over the receipt. There is currently no endpoint API to facilitate this, so implementation is up to the user.&#x20;
+
+An example use case for this and implementation detail is outlined here.
 
 {% embed url="https://gitlab.com/accumulatenetwork/sdk/anchor-solidity" %}
