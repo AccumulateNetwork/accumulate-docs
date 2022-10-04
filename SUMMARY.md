@@ -30,6 +30,7 @@
 ## Developer Resources
 
 * [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
+* [Factom API Support](developer-resources/factom-api-support.md)
 * [Proving account state with the API](developer-resources/proving-account-state-with-the-api.md)
 
 ## Tools
