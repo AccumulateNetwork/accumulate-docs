@@ -1,4 +1,4 @@
-# Factoid and Wrapped Factoid Conversion to ACME and Data Chain to Lite Data Account
+# Converting FCT and WFCT to ACME
 
 The FCT conversion to ACME is going to be automatic. At the point of conversion, the Factoid address will be converted into Accumulate Lite Token Account addresses. You will import all the Factoid addresses into accumulate as RCD1 Accumulate Lite Token account addresses at genesis. The Factoid address will map automatically to these new RCD1 Accumulate Lite Token accounts.&#x20;
 
@@ -70,7 +70,7 @@ The above command will return an output similar to the following:
 ### User Expectation&#x20;
 
 * **If a user has FCT in a Hot Wallet or on an Exchange:**  Export FS Address (Factom Secret Key) from Factom Wallet. Import FS Address it into Accumulate Wallet (Mobile, Web, CLI). Reference Export and Import Steps.&#x20;
-* **If a user has FCT in a Ledger:** No action on the user’s part when the Ledger supports ACME. &#x20;
+* **If a user has FCT in a Ledger:** No action on the user’s part when the Ledger supports ACME to convert FCT to ACME.  The user will need to install the ACME Ledger application.&#x20;
 * **If a user has WFCT:**  WFCT holders can convert their WFCT to ACME using this [https://wfct-burn.netlify.app](https://wfct-burn.netlify.app)&#x20;
 
 ### Exchange Expectation&#x20;
@@ -80,4 +80,8 @@ The above command will return an output similar to the following:
 **Assumption:** Exchange may hold some FCT in Cold and Hot Storage&#x20;
 
 * **Current Exchanges that support FCT:** Bittrex.com and Qtrade.io&#x20;
-* **Factom Data Chain to Lite Data Account** To Convert a Factom Data Chain to a Lite Data account, add acc:// before the Data Chain ID.&#x20;
+
+### Data Accounts&#x20;
+
+**Factom Data Chain to Lite Data Account** \
+****To Convert a Factom Data Chain to a Lite Data account, add acc:// before the Data Chain ID.&#x20;
