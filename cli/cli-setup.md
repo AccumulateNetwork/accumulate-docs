@@ -1,57 +1,71 @@
-# CLI Setup
+# CLI setup
 
 The Accumulate CLI (Command Line Interface) installation is the fastest way to get Accumulate running locally. The following guide is the installation option most recommended by Accumulate.
 
-### **Preparing the installation**
+#### **Preparing the installation**
 
 The CLI installation guide needs two requirements.
 
 * GO language 1.18 version
 * Terminal or any command line interface of your choice
 
-### **Step 1: Clone accumulate**
+#### **Step 1: Clone accumulate**
 
 ```
-git clone https://gitlab.com/AccumulateNetwork/accumulate.git
+git clone https://gitlab.com/accumulatenetwork/core/wallet.git
 ```
 
-{% hint style="info" %}
-The `accumulate`repository is also available on [Github](https://github.com/AccumulateNetwork/accumulate): `https://github.com/AccumulateNetwork/accumulate.git`
-{% endhint %}
-
-### **Step 2: Locate accumulate folder**
+#### **Step 2: Locate accumulate folder**
 
 ```
-cd accumulate
+cd wallet
 ```
 
-### **Step 3: Checkout a branch (optional)**
+#### **Step 4: Build Accumulate**
 
-Depending on the network you are connecting to, you may need to checkout a different branch. For best results, the CLI version must match the API version. Please see [networks.md](../getting-started/networks.md "mention") for the list of available networks and which branch to checkout.
-
-In your terminal type the below command to switch to a different branch.
-
-```
-git checkout ${branch_name}
-```
-
-### **Step 4: Build Accumulate**
-
-**Mac/Linux**
-
-```
-make accumulate 
-```
-
-#### Windows
+This command works for Mac/Linux and Windows
 
 ```
 go build ./cmd/accumulate
 ```
 
-Once you run these commands, an accumulate binary file should appear in the root directory accumulate that enables the CLI Commands.
+Once you run the command above, an **accumulate** binary file should appear in the root directory `accumulate`, which enables the CLI Commands.
 
-### **Step 5: Start the CLI Tool**
+#### **Step 5: Create a seeded wallet**
+
+This command will create a mnemonic seed and wallet locally.
+
+```
+./accumulate wallet init create
+```
+
+After running the command above, you will be requested to write down your generated **mnemonic phrase** in the terminal and press enter.
+
+{% hint style="info" %}
+Please keep your **mnemonic phrase** safe, it will help you restore the wallet.
+{% endhint %}
+
+Also, if you have an existing Accumulate wallet, then you can `import` the wallet using the command below.
+
+```
+./accumulate wallet init import
+```
+
+Import a mnemonic seed via the command prompt or import a wallet backup file to create a wallet
+
+To backup, your wallet
+
+```
+accumulate wallet export mywallet.json
+```
+
+To restore from the backup
+
+```
+accumulate wallet init import keystore mywallet.json
+```
+
+#### **Step 5: Start the CLI Tool**
 
 To test that the Accumulate is installed correctly, run the below command without arguments.
 
