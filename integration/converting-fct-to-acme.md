@@ -1,4 +1,8 @@
-# Converting FCT and WFCT to ACME
+---
+description: How to convert your FCT and wFCT to ACME
+---
+
+# Converting FCT to ACME
 
 The FCT conversion to ACME is going to be automatic. At the point of conversion, the Factoid address will be converted into Accumulate Lite Token Account addresses. You will import all the Factoid addresses into accumulate as RCD1 Accumulate Lite Token account addresses at genesis. The Factoid address will map automatically to these new RCD1 Accumulate Lite Token accounts.&#x20;
 

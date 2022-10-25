@@ -60,7 +60,7 @@
 ## Integration
 
 * [Tendermint](integration/tendermint.md)
-* [Converting FCT and WFCT to ACME](integration/converting-fct-and-wfct-to-acme.md)
+* [Converting FCT to ACME](integration/converting-fct-to-acme.md)
 
 ## Tutorials
 

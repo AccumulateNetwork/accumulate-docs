@@ -1,6 +1,6 @@
 # Retaining Validator Keys when wiping Node data
 
-To backup your validator keys (priv\_validator\_key.json & register.json) Make sure your on AccMan v0.3 or above.
+To backup your validator keys (located in `priv_validator_key.json` & `register.json`), make sure you're running AccMan v0.3 or above.
 
 ![](https://lh5.googleusercontent.com/fOVzk6M3tJJsJIe6Zf635Vm3xE7QI9GuDKXqJMso8vxDE79\_Ta5JubQL2dQlwOhMhU4QplFd0r3Z0G61aLxgbY\_WVFCaVsq6UbR2Xotx9o76ygEd8i35XdJdg87mOA9VC\_e6elzKxGdY3U2Bcyck8VOcZ0MW3QRPAg72pbR--xZjnpPX5K1dDy83BQ)
 
