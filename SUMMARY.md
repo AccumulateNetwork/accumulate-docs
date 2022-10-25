@@ -9,6 +9,7 @@
 * [Networks](getting-started/networks.md)
 * [Open source and contribution](getting-started/open-source-and-contribution.md)
 * [Frequently Asked Questions](https://accumulatenetwork.io/learn/#intro)
+* [Converting FCT to ACME](getting-started/converting-fct-to-acme.md)
 
 ## Setup
 
@@ -60,7 +61,6 @@
 ## Integration
 
 * [Tendermint](integration/tendermint.md)
-* [Converting FCT to ACME](integration/converting-fct-to-acme.md)
 
 ## Tutorials
 
