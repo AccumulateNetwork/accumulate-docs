@@ -1,4 +1,4 @@
-# Create a lite account
+# Sending a Transaction with a Lite Token Account
 
 This tutorial will teach you how to create and fund an account, send tokens between the two, send credits, check account balance, and check transaction info.&#x20;
 
@@ -171,7 +171,7 @@ Finally, let's make sure that the transaction was successful. You will use the t
 **Syntax:**&#x20;
 
 ```
-./accumulate tx get Transaction hash
+./accumulate tx get <transaction hash>
 ```
 
 **Example:**&#x20;
