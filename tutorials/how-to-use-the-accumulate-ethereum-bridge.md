@@ -6,7 +6,7 @@ It is a flexible wallet that works with various protocols on different blockchai
 
 Users can also use it to store NFTs.
 
-You can download the browser extension or app to access it via this link([https://metamask.io/](https://metamask.io/) )
+You can download the browser extension or app to access it via this [link](https://metamask.io/)
 
 In this article, you will learn how to add Accumulate to Metamask. So let's get straight to it, shall we?
 
@@ -27,8 +27,8 @@ They create a route for transporting tokens, messages, arbitrary data, and even 
 **Prerequisites**
 
 * Metamask account
-* Basic knowledge of Accumjulate CLI commands
-* Accumulate CLI Setup
+* Basic knowledge of [Accumjulate CLI commands](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
+* Accumulate [CLI Setup](https://docs.accumulatenetwork.io/accumulate/cli/cli-setup)
 
 ### **How to add Accumulate to Metamask**
 
