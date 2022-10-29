@@ -1,5 +1,5 @@
 ---
-description: How to convert your FCT and wFCT to ACME
+description: Follow this guide to learn how to convert your Factoids (FCT), and wrapped Factoids (wFCT) on Factom to ACME on Accumulate. 
 ---
 
 # Converting FCT to ACME
