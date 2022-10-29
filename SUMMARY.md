@@ -67,6 +67,7 @@
 * [Sending a Transaction with a Lite Token Account](tutorials/create-a-lite-account.md)
 * [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
+* [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge.md)
 
 ***
 

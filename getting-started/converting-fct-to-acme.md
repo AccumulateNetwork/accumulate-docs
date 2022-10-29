@@ -6,7 +6,7 @@ description: Follow this guide to learn how to convert your Factoids (FCT), and 
 
 The FCT conversion to ACME is going to be automatic. At the point of conversion, the Factoid address will be converted into Accumulate Lite Token Account addresses. You will import all the Factoid addresses into accumulate as RCD1 Accumulate Lite Token account addresses at genesis. The Factoid address will map automatically to these new RCD1 Accumulate Lite Token accounts.&#x20;
 
-The Factoid balances on the Factoid address will be automatically converted into ACME and deposited into the RCD1 ACME Lite Token account. To access their new ACME, users will need to import their Factoid private keys into the Accumulate CLI wallet. The wallet will understand this mapping, and the users will have access at that point to their new ACME. Within the Accumulate Explorer, Factoid Addresses will point to ACME Lite Token Account Addresses.
+The Factoid balances will be automatically converted into ACME and deposited into the RCD1 ACME Lite Token account. To access the new ACME, users will need to import their Factom private keys into the Accumulate CLI wallet. The wallet will understand this mapping, and the users will have access at that point to their new ACME. Within the Accumulate Explorer, Factoid Addresses will point to ACME Lite Token Account Addresses.
 
 ### **Export and Import Steps for CLI**&#x20;
 
