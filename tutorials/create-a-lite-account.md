@@ -1,4 +1,4 @@
-# Sending a Transaction with a Lite Token Account
+# Creating a Lite Token Account
 
 This tutorial will teach you how to create and fund an account, send tokens between the two, send credits, check account balance, and check transaction info.&#x20;
 
