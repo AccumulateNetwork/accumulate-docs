@@ -8,7 +8,7 @@ Accumulates fees are fixed and stable. Business models, built on Accumulate, can
 
 Estimated fees below are converted to USD for actions like identity creation, token transactions, and token issuances.
 
-<table><thead><tr><th>Type</th><th data-type="number">Base Fee in Credits (approx.)</th><th>Fee in USD</th></tr></thead><tbody><tr><td>Create Identity (see fee schedule) 13+ Characters</td><td>500</td><td>$5.00</td></tr><tr><td>Create Token Account</td><td>25</td><td>$0.25</td></tr><tr><td>Send Tokens</td><td>3</td><td>$0.03</td></tr><tr><td>Create ADI Data Account</td><td>25</td><td>$0.25</td></tr><tr><td>Write Data (ADI Data Account)</td><td>0.1</td><td>$0.001</td></tr><tr><td>Write Data (Scratch Chain)</td><td>0.01</td><td>$0.0001</td></tr><tr><td>Create/Write Data to (Lite Data Account</td><td>0.1</td><td>$0.001</td></tr><tr><td>Acme Faucet</td><td>0</td><td>$0.00</td></tr><tr><td>Create Token</td><td>5000</td><td>$50.00</td></tr><tr><td>Issue Tokens</td><td>3</td><td>$0.03</td></tr><tr><td>Burn Tokens</td><td>0</td><td>$0.00</td></tr><tr><td>Create Key Page</td><td>100</td><td>$1.00</td></tr><tr><td>Create Key Book</td><td>100</td><td>$1.00</td></tr><tr><td>Add Credits</td><td>0</td><td>$0.00</td></tr><tr><td>Update Key Page</td><td>3</td><td>$0.03</td></tr><tr><td>Sign Transaction</td><td>0.01</td><td>$0.0001</td></tr></tbody></table>
+<table><thead><tr><th>Type</th><th data-type="number">Base Fee in Credits (approx.)</th><th>Fee in USD</th></tr></thead><tbody><tr><td>Create Identity (see sliding fee schedule) 13+ Characters</td><td>500</td><td>$5.00</td></tr><tr><td>Create Token Account</td><td>25</td><td>$0.25</td></tr><tr><td>Send Tokens</td><td>3</td><td>$0.03</td></tr><tr><td>Create ADI Data Account</td><td>25</td><td>$0.25</td></tr><tr><td>Write Data (ADI Data Account)</td><td>0.1</td><td>$0.001</td></tr><tr><td>Write Data (Scratch Chain)</td><td>0.01</td><td>$0.0001</td></tr><tr><td>Create/Write Data to (Lite Data Account</td><td>0.1</td><td>$0.001</td></tr><tr><td>Acme Faucet</td><td>0</td><td>$0.00</td></tr><tr><td>Create Token</td><td>5000</td><td>$50.00</td></tr><tr><td>Issue Tokens</td><td>3</td><td>$0.03</td></tr><tr><td>Burn Tokens</td><td>0</td><td>$0.00</td></tr><tr><td>Create Key Page</td><td>100</td><td>$1.00</td></tr><tr><td>Create Key Book</td><td>100</td><td>$1.00</td></tr><tr><td>Add Credits</td><td>0</td><td>$0.00</td></tr><tr><td>Update Key Page</td><td>3</td><td>$0.03</td></tr><tr><td>Sign Transaction</td><td>0.01</td><td>$0.0001</td></tr></tbody></table>
 
 #### Multi-Operation Transactions
 
@@ -23,7 +23,7 @@ Estimated fees below are converted to USD for actions like identity creation, to
 
 #### Sliding fee schedule
 
-Short ADIs cost more. The length of an ADI is calculated as the number of bytes of the UTF-8 encoded string minus the `.acme` suffix, _not the number of characters_. For example, `屋.acme` and `abc.acme` are both counted as 3 bytes long. The schedule will likely change prior to launch. The current schedule is:
+Short ADIs cost more. The length of an ADI is calculated as the number of bytes of the UTF-8 encoded string minus the `.acme` suffix, _not the number of characters_. For example, `屋.acme` and `abc.acme` are both counted as 3 bytes long. The current schedule is:
 
 | Length | Cost                     | Length | Cost                 |
 | ------ | ------------------------ | ------ | -------------------- |
