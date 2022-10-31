@@ -793,7 +793,7 @@ accumulate adi create [origin-adi-url] [wallet signing key name] [key index (opt
 **Command**
 
 ```
-./accumulate adi create acc://DefiDevs.acme/Robot Key2 acc://Ford Key2 acc://Ford/Keybook
+./accumulate adi create acc://DefiDevs.acme/Robot Key2 acc://Ford.acme Key2 acc://Ford.acme/Keybook
 ```
 
 The above command will return an output similar to the following:
