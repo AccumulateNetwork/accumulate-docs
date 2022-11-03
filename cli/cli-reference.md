@@ -191,7 +191,7 @@ Balance : 2000000.00000000 ACME
 
 ### **Key**
 
-A named key can be generated using the key generating function. This will also output the public key's name and key type. Unless specified otherwise, this will create an ed25519 key.
+A named key can be generated using the key generating function. This will also output the public key's name and key type. Unless specified otherwise, this will create an ed25519 key. If you are creating an ADI DO NOT use a key other than an ed25519 key. Support for this will be added in the future.
 
 **Syntax**
 
