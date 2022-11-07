@@ -22,6 +22,7 @@
 
 * [CLI setup](cli/cli-setup.md)
 * [CLI reference](cli/cli-reference.md)
+* [Flags](cli/flags.md)
 
 ## Nodes
 
