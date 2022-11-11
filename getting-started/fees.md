@@ -33,7 +33,8 @@ Short ADIs cost more. The length of an ADI is calculated as the number of bytes 
 | 4      | $900 / 90000 credits     |
 | 5      | $250 / 25000 credits     |
 | 6      | $70 / 7000 credits       |
-| 7      | $18/ 1800 credits        |
+| 7      | $18 / 1800 credits       |
+| 8+     | $5 / 500 credits         |
 
 {% hint style="info" %}
 All transactions incur a 0.1 credit fee per each 256 bytes over a base 256 bytes. The additional fee is 0.01 credits instead of 0.1 if it is a scratch transaction. Signatures incur a 0.01 credit fee for each 256 bytes over a base 256 bytes.
