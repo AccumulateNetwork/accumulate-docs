@@ -1894,6 +1894,33 @@ Error code : ok
 Result :
 ```
 
+### **Staking**
+
+Setup staking
+
+Usage: accumulate staking convert \[account] \[key\[@signer]] \[flags]
+
+Available Commands: convert Convert an existing token account into a staking account
+
+Flags: \
+\--delegate url The account the stake should be delegated to -h, --help help for staking \
+****--rewards url Staking rewards account, if rewards should not be sent back into the staking account \
+\--type StakingType Type of staking account (pure, delegated, core-validator, core-follower, or staking-validator) (default inactive)\
+\
+
+
+./accumulate staking convert hello.acme/staking ben --delegate example.acme --rewards hello.acme/staking --type delegated Password: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+
+```
+    Transaction Hash        : 25c8e094d31e08cf13881591e812d27c342398858fa20cb70927e243e7830d3b
+    Signature 0 Hash        : 6cb358549a29cfa4086851b9c47c2aa57d3bb284ef59568b059393d735a4ea6a
+    Simple Hash             : d46e44f59efb4d6d4be73550d8c92a82338351ab7c2079ba88c404cd04c6eb1b
+    Error code              : ok
+    Result                  :
+```
+
+****
+
 ### **Token Issuer**
 
 A Token Issuer defines the properties of a custom token to be issued such as the symbol and supply limit. When creating an ADI Token Account that will accept a custom token, the Token Issuer must be specified instead of acc://ACME. To create a Custom Lite Token account the Token Issuer must issue the tokens to the Lite Identity (URL without /ACME) with Token Issuer URL appended to the Lite Identity address.
