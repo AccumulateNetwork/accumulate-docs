@@ -1907,7 +1907,7 @@ Flags: \
 ****--rewards url Staking rewards account, if rewards should not be sent back into the staking account \
 \--type StakingType Type of staking account (pure, delegated, core-validator, core-follower, or staking-validator) (default inactive)\
 \
-
+Delegated Staking Example:
 
 ./accumulate staking convert hello.acme/staking ben --delegate example.acme --rewards hello.acme/staking --type delegated Password: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 
