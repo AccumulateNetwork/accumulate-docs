@@ -1,8 +1,8 @@
----
-description: ALL STAKED TOKENS WILL BE HARD LOCKED UNTIL May 5TH, 2023.
----
-
 # Staking Guide
+
+{% hint style="danger" %}
+**All staked tokens will be hard locked until May 5th, 2023.** Staked tokens will be completely inaccessible (cannot be withdrawn or unstaked) until after this date.
+{% endhint %}
 
 Fundamentally there are three ways to stake your tokens:&#x20;
 
@@ -22,9 +22,13 @@ Delegated staking is delegating your staked tokens to another pure staker or ope
 
 ### **CLI Setup**&#x20;
 
-For quickest setup, download the binary for the Accumulate Command Line Wallet [here](https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.3/browse?job=build%20binaries). You can then execute commands by typing in the path to where the binary is downloaded and appending any command. Please visit the [CLI setup guide](https://docs.accumulatenetwork.io/accumulate/cli/cli-setup) for more information. If you are running macOS on an Intel-based computer, use accumulate-darwin-amd64. If you are running macOS on an Apple-silicon computer, use accumulate-darwin-arm64. Staking your account Setting up your account for staking gives custody of your account to the Staking Service. The transaction will remain pending until the Staking Service takes custody of your tokens.
+For quickest setup, download the binary for the Accumulate Command Line Wallet [here](https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.3/browse?job=build%20binaries). If you are running macOS on an Intel-based computer, use accumulate-darwin-amd64. If you are running macOS on an Apple-silicon computer, use accumulate-darwin-arm64. You can then execute commands by typing in the path to where the binary is downloaded and appending any command. If you want to build the CLI from source, see the [CLI setup guide](https://docs.accumulatenetwork.io/accumulate/cli/cli-setup).
 
+### Staking your account
 
+{% hint style="info" %}
+**Staking tokens gives custody of those tokens over to the staking system** unless and until they are unstaked. The transaction will remain pending until the Staking Service takes custody of your tokens.
+{% endhint %}
 
 Accumulate Command Line Interface Usage:
 
@@ -65,7 +69,9 @@ Simple Hash : d46e44f59efb4d6d4be73550d8c92a82338351ab7c2079ba88c404cd04c6eb1b
 Error code : ok
 ```
 
-### **Delegate List:**
+### **Delegate List**
+
+#### Operators
 
 * **Highstakes.acme**
 * **ConsensusNetworks.acme**
