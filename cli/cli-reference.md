@@ -2596,6 +2596,103 @@ Receipts:
 ./accumulate describe {"network":{"id":"DevNet","partitions":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}],"subnets":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}]},"networkAnchor":"0000000000000000000000000000000000000000000000000000000000000000","networkType":"directory","partitionId":"Directory","values":{"globals":{"feeSchedule":{"createIdentitySliding":\[204800000,102400000,51200000,25600000,12800000,6400000,3200000,1600000,800000,400000,200000,100000]},"majorBlockSchedule":"0 \*/12 \* \* \*","operatorAcceptThreshold":{"denominator":3,"numerator":2},"validatorAcceptThreshold":{"denominator":3,"numerator":2\}},"network":{"networkName":"DevNet","partitions":\[{"id":"BVN1","type":"blockValidator"},{"id":"Directory","type":"directory"}],"validators":\[{"partitions":\[{"active":true,"id":"Directory"},{"active":true,"id":"BVN1"}],"publicKey":"986511759eef5601701324cfa8961f99c3aad1dc62ef5932cbf63adc5e27a6b9","publicKeyHash":"aa157582befd1e5e150dbc4a0af48136e82a9b917b6f5af2ea5c732249ad4427"}]},"oracle":{"price":50000000},"routing":{"overrides":\[{"account":"acc://ACME","partition":"Directory"},{"account":"acc://bvn-BVN1.acme","partition":"BVN1"},{"account":"acc://dn.acme","partition":"Directory"}],"routes":\[{"partition":"BVN1"}]\}}}\
 
 
+## Multiple operations in single transaction
+
+## Send tokens to multiple parties&#x20;
+
+User can "send tokens" to multiple parties in a single transaction as follows
+
+{% code overflow="wrap" %}
+```
+accumulate tx execute acc://automationAdi138.acme/token24 addKeyed255198OA8 "{ type: sendTokens, to: [ { url: "acc://automationAdi138.acme/token943", amount: '10' }, { url: "automationAdi138.acme/token382", 
+amount: '5' } ] }"
+```
+{% endcode %}
+
+The above command will return an output similar to the following:
+
+```
+Transaction Hash        : 3260d61d1efdf01b3c19abe5aa24cbc44ba352e319da2240aba301a169263d69
+        Signature 0 Hash        : 325bcfc2b50a05193d843d75fdb9f7d03410af31b0c73dc402c3c1c01046a86f
+        Simple Hash             : c65c5fc325104e1839e0fc7c68226ee7533e1b32ebcf4dd9bb9381d010565b5d      
+        Error code              : ok
+        Result                  :
+```
+
+## Issue tokens to multiple parties&#x20;
+
+User can "issue tokens" to multiple parties in a single transaction as follows
+
+{% code overflow="wrap" %}
+```
+./accumulate tx execute acc://automationAdi138.acme/TokenIssuerVRG addKeyed255198OA8 "{ type: issueTokens, to: [ { url: "acc://automationAdi138.acme/CustomTokenDFQ2X", amount: '5' }, { url: "acc://automationAdi138.acme/CustomTokenE2b7g", amount: '5' } ] }"
+```
+{% endcode %}
+
+The above command will return an output similar to the following:
+
+```
+Transaction Hash        : 0eb31c163d28d5ba6a6d049a31173d3470dc039a53dbe867c35c01a687b47776      
+Signature 0 Hash        : a50215753c1d3a3d0978aae8e05c2e623be6570a9ca3da0edfb51f4e520d1078      
+Simple Hash             : c6c5ed51cf4a2c6df64d6ca323fc15ce69b697fc7e1bdb7a00bffeec11b0707c      
+Error code              : ok
+Result                  :
+```
+
+## Multiple updates to a key page&#x20;
+
+When a user wants to perform _"update"_ operation on a key page and _"add"_ a new key to a key page, he/she can perform both with a single transaction as follows
+
+{% code overflow="wrap" %}
+```
+./accumulate tx execute acc://automation9876542.acme/book/2 keyed25519SE1F "{"type": "updateKeyPage", "operation": [{ "type": "update", "oldEntry": {"keyHash": "418ae889ddb30826e68fa66977f29e955a52951afb7056b88a76f13161777515"} ,"newEntry": {"keyHash": "69614ac2db2b9cb07b86bbc6a451f7120e66b1d077f83b0b0e2f09a05258d66e" }}, { "type": "add", "entry": {"owner": "acc://automation9876542.acme/book/2", "keyHash": 
+"3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0"}}]}"
+```
+{% endcode %}
+
+The above command will return an output similar to the following:
+
+```
+Transaction Hash        : 20b1bd78b4776ab8defab7542fea5c04e13f6bff9222a20b13634d5622a7b6df      
+        Signature 0 Hash        : c80f19d9ee945f41ae595f55a84867c8cbc4eb9baf030ad4454f9cf0275cfe77      
+        Simple Hash             : 17d933a0dde79a71c6cfa2bf3c2495790aa8b6ce767c3f970f5596761caa1d5a      
+        Error code              : ok
+        Result                  :
+```
+
+To validate the transaction
+
+```
+./accumulate.exe get acc://automation9876542.acme/book/2 
+
+        Credit Balance  :       99.99
+
+        Index  Nonce                          Key Name       Delegate  Public Key Hash
+        0      1969-12-31 19:00:00 -0500 EST  key1                     3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0
+        1      1969-12-31 19:00:00 -0500 EST  CustomKeymJbU            69614ac2db2b9cb07b86bbc6a451f7120e66b1d077f83b0b0e2f09a05258d66e
+```
+
+## Multiple updates to a key page&#x20;
+
+When a user wants to perform multiple _"updateAccountAuth"_ operation, he/she can perform them with a single transaction as follows
+
+{% code overflow="wrap" %}
+```
+./accumulate tx execute acc://automation9876542.acme keyed25519SE1F "{"type": "updateAccountAuth", "operations": [{ "type": "disable", "authority": "acc://automation9876542.acme/dataAccount82"} ,{ "type": "enable", "authority": "acc://automation9876542.acme/book"}]}" 
+```
+{% endcode %}
+
+The above command will return an output similar to the following:
+
+```
+
+        Transaction Hash        : 35fc8b37f6242b237c6576e36faec7be8aa8edfe8690b483a0ee0cb7a1621ed4      
+        Signature 0 Hash        : 1bb5b781775bbaa790ea15da80681fc943113dddc1af1659b7a78ad665c70b9b      
+        Simple Hash             : 174927780ebb211a01c15785ff1b785d07209a5b98eb5fb54b7c27f744992e36      
+        Error code              : ok
+        Result                  :
+```
+
 ## Encrypt
 
 Encrypt Wallet Database \
