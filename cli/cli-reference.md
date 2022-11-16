@@ -1242,6 +1242,69 @@ This command updates your own key in a key **** page and doesn't require the pag
     Result                  :
 ```
 
+### **Locking/Unlocking a Key page**
+
+This command is used to **lock** a Key page. This prevents "update" operation to a key page.
+
+**Syntax**
+
+```
+accumulate page lock [key page url] [key name[@key book or page]] [flags]
+```
+
+**Command**
+
+```
+./accumulate page lock acc://RajagopalIndia456.acme/book/3 keyed25519NIVS@RajagopalIndia456.acme/book/1 
+```
+
+**Output**
+
+```
+Transaction Hash        : 4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310      
+Signature 0 Hash        : eb59b97b4a084f07205602a5dbe3fccf7ff7911e6f40540b627737fcc1dccd44      
+Simple Hash             : 151016ca9c69c73cd0c36f0094350104bfabd6cda7d6edf63573c39326c1839f      
+Error code              : ok
+Result                  :
+```
+
+**To verify a locked key page**
+
+To verify the locked key page, retrieve the value of key page. The following entry should be present in output.
+
+_"transactionBlacklist":\["updateKeyPage"]_
+
+{% code overflow="wrap" %}
+```
+./accumulate.exe get acc://RajagopalIndia456.acme/book/3 -j
+{"chainId":"1827174d2c721b93eb85c867fdf2dacadf75b9118cd702bcd4e831978de43f8c","chains":[{"count":41,"height":41,"name":"main","roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"],"type":"transaction"},{"count":41,"height":41,"name":"main-index","roots":["012802c5ae03039ea8aa01200000000000000000000000000000000000000000",null,null,"46ce7e00434dcf5b35ae6f269b144f353829224e295f0f8f3cf05d60afd715b3",null,"c65ed6c7442a1d5826ba41a4f8685ee492d36ff7321c18f481e7cebbd7caa59b"],"type":"index"},{"count":37,"height":37,"name":"signature","roots":["eb59b97b4a084f07205602a5dbe3fccf7ff7911e6f40540b627737fcc1dccd44",null,"7ba62d5dd3593010efb1a8a3d0d35c7b29f9fb814451eae2247fccca62b3bd76",null,null,"e146cca3dade29f26b8cda0bcbd9ed8f86b896bbb53cd3f0c43ca23449f619f1"],"type":"transaction"}],"data":{"acceptThreshold":1,"creditBalance":9700,"keyBook":"acc://RajagopalIndia456.acme/book","keys"[{"publicKey":"3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0","publicKeyHash":"3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0"},{"publicKey":"40d2648776279fcefd975ecda62d06cd7204952d8637b5dc0d6cd2115bc34df9","publicKeyHash":"40d2648776279fcefd975ecda62d06cd7204952d8637b5dc0d6cd2115bc34df9"},{"publicKey":"4af9d6740c30b7cab4c3639bf4ffa0aedbc38db41978818d8e268fc4f4c29c9c","publicKeyHash":"4af9d6740c30b7cab4c3639bf4ffa0aedbc38db41978818d8e268fc4f4c29c9c"},{"publicKey":"51bc346a606cfa7de2834f04a6c69d560e47257a78b5f12caaa338605ae8d37d","publicKeyHash":"51bc346a606cfa7de2834f04a6c69d560e47257a78b5f12caaa338605ae8d37d"}],"threshold":1,"transactionBlacklist":["updateKeyPage"],"type":"keyPage","url":"acc://RajagopalIndia456.acme/book/3","version":38},"mainChain":{"count":41,"height":41,"roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"]},"merkleState":{"count":41,"height":41,"roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"]},"type":"keyPage"}  
+```
+{% endcode %}
+
+
+
+This command is used to **unlock** a Key page.
+
+**Syntax**
+
+```
+ accumulate page unlock [key page url] [key name[@key book or page]] [flags]
+```
+
+**Command**
+
+<pre data-overflow="wrap"><code><strong>./accumulate page unlock acc://RajagopalIndia456.acme/book/3 keyed25519NIVS@RajagopalIndia456.acme/book/1</strong></code></pre>
+
+**Output**
+
+```
+Transaction Hash        : 40c3de4f3688b9a9aa993537196b9f6e221fadb2137305f419a4f789f75a877f      
+        Signature 0 Hash        : 5ae4def21f0387606bc6cac36f149aa85747ce916096bc74787e3c446d1dd92b      
+        Simple Hash             : 550a22a7dd0d536787581840f3710ab7a317157858c1bd7d75e01d97c1bb5946      
+        Error code              : ok
+        Result                  :
+```
+
 ### **Setting a Threshold for a Key Page**
 
 By default, setting a threshold for a Key Page, the m of n will be 1 of 1. Because of this, any entry within the Key Page can update the signature threshold. In the example below, the number of Keys within acc://DefiDevs.acme/Keybook/2 is 3. Setting the threshold at two means that 2 of 3 signatures are required for the transaction to be processed.

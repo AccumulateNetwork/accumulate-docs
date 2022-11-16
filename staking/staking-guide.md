@@ -1,14 +1,10 @@
 # Staking Guide
 
-{% hint style="info" %}
-The Deadline to be part of the first Staking Period is 11/24/22 at 11:59pm UTC
-{% endhint %}
-
 {% hint style="danger" %}
 **All staked tokens will be hard locked until May 5th, 2023.** Staked tokens will be completely inaccessible (cannot be withdrawn or unstaked) until after this date.
 {% endhint %}
 
-Fundamentally there are three ways to stake your ACME tokens:&#x20;
+Fundamentally there are three ways to stake your tokens:&#x20;
 
 ### **Pure staking**&#x20;
 
@@ -17,7 +13,7 @@ Pure staking is staking your tokens solely for the purpose of staking them (and 
 **Pure Staking has a waitlist. Please fill out this** [**form.**](https://forms.gle/W8cThDbS9xT2VBc89)****\
 ****
 
-### **Operator staking**&#x20;
+**Operator staking**&#x20;
 
 Registered operators of protocol nodes must maintain a minimum staked balance of 50,000 ACME. Registered operators have obligations and hardware expenditures depending on the type of node they run and may be slashed for downtime, negligence, abuse of their privileges, and other offenses. Registered operators are rewarded at a higher rate than pure stakers.
 
@@ -56,6 +52,8 @@ Create an ADI Token Account:&#x20;
 accumulate account create token \[actor adi] \[signing key name] \[key index (optional)] \[key height (optional)] \[new token account url] \[tokenUrl (e.g. acc://ACME)] \[keyBook (optional)] \[flags]&#x20;
 
 ./accumulate account create token example.acme examplekey example.acme/tokens acc://ACME
+
+
 
 \<signing key> = a Key within the ADI Token Account’s Key Book.
 
