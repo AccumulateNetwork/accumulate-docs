@@ -2507,6 +2507,36 @@ Account ID edb5a7e9186c418e3024cfa191d781929777470d21d7b2d4aa049f077737d589
 Entry Hash 12e90b8e74f20fc0a7274cff9fcbae14592db12292757f1ea0d7503d30799fd2
 ```
 
+### **How to allow anyone to write to a data account?**
+
+When an auth is **"disabled"** for a data account, anyone with valid signature can write into that account.
+
+**Steps:**
+
+1. Disable auth
+2. Sign the transaction
+3. Write into data account by signing with any valid user.&#x20;
+
+**Disable Auth**
+
+```
+./accumulate auth disable acc://automation9876542.acme keyed25519SE1F acc://automation9876542.acme/book 
+```
+
+**Sign the transaction**
+
+```
+./accumulate tx sign acc://automation9876542.acme/book/1 keyed25519SE1F@automation9876542.acme/book fbbec95994a3d92ee0baa7a8b7a04b126b259309e8626fcc1f44b068cc9026b7 
+```
+
+**Write to data account**
+
+{% code overflow="wrap" %}
+```
+./accumulate data write acc://automation9876542.acme/dataAccount72 keyed25519VUOK@RajagopalIndia789.acme/book "546573742064617461206d70684e55385a7a7467474c467649316a744748"
+```
+{% endcode %}
+
 ### **Minor Blocks**
 
 **Syntax**
