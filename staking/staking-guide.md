@@ -1,5 +1,9 @@
 # Staking Guide
 
+{% hint style="info" %}
+The Deadline to be part of the first Staking Period is 11/24/22 at 11:59pm UTC
+{% endhint %}
+
 {% hint style="danger" %}
 **All staked tokens will be hard locked until May 5th, 2023.** Staked tokens will be completely inaccessible (cannot be withdrawn or unstaked) until after this date.
 {% endhint %}
@@ -52,8 +56,6 @@ Create an ADI Token Account:&#x20;
 accumulate account create token \[actor adi] \[signing key name] \[key index (optional)] \[key height (optional)] \[new token account url] \[tokenUrl (e.g. acc://ACME)] \[keyBook (optional)] \[flags]&#x20;
 
 ./accumulate account create token example.acme examplekey example.acme/tokens acc://ACME
-
-
 
 \<signing key> = a Key within the ADI Token Account’s Key Book.
 
