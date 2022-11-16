@@ -35,6 +35,10 @@
 * [Factom API Support](developer-resources/factom-api-support.md)
 * [Proving account state with the API](developer-resources/proving-account-state-with-the-api.md)
 
+## Staking
+
+* [Staking Guide](staking/staking-guide.md)
+
 ## Tools
 
 * [Explorer](tools/explorer.md)
@@ -77,7 +81,3 @@
 ## Hackathon
 
 * [Accumulate Web3athon guide](hackathon/accumulate-web3athon-guide.md)
-
-## Staking
-
-* [Staking Guide](staking/staking-guide.md)
