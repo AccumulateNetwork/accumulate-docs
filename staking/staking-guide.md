@@ -10,9 +10,10 @@ Fundamentally there are three ways to stake your tokens:&#x20;
 
 Pure staking is staking your tokens solely for the purpose of staking them (and receiving rewards). Pure staking requires a minimum staked balance of 50,000 ACME. Pure staking has no risk of slashing and comes with no obligations but generates lower yields than operator staking.
 
-**Pure Staking will come in a later release**&#x20;
+**Pure Staking has a waitlist. Please fill out this** [**form.**](https://forms.gle/W8cThDbS9xT2VBc89)****\
+****
 
-### **Operator staking**&#x20;
+**Operator staking**&#x20;
 
 Registered operators of protocol nodes must maintain a minimum staked balance of 50,000 ACME. Registered operators have obligations and hardware expenditures depending on the type of node they run and may be slashed for downtime, negligence, abuse of their privileges, and other offenses. Registered operators are rewarded at a higher rate than pure stakers.
 
