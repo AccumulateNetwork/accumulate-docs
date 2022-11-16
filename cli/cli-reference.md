@@ -1906,10 +1906,13 @@ Flags: \
 \--delegate url The account the stake should be delegated to -h, --help help for staking \
 ****--rewards url Staking rewards account, if rewards should not be sent back into the staking account \
 \--type StakingType Type of staking account (pure, delegated, core-validator, core-follower, or staking-validator) (default inactive)\
+\--lockup Number of quarters stake will be locked (min. 2 max. 14)\
 \
 Delegated Staking Example:
 
-./accumulate staking convert hello.acme/staking ben --delegate example.acme --rewards hello.acme/staking --type delegated Password: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+./accumulate staking convert hello.acme/staking ben --delegate example.acme --rewards hello.acme/staking --type delegated --lockup 4\
+\
+Password: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 
 ```
     Transaction Hash        : 25c8e094d31e08cf13881591e812d27c342398858fa20cb70927e243e7830d3b
