@@ -73,6 +73,7 @@ Error code : ok
 
 #### Operators
 
+* **DeFiDevs.acme**
 * **Highstakes.acme**
 * **ConsensusNetworks.acme**
 * **Factoshi.acme**
