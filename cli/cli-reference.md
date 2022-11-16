@@ -296,7 +296,7 @@ This command will sign an Accumulate transaction using the `Factom` signature al
 **Syntax**
 
 ```
-./accumulate key generate --sigtype RCD1 keyname
+./accumulate key generate --sigtype RCD1 [keyname]
 ```
 
 **Command**
@@ -391,19 +391,37 @@ key type : ed25519
 **Syntax**
 
 ```
-accumulate key export all export all keys in wallet
+accumulate key export all  
 ```
 
 **Command**
 
 ```
-./accumulate key export all
+./accumulate key export all  
 ```
 
 The above command will return an output similar to the following:
 
 ```
-mnemonic phrase: into print foil tumble hammer prevent canoe shine maze bind cradle hub
+{
+  keys: [
+    {
+      name: 'f194af0eeb01ca0ffcf05918aa2328bb11c44b9d27d80ff4',
+      privateKey: '9272c3f03a182281efa8baf743fe4172216fd90e60c47c1cbe47bd36b51b08d90026e3420379dcc7f7eeeb1c61132ac4a1ecad95843bd255eb1b762e8c5e84b4',
+      publicKey: '0026e3420379dcc7f7eeeb1c61132ac4a1ecad95843bd255eb1b762e8c5e84b4',
+      keyInfo: [Object],
+      keyHash: 'f194af0eeb01ca0ffcf05918aa2328bb11c44b9d434887c9f1319c562af0d57e'
+    },
+    {
+      name: 'e4df9ccaab3e644788eac7361a8cc93caff5e9c2021eda10',
+      privateKey: '23834430ffa16cfe52ed79448259e058e21728c700695e6b4583f6843adbf614007486895d9cf3b5a9d945f615d1922bbd2e696a1b5dedcdeaa04e6aa2bdab14',
+      publicKey: '007486895d9cf3b5a9d945f615d1922bbd2e696a1b5dedcdeaa04e6aa2bdab14',
+      keyInfo: [Object],
+      keyHash: 'e4df9ccaab3e644788eac7361a8cc93caff5e9c2c28ac65ee5340f8f34af8787'
+    },
+    ... 1158 more items
+  ]
+}
 ```
 
 ### **Key Export Private**
@@ -417,7 +435,7 @@ accumulate key export private [key name] export the private key by key name
 **Command**
 
 ```
-./accumulate key export private dnkey
+./accumulate key export private [key/label name]
 ```
 
 The above command will return an output similar to the following:
@@ -425,11 +443,12 @@ The above command will return an output similar to the following:
 ```
 ./accumulate key export private dnkey
 Password: ********
-name                    :       dnkey
-        private key     :       083c1add158243eab736d66d82f568eda8a1e0fc4112351a960d1308e5de4f842004d1945a43082e0586c5e52b9198ef0768c3318c4d6e43aefe36ef9cce713b
-        public key      :       2004d1945a43082e0586c5e52b9198ef0768c3318c4d6e43aefe36ef9cce713b
-key type                :       ed25519
-        derivation      :       m/44'/281'/0'/0/21
+ Name        | dnkey
+ Private Key | 9a94cb8f45f6cbd4d421c07b491d9067dee6c9a72c73f923f90ff188c1d37030c1b5e95298e6817ac62cfbe792240025e9ce9c9644913a5e3c27c10516961721
+ Public Key  | c1b5e95298e6817ac62cfbe792240025e9ce9c9644913a5e3c27c10516961721
+ Key Hash    | 4b3684fb8fa25fa279d4b6fb6c4681999b92446eb5fca4a508f3a12a9c430f2e
+ Key Type    | ed25519
+ Derivation  | m/44'/281'/0'/0'/0'
 ```
 
 ### **Key Export Mnemonic**
@@ -444,28 +463,98 @@ accumulate key export mnemonic (export the mnemonic phrase if one was entered)
 
 ```
 ./accumulate key export mnemonic
+Password: ********
+mnemonic phrase: cat laugh aunt question rib scrap picture axis cushion deposit door taste
 ```
 
-mnemonic phrase: decide trap aisle raise above wool excite funny tuna body choice stereo
+
 
 ### **Key Export Seed**
 
 **Syntax**
 
-```
-accumulate key export seed (export the seed generated from the mnemonic phrase)
-```
+<pre><code><strong>accumulate key export seed (export the seed generated from the mnemonic phrase)</strong></code></pre>
 
 **Command**
 
 ```
 ./accumulate key export seed
+Password: ********
 ```
 
 The above command will return an output similar to the following:
 
 ```
-seed: 2cca6f211913e1031f2acae938611e8599e24cd550f60c4ddb637fd28667aefd5eb7e1b04d366bd603678ae7a0b13452240efee6296a2c09e1460795f9796484
+seed: ed542528af5bf865161314165b25bd106d98d7b57b372e7ac61bba767433bb6046c09f02c705b42153e2f95eef54b62981f2022dd8864b53b790d444cfd92756
+```
+
+### **Key Label**
+
+**Syntax**
+
+```
+accumulate key label [command]
+Available Commands:
+  assign      assign public key of existing label to a new label.      
+  remove      remove a key label
+  rename      rename a key label to new label, note: the old key name will be replaced with the new key 
+name
+```
+
+**Command (assign)**
+
+```
+./accumulate key label assign test501 test505
+Password: ********
+```
+
+The above command will return an output similar to the follow
+
+```
+ Label(s)   | test501
+            | test505
+ Lite Label | 612d6cd0ff886f95c9385c828cd8c3006de84d06617f20fa
+ Public Key | 936dc073a2694118a4e1d8b344b033d7a7fac0bdc981ef16f122e65be4967c16
+ Key Hash   | 612d6cd0ff886f95c9385c828cd8c3006de84d06a2fd5474fed97f0d954a6215
+ Key Type   | rcd1
+ Derivation | m/44'/131'/0'/0/3
+```
+
+**Command (rename)**
+
+```
+/accumulate key label rename test501 test599
+Password: ********
+```
+
+The above command will return an output similar to the follow
+
+```
+ Label(s)   | test505
+            | test599
+ Lite Label | 612d6cd0ff886f95c9385c828cd8c3006de84d06617f20fa
+ Public Key | 936dc073a2694118a4e1d8b344b033d7a7fac0bdc981ef16f122e65be4967c16
+ Key Hash   | 612d6cd0ff886f95c9385c828cd8c3006de84d06a2fd5474fed97f0d954a6215
+ Key Type   | rcd1
+ Derivation | m/44'/131'/0'/0/3
+```
+
+**Command (remove)**
+
+```
+/accumulate key label remove test599
+Password: ********
+```
+
+The above command will return an output similar to the follow
+
+```
+ Label(s)   | test505
+ Lite Label | 612d6cd0ff886f95c9385c828cd8c3006de84d06617f20fa
+ Public Key | 936dc073a2694118a4e1d8b344b033d7a7fac0bdc981ef16f122e65be4967c16
+ Key Hash   | 612d6cd0ff886f95c9385c828cd8c3006de84d06a2fd5474fed97f0d954a6215
+ Key Type   | rcd1
+ Derivation | m/44'/131'/0'/0
 ```
 
 ### **Wallet**&#x20;
