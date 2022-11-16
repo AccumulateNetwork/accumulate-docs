@@ -77,3 +77,7 @@
 ## Hackathon
 
 * [Accumulate Web3athon guide](hackathon/accumulate-web3athon-guide.md)
+
+## Staking
+
+* [Staking Guide](staking/staking-guide.md)
