@@ -8,7 +8,7 @@ The Deadline to be part of the first Staking Period is 11/24/22 at 11:59pm UTC
 **All staked tokens will be hard locked until May 5th, 2023.** Staked tokens will be completely inaccessible (cannot be withdrawn or unstaked) until after this date.
 {% endhint %}
 
-Fundamentally there are three ways to stake your tokens:&#x20;
+Fundamentally there are three ways to stake your ACME tokens:&#x20;
 
 ### **Pure staking**&#x20;
 
