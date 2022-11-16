@@ -4,7 +4,7 @@ description: All the commands available via the Command Line Tool are documented
 
 # CLI reference
 
-### **Lite Token Account/Lite Identity Creation**
+## **Lite Token Account/Lite Identity Creation**
 
 This command will generate a new account URL for you.
 
