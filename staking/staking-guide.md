@@ -32,7 +32,11 @@ For quickest setup, download the binary for the Accumulate Command Line Wallet [
 ### Staking your account
 
 {% hint style="info" %}
-**Staking tokens gives custody of those tokens over to the staking system** unless and until they are unstaked. The transaction will remain pending until the Staking Service takes custody of your tokens.
+**Staking tokens gives custody of those tokens over to the staking system** unless and until they are unstaked.
+{% endhint %}
+
+{% hint style="warning" %}
+**You must submit the transaction hash to** [**https://forms.gle/BtGDU6BYbeBcXr4D8**](https://forms.gle/BtGDU6BYbeBcXr4D8)**. The staking process cannot be completed until you do this.** The transaction will remain pending until the Staking Service takes custody of your tokens.
 {% endhint %}
 
 Accumulate Command Line Interface Usage:
