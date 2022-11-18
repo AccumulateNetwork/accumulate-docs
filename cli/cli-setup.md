@@ -2,6 +2,16 @@
 
 The Accumulate CLI (Command Line Interface) installation is the fastest way to get Accumulate running locally. The following guide is the installation option most recommended by Accumulate.
 
+## Download
+
+Latest release: [https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.3/browse?job=build%20binaries](https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.3/browse?job=build%20binaries)
+
+Latest build: [https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/main/browse?job=build%20binaries](https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/main/browse?job=build%20binaries)
+
+If you are running macOS on an Intel-based Mac, use accumulate-darwin-amd64. If you are running macOS on an Apple-silicon Mac, use accumulate-darwin-arm64.
+
+## From source
+
 #### **Preparing the installation**
 
 The CLI installation guide needs two requirements.

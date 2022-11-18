@@ -23,6 +23,7 @@
 * [CLI setup](cli/cli-setup.md)
 * [CLI reference](cli/cli-reference.md)
 * [Flags](cli/flags.md)
+* [Import a Factom wallet](cli/import-a-factom-wallet.md)
 
 ## Nodes
 
