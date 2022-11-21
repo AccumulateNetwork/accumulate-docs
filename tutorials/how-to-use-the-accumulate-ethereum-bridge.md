@@ -21,7 +21,7 @@ They create a route for transporting tokens, messages, arbitrary data, and even 
 **Prerequisites**
 
 * Metamask account
-* Basic knowledge of [Accumjulate CLI commands](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
+* Basic knowledge of [Accumulate CLI commands](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
 * Accumulate [CLI Setup](https://docs.accumulatenetwork.io/accumulate/cli/cli-setup)
 
 ### Configuring Metamask for Mainnet
@@ -47,7 +47,7 @@ To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accum
 
 ## Sending ACME through the Bridge Example:
 
-Below is an example of using the bridge on the Goerli Testnet sending ACME and minting Wrapped ACME in Ethereum.
+Below is an example of using the bridge on the Ethereum Mainnet sending ACME and minting Wrapped ACME in Ethereum.
 
 {% hint style="info" %}
 **The same instructions apply for the Goerli Testnet except:**\
