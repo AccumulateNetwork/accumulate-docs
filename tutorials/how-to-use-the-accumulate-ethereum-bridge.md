@@ -43,6 +43,12 @@ If you want to use the testnet, click on the Ethereum Mainnet dropdown scroll **
 
 To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accumulatenetwork.io/mint](https://testnet.bridge.accumulatenetwork.io/mint)
 
+
+
+## Bridge Example
+
+Below is an example of using the bridge on the Goerli Testnet. The same instructions apply for the Ethereum Mainnet; the only difference being, there is no faucet to get ACME on the Testnet.
+
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
 
 6\. Click on **connect a wallet,** then you will see a pop-up similar to the image below.
