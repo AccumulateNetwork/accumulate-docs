@@ -50,15 +50,13 @@ To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accum
 Below is an example of using the bridge on the Goerli Testnet sending ACME and minting Wrapped ACME in Ethereum.
 
 {% hint style="info" %}
-**The same instructions apply for the Ethereum Mainnet except:**\
-**1. There is no faucet to get ACME on the Mainnet.** \
-**2. The bridge address you are sending ACME tokens to  acc://bridge.acme/1-ACME**\
-**3. The contract address for importing WACME to MetaMask: 0xdf4ef6ee483953fe3b84abd08c6a060445c01170**
+**The same instructions apply for the Goerli Testnet except:**\
+**1. There is a faucet to get ACME on the Accumulate TestNet**\
+**2. The bridge address you are sending ACME tokens to  acc://bridge.acme/5-ACME**\
+**3. The contract address for importing WACME to MetaMask for the Goerli Testnet: `0xCD08505D03B6bc1a84A5E706536562546A9c99f9`**
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
-
-6\. Click on **connect a wallet,** then you will see a pop-up similar to the image below.
+1. Click on **connect a wallet,** then you will see a pop-up similar to the image below.
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.27.38.png" alt=""><figcaption></figcaption></figure>
 
@@ -68,17 +66,17 @@ After approving the transaction, your bridge will be connected to your Metamask 
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.23.53.png" alt=""><figcaption></figcaption></figure>
 
-7\. **** Type in the amount of ACME you want to send. &#x20;
+2\. **** Type in the amount of ACME you want to send. &#x20;
 
-In this example, I entered **100 ACME.**
+In this example, I entered 90 **ACME.**
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.33.10.png" alt=""><figcaption></figcaption></figure>
+****![](<../.gitbook/assets/image (1).png>)****
 
-8\. Click **Next** to view the mint instruction.
+****
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.35.13.png" alt=""><figcaption></figcaption></figure>
+3\. Click **Next** to view the mint instruction.
 
-You have now successfully connected Accumulate bridge to your Metamask wallet. You can now transfer and receive ACME tokens to any ERC20 token.
+![](<../.gitbook/assets/image (11).png>)
 
 The next step is to transfer ACME tokens to your Metamask wallet.
 
@@ -87,88 +85,72 @@ The next step is to transfer ACME tokens to your Metamask wallet.
 **Generate Lite Token Account**&#x20;
 
 ```
-./accumulate account generate 
+./accumulate key generate test1 (key name)
 ```
 
-The above command will return an output similar to the following:&#x20;
-
-```
-name            :       f683b49d4cddd026b410b1e2ea348c13db8ed7d0a776d4c0 
-lite account    :       acc://9a4df91123d42b5926b6e84dac256ddc8a1e32f8c5a59554/ACME 
-public key      :       021f4c46cbd0d46a5610c8069cecd2691f10275b721ec6ce699769019bb559bb 
-key type        :       ed25519 
 ```
 
-**Faucet Lite Token Account**&#x20;
-
-Add a faucet to your lite token runnig the command below.
-
+Password: ********************
+ Name         | test1
+ Lite Account | acc://cd6dfd30c1c66851cfea57631b0d1c0c7a6ea220df710bd4/ACME
+ Public Key   | 74fdd07e5108a284bfc8ec995b85665399de4d1328d22566f684a18d889b4f2a
+ Key Hash     | cd6dfd30c1c66851cfea57631b0d1c0c7a6ea2204f1a76d7b6de31644e7e056b
+ Key Type     | ed25519
+ Derivation   | m/44'/281'/0'/0'/1'
 ```
-./accumulate faucet acc://9a4df91123d42b5926b6e84dac256ddc8a1e32f8c5a59554/ACME 
-```
 
-&#x20;The above command will return an output similar to the following:&#x20;
-
-```
-Transaction Hash        : 517be7d3434b9c1bb23f570cd2602ec73ce15e325574fe9ef02f4ad206693638 
-Signature 0 Hash        : b3cb9b1241a896163b85088ed95ec78638f93cc3c5147b74d96329b32e54cc2c 
-Simple Hash             : 39100b269703a1546254f3a5ccaffe5d7f891e79d399751e2d168cf1431ef2c1 
-Error code              : ok 
-Result                  : 
-```
+**Add Tokens to Lite Token Account (Send Tokens to Account's Address)**
 
 **Add Credits to Lite Token Account**&#x20;
 
 Add credit to your lite token account by running the command below.
 
 ```
-./accumulate credits acc://9a4df91123d42b5926b6e84dac256ddc8a1e32f8c5a59554/ACME acc://9a4df91123d42b5926b6e84dac256ddc8a1e32f8c5a59554/ACME 10000 
+./accumulate credits acc://cd6dfd30c1c66851cfea57631b0d1c0c7a6ea220df710bd4/ACME acc://cd6dfd30c1c66851cfea57631b0d1c0c7a6ea220df710bd4/ACME 100
 ```
 
 The above command will return an output similar to the following:&#x20;
 
 ```
-Transaction Hash        : c618751354ac8cf993d432d3227d7a5739f672143e711f5ec538a4e082de9c00 
-Signature 0 Hash        : 5b89c04661b6e4287c5de1127a594b784b4038efb6346ddc6c7ae1af095f7132 
-Simple Hash             : a913477ab6b8d2c26ae98757dce48aee5f81d2c8f4c1bbebdcbc5d18f59a4585 
-Error code              : ok 
-Result                  : Oracle        $0.05 / ACME 
-                                  Credits       10000.00 
-                                  Amount        2000.00000000 ACME 
+
+
+        Transaction Hash        : 10f3aafbf8e4671505e0bcaaca7260f285e756f6a43b5011f5413e72e46ab9c4
+        Signature 0 Hash        : c360b1dd838293f949464676260685bce5c61e9a5fe5986f184f78fa6ca4d8a6
+        Simple Hash             : ce11fd8b00900542e8a9a766eee32ecf13bda77029c49133b69bf413a2f16f23
+        Error code              : ok
+        Result                  : Oracle        $0.50 / ACME
+                                  Credits       100.00
+                                  Amount        2.00000000 ACME
 ```
 
 **Send Tokens to the Bridge Token Account which is Displayed in the Mint Instructions and Add a Memo Field Containing your Ethereum Address shown in your Meta Mask wallet**&#x20;
 
 ```
-./accumulate tx create acc://9a4df91123d42b5926b6e84dac256ddc8a1e32f8c5a59554/ACME acc://bridge.acme/5-ACME 100 --memo ‘0x2F0A0C3341C63D647FE7f5f3bbFCcb4f6DbE7938'
+./accumulate tx create acc://9a4df91123d42b5926b6e84dac256ddc8a1e32f8c5a59554/ACME acc://bridge.acme/1-ACME 90 --memo ‘0x2F0A0C3341C63D647FE7f5f3bbFCcb4f6DbE7938'
 ```
 
 The above command will return an output similar to the following:&#x20;
 
 ```
-        Transaction Hash        : 37492a17e04e7a18e646c2d26cd287e69dd08b9faaf20470103a6d44bd638309 
-
-        Signature 0 Hash        : 6985294b34b514926f1aaaa8ca3dc95c4a2c352969dd04c8d0cd8ebd423ac3af 
-
-        Simple Hash             : 82967e2be708f03d1c5a8e83881ba2099a990a7c0b75ec0e2540dad9d013f4ce 
-
-        Error code              : ok 
-
-        Result                  : 
+ Transaction Hash        : c3ac9f185745f38a95725e04e45c7a14a44cbe9cfafd5e2715a3d1b99eecbced
+        Signature 0 Hash        : 9e63990ce7bd074c54c271983ee864512127c440042d99525625fa6f30344dfe
+        Simple Hash             : 7dccf4538317961988b0d2a10c1f4eb2e29d1211a0f49e743a22a8e2ceceaab1
+        Error code              : ok
+        Result                  :
 ```
 
 1. Open your MetaMask
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.24.18.png" alt=""><figcaption></figcaption></figure>
+![](<../.gitbook/assets/image (2).png>)
 
-2\. In the tab, Click on **Assets** then click **Import tokens** and paste this contract address `0xCD08505D03B6bc1a84A5E706536562546A9c99f9` in the **Token contract address** field&#x20;
+2\. In the tab, Click on **Assets** then click **Import tokens** and paste this contract address 0xDF4Ef6EE483953fE3B84ABd08C6A060445c01170 in the **Token contract address** field&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.31.42.png" alt=""><figcaption></figcaption></figure>
+![](<../.gitbook/assets/image (9).png>)
 
 3\. Click add custom token
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.31.59.png" alt=""><figcaption></figcaption></figure>
+![](<../.gitbook/assets/image (10).png>)
 
 4\. Finally, click Import tokens
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07.png" alt=""><figcaption></figcaption></figure>
+![](<../.gitbook/assets/image (12).png>)
