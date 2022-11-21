@@ -2,6 +2,10 @@
 
 
 
+## **Mainnet Bridge:** [**https://bridge.accumulatenetwork.io/mint**](https://bridge.accumulatenetwork.io/mint)****
+
+**Goerlie Testnet Bridge:**  [**https://testnet.bridge.accumulatenetwork.io/mint**](https://testnet.bridge.accumulatenetwork.io/mint)****
+
 ## **Will my MetaMask wallet support Accumulate?**
 
 Unfortunately, because Accumulate and Metamask are incompatible, you cannot directly add ACME, Accumulate's native token, to your Metamask wallet.&#x20;
