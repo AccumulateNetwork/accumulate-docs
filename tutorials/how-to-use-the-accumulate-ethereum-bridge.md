@@ -147,7 +147,7 @@ The above command will return an output similar to the following:&#x20;
 
 ![](<../.gitbook/assets/image (9).png>)
 
-2\. In the tab, Click on **Assets** then click **Import tokens** and paste this contract address 0xDF4Ef6EE483953fE3B84ABd08C6A060445c01170 in the **Token contract address** field&#x20;
+2\. In the tab, Click on **Assets** then click [**Import tokens**](https://metamask.zendesk.com/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask) **** and paste this contract address 0xDF4Ef6EE483953fE3B84ABd08C6A060445c01170 in the **Token contract address** field&#x20;
 
 ![](<../.gitbook/assets/image (6).png>)
 
