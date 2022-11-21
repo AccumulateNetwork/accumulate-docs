@@ -50,7 +50,9 @@ To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accum
 Below is an example of using the bridge on the Goerli Testnet sending ACME and mint Wrapped ACME in Ethereum.
 
 {% hint style="info" %}
-**The same instructions apply for the Ethereum Mainnet; the only difference being, there is no faucet to get ACME on the Mainnet. The bridge address you are sending tokens to is also different: acc://bridge.acme/1-ACME**
+**The same instructions apply for the Ethereum Mainnet except:**\
+**1. There is no faucet to get ACME on the Mainnet.** \
+**2. The bridge address you are sending ACME tokens to is also different: acc://bridge.acme/1-ACME**
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
