@@ -45,7 +45,7 @@ To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accum
 
 
 
-## Bridge Example
+## Sending ACME through the Bridge Example:
 
 Below is an example of using the bridge on the Goerli Testnet. The same instructions apply for the Ethereum Mainnet; the only difference being, there is no faucet to get ACME on the Testnet.
 
