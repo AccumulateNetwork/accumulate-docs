@@ -47,7 +47,7 @@ To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accum
 
 ## Sending ACME through the Bridge Example:
 
-Below is an example of using the bridge on the Goerli Testnet sending ACME and mint Wrapped ACME in Ethereum.
+Below is an example of using the bridge on the Goerli Testnet sending ACME and minting Wrapped ACME in Ethereum.
 
 {% hint style="info" %}
 **The same instructions apply for the Ethereum Mainnet except:**\
