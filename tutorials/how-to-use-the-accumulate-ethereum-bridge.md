@@ -1,22 +1,16 @@
 # How to use the Accumulate/Ethereum Bridge
 
-Metamask is a cryptocurrency wallet used to interact with the Ethereum blockchain.
 
-It is a flexible wallet that works with various protocols on different blockchains.&#x20;
 
-Users can also use it to store NFTs.
-
-You can download the browser extension or app to access it via this [link](https://metamask.io/)
-
-In this article, you will learn how to add Accumulate to Metamask. So let's get straight to it, shall we?
-
-### **Will my MetaMask wallet support Accumulate?**
+## **Will my MetaMask wallet support Accumulate?**
 
 Unfortunately, because Accumulate and Metamask are incompatible, you cannot directly add ACME, Accumulate's native token, to your Metamask wallet.&#x20;
 
 But there may be other approaches to adding Accumulate to Metamask.&#x20;
 
 Only blockchains created using the Ethereum Virtual Machine's primary programming language, Solidity, are supported by Metamask.&#x20;
+
+You can download the browser extension or app to access it via this [link](https://metamask.io/)
 
 ### **What is a bridge?**
 
@@ -30,20 +24,24 @@ They create a route for transporting tokens, messages, arbitrary data, and even 
 * Basic knowledge of [Accumjulate CLI commands](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
 * Accumulate [CLI Setup](https://docs.accumulatenetwork.io/accumulate/cli/cli-setup)
 
-### **How to add Accumulate to Metamask**
+### Configuring Metamask for Mainnet
 
 1. Open the Metamask browser extension on your pc.
-2. Click Ethereum Mainnet dropdown menu and click **Add network**
+2. Confirm Ethereum Mainnet dropdown&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 13.23.46.png" alt=""><figcaption><p>dropdown menu</p></figcaption></figure>
 
-3\. Click **Advanced** and toggle the **Show test networks** to **ON**
+To use the Accumulate Mainnet Bridge please go to: [https://bridge.accumulatenetwork.io/mint](https://bridge.accumulatenetwork.io/mint)
+
+### Configuring Metamask for Goerli Testnet
+
+If you want to use the testnet, click on the Ethereum Mainnet dropdown scroll **Advanced** and toggle the **Show test networks** to **ON**
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 13.26.02.png" alt=""><figcaption><p>Show test network</p></figcaption></figure>
 
-4\. Click on the Goerli test network
+1\. Click on the Goerli test network
 
-5\. Then, visit the Accumulate bridge website via this link [https://bridge.accumulatenetwork.io/mint](https://bridge.accumulatenetwork.io/mint)&#x20;
+To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accumulatenetwork.io/mint](https://testnet.bridge.accumulatenetwork.io/mint)
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
 
