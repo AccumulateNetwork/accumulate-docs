@@ -52,8 +52,8 @@ Below is an example of using the bridge on the Goerli Testnet sending ACME and m
 {% hint style="info" %}
 **The same instructions apply for the Ethereum Mainnet except:**\
 **1. There is no faucet to get ACME on the Mainnet.** \
-**2. The bridge address you are sending ACME tokens to is also different: acc://bridge.acme/1-ACME**\
-**3. The contract address for importing WACME is 0xdf4ef6ee483953fe3b84abd08c6a060445c01170**
+**2. The bridge address you are sending ACME tokens to  acc://bridge.acme/1-ACME**\
+**3. The contract address for importing WACME to MetaMask: 0xdf4ef6ee483953fe3b84abd08c6a060445c01170**
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
