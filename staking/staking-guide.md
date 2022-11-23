@@ -47,17 +47,17 @@ Accumulate Command Line Interface Usage:
 
 Flags:&#x20;
 
-\--delegate url The account the stake should be delegated to -h, --help help for staking&#x20;
+`--delegate <url>` The account the stake should be delegated to -h, --help help for staking&#x20;
 
-\--rewards url Staking rewards account, if rewards should not be sent back into the staking account&#x20;
+`--rewards <url>` Staking rewards account, if rewards should not be sent back into the staking account&#x20;
 
-\--type StakingType Type of staking account (pure, delegated, core-validator, core-follower, or staking-validator) (default inactive)
+`--type <stakingType>` Type of staking account (pure, delegated, core-validator, core-follower, or staking-validator) (default inactive)
 
-\<token account> **** = an Accumulate Digital Identitifier (ADI) token accounts e.g. acc://Example.acme/tokens. For instructions on how to [Create an ADI](https://docs.accumulatenetwork.io/accumulate/tutorials/create-an-adi-via-cli).
+`<token account>` **** an Accumulate Digital Identitifier (ADI) token accounts e.g. acc://Example.acme/tokens. For instructions on how to [Create an ADI](https://docs.accumulatenetwork.io/accumulate/tutorials/create-an-adi-via-cli).
 
-Create an ADI Token Account:&#x20;
+#### Create an ADI Token Account:&#x20;
 
-accumulate account create token \[actor adi] \[signing key name] \[key index (optional)] \[key height (optional)] \[new token account url] \[tokenUrl (e.g. acc://ACME)] \[keyBook (optional)] \[flags]&#x20;
+`accumulate account create token [actor adi] [signing key name] [key index (optional)] [key height (optional)] [new token account url] [tokenUrl (e.g. acc://ACME)] [keyBook (optional)] [flags]`&#x20;
 
 ./accumulate account create token example.acme examplekey example.acme/tokens acc://ACME
 
