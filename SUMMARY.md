@@ -46,15 +46,6 @@
 * [Javascript SDK](https://accumulatenetwork.gitlab.io/accumulate.js/)
 * [Java SDK](tools/java-sdk.md)
 
-## Release Note
-
-* [Release notes](release-note/release-note/README.md)
-  * [Release Note 2.0 RC2](release-note/release-note/release-note-2.0-rc2.md)
-  * [Release Note 1.0 RC1](release-note/release-note/release-note-1.0-rc1.md)
-  * [Release Note 0.6](release-note/release-note/release-note-0.6.md)
-  * [Release Note 0.5.1](release-note/release-note/release-note-0.5.1.md)
-  * [Release Note 0.5](release-note/release-note/release-note-0.5.md)
-
 ## Deep Dive
 
 * [Lite accounts](deep-dive/anonymous-token-chains.md)
@@ -66,6 +57,8 @@
 
 ## Integration
 
+* [Bridge](integration/bridge/README.md)
+  * [Release ACME in Accumulate Burn Wrapped ACME](integration/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
 * [Tendermint](integration/tendermint.md)
 
 ## Tutorials
@@ -74,6 +67,15 @@
 * [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
 * [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge.md)
+
+## Release Note
+
+* [Release notes](release-note/release-note/README.md)
+  * [Release Note 2.0 RC2](release-note/release-note/release-note-2.0-rc2.md)
+  * [Release Note 1.0 RC1](release-note/release-note/release-note-1.0-rc1.md)
+  * [Release Note 0.6](release-note/release-note/release-note-0.6.md)
+  * [Release Note 0.5.1](release-note/release-note/release-note-0.5.1.md)
+  * [Release Note 0.5](release-note/release-note/release-note-0.5.md)
 
 ***
 
