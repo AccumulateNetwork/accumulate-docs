@@ -141,21 +141,35 @@ accumulate staking convert <stakingAccount> <yourKey> --delegate <operatorUrl> -
 
 After running the command, make sure to write down the Transaction Hash. You'll need it for Step 5.
 
-### **Step 5: Submit the Transaction Hash to the Staking Gods**
+### **Step 5: Submit the Transaction Hash to the Staking Service**
 
 {% hint style="warning" %}
 **The staking process cannot be completed until you do this.** The transaction will remain pending until the Staking Service takes custody of your tokens.\
 
 {% endhint %}
 
-The final step is to submit the transaction hash to the Staking Gods. The Staking Gods demand sacrifice!&#x20;
-
-Submit the transaction hash you received after running the command in Step 4 using the following form:
+The final step is to submit the transaction hash to the Staking Gods. **Submit the transaction hash you received after running the command in Step 4 using the following form**:
 
 {% embed url="https://forms.gle/BtGDU6BYbeBcXr4D8" %}
 Send your Transaction Hash in this form
 {% endembed %}
 
-### **Step 6: You're done!**
+### **Step 6: Send the tokens you want to stake to your new Staking Account!**
 
-**Congratulations!**
+The final step and the most rewarding (literally!). Send the tokens you want to stake to your token account.&#x20;
+
+You can do this in the CLI using this command:
+
+```
+accumulate tx create <fromAddress> <yourKey> <destinationAddress> <amount>
+```
+
+`<fromAddress>` is the address for the account where the tokens are coming from
+
+`<yourkey>` is the name of the key that controls the account where the tokens are coming from
+
+`<destinationAddress>` is the address for the account where you want to send the tokens. In this case, this should be your staking account (e.g. `bob.acme/staking`)
+
+{% hint style="danger" %}
+Once you send tokens to your staking account, they WILL be locked up for 6 months. DO NOT send tokens to this account unless you are absolutely sure.
+{% endhint %}
