@@ -29,6 +29,8 @@
 
 * [Operator onboarding guide](nodes/operator-onboarding-guide.md)
 * [Debugging node issues](setup/debugging-node-issues.md)
+* [Bridge](nodes/bridge/README.md)
+  * [Setup Accumulate bridge node](nodes/bridge/setup-accumulate-bridge-node.md)
 
 ## Developer Resources
 
@@ -84,3 +86,5 @@
 ## Hackathon
 
 * [Accumulate Web3athon guide](hackathon/accumulate-web3athon-guide.md)
+
+## Bridge
