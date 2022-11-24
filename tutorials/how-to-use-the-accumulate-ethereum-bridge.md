@@ -74,13 +74,13 @@ After approving the transaction, your bridge will be connected to your Metamask 
 
 In this example, I entered 90 **ACME.**
 
-****![](<../.gitbook/assets/image (6).png>)****
+****![](<../.gitbook/assets/image (3).png>)****
 
 ****
 
 3\. Click **Next** to view the mint instruction.
 
-![](<../.gitbook/assets/image (14).png>)
+![](<../.gitbook/assets/image (10).png>)
 
 The next step is to transfer ACME tokens to your Metamask wallet.
 
@@ -145,7 +145,7 @@ The above command will return an output similar to the following:&#x20;
 
 1. Open your MetaMask
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (14).png>)
 
 2\. In the tab, Click on **Assets** then click [**Import tokens**](https://metamask.zendesk.com/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask) **** and paste this contract address 0xDF4Ef6EE483953fE3B84ABd08C6A060445c01170 in the **Token contract address** field&#x20;
 
@@ -153,11 +153,11 @@ The above command will return an output similar to the following:&#x20;
 
 3\. Click add custom token
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (6).png>)
 
 4\. Finally, click Import tokens
 
-![](<../.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (17).png>)
 
 
 
@@ -196,11 +196,11 @@ Click Confirm
 
 Click Release&#x20;
 
-![](<../.gitbook/assets/image (4) (2).png>)
+![](<../.gitbook/assets/image (4) (1).png>)
 
 Click Confirm
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (8).png>)
 
 Current Balance
 

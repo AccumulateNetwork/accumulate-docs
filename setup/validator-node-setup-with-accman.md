@@ -6,11 +6,11 @@ description: This guide will run you through how to create a Validator Node.
 
 Please complete the [follower-node-setup-with-accman.md](follower-node-setup-with-accman.md "mention"). To become a Validator Node, a Follower Node is created first. It is recommended to use Accman for this process. Please click images to enlarge.
 
-![](<../.gitbook/assets/image (5) (1).png>)
+![](<../.gitbook/assets/image (5).png>)
 
 Select "Accumulate - Manage Node" and hit Enter
 
-![](<../.gitbook/assets/image (5).png>)
+![](<../.gitbook/assets/image (2).png>)
 
 Scroll Down to “Display Registration Info” and Click Enter
 
@@ -41,7 +41,7 @@ _Please Provide the **Validator Public Key** and **Operator Public Key** to a me
 
 When you search in a Web Page your node's I.P. (I.P. :16592.status), if the voting power is 0 you are running a follower node. If the voting power is 1 you are running a Validator Node.&#x20;
 
-_****_![](<../.gitbook/assets/image (3) (3).png>)_****_
+_****_![](<../.gitbook/assets/image (3) (1).png>)_****_
 
 In a future AccMan release the type of Node you are running will be visible in your AccMan console.
 
