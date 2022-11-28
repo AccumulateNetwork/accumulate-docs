@@ -10,11 +10,11 @@ Please complete the [follower-node-setup-with-accman.md](follower-node-setup-wit
 
 Select "Accumulate - Manage Node" and hit Enter
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (6).png>)
 
 Scroll Down to “Display Registration Info” and Click Enter
 
-![](<../.gitbook/assets/image (1) (1).png>)
+![](<../.gitbook/assets/image (1).png>)
 
 The Public Key (pubkey) is what an Operator will provide as their **Validator Key** to the Protocol
 
@@ -41,7 +41,7 @@ _Please Provide the **Validator Public Key** and **Operator Public Key** to a me
 
 When you search in a Web Page your node's I.P. (I.P. :16592.status), if the voting power is 0 you are running a follower node. If the voting power is 1 you are running a Validator Node.&#x20;
 
-_****_![](<../.gitbook/assets/image (3) (2).png>)_****_
+_****_![](<../.gitbook/assets/image (3).png>)_****_
 
 In a future AccMan release the type of Node you are running will be visible in your AccMan console.
 
