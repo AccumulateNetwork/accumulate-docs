@@ -21,8 +21,8 @@
 ## CLI
 
 * [CLI setup](cli/cli-setup.md)
-* [CLI reference](cli/cli-reference.md)
-* [Flags](cli/flags.md)
+* [CLI reference](cli/cli-reference/README.md)
+  * [Flags](cli/cli-reference/flags.md)
 * [Import a Factom wallet](cli/import-a-factom-wallet.md)
 
 ## Nodes
@@ -40,7 +40,7 @@
 
 ## Staking
 
-* [Staking Guide](staking/staking-guide.md)
+* [Introduction](staking/introduction.md)
 
 ## Tools
 
@@ -61,6 +61,8 @@
 
 * [Bridge](integration/bridge/README.md)
   * [Release ACME in Accumulate Burn Wrapped ACME](integration/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
+* [Ledger Integration](integration/ledger-integration/README.md)
+  * [How to use the Ledger with the Accumulate CLI](integration/ledger-integration/how-to-use-the-ledger-with-the-accumulate-cli.md)
 * [Tendermint](integration/tendermint.md)
 
 ## Tutorials
@@ -68,8 +70,6 @@
 * [Sending a Transaction with a Lite Token Account](tutorials/create-a-lite-account.md)
 * [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
-* [Ledger Integration](tutorials/ledger-integration/README.md)
-  * [How to use the Ledger with the Accumulate CLI](tutorials/ledger-integration/how-to-use-the-ledger-with-the-accumulate-cli.md)
 * [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge/README.md)
   * [Ledger CLI Reference](tutorials/how-to-use-the-accumulate-ethereum-bridge/ledger-cli-reference.md)
 
