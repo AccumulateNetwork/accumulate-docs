@@ -36,7 +36,6 @@
 
 * [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
 * [Factom API Support](developer-resources/factom-api-support.md)
-* [Proving account state with the API](developer-resources/proving-account-state-with-the-api.md)
 
 ## Staking
 
@@ -72,6 +71,7 @@
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
 * [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge/README.md)
   * [Ledger CLI Reference](tutorials/how-to-use-the-accumulate-ethereum-bridge/ledger-cli-reference.md)
+* [Querying Accumulate token account with Json RPC API](tutorials/proving-account-state-with-the-api.md)
 
 ## Release Note
 
