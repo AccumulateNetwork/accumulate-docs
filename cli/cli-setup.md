@@ -9,45 +9,43 @@ The Accumulate CLI (Command Line Interface) installation and the binary installa
 
 ### **1. Binary Installation**
 
-**Installation for three OS**
-
-These are the supported Operating system.
-
-**Widnows | Mac OS | Linux**&#x20;
-
-**Step 1:** Download Accumulate binary file.
-
-If you are running macOS on an Intel-based Mac, use accumulate-darwin-amd64. If you are running macOS on an Apple-silicon Mac, use accumulate-darwin-arm64.
+**Step 1:** Choose one of the following:
 
 {% tabs %}
 {% tab title="Windows" %}
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/3280126469/artifacts/file/accumulate-windows-amd64.exe" %}
-Amd64
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.4/file/accumulate-windows-amd64.exe?job=build+binaries" %}
+Intel/AMD
 {% endembed %}
 
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/3280126469/artifacts/file/accumulate-windows-arm64.exe" %}
-Arm64
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.4/file/accumulate-windows-arm64.exe?job=build+binaries" %}
+ARM
 {% endembed %}
+
+Rename the file to **accumulate.exe**
 {% endtab %}
 
 {% tab title="Mac OS" %}
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/3280126469/artifacts/file/accumulate-linux-amd64" %}
-amd64
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.4/file/accumulate-darwin-amd64?job=build+binaries" %}
+Intel
 {% endembed %}
 
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/3280126469/artifacts/file/accumulate-darwin-arm64" %}
-arm64
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.4/file/accumulate-darwin-arm64?job=build+binaries" %}
+Apple M1/M2
 {% endembed %}
+
+Rename the file to **accumulate**
 {% endtab %}
 
 {% tab title="Linux" %}
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/3280126469/artifacts/file/accumulate-darwin-amd64" %}
-amd64
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.4/file/accumulate-linux-amd64?job=build+binaries" %}
+Intel/AMD
 {% endembed %}
 
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/3280126469/artifacts/file/accumulate-linux-arm64" %}
-arm64
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.3.4/file/accumulate-linux-arm64?job=build+binaries" %}
+ARM
 {% endembed %}
+
+Rename the file to **accumulate**
 {% endtab %}
 {% endtabs %}
 
@@ -55,15 +53,7 @@ arm64
 
 Moving it to your **documents** folder is recommended, making it easier to locate on your terminal.
 
-**Step 3:** (optional): Rename the file to "accumulate"
-
-It recommended renaming the binary file to "**accumulate**" so it will be shorter in the terminal.
-
-{% hint style="warning" %}
-**Make sure you have permission to open the file.**
-{% endhint %}
-
-**Step 4:**  Copy the binary file location and paste it into your terminal; you can do so by dragging and dropping it into your terminal for every command.
+**Step 3:**  Copy the binary file location and paste it into your terminal; you can do so by dragging and dropping it into your terminal for every command.
 
 You can start using the [Accumulate CLI commands.](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
 
