@@ -62,6 +62,7 @@
   * [Release ACME in Accumulate Burn Wrapped ACME](integration/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
 * [Ledger Integration](integration/ledger-integration/README.md)
   * [How to use the Ledger with the Accumulate CLI](integration/ledger-integration/how-to-use-the-ledger-with-the-accumulate-cli.md)
+  * [CLI Reference](integration/ledger-integration/cli-reference.md)
 * [Tendermint](integration/tendermint.md)
 
 ## Tutorials
@@ -69,9 +70,9 @@
 * [Sending a Transaction with a Lite Token Account](tutorials/create-a-lite-account.md)
 * [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
-* [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge/README.md)
-  * [Ledger CLI Reference](tutorials/how-to-use-the-accumulate-ethereum-bridge/ledger-cli-reference.md)
+* [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge.md)
 * [Querying Accumulate token account with Json RPC API](tutorials/proving-account-state-with-the-api.md)
+* [How to create a Lite Account and Keys on mainnet / testnet](tutorials/how-to-create-a-lite-account-and-keys-on-mainnet-testnet.md)
 
 ## Release Note
 
@@ -89,5 +90,3 @@
 ## Hackathon
 
 * [Accumulate Web3athon guide](hackathon/accumulate-web3athon-guide.md)
-
-## Bridge
