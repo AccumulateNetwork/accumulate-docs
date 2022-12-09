@@ -29,7 +29,6 @@
 
 * [Operator onboarding guide](nodes/operator-onboarding-guide.md)
 * [Debugging node issues](setup/debugging-node-issues.md)
-* [Bridge](nodes/bridge.md)
 
 ## Developer Resources
 
