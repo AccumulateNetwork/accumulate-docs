@@ -29,8 +29,7 @@
 
 * [Operator onboarding guide](nodes/operator-onboarding-guide.md)
 * [Debugging node issues](setup/debugging-node-issues.md)
-* [Bridge](nodes/bridge/README.md)
-  * [Setup Accumulate bridge node](nodes/bridge/setup-accumulate-bridge-node.md)
+* [Bridge](nodes/bridge.md)
 
 ## Developer Resources
 
@@ -60,6 +59,7 @@
 ## Integration
 
 * [Bridge](integration/bridge/README.md)
+  * [Setup](integration/bridge/setup.md)
   * [Release ACME in Accumulate Burn Wrapped ACME](integration/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
 * [Ledger Integration](integration/ledger-integration/README.md)
   * [How to use the Ledger with the Accumulate CLI](integration/ledger-integration/how-to-use-the-ledger-with-the-accumulate-cli.md)
