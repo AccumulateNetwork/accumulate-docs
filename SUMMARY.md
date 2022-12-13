@@ -16,7 +16,7 @@
 * [Local DevNet Setup](setup/local-devnet.md)
 * [Follower node setup with AccMan](setup/follower-node-setup-with-accman.md)
 * [Validator node setup with AccMan](setup/validator-node-setup-with-accman.md)
-* [Retaining Validator Keys when wiping Node data](setup/retaining-validator-keys-when-wiping-node-data.md)
+* [Retaining validator keys when wiping node data](setup/retaining-validator-keys-when-wiping-node-data.md)
 
 ## CLI
 
@@ -33,12 +33,12 @@
 ## Developer Resources
 
 * [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
-* [Factom API Support](developer-resources/factom-api-support.md)
+* [Factom API support](developer-resources/factom-api-support.md)
 
 ## Staking
 
 * [What is staking](staking/what-is-staking.md)
-* [How to Stake your Tokens](staking/how-to-stake-your-tokens.md)
+* [How to stake your tokens](staking/how-to-stake-your-tokens.md)
 
 ## Tools
 
@@ -49,7 +49,7 @@
 ## Deep Dive
 
 * [Lite accounts](deep-dive/anonymous-token-chains.md)
-* [Accumulate Digital Identifiers (ADIs)](deep-dive/identity.md)
+* [Accumulate digital identifiers (ADIs)](deep-dive/identity.md)
 * [Key management](deep-dive/key-management.md)
 * [Identity hierarchies](deep-dive/identity-hierarchies.md)
 * [Synthetic transactions](deep-dive/synthetic-transactions.md)
@@ -67,7 +67,7 @@
 
 ## Tutorials
 
-* [Sending a Transaction with a Lite Token Account](tutorials/create-a-lite-account.md)
+* [Sending a transaction with a lite token account](tutorials/create-a-lite-account.md)
 * [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
 * [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge.md)
@@ -89,4 +89,4 @@
 
 ## Hackathon
 
-* [Accumulate Web3athon guide](hackathon/accumulate-web3athon-guide.md)
+* [Accumulate web3athon guide](hackathon/accumulate-web3athon-guide.md)
