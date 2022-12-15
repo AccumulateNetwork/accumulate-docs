@@ -53,7 +53,9 @@ Rename the file to **accumulate**
 
 Moving it to your **documents** folder is recommended, making it easier to locate on your terminal.
 
-**Step 3:**  Copy the binary file location and paste it into your terminal; you can do so by dragging and dropping it into your terminal for every command.
+**Step 3:** In order to set the permissions so you can run this file, type in the following command: `chmod 744 <path_to_file>`. Pro tip: drag and drop the accumulate file onto the terminal to get the path.
+
+**Step 4:**  Copy the binary file location and paste it into your terminal and press enter to bring up the usage guide. Pro-tip: after the first time you drag and drop, you can press the Up arrow key to repeat for every future command.
 
 You can start using the [Accumulate CLI commands.](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
 
