@@ -39,6 +39,7 @@
 
 * [What is staking](staking/what-is-staking.md)
 * [How to stake your tokens](staking/how-to-stake-your-tokens.md)
+* [FAQ](staking/faq.md)
 
 ## Tools
 
