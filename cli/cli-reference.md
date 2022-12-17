@@ -1435,13 +1435,15 @@ Error code : ok
 Result :
 ```
 
-### **Adding a Delegate and Public Key hash to a Key Page Entry**
+### **Adding a Delegate to a Key Page**
 
 **Syntax**
 
 ```
-tx execute ./accumulate tx execute [Key Page] [Signing Key] '{type: updateKeyPage, operation: [{ type: add, entry: { owner: [Delegate], keyHash: [Public Key Hash]} }]}'
+./accumulate tx execute [Key Book] [Signing Key (key@You.acme)] '{type: updatekeypage, operation: { type: add, entry: { delegate: [Delegate ADI] } } }''
 ```
+
+
 
 **Command**
 
