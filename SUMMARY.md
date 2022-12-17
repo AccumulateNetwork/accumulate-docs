@@ -16,31 +16,30 @@
 * [Local DevNet Setup](setup/local-devnet.md)
 * [Follower node setup with AccMan](setup/follower-node-setup-with-accman.md)
 * [Validator node setup with AccMan](setup/validator-node-setup-with-accman.md)
-* [Retaining Validator Keys when wiping Node data](setup/retaining-validator-keys-when-wiping-node-data.md)
+* [Retaining validator keys when wiping node data](setup/retaining-validator-keys-when-wiping-node-data.md)
 
 ## CLI
 
 * [CLI setup](cli/cli-setup.md)
-* [CLI reference](cli/cli-reference.md)
-* [Flags](cli/flags.md)
+* [CLI reference](cli/cli-reference/README.md)
+  * [Flags](cli/cli-reference/flags.md)
 * [Import a Factom wallet](cli/import-a-factom-wallet.md)
 
 ## Nodes
 
 * [Operator onboarding guide](nodes/operator-onboarding-guide.md)
 * [Debugging node issues](setup/debugging-node-issues.md)
-* [Bridge](nodes/bridge/README.md)
-  * [Setup Accumulate bridge node](nodes/bridge/setup-accumulate-bridge-node.md)
 
 ## Developer Resources
 
 * [API Reference](https://documenter.getpostman.com/view/1835497/UzBnrSFB)
-* [Factom API Support](developer-resources/factom-api-support.md)
-* [Proving account state with the API](developer-resources/proving-account-state-with-the-api.md)
+* [Factom API support](developer-resources/factom-api-support.md)
 
 ## Staking
 
-* [Staking Guide](staking/staking-guide.md)
+* [What is staking](staking/what-is-staking.md)
+* [How to stake your tokens](staking/how-to-stake-your-tokens.md)
+* [FAQ](staking/faq.md)
 
 ## Tools
 
@@ -51,7 +50,7 @@
 ## Deep Dive
 
 * [Lite accounts](deep-dive/anonymous-token-chains.md)
-* [Accumulate Digital Identifiers (ADIs)](deep-dive/identity.md)
+* [Accumulate digital identifiers (ADIs)](deep-dive/identity.md)
 * [Key management](deep-dive/key-management.md)
 * [Identity hierarchies](deep-dive/identity-hierarchies.md)
 * [Synthetic transactions](deep-dive/synthetic-transactions.md)
@@ -60,15 +59,21 @@
 ## Integration
 
 * [Bridge](integration/bridge/README.md)
+  * [Setup](integration/bridge/setup.md)
   * [Release ACME in Accumulate Burn Wrapped ACME](integration/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
+* [Ledger Integration](integration/ledger-integration/README.md)
+  * [How to use the Ledger with the Accumulate CLI](integration/ledger-integration/how-to-use-the-ledger-with-the-accumulate-cli.md)
+  * [CLI Reference](integration/ledger-integration/cli-reference.md)
 * [Tendermint](integration/tendermint.md)
 
 ## Tutorials
 
-* [Sending a Transaction with a Lite Token Account](tutorials/create-a-lite-account.md)
+* [Sending a transaction with a lite token account](tutorials/create-a-lite-account.md)
 * [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
 * [How to use the Accumulate/Ethereum Bridge](tutorials/how-to-use-the-accumulate-ethereum-bridge.md)
+* [Querying Accumulate token account with Json RPC API](tutorials/proving-account-state-with-the-api.md)
+* [How to create a Lite Account and Keys on mainnet / testnet](tutorials/how-to-create-a-lite-account-and-keys-on-mainnet-testnet.md)
 
 ## Release Note
 
@@ -85,6 +90,4 @@
 
 ## Hackathon
 
-* [Accumulate Web3athon guide](hackathon/accumulate-web3athon-guide.md)
-
-## Bridge
+* [Accumulate web3athon guide](hackathon/accumulate-web3athon-guide.md)

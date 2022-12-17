@@ -1799,7 +1799,7 @@ Within the CLI, QR codes can be generated for accounts such as an ADI token acco
 
 The above command will return an output similar to the following:
 
-![](<../.gitbook/assets/Screenshot 2022-07-20 at 15.00.43.png>)
+![](<../../.gitbook/assets/Screenshot 2022-07-20 at 15.00.43.png>)
 
 ### **Sub-ADI Token Account**
 

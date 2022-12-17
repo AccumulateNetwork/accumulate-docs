@@ -1,4 +1,8 @@
-# Setup Accumulate bridge node
+---
+description: This guide will explain how to set up an Accumulate bridge node for Ethereum.
+---
+
+# Setup
 
 This guide will explain how to set up an Accumulate bridge node for Ethereum. The Accumulate bridge is software that allows for the secure exchange of ERC20 tokens between the [Ethereum](https://ethereum.org/en/developers/docs/) Mainnet and [Accumulate blockchain](https://accumulatenetwork.io/). The bridge is powered by the Accumulate Protocol, a set of smart contracts that facilitate the transfer of tokens and ownership.&#x20;
 

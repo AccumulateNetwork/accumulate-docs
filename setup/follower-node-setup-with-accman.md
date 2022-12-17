@@ -6,9 +6,7 @@ coverY: 4.783333333333334
 
 # Follower node setup with AccMan
 
-&#x20;A unique type of full node called a validator node takes part in "consensus." By taking part in consensus, validator nodes take on additional responsibilities such as transaction verification, voting, and maintaining a record of transactions.&#x20;
-
-The validator node connects to the Accumulate network and allows users to record and sign transactions in the Accumulate blockchain. &#x20;
+&#x20;A unique type of full node called a validator node takes part in **consensus**. By taking part in consensus, validator nodes take on additional responsibilities such as transaction verification, voting, and maintaining a record of transactions. &#x20;
 
 {% hint style="info" %}
 &#x20;A transaction must be validated and authorized before being added to the blockchain. &#x20;
@@ -40,10 +38,10 @@ Using the Accumulate manager is the recommended method of running a node on the 
 * It would help if you had Docker & docker-compose. [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/) (An optional install script is included for Ubuntu) &#x20;
 
 {% hint style="info" %}
-These steps are optimized for Linux servers, but you can install it on a personal Linux OS as well, by running the commands as root (use \`sudo su\` to switch to root in your terminal)&#x20;
+These steps are optimized for Linux servers, but you can install them on a personal Linux OS as well by running the commands as root (use \`sudo su\` to switch to root in your terminal)&#x20;
 {% endhint %}
 
-Follow the steps below to set up your Accumulate \`Node\` on your machine.&#x20;
+Follow the steps below to set up your Accumulate `Node` on your machine.&#x20;
 
 &#x20;**Update apt and install prerequisites**&#x20;
 
@@ -67,7 +65,7 @@ cd accman
 
 **Install Docker Engine.**&#x20;
 
-If you're running Ubuntu you can use our script.  Otherwise check the [Docker site](https://docs.docker.com/engine/install/)
+If you're running Ubuntu, you can use our script.  Otherwise, check the [Docker site](https://docs.docker.com/engine/install/)
 
 ```
 ./scripts/install-ubuntu.sh 
@@ -102,7 +100,7 @@ Testnet-Beta
 
 * **Select a BVN**&#x20;
 
-We recommend you select \`Auto.\`. This is to balance the network. If your running multiple servers, then assign a different BVN to each.
+We recommend you select \`Auto.\`. This is to balance the network. If you running multiple servers, then assign a different BVN to each.
 
 ```
 Auto 
@@ -132,7 +130,7 @@ This will create a login account `accman`. The private keys from \`/root/.ssh/au
 ### Synchronizing
 
 {% hint style="warning" %}
-Before booting your node **** you must configure it to synchronize to the latest snapshot. If you skip this step, your node will take days or weeks to get caught up to the network.
+Before booting your node, **** you must configure it to synchronize to the latest snapshot. If you skip this step, your node will take days or weeks to get caught up in the network.
 {% endhint %}
 
 Get the latest snapshot height and hash for the DN and for the BVN you're joining. For now, send a message on [#operator-chat](https://discord.com/channels/677558240141115481/1001135069727043594) requesting the latest snapshots.
@@ -144,7 +142,7 @@ accumulated sync snapshot -w /node/dnn  tcp://{bvn}-seed.testnet.accumulatenetwo
 accumulated sync snapshot -w /node/bvnn tcp://{bvn}-seed.testnet.accumulatenetwork.io:16692 {bvn snapshot height} {bvn snapshot hash}
 ```
 
-The node may take a few minutes to syncronize to the snapshot after booting up the first time. If the height remains at zero for more than 10 minutes, there may be a problem.
+The node may take a few minutes to synchronize to the snapshot after booting up the first time. If the height remains at zero for more than 10 minutes, there may be a problem.
 
 ### **Firewall & Rate Limiting**&#x20;
 
@@ -172,9 +170,9 @@ Remember, it is still your responsibility to ensure your server is secure.&#x20;
 
 ### **SSL certificates**&#x20;
 
-A self-certificate is automatically generated on start-up. If you have an existing certificate for a domain name, copy the `.crt` and `.key` files to the `./certs` directory. They will be read on start-up. `.pem` files are also compatible. Rename them to `.crt` and `.key` files respectively.
+A self-certificate is automatically generated on start-up. If you have an existing certificate for a domain name, copy the `.crt` and `.key` files to the `./certs` directory. They will be read on start-up. `.pem` files are also compatible. Rename them to `.crt` and `.key` files, respectively.
 
-&#x20;Set up a cron job, to make sure the files are kept valid. These files will be monitored for changes, and automatically reloaded. If you provide an e-mail address, Accumulate Manager will attempt to get a certificate from LetsEncrypt, and keep it renewed.
+&#x20;Set up a cron job, to make sure the files are kept valid. These files will be monitored for changes, and automatically reloaded. If you provide an e-mail address, Accumulate Manager will attempt to get a certificate from **LetsEncrypt**, and keep it renewed.
 
 
 
