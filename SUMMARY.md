@@ -59,7 +59,7 @@
 ## Integration
 
 * [ACME-ETH Bridge](integration/bridge/README.md)
-  * [Setup](integration/bridge/setup.md)
+  * [How to setup a bridge node](integration/bridge/setup.md)
   * [How to mint wACME with the Accumulate Bridge](integration/bridge/how-to-use-the-accumulate-ethereum-bridge.md)
   * [How to release ACME with the Accumulate Bridge](integration/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
 * [Ledger Integration](integration/ledger-integration/README.md)
