@@ -1,4 +1,4 @@
-# How to use the Accumulate/Ethereum Bridge
+# How to mint wACME with the Accumulate Bridge
 
 
 
@@ -35,7 +35,7 @@ They create a route for transporting tokens, messages, arbitrary data, and even 
 1. Open the Metamask browser extension on your pc.
 2. Click Ethereum Mainnet dropdown menu and click **Add network**
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 13.23.46.png" alt=""><figcaption><p>dropdown menu</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 13.23.46.png" alt=""><figcaption><p>dropdown menu</p></figcaption></figure>
 
 3\. Click **Advanced** and toggle the **Show test networks** to **ON**
 
@@ -47,9 +47,9 @@ If you want to use the testnet, click on the Ethereum Mainnet dropdown scroll **
 
 4\. Then, visit the Accumulate bridge website via this link [https://bridge.accumulatenetwork.io/mint](https://bridge.accumulatenetwork.io/mint)&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 13.26.02.png" alt=""><figcaption><p>Show test network</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 13.26.02.png" alt=""><figcaption><p>Show test network</p></figcaption></figure>
 
 5\. Click on **connect a wallet,** then you will see a pop-up similar to the image below.
 
@@ -72,29 +72,29 @@ Below is an example of using the bridge on the Ethereum Mainnet sending ACME and
 
 1. Click on **connect a wallet,** then you will see a pop-up similar to the image below.
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.27.38.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.27.38.png" alt=""><figcaption></figcaption></figure>
 
 Click on the **Metamask** button**.** Then a transaction will be sent to your Metamask wallet for your approval.
 
 After approving the transaction, your bridge will be connected to your Metamask wallet.
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.33.10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.33.10.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.23.53.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.23.53.png" alt=""><figcaption></figcaption></figure>
 
 7\. **** Type in the amount of ACME you want to send. &#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 14.35.13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.35.13.png" alt=""><figcaption></figcaption></figure>
 
 In this example, I entered **100 ACME.**
 
-****![](<../.gitbook/assets/image (17).png>)****
+****![](<../../.gitbook/assets/image (17).png>)****
 
 ****
 
 8\. Click **Next** to view the mint instruction.
 
-![](<../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (8).png>)
 
 The next step is to transfer ACME tokens to your Metamask wallet.
 
@@ -159,21 +159,21 @@ The above command will return an output similar to the following:&#x20;
 
 1. Open your MetaMask
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.24.18.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.24.18.png" alt=""><figcaption></figcaption></figure>
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (7).png>)
 
 2\. In the tab, Click on **Assets** then click **Import tokens** and paste this contract address `0xCD08505D03B6bc1a84A5E706536562546A9c99f9` in the **Token contract address** field&#x20;
 
-![](<../.gitbook/assets/image (6) (1).png>)
+![](<../../.gitbook/assets/image (6) (1).png>)
 
 3\. Click add custom token
 
-![](<../.gitbook/assets/image (12).png>)
+![](<../../.gitbook/assets/image (12).png>)
 
 4\. Finally, click Import tokens
 
-![](<../.gitbook/assets/image (11).png>)
+![](<../../.gitbook/assets/image (11).png>)
 
 
 
@@ -195,9 +195,9 @@ Connect the MetaMask Wallet on the Mainnet
 
 1. Enter in the Amount of ACME you would like released and the destination and click approve.
 
-![](<../.gitbook/assets/image (18).png>)
+![](<../../.gitbook/assets/image (18).png>)
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.31.42.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.31.42.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Make sure you have Eth in your Wallet to Sign Transactions on the Mainnet.\
@@ -208,21 +208,21 @@ Use Goerli Eth on the Testnet to Pay for Transactions:&#x20;
 
 If you will be signing transactions with a Ledger Device connected to MetaMask you will need to enable [blind signing.](https://www.ledger.com/academy/enable-blind-signing-why-when-and-how-to-stay-safe)
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.31.59.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.31.59.png" alt=""><figcaption></figcaption></figure>
 
 Click Confirm
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07 (1).png" alt=""><figcaption></figcaption></figure>
 
-![](<../.gitbook/assets/image (3) (1).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
 Click Release&#x20;
 
-![](<../.gitbook/assets/image (4) (1).png>)
+![](<../../.gitbook/assets/image (4) (1).png>)
 
 Click Confirm
 
-![](../.gitbook/assets/image.png)
+![](../../.gitbook/assets/image.png)
 
 Current Balance
 
