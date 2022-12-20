@@ -467,13 +467,12 @@ Password: ********
 mnemonic phrase: cat laugh aunt question rib scrap picture axis cushion deposit door taste
 ```
 
-
-
 ### **Key Export Seed**
 
 **Syntax**
 
-<pre><code><strong>accumulate key export seed (export the seed generated from the mnemonic phrase)</strong></code></pre>
+<pre><code><strong>accumulate key export seed (export the seed generated from the mnemonic phrase)
+</strong></code></pre>
 
 **Command**
 
@@ -557,17 +556,17 @@ The above command will return an output similar to the follow
  Derivation | m/44'/131'/0'/0
 ```
 
-### **Wallet**&#x20;
+### **Wallet**
 
 **Export -** Export Wallet Details\
 ./accumulate export "C:\filepath\myaccounts.json"\
 \
 Check the file path and open the json file to view its contents\
 \
-**Init** - Import secret factoid key from terminal input \
+**Init** - Import secret factoid key from terminal input\
 ./accumulate wallet init create\
 \
-./accumulate wallet init import \
+./accumulate wallet init import\
 Enter mnemonic :\
 \
 **Serve -** run wallet service daemon
@@ -584,7 +583,7 @@ To send credits to your lite account or Key Page, run the example command in you
 
 ### **Adding Credits to a Lite Token Account/Lite Identity.**
 
-This command adds credit to your lite token account/lite identity.&#x20;
+This command adds credit to your lite token account/lite identity.
 
 **Syntax**
 
@@ -1093,7 +1092,7 @@ Amount 2000.00000000 ACME
 
 ### **Adding Additional Key Pages to a Key Book**
 
-A new Key Page can be added to a Key Book where public keys or key names can be specified. In the example below 3 keys were added to the new Key Page (Key1, Key3, and Key4. Due to this being the 2nd Key Page, the Key Page URL would be acc:/DefiDevs.acme/Keybook/2.&#x20;
+A new Key Page can be added to a Key Book where public keys or key names can be specified. In the example below 3 keys were added to the new Key Page (Key1, Key3, and Key4. Due to this being the 2nd Key Page, the Key Page URL would be acc:/DefiDevs.acme/Keybook/2.
 
 **Syntax**
 
@@ -1193,7 +1192,7 @@ Result :
 
 ### **Updating a Key of another party**
 
-This command updates a key in a key **** page and requires the page threshold to be met.
+This command updates a key in a key \*\*\*\* page and requires the page threshold to be met.
 
 **Syntax**
 
@@ -1221,7 +1220,7 @@ Error code : ok
 
 ### **Updating your own Key**
 
-This command updates your own key in a key **** page and doesn't require the page threshold to be met.
+This command updates your own key in a key \*\*\*\* page and doesn't require the page threshold to be met.
 
 ```
 ./accumulate page key replace directorynetwork.acme/book/1 dnkey hello      
@@ -1281,8 +1280,6 @@ _"transactionBlacklist":\["updateKeyPage"]_
 ```
 {% endcode %}
 
-
-
 This command is used to **unlock** a Key page.
 
 **Syntax**
@@ -1293,7 +1290,8 @@ This command is used to **unlock** a Key page.
 
 **Command**
 
-<pre data-overflow="wrap"><code><strong>./accumulate page unlock acc://RajagopalIndia456.acme/book/3 keyed25519NIVS@RajagopalIndia456.acme/book/1</strong></code></pre>
+<pre data-overflow="wrap"><code><strong>./accumulate page unlock acc://RajagopalIndia456.acme/book/3 keyed25519NIVS@RajagopalIndia456.acme/book/1
+</strong></code></pre>
 
 **Output**
 
@@ -1333,11 +1331,11 @@ Result :
 
 ### **Multi-Signature Transactions**
 
-A multi-signature transaction is defined by the signature threshold for a given Key Page. As a note, to sign with multiple keys at once you can add the --sign-with flag with a list of keys to a transaction.&#x20;
+A multi-signature transaction is defined by the signature threshold for a given Key Page. As a note, to sign with multiple keys at once you can add the --sign-with flag with a list of keys to a transaction.
 
-**Multi-Signature Transactions**&#x20;
+**Multi-Signature Transactions**
 
-A multi-signature transaction is defined by the signature threshold for a given Key Page. In the following examples, a new Key will be added to a Key Page using a multi-signature transaction. &#x20;
+A multi-signature transaction is defined by the signature threshold for a given Key Page. In the following examples, a new Key will be added to a Key Page using a multi-signature transaction.
 
 **Syntax**
 
@@ -1345,13 +1343,13 @@ A multi-signature transaction is defined by the signature threshold for a given 
 accumulate page key add [key page url] [signing key name] [key index (optional)] [key height (optional)] [new key name] [flags]
 ```
 
-&#x20;**Command**
+**Command**
 
 ```
 ./accumulate page key add acc://DefiDevs.acme/Keybook/2 Key5 Key1  
 ```
 
-&#x20;The above command will return an output similar to the following:
+The above command will return an output similar to the following:
 
 ```
 Transaction Hash        : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6 
@@ -1363,7 +1361,7 @@ Result                  :
 
 ### **Pending Transaction**
 
-A pending transaction can be queried to see the status.&#x20;
+A pending transaction can be queried to see the status.
 
 **Syntax**
 
@@ -1440,15 +1438,13 @@ Result :
 **Syntax**
 
 ```
-./accumulate tx execute [Key Book] [Signing Key (key@You.acme)] '{type: updatekeypage, operation: { type: add, entry: { delegate: [Delegate ADI] } } }''
+./accumulate tx execute [Key Page] [Signing Key (key@You.acme)] '{type: updatekeypage, operation: { type: add, entry: { delegate: [Delegate Key Book] } } }''
 ```
-
-
 
 **Command**
 
 ```
-./accumulate tx execute Delegatetest.acme/Keybook/1 newkey '{type: updateKeyPage, operation: [{ type: add, entry: { owner: acc://Delegatetest.acme/Keybook3, keyHash: d2aad80e11d0478015c51c197e2df99da3a2c3309fb4245efa370a7033cdc127 } }]}'
+./accumulate tx execute myADI.acme/keybook/2 myKey@myADI.acme '{type: updatekeypage, operation: { type: add, entry: { delegate: Quentin.acme/book } } }'
 ```
 
 The above command will return an output similar to the following:
@@ -2056,9 +2052,9 @@ Usage: accumulate staking convert \[account] \[key\[@signer]] \[flags]
 
 Available Commands: convert Convert an existing token account into a staking account
 
-Flags: \
-\--delegate url The account the stake should be delegated to -h, --help help for staking \
-****--rewards url Staking rewards account, if rewards should not be sent back into the staking account \
+Flags:\
+\--delegate url The account the stake should be delegated to -h, --help help for staking\
+\*\*\*\*--rewards url Staking rewards account, if rewards should not be sent back into the staking account\
 \--type StakingType Type of staking account (pure, delegated, core-validator, core-follower, or staking-validator) (default inactive)\
 \--lockup Number of quarters stake will be locked (min. 2 max. 14)\
 \
@@ -2076,7 +2072,7 @@ Password: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
     Result                  :
 ```
 
-****
+***
 
 ### **Token Issuer**
 
@@ -2517,7 +2513,7 @@ When an auth is **"disabled"** for a data account, anyone with valid signature c
 
 1. Disable auth
 2. Sign the transaction
-3. Write into data account by signing with any valid user.&#x20;
+3. Write into data account by signing with any valid user.
 
 **Disable Auth**
 
@@ -2688,12 +2684,11 @@ Receipts:
 
 **Describe the Accumulate Node**
 
-./accumulate describe {"network":{"id":"DevNet","partitions":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}],"subnets":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}]},"networkAnchor":"0000000000000000000000000000000000000000000000000000000000000000","networkType":"directory","partitionId":"Directory","values":{"globals":{"feeSchedule":{"createIdentitySliding":\[204800000,102400000,51200000,25600000,12800000,6400000,3200000,1600000,800000,400000,200000,100000]},"majorBlockSchedule":"0 \*/12 \* \* \*","operatorAcceptThreshold":{"denominator":3,"numerator":2},"validatorAcceptThreshold":{"denominator":3,"numerator":2\}},"network":{"networkName":"DevNet","partitions":\[{"id":"BVN1","type":"blockValidator"},{"id":"Directory","type":"directory"}],"validators":\[{"partitions":\[{"active":true,"id":"Directory"},{"active":true,"id":"BVN1"}],"publicKey":"986511759eef5601701324cfa8961f99c3aad1dc62ef5932cbf63adc5e27a6b9","publicKeyHash":"aa157582befd1e5e150dbc4a0af48136e82a9b917b6f5af2ea5c732249ad4427"}]},"oracle":{"price":50000000},"routing":{"overrides":\[{"account":"acc://ACME","partition":"Directory"},{"account":"acc://bvn-BVN1.acme","partition":"BVN1"},{"account":"acc://dn.acme","partition":"Directory"}],"routes":\[{"partition":"BVN1"}]\}}}\
-
+./accumulate describe {"network":{"id":"DevNet","partitions":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}],"subnets":\[{"basePort":26656,"id":"Directory","nodes":\[{"address":"http://127.0.1.1:26656","type":"validator"}],"type":"directory"},{"basePort":26756,"id":"BVN1","nodes":\[{"address":"http://127.0.1.1:26756","type":"validator"}],"type":"blockValidator"}]},"networkAnchor":"0000000000000000000000000000000000000000000000000000000000000000","networkType":"directory","partitionId":"Directory","values":{"globals":{"feeSchedule":{"createIdentitySliding":\[204800000,102400000,51200000,25600000,12800000,6400000,3200000,1600000,800000,400000,200000,100000]},"majorBlockSchedule":"0 \*/12 \* \* \*","operatorAcceptThreshold":{"denominator":3,"numerator":2},"validatorAcceptThreshold":{"denominator":3,"numerator":2\}},"network":{"networkName":"DevNet","partitions":\[{"id":"BVN1","type":"blockValidator"},{"id":"Directory","type":"directory"}],"validators":\[{"partitions":\[{"active":true,"id":"Directory"},{"active":true,"id":"BVN1"}],"publicKey":"986511759eef5601701324cfa8961f99c3aad1dc62ef5932cbf63adc5e27a6b9","publicKeyHash":"aa157582befd1e5e150dbc4a0af48136e82a9b917b6f5af2ea5c732249ad4427"}]},"oracle":{"price":50000000},"routing":{"overrides":\[{"account":"acc://ACME","partition":"Directory"},{"account":"acc://bvn-BVN1.acme","partition":"BVN1"},{"account":"acc://dn.acme","partition":"Directory"}],"routes":\[{"partition":"BVN1"}]\}}}\\
 
 ## Multiple operations in single transaction
 
-## Send tokens to multiple parties&#x20;
+## Send tokens to multiple parties
 
 User can "send tokens" to multiple parties in a single transaction as follows
 
@@ -2714,7 +2709,7 @@ Transaction Hash        : 3260d61d1efdf01b3c19abe5aa24cbc44ba352e319da2240aba301
         Result                  :
 ```
 
-## Issue tokens to multiple parties&#x20;
+## Issue tokens to multiple parties
 
 User can "issue tokens" to multiple parties in a single transaction as follows
 
@@ -2734,7 +2729,7 @@ Error code              : ok
 Result                  :
 ```
 
-## Multiple updates to a key page&#x20;
+## Multiple updates to a key page
 
 When a user wants to perform _"update"_ operation on a key page and _"add"_ a new key to a key page, he/she can perform both with a single transaction as follows
 
@@ -2767,7 +2762,7 @@ To validate the transaction
         1      1969-12-31 19:00:00 -0500 EST  CustomKeymJbU            69614ac2db2b9cb07b86bbc6a451f7120e66b1d077f83b0b0e2f09a05258d66e
 ```
 
-## Multiple updates to a key page&#x20;
+## Multiple updates to a key page
 
 When a user wants to perform multiple _"updateAccountAuth"_ operation, he/she can perform them with a single transaction as follows
 
@@ -2790,11 +2785,7 @@ The above command will return an output similar to the following:
 
 ## Encrypt
 
-Encrypt Wallet Database \
+Encrypt Wallet Database\
 ./accumulate encrypt
 
-
-
-
-
-****
+***
