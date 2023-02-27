@@ -28,9 +28,9 @@ Estimated fees below are converted to USD for actions like identity creation, to
 | Update Key Page           |               3.00 |                 $0.0300 |
 | Sign Transaction          |               0.01 |                 $0.0001 |
 
-- ¹Adding and burning credits have minimum amounts instead of a fee. Adding or burning less than 1 credit is prohibited.
-- ²For 8+ characters. See the [sliding fee schedule](#sliding-fee-schedule) for the cost of shorter ADIs.
-- ³Creating and writing to a Lite Data Account always costs 0.10 credits. Writing to an ADI Data Account normally costs 0.10 credits. Writing to an ADI Data Account costs 0.01 credits if the data is marked as scratch data. Lite Data Accounts do not support scratch data.
+¹Adding and burning credits have minimum amounts instead of a fee. Adding or burning less than 1 credit is prohibited.<br />
+²For 8+ characters. See the [sliding fee schedule](#sliding-fee-schedule) for the cost of shorter ADIs.<br />
+³Creating and writing to a Lite Data Account always costs 0.10 credits. Writing to an ADI Data Account normally costs 0.10 credits. Writing to an ADI Data Account costs 0.01 credits if the data is marked as scratch data. Lite Data Accounts do not support scratch data.<br />
 
 
 #### Multi-Operation Transactions
