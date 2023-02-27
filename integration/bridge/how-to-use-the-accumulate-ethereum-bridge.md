@@ -161,7 +161,7 @@ The above command will return an output similar to the following:&#x20;
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.24.18.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/image (7).png>)
+![](<../../.gitbook/assets/image (9).png>)
 
 2\. In the tab, Click on **Assets** then click **Import tokens** and paste this contract address `0xCD08505D03B6bc1a84A5E706536562546A9c99f9` in the **Token contract address** field&#x20;
 
@@ -212,9 +212,9 @@ If you will be signing transactions with a Ledger Device connected to MetaMask y
 
 Click Confirm
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/image (13).png>)
+![](<../../.gitbook/assets/image (13) (1) (1).png>)
 
 Click Release&#x20;
 

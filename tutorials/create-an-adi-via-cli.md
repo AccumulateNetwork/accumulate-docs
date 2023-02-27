@@ -33,7 +33,7 @@ Any number of accounts or sub-ADIs can be nested within an ADI. Accounts and sub
 An nth generation ADI that is created within another ADI.&#x20;
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="ADI Token Account" %}
 Holds and exchanges tokens that belong to an ADI.&#x20;
 {% endtab %}
 
