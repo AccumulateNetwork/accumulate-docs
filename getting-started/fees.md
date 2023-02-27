@@ -8,7 +8,30 @@ Accumulates fees are fixed and stable. Business models, built on Accumulate, can
 
 Estimated fees below are converted to USD for actions like identity creation, token transactions, and token issuances.
 
-<table><thead><tr><th>Type</th><th data-type="number">Base Fee in Credits (approx.)</th><th>Fee in USD</th></tr></thead><tbody><tr><td>Create Identity (see sliding fee schedule) 8+ Characters</td><td>500</td><td>$5.00</td></tr><tr><td>Create Token Account</td><td>25</td><td>$0.25</td></tr><tr><td>Send Tokens</td><td>3</td><td>$0.03</td></tr><tr><td>Create ADI Data Account</td><td>25</td><td>$0.25</td></tr><tr><td>Write Data (ADI Data Account)</td><td>0.1</td><td>$0.001</td></tr><tr><td>Write Data (Scratch Chain)</td><td>0.01</td><td>$0.0001</td></tr><tr><td>Create/Write Data to (Lite Data Account</td><td>0.1</td><td>$0.001</td></tr><tr><td>Acme Faucet</td><td>0</td><td>$0.00</td></tr><tr><td>Create Token</td><td>5000</td><td>$50.00</td></tr><tr><td>Issue Tokens</td><td>3</td><td>$0.03</td></tr><tr><td>Burn Tokens</td><td>0</td><td>$0.00</td></tr><tr><td>Create Key Page</td><td>100</td><td>$1.00</td></tr><tr><td>Create Key Book</td><td>100</td><td>$1.00</td></tr><tr><td>Add Credits</td><td>0</td><td>$0.00</td></tr><tr><td>Update Key Page</td><td>3</td><td>$0.03</td></tr><tr><td>Sign Transaction</td><td>0.01</td><td>$0.0001</td></tr></tbody></table>
+| Type                      | Base Fee (credits) | Base Fee (USD, approx.) |
+| ------------------------- | ------------------:| -----------------------:|
+| Add Credits¹              |               0.00 |                 $0.0000 |
+| Burn Credits¹             |               0.00 |                 $0.0000 |
+| Transfer Credits          |               0.01 |                 $0.0001 |
+| Send Tokens               |               3.00 |                 $0.0300 |
+| Issue Tokens              |               3.00 |                 $0.0300 |
+| Burn Tokens               |               0.10 |                 $0.0000 |
+| Create Identity²          |             500.00 |                 $5.0000 |
+| Create Token Account      |              25.00 |                 $0.2500 |
+| Create ADI Data Account   |              25.00 |                 $0.2500 |
+| Create Lite Data Account³ |               0.10 |                 $0.0010 |
+| Create Token              |            5000.00 |                $50.0000 |
+| Write Data³               |               0.10 |                 $0.0010 |
+| Write Scratch Data³       |               0.01 |                 $0.0001 |
+| Create Key Page           |             100.00 |                 $1.0000 |
+| Create Key Book           |             100.00 |                 $1.0000 |
+| Update Key Page           |               3.00 |                 $0.0300 |
+| Sign Transaction          |               0.01 |                 $0.0001 |
+
+- ¹Adding and burning credits have minimum amounts instead of a fee. Adding or burning less than 1 credit is prohibited.
+- ²For 8+ characters. See the [sliding fee schedule](#sliding-fee-schedule) for the cost of shorter ADIs.
+- ³Creating and writing to a Lite Data Account always costs 0.10 credits. Writing to an ADI Data Account normally costs 0.10 credits. Writing to an ADI Data Account costs 0.01 credits if the data is marked as scratch data. Lite Data Accounts do not support scratch data.
+
 
 #### Multi-Operation Transactions
 
