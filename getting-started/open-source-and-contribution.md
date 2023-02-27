@@ -23,5 +23,5 @@ Please read our [contribution guide](https://gitlab.com/accumulatenetwork/accumu
 
 ### Contributing to the documentation
 
-We encourage our contributors to follow [Google's writing style](https://developers.google.com/style) when adding to our documentation. This style guide provides clear and concise guidelines for writing technical material, which will help to ensure that our documentation is consistent and easy to understand for all readers. If you need help getting started, you can find the [Google writing style guide](https://developers.google.com/style) online.
+We encourage our contributors to follow [Google's writing style](https://developers.google.com/style) when adding to our documentation. This style guide provides clear and concise guidelines for writing technical material, which will help to ensure that our documentation is consistent and easy to understand for all readers.
 
