@@ -101,7 +101,7 @@ If it doesn't work, run `make clean` then rerun the **step 10** command.
 
 At this stage, your Ledger Nano will show you **Deny unsafe manager** and an arrow **>** to see other options like **Public key** and **Allow safe manager.**
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-10-07 at 11.00.18 (1).png" alt=""><figcaption><p><strong>Deny unsafe manager</strong></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-07 at 11.00.18.png" alt=""><figcaption><p><strong>Deny unsafe manager</strong></p></figcaption></figure>
 
 Press the right button to navigate to **Allow safe manager.** Then press both buttons to accept.
 

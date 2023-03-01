@@ -1,30 +1,38 @@
 ---
-description: Follow this guide to learn how to convert your Factoids (FCT), and wrapped Factoids (wFCT) on Factom to ACME on Accumulate. 
+description: >-
+  Follow this guide to convert your Factoids (FCT) and wrapped Factoids (wFCT)
+  on Factom to ACME on Accumulate.
 ---
 
 # Converting FCT to ACME
 
-The FCT conversion to ACME is going to be automatic. At the point of conversion, the Factoid address will be converted into Accumulate Lite Token Account addresses. You will import all the Factoid addresses into accumulate as RCD1 Accumulate Lite Token account addresses at genesis. The Factoid address will map automatically to these new RCD1 Accumulate Lite Token accounts.&#x20;
+The FCT conversion to ACME is automatic. At the point of conversion, the Factoid address will be converted into Accumulate Lite Token Account addresses. You will import all the Factoid addresses into accumulate as RCD1 Accumulate Lite Token account addresses at genesis. The Factoid address will map automatically to these new RCD1 Accumulate Lite Token accounts.
 
-The Factoid balances will be automatically converted into ACME and deposited into the RCD1 ACME Lite Token account. To access the new ACME, users will need to import their Factom private keys into the Accumulate CLI wallet. The wallet will understand this mapping, and the users will have access at that point to their new ACME. Within the Accumulate Explorer, Factoid Addresses will point to ACME Lite Token Account Addresses.
+The Factoid balances will be automatically converted into ACME and deposited into the RCD1 ACME Lite Token account.&#x20;
 
-### **Export and Import Steps for CLI**&#x20;
+To access ACME, users will need to import their **Factom private keys** into the Accumulate CLI wallet. The wallet will understand this mapping, and the users will have access at that point to their new ACME. Within the Accumulate Explorer, Factoid Addresses will point to ACME Lite Token Account Addresses.
 
-**Step 1: Locate Factoid Address and Factoid Secret Key**&#x20;
+### **Export and Import Steps for CLI**
 
-Factoid Secret (ED25519 Private Key):&#x20;
+**Step 1:**&#x20;
+
+Locate Factoid Address and Factoid Secret Key
+
+**Factoid Secret (ED25519 Private Key):**
 
 ```
 Fs1ipNRjEXcWj8RUn1GRLMJYVoPFBL1yw9rn6sCxWGcxciC4HdPd 
 ```
 
-Factoid Address (Public Key RCD1 Hash):
+**Factoid Address (Public Key RCD1 Hash):**
 
 ```
 FA2PdKfzGP5XwoSbeW1k9QunCHwC8DY6d8xgEdfm57qfR31nTueb
 ```
 
-#### **Step 2: Import Factoid Secret to Accumulate CLI, Mobile Wallet, or Web Wallet**&#x20;
+#### **Step 2:**&#x20;
+
+Import Factoid Secret to Accumulate CLI, Mobile Wallet, or Web Wallet
 
 **Syntax**
 
@@ -32,7 +40,7 @@ FA2PdKfzGP5XwoSbeW1k9QunCHwC8DY6d8xgEdfm57qfR31nTueb
 accumulate key import factoid [factoid private address] Import a Factoid Secret Address 
 ```
 
-&#x20;**Command**
+**Command**
 
 ```
 ./accumulate key import factoid Fs1ipNRjEXcWj8RUn1GRLMJYVoPFBL1yw9rn6sCxWGcxciC4HdPd 
@@ -47,7 +55,9 @@ The above command will return an output similar to the following:
         key type        :       rcd1 
 ```
 
-**Step 3: Lite Token Account will hold ACME balance converted from Prior Factoid Balance**&#x20;
+**Step 3:**&#x20;
+
+Lite Token Account will hold ACME balance converted from Prior Factoid Balance
 
 **Syntax**
 
@@ -71,21 +81,21 @@ The above command will return an output similar to the following:
         Last Used On    :       1969-12-31 19:00:00 -0500 EST 
 ```
 
-### User Expectation&#x20;
+### User Expectation
 
-* **If a user has FCT in a Hot Wallet or on an Exchange:**  Export FS Address (Factom Secret Key) from Factom Wallet. Import FS Address it into Accumulate Wallet (Mobile, Web, CLI). Reference Export and Import Steps.&#x20;
-* **If a user has FCT in a Ledger:** No action on the user’s part when the Ledger supports ACME to convert FCT to ACME.  The user will need to install the ACME Ledger application.&#x20;
-* **If a user has WFCT:**  WFCT holders can convert their WFCT to ACME using this [https://wfct-burn.netlify.app](https://wfct-burn.netlify.app)&#x20;
+* **If a user has FCT in a Hot Wallet or on an Exchange:** Export FS Address (Factom Secret Key) from Factom Wallet. Import FS Address it into Accumulate Wallet (Mobile, Web, CLI). Reference Export and Import Steps.
+* **If a user has FCT in a Ledger:** No action on the user’s part when the Ledger supports ACME to convert FCT to ACME. The user will need to install the ACME Ledger application.
+* **If a user has WFCT:** WFCT holders can convert their WFCT to ACME using this [https://wfct-burn.netlify.app](https://wfct-burn.netlify.app)
 
-### Exchange Expectation&#x20;
+### Exchange Expectation
 
-* **If an exchange has FCT:**  If the exchange supports FCT to ACME conversion. Nothing needs to be done by the Exchange, and If the exchange does not support the FCT to ACME conversion, the Exchange needs to tell users to withdraw their funds from the Exchange.&#x20;
+* **If an exchange has FCT:** If the exchange supports FCT to ACME conversion. Nothing needs to be done by the Exchange, and If the exchange does not support the FCT to ACME conversion, the Exchange needs to tell users to withdraw their funds from the Exchange.
 
-**Assumption:** Exchange may hold some FCT in Cold and Hot Storage&#x20;
+**Assumption:** Exchange may hold some FCT in Cold and Hot Storage
 
-* **Current Exchanges that support FCT:** Bittrex.com and Qtrade.io&#x20;
+* **Current Exchanges that support FCT:** Bittrex.com and Qtrade.io
 
-### Data Accounts&#x20;
+### Data Accounts
 
-**Factom Data Chain to Lite Data Account** \
-****To Convert a Factom Data Chain to a Lite Data account, add acc:// before the Data Chain ID.&#x20;
+**Factom Data Chain to Lite Data Account**\
+To Convert a Factom Data Chain to a Lite Data account, add acc:// before the Data Chain ID.

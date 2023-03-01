@@ -9,7 +9,7 @@ Accumulates fees are fixed and stable. Business models, built on Accumulate, can
 Estimated fees below are converted to USD for actions like identity creation, token transactions, and token issuances.
 
 | Type                      | Base Fee (credits) | Base Fee (USD, approx.) |
-| ------------------------- | ------------------:| -----------------------:|
+| ------------------------- | -----------------: | ----------------------: |
 | Add Credits¹              |               0.00 |                 $0.0000 |
 | Burn Credits¹             |               0.00 |                 $0.0000 |
 | Transfer Credits          |               0.01 |                 $0.0001 |
@@ -28,9 +28,9 @@ Estimated fees below are converted to USD for actions like identity creation, to
 | Update Key Page           |               3.00 |                 $0.0300 |
 | Sign Transaction          |               0.01 |                 $0.0001 |
 
-¹Adding and burning credits have minimum amounts instead of a fee. Adding or burning less than 1 credit is prohibited.<br />
-²For 8+ characters. See the [sliding fee schedule](#sliding-fee-schedule) for the cost of shorter ADIs.<br />
-³Creating and writing to a Lite Data Account always costs 0.10 credits. Writing to an ADI Data Account normally costs 0.10 credits. Writing to an ADI Data Account costs 0.01 credits if the data is marked as scratch data. Lite Data Accounts do not support scratch data.<br />
+¹Adding and burning credits have minimum amounts instead of a fee. Adding or burning less than 1 credit is prohibited.\
+²For 8+ characters. See the [sliding fee schedule](fees.md#sliding-fee-schedule) for the cost of shorter ADIs.\
+³Creating and writing to a Lite Data Account always costs 0.10 credits. Writing to an ADI Data Account normally costs 0.10 credits. Writing to an ADI Data Account costs 0.01 credits if the data is marked as scratch data. Lite Data Accounts do not support scratch data.\
 
 
 #### Multi-Operation Transactions
@@ -68,5 +68,5 @@ Except for send tokens, failed transactions paying fees over 1 credit will be re
 {% endhint %}
 
 {% hint style="info" %}
-For send token transactions each failed output will refund 1 credit.&#x20;
+For send token transactions each failed output will refund 1 credit.
 {% endhint %}
