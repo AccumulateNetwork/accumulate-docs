@@ -16,7 +16,7 @@ The estimated fees below are converted to USD for actions like identity creation
 | Send Tokens               |               3.00 |                 $0.0300 |
 | Issue Tokens              |               3.00 |                 $0.0300 |
 | Burn Tokens               |               0.10 |                 $0.0000 |
-| Create Identity²          |             500.00 |                 $5.0000 |
+| Create ADI²               |             500.00 |                 $5.0000 |
 | Create Token Account      |              25.00 |                 $0.2500 |
 | Create ADI Data Account   |              25.00 |                 $0.2500 |
 | Create Lite Data Account³ |               0.10 |                 $0.0010 |
