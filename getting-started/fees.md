@@ -48,16 +48,16 @@ The estimated fees below are converted to USD for actions like identity creation
 
 Short ADIs cost more. The length of an ADI is calculated as the number of bytes of the UTF-8 encoded string minus the `.acme` suffix, _not the number of characters_. For example, `屋.acme` and `abc.acme` are both counted as 3 bytes long. The current schedule is as follows:
 
-| Length | Cost                        |
-| ------ | --------------------------- |
-| 1      | $48,000 / 4,800,000 credits |
-| 2      | $12,000 / 1,200,000 credits |
-| 3      | $3,500 / 350,000 credits    |
-| 4      | $900 / 90,000 credits       |
-| 5      | $250 / 25,000 credits       |
-| 6      | $70 / 7,000 credits         |
-| 7      | $18 / 1,800 credits         |
-| 8+     | $5 / 500 credits            |
+| Length | Cost              |
+| ------ | ----------------- |
+| 1      | 4,800,000 credits |
+| 2      | 1,200,000 credits |
+| 3      | 350,000 credits   |
+| 4      | 90,000 credits    |
+| 5      | 25,000 credits    |
+| 6      | 7,000 credits     |
+| 7      | 1,800 credits     |
+| 8+     | 500 credits       |
 
 {% hint style="info" %}
 All transactions incur a 0.1 credit fee per every 256 bytes over a base of 256 bytes. The additional fee is 0.01 credits instead of 0.1 if it is a scratch transaction. Signatures incur a 0.01 credit fee for every 256 bytes over a base of 256 bytes.
