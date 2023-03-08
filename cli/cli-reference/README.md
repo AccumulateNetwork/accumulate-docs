@@ -2690,12 +2690,18 @@ Receipts:
 
 ## Send tokens to multiple parties
 
+{% hint style="warning" %}
+  Sending tokens to multiheple destinations in the same transaction requires the `tx execute` command. This command is NOT set up to handle decimals. Therefore, the last 8 digits you include in the amount will be interpreted as decimals.
+
+  E.g. If you want to send 10.56 ACME, you must enter the amount as `1056000000`
+{% endhint %}
+
 User can "send tokens" to multiple parties in a single transaction as follows
 
 {% code overflow="wrap" %}
 ```
-accumulate tx execute acc://automationAdi138.acme/token24 addKeyed255198OA8 "{ type: sendTokens, to: [ { url: "acc://automationAdi138.acme/token943", amount: '10' }, { url: "automationAdi138.acme/token382", 
-amount: '5' } ] }"
+accumulate tx execute acc://automationAdi138.acme/token24 addKeyed255198OA8 "{ type: sendTokens, to: [ { url: "acc://automationAdi138.acme/token943", amount: '1056000000' }, { url: "automationAdi138.acme/token382", 
+amount: '500000000' } ] }"
 ```
 {% endcode %}
 
