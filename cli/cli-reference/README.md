@@ -2690,15 +2690,8 @@ Receipts:
 
 ## Send tokens to multiple parties
 
-User can "send tokens" to multiple parties in a single transaction using the following syntax:
+User can "send tokens" to multiple parties in a single transaction as follows
 
-{% code overflow="wrap" %}
-```
-accumulate tx execute <token account> <key>@<signer> '{ type: sendTokens, to: [ { url: "<recipient>", amount: "<amount>" }, ... ] }'
-```
-{% endcode %}
-
-Example:
 {% code overflow="wrap" %}
 ```
 accumulate tx execute acc://automationAdi138.acme/token24 addKeyed255198OA8 "{ type: sendTokens, to: [ { url: "acc://automationAdi138.acme/token943", amount: '10' }, { url: "automationAdi138.acme/token382", 
@@ -2706,6 +2699,15 @@ amount: '5' } ] }"
 ```
 {% endcode %}
 
+The above command will return an output similar to the following:
+
+```
+Transaction Hash        : 3260d61d1efdf01b3c19abe5aa24cbc44ba352e319da2240aba301a169263d69
+        Signature 0 Hash        : 325bcfc2b50a05193d843d75fdb9f7d03410af31b0c73dc402c3c1c01046a86f
+        Simple Hash             : c65c5fc325104e1839e0fc7c68226ee7533e1b32ebcf4dd9bb9381d010565b5d      
+        Error code              : ok
+        Result                  :
+```
 
 ## Issue tokens to multiple parties
 
