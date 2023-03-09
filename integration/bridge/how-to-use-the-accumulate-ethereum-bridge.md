@@ -1,14 +1,18 @@
 # How to mint wACME with the Accumulate Bridge
 
+Creating new tokens, or minting, can be complex and intimidating for many users. The Accumulate Bridge offers a simple and user-friendly solution to this problem, allowing users to mint wACME tokens easily. This article will explore the steps in minting wACME with the Accumulate Bridge, providing a comprehensive guide for beginners and experienced users. This is a step-by-step instruction on using it to mint wACME tokens. Whether you are a new or a seasoned user, this guide will help you navigate and empower you to mint wACME with confidence.
 
-
+{% hint style="info" %}
 You can download the browser extension or app to access it via this [link](https://metamask.io/)
+{% endhint %}
 
-### **Will my MetaMask wallet support Accumulate?**
+### **FAQ**
+
+#### **Will my MetaMask wallet support Accumulate?**
 
 **Goerlie Testnet Bridge:**  [**https://testnet.bridge.accumulatenetwork.io/mint**](https://testnet.bridge.accumulatenetwork.io/mint)****
 
-## **Will my MetaMask wallet support Accumulate?**
+#### **Will my MetaMask wallet support Accumulate?**
 
 Unfortunately, because Accumulate and Metamask are incompatible, you cannot directly add ACME, Accumulate's native token, to your Metamask wallet.&#x20;
 
@@ -24,7 +28,11 @@ Bridges exist to connect blockchain networks. They enable connectivity and inter
 
 They create a route for transporting tokens, messages, arbitrary data, and even smart contract calls from one blockchain to another.
 
-**Prerequisites**
+* Metamask account
+* Basic knowledge of [Accumulate CLI commands](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
+* Accumulate [CLI Setup](https://docs.accumulatenetwork.io/accumulate/cli/cli-setup)
+
+### **Prerequisites**
 
 * Metamask account
 * Basic knowledge of [Accumulate CLI commands](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference)
@@ -33,17 +41,17 @@ They create a route for transporting tokens, messages, arbitrary data, and even 
 ### **How to add Accumulate to Metamask**
 
 1. Open the Metamask browser extension on your pc.
-2. Click Ethereum Mainnet dropdown menu and click **Add network**
+2. Click the Ethereum Mainnet dropdown menu and click **Add network.**
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 13.23.46.png" alt=""><figcaption><p>dropdown menu</p></figcaption></figure>
 
 3\. Click **Advanced** and toggle the **Show test networks** to **ON**
 
-To use the Accumulate Mainnet Bridge please go to: [https://bridge.accumulatenetwork.io/mint](https://bridge.accumulatenetwork.io/mint)
+To use the Accumulate Mainnet Bridge, please go to: [https://bridge.accumulatenetwork.io/mint](https://bridge.accumulatenetwork.io/mint)
 
 ### Configuring Metamask for Goerli Testnet
 
-If you want to use the testnet, click on the Ethereum Mainnet dropdown scroll **Advanced** and toggle the **Show test networks** to **ON**
+If you want to use the testnet, click on the Ethereum Mainnet dropdown, scroll **Advanced,** and toggle the **Show test networks** to **ON**
 
 4\. Then, visit the Accumulate bridge website via this link [https://bridge.accumulatenetwork.io/mint](https://bridge.accumulatenetwork.io/mint)&#x20;
 
@@ -51,11 +59,11 @@ If you want to use the testnet, click on the Ethereum Mainnet dropdown scroll **
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 13.26.02.png" alt=""><figcaption><p>Show test network</p></figcaption></figure>
 
-5\. Click on **connect a wallet,** then you will see a pop-up similar to the image below.
+5\. Click on **connect a wallet to** see a pop-up like an image below.
 
 6\. Click on the Goerli test network
 
-To use the Accumulate Testnet Bridge please go to: [https://testnet.bridge.accumulatenetwork.io/mint](https://testnet.bridge.accumulatenetwork.io/mint)
+To use the Accumulate Testnet Bridge, please go to: [https://testnet.bridge.accumulatenetwork.io/mint](https://testnet.bridge.accumulatenetwork.io/mint)
 
 
 
@@ -70,7 +78,7 @@ Below is an example of using the bridge on the Ethereum Mainnet sending ACME and
 **3. The contract address for importing WACME to MetaMask for the Goerli Testnet: `0xCD08505D03B6bc1a84A5E706536562546A9c99f9`**
 {% endhint %}
 
-1. Click on **connect a wallet,** then you will see a pop-up similar to the image below.
+Click on **connect a wallet;** then**,** you will see a pop-up similar to the image below.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.27.38.png" alt=""><figcaption></figcaption></figure>
 
@@ -82,9 +90,9 @@ After approving the transaction, your bridge will be connected to your Metamask 
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.23.53.png" alt=""><figcaption></figcaption></figure>
 
-7\. **** Type in the amount of ACME you want to send. &#x20;
+&#x20;**** Type in the amount of ACME you want to send. &#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.35.13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.35.13.png" alt="Mint instruction"><figcaption></figcaption></figure>
 
 In this example, I entered **100 ACME.**
 
@@ -92,7 +100,7 @@ In this example, I entered **100 ACME.**
 
 ****
 
-8\. Click **Next** to view the mint instruction.
+Click **Next** to view the mint instruction.
 
 ![](<../../.gitbook/assets/image (8).png>)
 
@@ -100,7 +108,7 @@ The next step is to transfer ACME tokens to your Metamask wallet.
 
 ### **Send tokens to bridge token account**
 
-**Generate Lite Token Account**&#x20;
+* **Generate Lite Token Account**&#x20;
 
 ```
 ./accumulate key generate test1 (key name)
@@ -117,9 +125,7 @@ Password: ********************
  Derivation   | m/44'/281'/0'/0'/1'
 ```
 
-**Faucet Lite Token Account**&#x20;
-
-**Add Credits to Lite Token Account**&#x20;
+* **Add Credits to Lite Token Account**&#x20;
 
 Add credit to your lite token account by running the command below.
 
@@ -141,7 +147,7 @@ The above command will return an output similar to the following:&#x20;
                                   Amount        2.00000000 ACME
 ```
 
-**Send Tokens to the Bridge Token Account which is Displayed in the Mint Instructions and Add a Memo Field Containing your Ethereum Address shown in your Meta Mask wallet**&#x20;
+* **Send Tokens to the Bridge Token Account, displayed in the Mint Instructions, and Add a Memo Field Containing your Ethereum Address shown in your Meta Mask wallet.**
 
 ```
 ./accumulate tx create acc://9a4df91123d42b5926b6e84dac256ddc8a1e32f8c5a59554/ACME acc://bridge.acme/1-ACME 90 --memo ‘0x2F0A0C3341C63D647FE7f5f3bbFCcb4f6DbE7938'
@@ -157,27 +163,27 @@ The above command will return an output similar to the following:&#x20;
         Result                  :
 ```
 
-1. Open your MetaMask
+Then, open your MetaMask
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.24.18.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/image (9).png>)
+Change your network from `Goerli` to `Ethereum Mainet.`&#x20;
 
-2\. In the tab, Click on **Assets** then click **Import tokens** and paste this contract address `0xCD08505D03B6bc1a84A5E706536562546A9c99f9` in the **Token contract address** field&#x20;
+![](<../../.gitbook/assets/image (7).png>)
+
+In the tab, Click on **Assets,** then click **Import tokens** and paste this contract address `0xCD08505D03B6bc1a84A5E706536562546A9c99f9` in the **Token contract address** field&#x20;
 
 ![](<../../.gitbook/assets/image (6) (1).png>)
 
-3\. Click add custom token
+Click `Add custom token.`&#x20;
 
 ![](<../../.gitbook/assets/image (12).png>)
 
-4\. Finally, click Import tokens
+Finally, click `Import tokens.` to transfer your tokens to `WACME.`&#x20;
 
 ![](<../../.gitbook/assets/image (11).png>)
 
-
-
-Current ACME Balance
+To check your current `ACME` Balance, run the command below.
 
 ```
 ./accumulate get acc://cd6dfd30c1c66851cfea57631b0d1c0c7a6ea220df710bd4/ACME                                                                    
@@ -191,40 +197,40 @@ Current ACME Balance
 
 ## Sending WACME through the Bridge Example                    (WACME->ACME):
 
-Connect the MetaMask Wallet on the Mainnet
+You can connect the MetaMask Wallet on the Mainnet by following the steps below.
 
-1. Enter in the Amount of ACME you would like released and the destination and click approve.
+Enter the Amount of ACME you would like released and the destination, and click approve.
 
-![](<../../.gitbook/assets/image (18).png>)
+<img src="../../.gitbook/assets/image (18).png" alt="" data-size="original">
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.31.42.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Make sure you have Eth in your Wallet to Sign Transactions on the Mainnet.\
+Ensure you have Eth in your Wallet to Sign Transactions on the Mainnet.\
 Use Goerli Eth on the Testnet to Pay for Transactions:&#x20;
 
 [https://goerlifaucet.com/](https://goerlifaucet.com/)
 {% endhint %}
 
-If you will be signing transactions with a Ledger Device connected to MetaMask you will need to enable [blind signing.](https://www.ledger.com/academy/enable-blind-signing-why-when-and-how-to-stay-safe)
+If you are signing transactions with a Ledger Device connected to MetaMask, you will need to enable [blind signing.](https://www.ledger.com/academy/enable-blind-signing-why-when-and-how-to-stay-safe)
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.31.59.png" alt=""><figcaption></figcaption></figure>
 
-Click Confirm
+Click `Confirm`
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07 (1).png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/image (13) (1).png>)
+![](<../../.gitbook/assets/image (13).png>)
 
-Click Release&#x20;
+Click `Release`&#x20;
 
 ![](<../../.gitbook/assets/image (4) (1).png>)
 
-Click Confirm
+Click  the `Confirm` button to accept.
 
 ![](../../.gitbook/assets/image.png)
 
-Current Balance
+To check your current `ACME` Balance, run the command below.
 
 ```
 ./accumulate get acc://cd6dfd30c1c66851cfea57631b0d1c0c7a6ea220df710bd4/ACME                                                                    
