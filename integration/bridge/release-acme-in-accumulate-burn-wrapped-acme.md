@@ -1,12 +1,14 @@
-# Release ACME in Accumulate Burn Wrapped ACME
+# How to release ACME with the Accumulate Bridge
+
+Releasing ACME can be complex, especially when integrating it with other blockchains. This is where the Accumulate Bridge comes in, as it simplifies releasing ACME by providing an easy-to-use interface for management. This article will explore the steps involved in releasing an Accumulate token in WACME with the Accumulate Bridge.
 
 Burning a wrapped `ACME` in Ethereum will release a comparable amount of `ACME` in Accumulate minus bridge fees.
 
-This guide describes how to release an Accumulate token in WACME.
+### Steps in releasing ACME
 
-1\. Connect your wallet
+**1.** Connect your wallet
 
-The first step is to visit the bridge testnet url and connect your wallet to the bridge.&#x20;
+The first step is to visit the bridge testnet URL and connect your wallet to the bridge.&#x20;
 
 {% tabs %}
 {% tab title="Mainnet" %}
@@ -18,11 +20,11 @@ The first step is to visit the bridge testnet url and connect your wallet to the
 {% endtab %}
 {% endtabs %}
 
-2\. Click on the release tab
+**2.** Click on the release tab
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-11-18 at 17.43.50.png" alt=""><figcaption></figcaption></figure>
 
-3\. Add the amount of `WACME` you want to release, then click **Approve**.
+**3.** Add the amount of `WACME` you want to release, then click **Approve**.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-11-18 at 17.45.02.png" alt=""><figcaption></figcaption></figure>
 
@@ -30,7 +32,7 @@ The first step is to visit the bridge testnet url and connect your wallet to the
 Visit this URL to request more Gorlie faucets. [https://goerlifaucet.com/ for testnet only](https://goerlifaucet.com/)
 {% endhint %}
 
-4\. Click the **Confirm** button
+**4.** Click the **Confirm** button
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-11-18 at 17.51.14.png" alt=""><figcaption><p>permission to access WACME</p></figcaption></figure>
 
@@ -38,11 +40,11 @@ Then you will be prompted to accept the request on your Metamask.
 
 After accepting the request, the release button will become clickable, meaning you can now release your WACME.
 
-5\. Click the **Release** button above
+**5.** Click the **Release** button above
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-11-18 at 17.52.12.png" alt=""><figcaption></figcaption></figure>
 
-6\. Click the **Confirm** button to accept the transaction.
+**6.** Click the **Confirm** button to accept the transaction.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-11-18 at 17.52.47.png" alt=""><figcaption></figcaption></figure>
 
@@ -50,7 +52,7 @@ Your transaction is now successful.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-11-18 at 17.53.01.png" alt=""><figcaption></figcaption></figure>
 
-7\. Query Lite Token Account ACME is being sent via the CLI.
+**7.** Query Lite Token Account ACME is being sent via the CLI.
 
 **Command**&#x20;
 
@@ -74,7 +76,7 @@ The above command will return an output similar to the following:
         Lock Height     :       0 
 ```
 
-**Transaction hash**
+### **Transaction hash**
 
 You can also view the transaction on Etherscan by copying the transaction hash **** below and visiting [https://goerli.etherscan.io/](https://goerli.etherscan.io/)
 

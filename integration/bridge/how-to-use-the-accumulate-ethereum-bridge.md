@@ -214,7 +214,7 @@ Click Confirm
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 16.35.07.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/image (13) (1) (1).png>)
+![](<../../.gitbook/assets/image (13) (1).png>)
 
 Click Release&#x20;
 

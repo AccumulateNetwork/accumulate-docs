@@ -85,7 +85,7 @@ This command will start Accumulate manager.&#x20;
 
 The above command will return an output similar to the following: &#x20;
 
-![](<../.gitbook/assets/Screenshot 2022-08-10 at 14.51.57.png>)
+![](broken-reference)
 
 From the Accumulate manager main menu&#x20;
 
