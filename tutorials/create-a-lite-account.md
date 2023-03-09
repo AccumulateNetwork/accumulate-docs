@@ -1,4 +1,10 @@
-# Sending a transaction with a lite token account
+---
+description: >-
+  This guide will show you how to send tokens from a Lite Token Account (LTA)
+  with the CLI
+---
+
+# Sending Tokens from a Lite Token Account via CLI
 
 Lite Accounts are a ‘lite’ version of ADIs that may appeal to users who want to send and receive tokens and maintain a record of their token accounts and transactions despite their comparatively limited utility and flexibility. For more information, see the [Lite Account Deep Dive](../deep-dive/anonymous-token-chains.md) section.
 
@@ -11,21 +17,8 @@ Lite token accounts can send transactions to other users by specifying the recip
 * You need basic knowledge of Git
 
 {% hint style="info" %}
-Your account connects to the accumulate **mainnet** by default.
+Your account connects to the accumulate **mainnet** by default. If you want to connect to the testnet, append this flag and argument to every command you run: `-s https://testnet.accumulatenetwork.io/v2`
 {% endhint %}
-
-If you want to connect to the testnet, add this flag and argument -s [https://testnet.accumulatenetwork.io/v2](https://devnet.accumulatenetwork.io/v2)
-
-**Example:**
-
-I will use the faucet command for this example.
-
-```
-./accumulate faucet acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME -s 
-https://testnet.accumulatenetwork.io/v2
-```
-
-Follow the steps below to send transactions with a lite token account.
 
 ### **1: Generate a lite account**
 
@@ -49,14 +42,15 @@ acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME :   c11d64fa7aca19c3
 
 ### **2: Fund your account**
 
-You will fund your new account using the faucet command, which will broadcast the existence of your new account and give you some free tokens.
+If you are on testnet, you can use the built-in faucet. The faucet account  will broadcast the existence of your new account and give you some free tokens.
 
-Since this command requires broadcasting to the network, you need to ensure you are connected to a node. We do that with the -s flag then the server address for the node we wish to connect to comes next.
+This command only exists on testnet. For Mainnet users, you will need to purchase ACME or receive some from a friend.
 
 **Syntax**
 
 ```
-./accumulate faucet <your account address> 
+./accumulate faucet <your account address> -s 
+https://testnet.accumulatenetwork.io/v2
 ```
 
 **Example**
