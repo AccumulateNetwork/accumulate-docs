@@ -4,9 +4,13 @@ description: >-
   do that through a process called releasing.
 ---
 
-# How to convert wACME to ACME
+# How to convert WACME to ACME
 
-Converting wACME to ACME, can be accomplished with the Accumulate Bridge's Release feature. Releasing refers to burning Wrapped ACME (**WACME**) in Ethereum to release an equal amount of **ACME** in Accumulate (minus bridge fees). The Accumulate Bridge simplifies releasing ACME by providing an easy-to-use interface for management.&#x20;
+**Wrapped Accumulate (WACME)** is an ERC-20 wrapped version of the native **ACME** token on Ethereum. WACME allows users in the Ethereum ecosystem to use ACME across an array of DeFi platforms, such as Uniswap and Curve.
+
+The Accumulate Bridge offers a simple and user-friendly method to convert WACME back into native ACME for use in Accumulate.
+
+Converting WACME to ACME can be accomplished with the Accumulate Bridge's Release feature. Releasing refers to burning Wrapped ACME (WACME) in Ethereum to release an equal amount of **ACME** in Accumulate (minus bridge fees). The Accumulate Bridge simplifies releasing ACME by providing an easy-to-use interface for management.&#x20;
 
 ### Steps in releasing ACME
 
