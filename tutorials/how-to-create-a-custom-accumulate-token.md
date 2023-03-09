@@ -1,11 +1,31 @@
-# Create a Custom Token/Token Issuer
+# How to create a Custom Token/Token Issuer using CLI
+
+Creating a custom token involves writing and deploying smart contract code to a blockchain network. The smart contract defines the properties and behavior of the token, such as its name, symbol, and total supply.
+
+* Basic understanding of Command line&#x20;
+* Basic understanding of Accumulate CLI commands&#x20;
+
+To create a custom token, you will need to have a basic understanding of the Accumulate commands (CLI) and access to a development environment. The steps typically involved in creating a custom token are:
+
+1. Creation of an ADI
+2. Creation of your token
 
 Creating a custom token in Accumulate via CLI is straightforward. You do that by creating an ADI and using the ADI information to create your custom token. &#x20;
 
-### **Requirements**&#x20;
+{% hint style="info" %}
+Your account connects to the accumulate **mainnet** by default.
+{% endhint %}
 
-* Basic knowledge of Command line&#x20;
-* Basic knowledge of Accumulate CLI commands&#x20;
+If you want to connect to the testnet, add this flag and argument -s [https://testnet.accumulatenetwork.io/v2](https://devnet.accumulatenetwork.io/v2)
+
+**Example:**
+
+I will use the faucet command for this example.
+
+```
+./accumulate faucet acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME -s 
+https://testnet.accumulatenetwork.io/v2
+```
 
 ### **Create an ADI**&#x20;
 

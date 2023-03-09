@@ -70,7 +70,7 @@
 ## Tutorials
 
 * [Sending Tokens from a Lite Token Account via CLI](tutorials/create-a-lite-account.md)
-* [Create a Custom Token/Token Issuer](tutorials/how-to-create-a-custom-accumulate-token.md)
+* [How to create a Custom Token/Token Issuer using CLI](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
 * [Querying Accumulate token account with Json RPC API](tutorials/proving-account-state-with-the-api.md)
 * [How to create a Lite Account and Keys on mainnet / testnet](tutorials/how-to-create-a-lite-account-and-keys-on-mainnet-testnet.md)
