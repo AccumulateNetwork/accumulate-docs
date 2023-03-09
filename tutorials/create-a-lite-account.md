@@ -1,14 +1,31 @@
-# Sending a Transaction with a Lite Token Account
-
-This tutorial will teach you how to create and fund an account, send tokens between the two, send credits, check account balance, and check transaction info.
+# Sending a transaction with a lite token account
 
 Lite Accounts are a ‘lite’ version of ADIs that may appeal to users who want to send and receive tokens and maintain a record of their token accounts and transactions despite their comparatively limited utility and flexibility. For more information, see the [Lite Account Deep Dive](../deep-dive/anonymous-token-chains.md) section.
 
+Lite token accounts can send transactions to other users by specifying the recipient's address and the number of tokens to be transferred. This article provides a general overview of sending a transaction using a lite token account.&#x20;
+
 ### **Requirements:**
 
-* Basic CLI Knowledge
-* [CLI Setup](https://docs.accumulatenetwork.io/accumulate/setup/cli-setup)
-* Git
+* You need basic knowledge of CLI
+* You need to understand Accumulate [CLI Setup](https://docs.accumulatenetwork.io/accumulate/setup/cli-setup)
+* You need basic knowledge of Git
+
+{% hint style="info" %}
+Your account connects to the accumulate **mainnet** by default.
+{% endhint %}
+
+If you want to connect to the testnet, add this flag and argument -s [https://testnet.accumulatenetwork.io/v2](https://devnet.accumulatenetwork.io/v2)
+
+**Example:**
+
+I will use the faucet command for this example.
+
+```
+./accumulate faucet acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME -s 
+https://testnet.accumulatenetwork.io/v2
+```
+
+Follow the steps below to send transactions with a lite token account.
 
 ### **1: Generate a lite account**
 
@@ -30,18 +47,11 @@ Once you run the command, you should get an output with the address for your tok
 acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME :   c11d64fa7aca19c365fb4e392fac540033493911e604bf629465132392d18ba4
 ```
 
-### **2: Funding your account**
+### **2: Fund your account**
 
 You will fund your new account using the faucet command, which will broadcast the existence of your new account and give you some free tokens.
 
 Since this command requires broadcasting to the network, you need to ensure you are connected to a node. We do that with the -s flag then the server address for the node we wish to connect to comes next.
-
-{% hint style="info" %}
-Your account connects to the accumulate testnet by default.
-{% endhint %}
-
-If you want to connect to the devnet, add this flag and argument -s [https://devnet.accumulatenetwork.io/v2](https://devnet.accumulatenetwork.io/v2)\
-
 
 **Syntax**
 
@@ -72,9 +82,9 @@ To send ACME tokens to another account, you need to purchase credits with ACME a
 
 Check this [link](https://docs.accumulatenetwork.io/accumulate/getting-started/fees) to view the Base Fees for different transactions.
 
-To send credits to your lite account, run the example command in your terminal
+To send credits to your lite account, run the example command in your terminal.
 
-The command below gives your accumulate URL the access to send credits to another lite account.
+The command below gives your accumulate URL access to send credits to another lite account.
 
 **Syntax:**
 
@@ -125,7 +135,7 @@ Credits : 0
 Nonce : 0 
 ```
 
-To get it in a json format a -j flag
+To get it in a JSON format, use this `-j` flag.
 
 ```
 ./accumulate account get acc://5c33543157a40920252fa27d20079925807f611a9c4746c4/ACME -j
@@ -139,7 +149,7 @@ The above command will return an output similar to the following:
 
 ### **5: Send Tokens**
 
-Let's try sending some ACME tokens from one account to the other. You can use the account we already funded as the sending account. You'll need to create an additional account to receive the tokens.
+Let's try sending some ACME tokens from one account to the other. You can use the account we already funded as the sending account, then create an additional account to receive the tokens.
 
 To send the tokens, use the command below.
 
@@ -166,7 +176,7 @@ The above command will return an output similar to the following:
 
 ### **6: Get Transaction Hash:**
 
-Finally, let's make sure that the transaction was successful. You will use the tx get command to do that, and you will pass in the transaction id ("txid") that you received in the response output from step 5.
+Finally, let's make sure that the transaction was successful. You will use the tx get command to do that and pass in the transaction id **txid** that you received in the response output from **step 5**.
 
 **Syntax:**
 
