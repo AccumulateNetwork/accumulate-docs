@@ -1,12 +1,18 @@
 # How to create a Lite Account and Keys on mainnet / testnet
 
-To use the Accumulate Mainnet, you need to start with a lite token account. This is the network where all the real transactions occur (as opposed to the Testnet, which is only for testing purposes). A lite token account is a basic account type in Accumulate and is needed to create an ADI where the more advanced Accumulate features are available.&#x20;
+Creating a Lite Account and Keys on mainnet or testnet is an important step for anyone interested in using Accumulate. Lite Accounts are a type of account that can be used to transact and interact with blockchain networks, while Lite Keys are used to authenticate and signing transactions on these networks.
+
+This guide will walk you through creating a Lite Account and Keys on both mainnet and testnet. We will cover the basic concepts and tools required to create a Lite Account, including a wallet and private keys.
+
+By the end of this guide, you will have a better understanding of how to create a Lite Account and Keys, and you will be equipped with the knowledge and tools necessary to start using Accumulate protocol. \
+\
+To use the Accumulate Mainnet, you need to have a lite token account. This is the network where all the real transactions occur (as opposed to the Testnet, which is only for testing purposes). A lite token account is a basic account type in Accumulate and is needed to create an ADI where the more advanced Accumulate features are available.&#x20;
 
 {% hint style="info" %}
-Creating a lite account with Mainnet and testnet follows same steps.
+Creating a lite account with Mainnet and testnet follows the same steps.
 {% endhint %}
 
-Creating a lite token account on Mainnet/ testnet is easy and only takes a few minutes. In two simple steps, this article will show you how to create an account using CLI. &#x20;
+Creating a lite token account on Mainnet/ testnet is easy and only takes a few minutes. This article will show you how to create an account using CLI in two simple steps. &#x20;
 
 * Create a wallet&#x20;
 * Generate a key&#x20;
