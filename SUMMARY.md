@@ -69,9 +69,9 @@
 
 ## Tutorials
 
-* [How to create a Lite Account and Keys on mainnet / testnet](tutorials/how-to-create-a-lite-account-and-keys-on-mainnet-testnet.md)
+* [How to create a Lite Account and Keys on Mainnet / Testnet](tutorials/how-to-create-a-lite-account-and-keys-on-mainnet-testnet.md)
 * [Sending Tokens from a Lite Token Account via CLI](tutorials/create-a-lite-account.md)
-* [Create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
+* [How to create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
 * [How to create a Custom Token/Token Issuer using CLI](tutorials/how-to-create-a-custom-accumulate-token.md)
 * [Querying Accumulate token account with Json RPC API](tutorials/proving-account-state-with-the-api.md)
 

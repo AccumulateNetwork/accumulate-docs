@@ -1,6 +1,6 @@
-# Create an ADI via CLI
+# How to create an ADI via CLI
 
-Accumulate Digital Identifiers are human-readable addresses similar to website URLs that are chosen by individuals or assigned by organizations to represent their presence on the blockchain. Digital identifiers are a system for assigning unique digital identities to assets, individuals, or entities on the blockchain.
+Accumulate Digital Identifiers are human-readable addresses similar to website URLs that are chosen by individuals or assigned by organizations to represent their presence on the blockchain. Digital identifiers assign unique digital identities to assets, individuals, or entities on the blockchain.
 
 Using ADIs, Accumulate can serve as the de-facto communication and audit layer between blockchains, enabling the seamless transfer of tokens or other digital assets between ADIs across different chains regardless of their consensus mechanism.
 
@@ -11,16 +11,16 @@ Using ADIs, Accumulate can serve as the de-facto communication and audit layer b
 * Basic knowledge of Rest API
 * Basic knowledge of VueJS, Javascript
 * [Node.js v14 or newer](https://nodejs.org/) installed.
-* A JavaScript package manager, you’ll use npm as your JavaScript package manager, which is included when you install Node.
+* JavaScript package manager, you’ll use npm as your JavaScript package manager, which is included when you install Node.
 
 According to the whitepaper, “_Accumulate by-passes the trilemma of security, scalability, and decentralization by implementing a chain-of-chains architecture in which digital identities with the ability to manage keys, tokens, data, and other identities are treated as their independent blockchains.”_
 
 Each ADI is made up of a collection of independent sub-chains that are managed by four account types:
 
-* Token Accounts: For issuing tokens and tracking deposits and withdrawals from a token account.&#x20;
-* Data Accounts: For tracking and organizing data approved by an ADI
-* Staking Accounts: For staking Accumulate’s ACME tokens to participate in consensus and secure the network&#x20;
-* Scratch Accounts: For accruing data needed to build consensus across the Accumulate network and enable the coordination of multisig validation.&#x20;
+* **Token Accounts:** For issuing tokens and tracking deposits and withdrawals from a token account.&#x20;
+* **Data Accounts**: For tracking and organizing data approved by an ADI
+* **Staking Accounts:** For staking Accumulate’s ACME tokens to participate in consensus and secure the network&#x20;
+* **Scratch Accounts:** For accruing data needed to build consensus across the Accumulate network and enable the coordination of `multisig` validation.&#x20;
 
 ## **Structure**
 
@@ -141,7 +141,9 @@ This command will add credit(link) to your lite account
 
 This command creates a new ADI from a lite token account.
 
-**Note:** The minimum credit to create an ADI is 500
+{% hint style="info" %}
+The minimum credit to create an ADI is 500
+{% endhint %}
 
 **Syntax**
 
