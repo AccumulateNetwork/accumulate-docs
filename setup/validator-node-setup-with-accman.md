@@ -9,6 +9,10 @@ The validator node connects to the Accumulate network and allows users to record
 Please complete the [follower-node-setup-with-accman.md](follower-node-setup-with-accman.md "mention"). To become a Validator Node, a Follower Node is created first. It is recommended to use Accman for this process. Please&#x20;
 
 {% hint style="info" %}
+A Validator is the same as a follower, except it is trusted to check everything. It is accepted if enough Validators (usually 51%) agree. &#x20;
+{% endhint %}
+
+{% hint style="info" %}
 Click the images to enlarge them.
 {% endhint %}
 

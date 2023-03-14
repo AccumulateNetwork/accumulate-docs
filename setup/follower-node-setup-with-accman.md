@@ -8,11 +8,17 @@ coverY: 4.783333333333334
 
 &#x20;A unique type of full node called a validator node takes part in **consensus**. By taking part in consensus, validator nodes take on additional responsibilities such as transaction verification, voting, and maintaining a record of transactions. &#x20;
 
+A follower node keeps track of the history of a blockchain. Still, it is not part of the validator, and it is a type of node responsible for maintaining a full copy of the blockchain ledger and tracking the network's transaction history. However, unlike validator nodes, the follower nodes do not actively participate in the consensus mechanism or verify transactions.
+
+This means these nodes cannot add new blocks to the blockchain or confirm transactions. Rather, their role is to help ensure the integrity of the network by keeping a complete and up-to-date copy of the blockchain and serving as a source of information for other nodes in the network.
+
+Despite not being directly involved in the consensus process, these nodes are still important for the overall security and reliability of the blockchain. Maintaining a full copy of the blockchain and keeping track of its history, these nodes help prevent fraudulent or malicious activities on the network and ensure that the system is functioning as intended.
+
 {% hint style="info" %}
 &#x20;A transaction must be validated and authorized before being added to the blockchain. &#x20;
 {% endhint %}
 
-A Validator is the same as a follower, except that it is trusted to check everything. It is accepted if enough Validators (usually 51%) agree on something. &#x20;
+
 
 ![](../.gitbook/assets/AccMan.png)
 
@@ -20,13 +26,11 @@ A Validator is the same as a follower, except that it is trusted to check everyt
 Video Walkthrough
 {% endembed %}
 
-### **AccMan** &#x20;
-
-**AccMan aka (Accumulate Manager runner)**&#x20;
+### **AccMan aka (Accumulate Manager runner)**&#x20;
 
 The AccMan is a package that allows you to start the installation process of Accumulate manager.&#x20;
 
-Using the Accumulate manager is the recommended method of running a node on the Accumulate network. For more info about Accumulate manager, click here (Accumulate manager is a tool (watch the video); it is simple but powerful.).&#x20;
+The Accumulate manager is the recommended method of running a node on the Accumulate network. For more info about the Accumulate manager, click here (it is a tool (watch the video); it is simple but powerful.).&#x20;
 
 **Prerequisites**&#x20;
 
@@ -100,7 +104,7 @@ Testnet-Beta
 
 * **Select a BVN**&#x20;
 
-We recommend you select \`Auto.\`. This is to balance the network. If you running multiple servers, then assign a different BVN to each.
+We recommend you select \`Auto.\`. This is to balance the network. If you run multiple servers, assign a different BVN to each.
 
 ```
 Auto 
@@ -117,7 +121,7 @@ v0-6-0-rc1
 v0-6-0-rc2  
 ```
 
-Now, you have your Follower`Node`.  Select Start, and your running. 🥳🥳🥳&#x20;
+Now, you have your Follower`Node`.  Select Start, and you are up and running. 🥳🥳🥳&#x20;
 
 Also, if you want to create an `ssh` login account, it will take you directly to the Accumulate Manager menu:&#x20;
 
@@ -133,7 +137,7 @@ This will create a login account `accman`. The private keys from \`/root/.ssh/au
 Before booting your node, **** you must configure it to synchronize to the latest snapshot. If you skip this step, your node will take days or weeks to get caught up in the network.
 {% endhint %}
 
-Get the latest snapshot height and hash for the DN and for the BVN you're joining. For now, send a message on [#operator-chat](https://discord.com/channels/677558240141115481/1001135069727043594) requesting the latest snapshots.
+Get the latest snapshot height and hash for the DN and BVN you're joining. For now, send a message on [#operator-chat](https://discord.com/channels/677558240141115481/1001135069727043594) requesting the latest snapshots.
 
 In AccMan, run "Attach BASH Console" and run the following commands:
 
@@ -142,7 +146,7 @@ accumulated sync snapshot -w /node/dnn  tcp://{bvn}-seed.testnet.accumulatenetwo
 accumulated sync snapshot -w /node/bvnn tcp://{bvn}-seed.testnet.accumulatenetwork.io:16692 {bvn snapshot height} {bvn snapshot hash}
 ```
 
-The node may take a few minutes to synchronize to the snapshot after booting up the first time. If the height remains at zero for more than 10 minutes, there may be a problem.
+After booting up the first time, the node may take a few minutes to synchronize to the snapshot. If the height remains at zero for more than 10 minutes, there may be a problem.
 
 ### **Firewall & Rate Limiting**&#x20;
 
@@ -172,7 +176,7 @@ Remember, it is still your responsibility to ensure your server is secure.&#x20;
 
 A self-certificate is automatically generated on start-up. If you have an existing certificate for a domain name, copy the `.crt` and `.key` files to the `./certs` directory. They will be read on start-up. `.pem` files are also compatible. Rename them to `.crt` and `.key` files, respectively.
 
-&#x20;Set up a cron job, to make sure the files are kept valid. These files will be monitored for changes, and automatically reloaded. If you provide an e-mail address, Accumulate Manager will attempt to get a certificate from **LetsEncrypt**, and keep it renewed.
+&#x20;Set up a cron job to make sure the files are kept valid. These files will be monitored for changes and automatically reloaded. If you provide an e-mail address, Accumulate Manager will attempt to get a certificate from **LetsEncrypt** and keep it renewed.
 
 
 
