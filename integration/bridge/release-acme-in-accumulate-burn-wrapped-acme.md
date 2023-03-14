@@ -20,7 +20,7 @@ The first step is to visit the Accumulate Bridge in your web browser and connect
 
 {% tabs %}
 {% tab title="Mainnet" %}
-[https://bridge.accumulatenetwork.io/mint](https://bridge.accumulatenetwork.io/mint)
+[https://bridge.accumulatenetwork.io](https://bridge.accumulatenetwork.io/mint)
 {% endtab %}
 
 {% tab title="Testnet" %}
