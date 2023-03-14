@@ -2,7 +2,7 @@
 
 The fastest way to experiment with the Accumulate CLI or API is to replace the Accumulate Testnet with a running local devnet.
 
-A local devnet allows you to run accumulate Node locally on your computer and it's hosted on your company.
+A local devnet allows you to run accumulate Node locally on your computer, and it's hosted on your company.
 
 **Requirements**
 
@@ -15,19 +15,21 @@ To set up the Accumulate CLI tool, go to [cli-setup.md](../cli/cli-setup.md "men
 You can run a local devnet with the Accumulate Github or Gitlab source code.
 
 {% hint style="info" %}
-When using the CLI tool with your local devnet, you must specify the CLI to point to localhost with `-s local` with every command.
+When using the CLI tool with your local devnet, you must specify the CLI to point to localhost `-s local` with every command.
 {% endhint %}
 
-## **Follow the steps below for Mac:**
+## **Follow the steps:**&#x20;
+
+## **1. Mac:**
 
 **Initialize the Devnet**
 
 {% hint style="danger" %}
-WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w` make sure you specify an empty directory so no files are at risk.
+WARNING: Be extremely careful with the `--reset` flag, as it permanently deletes files on your computer. If you set a custom location for your configuration with the `-w` flag, it will delete whatever you specify in the directory. If you need to use `-w` , specify an empty directory, so no files are at risk.
 {% endhint %}
 
 {% hint style="info" %}
-Before you run the code make sure you “git checkout” the branch for the network version you want for your local devnet. Please see [networks.md](../getting-started/networks.md "mention") for a list of available versions.
+Before you run the code, make sure you “git checkout” the branch for the network version you want for your local devnet. Please see [networks.md](../getting-started/networks.md "mention") for the list of available versions.
 {% endhint %}
 
 Use this command below to initialize the local devnet
@@ -39,8 +41,8 @@ go run ./cmd/accumulated init devnet -w .nodes -f 0 -v 1 -b 1 --no-empty-blocks 
 * init devnet: Initialize the configure files for the devnet
 * \--no-empty-blocks: A Tendermint command that will not allow empty blocks stored in the database
 * \--no-website: this will stop the creation of a website
-* \--reset: This flag will delete the previous configuration that you have or data
-* \-w .nodes: is the working directory that the data is stored (you can also specify a custom location).
+* \--reset: This flag will delete the previous configuration that you have or the data
+* \-w .nodes: is the working directory where the data is stored (you can also specify a custom location).
 * \-v 1: specifies how many validators that you are using
 * \-b 1: is the number of BVN that you are using
 * \-f 0: x is the number of followers
@@ -51,7 +53,7 @@ go run ./cmd/accumulated init devnet -w .nodes -f 0 -v 1 -b 1 --no-empty-blocks 
 export ACC_API=http://127.0.1.1:26660/v2 
 ```
 
-The export `ACC\_API` command sets the CLI to look for this IP address when executing commands.
+The export `ACC\_API` the command sets the CLI to look for this IP address when executing commands.
 
 **Add Loopback Alias**
 
@@ -59,7 +61,7 @@ The export `ACC\_API` command sets the CLI to look for this IP address when exec
 sudo ifconfig lo0 alias 127.0.1.1 
 ```
 
-If you run the above command, it will prompt you to add your computer admin password. After that make sure to repeat this step till you get to 9.
+If you run the above command, it will prompt you to add your computer admin password. After that, repeat this step until you get to 9.
 
 **Example**
 
@@ -131,7 +133,7 @@ Waiting for 1f1bb66968df68f71b200135df74b127fcdc2dab8472d82c7825edf4c36121c7
 "pages":[{"signer":{"type":"liteTokenAccount","url":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME"},"signatures":[{"type":"ed25519","publicKey":"d03c683332ed36add8d0eeb9eee9e2669b5565decec03acc43d762f3f79f49c2","signature":"a05c49f63370cfe01878d4d9f596e5e890fe5408f562df92aecccbffc9e6ec35e798423b3ddfb3e3ce01d4f4646f0140c8938bc8e84a88f5f1e8dd6d44e9db00","signer":"acc://7117c50f04f1254d56b704dc05298912deeb25dbc1d26ef6/ACME","signerVersion":1,"timestamp":1650645938374084900,"transactionHash":"1f1bb66968df68f71b200135df74b127fcdc2dab8472d82c7825edf4c36121c7"}]}]}]} 
 ```
 
-## **Follow the steps below for Windows:**
+## **2. Windows:**
 
 ### **Build accumulated (the node daemon)**
 
@@ -152,7 +154,7 @@ Use this command below to initialize the local devnet.
 ```
 
 {% hint style="warning" %}
-WARNING: Be extremely careful with the `--reset` flag as it will permanently delete files on your computer. If you are setting a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, make sure you specify an empty directory so no files are at risk.
+WARNING: Be extremely careful with the `--reset` flag, as it permanently deletes files on your computer. If you set a custom location for your configuration with the `-w` flag, it will delete whatever is in the directory you specify. If you need to use `-w`, specify an empty directory, so no files are at risk.
 {% endhint %}
 
 * \--bvns 1: is the number of BVN that you are using
@@ -160,7 +162,7 @@ WARNING: Be extremely careful with the `--reset` flag as it will permanently del
 * \--followers 0: The number of followers you are using
 * \--log-levels 'error;executor=debug': (optional) to receive logs after running devnet
 * \--reset: This flag will delete the previous configuration that you have
-* \-w (optional) the working directory where you want data to be stored. If omitted a working directory will be added in the default location.
+* \-w (optional) the working directory where you want data stored. If omitted, a working directory will be added in the default location.
 
 The above command will return an output similar to the following:
 
@@ -178,7 +180,7 @@ Deleting D:\.accumulate/dn
 Add ‘-w’ if you included in the previous command 'D:\\.accumulate'
 
 {% hint style="info" %}
-in order to point the CLI to your local devnet, you must add ‘-s local’ to each command.
+To point the CLI to your local devnet, add ‘-s local’ to each command.
 {% endhint %}
 
-To test if your devnet is working, checkout the [CLI guide](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference).
+To test if your devnet is working, check out the [CLI guide](https://docs.accumulatenetwork.io/accumulate/cli/cli-reference).
