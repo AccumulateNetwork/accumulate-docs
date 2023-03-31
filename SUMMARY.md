@@ -58,10 +58,6 @@
 
 ## Integration
 
-* [Accumulate Bridge Guides](integration/bridge/README.md)
-  * [How to convert ACME to WACME](integration/bridge/how-to-use-the-accumulate-ethereum-bridge.md)
-  * [How to convert WACME to ACME](integration/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
-  * [How to setup a bridge node](integration/bridge/setup.md)
 * [Ledger Integration](integration/ledger-integration/README.md)
   * [How to use the Ledger with the Accumulate CLI](integration/ledger-integration/how-to-use-the-ledger-with-the-accumulate-cli.md)
   * [CLI Reference](integration/ledger-integration/cli-reference.md)
@@ -69,6 +65,10 @@
 
 ## Tutorials
 
+* [Accumulate Bridge Guides](tutorials/bridge/README.md)
+  * [How to convert ACME to WACME](tutorials/bridge/how-to-use-the-accumulate-ethereum-bridge.md)
+  * [How to convert WACME to ACME](tutorials/bridge/release-acme-in-accumulate-burn-wrapped-acme.md)
+  * [How to setup a bridge node](tutorials/bridge/setup.md)
 * [How to create a Lite Account and Keys on Mainnet / Testnet](tutorials/how-to-create-a-lite-account-and-keys-on-mainnet-testnet.md)
 * [Sending Tokens from a Lite Token Account via CLI](tutorials/create-a-lite-account.md)
 * [How to create an ADI via CLI](tutorials/create-an-adi-via-cli.md)
