@@ -13,11 +13,11 @@ The Accumulate CLI (Command Line Interface) installation and the binary installa
 
 {% tabs %}
 {% tab title="Windows" %}
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.2/file/accumulate-windows-amd64.exe?job=build+binaries" %}
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.3/file/accumulate-windows-amd64.exe?job=build+binaries" %}
 Intel/AMD
 {% endembed %}
 
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.2/file/accumulate-windows-arm64.exe?job=build+binaries" %}
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.3/file/accumulate-windows-arm64.exe?job=build+binaries" %}
 ARM
 {% endembed %}
 
@@ -25,11 +25,11 @@ Rename the file to **accumulate.exe**
 {% endtab %}
 
 {% tab title="Mac OS" %}
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.2/file/accumulate-darwin-amd64?job=build+binaries" %}
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.3/file/accumulate-darwin-amd64?job=build+binaries" %}
 Intel
 {% endembed %}
 
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.2/file/accumulate-darwin-arm64?job=build+binaries" %}
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.3/file/accumulate-darwin-arm64?job=build+binaries" %}
 Apple M1/M2
 {% endembed %}
 
@@ -37,11 +37,11 @@ Rename the file to **accumulate**
 {% endtab %}
 
 {% tab title="Linux" %}
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.2/file/accumulate-linux-amd64?job=build+binaries" %}
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.3/file/accumulate-linux-amd64?job=build+binaries" %}
 Intel/AMD
 {% endembed %}
 
-{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.2/file/accumulate-linux-arm64?job=build+binaries" %}
+{% embed url="https://gitlab.com/accumulatenetwork/core/wallet/-/jobs/artifacts/v0.4.3/file/accumulate-linux-arm64?job=build+binaries" %}
 ARM
 {% endembed %}
 
