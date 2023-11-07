@@ -42,13 +42,13 @@ This command will get the list of accounts.
 **The above command will return an output similar to the following:**
 
 ```
-key name : 001846c0a1590675fd0ad816ab4873387ef127cd9b307c24 
-lite account : acc://001846c0a1590675fd0ad816ab4873387ef127cd9b307c24/ACME 
-public key : 3615e429b89fa3d6b636412d7a17b13cc321c14b2f2e5bf520868c9617401845 
-key type : legacyED25519 
-key name : 003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54 
-lite account : acc://003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54/ACME 
-public key : 45090e7cfa0edd52db7181fa0a30f1da8d2c0b1bdc6b4847de75fe922ad9e755 
+key name : 001846c0a1590675fd0ad816ab4873387ef127cd9b307c24
+lite account : acc://001846c0a1590675fd0ad816ab4873387ef127cd9b307c24/ACME
+public key : 3615e429b89fa3d6b636412d7a17b13cc321c14b2f2e5bf520868c9617401845
+key type : legacyED25519
+key name : 003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54
+lite account : acc://003df7b8b865b3eda520dbb224eaf7536ee98cc25874ce54/ACME
+public key : 45090e7cfa0edd52db7181fa0a30f1da8d2c0b1bdc6b4847de75fe922ad9e755
 key type : ed25519
 ```
 
@@ -75,7 +75,7 @@ Transaction Hash        : a0018d18c558c36f3f639fa1a64e2e9c47cc705fdf0d3f65a8ec8f
 Signature 0 Hash        : 78d521b36691c46216a66d6648dd620a9f6ec312a24b3b0f29a9889887f4953d
 Simple Hash             : ab039db9714e8a30b0443054dea78a36e754ead8ca50a6ab6e50adc62ef3d801
 Error code              : ok
-Result                  : 
+Result                  :
 ```
 
 _**The Transaction Hash is a hash of the transaction without signatures and the Signature Hash is the Transaction Hash with the Signature appended to it and hashed.**_
@@ -391,13 +391,13 @@ key type : ed25519
 **Syntax**
 
 ```
-accumulate key export all  
+accumulate key export all
 ```
 
 **Command**
 
 ```
-./accumulate key export all  
+./accumulate key export all
 ```
 
 The above command will return an output similar to the following:
@@ -494,9 +494,9 @@ seed: ed542528af5bf865161314165b25bd106d98d7b57b372e7ac61bba767433bb6046c09f02c7
 ```
 accumulate key label [command]
 Available Commands:
-  assign      assign public key of existing label to a new label.      
+  assign      assign public key of existing label to a new label.
   remove      remove a key label
-  rename      rename a key label to new label, note: the old key name will be replaced with the new key 
+  rename      rename a key label to new label, note: the old key name will be replaced with the new key
 name
 ```
 
@@ -693,13 +693,13 @@ This command creates a new lite data account from an ADI
 **Syntax**
 
 ```
-Account create data --lite [origin token account][signing key][extID]
+Account create data --lite [origin token account] [extID]
 ```
 
 **Command**
 
 ```
-./accumulate account create data --lite acc://DefiDevs.acme Key2 "Marian"
+./accumulate account create data --lite acc://DefiDevs.acme "Marian"
 ```
 
 The above command will return an output similar to the following:
@@ -722,7 +722,7 @@ This command writes to an Accumulate lite data account
 **Syntax**
 
 ```
-accumulate data write-to [account url] [signing key][BS3] [lite data account] [extid_0 (optional)] ... [extid_n (optional)] [data]
+accumulate data write-to [account url] [lite data account] [extid_0 (optional)] ... [extid_n (optional)] [data]
 ```
 
 **Command**
@@ -817,7 +817,7 @@ This command creates an ADI from a lite token account.
 **Syntax**
 
 ```
-accumulate adi create [origin-lite-account] [adi url to create] [public-key or key name] [key-book-name (optional)] [public key page 1 (optional)] Create new ADI from lite token account.
+accumulate adi create [origin-lite-account] [adi url to create] [key-book-name (optional)] [public key page 1 (optional)] Create new ADI from lite token account.
 ```
 
 When public-key one is specified, it will be assigned to the first page. Otherwise, the origin key is used.
@@ -825,7 +825,7 @@ When public-key one is specified, it will be assigned to the first page. Otherwi
 **Command**
 
 ```
-./accumulate adi create acc://f338762f7013acb0fd5e1480c20df47ff836862adbd6e0f1/ACME acc://DefiDevs.acme Key1 acc://DefiDevs.acme/Keybook
+./accumulate adi create acc://f338762f7013acb0fd5e1480c20df47ff836862adbd6e0f1/ACME acc://DefiDevs.acme acc://DefiDevs.acme/Keybook
 ```
 
 The above command will return an output similar to the following:
@@ -845,13 +845,13 @@ This command creates ADI from another ADI.
 **Syntax**
 
 ```
-accumulate adi create [origin-adi-url] [wallet signing key name] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
+accumulate adi create [origin-adi-url] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
 ```
 
 **Command**
 
 ```
-./accumulate adi create acc://DefiDevs.acme Key2 acc://Toyota Key2 acc://Toyota/Keybook
+./accumulate adi create acc://DefiDevs.acme acc://Toyota Key2 acc://Toyota/Keybook
 ```
 
 The above command will return an output similar to the following:
@@ -875,13 +875,13 @@ This command creates ADI from a sub-ADI.
 **Syntax**
 
 ```
-accumulate adi create [origin-adi-url] [wallet signing key name] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
+accumulate adi create [origin-adi-url] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
 ```
 
 **Command**
 
 ```
-./accumulate adi create acc://DefiDevs.acme/Robot Key2 acc://Ford.acme Key2 acc://Ford.acme/Keybook
+./accumulate adi create acc://DefiDevs.acme/Robot acc://Ford.acme Key2 acc://Ford.acme/Keybook
 ```
 
 The above command will return an output similar to the following:
@@ -901,13 +901,13 @@ This command creates ADI from a sub-sub-ADI.
 **Syntax**
 
 ```
-accumulate adi create [origin-adi-url] [wallet signing key name] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
+accumulate adi create [origin-adi-url] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
 ```
 
 **Command**
 
 ```
-./accumulate adi create acc://DefiDevs.acme/Robot/MrRoboto Key2 acc://Ferrari Key2 acc://Ferrari/Keybook
+./accumulate adi create acc://DefiDevs.acme/Robot/MrRoboto acc://Ferrari Key2 acc://Ferrari/Keybook
 ```
 
 The above command will return an output similar to the following:
@@ -1015,13 +1015,13 @@ An ADI can have multiple Key Books. To create an additional Key Book, a Public K
 **Syntax**
 
 ```
-accumulate book create [origin adi url] [signing key name] [key index (optional)] [key height (optional)] [new key book url] [public key 1 (optional)] ... [public key hex or name n + 1 [flags]
+accumulate book create [origin adi url] [new key book url] [public key 1 (optional)] ... [public key hex or name n + 1 [flags]
 ```
 
 **Command**
 
 ```
-./accumulate book create acc://DefiDevs.acme Key1 acc://DefiDevs.acme/Keybook2 Key3
+./accumulate book create acc://DefiDevs.acme acc://DefiDevs.acme/Keybook2 Key3
 ```
 
 The above command will return an output similar to the following:
@@ -1097,13 +1097,13 @@ A new Key Page can be added to a Key Book where public keys or key names can be 
 **Syntax**
 
 ```
-accumulate page create [origin key book url] [key name[@key book or page]] [public key 1] ... [public key hex or name n + 1] [flags]
+accumulate page create [origin key book url] [public key 1] ... [public key hex or name n + 1] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate page create acc://DefiDevs.acme/Keybook Key1 Key3 Key4
+./accumulate page create acc://DefiDevs.acme/Keybook Key3 Key4
 ```
 
 The above command will return an output similar to the following:
@@ -1120,13 +1120,13 @@ Result :
 **Syntax**
 
 ```
-accumulate page key add [key page url] [signing key name] [key index (optional)] [key height (optional)] [new key name] [flags]
+accumulate page key add [key page url] [new key name] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate page key add acc://DefiDevs.acme/Keybook/1 Key1 Key2
+./accumulate page key add acc://DefiDevs.acme/Keybook/1 Key2
 ```
 
 The above command will return an output similar to the following:
@@ -1171,13 +1171,13 @@ This command removes a key from a keypage.
 **Syntax**
 
 ```
-accumulate page key remove [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key name] [flags]
+accumulate page key remove [key page url] [old key name] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate page key remove acc://DefiDevs.acme/Keybook/1 Key2 Key2
+./accumulate page key remove acc://DefiDevs.acme/Keybook/1 Key2
 ```
 
 The above command will return an output similar to the following:
@@ -1197,25 +1197,25 @@ This command updates a key in a key \*\*\*\* page and requires the page threshol
 **Syntax**
 
 ```
-accumulate page key update [key page url] [signing key name] [key index (optional)] [key height (optional)] [old key name] [new public key or name] [flags]
+accumulate page key update [key page url] [old key name] [new public key or name] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate page key update acc://DefiDevs.acme/Keybook/1 Key1 Key1 Key2
+./accumulate page key update acc://DefiDevs.acme/Keybook/1 Key1 Key2
 ```
 
 The above command will return an output similar to the following:
 
 ```
-Transaction Hash : f5b4ab98ff3b322bf513376acaad748d65847408c6b3e10909e32bd1c81401d9 
+Transaction Hash : f5b4ab98ff3b322bf513376acaad748d65847408c6b3e10909e32bd1c81401d9
 
-Signature 0 Hash : d9e3c4786353b89d1fa7bca22e2e317f2e4071e195e86f6f2bfd409d0516cb63 
+Signature 0 Hash : d9e3c4786353b89d1fa7bca22e2e317f2e4071e195e86f6f2bfd409d0516cb63
 
-Simple Hash : ffe7d185949a7322333a485590c8976fc1dd66855f7fc973dfae084f1afb455a 
+Simple Hash : ffe7d185949a7322333a485590c8976fc1dd66855f7fc973dfae084f1afb455a
 
-Error code : ok 
+Error code : ok
 ```
 
 ### **Updating your own Key**
@@ -1223,7 +1223,7 @@ Error code : ok
 This command updates your own key in a key \*\*\*\* page and doesn't require the page threshold to be met.
 
 ```
-./accumulate page key replace directorynetwork.acme/book/1 dnkey hello      
+./accumulate page key replace directorynetwork.acme/book/1 hello
 
 
         Transaction Hash        : e1a36e712b0bb6c2335d0c03dbb2e8238dcbe7f25e07ede3f419d19af5adc981
@@ -1248,21 +1248,21 @@ This command is used to **lock** a Key page. This prevents "update" operation to
 **Syntax**
 
 ```
-accumulate page lock [key page url] [key name[@key book or page]] [flags]
+accumulate page lock [key page url] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate page lock acc://RajagopalIndia456.acme/book/3 keyed25519NIVS@RajagopalIndia456.acme/book/1 
+./accumulate page lock acc://RajagopalIndia456.acme/book/3
 ```
 
 **Output**
 
 ```
-Transaction Hash        : 4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310      
-Signature 0 Hash        : eb59b97b4a084f07205602a5dbe3fccf7ff7911e6f40540b627737fcc1dccd44      
-Simple Hash             : 151016ca9c69c73cd0c36f0094350104bfabd6cda7d6edf63573c39326c1839f      
+Transaction Hash        : 4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310
+Signature 0 Hash        : eb59b97b4a084f07205602a5dbe3fccf7ff7911e6f40540b627737fcc1dccd44
+Simple Hash             : 151016ca9c69c73cd0c36f0094350104bfabd6cda7d6edf63573c39326c1839f
 Error code              : ok
 Result                  :
 ```
@@ -1276,7 +1276,7 @@ _"transactionBlacklist":\["updateKeyPage"]_
 {% code overflow="wrap" %}
 ```
 ./accumulate.exe get acc://RajagopalIndia456.acme/book/3 -j
-{"chainId":"1827174d2c721b93eb85c867fdf2dacadf75b9118cd702bcd4e831978de43f8c","chains":[{"count":41,"height":41,"name":"main","roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"],"type":"transaction"},{"count":41,"height":41,"name":"main-index","roots":["012802c5ae03039ea8aa01200000000000000000000000000000000000000000",null,null,"46ce7e00434dcf5b35ae6f269b144f353829224e295f0f8f3cf05d60afd715b3",null,"c65ed6c7442a1d5826ba41a4f8685ee492d36ff7321c18f481e7cebbd7caa59b"],"type":"index"},{"count":37,"height":37,"name":"signature","roots":["eb59b97b4a084f07205602a5dbe3fccf7ff7911e6f40540b627737fcc1dccd44",null,"7ba62d5dd3593010efb1a8a3d0d35c7b29f9fb814451eae2247fccca62b3bd76",null,null,"e146cca3dade29f26b8cda0bcbd9ed8f86b896bbb53cd3f0c43ca23449f619f1"],"type":"transaction"}],"data":{"acceptThreshold":1,"creditBalance":9700,"keyBook":"acc://RajagopalIndia456.acme/book","keys"[{"publicKey":"3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0","publicKeyHash":"3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0"},{"publicKey":"40d2648776279fcefd975ecda62d06cd7204952d8637b5dc0d6cd2115bc34df9","publicKeyHash":"40d2648776279fcefd975ecda62d06cd7204952d8637b5dc0d6cd2115bc34df9"},{"publicKey":"4af9d6740c30b7cab4c3639bf4ffa0aedbc38db41978818d8e268fc4f4c29c9c","publicKeyHash":"4af9d6740c30b7cab4c3639bf4ffa0aedbc38db41978818d8e268fc4f4c29c9c"},{"publicKey":"51bc346a606cfa7de2834f04a6c69d560e47257a78b5f12caaa338605ae8d37d","publicKeyHash":"51bc346a606cfa7de2834f04a6c69d560e47257a78b5f12caaa338605ae8d37d"}],"threshold":1,"transactionBlacklist":["updateKeyPage"],"type":"keyPage","url":"acc://RajagopalIndia456.acme/book/3","version":38},"mainChain":{"count":41,"height":41,"roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"]},"merkleState":{"count":41,"height":41,"roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"]},"type":"keyPage"}  
+{"chainId":"1827174d2c721b93eb85c867fdf2dacadf75b9118cd702bcd4e831978de43f8c","chains":[{"count":41,"height":41,"name":"main","roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"],"type":"transaction"},{"count":41,"height":41,"name":"main-index","roots":["012802c5ae03039ea8aa01200000000000000000000000000000000000000000",null,null,"46ce7e00434dcf5b35ae6f269b144f353829224e295f0f8f3cf05d60afd715b3",null,"c65ed6c7442a1d5826ba41a4f8685ee492d36ff7321c18f481e7cebbd7caa59b"],"type":"index"},{"count":37,"height":37,"name":"signature","roots":["eb59b97b4a084f07205602a5dbe3fccf7ff7911e6f40540b627737fcc1dccd44",null,"7ba62d5dd3593010efb1a8a3d0d35c7b29f9fb814451eae2247fccca62b3bd76",null,null,"e146cca3dade29f26b8cda0bcbd9ed8f86b896bbb53cd3f0c43ca23449f619f1"],"type":"transaction"}],"data":{"acceptThreshold":1,"creditBalance":9700,"keyBook":"acc://RajagopalIndia456.acme/book","keys"[{"publicKey":"3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0","publicKeyHash":"3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0"},{"publicKey":"40d2648776279fcefd975ecda62d06cd7204952d8637b5dc0d6cd2115bc34df9","publicKeyHash":"40d2648776279fcefd975ecda62d06cd7204952d8637b5dc0d6cd2115bc34df9"},{"publicKey":"4af9d6740c30b7cab4c3639bf4ffa0aedbc38db41978818d8e268fc4f4c29c9c","publicKeyHash":"4af9d6740c30b7cab4c3639bf4ffa0aedbc38db41978818d8e268fc4f4c29c9c"},{"publicKey":"51bc346a606cfa7de2834f04a6c69d560e47257a78b5f12caaa338605ae8d37d","publicKeyHash":"51bc346a606cfa7de2834f04a6c69d560e47257a78b5f12caaa338605ae8d37d"}],"threshold":1,"transactionBlacklist":["updateKeyPage"],"type":"keyPage","url":"acc://RajagopalIndia456.acme/book/3","version":38},"mainChain":{"count":41,"height":41,"roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"]},"merkleState":{"count":41,"height":41,"roots":["4d0b16c471a19d7abcc2173ca5b268c28283a0e3c0764d776fdfbd1259aa1310",null,null,"cc592302f8b7e438aebab91abf97e88b0a3f77e34f0a3264a7244c72bfb6b717",null,"4ba548e009f93ef4f2cffbbc2c6c251f3afbae95facbcac4547f03d41431c46f"]},"type":"keyPage"}
 ```
 {% endcode %}
 
@@ -1285,20 +1285,20 @@ This command is used to **unlock** a Key page.
 **Syntax**
 
 ```
- accumulate page unlock [key page url] [key name[@key book or page]] [flags]
+ accumulate page unlock [key page url] [flags]
 ```
 
 **Command**
 
-<pre data-overflow="wrap"><code><strong>./accumulate page unlock acc://RajagopalIndia456.acme/book/3 keyed25519NIVS@RajagopalIndia456.acme/book/1
+<pre data-overflow="wrap"><code><strong>./accumulate page unlock acc://RajagopalIndia456.acme/book/3
 </strong></code></pre>
 
 **Output**
 
 ```
-Transaction Hash        : 40c3de4f3688b9a9aa993537196b9f6e221fadb2137305f419a4f789f75a877f      
-        Signature 0 Hash        : 5ae4def21f0387606bc6cac36f149aa85747ce916096bc74787e3c446d1dd92b      
-        Simple Hash             : 550a22a7dd0d536787581840f3710ab7a317157858c1bd7d75e01d97c1bb5946      
+Transaction Hash        : 40c3de4f3688b9a9aa993537196b9f6e221fadb2137305f419a4f789f75a877f
+        Signature 0 Hash        : 5ae4def21f0387606bc6cac36f149aa85747ce916096bc74787e3c446d1dd92b
+        Simple Hash             : 550a22a7dd0d536787581840f3710ab7a317157858c1bd7d75e01d97c1bb5946
         Error code              : ok
         Result                  :
 ```
@@ -1310,13 +1310,13 @@ By default, setting a threshold for a Key Page, the m of n will be 1 of 1. Becau
 **Syntax**
 
 ```
-accumulate tx execute [origin url] [signing key name] [key index (optional)] [key height (optional)] [payload] 
+accumulate tx execute [origin url] [payload]
 ```
 
 **Command**
 
 ```
-./accumulate tx execute acc://DefiDevs.acme/Keybook/2 Key1 '{\"type\": \"updateKeyPage\", \"operation\": [{ \"type\": \"setThreshold\", \"threshold\": 2 }]}'
+./accumulate tx execute acc://DefiDevs.acme/Keybook/2 '{\"type\": \"updateKeyPage\", \"operation\": [{ \"type\": \"setThreshold\", \"threshold\": 2 }]}'
 ```
 
 The above command will return an output similar to the following:
@@ -1340,23 +1340,23 @@ A multi-signature transaction is defined by the signature threshold for a given 
 **Syntax**
 
 ```
-accumulate page key add [key page url] [signing key name] [key index (optional)] [key height (optional)] [new key name] [flags]
+accumulate page key add [key page url] [new key name] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate page key add acc://DefiDevs.acme/Keybook/2 Key5 Key1  
+./accumulate page key add acc://DefiDevs.acme/Keybook/2 Key1
 ```
 
 The above command will return an output similar to the following:
 
 ```
-Transaction Hash        : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6 
-Signature 0 Hash        : de3f985a3569b3537c591353db6a15a385578967b7ddc28910f6779bebce4cf3 
-Simple Hash             : 8961c92b3adeadaae13eba36e935808d723c33806bc421937159d0a9498b33c6 
-Error code              : ok 
-Result                  : 
+Transaction Hash        : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6
+Signature 0 Hash        : de3f985a3569b3537c591353db6a15a385578967b7ddc28910f6779bebce4cf3
+Simple Hash             : 8961c92b3adeadaae13eba36e935808d723c33806bc421937159d0a9498b33c6
+Error code              : ok
+Result                  :
 ```
 
 ### **Pending Transaction**
@@ -1372,13 +1372,13 @@ A pending transaction can be queried to see the status.
 **Command**
 
 ```
-./accumulate tx pending 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6 
+./accumulate tx pending 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6
 ```
 
 The above command will return an output similar to the following:
 
 ```
-  Pending Tranactions -> Start: 0  Count: 1       Total: 1 
+  Pending Tranactions -> Start: 0  Count: 1       Total: 1
 ```
 
 ### **Sign Transaction Hash**
@@ -1388,23 +1388,23 @@ The second signer signs the transaction hash of the first transaction in the mul
 **Syntax**
 
 ```
-./accumulate tx sign [key page url] [signing key name] [txid]
+./accumulate tx sign [key page url] [txid]
 ```
 
 **Command**
 
 ```
-./accumulate tx sign acc://DefiDevs.acme/Keybook/2 Key3 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6   
+./accumulate tx sign acc://DefiDevs.acme/Keybook/2 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6
 ```
 
 The above command will return an output similar to the following:
 
 ```
-    Transaction Hash        : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6 
-    Signature 0 Hash        : de79633b1ceced2652f29f7fcb813190c19d175dd1846e76b3e233da66252666 
-    Simple Hash             : c87ef41af1233a666e9a833f50ee030ddcca08a1adaab76904846489220f3b8b 
-    Error code              : ok 
-    Result                  : 
+    Transaction Hash        : 72fb5fcdecbf8b30182e20eaeb4d218f13163fe15b2ff6543f8be7ea2d4a78e6
+    Signature 0 Hash        : de79633b1ceced2652f29f7fcb813190c19d175dd1846e76b3e233da66252666
+    Simple Hash             : c87ef41af1233a666e9a833f50ee030ddcca08a1adaab76904846489220f3b8b
+    Error code              : ok
+    Result                  :
 ```
 
 ### **Signing with a Delegate**
@@ -1438,13 +1438,13 @@ Result :
 **Syntax**
 
 ```
-./accumulate tx execute [Key Page] [Signing Key (key@You.acme)] '{type: updatekeypage, operation: { type: add, entry: { delegate: [Delegate Key Book] } } }''
+./accumulate tx execute [Key Page] '{type: updatekeypage, operation: { type: add, entry: { delegate: [Delegate Key Book] } } }''
 ```
 
 **Command**
 
 ```
-./accumulate tx execute myADI.acme/keybook/2 myKey@myADI.acme '{type: updatekeypage, operation: { type: add, entry: { delegate: Quentin.acme/book } } }'
+./accumulate tx execute myADI.acme/keybook/2 '{type: updatekeypage, operation: { type: add, entry: { delegate: Quentin.acme/book } } }'
 ```
 
 The above command will return an output similar to the following:
@@ -1462,13 +1462,13 @@ Result :
 **Syntax**
 
 ```
-./accumulate tx sign [Key Page] [SingingKey@KeyBook][Transaction ID]
+./accumulate tx sign [Transaction ID]
 ```
 
 **Command**
 
 ```
-./accumulate tx sign acc://Delegatetest.acme/Keybook/1 newkey@Delegatetest.acme/Keybook3 619ec91821f0fec89a77d69ed1272f86e18fc70d78101660b4859f67f77fb90b
+./accumulate tx sign 619ec91821f0fec89a77d69ed1272f86e18fc70d78101660b4859f67f77fb90b --sign-with Delegatetest.acme/Keybook3
 ```
 
 The above command will return an output similar to the following:
@@ -1486,13 +1486,13 @@ Result :
 **Syntax**
 
 ```
-./accumulate tx execute acc://Delegatetest.acme/Keybook/1 [Signing Key]'{type: updateKeyPage, operation: [{ type: update, oldEntry: {keyHash: [Public Key Hash], Delegate: [Delegate Key Book]} , newEntry: {keyHash: [Public Key Hash], Delegate: [Delegate Key Book]} }}]}'
+./accumulate tx execute acc://Delegatetest.acme/Keybook/1 '{type: updateKeyPage, operation: [{ type: update, oldEntry: {keyHash: [Public Key Hash], Delegate: [Delegate Key Book]} , newEntry: {keyHash: [Public Key Hash], Delegate: [Delegate Key Book]} }}]}'
 ```
 
 **Command**
 
 ```
-./accumulate tx execute acc://Delegatetest.acme/Keybook/1 newkey@Delegatetest.acme/Keybook3/1 '{type: updateKeyPage, operation: [{ type: update, oldEntry: {keyHash: 39c2ada31c6cb824e80f2a96f17e077a7edc9f02a93d34eede2616a5c9c3412c, Delegate: Delegatetest.acme/Keybook3} , newEntry: {keyHash: 785b7f22ab201ae3f391cc47b06e2da00bbd47e7600ba1c68ea2cdb2b26f00ef, Delegate: Delegatetest.acme/Keybook3}}]}' --delegator acc://Delegatetest.acme/Keybook/1
+./accumulate tx execute acc://Delegatetest.acme/Keybook/1 '{type: updateKeyPage, operation: [{ type: update, oldEntry: {keyHash: 39c2ada31c6cb824e80f2a96f17e077a7edc9f02a93d34eede2616a5c9c3412c, Delegate: Delegatetest.acme/Keybook3} , newEntry: {keyHash: 785b7f22ab201ae3f391cc47b06e2da00bbd47e7600ba1c68ea2cdb2b26f00ef, Delegate: Delegatetest.acme/Keybook3}}]}' --delegator acc://Delegatetest.acme/Keybook/1
 ```
 
 The above command will return an output similar to the following:
@@ -1505,42 +1505,18 @@ Error code : ok
 Result :
 ```
 
-### **Sign Transaction with Delegate**
-
-**Syntax**
-
-```
-./accumulate tx sign [Key Book][Signing Key][Transaction ID]
-```
-
-**Command**
-
-```
-./accumulate tx sign acc://Delegatetest.acme/Keybook/1 newkey@Delegatetest.acme/Keybook3 619ec91821f0fec89a77d69ed1272f86e18fc70d78101660b4859f67f77fb90b
-```
-
-The above command will return an output similar to the following:
-
-```
-Transaction Hash : 139c736cbccfc146d7731694d3a146417ef39be59614d63da9795d56307d38fc
-Signature 0 Hash : fe1290db52481dfc99380a576a6db00dbdec588b37bc7e867e2a6f3493dc6206
-Simple Hash : eccd36490ce21d1436e0d3b109922667a4f89f62f8247acd1f0dbce8ab413e31
-Error code : ok
-Result :
-```
-
 ### **Removing a Delegate and Public Key Hash of Key Page Entry**
 
 **Syntax**
 
 ```
-./accumulate tx execute acc://Delegatetest.acme/Keybook/1 [Signing Key] '{type: updateKeyPage, operation: [{ type: remove, entry: { owner: [Delegate Key Book], keyhash: [Public Key Hash}}]}'
+./accumulate tx execute acc://Delegatetest.acme/Keybook/1 '{type: updateKeyPage, operation: [{ type: remove, entry: { owner: [Delegate Key Book], keyhash: [Public Key Hash}}]}'
 ```
 
 **Command**
 
 ```
-./accumulate tx execute acc://Delegatetest.acme/Keybook/1 newkey4 '{"type": "updateKeyPage", "operation": [{ "type": "remove", "entry": { "owner": "acc://Delegatetest.acme/Keybook7", "keyhash": "1071cce6eb3ffe8ff0739ee669d0f7b8d095095c088123ebe8039478ae2043fe"}}]}'
+./accumulate tx execute acc://Delegatetest.acme/Keybook/1 '{"type": "updateKeyPage", "operation": [{ "type": "remove", "entry": { "owner": "acc://Delegatetest.acme/Keybook7", "keyhash": "1071cce6eb3ffe8ff0739ee669d0f7b8d095095c088123ebe8039478ae2043fe"}}]}'
 ```
 
 The above command will return an output similar to the following:
@@ -1564,13 +1540,13 @@ When adding an Authority, the Authority must sign the transaction hash to approv
 **Syntax**
 
 ```
-accumulate auth add [account url] [signing key name] [key index (optional)] [key height (optional)] [authority url] [flags]
+accumulate auth add [account url] [authority url] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate auth add acc://DefiDevs.acme/Tokens Key2 acc://DefiDevs.acme/Keybook2
+./accumulate auth add acc://DefiDevs.acme/Tokens acc://DefiDevs.acme/Keybook2
 ```
 
 The above command will return an output similar to the following:
@@ -1590,13 +1566,13 @@ To disable an Authority, the Authority you are disabling must sign the transacti
 **Syntax**
 
 ```
-accumulate auth disable [account url] [signing key name] [key index (optional)] [key height (optional)] [authority url or index
+accumulate auth disable [account url] [authority url or index (1-based)]
 ```
 
 **Command**
 
 ```
-./accumulate auth disable acc://DefiDevs.acme/Tokens acc://Key3@DefiDevs.acme/Keybook2 acc://DefiDevs.acme/Keybook2
+./accumulate auth disable acc://DefiDevs.acme/Tokens acc://DefiDevs.acme/Keybook2
 ```
 
 The above command will return an output similar to the following:
@@ -1616,13 +1592,13 @@ Enabling a Disabled Authority also requires a signature from the Disabled Author
 **Syntax**
 
 ```
-accumulate auth enable [account url] [signing key name] [key index (optional)] [key height (optional)] [authority url or index (1-based)] [flags]
+accumulate auth enable [account url] [authority url or index (1-based)] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate auth enable acc://DefiDevs.acme/Tokens Key2 acc://DefiDevs.acme/Keybook2
+./accumulate auth enable acc://DefiDevs.acme/Tokens acc://DefiDevs.acme/Keybook2
 ```
 
 The above command will return an output similar to the following:
@@ -1642,13 +1618,13 @@ Whether a Key Book is enabled or disabled, updating the authority set requires a
 **Syntax**
 
 ```
-accumulate auth remove [account url] [signing key name] [key index (optional)] [key height (optional)] [authority url or index (1-based)] [flags]
+accumulate auth remove [account url] [authority url or index (1-based)] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate auth remove acc://DefiDevs.acme/Tokens Key2 acc://DefiDevs.acme/Keybook2
+./accumulate auth remove acc://DefiDevs.acme/Tokens acc://DefiDevs.acme/Keybook2
 ```
 
 The above command will return an output similar to the following:
@@ -1668,13 +1644,13 @@ A Sub-ADI is an ADI created within an ADI. An example could be an organization t
 **Syntax**
 
 ```
-accumulate adi create [origin-adi-url] [wallet signing key name] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
+accumulate adi create [origin-adi-url] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
 ```
 
 **Command**
 
 ```
-./accumulate adi create acc://DefiDevs.acme Key2 acc://DefiDevs.acme/Car Key2 acc://DefiDevs.acme/Car/Keybook
+./accumulate adi create acc://DefiDevs.acme acc://DefiDevs.acme/Car Key2 acc://DefiDevs.acme/Car/Keybook
 ```
 
 The above command will return an output similar to the following:
@@ -1692,7 +1668,7 @@ Result :
 **Syntax**
 
 ```
-accumulate credits <origin lite account> <lite account or key page url><amount> 
+accumulate credits <origin lite account> <lite account or key page url><amount>
 ```
 
 **Command**
@@ -1720,13 +1696,13 @@ In the example below, the Origin ADI URL is the Sub-ADI and the ADI URL to creat
 **Syntax**
 
 ```
-accumulate adi create [origin-adi-url] [wallet signing key name] [key index (optional)] [key height (optional)] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
+accumulate adi create [origin-adi-url] [adi url to create] [public key or wallet key name] [key book url (optional)] [public key page 1 (optional)] Create new ADI for another ADI
 ```
 
 **Command**
 
 ```
-./accumulate adi create acc://DefiDevs.acme/Robot Key2 acc://DefiDevs.acme/Robot/MrRoboto Key2
+./accumulate adi create acc://DefiDevs.acme/Robot acc://DefiDevs.acme/Robot/MrRoboto Key2
 ```
 
 The above command will return an output similar to the following:
@@ -1758,13 +1734,13 @@ The creation of an ADI Token Accounts requires Credits. These Credits must resid
 **Syntax**
 
 ```
-accumulate account create token [actor adi] [signing key name] [key index (optional)] [key height (optional)] [new token account url] [tokenUrl] [keyBook (optional)] [flags]
+accumulate account create token [actor adi] [new token account url] [tokenUrl] [keyBook (optional)] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate account create token acc://DefiDevs.acme Key1 acc://DefiDevs.acme/Tokens acc://ACME acc://DefiDevs.acme/Keybook
+./accumulate account create token acc://DefiDevs.acme acc://DefiDevs.acme/Tokens acc://ACME acc://DefiDevs.acme/Keybook
 ```
 
 The above command will return an output similar to the following:
@@ -1802,13 +1778,13 @@ The above command will return an output similar to the following:
 **Syntax**
 
 ```
-accumulate account create token [actor adi] [signing key name] [key index (optional)] [key height (optional)] [new token account url] [tokenUrl] [keyBook (optional)] [flags]
+accumulate account create token [actor adi] [new token account url] [tokenUrl] [keyBook (optional)] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate account create token acc://DefiDevs.acme/Robot Key2 acc://DefiDevs.acme/Robot/Tokens acc://ACME acc://DefiDevs.acme/Robot/book
+./accumulate account create token acc://DefiDevs.acme/Robot acc://DefiDevs.acme/Robot/Tokens acc://ACME acc://DefiDevs.acme/Robot/book
 ```
 
 The above command will return an output similar to the following:
@@ -1830,7 +1806,7 @@ From the matrix above, you can send tokens in multiple ways.
 **Syntax**
 
 ```
-accumulate tx create [origin url] [signing key name] [key index (optional)] [key height (optional)] [to] [amount] Create new token tx
+accumulate tx create [origin url] [to] [amount] Create new token tx
 ```
 
 **Command**
@@ -1854,7 +1830,7 @@ Result :
 **Syntax**
 
 ```
-accumulate tx create [origin url] [signing key name] [key index (optional)] [key height (optional)] [to] [amount] Create new token tx
+accumulate tx create [origin url] [to] [amount] Create new token tx
 ```
 
 **Command**
@@ -1878,7 +1854,7 @@ Result :
 **Syntax**
 
 ```
-accumulate tx create [origin url] [signing key name] [key index (optional)] [key height (optional)] [to] [amount] Create new token tx
+accumulate tx create [origin url] [to] [amount] Create new token tx
 ```
 
 **Command**
@@ -1905,13 +1881,13 @@ The signing Key used to sign ADI related token transactions must be specified.
 **Syntax**
 
 ```
-accumulate tx create [Token url] [signing key name] [origin lite account] [amount]
+accumulate tx create [Token url] [origin lite account] [amount]
 ```
 
 **Command**
 
 ```
-./accumulate tx create acc://DefiDevs.acme/Tokens Key2 acc://27259b5544176ede283ba745b5a6d1775a281ad2f28abc3d/ACME 5
+./accumulate tx create acc://DefiDevs.acme/Tokens acc://27259b5544176ede283ba745b5a6d1775a281ad2f28abc3d/ACME 5
 ```
 
 The above command will return an output similar to the following:
@@ -1929,13 +1905,13 @@ Result :
 **Syntax**
 
 ```
-accumulate tx create [Token url] [signing key name] [Token url] [amount]
+accumulate tx create [Token url] [Token url] [amount]
 ```
 
 **Command**
 
 ```
-./accumulate tx create acc://Google.acme/Tokens Key5 acc://DefiDevs.acme/Tokens 50000
+./accumulate tx create acc://Google.acme/Tokens acc://DefiDevs.acme/Tokens 50000
 ```
 
 The above command will return an output similar to the following:
@@ -1953,13 +1929,13 @@ Result :
 **Syntax**
 
 ```
-accumulate tx create [Token url] [signing key name] [Sub-Token url] [amount]
+accumulate tx create [Token url] [Sub-Token url] [amount]
 ```
 
 **Command**
 
 ```
-./accumulate tx create acc://Google.acme/Tokens Key5 acc://DefiDevs.acme/Robot/Tokens 50000
+./accumulate tx create acc://Google.acme/Tokens acc://DefiDevs.acme/Robot/Tokens 50000
 ```
 
 The above command will return an output similar to the following:
@@ -1977,13 +1953,13 @@ Result :
 **Syntax**
 
 ```
-accumulate tx create [Sub-Token url] [signing key name] [origin lite account] [amount]
+accumulate tx create [Sub-Token url] [origin lite account] [amount]
 ```
 
 **Command**
 
 ```
-./accumulate tx create acc://Google.acme/Car/Tokens Key5 acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME 500
+./accumulate tx create acc://Google.acme/Car/Tokens acc://0143b52490530b90eef9b1a2405e322c6badc1e90e200c56/ACME 500
 ```
 
 The above command will return an output similar to the following:
@@ -2001,13 +1977,13 @@ Result :
 **Syntax**
 
 ```
-accumulate tx create [Sub-Token url] [signing key name] [Token url] [amount]
+accumulate tx create [Sub-Token url] [Token url] [amount]
 ```
 
 **Command**
 
 ```
-./accumulate tx create acc://Google.acme/Car/Tokens Key5 acc://DefiDevs.acme/Tokens 500
+./accumulate tx create acc://Google.acme/Car/Tokens acc://DefiDevs.acme/Tokens 500
 ```
 
 The above command will return an output similar to the following:
@@ -2025,13 +2001,13 @@ Result :
 **Syntax**
 
 ```
-accumulate tx create [Sub-Token url] [signing key name] [Sub-Token url] [amount]
+accumulate tx create [Sub-Token url] [Sub-Token url] [amount]
 ```
 
 **Command**
 
 ```
-./accumulate tx create acc://Google.acme/Car/Tokens Key5 acc://DefiDevs.acme/Robot/Tokens 500
+./accumulate tx create acc://Google.acme/Car/Tokens acc://DefiDevs.acme/Robot/Tokens 500
 ```
 
 The above command will return an output similar to the following:
@@ -2048,7 +2024,7 @@ Result :
 
 Setup staking
 
-Usage: accumulate staking convert \[account] \[key\[@signer]] \[flags]
+Usage: accumulate staking convert \[account] \[flags]
 
 Available Commands: convert Convert an existing token account into a staking account
 
@@ -2060,7 +2036,7 @@ Flags:\
 \
 Delegated Staking Example:
 
-./accumulate staking convert hello.acme/staking ben --delegate example.acme --rewards hello.acme/staking --type delegated --lockup 4\
+./accumulate staking convert hello.acme/staking --delegate example.acme --rewards hello.acme/staking --type delegated --lockup 4\
 \
 Password: \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 
@@ -2083,13 +2059,13 @@ A Token Issuer defines the properties of a custom token to be issued such as the
 **Syntax**
 
 ```
-accumulate token create [origin adi or lite url] [adi signer key name (if applicable)] [token issuer url][BS4] [symbol] [precision (0 - 18)] [supply limit] [properties URL (optional)] [flags]
+accumulate token create [origin adi or lite url] [token issuer url][BS4] [symbol] [precision (0 - 18)] [supply limit] [properties URL (optional)] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate token create acc://DefiDevs.acme Key2 acc://DefiDevs.acme/AI AI 1 100000000
+./accumulate token create acc://DefiDevs.acme acc://DefiDevs.acme/AI AI 1 100000000
 ```
 
 The above command will return an output similar to the following:
@@ -2107,13 +2083,13 @@ Result :
 **Syntax**
 
 ```
-// Some code./accumulate account create token [ADI URL][Signing Key][ADI Token Account][Token Issuer]
+./accumulate account create token [ADI URL] [ADI Token Account] [Token Issuer]
 ```
 
 **Command**
 
 ```
-./accumulate account create token acc://DefiDevs.acme Key2 acc://DefiDevs.acme/AITokens acc://DefiDevs.acme/AI
+./accumulate account create token acc://DefiDevs.acme acc://DefiDevs.acme/AITokens acc://DefiDevs.acme/AI
 ```
 
 The above command will return an output similar to the following:
@@ -2131,13 +2107,13 @@ Result :
 **Syntax**
 
 ```
-accumulate token issue [adi token url] [signer key name] [recipient url] [amount] [flags]
+accumulate token issue [adi token url] [recipient url] [amount] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate token issue acc://DefiDevs.acme/AI Key2 acc://DefiDevs.acme/AITokens 10000
+./accumulate token issue acc://DefiDevs.acme/AI acc://DefiDevs.acme/AITokens 10000
 ```
 
 The above command will return an output similar to the following:
@@ -2177,7 +2153,7 @@ Result :
 **Syntax**
 
 ```
-accumulate token burn [adi or lite token account] [adi signer key name (if applicable)] [amount] [flags]
+accumulate token burn [adi or lite token account] [amount] [flags]
 ```
 
 **Command**
@@ -2203,13 +2179,13 @@ A decimal value must be added (can be 0) when burning tokens
 **Syntax**
 
 ```
- accumulate token burn [adi or lite token account] [adi signer key name (if applicable)] [amount] [flags]
+ accumulate token burn [adi or lite token account] [amount] [flags]
 ```
 
 **Command**
 
 ```
-./accumulate token burn acc://DefiDevs.acme/Tokens Key2 9[BS5] .0
+./accumulate token burn acc://DefiDevs.acme/Tokens 9[BS5] .0
 ```
 
 The above command will return an output similar to the following:
@@ -2229,13 +2205,13 @@ Create an ADI Data Account
 **Syntax**
 
 ```
-accumulate account create data [actor adi url] [signing key name] [key index (optional)] [key height (optional)] [adi data account url] [key book (optional)] Create new data account
+accumulate account create data [actor adi url] [adi data account url] [key book (optional)] Create new data account
 ```
 
 **Command**
 
 ```
-./accumulate account create data acc://DefiDevs.acme Key1 acc://DefiDevs.acme/Data acc://DefiDevs.acme/Keybook
+./accumulate account create data acc://DefiDevs.acme acc://DefiDevs.acme/Data acc://DefiDevs.acme/Keybook
 ```
 
 The above command will return an output similar to the following:
@@ -2253,13 +2229,13 @@ Result :
 **Syntax**
 
 ```
-accumulate data write [data account url] [signingKey] [extid_0 (optional)] ... [extid_n (optional)] [data] Write entry to your data account. Note: extid's and data needs to be a quoted string or hex
+accumulate data write [data account url] [extid_0 (optional)] ... [extid_n (optional)] [data] Write entry to your data account. Note: extid's and data needs to be a quoted string or hex
 ```
 
 **Command**
 
 ```
-./accumulate data write acc://DefiDevs.acme/data Key2 "entryhashtest1"
+./accumulate data write acc://DefiDevs.acme/data "entryhashtest1"
 ```
 
 The above command will return an output similar to the following:
@@ -2342,13 +2318,13 @@ Write scratch data command:
 **Syntax**
 
 ```
-./accumulate data write [ADI Data Account][Signing Key] --scratch [data]
+./accumulate data write [ADI Data Account] --scratch [data]
 ```
 
 **Command**
 
 ```
-./accumulate data write DeFiDevs.acme/data 1d92f317cb3ed1b2992d345ae9546ec0d66c069c4b471c04 --scratch "DATA"
+./accumulate data write DeFiDevs.acme/data --scratch "DATA"
 ```
 
 The above command will return an output similar to the following:
@@ -2369,8 +2345,8 @@ Entry Hash 12e90b8e74f20fc0a7274cff9fcbae14592db12292757f1ea0d7503d30799fd2
 **Syntax**
 
 ```
-accumulate account create data [actor adi url] [key name[@key book or page]]  [adi data account url] --authority key
-book (optional) 
+accumulate account create data [actor adi url] [adi data account url] --authority key
+book (optional)
 ```
 
 The actor ADI is an AD or Sub-ADI
@@ -2378,7 +2354,7 @@ The actor ADI is an AD or Sub-ADI
 **Command**
 
 ```
-./accumulate account create data acc://DefiDevs.acme/Robot Key2 acc://DefiDevs.acme/Robot/Data acc://DefiDevs.acme/Robot/Book
+./accumulate account create data acc://DefiDevs.acme/Robot acc://DefiDevs.acme/Robot/Data acc://DefiDevs.acme/Robot/Book
 ```
 
 The above command will return an output similar to the following:
@@ -2396,13 +2372,13 @@ Result :
 **Syntax**
 
 ```
-accumulate data write [data account url] [signingKey] [extid_0 (optional)] ... [extid_n (optional)] [data] Write entry to your data account. Note: extid's and data needs to be a quoted string or hex
+accumulate data write [data account url] [extid_0 (optional)] ... [extid_n (optional)] [data] Write entry to your data account. Note: extid's and data needs to be a quoted string or hex
 ```
 
 **Command**
 
 ```
-./accumulate data write acc://Test.acme/SubADITest/Data Key1 'Key6'
+./accumulate data write acc://Test.acme/SubADITest/Data 'Key6'
 ```
 
 The above command will return an output similar to the following:
@@ -2483,13 +2459,13 @@ The above command will return an output similar to the following:
 **Syntax**
 
 ```
-accumulate data write [data account url] [signingKey] --scratch (optional) [extid_0 (optional)] ... [extid_n (optional)] [data]
+accumulate data write [data account url] --scratch (optional) [extid_0 (optional)] ... [extid_n (optional)] [data]
 ```
 
 **Command**
 
 ```
-./accumulate data write DeFiDevs.acme/subadi/data 1d92f317cb3ed1b2992d345ae9546ec0d66c069c4b471c04 --scratch "DATA"
+./accumulate data write DeFiDevs.acme/subadi/data --scratch "DATA"
 ```
 
 The above command will return an output similar to the following:
@@ -2518,20 +2494,20 @@ When an auth is **"disabled"** for a data account, anyone with valid signature c
 **Disable Auth**
 
 ```
-./accumulate auth disable acc://automation9876542.acme keyed25519SE1F acc://automation9876542.acme/book 
+./accumulate auth disable acc://automation9876542.acme acc://automation9876542.acme/book
 ```
 
 **Sign the transaction**
 
 ```
-./accumulate tx sign acc://automation9876542.acme/book/1 keyed25519SE1F@automation9876542.acme/book fbbec95994a3d92ee0baa7a8b7a04b126b259309e8626fcc1f44b068cc9026b7 
+./accumulate tx sign acc://automation9876542.acme/book/1 fbbec95994a3d92ee0baa7a8b7a04b126b259309e8626fcc1f44b068cc9026b7
 ```
 
 **Write to data account**
 
 {% code overflow="wrap" %}
 ```
-./accumulate data write acc://automation9876542.acme/dataAccount72 keyed25519VUOK@RajagopalIndia789.acme/book "546573742064617461206d70684e55385a7a7467474c467649316a744748"
+./accumulate data write acc://automation9876542.acme/dataAccount72 "546573742064617461206d70684e55385a7a7467474c467649316a744748"
 ```
 {% endcode %}
 
@@ -2540,7 +2516,7 @@ When an auth is **"disabled"** for a data account, anyone with valid signature c
 **Syntax**
 
 ```
-accumulate blocks minor [partition-url] [start index] [count] [tx fetch mode expand|ids|countOnly|omit (optional)] [block filter mode excludenone|excludeempty (optional)] 
+accumulate blocks minor [partition-url] [start index] [count] [tx fetch mode expand|ids|countOnly|omit (optional)] [block filter mode excludenone|excludeempty (optional)]
 ```
 
 The partition url is a BVN ADI, or a DN ADI
@@ -2700,7 +2676,7 @@ User can "send tokens" to multiple parties in a single transaction as follows
 
 {% code overflow="wrap" %}
 ```
-accumulate tx execute acc://automationAdi138.acme/token24 addKeyed255198OA8 "{ type: sendTokens, to: [ { url: "acc://automationAdi138.acme/token943", amount: '1056000000' }, { url: "automationAdi138.acme/token382", 
+accumulate tx execute acc://automationAdi138.acme/token24 "{ type: sendTokens, to: [ { url: "acc://automationAdi138.acme/token943", amount: '1056000000' }, { url: "automationAdi138.acme/token382",
 amount: '500000000' } ] }"
 ```
 {% endcode %}
@@ -2710,7 +2686,7 @@ The above command will return an output similar to the following:
 ```
 Transaction Hash        : 3260d61d1efdf01b3c19abe5aa24cbc44ba352e319da2240aba301a169263d69
         Signature 0 Hash        : 325bcfc2b50a05193d843d75fdb9f7d03410af31b0c73dc402c3c1c01046a86f
-        Simple Hash             : c65c5fc325104e1839e0fc7c68226ee7533e1b32ebcf4dd9bb9381d010565b5d      
+        Simple Hash             : c65c5fc325104e1839e0fc7c68226ee7533e1b32ebcf4dd9bb9381d010565b5d
         Error code              : ok
         Result                  :
 ```
@@ -2721,16 +2697,16 @@ User can "issue tokens" to multiple parties in a single transaction as follows
 
 {% code overflow="wrap" %}
 ```
-./accumulate tx execute acc://automationAdi138.acme/TokenIssuerVRG addKeyed255198OA8 "{ type: issueTokens, to: [ { url: "acc://automationAdi138.acme/CustomTokenDFQ2X", amount: '5' }, { url: "acc://automationAdi138.acme/CustomTokenE2b7g", amount: '5' } ] }"
+./accumulate tx execute acc://automationAdi138.acme/TokenIssuerVRG "{ type: issueTokens, to: [ { url: "acc://automationAdi138.acme/CustomTokenDFQ2X", amount: '5' }, { url: "acc://automationAdi138.acme/CustomTokenE2b7g", amount: '5' } ] }"
 ```
 {% endcode %}
 
 The above command will return an output similar to the following:
 
 ```
-Transaction Hash        : 0eb31c163d28d5ba6a6d049a31173d3470dc039a53dbe867c35c01a687b47776      
-Signature 0 Hash        : a50215753c1d3a3d0978aae8e05c2e623be6570a9ca3da0edfb51f4e520d1078      
-Simple Hash             : c6c5ed51cf4a2c6df64d6ca323fc15ce69b697fc7e1bdb7a00bffeec11b0707c      
+Transaction Hash        : 0eb31c163d28d5ba6a6d049a31173d3470dc039a53dbe867c35c01a687b47776
+Signature 0 Hash        : a50215753c1d3a3d0978aae8e05c2e623be6570a9ca3da0edfb51f4e520d1078
+Simple Hash             : c6c5ed51cf4a2c6df64d6ca323fc15ce69b697fc7e1bdb7a00bffeec11b0707c
 Error code              : ok
 Result                  :
 ```
@@ -2741,7 +2717,7 @@ When a user wants to perform _"update"_ operation on a key page and _"add"_ a ne
 
 {% code overflow="wrap" %}
 ```
-./accumulate tx execute acc://automation9876542.acme/book/2 keyed25519SE1F "{"type": "updateKeyPage", "operation": [{ "type": "update", "oldEntry": {"keyHash": "418ae889ddb30826e68fa66977f29e955a52951afb7056b88a76f13161777515"} ,"newEntry": {"keyHash": "69614ac2db2b9cb07b86bbc6a451f7120e66b1d077f83b0b0e2f09a05258d66e" }}, { "type": "add", "entry": {"owner": "acc://automation9876542.acme/book/2", "keyHash": 
+./accumulate tx execute acc://automation9876542.acme/book/2 "{"type": "updateKeyPage", "operation": [{ "type": "update", "oldEntry": {"keyHash": "418ae889ddb30826e68fa66977f29e955a52951afb7056b88a76f13161777515"} ,"newEntry": {"keyHash": "69614ac2db2b9cb07b86bbc6a451f7120e66b1d077f83b0b0e2f09a05258d66e" }}, { "type": "add", "entry": {"owner": "acc://automation9876542.acme/book/2", "keyHash":
 "3ebc9b367208e1834afc5a9819ca6ab54d84e2a529a76267d02594f5fe118db0"}}]}"
 ```
 {% endcode %}
@@ -2749,9 +2725,9 @@ When a user wants to perform _"update"_ operation on a key page and _"add"_ a ne
 The above command will return an output similar to the following:
 
 ```
-Transaction Hash        : 20b1bd78b4776ab8defab7542fea5c04e13f6bff9222a20b13634d5622a7b6df      
-        Signature 0 Hash        : c80f19d9ee945f41ae595f55a84867c8cbc4eb9baf030ad4454f9cf0275cfe77      
-        Simple Hash             : 17d933a0dde79a71c6cfa2bf3c2495790aa8b6ce767c3f970f5596761caa1d5a      
+Transaction Hash        : 20b1bd78b4776ab8defab7542fea5c04e13f6bff9222a20b13634d5622a7b6df
+        Signature 0 Hash        : c80f19d9ee945f41ae595f55a84867c8cbc4eb9baf030ad4454f9cf0275cfe77
+        Simple Hash             : 17d933a0dde79a71c6cfa2bf3c2495790aa8b6ce767c3f970f5596761caa1d5a
         Error code              : ok
         Result                  :
 ```
@@ -2759,7 +2735,7 @@ Transaction Hash        : 20b1bd78b4776ab8defab7542fea5c04e13f6bff9222a20b13634d
 To validate the transaction
 
 ```
-./accumulate.exe get acc://automation9876542.acme/book/2 
+./accumulate.exe get acc://automation9876542.acme/book/2
 
         Credit Balance  :       99.99
 
@@ -2774,7 +2750,7 @@ When a user wants to perform multiple _"updateAccountAuth"_ operation, he/she ca
 
 {% code overflow="wrap" %}
 ```
-./accumulate tx execute acc://automation9876542.acme keyed25519SE1F "{"type": "updateAccountAuth", "operations": [{ "type": "disable", "authority": "acc://automation9876542.acme/dataAccount82"} ,{ "type": "enable", "authority": "acc://automation9876542.acme/book"}]}" 
+./accumulate tx execute acc://automation9876542.acme "{"type": "updateAccountAuth", "operations": [{ "type": "disable", "authority": "acc://automation9876542.acme/dataAccount82"} ,{ "type": "enable", "authority": "acc://automation9876542.acme/book"}]}"
 ```
 {% endcode %}
 
@@ -2782,16 +2758,9 @@ The above command will return an output similar to the following:
 
 ```
 
-        Transaction Hash        : 35fc8b37f6242b237c6576e36faec7be8aa8edfe8690b483a0ee0cb7a1621ed4      
-        Signature 0 Hash        : 1bb5b781775bbaa790ea15da80681fc943113dddc1af1659b7a78ad665c70b9b      
-        Simple Hash             : 174927780ebb211a01c15785ff1b785d07209a5b98eb5fb54b7c27f744992e36      
+        Transaction Hash        : 35fc8b37f6242b237c6576e36faec7be8aa8edfe8690b483a0ee0cb7a1621ed4
+        Signature 0 Hash        : 1bb5b781775bbaa790ea15da80681fc943113dddc1af1659b7a78ad665c70b9b
+        Simple Hash             : 174927780ebb211a01c15785ff1b785d07209a5b98eb5fb54b7c27f744992e36
         Error code              : ok
         Result                  :
 ```
-
-## Encrypt
-
-Encrypt Wallet Database\
-./accumulate encrypt
-
-***
