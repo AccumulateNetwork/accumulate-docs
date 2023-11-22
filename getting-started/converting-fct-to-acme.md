@@ -85,7 +85,6 @@ The above command will return an output similar to the following:
 
 * **If a user has FCT in a Hot Wallet or on an Exchange:** Export FS Address (Factom Secret Key) from Factom Wallet. Import FS Address it into Accumulate Wallet (Mobile, Web, CLI). Reference Export and Import Steps.
 * **If a user has FCT in a Ledger:** No action on the user’s part when the Ledger supports ACME to convert FCT to ACME. The user will need to install the ACME Ledger application.
-* **If a user has WFCT:** WFCT holders can convert their WFCT to ACME using this [https://wfct-burn.netlify.app](https://wfct-burn.netlify.app)
 
 ### Exchange Expectation
 

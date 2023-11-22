@@ -1,6 +1,6 @@
 # Release Note 0.5.1
 
-### **Accumulate 0.5.1 -** April 30th 2022 ****&#x20;
+### **Accumulate 0.5.1 -** April 30th 2022&#x20;
 
 🚀  **New**&#x20;
 

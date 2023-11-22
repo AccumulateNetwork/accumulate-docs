@@ -60,6 +60,6 @@ Your transaction is now successful.
 
 ### **Transaction hash**
 
-You can also view the transaction on [Etherscan](https://etherscan.io) by copying the transaction hash **** displayed by the bridge.
+You can also view the transaction on [Etherscan](https://etherscan.io) by copying the transaction hash displayed by the bridge.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-11-18 at 17.55.54.png" alt=""><figcaption></figcaption></figure>
