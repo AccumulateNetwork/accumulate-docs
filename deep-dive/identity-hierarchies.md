@@ -2,7 +2,7 @@
 description: An overview of Accumulate's identity hierarchy
 ---
 
-# Identity Hierarchies
+# Identity hierarchies
 
 This guide will take a deeper look at how the construction of ADIs with a focus on the identity hierarchy.
 
@@ -36,7 +36,7 @@ Accounts are terminal sub-chains, meaning that sub-accounts don’t exist. Howev
 | **Account-1**   | acc://firm/r/properties | acc://user/n/art  |
 | **Account-2**   | acc://firm/c/sales      | acc://user/s/USDT |
 
-***
+
 
 **Sub-ADIs**
 
@@ -60,7 +60,7 @@ The human resources department can be\*\* \*\*further subdivided into sub-ADIs t
 | **Sub3-ADI-1**  | acc://bank/i/hr/i/cpo/i/director     |
 | **SubN-ADI-1**  | acc://bank/i/hr/i/cpo/i/director/tbd |
 
-***
+
 
 **Combining Accounts and Sub-ADIs**
 

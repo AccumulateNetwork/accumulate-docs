@@ -61,11 +61,11 @@ _Please provide the **Validator Public Key** and **Operator Public Key** to a me
 
 When you search on a Web Page, your node's I.P. (I.P. :16592.status), if the voting power is 0, you are running a follower node. If the voting power is 1, you are running a Validator Node.&#x20;
 
-_****_![](<../.gitbook/assets/image (3).png>)_****_
+![](<../.gitbook/assets/image (3).png>)
 
 In a future AccMan release, the type of Node you are running will be visible in your AccMan console.
 
-_To verify, your **operator key** is on the **operator key page.** _&#x20;
+_To verify, your **operator key** is on the **operator key page.**_&#x20;
 
 _Run this command_
 

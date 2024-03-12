@@ -134,7 +134,7 @@ This will create a login account `accman`. The private keys from \`/root/.ssh/au
 ### Synchronizing
 
 {% hint style="warning" %}
-Before booting your node, **** you must configure it to synchronize to the latest snapshot. If you skip this step, your node will take days or weeks to get caught up in the network.
+Before booting your node, you must configure it to synchronize to the latest snapshot. If you skip this step, your node will take days or weeks to get caught up in the network.
 {% endhint %}
 
 Get the latest snapshot height and hash for the DN and BVN you're joining. For now, send a message on [#operator-chat](https://discord.com/channels/677558240141115481/1001135069727043594) requesting the latest snapshots.

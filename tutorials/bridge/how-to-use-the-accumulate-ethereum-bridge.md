@@ -2,7 +2,7 @@
 description: Learn how to convert ACME to WACME using the Accumulate Bridge
 ---
 
-# How to mint WACME
+# How to convert ACME to WACME
 
 Wrapped Accumulate (WACME) is an ERC-20 wrapped version of the native ACME token on Ethereum. WACME allows users in the Ethereum ecosystem to use ACME across an array of DeFi platforms, such as Uniswap and Curve.
 
@@ -22,13 +22,17 @@ Note: If you would like to test the Bridge on the Goerli Testnet, you can follow
 
 ### **How to add Accumulate to Metamask**
 
-**1.** To use the Accumulate Mainnet Bridge, please go to: [**bridge.accumulatenetwork.io**](https://bridge.accumulatenetwork.io/mint)****
+**1.** To use the Accumulate Mainnet Bridge, please go to: [**bridge.accumulatenetwork.io**](https://bridge.accumulatenetwork.io/mint)
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.16.25.png" alt=""><figcaption></figcaption></figure>
 
 **2.** Click on **connect a wallet**. you will see a pop-up similar to the image below.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/Screenshot 2022-10-27 at 14.27.38.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 **3.** Choose either **Metamask** or **WalletConnect** depending on your connection method**.**&#x20;
 
@@ -40,9 +44,9 @@ An approval transaction will be sent to your wallet. After approving the transac
 
 &#x20;**4.** Type in the amount of ACME you would like to convert. &#x20;
 
-****![](<../../.gitbook/assets/image (17).png>)****
+![](<../../.gitbook/assets/image (17).png>)
 
-****
+
 
 **5.** Click **Next** to view the mint instruction.
 

@@ -19,9 +19,4 @@ When running a DNN and BVNN in dual-mode, the BVNN's Prometheus exporer is disab
 
 The base port for the testnet and mainnet is 16591. All of the node ports have a fixed offset from the base port.
 
-| Service        | DNN | BVNN |
-| -------------- | --- | ---- |
-| Tendermint P2P | 0   | 100  |
-| Tendermint RPC | 1   | 101  |
-| Prometheus     | 3   | 103  |
-| Accumulate API | 4   | 104  |
+<table><thead><tr><th width="249">Service</th><th>DNN</th><th>BVNN</th></tr></thead><tbody><tr><td>Tendermint P2P</td><td>0</td><td>100</td></tr><tr><td>Tendermint RPC</td><td>1</td><td>101</td></tr><tr><td>Prometheus</td><td>3</td><td>103</td></tr><tr><td>Accumulate API</td><td>4</td><td>104</td></tr></tbody></table>

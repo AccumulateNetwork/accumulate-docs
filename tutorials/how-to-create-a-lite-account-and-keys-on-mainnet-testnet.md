@@ -56,7 +56,7 @@ Generate random Lite Identity and ACME Lite Token Account &#x20;
 ./accumulate account generate
 ```
 
-****
+
 
 **Command:** &#x20;
 

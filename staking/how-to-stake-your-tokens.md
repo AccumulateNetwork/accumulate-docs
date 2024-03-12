@@ -2,7 +2,7 @@
 description: This article will show you how to stake your ACME tokens.
 ---
 
-# How to Stake your Tokens
+# How to stake your tokens
 
 {% hint style="info" %}
 **Staking tokens gives custody of those tokens over to the staking system** unless and until they are unstaked.
@@ -92,7 +92,7 @@ Since you are setting up delegated staking, you must choose an Operator to stake
 | ARSR                     | `arsr.acme`                 |
 | PrestigeIT               | `PrestigeIT.acme`           |
 
-****
+
 
 ### Step 4: Run the Delegated Staking Command
 
